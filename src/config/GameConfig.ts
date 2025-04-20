@@ -29,4 +29,12 @@ export class GameConfig {
   
   // Audio settings
   static readonly SPEECH_API_URL: string = 'https://readloud.net/';
+  
+  // Voice mappings for ReadLoud API
+  static readonly VOICE_MAPPINGS: Record<string, string> = {
+    'Brian': 'Brian', // Slow, managerial (Boomer)
+    'Bruno': 'Russell', // Mysterious, deep (Bogdanoff)
+    'Brandon': 'Evan', // Hyper, high-pitched (Zoomer)
+    'Salli': 'Joanna' // Corporate perky (Girl)
+  };
 }

@@ -5,6 +5,7 @@ export class AudioManager {
   private scene: Phaser.Scene;
   private fartSounds: Phaser.Sound.BaseSound[] = [];
   private speechSounds: Map<string, Phaser.Sound.BaseSound> = new Map();
+  private audioCache: Map<string, HTMLAudioElement> = new Map();
   
   constructor(scene: Phaser.Scene) {
     this.scene = scene;
@@ -25,26 +26,65 @@ export class AudioManager {
   }
   
   public async playVoice(text: string, voiceType: string): Promise<void> {
-    // In a real implementation, this would make API calls to the TTS service
-    // For now, we'll just simulate it with a dummy sound
-    
-    // Check if we've already synthesized this text/voice combination
-    const key = `${voiceType}-${text.substring(0, 20)}`;
-    
-    if (this.speechSounds.has(key)) {
-      // Reuse existing audio
-      const sound = this.speechSounds.get(key);
-      if (sound) {
-        sound.play();
-      }
-    } else {
-      // In a real implementation, this would call the TTS API
-      // For now, we'll simulate it
-      console.log(`[TTS] Playing "${text}" with voice ${voiceType}`);
+    try {
+      // Map the voice type to the ReadLoud API voice names
+      const apiVoice = GameConfig.VOICE_MAPPINGS[voiceType] || voiceType;
       
-      // In a real implementation, we would load the resulting audio file
-      // and play it. For now, we'll just log it.
+      // Create a unique key for this text/voice combination
+      const key = `${apiVoice}-${this.hashText(text)}`;
+      
+      // Check if we already have this cached
+      if (this.audioCache.has(key)) {
+        const audio = this.audioCache.get(key);
+        if (audio) {
+          // Restart audio playback
+          audio.currentTime = 0;
+          audio.play().catch(e => console.error('Error playing cached audio:', e));
+        }
+        return;
+      }
+      
+      // Generate TTS URL
+      const ttsUrl = this.generateTTS(text, apiVoice);
+      
+      console.log(`TTS URL: ${ttsUrl}`);
+      
+      // For development purposes, we'll fall back to a basic console log
+      // since the actual TTS might not work in all environments
+      console.log(`Speaking with ${apiVoice}: "${text}"`);
+      
+      // In production, this would be uncommented:
+      /*
+      // Create an HTML audio element to play the TTS
+      const audio = new Audio();
+      audio.crossOrigin = "anonymous"; // Important for CORS
+      audio.src = ttsUrl;
+      
+      // Add to cache
+      this.audioCache.set(key, audio);
+      
+      // Play the audio (don't await, let it play asynchronously)
+      audio.play().catch(e => {
+        console.error('Error playing TTS:', e);
+      });
+      */
+    } catch (error) {
+      console.error('Error playing TTS:', error);
+      
+      // As a fallback, just log what would have been said
+      console.log(`TTS (fallback): [${voiceType}] "${text}"`);
     }
+  }
+  
+  // Simple hash function for creating cache keys
+  private hashText(text: string): string {
+    let hash = 0;
+    for (let i = 0; i < text.length; i++) {
+      const char = text.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32bit integer
+    }
+    return hash.toString(16);
   }
   
   private initAudio(): void {
@@ -55,10 +95,20 @@ export class AudioManager {
   // Additional methods for managing and controlling audio
   public stopAllSounds(): void {
     this.scene.sound.stopAll();
+    
+    // Also stop any HTML audio elements
+    this.audioCache.forEach(audio => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
   }
   
   public generateTTS(text: string, voiceType: string): string {
-    // In a real implementation, this would generate a URL or request to the TTS service
-    return `${GameConfig.SPEECH_API_URL}?text=${encodeURIComponent(text)}&voice=${voiceType}`;
+    // Ensure text is properly encoded for URL
+    const encodedText = encodeURIComponent(text);
+    
+    // ReadLoud.net specific URL format
+    // Example format: https://readloud.net/speech.php?q=Hello+world&voice=Brian
+    return `${GameConfig.SPEECH_API_URL}speech.php?q=${encodedText}&voice=${voiceType}`;
   }
 }

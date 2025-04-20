@@ -9,6 +9,7 @@ export class Player {
   private faceSprite: Phaser.GameObjects.Image;
   private nameTag: Phaser.GameObjects.Container;
   private statusText: Phaser.GameObjects.Text;
+  private effectCircle: Phaser.GameObjects.Ellipse | null = null;
   private currentExpression: string = 'normal';
   private expressionLookup: Record<string, string> = {
     normal: 'player-normal',
@@ -27,12 +28,17 @@ export class Player {
     this.x = x;
     this.y = y;
     
+    // Add effect circle for farting animation (initially invisible)
+    this.effectCircle = this.scene.add.ellipse(x, y, 160, 160, 0x99aaff, 0);
+    this.effectCircle.setStrokeStyle(3, 0x99aaff, 0.8);
+    this.effectCircle.setVisible(false);
+    
     // Create face sprite
     this.faceSprite = this.scene.add.image(x, y, this.expressionLookup.normal);
     this.faceSprite.setScale(1.5);
     
     // Create name tag as a container
-    this.nameTag = this.scene.add.container(x, y + 70);
+    this.nameTag = this.scene.add.container(x, y + 80);
     
     // Add background for name tag
     const nameBackground = this.scene.add.rectangle(0, 0, 150, 30, 0x0066aa, 0.8).setOrigin(0.5);
@@ -51,14 +57,14 @@ export class Player {
     
     // Create status text (above character)
     this.statusText = this.scene.add.text(
-      0,
-      -95, // Position above character
-      '',
+      x,
+      y - 130, // Position well above character
+      'CRITICAL',
       {
-        font: '20px Arial',
+        font: '24px Arial',
         color: '#ffffff',
-        backgroundColor: '#333333',
-        padding: { x: 10, y: 6 },
+        backgroundColor: '#ff0000',
+        padding: { x: 12, y: 8 },
         align: 'center',
         stroke: '#000000',
         strokeThickness: 2
@@ -79,6 +85,19 @@ export class Player {
     
     // Update facial expression based on pressure
     this.updateFacialExpression();
+    
+    // Animate effect circle if visible
+    if (this.effectCircle && this.effectCircle.visible) {
+      this.effectCircle.scaleX += 0.01;
+      this.effectCircle.scaleY += 0.01;
+      this.effectCircle.alpha -= 0.01;
+      
+      if (this.effectCircle.alpha <= 0) {
+        this.effectCircle.setVisible(false);
+        this.effectCircle.setScale(1);
+        this.effectCircle.alpha = 0.7;
+      }
+    }
   }
   
   public setFartMeter(meter: FartMeter): void {
@@ -111,44 +130,74 @@ export class Player {
     }
     
     // Hide critical warning if it was showing
-    this.statusText.setVisible(false);
+    if (this.currentExpression === 'critical') {
+      this.statusText.setVisible(false);
+      this.scene.tweens.killTweensOf(this.statusText);
+      this.statusText.setScale(1);
+    }
   }
   
   public setExpression(expression: string): void {
     if (this.expressionLookup[expression]) {
-      this.currentExpression = expression;
-      this.faceSprite.setTexture(this.expressionLookup[expression]);
-      
-      // Show status for critical only
-      if (expression === 'critical') {
-        this.statusText.setText('CRITICAL');
-        this.statusText.setStyle({
-          font: '20px Arial',
-          color: '#ffffff',
-          backgroundColor: '#ff0000',
-          padding: { x: 10, y: 6 },
-          align: 'center',
-          stroke: '#000000',
-          strokeThickness: 2
-        });
-        this.statusText.setVisible(true);
+      // Check if texture exists to prevent errors
+      const textureName = this.expressionLookup[expression];
+      if (this.scene.textures.exists(textureName)) {
+        this.currentExpression = expression;
+        this.faceSprite.setTexture(textureName);
         
-        // Add pulsing effect to critical warning
-        if (!this.scene.tweens.isTweening(this.statusText)) {
-          this.scene.tweens.add({
-            targets: this.statusText,
-            scaleX: { from: 0.95, to: 1.05 },
-            scaleY: { from: 0.95, to: 1.05 },
-            yoyo: true,
-            repeat: -1,
-            duration: 500
+        // Show appropriate status
+        if (expression === 'critical') {
+          this.statusText.setText('CRITICAL');
+          this.statusText.setStyle({
+            font: '24px Arial',
+            color: '#ffffff',
+            backgroundColor: '#ff0000',
+            padding: { x: 12, y: 8 },
+            align: 'center',
+            stroke: '#000000',
+            strokeThickness: 2
           });
+          this.statusText.setVisible(true);
+          
+          // Add pulsing effect to critical warning
+          if (!this.scene.tweens.isTweening(this.statusText)) {
+            this.scene.tweens.add({
+              targets: this.statusText,
+              scaleX: { from: 0.95, to: 1.05 },
+              scaleY: { from: 0.95, to: 1.05 },
+              yoyo: true,
+              repeat: -1,
+              duration: 500
+            });
+          }
+        } else if (expression === 'farting') {
+          // Show farting text and effect
+          this.statusText.setText('FARTING!');
+          this.statusText.setStyle({
+            font: '24px Arial',
+            color: '#ffffff',
+            backgroundColor: '#3366ff',
+            padding: { x: 12, y: 8 },
+            align: 'center',
+            stroke: '#000000',
+            strokeThickness: 2
+          });
+          this.statusText.setVisible(true);
+          
+          // Show and animate effect circle
+          if (this.effectCircle) {
+            this.effectCircle.setVisible(true);
+            this.effectCircle.setScale(1);
+            this.effectCircle.alpha = 0.7;
+          }
+        } else {
+          // Hide status for other expressions
+          this.statusText.setVisible(false);
+          this.scene.tweens.killTweensOf(this.statusText);
+          this.statusText.setScale(1);
         }
       } else {
-        // Hide status for other expressions
-        this.statusText.setVisible(false);
-        this.scene.tweens.killTweensOf(this.statusText);
-        this.statusText.setScale(1);
+        console.warn(`Texture ${textureName} for expression ${expression} does not exist`);
       }
     }
   }

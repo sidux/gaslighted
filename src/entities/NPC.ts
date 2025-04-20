@@ -8,6 +8,7 @@ export class NPC {
   private speakingIndicator: Phaser.GameObjects.Rectangle | null = null;
   private animMouthLoop: Phaser.Time.TimerEvent | null = null;
   private currentExpression: string = 'normal';
+  private expressionText: Phaser.GameObjects.Text;
   
   public readonly id: string;
   public readonly name: string;
@@ -45,21 +46,28 @@ export class NPC {
       }
     ).setOrigin(0.5);
     
-    // Add text to container
-    this.nameTag.add([nameBackground, this.nameText]);
+    // Create status text above character with background (in container for positioning)
+    const expressionContainer = this.scene.add.container(x, y - 25);
+    
+    const expressionBackground = this.scene.add.rectangle(0, 0, 100, 24, 0x000000, 0.5).setOrigin(0.5);
     
     // Add status text showing current expression
-    const expressionText = this.scene.add.text(
+    this.expressionText = this.scene.add.text(
       0,
-      -nameYOffset - 25, // Position above character
+      0, // Positioned with container
       'Normal',
       {
-        font: '16px Arial',
-        color: '#cccccc'
+        font: '14px Arial',
+        color: '#ffffff',
+        align: 'center'
       }
     ).setOrigin(0.5);
     
-    this.nameTag.add(expressionText);
+    expressionContainer.add([expressionBackground, this.expressionText]);
+    expressionContainer.setVisible(false); // Hide by default
+    
+    // Add text to container
+    this.nameTag.add([nameBackground, this.nameText]);
     
     this.createSpeakingIndicator();
     this.stopSpeaking();
@@ -79,9 +87,8 @@ export class NPC {
       this.currentExpression = expression;
       
       // Update expression text
-      const expressionText = this.nameTag.getAt(2) as Phaser.GameObjects.Text;
-      if (expressionText) {
-        expressionText.setText(expression.charAt(0).toUpperCase() + expression.slice(1));
+      if (this.expressionText) {
+        this.expressionText.setText(expression.charAt(0).toUpperCase() + expression.slice(1));
       }
     }
   }
@@ -120,7 +127,15 @@ export class NPC {
     }
     
     // Reset to normal or current expression
-    this.faceSprite.setTexture(`${this.id}-${this.currentExpression}`);
+    // First check if texture exists to prevent errors
+    const textureName = `${this.id}-${this.currentExpression}`;
+    if (this.scene.textures.exists(textureName)) {
+      this.faceSprite.setTexture(textureName);
+    } else if (this.scene.textures.exists(`${this.id}-normal`)) {
+      // Fallback to normal if current expression doesn't exist
+      this.faceSprite.setTexture(`${this.id}-normal`);
+      this.currentExpression = 'normal';
+    }
   }
   
   public reactToFart(intensity: 'mild' | 'medium' | 'strong'): void {
@@ -147,22 +162,29 @@ export class NPC {
   }
   
   private createSpeakingIndicator(): void {
-    // Green dot indicator when speaking
+    // Green dot indicator when speaking - positioned inside the video frame
     this.speakingIndicator = this.scene.add.rectangle(
-      this.x - 80,
+      this.x - 60,
       this.y - 60,
-      20,
-      20,
+      12,
+      12,
       0x00ff00
     ).setOrigin(0.5);
   }
   
   private animateMouth(): void {
     // Toggle between normal/talking for mouth animation
+    // Check if textures exist before setting them
     if (this.faceSprite.texture.key.endsWith('talking')) {
-      this.faceSprite.setTexture(`${this.id}-${this.currentExpression}`);
+      const normalTexture = `${this.id}-${this.currentExpression}`;
+      if (this.scene.textures.exists(normalTexture)) {
+        this.faceSprite.setTexture(normalTexture);
+      }
     } else {
-      this.faceSprite.setTexture(`${this.id}-talking`);
+      const talkingTexture = `${this.id}-talking`;
+      if (this.scene.textures.exists(talkingTexture)) {
+        this.faceSprite.setTexture(talkingTexture);
+      }
     }
   }
 }

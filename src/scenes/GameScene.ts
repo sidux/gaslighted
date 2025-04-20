@@ -56,17 +56,23 @@ export class GameScene extends Phaser.Scene {
     // Create NPCs from level data
     this.createNPCs();
     
+    // Calculate the center of the bottom-right quadrant
+    const quarterWidth = this.cameras.main.width / 2;
+    const quarterHeight = this.cameras.main.height / 2;
+    const playerX = this.cameras.main.width * 0.75; // Center of right side
+    const playerY = this.cameras.main.height * 0.7;  // Positioned slightly above center of bottom half
+    
     // Create player (after NPCs so player is on top layer)
-    this.player = new Player(this, this.cameras.main.width * 3/4, this.cameras.main.height * 3/4 - 50);
+    this.player = new Player(this, playerX, playerY);
     
     // Link dialogue manager to NPCs for expression changes
     this.dialogueManager.setNPCs(this.npcs);
     
-    // Setup fart meter
+    // Setup fart meter - positioned at bottom of player quadrant
     this.fartMeter = new FartMeter(
       this, 
-      this.cameras.main.width * 3/4,
-      this.cameras.main.height * 3/4 + 70, // Position below player
+      playerX, // Center with player
+      playerY + 140, // Position below player
       GameConfig.PRESSURE_METER_WIDTH,
       GameConfig.PRESSURE_METER_HEIGHT
     );
@@ -132,16 +138,16 @@ export class GameScene extends Phaser.Scene {
     // Add subtle quadrant background colors
     const quadOpacity = 0.15;
     
-    // Top Left - Teal
-    this.add.rectangle(0, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x30d5c8, quadOpacity).setOrigin(0, 0);
+    // Top Left - Purple (Boss)
+    this.add.rectangle(0, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x9370db, quadOpacity).setOrigin(0, 0);
     
-    // Top Right - Purple
-    this.add.rectangle(this.cameras.main.width / 2, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x9370db, quadOpacity).setOrigin(0, 0);
+    // Top Right - Blue (Coworker 1)
+    this.add.rectangle(this.cameras.main.width / 2, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x4169e1, quadOpacity).setOrigin(0, 0);
     
-    // Bottom Left - Blue
-    this.add.rectangle(0, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x4169e1, quadOpacity).setOrigin(0, 0);
+    // Bottom Left - Teal (Coworker 2)
+    this.add.rectangle(0, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x30d5c8, quadOpacity).setOrigin(0, 0);
     
-    // Bottom Right - Orange (player area)
+    // Bottom Right - Light Blue (Player area)
     this.add.rectangle(this.cameras.main.width / 2, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x6495ed, quadOpacity).setOrigin(0, 0);
   }
   
@@ -208,26 +214,32 @@ export class GameScene extends Phaser.Scene {
     
     const positions = [
       { 
-        x: this.cameras.main.width / 4, 
-        y: this.cameras.main.height / 4,
-        nameY: 50 // Name position offset
-      },      // Top Left
+        x: this.cameras.main.width * 0.25, 
+        y: this.cameras.main.height * 0.25,
+        nameY: 65 // Name position offset
+      },     // Top Left - Boss
       { 
-        x: this.cameras.main.width * 3/4, 
-        y: this.cameras.main.height / 4,
-        nameY: 50
-      },    // Top Right
+        x: this.cameras.main.width * 0.75, 
+        y: this.cameras.main.height * 0.25,
+        nameY: 65
+      },    // Top Right - Coworker 1
       { 
-        x: this.cameras.main.width / 4, 
-        y: this.cameras.main.height * 3/4 - 50,
-        nameY: 50
-      } // Bottom Left
+        x: this.cameras.main.width * 0.25, 
+        y: this.cameras.main.height * 0.7, // Aligned with player
+        nameY: 65
+      } // Bottom Left - Coworker 2
     ];
     
-    let npcIndex = 0;
-    this.currentLevel.participants.forEach((participant) => {
-      if (participant.id !== 'player' && npcIndex < positions.length) {
-        const pos = positions[npcIndex];
+    // Ensure NPCs are created in the correct order to match positions
+    const orderedParticipants = [
+      this.currentLevel.participants.find(p => p.id === 'boss'),
+      this.currentLevel.participants.find(p => p.id === 'coworker1'),
+      this.currentLevel.participants.find(p => p.id === 'coworker2')
+    ].filter(p => p !== undefined && p.id !== 'player');
+    
+    orderedParticipants.forEach((participant, index) => {
+      if (participant && index < positions.length) {
+        const pos = positions[index];
         const npc = new NPC(
           this,
           pos.x,
@@ -239,7 +251,6 @@ export class GameScene extends Phaser.Scene {
           pos.nameY
         );
         this.npcs.push(npc);
-        npcIndex++;
       }
     });
   }
@@ -408,13 +419,13 @@ export class GameScene extends Phaser.Scene {
     // Update text color based on score
     if (this.credibilityScore < 30) {
       this.credibilityText.setStyle({ 
-        color: '#ff0000',
+        color: '#ffaa00',
         stroke: '#000000',
         strokeThickness: 2
       });
     } else if (this.credibilityScore < 60) {
       this.credibilityText.setStyle({ 
-        color: '#ffaa00',
+        color: '#ffff00',
         stroke: '#000000',
         strokeThickness: 2
       });
