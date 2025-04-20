@@ -21,6 +21,8 @@ export class GameScene extends Phaser.Scene {
   private gameOver: boolean = false;
   private credibilityScore: number = 100;
   private credibilityText!: Phaser.GameObjects.Text;
+  private dialogueBox!: Phaser.GameObjects.Rectangle;
+  private dialogueText!: Phaser.GameObjects.Text;
   
   constructor() {
     super({
@@ -44,15 +46,18 @@ export class GameScene extends Phaser.Scene {
     // Setup UI elements
     this.setupUI();
     
+    // Create dialogue box
+    this.createDialogueBox();
+    
     // Initialize managers
     this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
     this.audioManager = new AudioManager(this);
     
-    // Create player
-    this.player = new Player(this, this.cameras.main.width / 2, this.cameras.main.height - 150);
-    
     // Create NPCs from level data
     this.createNPCs();
+    
+    // Create player (after NPCs so player is on top layer)
+    this.player = new Player(this, this.cameras.main.width * 3/4, this.cameras.main.height * 3/4 - 50);
     
     // Link dialogue manager to NPCs for expression changes
     this.dialogueManager.setNPCs(this.npcs);
@@ -60,8 +65,8 @@ export class GameScene extends Phaser.Scene {
     // Setup fart meter
     this.fartMeter = new FartMeter(
       this, 
-      this.cameras.main.width / 2, 
-      this.cameras.main.height - 50,
+      this.cameras.main.width * 3/4,
+      this.cameras.main.height * 3/4 + 70, // Position below player
       GameConfig.PRESSURE_METER_WIDTH,
       GameConfig.PRESSURE_METER_HEIGHT
     );
@@ -110,7 +115,7 @@ export class GameScene extends Phaser.Scene {
   }
   
   private createBackground(): void {
-    // Create a video conference background
+    // Create a dark video conference background
     const bg = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x1a1a2e);
     bg.setOrigin(0, 0);
     
@@ -118,11 +123,26 @@ export class GameScene extends Phaser.Scene {
     const gridColor = 0x16213e;
     const gridThickness = 4;
     
-    // Horizontal lines
+    // Horizontal line
     this.add.rectangle(0, this.cameras.main.height / 2, this.cameras.main.width, gridThickness, gridColor).setOrigin(0, 0.5);
     
-    // Vertical lines
+    // Vertical line
     this.add.rectangle(this.cameras.main.width / 2, 0, gridThickness, this.cameras.main.height, gridColor).setOrigin(0.5, 0);
+    
+    // Add subtle quadrant background colors
+    const quadOpacity = 0.15;
+    
+    // Top Left - Teal
+    this.add.rectangle(0, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x30d5c8, quadOpacity).setOrigin(0, 0);
+    
+    // Top Right - Purple
+    this.add.rectangle(this.cameras.main.width / 2, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x9370db, quadOpacity).setOrigin(0, 0);
+    
+    // Bottom Left - Blue
+    this.add.rectangle(0, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x4169e1, quadOpacity).setOrigin(0, 0);
+    
+    // Bottom Right - Orange (player area)
+    this.add.rectangle(this.cameras.main.width / 2, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x6495ed, quadOpacity).setOrigin(0, 0);
   }
   
   private setupUI(): void {
@@ -133,7 +153,9 @@ export class GameScene extends Phaser.Scene {
       "Meeting Time: " + this.formatTime(this.timeRemaining), 
       {
         font: '24px Arial',
-        color: '#ffffff'
+        color: '#ffffff',
+        stroke: '#000000',
+        strokeThickness: 2
       }
     );
     
@@ -144,32 +166,97 @@ export class GameScene extends Phaser.Scene {
       "Credibility: " + this.credibilityScore + "%", 
       {
         font: '24px Arial',
-        color: '#ffffff'
+        color: '#ffffff',
+        stroke: '#000000',
+        strokeThickness: 2
       }
     ).setOrigin(1, 0);
   }
   
+  private createDialogueBox(): void {
+    // Create dialogue box at bottom
+    const boxHeight = 60;
+    
+    this.dialogueBox = this.add.rectangle(
+      this.cameras.main.width / 2,
+      this.cameras.main.height - boxHeight / 2,
+      this.cameras.main.width,
+      boxHeight,
+      0x000000,
+      0.7
+    ).setOrigin(0.5);
+    
+    // Add text to dialogue box
+    this.dialogueText = this.add.text(
+      20, 
+      this.cameras.main.height - boxHeight + 15, 
+      "", 
+      {
+        font: '20px Arial',
+        color: '#ffffff',
+        wordWrap: { width: this.cameras.main.width - 40 }
+      }
+    );
+    
+    // Hide until needed
+    this.dialogueBox.setVisible(false);
+    this.dialogueText.setVisible(false);
+  }
+  
   private createNPCs(): void {
+    const scale = 1.2; // Consistent scale for all characters
+    
     const positions = [
-      { x: this.cameras.main.width / 4, y: this.cameras.main.height / 4 },      // Top Left
-      { x: this.cameras.main.width * 3/4, y: this.cameras.main.height / 4 },    // Top Right
-      { x: this.cameras.main.width / 4, y: this.cameras.main.height * 3/4 - 100 } // Bottom Left
+      { 
+        x: this.cameras.main.width / 4, 
+        y: this.cameras.main.height / 4,
+        nameY: 50 // Name position offset
+      },      // Top Left
+      { 
+        x: this.cameras.main.width * 3/4, 
+        y: this.cameras.main.height / 4,
+        nameY: 50
+      },    // Top Right
+      { 
+        x: this.cameras.main.width / 4, 
+        y: this.cameras.main.height * 3/4 - 50,
+        nameY: 50
+      } // Bottom Left
     ];
     
-    this.currentLevel.participants.forEach((participant, index) => {
-      if (participant.id !== 'player') {
-        const pos = positions[index % positions.length];
+    let npcIndex = 0;
+    this.currentLevel.participants.forEach((participant) => {
+      if (participant.id !== 'player' && npcIndex < positions.length) {
+        const pos = positions[npcIndex];
         const npc = new NPC(
           this,
           pos.x,
           pos.y,
           participant.id,
           participant.name,
-          participant.voiceType
+          participant.voiceType,
+          scale,
+          pos.nameY
         );
         this.npcs.push(npc);
+        npcIndex++;
       }
     });
+  }
+  
+  public showDialogue(speakerName: string, text: string): void {
+    // Update dialogue text
+    this.dialogueText.setText(speakerName + ": " + text);
+    
+    // Show dialogue box
+    this.dialogueBox.setVisible(true);
+    this.dialogueText.setVisible(true);
+  }
+  
+  public hideDialogue(): void {
+    // Hide dialogue box
+    this.dialogueBox.setVisible(false);
+    this.dialogueText.setVisible(false);
   }
   
   private handleFartAttempt(): void {
@@ -241,7 +328,9 @@ export class GameScene extends Phaser.Scene {
       'Masked!',
       {
         font: '20px Arial',
-        color: '#00ff00'
+        color: '#00ff00',
+        stroke: '#000000',
+        strokeThickness: 2
       }
     ).setOrigin(0.5);
     
@@ -285,7 +374,9 @@ export class GameScene extends Phaser.Scene {
         'What was that?!',
         {
           font: '20px Arial',
-          color: '#ff0000'
+          color: '#ff0000',
+          stroke: '#000000',
+          strokeThickness: 2
         }
       ).setOrigin(0.5);
       
@@ -316,11 +407,23 @@ export class GameScene extends Phaser.Scene {
     
     // Update text color based on score
     if (this.credibilityScore < 30) {
-      this.credibilityText.setStyle({ color: '#ff0000' });
+      this.credibilityText.setStyle({ 
+        color: '#ff0000',
+        stroke: '#000000',
+        strokeThickness: 2
+      });
     } else if (this.credibilityScore < 60) {
-      this.credibilityText.setStyle({ color: '#ffaa00' });
+      this.credibilityText.setStyle({ 
+        color: '#ffaa00',
+        stroke: '#000000',
+        strokeThickness: 2
+      });
     } else {
-      this.credibilityText.setStyle({ color: '#ffffff' });
+      this.credibilityText.setStyle({ 
+        color: '#ffffff',
+        stroke: '#000000',
+        strokeThickness: 2
+      });
     }
   }
   

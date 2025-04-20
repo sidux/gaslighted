@@ -7,6 +7,8 @@ export class Player {
   private fartPressure: number = GameConfig.FART_PRESSURE_INITIAL;
   private fartMeter: FartMeter | null = null;
   private faceSprite: Phaser.GameObjects.Image;
+  private nameTag: Phaser.GameObjects.Container;
+  private statusText: Phaser.GameObjects.Text;
   private currentExpression: string = 'normal';
   private expressionLookup: Record<string, string> = {
     normal: 'player-normal',
@@ -28,6 +30,44 @@ export class Player {
     // Create face sprite
     this.faceSprite = this.scene.add.image(x, y, this.expressionLookup.normal);
     this.faceSprite.setScale(1.5);
+    
+    // Create name tag as a container
+    this.nameTag = this.scene.add.container(x, y + 70);
+    
+    // Add background for name tag
+    const nameBackground = this.scene.add.rectangle(0, 0, 150, 30, 0x0066aa, 0.8).setOrigin(0.5);
+    
+    // Create name text
+    const nameText = this.scene.add.text(
+      0, 
+      0,
+      'Russell (You)',
+      {
+        font: '18px Arial',
+        color: '#ffffff',
+        align: 'center',
+      }
+    ).setOrigin(0.5);
+    
+    // Create status text (above character)
+    this.statusText = this.scene.add.text(
+      0,
+      -95, // Position above character
+      '',
+      {
+        font: '20px Arial',
+        color: '#ffffff',
+        backgroundColor: '#333333',
+        padding: { x: 10, y: 6 },
+        align: 'center',
+        stroke: '#000000',
+        strokeThickness: 2
+      }
+    ).setOrigin(0.5);
+    this.statusText.setVisible(false);
+    
+    // Add elements to container
+    this.nameTag.add([nameBackground, nameText]);
     
     // Initialize with normal expression
     this.setExpression('normal');
@@ -69,12 +109,47 @@ export class Player {
     if (this.fartMeter) {
       this.fartMeter.setPressure(this.fartPressure);
     }
+    
+    // Hide critical warning if it was showing
+    this.statusText.setVisible(false);
   }
   
   public setExpression(expression: string): void {
     if (this.expressionLookup[expression]) {
       this.currentExpression = expression;
       this.faceSprite.setTexture(this.expressionLookup[expression]);
+      
+      // Show status for critical only
+      if (expression === 'critical') {
+        this.statusText.setText('CRITICAL');
+        this.statusText.setStyle({
+          font: '20px Arial',
+          color: '#ffffff',
+          backgroundColor: '#ff0000',
+          padding: { x: 10, y: 6 },
+          align: 'center',
+          stroke: '#000000',
+          strokeThickness: 2
+        });
+        this.statusText.setVisible(true);
+        
+        // Add pulsing effect to critical warning
+        if (!this.scene.tweens.isTweening(this.statusText)) {
+          this.scene.tweens.add({
+            targets: this.statusText,
+            scaleX: { from: 0.95, to: 1.05 },
+            scaleY: { from: 0.95, to: 1.05 },
+            yoyo: true,
+            repeat: -1,
+            duration: 500
+          });
+        }
+      } else {
+        // Hide status for other expressions
+        this.statusText.setVisible(false);
+        this.scene.tweens.killTweensOf(this.statusText);
+        this.statusText.setScale(1);
+      }
     }
   }
   

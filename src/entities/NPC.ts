@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 export class NPC {
   private scene: Phaser.Scene;
   private faceSprite: Phaser.GameObjects.Image;
+  private nameTag: Phaser.GameObjects.Container;
   private nameText: Phaser.GameObjects.Text;
   private speakingIndicator: Phaser.GameObjects.Rectangle | null = null;
   private animMouthLoop: Phaser.Time.TimerEvent | null = null;
@@ -14,7 +15,7 @@ export class NPC {
   public readonly x: number;
   public readonly y: number;
   
-  constructor(scene: Phaser.Scene, x: number, y: number, id: string, name: string, voiceType: string) {
+  constructor(scene: Phaser.Scene, x: number, y: number, id: string, name: string, voiceType: string, scale: number = 1.5, nameYOffset: number = 70) {
     this.scene = scene;
     this.x = x;
     this.y = y;
@@ -24,20 +25,41 @@ export class NPC {
     
     // Create face sprite
     this.faceSprite = this.scene.add.image(x, y, `${id}-normal`);
-    this.faceSprite.setScale(1.5);
+    this.faceSprite.setScale(scale);
+    
+    // Create name tag as a container
+    this.nameTag = this.scene.add.container(x, y + nameYOffset);
+    
+    // Add background for name tag
+    const nameBackground = this.scene.add.rectangle(0, 0, 150, 30, 0x0066aa, 0.8).setOrigin(0.5);
     
     // Create name text
     this.nameText = this.scene.add.text(
-      x, 
-      y + 100,
+      0, 
+      0,
       name,
       {
-        font: '20px Arial',
+        font: '18px Arial',
         color: '#ffffff',
-        backgroundColor: '#0066aa',
-        padding: { x: 10, y: 5 }
+        align: 'center',
       }
     ).setOrigin(0.5);
+    
+    // Add text to container
+    this.nameTag.add([nameBackground, this.nameText]);
+    
+    // Add status text showing current expression
+    const expressionText = this.scene.add.text(
+      0,
+      -nameYOffset - 25, // Position above character
+      'Normal',
+      {
+        font: '16px Arial',
+        color: '#cccccc'
+      }
+    ).setOrigin(0.5);
+    
+    this.nameTag.add(expressionText);
     
     this.createSpeakingIndicator();
     this.stopSpeaking();
@@ -55,6 +77,12 @@ export class NPC {
     if (this.scene.textures.exists(textureName)) {
       this.faceSprite.setTexture(textureName);
       this.currentExpression = expression;
+      
+      // Update expression text
+      const expressionText = this.nameTag.getAt(2) as Phaser.GameObjects.Text;
+      if (expressionText) {
+        expressionText.setText(expression.charAt(0).toUpperCase() + expression.slice(1));
+      }
     }
   }
   

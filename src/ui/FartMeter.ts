@@ -89,7 +89,7 @@ export class FartMeter {
   }
   
   public setSafeZones(safeZones: Array<{ start: number; end: number }>): void {
-    // Clear existing danger zones
+    // Clear existing zones
     this.dangerZones.forEach(zone => zone.destroy());
     this.dangerZones = [];
     
@@ -112,46 +112,80 @@ export class FartMeter {
   }
   
   private createMeter(): void {
-    // Background
+    // Create container
+    const container = this.scene.add.container(this.x, this.y);
+    
+    // Background with rounded corners (simulated with graphics)
+    const graphics = this.scene.add.graphics();
+    graphics.fillStyle(0x333333, 1);
+    graphics.fillRoundedRect(-(this.width/2), -(this.height/2), this.width, this.height, 8);
+    container.add(graphics);
+    
+    // Background (main rectangle)
     this.background = this.scene.add.rectangle(
-      this.x,
-      this.y,
+      0,
+      0,
       this.width,
       this.height,
       0x333333
     ).setOrigin(0.5);
+    this.background.setVisible(false); // Hide since we're using the graphics version
     
     // Fill (starts empty)
     this.fill = this.scene.add.rectangle(
-      this.x - (this.width / 2) + 2,
-      this.y,
+      -(this.width/2) + 2,
+      0,
       0,
       this.height - 4,
       0x00ff00
     ).setOrigin(0, 0.5);
+    container.add(this.fill);
+    
+    // Add border
+    const border = this.scene.add.graphics();
+    border.lineStyle(2, 0xffffff, 0.8);
+    border.strokeRoundedRect(-(this.width/2), -(this.height/2), this.width, this.height, 8);
+    container.add(border);
     
     // Label
     this.label = this.scene.add.text(
-      this.x,
-      this.y - 25,
+      0,
+      0,
       'Pressure: 0%',
       {
-        font: '18px Arial',
-        color: '#ffffff'
+        font: '16px Arial',
+        color: '#ffffff',
+        stroke: '#000000',
+        strokeThickness: 2,
+        align: 'center'
       }
     ).setOrigin(0.5);
+    container.add(this.label);
     
     // Critical threshold marker
-    const criticalX = this.x - (this.width / 2) + (GameConfig.FART_PRESSURE_CRITICAL / GameConfig.FART_PRESSURE_MAX) * this.width;
+    const criticalX = (GameConfig.FART_PRESSURE_CRITICAL / GameConfig.FART_PRESSURE_MAX) * this.width - (this.width / 2);
     
-    this.scene.add.line(
+    const criticalLine = this.scene.add.line(
       criticalX,
-      this.y,
+      0,
       0,
       -this.height / 2,
       0,
       this.height / 2,
       0xff0000
     ).setLineWidth(2).setOrigin(0.5);
+    container.add(criticalLine);
+    
+    // Add critical text
+    const criticalText = this.scene.add.text(
+      criticalX, 
+      -this.height / 2 - 10,
+      'CRITICAL',
+      {
+        font: '12px Arial',
+        color: '#ff0000'
+      }
+    ).setOrigin(0.5, 1);
+    container.add(criticalText);
   }
 }

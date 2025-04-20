@@ -3,9 +3,10 @@ import { Dialogue } from '../types/Dialogue';
 import { NPC } from '../entities/NPC';
 import { AudioManager } from './AudioManager';
 import { CorporateDialogueGenerator } from '../utils/CorporateDialogueGenerator';
+import { GameScene } from '../scenes/GameScene';
 
 export class DialogueManager {
-  private scene: Phaser.Scene;
+  private scene: GameScene;
   private dialogues: Dialogue[];
   private audioManager: AudioManager;
   private dialogueGenerator: CorporateDialogueGenerator;
@@ -13,17 +14,13 @@ export class DialogueManager {
   private currentDialogueIndex: number = -1;
   private isDialogueActive: boolean = false;
   private nextDialogueTimer: Phaser.Time.TimerEvent | null = null;
-  private dialogueText: Phaser.GameObjects.Text | null = null;
   private currentSafetyStatus: 'safe' | 'neutral' | 'danger' = 'neutral';
   
-  constructor(scene: Phaser.Scene, dialogues: Dialogue[]) {
+  constructor(scene: GameScene, dialogues: Dialogue[]) {
     this.scene = scene;
     this.dialogues = dialogues;
     this.audioManager = new AudioManager(scene);
     this.dialogueGenerator = new CorporateDialogueGenerator();
-    
-    // Create dialogue text box
-    this.createDialogueText();
   }
   
   public setNPCs(npcs: NPC[]): void {
@@ -99,11 +96,8 @@ export class DialogueManager {
       processedText = this.dialogueGenerator.processTemplate(processedText);
     }
     
-    // Update dialogue text
-    if (this.dialogueText) {
-      this.dialogueText.setText(`${speaker.name}: ${processedText}`);
-      this.dialogueText.setVisible(true);
-    }
+    // Update dialogue text in the GameScene
+    this.scene.showDialogue(speaker.name, processedText);
     
     // Play voice audio
     this.audioManager.playVoice(processedText, speaker.voiceType);
@@ -119,9 +113,7 @@ export class DialogueManager {
         speaker.stopSpeaking();
         
         // Hide dialogue text
-        if (this.dialogueText) {
-          this.dialogueText.setVisible(false);
-        }
+        this.scene.hideDialogue();
         
         // Mark dialogue as inactive
         this.isDialogueActive = false;
@@ -148,9 +140,7 @@ export class DialogueManager {
     }
     
     // Hide dialogue text
-    if (this.dialogueText) {
-      this.dialogueText.setVisible(false);
-    }
+    this.scene.hideDialogue();
     
     // Set dialogue as inactive
     this.isDialogueActive = false;
@@ -161,22 +151,5 @@ export class DialogueManager {
     console.log('All dialogues completed');
     
     // Game could trigger success here or continue to another phase
-  }
-  
-  private createDialogueText(): void {
-    this.dialogueText = this.scene.add.text(
-      10,
-      this.scene.cameras.main.height - 80,
-      '',
-      {
-        font: '20px Arial',
-        color: '#ffffff',
-        backgroundColor: '#000000',
-        padding: { x: 15, y: 10 },
-        wordWrap: { width: this.scene.cameras.main.width - 20 }
-      }
-    );
-    
-    this.dialogueText.setVisible(false);
   }
 }
