@@ -1,0 +1,114 @@
+id: level1
+title: First Day Jitters
+description: Your first remote meeting. Thankfully, people are forgiving.
+difficulty: 1
+duration: 120  # 2 minutes
+zeroMistakesAllowed: false
+
+participants:
+  - id: player
+    name: Russell
+    voiceType: Brian
+
+  - id: boss
+    name: Mr. Bogdanoff
+    voiceType: Bruno
+
+  - id: coworker1
+    name: Zoomer
+    voiceType: Brandon
+
+  - id: coworker2
+    name: Susan
+    voiceType: Salli
+
+dialogues:
+  - speakerId: boss
+    text: Welcome to the quarterly review meeting. We have lots to discuss today.
+    delay: 2000
+    duration: 4000
+    safetyStatus: neutral
+
+  - speakerId: coworker1
+    text: "Hey everyone! I'm super excited to share our Q4 results!"
+    delay: 1000
+    duration: 3000
+    safetyStatus: neutral
+
+  - speakerId: boss
+    text: Before we begin, I would like to emphasize how important it is to listen carefully.
+    delay: 1000
+    duration: 5000
+    safetyStatus: danger
+
+  - speakerId: coworker2
+    text: "Let's synergize our efforts and leverage our core competencies going forward."
+    delay: 1000
+    duration: 4000
+    safetyStatus: safe
+
+  - speakerId: boss
+    text: Russell, are you with us? You look a bit uncomfortable.
+    delay: 1000
+    duration: 3000
+    safetyStatus: danger
+
+  - speakerId: coworker1
+    text: "HAHAHA, that's so funny! I can't believe that happened!"
+    delay: 1000
+    duration: 3000
+    safetyStatus: safe
+
+  - speakerId: boss
+    text: As I was saying, our quarterly numbers are looking promising.
+    delay: 1000
+    duration: 3500
+    safetyStatus: danger
+
+  - speakerId: coworker2
+    text: "I've been working on the {{buzzword}} initiative with the {{department}} team."
+    delay: 1000
+    duration: 4000
+    safetyStatus: neutral
+
+  - speakerId: coworker1
+    text: "Can we {{buzzword}} the {{buzzword}} before next week's deadline?"
+    delay: 1000
+    duration: 3000
+    safetyStatus: neutral
+
+  - speakerId: boss
+    text: "Everyone needs to submit their reports by EOD. No exceptions!"
+    delay: 1000
+    duration: 3500
+    safetyStatus: danger
+
+  - speakerId: coworker2
+    text: "*coughs loudly* Sorry about that, I'm coming down with something."
+    delay: 1000
+    duration: 3000
+    safetyStatus: safe
+
+  - speakerId: coworker1
+    text: "We should totally {{buzzword}} with the new {{buzzword}} {{fillerPhrase}}!"
+    delay: 1000
+    duration: 4000
+    safetyStatus: neutral
+
+  - speakerId: boss
+    text: "Let's wrap this up. Russell, do you have anything to add?"
+    delay: 1000
+    duration: 3500
+    safetyStatus: danger
+
+  - speakerId: coworker1
+    text: "*laughs* That reminds me of last year's company retreat!"
+    delay: 1000
+    duration: 3000
+    safetyStatus: safe
+
+  - speakerId: boss
+    text: "Thank you all for attending. Meeting adjourned."
+    delay: 1000
+    duration: 3000
+    safetyStatus: neutral
