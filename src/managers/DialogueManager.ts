@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { Dialogue } from '../types/Dialogue';
-import { NPC } from '../entities/NPC';
+import { Character } from '../entities/Character';
 import { AudioManager } from './AudioManager';
 import { GameScene } from '../scenes/GameScene';
 
@@ -8,7 +8,7 @@ export class DialogueManager {
   private scene: GameScene;
   private dialogues: Dialogue[];
   private audioManager: AudioManager;
-  private npcs: NPC[] = [];
+  private npcs: Character[] = [];
   private currentDialogueIndex: number = -1;
   private isDialogueActive: boolean = false;
   private nextDialogueTimer: Phaser.Time.TimerEvent | null = null;
@@ -20,7 +20,7 @@ export class DialogueManager {
     this.audioManager = new AudioManager(scene);
   }
   
-  public setNPCs(npcs: NPC[]): void {
+  public setNPCs(npcs: Character[]): void {
     this.npcs = npcs;
   }
   
@@ -28,13 +28,13 @@ export class DialogueManager {
     // Any per-frame updates
   }
   
-  public startDialogue(): void {
+  public async startDialogue(): Promise<void> {
     console.log("Starting dialogue sequence with", this.dialogues.length, "dialogues");
     // Begin dialogue sequence
-    this.moveToNextDialogue();
+    await this.moveToNextDialogue();
   }
   
-  public getCurrentSpeaker(): NPC | null {
+  public getCurrentSpeaker(): Character | null {
     if (this.currentDialogueIndex < 0 || this.currentDialogueIndex >= this.dialogues.length) {
       return null;
     }
@@ -47,7 +47,7 @@ export class DialogueManager {
     return this.currentSafetyStatus;
   }
   
-  private moveToNextDialogue(): void {
+  private async moveToNextDialogue(): Promise<void> {
     console.log("Moving to next dialogue...");
     
     // Stop current dialogue if any
@@ -70,15 +70,15 @@ export class DialogueManager {
     
     // Schedule the dialogue with delay
     console.log(`Scheduling dialogue with ${dialogue.delay}ms delay`);
-    this.nextDialogueTimer = this.scene.time.delayedCall(
-      dialogue.delay,
-      () => this.playDialogue(dialogue),
-      [],
-      this
-    );
+    
+    // Use Promise-based delay instead of callback
+    await this.delay(dialogue.delay);
+    
+    // Play dialogue after delay
+    await this.playDialogue(dialogue);
   }
   
-  private playDialogue(dialogue: Dialogue): void {
+  private async playDialogue(dialogue: Dialogue): Promise<void> {
     console.log(`Playing dialogue for speaker ${dialogue.speakerId}`);
     
     // Find the speaking NPC
@@ -87,7 +87,7 @@ export class DialogueManager {
     if (!speaker) {
       console.warn(`Speaker with ID ${dialogue.speakerId} not found!`);
       console.log(`Available NPCs: ${this.npcs.map(npc => npc.id).join(', ')}`);
-      this.moveToNextDialogue();
+      await this.moveToNextDialogue();
       return;
     }
     
@@ -103,30 +103,30 @@ export class DialogueManager {
     // this.scene.showDialogue(speaker.name, dialogue.text);
     
     // Play voice audio
-    this.audioManager.playVoice(dialogue);
+    await this.audioManager.playVoice(dialogue);
     
     // Set dialogue as active
     this.isDialogueActive = true;
     
-    // Schedule end of dialogue
-    this.scene.time.delayedCall(
-      dialogue.duration,
-      () => {
-        // Stop speaking
-        speaker.stopSpeaking();
-        
-        // Hide dialogue text
-        this.scene.hideDialogue();
-        
-        // Mark dialogue as inactive
-        this.isDialogueActive = false;
-        
-        // Move to next dialogue
-        this.moveToNextDialogue();
-      },
-      [],
-      this
-    );
+    // Wait for dialogue duration
+    await this.delay(dialogue.duration);
+    
+    // Stop speaking
+    speaker.stopSpeaking();
+    
+    // Hide dialogue text
+    this.scene.hideDialogue();
+    
+    // Mark dialogue as inactive
+    this.isDialogueActive = false;
+    
+    // Move to next dialogue
+    await this.moveToNextDialogue();
+  }
+  
+  // Helper method for Promise-based delays
+  private delay(ms: number): Promise<void> {
+    return new Promise<void>(resolve => setTimeout(resolve, ms));
   }
   
   private stopCurrentDialogue(): void {

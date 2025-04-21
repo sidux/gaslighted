@@ -1,9 +1,8 @@
 import Phaser from 'phaser';
 import {GameConfig} from '../config/GameConfig';
 import {LevelManager} from '../managers/LevelManager';
-import {Player} from '../entities/Player';
-import {FartMeter} from '../ui/FartMeter';
-import {NPC} from '../entities/NPC';
+import {FartMeter} from '../entities/FartMeter';
+import {Character, CharacterRole} from '../entities/Character';
 import {DialogueManager} from '../managers/DialogueManager';
 import {AudioManager} from '../managers/AudioManager';
 import {Level} from '../types/Level';
@@ -12,8 +11,8 @@ export class GameScene extends Phaser.Scene {
   private levelManager!: LevelManager;
   private dialogueManager!: DialogueManager;
   private audioManager!: AudioManager;
-  private player!: Player;
-  private npcs: NPC[] = [];
+  private player!: Character;
+  private npcs: Character[] = [];
   private fartMeter!: FartMeter;
   private currentLevel!: Level;
   private timeRemaining: number = 0;
@@ -49,7 +48,7 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  create(): void {
+  async create(): Promise<void> {
     // Setup background
     this.createBackground();
     
@@ -67,8 +66,8 @@ export class GameScene extends Phaser.Scene {
         this,
         this.cameras.main.width / 2,
         this.cameras.main.height / 2,
-      GameConfig.PRESSURE_METER_WIDTH,
-      GameConfig.PRESSURE_METER_HEIGHT
+        GameConfig.PRESSURE_METER_WIDTH,
+        GameConfig.PRESSURE_METER_HEIGHT,
     );
     
     // Setup input
@@ -86,8 +85,10 @@ export class GameScene extends Phaser.Scene {
       loop: true
     });
     
-    // Preload all audio files for this level for better performance
-    this.audioManager.preloadLevelAudio(this.currentLevel.dialogues).then(() => {
+    try {
+      // Preload all audio files for this level for better performance
+      await this.audioManager.preloadLevelAudio(this.currentLevel.dialogues);
+      
       this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
 
       // Create NPCs from level data
@@ -97,26 +98,43 @@ export class GameScene extends Phaser.Scene {
       const playerX = this.cameras.main.width / 6; // 1/6 of screen width
       const playerY = this.cameras.main.height * 3 / 4; // 3/4 of screen height
       
-      // Create player (after NPCs so player is on top layer)
-      this.player = new Player(this, playerX, playerY);
+      // Find player data
+      const playerData = this.currentLevel.participants.find(p => p.id === 'player');
       
+      if (!playerData) {
+        console.error("Player data not found in level configuration");
+        return;
+      }
+      
+      // Create player (after NPCs so player is on top layer)
+      this.player = new Character(
+        this, 
+        playerX, 
+        playerY, 
+        playerData.id,
+        playerData.name,
+        playerData.voiceType,
+        CharacterRole.PLAYER
+      );
+
       // Link dialogue manager to NPCs for expression changes
       this.dialogueManager.setNPCs(this.npcs);
       
-
       // Link player to fart meter for pressure updates
       this.player.setFartMeter(this.fartMeter);
       
       // Mark components as initialized
       this.componentsInitialized = true;
       
-      // Start level dialogue
-      this.dialogueManager.startDialogue();
+      // Start level dialogue (don't await as we don't need to block here)
+      this.dialogueManager.startDialogue().catch(error => {
+        console.error("Error starting dialogue:", error);
+      });
       
       console.log("Level initialized with audio preloaded");
-    }).catch(error => {
+    } catch (error) {
       console.error("Error preloading audio:", error);
-    });
+    }
   }
 
   update(time: number, delta: number): void {
@@ -378,16 +396,20 @@ export class GameScene extends Phaser.Scene {
       });
     };
 
-    this.hideDialogue = () => {
-      // Animate hiding
-      this.tweens.add({
-        targets: dialogueContainer,
-        y: 50,
-        duration: 200,
-        ease: 'Power2',
-        onComplete: () => {
-          dialogueContainer.setVisible(false);
-        }
+    this.hideDialogue = async () => {
+      // Return a Promise that resolves when animation is complete
+      return new Promise<void>((resolve) => {
+        // Animate hiding
+        this.tweens.add({
+          targets: dialogueContainer,
+          y: 50,
+          duration: 200,
+          ease: 'Power2',
+          onComplete: () => {
+            dialogueContainer.setVisible(false);
+            resolve();
+          }
+        });
       });
     };
   }
@@ -421,13 +443,14 @@ export class GameScene extends Phaser.Scene {
       const participant = this.currentLevel.participants.find(p => p.id === position.id);
       
       if (participant && participant.id !== 'player') {
-        const npc = new NPC(
+        const npc = new Character(
           this,
           position.x,
           position.y,
           participant.id,
           participant.name,
           participant.voiceType,
+          CharacterRole.NPC,
           position.nameY
         );
         this.npcs.push(npc);
@@ -450,7 +473,7 @@ export class GameScene extends Phaser.Scene {
     this.dialogueText.setVisible(false);
   }
   
-  private handleFartAttempt(): void {
+  private async handleFartAttempt(): Promise<void> {
     if (!this.componentsInitialized || !this.dialogueManager || !this.player || !this.audioManager) {
       console.warn("Cannot handle fart attempt - components not fully initialized");
       return;
@@ -475,27 +498,21 @@ export class GameScene extends Phaser.Scene {
     // Update player expression
     this.player.setExpression('farting');
     
-    // Handle reactions based on safety
-    if (safetyStatus === 'danger') {
-      // Bad timing
-      this.handleBadFartTiming(currentPressure);
-    } else if (safetyStatus === 'safe') {
-      // Good timing
-      this.handleGoodFartTiming();
-    } else {
-      // Neutral timing - slightly risky
-      this.handleNeutralFartTiming();
-    }
+    // Handle reactions based on safety status
+    this.handleFartReaction(safetyStatus, currentPressure);
     
-    // Reset expression after a moment
-    this.time.delayedCall(1000, () => {
-      if (this.player) {
-        this.player.resetExpression();
-      }
+    // Reset expression after a moment (using Promise instead of callback)
+    await new Promise<void>((resolve) => {
+      setTimeout(() => {
+        if (this.player) {
+          this.player.resetExpression();
+        }
+        resolve();
+      }, 1000);
     });
   }
   
-  private handleAutoFartRelease(): void {
+  private async handleAutoFartRelease(): Promise<void> {
     if (!this.componentsInitialized || !this.player || !this.audioManager) {
       return;
     }
@@ -512,107 +529,99 @@ export class GameScene extends Phaser.Scene {
     // Force player expression
     this.player.setExpression('farting');
     
-    // Heavy penalty
-    this.handleBadFartTiming(currentPressure, true);
+    // Heavy penalty - always treat as danger
+    this.handleFartReaction('danger', currentPressure, true);
     
-    // Reset expression after a moment
-    this.time.delayedCall(1000, () => {
-      if (this.player) {
-        this.player.resetExpression();
-      }
-    });
-  }
-  
-  private handleGoodFartTiming(): void {
-    if (!this.componentsInitialized || !this.player) {
-      return;
-    }
-    
-    // No penalty, got away with it
-    // Add some small positive indicator
-    const goodText = this.add.text(
-      this.player.x,
-      this.player.y - 60,
-      'Masked!',
-      {
-        font: '20px Arial',
-        color: '#00ff00',
-        stroke: '#000000',
-        strokeThickness: 2
-      }
-    ).setOrigin(0.5);
-    
-    // Fade out and remove
-    this.tweens.add({
-      targets: goodText,
-      y: goodText.y - 40,
-      alpha: 0,
-      duration: 1000,
-      onComplete: () => goodText.destroy()
-    });
-  }
-  
-  private handleNeutralFartTiming(): void {
-    if (!this.componentsInitialized || this.npcs.length === 0) {
-      return;
-    }
-    
-    // Small penalty
-    this.updateCredibility(-5);
-    
-    // Make one random NPC react slightly
-    const randomNPC = this.npcs[Phaser.Math.Between(0, this.npcs.length - 1)];
-    randomNPC.reactToFart('mild');
-    
-    // Reset NPC after a moment
-    this.time.delayedCall(2000, () => {
-      randomNPC.resetExpression();
-    });
-  }
-  
-  private handleBadFartTiming(pressureValue: number, isAuto: boolean = false): void {
-    if (!this.componentsInitialized || this.npcs.length === 0) {
-      return;
-    }
-    
-    // Heavy penalty based on pressure
-    const penalty = isAuto ? -30 : -15;
-    this.updateCredibility(penalty);
-    
-    // All NPCs react strongly
-    this.npcs.forEach(npc => {
-      npc.reactToFart('strong');
-
-      // Add reaction text with correct styling
-      const reactionText = this.add.text(
-        npc.x,
-        npc.y - 60,
-        'What was that?!',
-        {
-          font: '20px Arial',
-          color: '#ff0000',
-          fontStyle: 'bold'
+    // Reset expression after a moment (using Promise instead of callback)
+    await new Promise<void>((resolve) => {
+      setTimeout(() => {
+        if (this.player) {
+          this.player.resetExpression();
         }
-      ).setOrigin(0.5);
-      
-      // Fade out and remove
-      this.tweens.add({
-        targets: reactionText,
-        y: reactionText.y - 40,
-        alpha: 0,
-        duration: 2000,
-        onComplete: () => reactionText.destroy()
-      });
+        resolve();
+      }, 1000);
     });
+  }
+  
+  private handleFartReaction(safetyStatus: 'safe' | 'neutral' | 'danger', currentPressure: number, isAuto: boolean = false): void {
+    if (!this.componentsInitialized || this.npcs.length === 0) {
+      return;
+    }
     
-    // Reset NPCs after reactions
-    this.time.delayedCall(3000, () => {
-      this.npcs.forEach(npc => npc.resetExpression());
-    });
-    
-    // Check current level failure conditions
-    if (this.currentLevel.zeroMistakesAllowed || this.credibilityScore <= 0) {
-      this.triggerGameOver(false);
+    switch (safetyStatus) {
+      case 'safe':
+        // No penalty, got away with it
+        // Add visual feedback
+        const goodText = this.add.text(
+          this.player.x,
+          this.player.y - 60,
+          'Masked!',
+          {
+            font: '20px Arial',
+            color: '#00ff00',
+            stroke: '#000000',
+            strokeThickness: 2
+          }
+        ).setOrigin(0.5);
+        
+        // Fade out and remove
+        this.tweens.add({
+          targets: goodText,
+          y: goodText.y - 40,
+          alpha: 0,
+          duration: 1000,
+          onComplete: () => goodText.destroy()
+        });
+        break;
+        
+      case 'neutral':
+        // Small penalty
+        this.updateCredibility(-5);
+        
+        // Make one random NPC react slightly
+        const randomNPC = this.npcs[Phaser.Math.Between(0, this.npcs.length - 1)];
+        
+        // Use playAnimation instead of specific reactToFart method
+        randomNPC.playAnimation(['mad', 'neutral'], 2000);
+        break;
+        
+      case 'danger':
+        // Heavy penalty based on pressure
+        const penalty = isAuto ? -30 : -15;
+        this.updateCredibility(penalty);
+        
+        // All NPCs react strongly
+        this.npcs.forEach(npc => {
+          // Play shock animation
+          npc.playAnimation(['shock', 'neutral'], 3000);
+
+          // Add reaction text
+          const reactionText = this.add.text(
+            npc.x,
+            npc.y - 60,
+            'What was that?!',
+            {
+              font: '20px Arial',
+              color: '#ff0000',
+              fontStyle: 'bold'
+            }
+          ).setOrigin(0.5);
+          
+          // Fade out and remove
+          this.tweens.add({
+            targets: reactionText,
+            y: reactionText.y - 40,
+            alpha: 0,
+            duration: 2000,
+            onComplete: () => reactionText.destroy()
+          });
+        });
+        
+        // Check current level failure conditions
+        if (this.currentLevel.zeroMistakesAllowed || this.credibilityScore <= 0) {
+          this.triggerGameOver(false);
+        }
+        break;
     }
   }
   
@@ -660,16 +669,21 @@ export class GameScene extends Phaser.Scene {
     return minutes + ":" + remainingSeconds.toString().padStart(2, '0');
   }
   
-  private triggerGameOver(success: boolean): void {
+  private async triggerGameOver(success: boolean): Promise<void> {
     this.gameOver = true;
     
-    // Transition to game over scene after a short delay
-    this.time.delayedCall(2000, () => {
-      this.scene.start(GameConfig.SCENE_GAME_OVER, {
-        success,
-        levelId: this.currentLevel.id,
-        credibilityScore: this.credibilityScore
-      });
+    // Transition to game over scene after a short delay (using Promise)
+    await this.delay(2000);
+    
+    this.scene.start(GameConfig.SCENE_GAME_OVER, {
+      success,
+      levelId: this.currentLevel.id,
+      credibilityScore: this.credibilityScore
     });
+  }
+  
+  // Helper method for Promise-based delays
+  private delay(ms: number): Promise<void> {
+    return new Promise<void>(resolve => setTimeout(resolve, ms));
   }
 }

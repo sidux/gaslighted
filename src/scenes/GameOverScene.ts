@@ -115,7 +115,7 @@ export class GameOverScene extends Phaser.Scene {
     );
   }
   
-  private createButton(x: number, y: number, text: string, callback: () => void): void {
+  private createButton(x: number, y: number, text: string, callback: () => void | Promise<void>): void {
     const button = this.add.text(
       x,
       y,
@@ -129,7 +129,13 @@ export class GameOverScene extends Phaser.Scene {
     ).setOrigin(0.5)
      .setInteractive({ useHandCursor: true });
     
-    button.on('pointerdown', callback);
+    button.on('pointerdown', () => {
+      const result = callback();
+      // If callback returns a Promise, handle potential errors
+      if (result instanceof Promise) {
+        result.catch(error => console.error("Button action error:", error));
+      }
+    });
     
     // Hover effects
     button.on('pointerover', () => {
