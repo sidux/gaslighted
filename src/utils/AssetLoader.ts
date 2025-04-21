@@ -8,7 +8,7 @@ export class AssetLoader {
   }
   
   public loadFaces(): void {
-    // Player faces
+    // Player faces (SVG)
     this.scene.load.image('player-normal', 'faces/player-normal.svg');
     this.scene.load.image('player-uncomfortable', 'faces/player-uncomfortable.svg');
     this.scene.load.image('player-sweating', 'faces/player-sweating.svg');
@@ -16,26 +16,25 @@ export class AssetLoader {
     this.scene.load.image('player-critical', 'faces/player-critical.svg');
     this.scene.load.image('player-farting', 'faces/player-farting.svg');
     
-    // Boss faces
-    this.scene.load.image('boss-normal', 'faces/boss-normal.svg');
-    this.scene.load.image('boss-angry', 'faces/boss-angry.svg');
-    this.scene.load.image('boss-annoyed', 'faces/boss-annoyed.svg');
-    this.scene.load.image('boss-shocked', 'faces/boss-shocked.svg');
+    // New Boomer face assets (PNG)
+    this.scene.load.image('boomer-neutral', 'faces/boomer-neutral.png');
+    this.scene.load.image('boomer-mad', 'faces/boomer-mad.png');
+    this.scene.load.image('boomer-shock', 'faces/boomer-shock.png');
+    this.scene.load.image('boomer-talking', 'faces/boomer-talking.png');
+    this.scene.load.image('boomer-talking2', 'faces/boomer-talking2.png');
     
-    // Coworker 1 faces
+    // New Zoomer face assets (PNG)
+    this.scene.load.image('zoomer-neutral', 'faces/zoomer-neutral.png');
+    this.scene.load.image('zoomer-laughing', 'faces/zoomer-laughing.png');
+    this.scene.load.image('zoomer-shock', 'faces/zoomer-shock.png');
+    this.scene.load.image('zoomer-talking', 'faces/zoomer-talking.png');
+    this.scene.load.image('zoomer-talking2', 'faces/zoomer-talking2.png');
+    
+    // Legacy faces (SVG)
     this.scene.load.image('coworker1-normal', 'faces/coworker1-normal.svg');
     this.scene.load.image('coworker1-laughing', 'faces/coworker1-laughing.svg');
     this.scene.load.image('coworker1-shocked', 'faces/coworker1-shocked.svg');
     this.scene.load.image('coworker1-smirk', 'faces/coworker1-smirk.svg');
-    
-    // Coworker 2 faces
-    this.scene.load.image('coworker2-normal', 'faces/coworker2-normal.svg');
-    
-    // Coworker 3 faces
-    this.scene.load.image('coworker3-normal', 'faces/coworker3-normal.svg');
-    
-    // Intern faces
-    this.scene.load.image('intern-normal', 'faces/intern-normal.svg');
   }
   
   public loadAudio(): void {

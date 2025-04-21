@@ -50,15 +50,13 @@ export class GameScene extends Phaser.Scene {
     this.createDialogueBox();
     
     // Initialize managers
-    this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
     this.audioManager = new AudioManager(this);
+    this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
     
     // Create NPCs from level data
     this.createNPCs();
     
     // Calculate the center of the bottom-right quadrant
-    const quarterWidth = this.cameras.main.width / 2;
-    const quarterHeight = this.cameras.main.height / 2;
     const playerX = this.cameras.main.width * 0.75; // Center of right side
     const playerY = this.cameras.main.height * 0.7;  // Positioned slightly above center of bottom half
     
@@ -138,13 +136,13 @@ export class GameScene extends Phaser.Scene {
     // Add subtle quadrant background colors
     const quadOpacity = 0.15;
     
-    // Top Left - Purple (Boss)
+    // Top Left - Purple (Boomer)
     this.add.rectangle(0, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x9370db, quadOpacity).setOrigin(0, 0);
     
-    // Top Right - Blue (Coworker 1)
+    // Top Right - Blue (Zoomer)
     this.add.rectangle(this.cameras.main.width / 2, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x4169e1, quadOpacity).setOrigin(0, 0);
     
-    // Bottom Left - Teal (Coworker 2)
+    // Bottom Left - Teal (Coworker)
     this.add.rectangle(0, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x30d5c8, quadOpacity).setOrigin(0, 0);
     
     // Bottom Right - Light Blue (Player area)
@@ -210,45 +208,46 @@ export class GameScene extends Phaser.Scene {
   }
   
   private createNPCs(): void {
-    const scale = 1.2; // Consistent scale for all characters
-    
+    // Positions for each of the character slots
     const positions = [
-      { 
+      { // Top Left - Boomer (position 0)
+        id: 'boomer',
         x: this.cameras.main.width * 0.25, 
         y: this.cameras.main.height * 0.25,
-        nameY: 65 // Name position offset
-      },     // Top Left - Boss
-      { 
+        scale: 0.3, // Much smaller scale for PNG images
+        nameY: 85
+      },
+      { // Top Right - Zoomer (position 1)
+        id: 'zoomer',
         x: this.cameras.main.width * 0.75, 
         y: this.cameras.main.height * 0.25,
-        nameY: 65
-      },    // Top Right - Coworker 1
-      { 
+        scale: 0.3, // Much smaller scale for PNG images  
+        nameY: 85
+      },
+      { // Bottom Left - Coworker (position 2)
+        id: 'coworker1',
         x: this.cameras.main.width * 0.25, 
-        y: this.cameras.main.height * 0.7, // Aligned with player
+        y: this.cameras.main.height * 0.7,
+        scale: 1.2, // SVG scale
         nameY: 65
-      } // Bottom Left - Coworker 2
+      }
     ];
     
-    // Ensure NPCs are created in the correct order to match positions
-    const orderedParticipants = [
-      this.currentLevel.participants.find(p => p.id === 'boss'),
-      this.currentLevel.participants.find(p => p.id === 'coworker1'),
-      this.currentLevel.participants.find(p => p.id === 'coworker2')
-    ].filter(p => p !== undefined && p.id !== 'player');
-    
-    orderedParticipants.forEach((participant, index) => {
-      if (participant && index < positions.length) {
-        const pos = positions[index];
+    // Create NPCs based on character type and position
+    positions.forEach(position => {
+      // Find the participant with matching ID
+      const participant = this.currentLevel.participants.find(p => p.id === position.id);
+      
+      if (participant && participant.id !== 'player') {
         const npc = new NPC(
           this,
-          pos.x,
-          pos.y,
+          position.x,
+          position.y,
           participant.id,
           participant.name,
           participant.voiceType,
-          scale,
-          pos.nameY
+          position.scale,
+          position.nameY
         );
         this.npcs.push(npc);
       }

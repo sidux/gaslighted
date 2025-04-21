@@ -5,7 +5,8 @@ export class AudioManager {
   private scene: Phaser.Scene;
   private fartSounds: Phaser.Sound.BaseSound[] = [];
   private speechSounds: Map<string, Phaser.Sound.BaseSound> = new Map();
-  private audioCache: Map<string, HTMLAudioElement> = new Map();
+  private audioMappings: Map<string, any> = new Map();
+  private loadedAudioFiles: Set<string> = new Set();
   
   constructor(scene: Phaser.Scene) {
     this.scene = scene;
@@ -25,90 +26,104 @@ export class AudioManager {
     });
   }
   
-  public async playVoice(text: string, voiceType: string): Promise<void> {
+  public async playVoice(text: string, voiceType: string, speakerId: string = "unknown"): Promise<void> {
     try {
-      // Map the voice type to the ReadLoud API voice names
-      const apiVoice = GameConfig.VOICE_MAPPINGS[voiceType] || voiceType;
+      // First, try to find a pre-generated audio file for this text
+      const audioFile = this.findAudioFile(text);
       
-      // Create a unique key for this text/voice combination
-      const key = `${apiVoice}-${this.hashText(text)}`;
-      
-      // Check if we already have this cached
-      if (this.audioCache.has(key)) {
-        const audio = this.audioCache.get(key);
-        if (audio) {
-          // Restart audio playback
-          audio.currentTime = 0;
-          audio.play().catch(e => console.error('Error playing cached audio:', e));
+      if (audioFile) {
+        // We found a pre-generated audio file
+        console.log(`Playing pre-generated audio for: "${text.substring(0, 30)}..."`);
+        
+        // Check if this audio file is already loaded
+        if (!this.loadedAudioFiles.has(audioFile)) {
+          // Load the audio file if not already loaded
+          this.scene.load.audio(audioFile, `audio/dialogue/${audioFile}`);
+          // Wait for loading to complete
+          await new Promise<void>((resolve) => {
+            this.scene.load.once('complete', () => resolve());
+            this.scene.load.start();
+          });
+          this.loadedAudioFiles.add(audioFile);
         }
+        
+        // Play the audio
+        const sound = this.scene.sound.add(audioFile);
+        sound.play();
         return;
       }
       
-      // Generate TTS URL
-      const ttsUrl = this.generateTTS(text, apiVoice);
+      // If no pre-generated audio found, fallback to placeholder method
+      console.log(`No pre-generated audio found for: "${text.substring(0, 30)}..." (${speakerId}, ${voiceType})`);
       
-      console.log(`TTS URL: ${ttsUrl}`);
+      // In a production environment, you might want to:
+      // 1. Generate the audio on-the-fly (but this requires server-side support)
+      // 2. Play a placeholder sound
+      // 3. Show a visual indicator that the character is speaking
       
-      // For development purposes, we'll fall back to a basic console log
-      // since the actual TTS might not work in all environments
-      console.log(`Speaking with ${apiVoice}: "${text}"`);
-      
-      // In production, this would be uncommented:
-      /*
-      // Create an HTML audio element to play the TTS
-      const audio = new Audio();
-      audio.crossOrigin = "anonymous"; // Important for CORS
-      audio.src = ttsUrl;
-      
-      // Add to cache
-      this.audioCache.set(key, audio);
-      
-      // Play the audio (don't await, let it play asynchronously)
-      audio.play().catch(e => {
-        console.error('Error playing TTS:', e);
-      });
-      */
+      // For now, we'll just log to console
+      console.log(`Character ${speakerId} says: "${text}" (Voice: ${voiceType})`);
     } catch (error) {
-      console.error('Error playing TTS:', error);
+      console.error('Error playing voice:', error);
+    }
+  }
+  
+  private findAudioFile(text: string): string | null {
+    // Check each mapping file to find the audio for this text
+    for (const [levelName, mapping] of this.audioMappings.entries()) {
+      if (mapping[text]) {
+        return mapping[text];
+      }
+    }
+    
+    // Check if text needs corporate jargon template processing
+    if (text.includes('{{')) {
+      // For template text, we'll need a different approach
+      // This is a simplification - in a real scenario, you'd need to match patterns
+      console.log('Text contains templates, cannot find exact match');
+    }
+    
+    return null;
+  }
+  
+  private async initAudio(): Promise<void> {
+    // Load audio mapping files
+    try {
+      // Load all JSON mapping files from the audio/dialogue directory
+      const mappingFiles = await this.getAudioMappingFiles();
       
-      // As a fallback, just log what would have been said
-      console.log(`TTS (fallback): [${voiceType}] "${text}"`);
+      for (const file of mappingFiles) {
+        const levelName = file.replace('_mapping.json', '');
+        this.scene.load.json(file, `audio/dialogue/${file}`);
+        
+        // Wait for loading to complete
+        const loadPromise = new Promise<void>((resolve) => {
+          this.scene.load.once('complete', () => {
+            // Store the mapping in our cache
+            const mapping = this.scene.cache.json.get(file);
+            this.audioMappings.set(levelName, mapping);
+            resolve();
+          });
+          this.scene.load.start();
+        });
+        
+        await loadPromise;
+      }
+      
+      console.log(`Loaded ${this.audioMappings.size} audio mapping files`);
+    } catch (error) {
+      console.error('Error loading audio mappings:', error);
     }
   }
   
-  // Simple hash function for creating cache keys
-  private hashText(text: string): string {
-    let hash = 0;
-    for (let i = 0; i < text.length; i++) {
-      const char = text.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
-      hash = hash & hash; // Convert to 32bit integer
-    }
-    return hash.toString(16);
-  }
-  
-  private initAudio(): void {
-    // Initialize any audio resources needed
-    // In a real implementation, fart sounds would be loaded during the preload phase
+  private async getAudioMappingFiles(): Promise<string[]> {
+    // In a real scenario, you would dynamically discover these files
+    // For simplicity, we'll hardcode the level1 mapping file
+    return ['level1_mapping.json'];
   }
   
   // Additional methods for managing and controlling audio
   public stopAllSounds(): void {
     this.scene.sound.stopAll();
-    
-    // Also stop any HTML audio elements
-    this.audioCache.forEach(audio => {
-      audio.pause();
-      audio.currentTime = 0;
-    });
-  }
-  
-  public generateTTS(text: string, voiceType: string): string {
-    // Ensure text is properly encoded for URL
-    const encodedText = encodeURIComponent(text);
-    
-    // ReadLoud.net specific URL format
-    // Example format: https://readloud.net/speech.php?q=Hello+world&voice=Brian
-    return `${GameConfig.SPEECH_API_URL}speech.php?q=${encodedText}&voice=${voiceType}`;
   }
 }

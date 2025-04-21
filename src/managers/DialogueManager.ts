@@ -99,8 +99,8 @@ export class DialogueManager {
     // Update dialogue text in the GameScene
     this.scene.showDialogue(speaker.name, processedText);
     
-    // Play voice audio
-    this.audioManager.playVoice(processedText, speaker.voiceType);
+    // Play voice audio with speaker ID
+    this.audioManager.playVoice(processedText, speaker.voiceType, dialogue.speakerId);
     
     // Set dialogue as active
     this.isDialogueActive = true;

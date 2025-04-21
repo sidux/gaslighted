@@ -27,14 +27,14 @@ export class GameConfig {
   static readonly SCENE_GAME: string = 'Game';
   static readonly SCENE_GAME_OVER: string = 'GameOver';
   
-  // Audio settings
-  static readonly SPEECH_API_URL: string = 'https://readloud.net/';
-  
-  // Voice mappings for ReadLoud API
+  // Voice mappings for Amazon Polly
   static readonly VOICE_MAPPINGS: Record<string, string> = {
-    'Brian': 'Brian', // Slow, managerial (Boomer)
-    'Bruno': 'Russell', // Mysterious, deep (Bogdanoff)
-    'Brandon': 'Evan', // Hyper, high-pitched (Zoomer)
-    'Salli': 'Joanna' // Corporate perky (Girl)
+    'Brian': 'Brian', // Boomer - British male
+    'Bruno': 'Russell', // Bogdanoff - Australian male
+    'Brandon': 'Joey', // Zoomer - US young male
+    'Salli': 'Joanna' // Corporate perky - US female
   };
+  
+  // Amazon Polly engine type - Neural produces better quality voices
+  static readonly POLLY_ENGINE: string = 'standard';
 }

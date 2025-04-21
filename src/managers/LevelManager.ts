@@ -34,48 +34,48 @@ export class LevelManager {
       duration: 120, // 2 minutes
       participants: [
         { id: 'player', name: 'Russell', voiceType: 'Brian' },
-        { id: 'boss', name: 'Mr. Bogdanoff', voiceType: 'Bruno' },
-        { id: 'coworker1', name: 'Zoomer', voiceType: 'Brandon' },
-        { id: 'coworker2', name: 'Susan', voiceType: 'Salli' }
+        { id: 'boomer', name: 'Mr. Boomer', voiceType: 'Brian' }, // Using boomer instead of boss
+        { id: 'zoomer', name: 'Zoomer', voiceType: 'Brandon' }, // Using zoomer
+        { id: 'coworker1', name: 'Susan', voiceType: 'Salli' }
       ],
       dialogues: [
         {
-          speakerId: 'boss',
+          speakerId: 'boomer',
           text: 'Welcome to the quarterly review meeting. We have lots to discuss today.',
           delay: 2000,
           duration: 4000,
           safetyStatus: 'neutral'
         },
         {
-          speakerId: 'coworker1',
+          speakerId: 'zoomer',
           text: "Hey everyone! I'm super excited to share our Q4 results!",
           delay: 1000,
           duration: 3000,
           safetyStatus: 'neutral'
         },
         {
-          speakerId: 'boss',
+          speakerId: 'boomer',
           text: 'Before we begin, I would like to emphasize how important it is to listen carefully.',
           delay: 1000,
           duration: 5000,
           safetyStatus: 'danger'
         },
         {
-          speakerId: 'coworker2',
+          speakerId: 'coworker1',
           text: "Let's synergize our efforts and leverage our core competencies going forward.",
           delay: 1000,
           duration: 4000,
           safetyStatus: 'safe'
         },
         {
-          speakerId: 'boss',
+          speakerId: 'boomer',
           text: 'Russell, are you with us? You look a bit uncomfortable.',
           delay: 1000,
           duration: 3000,
           safetyStatus: 'danger'
         },
         {
-          speakerId: 'coworker1',
+          speakerId: 'zoomer',
           text: "HAHAHA, that's so funny! I can't believe that happened!",
           delay: 1000,
           duration: 3000,
@@ -95,21 +95,21 @@ export class LevelManager {
       duration: 180, // 3 minutes
       participants: [
         { id: 'player', name: 'Russell', voiceType: 'Brian' },
-        { id: 'boss', name: 'Mr. Bogdanoff', voiceType: 'Bruno' },
-        { id: 'coworker1', name: 'Zoomer', voiceType: 'Brandon' },
-        { id: 'intern', name: 'Intern', voiceType: 'Salli' }
+        { id: 'boomer', name: 'Mr. Boomer', voiceType: 'Brian' },
+        { id: 'zoomer', name: 'Zoomer', voiceType: 'Brandon' },
+        { id: 'coworker1', name: 'Susan', voiceType: 'Salli' }
       ],
       dialogues: [
         // Would contain more complex dialogue patterns
         {
-          speakerId: 'boss',
+          speakerId: 'boomer',
           text: 'This client meeting is critically important for our Q4 revenue targets.',
           delay: 2000,
           duration: 5000,
           safetyStatus: 'danger'
         },
         {
-          speakerId: 'intern',
+          speakerId: 'coworker1',
           text: "I've prepared the presentation as requested. Should I share my screen?",
           delay: 1000,
           duration: 4000,
@@ -129,21 +129,21 @@ export class LevelManager {
       duration: 240, // 4 minutes
       participants: [
         { id: 'player', name: 'Russell', voiceType: 'Brian' },
-        { id: 'boss', name: 'Mr. Bogdanoff', voiceType: 'Bruno' },
-        { id: 'coworker1', name: 'Zoomer', voiceType: 'Brandon' },
-        { id: 'coworker3', name: 'CFO', voiceType: 'Salli' }
+        { id: 'boomer', name: 'Mr. Boomer', voiceType: 'Brian' },
+        { id: 'zoomer', name: 'Zoomer', voiceType: 'Brandon' },
+        { id: 'coworker1', name: 'Susan', voiceType: 'Salli' }
       ],
       dialogues: [
         // Would contain intense dialogue with few safe windows
         {
-          speakerId: 'boss',
+          speakerId: 'boomer',
           text: 'Board members, thank you for joining us for this critical quarterly review.',
           delay: 2000,
           duration: 5000,
           safetyStatus: 'danger'
         },
         {
-          speakerId: 'coworker3',
+          speakerId: 'coworker1',
           text: "Our financial projection models indicate substantial growth in Q1 of next year.",
           delay: 1000,
           duration: 5000,
