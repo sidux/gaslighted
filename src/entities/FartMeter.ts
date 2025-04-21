@@ -13,7 +13,7 @@ export class FartMeter {
   private background!: Phaser.GameObjects.Rectangle;
   private fill!: Phaser.GameObjects.Rectangle;
   private label!: Phaser.GameObjects.Text;
-  private dangerZones: Phaser.GameObjects.Rectangle[] = [];
+  private dangerZones: Phaser.GameObjects.GameObject[] = []; // Changed to GameObject to accept both Rectangle and Text
   
   constructor(scene: Phaser.Scene, x: number, y: number, width: number, height: number) {
     this.scene = scene;
@@ -91,26 +91,132 @@ export class FartMeter {
   
   public setSafeZones(safeZones: Array<{ start: number; end: number }>): void {
     // Clear existing zones
-    this.dangerZones.forEach(zone => zone.destroy());
-    this.dangerZones = [];
+    this.clearSafeZones();
     
     // Create new safe zones for vertical meter
     safeZones.forEach(zone => {
-      const zoneStartY = (this.width / 2) - 2 - (zone.end / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
-      const zoneHeight = ((zone.end - zone.start) / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
+      // For vertical meter, we need to convert the percentage values to Y positions
+      // The meter is 200 pixels tall, positioning from -100 (top) to +100 (bottom)
+      // Higher values should be higher on the meter (lower Y values)
+      const zoneEndY = -100 + (200 - ((zone.end / 100) * 200));
+      const zoneStartY = -100 + (200 - ((zone.start / 100) * 200));
+      const zoneHeight = Math.abs(zoneEndY - zoneStartY);
       
+      // Create a green zone indicator
       const zoneRect = this.scene.add.rectangle(
-        0,
-        zoneStartY + zoneHeight,
-        this.height - 4,
+        0,  // Center X
+        (zoneStartY + zoneEndY) / 2,  // Center Y of zone
+        26,  // Width - slightly narrower than the background
         zoneHeight,
         0x00ff00,
-        0.3
-      ).setOrigin(0.5, 1);
+        0.4
+      ).setOrigin(0.5, 0.5);
+      
+      // Add border to make it more visible
+      zoneRect.setStrokeStyle(1, 0x00ff00, 0.8);
+      
+      // Add a pulsing animation to make it more noticeable
+      this.scene.tweens.add({
+        targets: zoneRect,
+        alpha: { from: 0.4, to: 0.8 },
+        yoyo: true,
+        repeat: -1,
+        duration: 500
+      });
+      
+      // Add "SAFE" text for the largest zone
+      if (zoneHeight > 30) {
+        const safeText = this.scene.add.text(
+          -40, // Left of the meter
+          (zoneStartY + zoneEndY) / 2,
+          "SAFE",
+          {
+            font: '12px Arial',
+            color: '#00ff00',
+            fontStyle: 'bold'
+          }
+        ).setOrigin(1, 0.5);
+        
+        this.meterContainer.add(safeText);
+        this.dangerZones.push(safeText); // It's now safe to add Text to dangerZones (GameObject[])
+      }
       
       this.meterContainer.add(zoneRect);
       this.dangerZones.push(zoneRect);
     });
+    
+    // Add up/down indicators to guide player to safe zones
+    this.addSafeZoneGuides(safeZones);
+  }
+  
+  /**
+   * Add visual guides to direct player to nearest safe zone
+   */
+  private addSafeZoneGuides(safeZones: Array<{ start: number; end: number }>): void {
+    // Find the nearest safe zone to current pressure
+    const currentPressurePercent = (this.currentPressure / GameConfig.FART_PRESSURE_MAX) * 100;
+    
+    // Find closest safe zone
+    let closestZone = null;
+    let minDistance = Infinity;
+    
+    for (const zone of safeZones) {
+      const zoneMiddle = (zone.start + zone.end) / 2;
+      const distance = Math.abs(zoneMiddle - currentPressurePercent);
+      
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestZone = zone;
+      }
+    }
+    
+    if (closestZone) {
+      const zoneMiddle = (closestZone.start + closestZone.end) / 2;
+      
+      // Determine if we need to go up or down
+      const needToGoUp = zoneMiddle < currentPressurePercent;
+      
+      // Add an arrow indicator
+      const arrowText = needToGoUp ? "↑" : "↓";
+      const arrowColor = needToGoUp ? "#00ffff" : "#ffff00";
+      
+      const arrow = this.scene.add.text(
+        40, // Right of the meter
+        0,  // Will be positioned based on current pressure
+        arrowText,
+        {
+          font: '24px Arial',
+          color: arrowColor,
+          fontStyle: 'bold'
+        }
+      ).setOrigin(0, 0.5);
+      
+      // Position arrow at current pressure level
+      const pressureY = -100 + (200 - ((currentPressurePercent / 100) * 200));
+      arrow.y = pressureY;
+      
+      // Add pulsing animation
+      this.scene.tweens.add({
+        targets: arrow,
+        alpha: { from: 0.7, to: 1 },
+        scale: { from: 0.9, to: 1.1 },
+        yoyo: true,
+        repeat: -1,
+        duration: 300
+      });
+      
+      this.meterContainer.add(arrow);
+      this.dangerZones.push(arrow); // It's now safe to add Text to dangerZones (GameObject[])
+    }
+  }
+  
+  /**
+   * Clear all safe zone indicators
+   */
+  public clearSafeZones(): void {
+    // Remove all zone indicators
+    this.dangerZones.forEach(zone => zone.destroy());
+    this.dangerZones = [];
   }
   
   public setPosition(x: number, y: number): void {

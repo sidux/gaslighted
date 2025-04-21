@@ -20,6 +20,8 @@ export class Character {
   private animMouthLoop: Phaser.Time.TimerEvent | null = null;
   private talkingFrame: number = 0;
   private videoFrame: Phaser.GameObjects.Rectangle | null = null;
+  private isHoldingFart: boolean = false;
+  private holdingText: Phaser.GameObjects.Text | null = null;
   
   public readonly id: string;
   public readonly name: string;
@@ -123,8 +125,16 @@ export class Character {
   public update(delta: number): void {
     // Player-specific update logic
     if (this.role === CharacterRole.PLAYER) {
+      // Calculate pressure increase rate based on holding state
+      let pressureRate = GameConfig.FART_PRESSURE_INCREASE_RATE;
+      
+      // Reduce pressure buildup rate when holding
+      if (this.isHoldingFart) {
+        pressureRate *= 0.3; // 70% reduction when holding
+      }
+      
       // Increase pressure over time
-      this.increasePressure(GameConfig.FART_PRESSURE_INCREASE_RATE * (delta / 16.667));
+      this.increasePressure(pressureRate * (delta / 16.667));
       
       // Update facial expression based on pressure
       this.updateFacialExpression();
@@ -141,6 +151,32 @@ export class Character {
         this.effectCircle.setScale(1);
         this.effectCircle.alpha = 0.7;
       }
+    }
+  }
+  
+  /**
+   * Set whether the player is holding in the fart
+   * @param isHolding Whether the player is holding the fart
+   */
+  public setHoldingFart(isHolding: boolean): void {
+    this.isHoldingFart = isHolding;
+  }
+  
+  /**
+   * Set the holding text reference
+   * @param text The text object showing "Holding..."
+   */
+  public setHoldingText(text: Phaser.GameObjects.Text): void {
+    this.holdingText = text;
+  }
+  
+  /**
+   * Clear the holding text
+   */
+  public clearHoldingText(): void {
+    if (this.holdingText) {
+      this.holdingText.destroy();
+      this.holdingText = null;
     }
   }
   

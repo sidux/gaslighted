@@ -3,21 +3,32 @@ import { Dialogue } from '../types/Dialogue';
 import { Character } from '../entities/Character';
 import { AudioManager } from './AudioManager';
 import { GameScene } from '../scenes/GameScene';
+import { NeuralSpeechProcessor } from './NeuralSpeechProcessor';
+import { SafeZone } from '../types/speech/SpeechMark';
 
 export class DialogueManager {
   private scene: GameScene;
   private dialogues: Dialogue[];
   private audioManager: AudioManager;
+  private speechProcessor: NeuralSpeechProcessor;
   private npcs: Character[] = [];
   private currentDialogueIndex: number = -1;
   private isDialogueActive: boolean = false;
   private nextDialogueTimer: Phaser.Time.TimerEvent | null = null;
   private currentSafetyStatus: 'safe' | 'neutral' | 'danger' = 'neutral';
+  private currentDialogueStartTime: number = 0;
+  private currentDialogue: Dialogue | null = null;
+  private safeZones: SafeZone[] = [];
+  private speechRhythmDisplay: Phaser.GameObjects.Container | null = null;
   
   constructor(scene: GameScene, dialogues: Dialogue[]) {
     this.scene = scene;
     this.dialogues = dialogues;
     this.audioManager = new AudioManager(scene);
+    this.speechProcessor = new NeuralSpeechProcessor();
+    
+    // Create rhythm display
+    this.createSpeechRhythmDisplay();
   }
   
   public setNPCs(npcs: Character[]): void {
@@ -25,11 +36,108 @@ export class DialogueManager {
   }
   
   public update(delta: number): void {
-    // Any per-frame updates
+    // Update safety status based on current time in dialogue
+    if (this.isDialogueActive && this.currentDialogue) {
+      const currentTime = this.scene.time.now - this.currentDialogueStartTime;
+      
+      // Update safety status based on speech rhythm
+      this.currentSafetyStatus = this.speechProcessor.getSafetyStatusAtTime(
+        this.currentDialogue,
+        currentTime
+      );
+      
+      // Update rhythm display
+      this.updateRhythmDisplay(currentTime);
+    }
+  }
+  
+  /**
+   * Creates a visual display for speech rhythm
+   */
+  private createSpeechRhythmDisplay(): void {
+    // Create container for rhythm display elements
+    this.speechRhythmDisplay = this.scene.add.container(
+      this.scene.cameras.main.width - 150,
+      this.scene.cameras.main.height / 2
+    );
+    
+    // Add background
+    const bg = this.scene.add.rectangle(0, 0, 20, 300, 0x222222, 0.7);
+    bg.setStrokeStyle(1, 0x444444);
+    
+    this.speechRhythmDisplay.add(bg);
+    
+    // Add title
+    const title = this.scene.add.text(0, -170, "Rhythm", {
+      font: '14px Arial',
+      color: '#ffffff',
+    }).setOrigin(0.5);
+    
+    this.speechRhythmDisplay.add(title);
+    
+    // Hide initially
+    this.speechRhythmDisplay.setVisible(false);
+  }
+  
+  /**
+   * Updates the speech rhythm display based on current time
+   */
+  private updateRhythmDisplay(currentTime: number): void {
+    if (!this.speechRhythmDisplay || !this.currentDialogue) return;
+    
+    // Clear previous rhythm indicators
+    this.speechRhythmDisplay.getAll()
+      .filter(obj => obj.name === 'rhythm-indicator')
+      .forEach(obj => obj.destroy());
+    
+    // Get safe zones for this dialogue
+    const safeZones = this.speechProcessor.getSafeZones(this.currentDialogue);
+    
+    // Display upcoming safe zones in the next 3 seconds
+    const lookAheadTime = 3000; // 3 seconds ahead
+    
+    safeZones.forEach(zone => {
+      const zoneStartTime = zone.startTime;
+      const zoneEndTime = zone.endTime;
+      
+      // Only show zones that are coming up in the next few seconds or currently active
+      if (zoneStartTime > currentTime - 500 && zoneStartTime < currentTime + lookAheadTime) {
+        // Calculate position on rhythm bar (higher = further in future)
+        const yPos = ((zoneStartTime - currentTime) / lookAheadTime) * 200;
+        const height = Math.min(((zoneEndTime - zoneStartTime) / lookAheadTime) * 200, 200);
+        
+        // Create zone indicator
+        const indicator = this.scene.add.rectangle(
+          0,  // Center of rhythm bar
+          yPos - 100, // Offset to position correctly
+          18,  // Slightly narrower than the background
+          height,
+          0x00ff00,
+          0.5
+        );
+        indicator.setName('rhythm-indicator');
+        
+        // Add to display
+        this.speechRhythmDisplay.add(indicator);
+      }
+    });
+    
+    // Add "now" marker (horizontal line)
+    const nowMarker = this.scene.add.line(0, -100, -15, 0, 15, 0, 0xffffff);
+    nowMarker.setLineWidth(2);
+    nowMarker.setName('rhythm-indicator');
+    this.speechRhythmDisplay.add(nowMarker);
+    
+    // Ensure display is visible
+    this.speechRhythmDisplay.setVisible(true);
   }
   
   public async startDialogue(): Promise<void> {
     console.log("Starting dialogue sequence with", this.dialogues.length, "dialogues");
+    
+    // Preload all speech marks first
+    await this.speechProcessor.preloadSpeechMarks(this.dialogues);
+    
     // Begin dialogue sequence
     await this.moveToNextDialogue();
   }
@@ -81,6 +189,9 @@ export class DialogueManager {
   private async playDialogue(dialogue: Dialogue): Promise<void> {
     console.log(`Playing dialogue for speaker ${dialogue.speakerId}`);
     
+    // Store current dialogue reference
+    this.currentDialogue = dialogue;
+    
     // Find the speaking NPC
     const speaker = this.npcs.find(npc => npc.id === dialogue.speakerId);
     
@@ -93,14 +204,28 @@ export class DialogueManager {
     
     console.log(`Found speaker: ${speaker.name} (ID: ${speaker.id})`);
     
-    // Set current safety status
-    this.currentSafetyStatus = dialogue.safetyStatus;
+    // Get safe zones for this dialogue from speech processor
+    this.safeZones = this.speechProcessor.getSafeZones(dialogue);
+    
+    // Set current safety status to neutral initially
+    // It will be updated dynamically based on the speech rhythm
+    this.currentSafetyStatus = 'neutral';
     
     // Make NPC speak
     speaker.startSpeaking();
     
     // Update dialogue text in the GameScene
     // this.scene.showDialogue(speaker.name, dialogue.text);
+    
+    // Record start time for timing calculations
+    this.currentDialogueStartTime = this.scene.time.now;
+    
+    // Update player's fart meter with safe zones
+    const fartMeter = this.scene.getFartMeter();
+    if (fartMeter) {
+      const meterSafeZones = this.speechProcessor.getSafeZonesForMeter(dialogue);
+      fartMeter.setSafeZones(meterSafeZones);
+    }
     
     // Play voice audio
     await this.audioManager.playVoice(dialogue);
@@ -117,8 +242,19 @@ export class DialogueManager {
     // Hide dialogue text
     this.scene.hideDialogue();
     
+    // Hide rhythm display
+    if (this.speechRhythmDisplay) {
+      this.speechRhythmDisplay.setVisible(false);
+    }
+    
     // Mark dialogue as inactive
     this.isDialogueActive = false;
+    this.currentDialogue = null;
+    
+    // Clear safe zones
+    if (fartMeter) {
+      fartMeter.clearSafeZones();
+    }
     
     // Move to next dialogue
     await this.moveToNextDialogue();

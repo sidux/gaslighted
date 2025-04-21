@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "webpack serve --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
-    "test": "jest"
+    "test": "jest",
+    "generate-audio": "node scripts/generate-audio.js",
+    "prepare-assets": "npm run generate-audio"
   },
   "keywords": [
     "phaser",

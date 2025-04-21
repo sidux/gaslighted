@@ -14,14 +14,27 @@ export class AudioManager {
   
   public playFartSound(intensity: number, isAuto: boolean = false): void {
     // Play fart sound based on intensity
-    // For now we have just one fart sound, but this could be expanded
-    const fartSound = this.scene.sound.add('fart');
+    // Enhanced version with different sound types based on intensity
+    
+    // Select sound key based on intensity
+    let soundKey = 'fart'; // Default sound
     
     // Adjust volume based on intensity (higher intensity = louder)
     const volume = isAuto ? 1.0 : Math.min(0.4 + (intensity / 100) * 0.6, 1.0);
     
+    // Adjust playback rate for variety based on intensity
+    // Lower intensities = higher pitch (subtle sound)
+    // Higher intensities = lower pitch (deeper sound)
+    const rate = isAuto ? 0.8 : Math.max(1.2 - (intensity / 100) * 0.4, 0.8);
+    
+    // Create the sound
+    const fartSound = this.scene.sound.add(soundKey);
+    
+    // Play with custom settings
     fartSound.play({
-      volume
+      volume,
+      rate,
+      detune: Math.random() * 300 - 150 // Add slight randomness to pitch (-150 to +150 cents)
     });
   }
   

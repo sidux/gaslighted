@@ -1,0 +1,200 @@
+id: level3
+title: Board Meeting Nightmare
+description: The annual board meeting with investors. Zero mistakes allowed!
+difficulty: 3
+duration: 240
+zeroMistakesAllowed: true
+participants:
+  - id: player
+    name: Wojak
+    voiceType: Matthew
+  - id: boomer
+    name: Mr. Bogdanoff
+    voiceType: Brian
+  - id: zoomer
+    name: Zoomer
+    voiceType: Kendra
+  - id: coworker1
+    name: Wifey
+    voiceType: Joanna
+  - id: investor1
+    name: Mr. Rothschild
+    voiceType: Stephen
+  - id: investor2
+    name: Ms. Vanderbilt
+    voiceType: Olivia
+dialogues:
+  - speakerId: boomer
+    text: <speak>Ladies and gentlemen of the board<break time="800ms"/><break time="300ms"/>thank you for joining our annual investor meeting.</speak>
+    delay: 2000
+    duration: 6500
+    safetyStatus: danger
+    soundFile: boomer_Brian_fcd54392.mp3
+  - speakerId: investor1
+    text: <speak>Let's not waste time with pleasantries. <break time="200ms"/> I'd like to see the Q4 numbers <break time="300ms"/> immediately.</speak>
+    delay: 1800
+    duration: 5000
+    safetyStatus: danger
+    soundFile: investor1_Stephen_678b8892.mp3
+  - speakerId: zoomer
+    text: <speak>Of course, sir! <break time="150ms"/> I've prepared a comprehensive dashboard. <break time="300ms"/>Just<break time="200ms"/>one moment<break time="200ms"/>while I share my screen.</speak>
+    delay: 1500
+    duration: 6000
+    safetyStatus: safe
+    soundFile: zoomer_Kendra_7269644a.mp3
+  - speakerId: boomer
+    text: <speak>As you'll see<break time="800ms"/>our performance this quarter has been<break time="900ms"/>challenging but ultimately promising.</speak>
+    delay: 2000
+    duration: 6500
+    safetyStatus: danger
+    soundFile: boomer_Brian_d6c8672d.mp3
+  - speakerId: investor2
+    text: <speak>Challenging? <break time="250ms"/> That's quite an understatement. <break time="300ms"/> Your growth is down seventeen percent from projections.</speak>
+    delay: 1800
+    duration: 5500
+    safetyStatus: neutral
+    soundFile: investor2_Olivia_10e95195.mp3
+  - speakerId: coworker1
+    text: <speak>If I may interject<break time="500ms"/>these results must be contextualized within the broader market downturn.</speak>
+    delay: 1500
+    duration: 7000
+    safetyStatus: safe
+    soundFile: coworker1_Joanna_fe8b41ea.mp3
+  - speakerId: investor1
+    text: <speak>The broader market is down five percent. <break time="200ms"/> You're down seventeen. <break time="700ms"/>Explain that discrepancy.</speak>
+    delay: 1300
+    duration: 5000
+    safetyStatus: danger
+    soundFile: investor1_Stephen_a6e88cda.mp3
+  - speakerId: boomer
+    text: <speak><break time="300ms"/>Wojak has prepared a detailed analysis of<break time="700ms"/>external factors affecting our performance. <break time="300ms"/> Wojak, please proceed.</speak>
+    delay: 2000
+    duration: 6000
+    safetyStatus: danger
+    soundFile: boomer_Brian_34c0720e.mp3
+  - speakerId: investor2
+    text: <speak>I have another meeting in thirty minutes. <break time="400ms"/>Can we accelerate this presentation?</speak>
+    delay: 1800
+    duration: 4500
+    safetyStatus: neutral
+    soundFile: investor2_Olivia_33b1e82e.mp3
+  - speakerId: zoomer
+    text: <speak>Absolutely! <break time="150ms"/> Let me just<break time="200ms"/>jump ahead to the key metrics. <break time="300ms"/> There! <break time="200ms"/> As you can see...</speak>
+    delay: 1400
+    duration: 5500
+    safetyStatus: safe
+    soundFile: zoomer_Kendra_a196fcce.mp3
+  - speakerId: coworker1
+    text: <speak>The critical insight is on slide fourteen<break time="1s"/>where we demonstrate our pivot strategy for Q1.</speak>
+    delay: 2000
+    duration: 5500
+    safetyStatus: neutral
+    soundFile: coworker1_Joanna_b7386f33.mp3
+  - speakerId: investor1
+    text: <speak>A pivot? <break time="500ms"/>This is the third strategic pivot in eighteen months. <break time="700ms"/>How is this one different?</speak>
+    delay: 1600
+    duration: 6000
+    safetyStatus: danger
+    soundFile: investor1_Stephen_756f06f8.mp3
+  - speakerId: boomer
+    text: <speak>The<break time="300ms"/>difference<break time="1s"/>is in our approach to customer acquisition. <break time="500ms"/> We've<break time="700ms"/>discovered a new opportunity.</speak>
+    delay: 2500
+    duration: 7500
+    safetyStatus: safe
+    soundFile: boomer_Brian_a58127c3.mp3
+  - speakerId: investor2
+    text: <speak>Specifics, please. <break time="300ms"/> What exactly is this 'new opportunity' and why should we believe in it?</speak>
+    delay: 1800
+    duration: 5000
+    safetyStatus: danger
+    soundFile: investor2_Olivia_25d1aec6.mp3
+  - speakerId: zoomer
+    text: <speak>Machine learning! <break time="200ms"/> AI-driven personalization at scale! <break time="400ms"/>Our algorithms have achieved <break time="150ms"/> 97% accuracy in customer predictions!</speak>
+    delay: 1400
+    duration: 6000
+    safetyStatus: neutral
+    soundFile: zoomer_Kendra_4189f206.mp3
+  - speakerId: coworker1
+    text: <speak><break time="300ms"/><break time="500ms"/>What my colleague means is that we've identified key behavioral patterns that allow for targeted engagement.</speak>
+    delay: 2000
+    duration: 6500
+    safetyStatus: safe
+    soundFile: coworker1_Joanna_4fa8a237.mp3
+  - speakerId: investor1
+    text: <speak>And the cost? <break time="600ms"/>This technology isn't cheap to implement. <break time="300ms"/> What's the projected ROI timeline?</speak>
+    delay: 1700
+    duration: 5000
+    safetyStatus: danger
+    soundFile: investor1_Stephen_ea14c12f.mp3
+  - speakerId: boomer
+    text: <speak>Wojak has the<break time="400ms"/>detailed<break time="400ms"/>financial projections. <break time="500ms"/>Wojak? <break time="200ms"/> The ROI analysis please?</speak>
+    delay: 2200
+    duration: 5500
+    safetyStatus: danger
+    soundFile: boomer_Brian_c5a2b335.mp3
+  - speakerId: investor2
+    text: <speak><break time="300ms"/>Excuse me, I need to take this. <break time="200ms"/> Yes? <break time="300ms"/> No, I'm still in the meeting. <break time="200ms"/> Continue.</speak>
+    delay: 2500
+    duration: 6500
+    safetyStatus: safe
+    soundFile: investor2_Olivia_759493d0.mp3
+  - speakerId: zoomer
+    text: <speak>Should I continue with the presentation or wait? <break time="300ms"/> Do something! <break time="200ms"/> They look bored!</speak>
+    delay: 2000
+    duration: 5000
+    safetyStatus: safe
+    soundFile: zoomer_Kendra_5a8e4d2f.mp3
+  - speakerId: investor1
+    text: <speak>While we're waiting, let me be direct. <break time="600ms"/>Are you requesting additional funding or just updating us on poor performance?</speak>
+    delay: 2300
+    duration: 6000
+    safetyStatus: danger
+    soundFile: investor1_Stephen_981df5ce.mp3
+  - speakerId: boomer
+    text: <speak>We<break time="300ms"/>believe<break time="800ms"/>that with appropriate resources, <break time="300ms"/> this pivot represents a significant<break time="1s"/>opportunity.</speak>
+    delay: 2000
+    duration: 7000
+    safetyStatus: neutral
+    soundFile: boomer_Brian_8476fdbb.mp3
+  - speakerId: investor2
+    text: <speak>I'm back. <break time="500ms"/>So you are asking for more money. <break time="300ms"/> How much exactly, <break time="200ms"/> and what specific milestones would that achieve?</speak>
+    delay: 1800
+    duration: 5500
+    safetyStatus: danger
+    soundFile: investor2_Olivia_86d3b972.mp3
+  - speakerId: coworker1
+    text: <speak>The detailed funding request is on the final slide. <break time="500ms"/>As you can see, we've outlined three tiers of investment options.</speak>
+    delay: 1600
+    duration: 5500
+    safetyStatus: neutral
+    soundFile: coworker1_Joanna_2815f3c4.mp3
+  - speakerId: investor1
+    text: <speak><break time="1s"/>These numbers are<break time="700ms"/>ambitious. <break time="400ms"/> I'll need time to review the full proposal.</speak>
+    delay: 2500
+    duration: 5000
+    safetyStatus: safe
+    soundFile: investor1_Stephen_c16c4dbb.mp3
+  - speakerId: boomer
+    text: <speak>Of course. <break time="500ms"/>We've prepared comprehensive documentation for your review. <break time="400ms"/>Wojak will send everything immediately after our meeting.</speak>
+    delay: 2000
+    duration: 6000
+    safetyStatus: danger
+    soundFile: boomer_Brian_8fe78c15.mp3
+  - speakerId: investor2
+    text: <speak>Very well. <break time="300ms"/> I have another commitment. <break time="600ms"/>We'll resume this discussion next week after reviewing your materials.</speak>
+    delay: 1800
+    duration: 5500
+    safetyStatus: neutral
+    soundFile: investor2_Olivia_00a5bca7.mp3
+  - speakerId: zoomer
+    text: <speak>Thank you so much for your time! <break time="200ms"/> We're really excited about this new direction and can't wait to share more details!</speak>
+    delay: 1500
+    duration: 5500
+    safetyStatus: safe
+    soundFile: zoomer_Kendra_e28b8991.mp3
+  - speakerId: boomer
+    text: <speak>Thank you all for your time today. <break time="600ms"/>We look forward to our<break time="500ms"/>continued<break time="300ms"/>partnership.</speak>
+    delay: 2000
+    duration: 5000
+    safetyStatus: neutral
+    soundFile: boomer_Brian_eb68ed1b.mp3

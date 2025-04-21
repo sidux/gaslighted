@@ -70,10 +70,18 @@ export class GameScene extends Phaser.Scene {
         GameConfig.PRESSURE_METER_HEIGHT,
     );
     
-    // Setup input
+    // Setup input for fart mechanics
+    // SPACE DOWN = hold fart
     this.input.keyboard.on('keydown-SPACE', () => {
       if (!this.gameOver && this.componentsInitialized) {
-        this.handleFartAttempt();
+        this.handleFartHold();
+      }
+    });
+    
+    // SPACE UP = release fart
+    this.input.keyboard.on('keyup-SPACE', () => {
+      if (!this.gameOver && this.componentsInitialized) {
+        this.handleFartRelease();
       }
     });
     
@@ -473,23 +481,78 @@ export class GameScene extends Phaser.Scene {
     this.dialogueText.setVisible(false);
   }
   
-  private async handleFartAttempt(): Promise<void> {
-    if (!this.componentsInitialized || !this.dialogueManager || !this.player || !this.audioManager) {
-      console.warn("Cannot handle fart attempt - components not fully initialized");
+  /**
+   * Gets the fart meter instance
+   * @returns The fart meter
+   */
+  public getFartMeter(): FartMeter | null {
+    return this.fartMeter;
+  }
+  
+  /**
+   * Handle player holding the SPACE key (holding in the fart)
+   */
+  private handleFartHold(): void {
+    if (!this.componentsInitialized || !this.player) {
       return;
     }
     
-    // Get current dialogue safety
-    const safetyStatus = this.dialogueManager.getCurrentSafetyStatus();
+    // Reduce pressure buildup rate while holding
+    this.player.setHoldingFart(true);
+    
+    // Update player expression to show effort
+    if (this.player.getCurrentPressure() > 50) {
+      this.player.setExpression('struggling');
+    } else {
+      this.player.setExpression('uncomfortable');
+    }
+    
+    // Visual feedback
+    const holdText = this.add.text(
+      this.player.x,
+      this.player.y - 90,
+      "Holding...",
+      {
+        font: '18px Arial',
+        color: '#ffffff',
+        backgroundColor: '#333333',
+        padding: { x: 8, y: 4 }
+      }
+    ).setOrigin(0.5);
+    
+    // Store reference to remove when releasing
+    this.player.setHoldingText(holdText);
+  }
+  
+  /**
+   * Handle player releasing the SPACE key (releasing the fart)
+   */
+  private async handleFartRelease(): Promise<void> {
+    if (!this.componentsInitialized || !this.dialogueManager || !this.player || !this.audioManager) {
+      console.warn("Cannot handle fart release - components not fully initialized");
+      return;
+    }
+    
+    // Remove holding text if exists
+    this.player.clearHoldingText();
+    
+    // Stop holding fart
+    this.player.setHoldingFart(false);
+    
+    // Get current pressure
     const currentPressure = this.player.getCurrentPressure();
     
+    // Check if there's enough pressure to make a sound
     if (currentPressure < 10) {
       // Not enough pressure built up
-      this.player.setExpression('struggling');
+      this.player.setExpression('neutral');
       return;
     }
     
-    // Play fart sound
+    // Get current dialogue safety from speech rhythm analysis
+    const safetyStatus = this.dialogueManager.getCurrentSafetyStatus();
+    
+    // Play fart sound with intensity based on pressure
     this.audioManager.playFartSound(currentPressure);
     
     // Release pressure
@@ -498,10 +561,13 @@ export class GameScene extends Phaser.Scene {
     // Update player expression
     this.player.setExpression('farting');
     
+    // Show visual feedback about timing
+    this.showFartTimingFeedback(safetyStatus);
+    
     // Handle reactions based on safety status
     this.handleFartReaction(safetyStatus, currentPressure);
     
-    // Reset expression after a moment (using Promise instead of callback)
+    // Reset expression after a moment
     await new Promise<void>((resolve) => {
       setTimeout(() => {
         if (this.player) {
@@ -509,6 +575,54 @@ export class GameScene extends Phaser.Scene {
         }
         resolve();
       }, 1000);
+    });
+  }
+  
+  /**
+   * Shows visual feedback about fart timing
+   */
+  private showFartTimingFeedback(safetyStatus: 'safe' | 'neutral' | 'danger'): void {
+    if (!this.player) return;
+    
+    let feedbackText: string;
+    let textColor: string;
+    
+    switch (safetyStatus) {
+      case 'safe':
+        feedbackText = "Perfect Timing!";
+        textColor = '#00ff00';
+        break;
+      case 'neutral':
+        feedbackText = "Okay Timing";
+        textColor = '#ffff00';
+        break;
+      case 'danger':
+        feedbackText = "Bad Timing!";
+        textColor = '#ff0000';
+        break;
+    }
+    
+    // Create feedback text
+    const feedback = this.add.text(
+      this.player.x,
+      this.player.y - 120,
+      feedbackText,
+      {
+        font: 'bold 20px Arial',
+        color: textColor,
+        stroke: '#000000',
+        strokeThickness: 3
+      }
+    ).setOrigin(0.5);
+    
+    // Animate and remove
+    this.tweens.add({
+      targets: feedback,
+      y: feedback.y - 50,
+      alpha: 0,
+      duration: 1500,
+      ease: 'Power2',
+      onComplete: () => feedback.destroy()
     });
   }
   
