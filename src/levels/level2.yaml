@@ -7,7 +7,7 @@ zeroMistakesAllowed: false
 
 participants:
   - id: player
-    name: Russell
+    name: Wojak
     voiceType: Brian
 
   - id: boomer
@@ -19,7 +19,7 @@ participants:
     voiceType: Brandon
 
   - id: coworker1
-    name: Susan
+    name: Wifey
     voiceType: Salli
 
 dialogues:
@@ -52,7 +52,7 @@ dialogues:
     soundFile: coworker2_Salli_620e5e9d.mp3
 
   - speakerId: boomer
-    text: "Russell, you seem distracted. Are you prepared for your part?"
+    text: "Wojak, you seem distracted. Are you prepared for your part?"
     delay: 1000
     duration: 3500
     safetyStatus: danger
@@ -122,7 +122,7 @@ dialogues:
     soundFile: coworker2_Salli_0c41116a.mp3
 
   - speakerId: zoomer
-    text: "And with that, I'll turn it over to Russell for the technical details."
+    text: "And with that, I'll turn it over to Wojak for the technical details."
     delay: 1500
     duration: 3000
     safetyStatus: danger

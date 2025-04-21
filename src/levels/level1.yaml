@@ -7,7 +7,7 @@ zeroMistakesAllowed: false
 
 participants:
   - id: player
-    name: Russell
+    name: Wojak
     voiceType: Brian
 
   - id: boomer
@@ -19,7 +19,7 @@ participants:
     voiceType: Brandon
 
   - id: coworker1
-    name: Susan
+    name: Wifey
     voiceType: Salli
 
 dialogues:
@@ -52,7 +52,7 @@ dialogues:
     soundFile: coworker2_Salli_620e5e9d.mp3
 
   - speakerId: boomer
-    text: Russell, are you with us? You look a bit uncomfortable.
+    text: Wojak, are you with us? You look a bit uncomfortable.
     delay: 1000
     duration: 3000
     safetyStatus: danger
@@ -108,7 +108,7 @@ dialogues:
     soundFile: coworker1_Brandon_9c210d99.mp3
 
   - speakerId: boomer
-    text: "Let's wrap this up. Russell, do you have anything to add?"
+    text: "Let's wrap this up. Wojak, do you have anything to add?"
     delay: 1000
     duration: 3500
     safetyStatus: danger

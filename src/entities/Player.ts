@@ -20,6 +20,9 @@ export class Player {
     farting: 'player-farting'
   };
   
+  // Standard scale for all character images
+  private readonly STANDARD_SCALE: number = 0.5;
+  
   public x: number;
   public y: number;
   
@@ -28,28 +31,29 @@ export class Player {
     this.x = x;
     this.y = y;
     
-    // Add effect circle for farting animation (initially invisible)
-    this.effectCircle = this.scene.add.ellipse(x, y, 160, 160, 0x99aaff, 0);
-    this.effectCircle.setStrokeStyle(3, 0x99aaff, 0.8);
+    // Add effect circle for farting animation (initially invisible) - with correct color from screenshot
+    this.effectCircle = this.scene.add.ellipse(x, y, 160, 160, 0x6495ed, 0);
+    this.effectCircle.setStrokeStyle(2, 0x6495ed, 0.6);
     this.effectCircle.setVisible(false);
     
     // Create face sprite
     this.faceSprite = this.scene.add.image(x, y, this.expressionLookup.normal);
-    this.faceSprite.setScale(1.5);
+    // Increase scale for better visibility
+    this.faceSprite.setScale(0.8);
     
-    // Create name tag as a container
-    this.nameTag = this.scene.add.container(x, y + 80);
+    // Create name tag as a container positioned as in screenshot
+    this.nameTag = this.scene.add.container(x, y + 160);
     
-    // Add background for name tag
-    const nameBackground = this.scene.add.rectangle(0, 0, 150, 30, 0x0066aa, 0.8).setOrigin(0.5);
+    // Add background for name tag - style to match screenshot
+    const nameBackground = this.scene.add.rectangle(0, 0, 120, 30, 0x2d5986);
     
     // Create name text
     const nameText = this.scene.add.text(
       0, 
       0,
-      'Russell (You)',
+      'Wojak (You)',
       {
-        font: '18px Arial',
+        font: '16px Arial',
         color: '#ffffff',
         align: 'center',
       }
@@ -58,7 +62,7 @@ export class Player {
     // Create status text (above character)
     this.statusText = this.scene.add.text(
       x,
-      y - 130, // Position well above character
+      y - 100, // Adjusted position for better placement
       'CRITICAL',
       {
         font: '24px Arial',
@@ -171,16 +175,15 @@ export class Player {
             });
           }
         } else if (expression === 'farting') {
-          // Show farting text and effect
+          // Show farting text and effect - match style from screenshot
           this.statusText.setText('FARTING!');
           this.statusText.setStyle({
-            font: '24px Arial',
+            font: '18px Arial',
             color: '#ffffff',
-            backgroundColor: '#3366ff',
-            padding: { x: 12, y: 8 },
+            backgroundColor: '#4169e1', // Royal blue from screenshot
+            padding: { x: 10, y: 5 },
             align: 'center',
-            stroke: '#000000',
-            strokeThickness: 2
+            fontStyle: 'bold'
           });
           this.statusText.setVisible(true);
           

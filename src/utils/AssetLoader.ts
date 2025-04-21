@@ -8,33 +8,77 @@ export class AssetLoader {
   }
   
   public loadFaces(): void {
-    // Player faces (SVG)
-    this.scene.load.image('player-normal', 'faces/player-normal.svg');
-    this.scene.load.image('player-uncomfortable', 'faces/player-uncomfortable.svg');
-    this.scene.load.image('player-sweating', 'faces/player-sweating.svg');
-    this.scene.load.image('player-struggling', 'faces/player-struggling.svg');
-    this.scene.load.image('player-critical', 'faces/player-critical.svg');
-    this.scene.load.image('player-farting', 'faces/player-farting.svg');
-    
-    // New Boomer face assets (PNG)
-    this.scene.load.image('boomer-neutral', 'faces/boomer-neutral.png');
-    this.scene.load.image('boomer-mad', 'faces/boomer-mad.png');
-    this.scene.load.image('boomer-shock', 'faces/boomer-shock.png');
-    this.scene.load.image('boomer-talking', 'faces/boomer-talking.png');
-    this.scene.load.image('boomer-talking2', 'faces/boomer-talking2.png');
-    
-    // New Zoomer face assets (PNG)
-    this.scene.load.image('zoomer-neutral', 'faces/zoomer-neutral.png');
-    this.scene.load.image('zoomer-laughing', 'faces/zoomer-laughing.png');
-    this.scene.load.image('zoomer-shock', 'faces/zoomer-shock.png');
-    this.scene.load.image('zoomer-talking', 'faces/zoomer-talking.png');
-    this.scene.load.image('zoomer-talking2', 'faces/zoomer-talking2.png');
-    
-    // Legacy faces (SVG)
-    this.scene.load.image('coworker1-normal', 'faces/coworker1-normal.svg');
-    this.scene.load.image('coworker1-laughing', 'faces/coworker1-laughing.svg');
-    this.scene.load.image('coworker1-shocked', 'faces/coworker1-shocked.svg');
-    this.scene.load.image('coworker1-smirk', 'faces/coworker1-smirk.svg');
+    // Define all character expressions
+    const characters = {
+      player: {
+        baseId: 'player',
+        prefix: 'wojak',
+        expressions: [
+          'neutral', 'poker-face', 'talking', 'talking2', 'talking3', 'farting'
+        ],
+        aliases: {
+          'normal': 'neutral',
+          'uncomfortable': 'poker-face',
+          'sweating': 'poker-face',
+          'struggling': 'talking2',
+          'critical': 'talking3'
+        }
+      },
+      boomer: {
+        baseId: 'boomer',
+        prefix: 'boomer',
+        expressions: [
+          'neutral', 'mad', 'shock', 'talking', 'talking2'
+        ],
+        aliases: {
+          'normal': 'neutral',
+          'annoyed': 'mad',
+          'shocked': 'shock'
+        }
+      },
+      zoomer: {
+        baseId: 'zoomer',
+        prefix: 'zoomer',
+        expressions: [
+          'neutral', 'laughing', 'shock', 'talking', 'talking2'
+        ],
+        aliases: {
+          'normal': 'neutral',
+          'shocked': 'shock'
+        }
+      },
+      coworker1: {
+        baseId: 'coworker1',
+        prefix: 'wifey',
+        expressions: [
+          'neutral', 'mad', 'shock', 'talking', 'talking2'
+        ],
+        aliases: {
+          'normal': 'neutral',
+          'laughing': 'talking',
+          'shocked': 'shock',
+          'smirk': 'mad',
+          'annoyed': 'mad'
+        }
+      }
+    };
+
+    // Load all character expressions
+    Object.values(characters).forEach(char => {
+      // Load base expressions
+      char.expressions.forEach(expression => {
+        const assetKey = `${char.baseId}-${expression}`;
+        const assetPath = `faces/${char.prefix}-${expression}.png`;
+        this.scene.load.image(assetKey, assetPath);
+      });
+
+      // Load aliased expressions
+      Object.entries(char.aliases).forEach(([alias, target]) => {
+        const assetKey = `${char.baseId}-${alias}`;
+        const assetPath = `faces/${char.prefix}-${target}.png`;
+        this.scene.load.image(assetKey, assetPath);
+      });
+    });
   }
   
   public loadAudio(): void {

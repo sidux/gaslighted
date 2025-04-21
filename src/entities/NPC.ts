@@ -2,25 +2,25 @@ import Phaser from 'phaser';
 
 export class NPC {
   private scene: Phaser.Scene;
-  private faceSprite: Phaser.GameObjects.Image;
+  private readonly faceSprite: Phaser.GameObjects.Image;
   private videoFrame: Phaser.GameObjects.Rectangle;
   private nameTag: Phaser.GameObjects.Container;
-  private nameText: Phaser.GameObjects.Text;
+  private readonly nameText: Phaser.GameObjects.Text;
   private speakingIndicator: Phaser.GameObjects.Rectangle | null = null;
   private animMouthLoop: Phaser.Time.TimerEvent | null = null;
   private currentExpression: string = 'neutral';
-  private expressionText: Phaser.GameObjects.Text;
+  private readonly expressionText: Phaser.GameObjects.Text;
   private talkingFrame: number = 0; // Track which talking frame we're on
-  private hasMultiframeTalking: boolean = false; // Whether this character has multi-frame talking
+  private readonly hasMultiframeTalking: boolean = false; // Whether this character has multi-frame talking
   
   public readonly id: string;
   public readonly name: string;
   public readonly voiceType: string;
   public readonly x: number;
   public readonly y: number;
-  private readonly frameSize: number = 240; // Size of video frame square
+  private readonly frameSize: number = 320; // Further increased size of video frames
   
-  constructor(scene: Phaser.Scene, x: number, y: number, id: string, name: string, voiceType: string, scale: number = 1.0, nameYOffset: number = 70) {
+  constructor(scene: Phaser.Scene, x: number, y: number, id: string, name: string, voiceType: string, nameYOffset: number = 85) {
     this.scene = scene;
     this.x = x;
     this.y = y;
@@ -28,36 +28,25 @@ export class NPC {
     this.name = name;
     this.voiceType = voiceType;
     
-    // Create video frame background
-    this.videoFrame = scene.add.rectangle(x, y, this.frameSize, this.frameSize, 0x000000, 0.3);
-    this.videoFrame.setStrokeStyle(2, 0xffffff, 0.5);
+    // Create video frame background - thin dark border as in screenshot
+    this.videoFrame = scene.add.rectangle(x, y, this.frameSize, this.frameSize, 0x000000);
+    this.videoFrame.setStrokeStyle(1, 0x333333);
     
-    // Determine if PNG-based character with multi-frame talking
-    if (id === 'boomer' || id === 'zoomer') {
-      this.hasMultiframeTalking = true;
-      
-      // For boomer and zoomer, use -neutral instead of -normal
-      this.faceSprite = this.scene.add.image(x, y, `${id}-neutral`);
-      this.currentExpression = 'neutral';
-      
-      // PNG images need to be scaled down to fit in the frame
-      if (id === 'boomer') {
-        this.faceSprite.setScale(0.3); // Boomer may need different scaling
-      } else {
-        this.faceSprite.setScale(0.35); // Zoomer may need different scaling
-      }
-    } else {
-      // Legacy characters (SVG)
-      this.faceSprite = this.scene.add.image(x, y, `${id}-normal`);
-      this.currentExpression = 'normal';
-      this.faceSprite.setScale(scale);
-    }
+    // All characters now use PNG with standardized sizes and multi-frame talking
+    this.hasMultiframeTalking = true;
     
-    // Create name tag as a container
-    this.nameTag = this.scene.add.container(x, y + nameYOffset);
+    // Use neutral as the default expression
+    this.faceSprite = this.scene.add.image(x, y, `${id}-neutral`);
+    this.currentExpression = 'neutral';
     
-    // Add background for name tag
-    const nameBackground = this.scene.add.rectangle(0, 0, 150, 30, 0x0066aa, 0.8).setOrigin(0.5);
+    // Increase scale for better visibility
+    this.faceSprite.setScale(0.8);
+    
+    // Create name tag as a container - positioned exactly as in screenshot
+    this.nameTag = this.scene.add.container(x, y + 120);
+    
+    // Add background for name tag - style to match screenshot
+    const nameBackground = this.scene.add.rectangle(0, 0, 120, 30, 0x2d5986).setOrigin(0.5);
     
     // Create name text
     this.nameText = this.scene.add.text(
@@ -65,7 +54,7 @@ export class NPC {
       0,
       name,
       {
-        font: '18px Arial',
+        font: '16px Arial',
         color: '#ffffff',
         align: 'center',
       }
@@ -103,17 +92,25 @@ export class NPC {
   }
   
   public setExpression(expression: string): void {
-    // For boomer/zoomer, map 'normal' to 'neutral' to match the asset names
-    if ((this.id === 'boomer' || this.id === 'zoomer') && expression === 'normal') {
+    // For PNG-based characters, map 'normal' to 'neutral' to match the asset names
+    if ((this.id === 'boomer' || this.id === 'zoomer' || this.id === 'coworker1') && expression === 'normal') {
       expression = 'neutral';
     }
     
-    // For boomer/zoomer, map various expressions
-    if (this.id === 'boomer' || this.id === 'zoomer') {
+    // For PNG-based characters, map various expressions
+    if (this.id === 'boomer' || this.id === 'zoomer' || this.id === 'coworker1') {
       // Map 'shocked' to 'shock' for these characters
       if (expression === 'shocked') expression = 'shock';
-      // Map 'annoyed' to 'mad' for boomer
-      if (expression === 'annoyed' && this.id === 'boomer') expression = 'mad';
+      // Map 'annoyed' to 'mad' for boomer and wifey
+      if (expression === 'annoyed' && (this.id === 'boomer' || this.id === 'coworker1')) {
+        expression = 'mad';
+      }
+      // Map 'smirk' to appropriate equivalent
+      if (expression === 'smirk') {
+        if (this.id === 'coworker1') {
+          expression = 'mad'; // Use mad for wifey's smirk
+        }
+      }
     }
     
     // Try to set the expression if the texture exists
@@ -212,19 +209,21 @@ export class NPC {
           this.setExpression('mad');
         } else if (this.id === 'zoomer') {
           this.setExpression('shock'); // No direct 'annoyed' equivalent
+        } else if (this.id === 'coworker1') {
+          this.setExpression('mad'); // Use mad for wifey
         } else {
           this.setExpression('annoyed');
         }
         break;
       case 'medium':
-        if (this.id === 'boomer' || this.id === 'zoomer') {
+        if (this.id === 'boomer' || this.id === 'zoomer' || this.id === 'coworker1') {
           this.setExpression('shock');
         } else {
           this.setExpression('shocked');
         }
         break;
       case 'strong':
-        if (this.id === 'boomer' || this.id === 'zoomer') {
+        if (this.id === 'boomer' || this.id === 'zoomer' || this.id === 'coworker1') {
           this.setExpression('shock');
         } else {
           this.setExpression('shocked');
@@ -244,12 +243,15 @@ export class NPC {
   private createSpeakingIndicator(): void {
     // Green dot indicator when speaking - positioned inside the video frame
     this.speakingIndicator = this.scene.add.rectangle(
-      this.x - (this.frameSize/2) + 15, 
-      this.y - (this.frameSize/2) + 15,
-      10,
-      10,
+      this.x - (this.frameSize/2) + 20, 
+      this.y - (this.frameSize/2) + 20,
+      14, // Larger dot
+      14, // Larger dot
       0x00ff00
     ).setOrigin(0.5);
+    
+    // Add a glow effect
+    this.speakingIndicator.setStrokeStyle(2, 0x00ff00, 0.5);
   }
   
   private animateMouth(): void {
@@ -269,7 +271,7 @@ export class NPC {
   }
   
   private animateMouthMultiframe(): void {
-    // Cycle through talking frames for boomer/zoomer
+    // Cycle through talking frames for PNG-based characters
     this.talkingFrame = (this.talkingFrame + 1) % 4; // 4 frames in the cycle: neutral->talking->talking2->neutral
     
     let frameTexture: string;
@@ -281,6 +283,15 @@ export class NPC {
       frameTexture = `${this.id}-talking2`;
     } else {
       frameTexture = `${this.id}-neutral`;
+    }
+    
+    // Special case for wojak if we ever add that as an NPC
+    if (this.id === 'wojak' && this.talkingFrame === 2) {
+      // Use talking3 for wojak's second talking frame if available
+      const wojak3 = `${this.id}-talking3`;
+      if (this.scene.textures.exists(wojak3)) {
+        frameTexture = wojak3;
+      }
     }
     
     // Check if texture exists before setting

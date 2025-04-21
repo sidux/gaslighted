@@ -2,14 +2,12 @@ import Phaser from 'phaser';
 import { Dialogue } from '../types/Dialogue';
 import { NPC } from '../entities/NPC';
 import { AudioManager } from './AudioManager';
-import { CorporateDialogueGenerator } from '../utils/CorporateDialogueGenerator';
 import { GameScene } from '../scenes/GameScene';
 
 export class DialogueManager {
   private scene: GameScene;
   private dialogues: Dialogue[];
   private audioManager: AudioManager;
-  private dialogueGenerator: CorporateDialogueGenerator;
   private npcs: NPC[] = [];
   private currentDialogueIndex: number = -1;
   private isDialogueActive: boolean = false;
@@ -20,7 +18,6 @@ export class DialogueManager {
     this.scene = scene;
     this.dialogues = dialogues;
     this.audioManager = new AudioManager(scene);
-    this.dialogueGenerator = new CorporateDialogueGenerator();
   }
   
   public setNPCs(npcs: NPC[]): void {
@@ -102,20 +99,11 @@ export class DialogueManager {
     // Make NPC speak
     speaker.startSpeaking();
     
-    // Process the dialogue text (replace templates if needed)
-    let processedText = dialogue.text;
-    if (processedText.includes('{{') && processedText.includes('}}')) {
-      processedText = this.dialogueGenerator.processTemplate(processedText);
-    }
-    
     // Update dialogue text in the GameScene
-    this.scene.showDialogue(speaker.name, processedText);
-    
-    // Create a modified dialogue with processed text for audio playback
-    const audioDialogue = { ...dialogue, text: processedText };
+    // this.scene.showDialogue(speaker.name, dialogue.text);
     
     // Play voice audio
-    this.audioManager.playVoice(audioDialogue);
+    this.audioManager.playVoice(dialogue);
     
     // Set dialogue as active
     this.isDialogueActive = true;

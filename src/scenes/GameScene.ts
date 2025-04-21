@@ -1,12 +1,12 @@
 import Phaser from 'phaser';
-import { GameConfig } from '../config/GameConfig';
-import { LevelManager } from '../managers/LevelManager';
-import { Player } from '../entities/Player';
-import { FartMeter } from '../ui/FartMeter';
-import { NPC } from '../entities/NPC';
-import { DialogueManager } from '../managers/DialogueManager';
-import { AudioManager } from '../managers/AudioManager';
-import { Level } from '../types/Level';
+import {GameConfig} from '../config/GameConfig';
+import {LevelManager} from '../managers/LevelManager';
+import {Player} from '../entities/Player';
+import {FartMeter} from '../ui/FartMeter';
+import {NPC} from '../entities/NPC';
+import {DialogueManager} from '../managers/DialogueManager';
+import {AudioManager} from '../managers/AudioManager';
+import {Level} from '../types/Level';
 
 export class GameScene extends Phaser.Scene {
   private levelManager!: LevelManager;
@@ -43,7 +43,6 @@ export class GameScene extends Phaser.Scene {
       this.credibilityScore = 100;
       this.componentsInitialized = false;
       
-      console.log(`Level "${this.currentLevel.title}" loaded successfully`);
     } catch (error) {
       console.error("Error loading level:", error);
       alert("Error loading level. See console for details.");
@@ -59,17 +58,15 @@ export class GameScene extends Phaser.Scene {
     
     // Create dialogue box
     this.createDialogueBox();
-    
+
     // Initialize managers
-    console.log("Creating AudioManager...");
     this.audioManager = new AudioManager(this);
-    console.log("AudioManager created successfully");
-    
+
     // Setup fart meter - we'll position it once the player is created
     this.fartMeter = new FartMeter(
-      this, 
-      0, // Will be positioned later
-      0, // Will be positioned later
+        this,
+        this.cameras.main.width / 2,
+        this.cameras.main.height / 2,
       GameConfig.PRESSURE_METER_WIDTH,
       GameConfig.PRESSURE_METER_HEIGHT
     );
@@ -90,22 +87,15 @@ export class GameScene extends Phaser.Scene {
     });
     
     // Preload all audio files for this level for better performance
-    console.log(`Starting audio preload for level: ${this.currentLevel.id} - ${this.currentLevel.title}`);
-    console.log(`Level has ${this.currentLevel.dialogues.length} dialogues to preload`);
-    
     this.audioManager.preloadLevelAudio(this.currentLevel.dialogues).then(() => {
-      console.log("Audio preload completed successfully");
-      // Initialize dialogue manager after audio is preloaded
-      console.log("Creating DialogueManager with", this.currentLevel.dialogues.length, "dialogues");
       this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
-      console.log("DialogueManager created successfully");
-      
+
       // Create NPCs from level data
       this.createNPCs();
-      
-      // Calculate the center of the bottom-right quadrant
-      const playerX = this.cameras.main.width * 0.75; // Center of right side
-      const playerY = this.cameras.main.height * 0.7;  // Positioned slightly above center of bottom half
+
+      // Position player exactly according to the screenshot (bottom left)
+      const playerX = this.cameras.main.width / 6; // 1/6 of screen width
+      const playerY = this.cameras.main.height * 3 / 4; // 3/4 of screen height
       
       // Create player (after NPCs so player is on top layer)
       this.player = new Player(this, playerX, playerY);
@@ -113,9 +103,7 @@ export class GameScene extends Phaser.Scene {
       // Link dialogue manager to NPCs for expression changes
       this.dialogueManager.setNPCs(this.npcs);
       
-      // Position and setup the fart meter
-      this.fartMeter.setPosition(playerX, playerY + 140);
-      
+
       // Link player to fart meter for pressure updates
       this.player.setFartMeter(this.fartMeter);
       
@@ -161,117 +149,269 @@ export class GameScene extends Phaser.Scene {
   }
   
   private createBackground(): void {
-    // Create a dark video conference background
-    const bg = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x1a1a2e);
-    bg.setOrigin(0, 0);
-    
-    // Add grid for video feeds
-    const gridColor = 0x16213e;
-    const gridThickness = 4;
-    
-    // Horizontal line
-    this.add.rectangle(0, this.cameras.main.height / 2, this.cameras.main.width, gridThickness, gridColor).setOrigin(0, 0.5);
-    
-    // Vertical line
-    this.add.rectangle(this.cameras.main.width / 2, 0, gridThickness, this.cameras.main.height, gridColor).setOrigin(0.5, 0);
-    
-    // Add subtle quadrant background colors
-    const quadOpacity = 0.15;
-    
-    // Top Left - Purple (Boomer)
-    this.add.rectangle(0, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x9370db, quadOpacity).setOrigin(0, 0);
-    
-    // Top Right - Blue (Zoomer)
-    this.add.rectangle(this.cameras.main.width / 2, 0, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x4169e1, quadOpacity).setOrigin(0, 0);
-    
-    // Bottom Left - Teal (Coworker)
-    this.add.rectangle(0, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x30d5c8, quadOpacity).setOrigin(0, 0);
-    
-    // Bottom Right - Light Blue (Player area)
-    this.add.rectangle(this.cameras.main.width / 2, this.cameras.main.height / 2, this.cameras.main.width / 2, this.cameras.main.height / 2, 0x6495ed, quadOpacity).setOrigin(0, 0);
+    // const bg = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000);
+    // bg.setOrigin(0, 0);
+    //
+    // // Create the top black bar
+    // const topBar = this.add.rectangle(0, 0, this.cameras.main.width, 35, 0x000000);
+    // topBar.setOrigin(0, 0);
+    //
+    // // ZOOM text
+    // this.add.text(20, 15, "ZOOM", {
+    //   font: 'bold 16px Arial',
+    //   color: '#ffffff'
+    // }).setOrigin(0, 0.5);
+    //
+    // // Original Sound: Off
+    // this.add.text(140, 15, "Original Sound: Off", {
+    //   font: '14px Arial',
+    //   color: '#aaaaaa'
+    // }).setOrigin(0.5, 0.5);
+    //
+    // // Meeting time in center
+    // this.add.text(this.cameras.main.width / 2, 18, "Meeting Time: 1:56", {
+    //   font: '16px Arial',
+    //   color: '#ffffff',
+    //   fontStyle: 'bold'
+    // }).setOrigin(0.5, 0.5);
+    //
+    // // View button and Recording indicator
+    // this.add.text(this.cameras.main.width - 70, 15, "☐", {
+    //   font: '16px Arial',
+    //   color: '#ffffff'
+    // }).setOrigin(0.5, 0.5);
+    //
+    // const recBox = this.add.rectangle(this.cameras.main.width - 25, 15, 40, 22, 0xcc0000).setOrigin(0.5, 0.5);
+    // this.add.text(this.cameras.main.width - 25, 15, "● REC", {
+    //   font: '12px Arial',
+    //   color: '#ffffff'
+    // }).setOrigin(0.5, 0.5);
+    //
+    // // Video grid with exact dimensions to match screenshot
+    // // Each video is surrounded by a very thin dark gray border
+    // const borderColor = 0x333333;
+    // const borderWidth = 1;
+    //
+    // // Create the four video frames with exact positioning
+    // // Top-left (Mr. Bogdanoff)
+    // this.add.rectangle(10, 45, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
+    //   .setStrokeStyle(borderWidth, borderColor)
+    //   .setOrigin(0, 0);
+    //
+    // // Top-right (Zoomer)
+    // this.add.rectangle(this.cameras.main.width/2 + 10, 45, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
+    //   .setStrokeStyle(borderWidth, borderColor)
+    //   .setOrigin(0, 0);
+    //
+    // // Bottom-left (Wojak)
+    // this.add.rectangle(10, this.cameras.main.height/2 + 10, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
+    //   .setStrokeStyle(borderWidth, borderColor)
+    //   .setOrigin(0, 0);
+    //
+    // // Bottom-right (Wifey)
+    // this.add.rectangle(this.cameras.main.width/2 + 10, this.cameras.main.height/2 + 10, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
+    //   .setStrokeStyle(borderWidth, borderColor)
+    //   .setOrigin(0, 0);
+    //
+    // // Draw the green active speaker indicator (small box in top-left of Bogdanoff)
+    // this.add.rectangle(20, 55, 15, 15, 0x00ff00).setOrigin(0, 0);
+    //
+    // // Controls at the bottom with exact spacing to match screenshot
+    // const controls = [
+    //   { icon: "🎤", label: "Mute", x: 75 },
+    //   { icon: "📹", label: "Stop Video", x: 175 },
+    //   { icon: "🔒", label: "Security", x: 275 },
+    //   { icon: "👥", label: "Participants", x: 375 },
+    //   { icon: "💬", label: "Chat", x: 475 },
+    //   { icon: "📊", label: "Share Screen", x: 580 },
+    //   { icon: "📈", label: "Record", x: 680 },
+    // ];
+    //
+    // // Add each control button
+    // controls.forEach(control => {
+    //   // Icon
+    //   this.add.text(control.x, this.cameras.main.height - 25, control.icon, {
+    //     font: '16px Arial',
+    //     color: '#ffffff'
+    //   }).setOrigin(0.5, 0.5);
+    //
+    //   // Label below icon
+    //   this.add.text(control.x, this.cameras.main.height - 10, control.label, {
+    //     font: '11px Arial',
+    //     color: '#aaaaaa'
+    //   }).setOrigin(0.5, 0.5);
+    // });
+    //
+    // // End button (special red button)
+    // this.add.text(this.cameras.main.width - 80, this.cameras.main.height - 20, "End", {
+    //   font: '14px Arial',
+    //   color: '#ffffff',
+    //   fontStyle: 'bold'
+    // }).setOrigin(0.5, 0.5);
+    //
+    // // Credibility score display in bottom right
+    // this.add.text(this.cameras.main.width - 120, this.cameras.main.height - 60, "Credibility: 70%", {
+    //   font: '16px Arial',
+    //   color: '#ffffff',
+    //   stroke: '#000000',
+    //   strokeThickness: 1
+    // }).setOrigin(0.5, 0.5);
+    //
+    // // Add warning icon next to credibility
+    // this.add.text(this.cameras.main.width - 70, this.cameras.main.height - 60, "⚠️", {
+    //   font: '16px Arial'
+    // }).setOrigin(0.5, 0.5);
   }
   
   private setupUI(): void {
-    // Create timer text
+    // Create timer text - positioned in the Zoom-style top bar
     this.timeText = this.add.text(
-      20, 
-      20, 
-      "Meeting Time: " + this.formatTime(this.timeRemaining), 
+        this.cameras.main.width / 2,
+        18,
+        "Meeting Time: 1:56", // Exact text from screenshot
       {
-        font: '24px Arial',
+        font: '16px Arial',
         color: '#ffffff',
-        stroke: '#000000',
-        strokeThickness: 2
+        fontStyle: 'bold'
       }
-    );
-    
-    // Create credibility score
+    ).setOrigin(0.5, 0.5);
+
+    // Create credibility text in bottom right
     this.credibilityText = this.add.text(
-      this.cameras.main.width - 20, 
-      20, 
-      "Credibility: " + this.credibilityScore + "%", 
+        this.cameras.main.width - 120,
+        this.cameras.main.height - 60,
+        "Credibility: 70%", // Starting with 70% as shown in screenshot
       {
-        font: '24px Arial',
+        font: '16px Arial',
         color: '#ffffff',
         stroke: '#000000',
-        strokeThickness: 2
+        strokeThickness: 1
       }
-    ).setOrigin(1, 0);
+    ).setOrigin(0.5, 0.5);
+
+    // Add warning icon next to credibility
+    this.add.text(
+        this.cameras.main.width - 70,
+        this.cameras.main.height - 60,
+        "⚠️",
+        {
+          font: '16px Arial'
+        }
+    ).setOrigin(0.5, 0.5);
   }
   
   private createDialogueBox(): void {
-    // Create dialogue box at bottom
-    const boxHeight = 60;
-    
+    // Create dialogue box that looks like a Zoom chat message
+    const boxHeight = 80;
+
+    // Create container for the dialogue
+    const dialogueContainer = this.add.container(0, 0);
+
+    // Create chat-like background
     this.dialogueBox = this.add.rectangle(
       this.cameras.main.width / 2,
-      this.cameras.main.height - boxHeight / 2,
-      this.cameras.main.width,
+        this.cameras.main.height - boxHeight - 60, // Position above the controls
+        this.cameras.main.width * 0.6,
       boxHeight,
-      0x000000,
-      0.7
+        0x333333,
+        0.9
     ).setOrigin(0.5);
+
+    // Add rounded corners and border
+    this.dialogueBox.setStrokeStyle(1, 0x555555);
+
+    // Add chat header with "To: Everyone" like in Zoom
+    const chatHeader = this.add.text(
+        this.cameras.main.width / 2 - (this.dialogueBox.width / 2) + 10,
+        this.cameras.main.height - boxHeight - 60 - 15,
+        "Chat | To: Everyone",
+        {
+          font: '14px Arial',
+          color: '#aaaaaa'
+        }
+    );
     
     // Add text to dialogue box
     this.dialogueText = this.add.text(
-      20, 
-      this.cameras.main.height - boxHeight + 15, 
+        this.cameras.main.width / 2 - (this.dialogueBox.width / 2) + 15,
+        this.cameras.main.height - boxHeight - 60 - 5,
       "", 
       {
-        font: '20px Arial',
+        font: '16px Arial',
         color: '#ffffff',
-        wordWrap: { width: this.cameras.main.width - 40 }
+        wordWrap: {width: this.dialogueBox.width - 30}
       }
     );
+
+    // Add a close button like in Zoom
+    const closeButton = this.add.text(
+        this.cameras.main.width / 2 + (this.dialogueBox.width / 2) - 25,
+        this.cameras.main.height - boxHeight - 60 - 15,
+        "✕",
+        {
+          font: '14px Arial',
+          color: '#aaaaaa'
+      }
+    );
+
+    // Add all elements to the container
+    dialogueContainer.add([this.dialogueBox, chatHeader, this.dialogueText, closeButton]);
     
     // Hide until needed
-    this.dialogueBox.setVisible(false);
-    this.dialogueText.setVisible(false);
+    dialogueContainer.setVisible(false);
+
+    // Override the show/hide methods to manage the container
+    this.showDialogue = (speakerName, text) => {
+      // Update dialogue text with sender name in bold
+      this.dialogueText.setText(speakerName + ": " + text);
+
+      // Show dialogue container
+      dialogueContainer.setVisible(true);
+
+      // Animate it appearing from bottom
+      dialogueContainer.y = 50;
+      this.tweens.add({
+        targets: dialogueContainer,
+        y: 0,
+        duration: 200,
+        ease: 'Power2'
+      });
+    };
+
+    this.hideDialogue = () => {
+      // Animate hiding
+      this.tweens.add({
+        targets: dialogueContainer,
+        y: 50,
+        duration: 200,
+        ease: 'Power2',
+        onComplete: () => {
+          dialogueContainer.setVisible(false);
+        }
+      });
+    };
   }
   
   private createNPCs(): void {
-    // Positions for each of the character slots
+    // Position characters exactly according to the screenshot
     const positions = [
       { // Top Left - Boomer (position 0)
         id: 'boomer',
-        x: this.cameras.main.width * 0.25, 
-        y: this.cameras.main.height * 0.25,
-        scale: 0.3, // Much smaller scale for PNG images
-        nameY: 85
+        x: this.cameras.main.width / 6,
+        y: this.cameras.main.height / 4,
+        nameY: 80
       },
       { // Top Right - Zoomer (position 1)
         id: 'zoomer',
-        x: this.cameras.main.width * 0.75, 
-        y: this.cameras.main.height * 0.25,
-        scale: 0.3, // Much smaller scale for PNG images  
-        nameY: 85
+        x: this.cameras.main.width * 5 / 6,
+        y: this.cameras.main.height / 4,
+        nameY: 80
       },
-      { // Bottom Left - Coworker (position 2)
+      { // Bottom Right - Wifey
         id: 'coworker1',
-        x: this.cameras.main.width * 0.25, 
-        y: this.cameras.main.height * 0.7,
-        scale: 1.2, // SVG scale
-        nameY: 65
+        x: this.cameras.main.width * 5 / 6,
+        y: this.cameras.main.height * 3 / 4,
+        nameY: 80
       }
     ];
     
@@ -288,7 +428,6 @@ export class GameScene extends Phaser.Scene {
           participant.id,
           participant.name,
           participant.voiceType,
-          position.scale,
           position.nameY
         );
         this.npcs.push(npc);
@@ -304,7 +443,7 @@ export class GameScene extends Phaser.Scene {
     this.dialogueBox.setVisible(true);
     this.dialogueText.setVisible(true);
   }
-  
+
   public hideDialogue(): void {
     // Hide dialogue box
     this.dialogueBox.setVisible(false);
@@ -443,8 +582,8 @@ export class GameScene extends Phaser.Scene {
     // All NPCs react strongly
     this.npcs.forEach(npc => {
       npc.reactToFart('strong');
-      
-      // Add reaction text
+
+      // Add reaction text with correct styling
       const reactionText = this.add.text(
         npc.x,
         npc.y - 60,
@@ -452,8 +591,7 @@ export class GameScene extends Phaser.Scene {
         {
           font: '20px Arial',
           color: '#ff0000',
-          stroke: '#000000',
-          strokeThickness: 2
+          fontStyle: 'bold'
         }
       ).setOrigin(0.5);
       

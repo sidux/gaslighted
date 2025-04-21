@@ -29,34 +29,30 @@ export class FartMeter {
   }
   
   public update(): void {
-    // Update fill width based on current pressure
-    const fillWidth = (this.currentPressure / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
-    this.fill.width = fillWidth;
+    // Update fill height based on current pressure for vertical meter
+    // Fill from bottom to top by keeping the origin at the bottom
+    const fillHeight = (this.currentPressure / GameConfig.FART_PRESSURE_MAX) * 200; // 200px total height
+    this.fill.height = fillHeight;
     
-    // Update fill color based on pressure level
-    if (this.currentPressure < 30) {
-      this.fill.fillColor = 0x00ff00; // Green
-    } else if (this.currentPressure < 60) {
-      this.fill.fillColor = 0xffff00; // Yellow
+    // Use a consistent blue-gray color for meter fill as shown in screenshot
+    this.fill.fillColor = 0x6682bb;
+    
+    // Update the label with current pressure
+    this.label.setText(`Pressure: ${Math.floor(this.currentPressure)}%`);
+    
+    // Pulsate when critical
+    if (this.currentPressure >= GameConfig.FART_PRESSURE_CRITICAL && !this.scene.tweens.isTweening(this.fill)) {
+      this.scene.tweens.add({
+        targets: this.fill,
+        alpha: { from: 0.7, to: 1 },
+        yoyo: true,
+        repeat: -1,
+        duration: 300
+      });
     } else if (this.currentPressure < GameConfig.FART_PRESSURE_CRITICAL) {
-      this.fill.fillColor = 0xff8800; // Orange
-    } else {
-      this.fill.fillColor = 0xff0000; // Red
-      
-      // Pulsate when critical
-      if (!this.scene.tweens.isTweening(this.fill)) {
-        this.scene.tweens.add({
-          targets: this.fill,
-          alpha: { from: 0.7, to: 1 },
-          yoyo: true,
-          repeat: -1,
-          duration: 300
-        });
-      }
+      this.scene.tweens.killTweensOf(this.fill);
+      this.fill.alpha = 1;
     }
-    
-    // Update label
-    this.label.setText("Pressure: " + Math.floor(this.currentPressure) + "%");
   }
   
   public setPressure(value: number): void {
@@ -74,19 +70,19 @@ export class FartMeter {
     this.dangerZones.forEach(zone => zone.destroy());
     this.dangerZones = [];
     
-    // Create new danger zones
+    // Create new danger zones for vertical meter
     dangerZones.forEach(zone => {
-      const zoneStartX = -(this.width / 2) + 2 + (zone.start / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
-      const zoneWidth = ((zone.end - zone.start) / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
+      const zoneStartY = (this.width / 2) - 2 - (zone.end / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
+      const zoneHeight = ((zone.end - zone.start) / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
       
       const zoneRect = this.scene.add.rectangle(
-        zoneStartX,
         0,
-        zoneWidth,
-        this.height,
+        zoneStartY + zoneHeight,
+        this.height - 4,
+        zoneHeight,
         0xff0000,
         0.3
-      ).setOrigin(0, 0.5);
+      ).setOrigin(0.5, 1);
       
       this.meterContainer.add(zoneRect);
       this.dangerZones.push(zoneRect);
@@ -98,19 +94,19 @@ export class FartMeter {
     this.dangerZones.forEach(zone => zone.destroy());
     this.dangerZones = [];
     
-    // Create new safe zones
+    // Create new safe zones for vertical meter
     safeZones.forEach(zone => {
-      const zoneStartX = -(this.width / 2) + 2 + (zone.start / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
-      const zoneWidth = ((zone.end - zone.start) / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
+      const zoneStartY = (this.width / 2) - 2 - (zone.end / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
+      const zoneHeight = ((zone.end - zone.start) / GameConfig.FART_PRESSURE_MAX) * (this.width - 4);
       
       const zoneRect = this.scene.add.rectangle(
-        zoneStartX,
         0,
-        zoneWidth,
-        this.height,
+        zoneStartY + zoneHeight,
+        this.height - 4,
+        zoneHeight,
         0x00ff00,
         0.3
-      ).setOrigin(0, 0.5);
+      ).setOrigin(0.5, 1);
       
       this.meterContainer.add(zoneRect);
       this.dangerZones.push(zoneRect);
@@ -124,40 +120,42 @@ export class FartMeter {
   }
   
   private createMeter(): void {
-    // Background with gradient and rounded corners
+    // Create a vertical meter that exactly matches the screenshot
+    
+    // Background with dark gray color
     const meterBg = this.scene.add.graphics();
     
-    // Add outer stroke
-    meterBg.lineStyle(2, 0xffffff, 0.8);
-    meterBg.strokeRoundedRect(-(this.width/2), -(this.height/2), this.width, this.height, 8);
+    // Add outer stroke for the vertical bar (very thin, light gray)
+    meterBg.lineStyle(1, 0x444444, 0.8);
+    meterBg.strokeRoundedRect(-15, -100, 30, 200, 4);
     
-    // Add background fill
+    // Add background fill (dark gray)
     meterBg.fillStyle(0x333333, 1);
-    meterBg.fillRoundedRect(-(this.width/2), -(this.height/2), this.width, this.height, 8);
+    meterBg.fillRoundedRect(-15, -100, 30, 200, 4);
     
     this.meterContainer.add(meterBg);
     
-    // Fill rectangle (starts empty)
+    // Fill rectangle starting from bottom (fills upward)
     this.fill = this.scene.add.rectangle(
-      -(this.width/2) + 2,
       0,
+      100 - 2, // Starting from bottom
+      26,
       0,
-      this.height - 4,
-      0x00ff00
-    ).setOrigin(0, 0.5);
+      0x6682bb // Blue color from screenshot
+    ).setOrigin(0.5, 1); // Origin at bottom center for bottom-to-top filling
     
     this.meterContainer.add(this.fill);
     
-    // Critical threshold marker
-    const criticalX = (GameConfig.FART_PRESSURE_CRITICAL / GameConfig.FART_PRESSURE_MAX) * this.width - (this.width / 2);
+    // Critical threshold marker - horizontal red line
+    const criticalY = -30; // Exact position from screenshot
     
     const criticalLine = this.scene.add.line(
-      criticalX,
       0,
+      criticalY,
+      -15,
       0,
-      -this.height / 2 + 2,
+      15,
       0,
-      this.height / 2 - 2,
       0xff0000
     ).setLineWidth(2);
     
@@ -165,29 +163,26 @@ export class FartMeter {
     
     // Add critical text
     const criticalText = this.scene.add.text(
-      criticalX, 
-      -(this.height / 2) - 10,
+      30, 
+      criticalY,
       'CRITICAL',
       {
         font: '12px Arial',
         color: '#ff0000',
-        stroke: '#000000',
-        strokeThickness: 1
+        align: 'left'
       }
-    ).setOrigin(0.5, 1);
+    ).setOrigin(0, 0.5);
     
     this.meterContainer.add(criticalText);
     
-    // Pressure label
+    // Pressure text above meter
     this.label = this.scene.add.text(
       0,
-      0,
-      'Pressure: 0%',
+      -130,
+      'Pressure: 3%',
       {
         font: '16px Arial',
         color: '#ffffff',
-        stroke: '#000000',
-        strokeThickness: 1,
         align: 'center'
       }
     ).setOrigin(0.5);
