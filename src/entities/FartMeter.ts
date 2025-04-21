@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { GameConfig } from '../config/GameConfig';
+import {GameConfig} from '../config/GameConfig';
 
 export class FartMeter {
   private scene: Phaser.Scene;
@@ -31,9 +31,9 @@ export class FartMeter {
   public update(): void {
     // Update fill height based on current pressure for vertical meter
     // Fill from bottom to top by keeping the origin at the bottom
-    const fillHeight = (this.currentPressure / GameConfig.FART_PRESSURE_MAX) * 200; // 200px total height
-    this.fill.height = fillHeight;
-    
+
+    this.fill.height = (this.currentPressure / GameConfig.FART_PRESSURE_MAX) * -200;
+
     // Use a consistent blue-gray color for meter fill as shown in screenshot
     this.fill.fillColor = 0x6682bb;
     
