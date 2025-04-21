@@ -96,6 +96,7 @@ export class AssetLoader {
     try {
       this.scene.load.image('logo', 'images/logo.png');
       this.scene.load.image('loading-bar', 'images/loading-bar.png');
+      this.scene.load.image('fart-particle', 'images/particle.png');
     } catch (e) {
       console.warn('Some images failed to load. This is expected in development.');
     }

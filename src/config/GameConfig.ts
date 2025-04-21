@@ -3,9 +3,9 @@
  */
 export const GameConfig = {
   // Game dimensions
-  WIDTH: 800,
+  WIDTH: 1024, // Wider game area for rhythm UI
   HEIGHT: 600,
-  BACKGROUND_COLOR: 0x333333,
+  BACKGROUND_COLOR: 0x222222,
   
   // Scene keys
   SCENE_BOOT: 'boot',

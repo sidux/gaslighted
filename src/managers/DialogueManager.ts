@@ -214,9 +214,6 @@ export class DialogueManager {
     // Make NPC speak
     speaker.startSpeaking();
     
-    // Update dialogue text in the GameScene
-    // this.scene.showDialogue(speaker.name, dialogue.text);
-    
     // Record start time for timing calculations
     this.currentDialogueStartTime = this.scene.time.now;
     
@@ -225,6 +222,19 @@ export class DialogueManager {
     if (fartMeter) {
       const meterSafeZones = this.speechProcessor.getSafeZonesForMeter(dialogue);
       fartMeter.setSafeZones(meterSafeZones);
+    }
+    
+    // Get rhythm UI from game scene (if it exists)
+    const rhythmUI = (this.scene as any).rhythmUI;
+    if (rhythmUI) {
+      // Clear existing notes
+      rhythmUI.clearNotes();
+      
+      // Set active speaker
+      rhythmUI.setActiveSpeaker(dialogue.speakerId);
+      
+      // Add notes for this dialogue's safe zones
+      rhythmUI.addNotesForDialogue(dialogue.speakerId, this.safeZones, dialogue.duration);
     }
     
     // Play voice audio

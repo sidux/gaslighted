@@ -20,8 +20,11 @@ export class Character {
   private animMouthLoop: Phaser.Time.TimerEvent | null = null;
   private talkingFrame: number = 0;
   private videoFrame: Phaser.GameObjects.Rectangle | null = null;
-  private isHoldingFart: boolean = false;
+  public isHoldingFart: boolean = false;
   private holdingText: Phaser.GameObjects.Text | null = null;
+  private isFarting: boolean = false;
+  private fartingTimer: Phaser.Time.TimerEvent | null = null;
+  private fartParticles: Phaser.GameObjects.Particles.ParticleEmitter | null = null;
   
   public readonly id: string;
   public readonly name: string;
@@ -125,19 +128,37 @@ export class Character {
   public update(delta: number): void {
     // Player-specific update logic
     if (this.role === CharacterRole.PLAYER) {
-      // Calculate pressure increase rate based on holding state
+      // Calculate pressure increase rate based on state
       let pressureRate = GameConfig.FART_PRESSURE_INCREASE_RATE;
       
-      // Reduce pressure buildup rate when holding
       if (this.isHoldingFart) {
-        pressureRate *= 0.3; // 70% reduction when holding
+        // Holding fart reduces pressure increase rate significantly
+        pressureRate *= 0.2; // 80% reduction when holding
+      } else if (this.isFarting) {
+        // Actively farting reduces pressure
+        this.decreasePressure(3 * (delta / 16.667)); // Decrease pressure while farting
+        
+        // If pressure gets too low, stop farting automatically
+        if (this.fartPressure <= 5) {
+          this.stopFarting();
+        }
+      } else {
+        // Normal pressure buildup (not holding, not actively farting)
+        pressureRate *= 1.2; // 20% faster buildup when neither holding nor farting
       }
       
-      // Increase pressure over time
-      this.increasePressure(pressureRate * (delta / 16.667));
+      // If not actively farting, increase pressure
+      if (!this.isFarting) {
+        this.increasePressure(pressureRate * (delta / 16.667));
+      }
       
-      // Update facial expression based on pressure
+      // Update facial expression based on pressure and state
       this.updateFacialExpression();
+      
+      // Update particle position if farting
+      if (this.isFarting && this.fartParticles) {
+        this.fartParticles.setPosition(this.x, this.y + 50);
+      }
     }
     
     // Animate effect circle if visible (player-only)
@@ -155,11 +176,107 @@ export class Character {
   }
   
   /**
+   * Decrease pressure (used when farting)
+   */
+  public decreasePressure(amount: number): void {
+    this.fartPressure = Math.max(this.fartPressure - amount, 0);
+    
+    // Update meter if available
+    if (this.fartMeter) {
+      this.fartMeter.setPressure(this.fartPressure);
+    }
+  }
+  
+  /**
    * Set whether the player is holding in the fart
    * @param isHolding Whether the player is holding the fart
    */
   public setHoldingFart(isHolding: boolean): void {
     this.isHoldingFart = isHolding;
+    
+    if (isHolding && this.isFarting) {
+      // Player is holding fart again after releasing
+      this.stopFarting();
+    }
+  }
+  
+  /**
+   * Start continuous farting
+   */
+  public startFarting(intensity: number): void {
+    if (this.isFarting) return; // Already farting
+    
+    this.isFarting = true;
+    this.setExpression('farting');
+    
+    // Create particle emitter for fart visual effect if it doesn't exist
+    if (!this.fartParticles && this.role === CharacterRole.PLAYER) {
+      // Determine particle color based on intensity
+      const particleColor = intensity > 70 ? 0x99cc00 : 0xccff66;
+      
+      // Create particles
+      this.fartParticles = this.scene.add.particles(this.x, this.y + 50, 'fart-particle', {
+        speed: { min: 50, max: 100 },
+        angle: { min: 250, max: 290 },
+        scale: { start: 0.6, end: 0.1 },
+        lifespan: { min: 400, max: 1000 },
+        blendMode: 'ADD',
+        frequency: 30,
+        tint: particleColor
+      });
+    }
+    
+    // Enable emitter if it exists
+    if (this.fartParticles) {
+      this.fartParticles.start();
+    }
+    
+    // Set timer to continuously decrease pressure and play sound
+    if (this.fartingTimer) {
+      this.fartingTimer.remove();
+    }
+    
+    // Timer to play fart sound periodically while continuously farting
+    this.fartingTimer = this.scene.time.addEvent({
+      delay: 1000, // Play sound every second
+      callback: () => {
+        // Get audio manager from scene
+        const gameScene = this.scene as any;
+        if (gameScene.audioManager) {
+          gameScene.audioManager.playFartSound(20, false); // Low intensity continuous fart
+        }
+      },
+      callbackScope: this,
+      loop: true
+    });
+  }
+  
+  /**
+   * Stop continuous farting
+   */
+  public stopFarting(): void {
+    if (!this.isFarting) return;
+    
+    this.isFarting = false;
+    this.resetExpression();
+    
+    // Stop particles
+    if (this.fartParticles) {
+      this.fartParticles.stop();
+    }
+    
+    // Clear timer
+    if (this.fartingTimer) {
+      this.fartingTimer.remove();
+      this.fartingTimer = null;
+    }
+  }
+  
+  /**
+   * Check if character is currently farting
+   */
+  public isCurrentlyFarting(): boolean {
+    return this.isFarting;
   }
   
   /**

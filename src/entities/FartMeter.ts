@@ -31,28 +31,49 @@ export class FartMeter {
   public update(): void {
     // Update fill height based on current pressure for vertical meter
     // Fill from bottom to top by keeping the origin at the bottom
-
     this.fill.height = (this.currentPressure / GameConfig.FART_PRESSURE_MAX) * -200;
 
-    // Use a consistent blue-gray color for meter fill as shown in screenshot
-    this.fill.fillColor = 0x6682bb;
-    
-    // Update the label with current pressure
-    this.label.setText(`Pressure: ${Math.floor(this.currentPressure)}%`);
-    
-    // Pulsate when critical
-    if (this.currentPressure >= GameConfig.FART_PRESSURE_CRITICAL && !this.scene.tweens.isTweening(this.fill)) {
-      this.scene.tweens.add({
-        targets: this.fill,
-        alpha: { from: 0.7, to: 1 },
-        yoyo: true,
-        repeat: -1,
-        duration: 300
-      });
-    } else if (this.currentPressure < GameConfig.FART_PRESSURE_CRITICAL) {
+    // Change color based on pressure level
+    if (this.currentPressure >= GameConfig.FART_PRESSURE_CRITICAL) {
+      // Critical - red with pulsing
+      this.fill.fillColor = 0xff3333;
+      
+      if (!this.scene.tweens.isTweening(this.fill)) {
+        this.scene.tweens.add({
+          targets: this.fill,
+          alpha: { from: 0.7, to: 1 },
+          fillColor: { from: 0xff3333, to: 0xff0000 },
+          yoyo: true,
+          repeat: -1,
+          duration: 300
+        });
+      }
+    } else if (this.currentPressure >= 70) {
+      // High pressure - orange
+      this.fill.fillColor = 0xff9900;
+      this.scene.tweens.killTweensOf(this.fill);
+      this.fill.alpha = 1;
+    } else if (this.currentPressure >= 40) {
+      // Medium pressure - yellow
+      this.fill.fillColor = 0xffcc00;
+      this.scene.tweens.killTweensOf(this.fill);
+      this.fill.alpha = 1;
+    } else {
+      // Low pressure - blue
+      this.fill.fillColor = 0x6682bb;
       this.scene.tweens.killTweensOf(this.fill);
       this.fill.alpha = 1;
     }
+    
+    // Update the label with current pressure and status
+    let statusText = "Normal";
+    if (this.currentPressure >= GameConfig.FART_PRESSURE_CRITICAL) {
+      statusText = "CRITICAL!";
+    } else if (this.currentPressure >= 70) {
+      statusText = "High";
+    }
+    
+    this.label.setText(`Pressure: ${Math.floor(this.currentPressure)}% (${statusText})`);
   }
   
   public setPressure(value: number): void {

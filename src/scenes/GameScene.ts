@@ -6,6 +6,7 @@ import {Character, CharacterRole} from '../entities/Character';
 import {DialogueManager} from '../managers/DialogueManager';
 import {AudioManager} from '../managers/AudioManager';
 import {Level} from '../types/Level';
+import {RhythmUI} from '../entities/RhythmUI';
 
 export class GameScene extends Phaser.Scene {
   private levelManager!: LevelManager;
@@ -14,6 +15,7 @@ export class GameScene extends Phaser.Scene {
   private player!: Character;
   private npcs: Character[] = [];
   private fartMeter!: FartMeter;
+  private rhythmUI!: RhythmUI; 
   private currentLevel!: Level;
   private timeRemaining: number = 0;
   private timeText!: Phaser.GameObjects.Text;
@@ -23,6 +25,10 @@ export class GameScene extends Phaser.Scene {
   private dialogueBox!: Phaser.GameObjects.Rectangle;
   private dialogueText!: Phaser.GameObjects.Text;
   private componentsInitialized: boolean = false;
+  private playerStartedFarting: boolean = false;
+  private combo: number = 0;
+  private comboText!: Phaser.GameObjects.Text;
+  private fartParticles!: Phaser.GameObjects.Particles.ParticleEmitter;
   
   constructor() {
     super({
@@ -60,27 +66,59 @@ export class GameScene extends Phaser.Scene {
 
     // Initialize managers
     this.audioManager = new AudioManager(this);
+    
+    // Create fart particle emitter
+    this.fartParticles = this.add.particles(0, 0, 'fart-particle', {});
 
-    // Setup fart meter - we'll position it once the player is created
+    // Setup fart meter in left side of screen
     this.fartMeter = new FartMeter(
         this,
-        this.cameras.main.width / 2,
+        100, // Left side position
         this.cameras.main.height / 2,
         GameConfig.PRESSURE_METER_WIDTH,
         GameConfig.PRESSURE_METER_HEIGHT,
     );
     
-    // Setup input for fart mechanics
-    // SPACE DOWN = hold fart
+    // Setup rhythm UI (Guitar Hero style) on right side
+    this.rhythmUI = new RhythmUI(
+      this,
+      this.cameras.main.width / 2, // Right side position
+      this.cameras.main.height / 2
+    );
+    
+    // Add combo counter
+    this.comboText = this.add.text(
+      this.cameras.main.width / 2, 
+      50,
+      "COMBO: 0",
+      {
+        font: 'bold 24px Arial',
+        color: '#ffffff',
+        stroke: '#000000',
+        strokeThickness: 4
+      }
+    ).setOrigin(0.5);
+    this.comboText.setVisible(false);
+    
+    // Start with holding required - player must hold SPACE to start
+    // Create "Hold SPACE to Start" prompt
+    this.showStartPrompt();
+    
+    // Wait for initial SPACE to start the game
+    this.input.keyboard.once('keydown-SPACE', () => {
+      this.startGame();
+    });
+    
+    // Setup input for fart mechanics once game starts
     this.input.keyboard.on('keydown-SPACE', () => {
-      if (!this.gameOver && this.componentsInitialized) {
+      if (!this.gameOver && this.componentsInitialized && this.playerStartedFarting) {
         this.handleFartHold();
       }
     });
     
     // SPACE UP = release fart
     this.input.keyboard.on('keyup-SPACE', () => {
-      if (!this.gameOver && this.componentsInitialized) {
+      if (!this.gameOver && this.componentsInitialized && this.playerStartedFarting) {
         this.handleFartRelease();
       }
     });
@@ -146,7 +184,10 @@ export class GameScene extends Phaser.Scene {
   }
 
   update(time: number, delta: number): void {
-    if (this.gameOver || !this.componentsInitialized) return;
+    if (this.gameOver) return;
+    
+    // If game hasn't fully started yet, just wait for space press
+    if (!this.componentsInitialized) return;
     
     // Update player (increases pressure, updates face)
     if (this.player) {
@@ -155,6 +196,12 @@ export class GameScene extends Phaser.Scene {
       // Check for auto-release if pressure is critical
       if (this.player.shouldAutoRelease()) {
         this.handleAutoFartRelease();
+      }
+      
+      // Update RhythmUI with current pressure
+      if (this.rhythmUI) {
+        this.rhythmUI.updatePressureIndicator(this.player.getCurrentPressure());
+        this.rhythmUI.showHolding(this.player.isHoldingFart);
       }
     }
     
@@ -166,6 +213,12 @@ export class GameScene extends Phaser.Scene {
     // Update dialogue manager
     if (this.dialogueManager) {
       this.dialogueManager.update(delta);
+      
+      // Get current speaker for rhythm UI
+      const currentSpeaker = this.dialogueManager.getCurrentSpeaker();
+      if (currentSpeaker && this.rhythmUI) {
+        this.rhythmUI.setActiveSpeaker(currentSpeaker.id);
+      }
     }
     
     // Update NPCs
@@ -552,14 +605,16 @@ export class GameScene extends Phaser.Scene {
     // Get current dialogue safety from speech rhythm analysis
     const safetyStatus = this.dialogueManager.getCurrentSafetyStatus();
     
-    // Play fart sound with intensity based on pressure
+    // Start continuous farting
+    this.player.startFarting(currentPressure);
+    
+    // Play initial fart sound with intensity based on pressure
     this.audioManager.playFartSound(currentPressure);
     
-    // Release pressure
-    this.player.releasePressure();
-    
-    // Update player expression
-    this.player.setExpression('farting');
+    // Show visual feedback in the rhythm UI
+    if (this.rhythmUI) {
+      this.rhythmUI.showFartRelease(safetyStatus);
+    }
     
     // Show visual feedback about timing
     this.showFartTimingFeedback(safetyStatus);
@@ -567,15 +622,88 @@ export class GameScene extends Phaser.Scene {
     // Handle reactions based on safety status
     this.handleFartReaction(safetyStatus, currentPressure);
     
-    // Reset expression after a moment
-    await new Promise<void>((resolve) => {
-      setTimeout(() => {
-        if (this.player) {
-          this.player.resetExpression();
+    // Update combo count based on safety
+    this.updateCombo(safetyStatus);
+  }
+  
+  /**
+   * Update combo counter based on timing quality
+   */
+  private updateCombo(safetyStatus: 'safe' | 'neutral' | 'danger'): void {
+    if (safetyStatus === 'safe') {
+      // Increase combo for perfect timing
+      this.combo += 1;
+      
+      // Show combo text
+      this.comboText.setText(`COMBO: ${this.combo}x`);
+      this.comboText.setVisible(true);
+      
+      // Scale effect
+      this.tweens.add({
+        targets: this.comboText,
+        scaleX: { from: 1.5, to: 1 },
+        scaleY: { from: 1.5, to: 1 },
+        duration: 300,
+        ease: 'Back.easeOut'
+      });
+      
+      // Change color based on combo value
+      if (this.combo >= 10) {
+        this.comboText.setStyle({
+          font: 'bold 28px Arial',
+          color: '#ff00ff',
+          stroke: '#000000',
+          strokeThickness: 4
+        });
+      } else if (this.combo >= 5) {
+        this.comboText.setStyle({
+          font: 'bold 26px Arial',
+          color: '#ffff00',
+          stroke: '#000000',
+          strokeThickness: 4
+        });
+      }
+      
+      // Give bonus credibility for higher combos
+      if (this.combo >= 5) {
+        this.updateCredibility(this.combo / 2);
+      }
+      
+    } else if (safetyStatus === 'danger') {
+      // Reset combo on bad timing
+      this.resetCombo();
+    }
+  }
+  
+  /**
+   * Reset combo counter
+   */
+  private resetCombo(): void {
+    if (this.combo <= 1) {
+      this.comboText.setVisible(false);
+    } else {
+      // Broken combo effect
+      this.tweens.add({
+        targets: this.comboText,
+        y: this.comboText.y + 20,
+        alpha: 0,
+        duration: 500,
+        onComplete: () => {
+          this.combo = 0;
+          this.comboText.setText("COMBO: 0");
+          this.comboText.y -= 20;
+          this.comboText.alpha = 1;
+          this.comboText.setVisible(false);
+          this.comboText.setStyle({
+            font: 'bold 24px Arial', 
+            color: '#ffffff',
+            stroke: '#000000',
+            strokeThickness: 4
+          });
         }
-        resolve();
-      }, 1000);
-    });
+      });
+    }
+    this.combo = 0;
   }
   
   /**
@@ -794,6 +922,179 @@ export class GameScene extends Phaser.Scene {
       levelId: this.currentLevel.id,
       credibilityScore: this.credibilityScore
     });
+  }
+  
+  /**
+   * Display the start prompt for the player
+   */
+  private showStartPrompt(): void {
+    // Create container for start prompt
+    const startContainer = this.add.container(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50);
+    startContainer.setName('startPrompt');
+    
+    // Background
+    const bg = this.add.rectangle(0, 0, 400, 200, 0x000000, 0.8);
+    bg.setStrokeStyle(4, 0x6666cc);
+    startContainer.add(bg);
+    
+    // Title
+    const title = this.add.text(0, -60, "GASLIGHTED", {
+      fontFamily: 'Arial',
+      fontSize: '32px',
+      fontStyle: 'bold',
+      color: '#ffffff',
+      stroke: '#000000',
+      strokeThickness: 4
+    }).setOrigin(0.5);
+    startContainer.add(title);
+    
+    // Instructions
+    const instructions = this.add.text(0, 0, 
+      "HOLD the SPACE BAR to retain farts\nRELEASE at the right moment to let it out\n\nTime your releases with character speech\nDon't get caught!", 
+      {
+        fontFamily: 'Arial',
+        fontSize: '18px',
+        color: '#ffffff',
+        align: 'center'
+      }
+    ).setOrigin(0.5);
+    startContainer.add(instructions);
+    
+    // Start prompt
+    const startText = this.add.text(0, 70, "HOLD SPACE BAR TO START", {
+      fontFamily: 'Arial',
+      fontSize: '24px',
+      fontStyle: 'bold',
+      color: '#ffff00'
+    }).setOrigin(0.5);
+    startContainer.add(startText);
+    
+    // Add pulsing animation to start text
+    this.tweens.add({
+      targets: startText,
+      alpha: 0.5,
+      scaleX: 1.1,
+      scaleY: 1.1,
+      duration: 800,
+      yoyo: true,
+      repeat: -1
+    });
+  }
+  
+  /**
+   * Start the game when player holds SPACE initially
+   */
+  private startGame(): void {
+    // Hide start prompt
+    const startPrompt = this.children.getByName('startPrompt');
+    if (startPrompt) {
+      this.tweens.add({
+        targets: startPrompt,
+        alpha: 0,
+        y: '-=50',
+        duration: 500,
+        onComplete: () => startPrompt.destroy()
+      });
+    }
+    
+    // Show "Holding..." text
+    const holdingText = this.add.text(
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2,
+      "Holding... Release to begin!",
+      {
+        fontFamily: 'Arial',
+        fontSize: '24px',
+        color: '#ffffff',
+        backgroundColor: '#333333',
+        padding: { x: 16, y: 8 }
+      }
+    ).setOrigin(0.5);
+    
+    // When space is released, actually start the game
+    const startListener = this.input.keyboard.once('keyup-SPACE', () => {
+      // Remove the holding text
+      this.tweens.add({
+        targets: holdingText,
+        alpha: 0,
+        y: '-=50',
+        duration: 300,
+        onComplete: () => holdingText.destroy()
+      });
+      
+      // Start game timer
+      this.time.addEvent({
+        delay: 1000,
+        callback: this.updateTimer,
+        callbackScope: this,
+        loop: true
+      });
+      
+      // Mark as started
+      this.playerStartedFarting = true;
+      
+      // Show combo counter
+      this.comboText.setVisible(true);
+      
+      // Initialize the rest of the game
+      this.initializeGameComponents();
+    });
+  }
+  
+  /**
+   * Initialize the rest of the game components after player starts
+   */
+  private async initializeGameComponents(): Promise<void> {
+    try {
+      // Preload all audio files for this level for better performance
+      await this.audioManager.preloadLevelAudio(this.currentLevel.dialogues);
+      
+      this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
+
+      // Create NPCs from level data
+      this.createNPCs();
+
+      // Position player exactly according to the screenshot (bottom left)
+      const playerX = this.cameras.main.width / 6; // 1/6 of screen width
+      const playerY = this.cameras.main.height * 3 / 4; // 3/4 of screen height
+      
+      // Find player data
+      const playerData = this.currentLevel.participants.find(p => p.id === 'player');
+      
+      if (!playerData) {
+        console.error("Player data not found in level configuration");
+        return;
+      }
+      
+      // Create player (after NPCs so player is on top layer)
+      this.player = new Character(
+        this, 
+        playerX, 
+        playerY, 
+        playerData.id,
+        playerData.name,
+        playerData.voiceType,
+        CharacterRole.PLAYER
+      );
+
+      // Link dialogue manager to NPCs for expression changes
+      this.dialogueManager.setNPCs(this.npcs);
+      
+      // Link player to fart meter for pressure updates
+      this.player.setFartMeter(this.fartMeter);
+      
+      // Mark components as initialized
+      this.componentsInitialized = true;
+      
+      // Start level dialogue (don't await as we don't need to block here)
+      this.dialogueManager.startDialogue().catch(error => {
+        console.error("Error starting dialogue:", error);
+      });
+      
+      console.log("Level initialized with audio preloaded");
+    } catch (error) {
+      console.error("Error initializing game components:", error);
+    }
   }
   
   // Helper method for Promise-based delays
