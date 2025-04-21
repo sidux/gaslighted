@@ -51,7 +51,6 @@ module.exports = {
         { from: 'faces', to: 'faces' },
         { from: 'audio', to: 'audio' },
         { from: 'images', to: 'images' },
-        { from: 'levels', to: 'levels' },
       ],
     }),
   ],

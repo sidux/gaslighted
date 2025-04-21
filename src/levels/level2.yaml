@@ -1,0 +1,136 @@
+id: level2
+title: Important Client Call
+description: An important client is joining. Maintain your professionalism!
+difficulty: 2
+duration: 180  # 3 minutes
+zeroMistakesAllowed: false
+
+participants:
+  - id: player
+    name: Russell
+    voiceType: Brian
+
+  - id: boomer
+    name: Mr. Bogdanoff
+    voiceType: Bruno
+
+  - id: zoomer
+    name: Zoomer
+    voiceType: Brandon
+
+  - id: coworker1
+    name: Susan
+    voiceType: Salli
+
+dialogues:
+  - speakerId: boomer
+    text: "Welcome everyone to this important client meeting. Our investors are counting on us."
+    delay: 2000
+    duration: 4000
+    safetyStatus: danger
+    soundFile: boss_Bruno_6749b08f.mp3
+
+  - speakerId: zoomer
+    text: "I've prepared the slides for our product roadmap presentation!"
+    delay: 1000
+    duration: 3000
+    safetyStatus: neutral
+    soundFile: coworker1_Brandon_6de0238c.mp3
+
+  - speakerId: boomer
+    text: "Remember that this client represents a major opportunity. Stay focused."
+    delay: 1000
+    duration: 4500
+    safetyStatus: danger
+    soundFile: boss_Bruno_55b161e8.mp3
+
+  - speakerId: coworker1
+    text: "I'll share the latest market research numbers when they arrive."
+    delay: 1000
+    duration: 3500
+    safetyStatus: neutral
+    soundFile: coworker2_Salli_620e5e9d.mp3
+
+  - speakerId: boomer
+    text: "Russell, you seem distracted. Are you prepared for your part?"
+    delay: 1000
+    duration: 3500
+    safetyStatus: danger
+    soundFile: boss_Bruno_e19dc6b1.mp3
+
+  - speakerId: zoomer
+    text: "The client will be joining in just a minute! Everyone look professional!"
+    delay: 1000
+    duration: 3500
+    safetyStatus: danger
+    soundFile: coworker1_Brandon_a292618f.mp3
+
+  - speakerId: coworker1
+    text: "*adjusts camera* Is my lighting okay? I want to make a good impression."
+    delay: 1500
+    duration: 3500
+    safetyStatus: safe
+    soundFile: coworker2_Salli_0c41116a.mp3
+
+  - speakerId: boomer
+    text: "Let's review the key talking points before they join. First, our quarterly performance..."
+    delay: 1000
+    duration: 4500
+    safetyStatus: danger
+    soundFile: boss_Bruno_66326790.mp3
+
+  - speakerId: zoomer
+    text: "I've been working on the {{buzzword}} implementation with amazing results!"
+    delay: 1000
+    duration: 3500
+    safetyStatus: neutral
+    soundFile: coworker1_Brandon_70d7f461.mp3
+
+  - speakerId: coworker1
+    text: "The {{department}} team has prepared a detailed analysis of the {{buzzword}} metrics."
+    delay: 1000
+    duration: 4000
+    safetyStatus: neutral
+    soundFile: coworker2_Salli_b957a5a8.mp3
+
+  - speakerId: boomer
+    text: "Shh! I think they're joining now. Everyone act professional!"
+    delay: 2000
+    duration: 3000
+    safetyStatus: danger
+    soundFile: boss_Bruno_3328a51a.mp3
+
+  - speakerId: zoomer
+    text: "Welcome! We're so excited to have you join us today!"
+    delay: 2000
+    duration: 3000
+    safetyStatus: danger
+    soundFile: coworker1_Brandon_9c210d99.mp3
+
+  - speakerId: boomer
+    text: "As you can see from our presentation, our {{buzzword}} initiative has exceeded expectations."
+    delay: 2000
+    duration: 4500
+    safetyStatus: danger
+    soundFile: boss_Bruno_0ad8a44e.mp3
+
+  - speakerId: coworker1
+    text: "Our team has been working around the clock to ensure quality deliverables."
+    delay: 1500
+    duration: 3500
+    safetyStatus: danger
+    soundFile: coworker2_Salli_0c41116a.mp3
+
+  - speakerId: zoomer
+    text: "And with that, I'll turn it over to Russell for the technical details."
+    delay: 1500
+    duration: 3000
+    safetyStatus: danger
+    soundFile: coworker1_Brandon_67529201.mp3
+
+  - speakerId: boomer
+    text: "Thank you all for attending. We look forward to our partnership."
+    delay: 2000
+    duration: 3500
+    safetyStatus: neutral
+    soundFile: boss_Bruno_e38c3d89.mp3

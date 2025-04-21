@@ -117,6 +117,12 @@ export class FartMeter {
     });
   }
   
+  public setPosition(x: number, y: number): void {
+    this.x = x;
+    this.y = y;
+    this.meterContainer.setPosition(x, y);
+  }
+  
   private createMeter(): void {
     // Background with gradient and rounded corners
     const meterBg = this.scene.add.graphics();

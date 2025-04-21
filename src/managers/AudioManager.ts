@@ -1,16 +1,15 @@
 import Phaser from 'phaser';
 import { GameConfig } from '../config/GameConfig';
+import { Dialogue } from '../types/Dialogue';
 
 export class AudioManager {
   private scene: Phaser.Scene;
   private fartSounds: Phaser.Sound.BaseSound[] = [];
   private speechSounds: Map<string, Phaser.Sound.BaseSound> = new Map();
-  private audioMappings: Map<string, any> = new Map();
   private loadedAudioFiles: Set<string> = new Set();
   
   constructor(scene: Phaser.Scene) {
     this.scene = scene;
-    this.initAudio();
   }
   
   public playFartSound(intensity: number, isAuto: boolean = false): void {
@@ -26,35 +25,58 @@ export class AudioManager {
     });
   }
   
-  public async playVoice(text: string, voiceType: string, speakerId: string = "unknown"): Promise<void> {
+  public async playVoice(dialogue: Dialogue): Promise<void> {
     try {
-      // First, try to find a pre-generated audio file for this text
-      const audioFile = this.findAudioFile(text);
+      console.log(`Attempting to play voice for speaker: ${dialogue.speakerId}`);
       
-      if (audioFile) {
-        // We found a pre-generated audio file
-        console.log(`Playing pre-generated audio for: "${text.substring(0, 30)}..."`);
+      // Check if this dialogue has a sound file specified
+      if (dialogue.soundFile) {
+        console.log(`Found soundFile: ${dialogue.soundFile} for text: "${dialogue.text.substring(0, 30)}..."`);
+        
+        // Construct the full path to the audio file
+        const audioPath = `audio/dialogue/${dialogue.soundFile}`;
+        console.log(`Full audio path: ${audioPath}`);
         
         // Check if this audio file is already loaded
-        if (!this.loadedAudioFiles.has(audioFile)) {
+        if (!this.loadedAudioFiles.has(dialogue.soundFile)) {
+          console.log(`Loading audio file: ${dialogue.soundFile}`);
           // Load the audio file if not already loaded
-          this.scene.load.audio(audioFile, `audio/dialogue/${audioFile}`);
+          this.scene.load.audio(dialogue.soundFile, audioPath);
           // Wait for loading to complete
-          await new Promise<void>((resolve) => {
-            this.scene.load.once('complete', () => resolve());
+          await new Promise<void>((resolve, reject) => {
+            this.scene.load.once('complete', () => {
+              console.log(`Successfully loaded: ${dialogue.soundFile}`);
+              resolve();
+            });
+            this.scene.load.once('loaderror', (file: any) => {
+              console.error(`Failed to load audio file: ${file.src}`);
+              reject(new Error(`Failed to load audio file: ${file.src}`));
+            });
             this.scene.load.start();
           });
-          this.loadedAudioFiles.add(audioFile);
+          this.loadedAudioFiles.add(dialogue.soundFile);
+        } else {
+          console.log(`Audio file ${dialogue.soundFile} already loaded, reusing`);
         }
         
         // Play the audio
-        const sound = this.scene.sound.add(audioFile);
+        console.log(`Playing audio file: ${dialogue.soundFile}`);
+        const sound = this.scene.sound.add(dialogue.soundFile);
+        sound.once('play', () => {
+          console.log(`Sound ${dialogue.soundFile} started playing`);
+        });
+        sound.once('complete', () => {
+          console.log(`Sound ${dialogue.soundFile} finished playing`);
+        });
+        sound.once('loaderror', (error: any) => {
+          console.error(`Error playing sound ${dialogue.soundFile}:`, error);
+        });
         sound.play();
         return;
       }
       
-      // If no pre-generated audio found, fallback to placeholder method
-      console.log(`No pre-generated audio found for: "${text.substring(0, 30)}..." (${speakerId}, ${voiceType})`);
+      // If no sound file specified, fallback to placeholder method
+      console.warn(`No audio file specified for: "${dialogue.text.substring(0, 30)}..." (${dialogue.speakerId})`);
       
       // In a production environment, you might want to:
       // 1. Generate the audio on-the-fly (but this requires server-side support)
@@ -62,64 +84,72 @@ export class AudioManager {
       // 3. Show a visual indicator that the character is speaking
       
       // For now, we'll just log to console
-      console.log(`Character ${speakerId} says: "${text}" (Voice: ${voiceType})`);
+      console.log(`Character ${dialogue.speakerId} says: "${dialogue.text}"`);
     } catch (error) {
       console.error('Error playing voice:', error);
+      console.error(error); // Log the full error object for more details
     }
   }
   
-  private findAudioFile(text: string): string | null {
-    // Check each mapping file to find the audio for this text
-    for (const [levelName, mapping] of this.audioMappings.entries()) {
-      if (mapping[text]) {
-        return mapping[text];
-      }
-    }
-    
-    // Check if text needs corporate jargon template processing
-    if (text.includes('{{')) {
-      // For template text, we'll need a different approach
-      // This is a simplification - in a real scenario, you'd need to match patterns
-      console.log('Text contains templates, cannot find exact match');
-    }
-    
-    return null;
-  }
-  
-  private async initAudio(): Promise<void> {
-    // Load audio mapping files
+  // Additional method to preload all dialogue audio files for a level
+  public async preloadLevelAudio(dialogues: Dialogue[]): Promise<void> {
     try {
-      // Load all JSON mapping files from the audio/dialogue directory
-      const mappingFiles = await this.getAudioMappingFiles();
+      console.log("Starting to preload level audio files");
       
-      for (const file of mappingFiles) {
-        const levelName = file.replace('_mapping.json', '');
-        this.scene.load.json(file, `audio/dialogue/${file}`);
+      // Get all unique sound files from dialogues
+      const soundFiles = new Set<string>();
+      dialogues.forEach(dialogue => {
+        if (dialogue.soundFile) {
+          soundFiles.add(dialogue.soundFile);
+          console.log(`Found sound file to preload: ${dialogue.soundFile} for speaker: ${dialogue.speakerId}`);
+        } else {
+          console.warn(`No sound file for dialogue: "${dialogue.text.substring(0, 30)}..." (${dialogue.speakerId})`);
+        }
+      });
+      
+      console.log(`Found ${soundFiles.size} unique sound files to preload`);
+      
+      // Preload all sound files
+      let filesToLoad = 0;
+      for (const file of soundFiles) {
+        if (!this.loadedAudioFiles.has(file)) {
+          const audioPath = `audio/dialogue/${file}`;
+          console.log(`Queuing file for preload: ${file} at path: ${audioPath}`);
+          this.scene.load.audio(file, audioPath);
+          this.loadedAudioFiles.add(file);
+          filesToLoad++;
+        } else {
+          console.log(`File already loaded, skipping: ${file}`);
+        }
+      }
+      
+      // Start loading if there are any files to load
+      if (filesToLoad > 0) {
+        console.log(`Starting load of ${filesToLoad} new audio files`);
         
-        // Wait for loading to complete
-        const loadPromise = new Promise<void>((resolve) => {
+        await new Promise<void>((resolve, reject) => {
           this.scene.load.once('complete', () => {
-            // Store the mapping in our cache
-            const mapping = this.scene.cache.json.get(file);
-            this.audioMappings.set(levelName, mapping);
+            console.log(`Successfully preloaded ${filesToLoad} audio files`);
             resolve();
           });
+          
+          this.scene.load.once('loaderror', (file: any) => {
+            console.error(`Failed to preload audio file: ${file.src}`);
+            reject(new Error(`Failed to preload audio file: ${file.src}`));
+          });
+          
           this.scene.load.start();
         });
         
-        await loadPromise;
+        console.log(`Completed preloading ${filesToLoad} audio files for the level`);
+      } else {
+        console.log("No new audio files to preload");
       }
-      
-      console.log(`Loaded ${this.audioMappings.size} audio mapping files`);
     } catch (error) {
-      console.error('Error loading audio mappings:', error);
+      console.error('Error preloading level audio:', error);
+      console.error(error); // Log the full error object
+      throw error; // Re-throw to be caught by the caller
     }
-  }
-  
-  private async getAudioMappingFiles(): Promise<string[]> {
-    // In a real scenario, you would dynamically discover these files
-    // For simplicity, we'll hardcode the level1 mapping file
-    return ['level1_mapping.json'];
   }
   
   // Additional methods for managing and controlling audio

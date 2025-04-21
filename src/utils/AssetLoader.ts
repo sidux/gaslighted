@@ -58,7 +58,7 @@ export class AssetLoader {
   }
   
   public loadLevels(): void {
-    // In a real implementation, this would load YAML level definitions
-    // For now, the levels are defined in code in the LevelManager
+    // Levels are now loaded directly by the LevelManager from YAML files
+    // No need to preload them via the asset loader anymore
   }
 }

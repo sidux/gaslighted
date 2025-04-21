@@ -10,105 +10,120 @@ participants:
     name: Russell
     voiceType: Brian
 
-  - id: boss
+  - id: boomer
     name: Mr. Bogdanoff
     voiceType: Bruno
 
-  - id: coworker1
+  - id: zoomer
     name: Zoomer
     voiceType: Brandon
 
-  - id: coworker2
+  - id: coworker1
     name: Susan
     voiceType: Salli
 
 dialogues:
-  - speakerId: boss
+  - speakerId: boomer
     text: Welcome to the quarterly review meeting. We have lots to discuss today.
     delay: 2000
     duration: 4000
     safetyStatus: neutral
+    soundFile: boss_Bruno_6749b08f.mp3
 
-  - speakerId: coworker1
+  - speakerId: zoomer
     text: "Hey everyone! I'm super excited to share our Q4 results!"
     delay: 1000
     duration: 3000
     safetyStatus: neutral
+    soundFile: coworker1_Brandon_6de0238c.mp3
 
-  - speakerId: boss
+  - speakerId: boomer
     text: Before we begin, I would like to emphasize how important it is to listen carefully.
     delay: 1000
     duration: 5000
     safetyStatus: danger
+    soundFile: boss_Bruno_55b161e8.mp3
 
-  - speakerId: coworker2
+  - speakerId: coworker1
     text: "Let's synergize our efforts and leverage our core competencies going forward."
     delay: 1000
     duration: 4000
     safetyStatus: safe
+    soundFile: coworker2_Salli_620e5e9d.mp3
 
-  - speakerId: boss
+  - speakerId: boomer
     text: Russell, are you with us? You look a bit uncomfortable.
     delay: 1000
     duration: 3000
     safetyStatus: danger
+    soundFile: boss_Bruno_e19dc6b1.mp3
 
-  - speakerId: coworker1
+  - speakerId: zoomer
     text: "HAHAHA, that's so funny! I can't believe that happened!"
     delay: 1000
     duration: 3000
     safetyStatus: safe
+    soundFile: coworker1_Brandon_a292618f.mp3
 
-  - speakerId: boss
+  - speakerId: boomer
     text: As I was saying, our quarterly numbers are looking promising.
     delay: 1000
     duration: 3500
     safetyStatus: danger
+    soundFile: boss_Bruno_66326790.mp3
 
-  - speakerId: coworker2
+  - speakerId: coworker1
     text: "I've been working on the {{buzzword}} initiative with the {{department}} team."
     delay: 1000
     duration: 4000
     safetyStatus: neutral
+    soundFile: coworker2_Salli_b957a5a8.mp3
 
-  - speakerId: coworker1
+  - speakerId: zoomer
     text: "Can we {{buzzword}} the {{buzzword}} before next week's deadline?"
     delay: 1000
     duration: 3000
     safetyStatus: neutral
+    soundFile: coworker1_Brandon_70d7f461.mp3
 
-  - speakerId: boss
+  - speakerId: boomer
     text: "Everyone needs to submit their reports by EOD. No exceptions!"
     delay: 1000
     duration: 3500
     safetyStatus: danger
+    soundFile: boss_Bruno_3328a51a.mp3
 
-  - speakerId: coworker2
+  - speakerId: coworker1
     text: "*coughs loudly* Sorry about that, I'm coming down with something."
     delay: 1000
     duration: 3000
     safetyStatus: safe
+    soundFile: coworker2_Salli_0c41116a.mp3
 
-  - speakerId: coworker1
+  - speakerId: zoomer
     text: "We should totally {{buzzword}} with the new {{buzzword}} {{fillerPhrase}}!"
     delay: 1000
     duration: 4000
     safetyStatus: neutral
+    soundFile: coworker1_Brandon_9c210d99.mp3
 
-  - speakerId: boss
+  - speakerId: boomer
     text: "Let's wrap this up. Russell, do you have anything to add?"
     delay: 1000
     duration: 3500
     safetyStatus: danger
+    soundFile: boss_Bruno_0ad8a44e.mp3
 
-  - speakerId: coworker1
+  - speakerId: zoomer
     text: "*laughs* That reminds me of last year's company retreat!"
     delay: 1000
     duration: 3000
     safetyStatus: safe
+    soundFile: coworker1_Brandon_67529201.mp3
 
-  - speakerId: boss
+  - speakerId: boomer
     text: "Thank you all for attending. Meeting adjourned."
     delay: 1000
     duration: 3000
     safetyStatus: neutral
+    soundFile: boss_Bruno_e38c3d89.mp3

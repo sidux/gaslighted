@@ -16,4 +16,7 @@ export interface Dialogue {
   
   /** Safety status for farting during this dialogue */
   safetyStatus: 'safe' | 'neutral' | 'danger';
+  
+  /** The audio file to play for this dialogue (without path) */
+  soundFile?: string;
 }

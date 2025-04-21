@@ -32,6 +32,7 @@ export class DialogueManager {
   }
   
   public startDialogue(): void {
+    console.log("Starting dialogue sequence with", this.dialogues.length, "dialogues");
     // Begin dialogue sequence
     this.moveToNextDialogue();
   }
@@ -50,22 +51,28 @@ export class DialogueManager {
   }
   
   private moveToNextDialogue(): void {
+    console.log("Moving to next dialogue...");
+    
     // Stop current dialogue if any
     this.stopCurrentDialogue();
     
     // Increment dialogue index
     this.currentDialogueIndex++;
+    console.log(`Dialogue index is now ${this.currentDialogueIndex}`);
     
     // Check if we've reached the end
     if (this.currentDialogueIndex >= this.dialogues.length) {
+      console.log("Reached the end of dialogues");
       this.finalizeDialogue();
       return;
     }
     
     // Get current dialogue
     const dialogue = this.dialogues[this.currentDialogueIndex];
+    console.log(`Next dialogue: Speaker=${dialogue.speakerId}, Text="${dialogue.text.substring(0, 30)}...", SoundFile=${dialogue.soundFile || 'none'}`);
     
     // Schedule the dialogue with delay
+    console.log(`Scheduling dialogue with ${dialogue.delay}ms delay`);
     this.nextDialogueTimer = this.scene.time.delayedCall(
       dialogue.delay,
       () => this.playDialogue(dialogue),
@@ -75,14 +82,19 @@ export class DialogueManager {
   }
   
   private playDialogue(dialogue: Dialogue): void {
+    console.log(`Playing dialogue for speaker ${dialogue.speakerId}`);
+    
     // Find the speaking NPC
     const speaker = this.npcs.find(npc => npc.id === dialogue.speakerId);
     
     if (!speaker) {
       console.warn(`Speaker with ID ${dialogue.speakerId} not found!`);
+      console.log(`Available NPCs: ${this.npcs.map(npc => npc.id).join(', ')}`);
       this.moveToNextDialogue();
       return;
     }
+    
+    console.log(`Found speaker: ${speaker.name} (ID: ${speaker.id})`);
     
     // Set current safety status
     this.currentSafetyStatus = dialogue.safetyStatus;
@@ -99,8 +111,11 @@ export class DialogueManager {
     // Update dialogue text in the GameScene
     this.scene.showDialogue(speaker.name, processedText);
     
-    // Play voice audio with speaker ID
-    this.audioManager.playVoice(processedText, speaker.voiceType, dialogue.speakerId);
+    // Create a modified dialogue with processed text for audio playback
+    const audioDialogue = { ...dialogue, text: processedText };
+    
+    // Play voice audio
+    this.audioManager.playVoice(audioDialogue);
     
     // Set dialogue as active
     this.isDialogueActive = true;

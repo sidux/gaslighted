@@ -23,6 +23,7 @@ export class GameScene extends Phaser.Scene {
   private credibilityText!: Phaser.GameObjects.Text;
   private dialogueBox!: Phaser.GameObjects.Rectangle;
   private dialogueText!: Phaser.GameObjects.Text;
+  private componentsInitialized: boolean = false;
   
   constructor() {
     super({
@@ -30,13 +31,23 @@ export class GameScene extends Phaser.Scene {
     });
   }
 
-  init(data: { levelId: string }): void {
+  async init(data: { levelId: string }): Promise<void> {
     // Get the selected level
     this.levelManager = new LevelManager();
-    this.currentLevel = this.levelManager.getLevel(data.levelId);
-    this.timeRemaining = this.currentLevel.duration;
-    this.gameOver = false;
-    this.credibilityScore = 100;
+    
+    try {
+      // Get the level
+      this.currentLevel = this.levelManager.getLevel(data.levelId);
+      this.timeRemaining = this.currentLevel.duration;
+      this.gameOver = false;
+      this.credibilityScore = 100;
+      this.componentsInitialized = false;
+      
+      console.log(`Level "${this.currentLevel.title}" loaded successfully`);
+    } catch (error) {
+      console.error("Error loading level:", error);
+      alert("Error loading level. See console for details.");
+    }
   }
 
   create(): void {
@@ -50,43 +61,25 @@ export class GameScene extends Phaser.Scene {
     this.createDialogueBox();
     
     // Initialize managers
+    console.log("Creating AudioManager...");
     this.audioManager = new AudioManager(this);
-    this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
+    console.log("AudioManager created successfully");
     
-    // Create NPCs from level data
-    this.createNPCs();
-    
-    // Calculate the center of the bottom-right quadrant
-    const playerX = this.cameras.main.width * 0.75; // Center of right side
-    const playerY = this.cameras.main.height * 0.7;  // Positioned slightly above center of bottom half
-    
-    // Create player (after NPCs so player is on top layer)
-    this.player = new Player(this, playerX, playerY);
-    
-    // Link dialogue manager to NPCs for expression changes
-    this.dialogueManager.setNPCs(this.npcs);
-    
-    // Setup fart meter - positioned at bottom of player quadrant
+    // Setup fart meter - we'll position it once the player is created
     this.fartMeter = new FartMeter(
       this, 
-      playerX, // Center with player
-      playerY + 140, // Position below player
+      0, // Will be positioned later
+      0, // Will be positioned later
       GameConfig.PRESSURE_METER_WIDTH,
       GameConfig.PRESSURE_METER_HEIGHT
     );
     
-    // Link player to fart meter for pressure updates
-    this.player.setFartMeter(this.fartMeter);
-    
     // Setup input
     this.input.keyboard.on('keydown-SPACE', () => {
-      if (!this.gameOver) {
+      if (!this.gameOver && this.componentsInitialized) {
         this.handleFartAttempt();
       }
     });
-    
-    // Start level dialogue
-    this.dialogueManager.startDialogue();
     
     // Start the game timer
     this.time.addEvent({
@@ -95,27 +88,76 @@ export class GameScene extends Phaser.Scene {
       callbackScope: this,
       loop: true
     });
+    
+    // Preload all audio files for this level for better performance
+    console.log(`Starting audio preload for level: ${this.currentLevel.id} - ${this.currentLevel.title}`);
+    console.log(`Level has ${this.currentLevel.dialogues.length} dialogues to preload`);
+    
+    this.audioManager.preloadLevelAudio(this.currentLevel.dialogues).then(() => {
+      console.log("Audio preload completed successfully");
+      // Initialize dialogue manager after audio is preloaded
+      console.log("Creating DialogueManager with", this.currentLevel.dialogues.length, "dialogues");
+      this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
+      console.log("DialogueManager created successfully");
+      
+      // Create NPCs from level data
+      this.createNPCs();
+      
+      // Calculate the center of the bottom-right quadrant
+      const playerX = this.cameras.main.width * 0.75; // Center of right side
+      const playerY = this.cameras.main.height * 0.7;  // Positioned slightly above center of bottom half
+      
+      // Create player (after NPCs so player is on top layer)
+      this.player = new Player(this, playerX, playerY);
+      
+      // Link dialogue manager to NPCs for expression changes
+      this.dialogueManager.setNPCs(this.npcs);
+      
+      // Position and setup the fart meter
+      this.fartMeter.setPosition(playerX, playerY + 140);
+      
+      // Link player to fart meter for pressure updates
+      this.player.setFartMeter(this.fartMeter);
+      
+      // Mark components as initialized
+      this.componentsInitialized = true;
+      
+      // Start level dialogue
+      this.dialogueManager.startDialogue();
+      
+      console.log("Level initialized with audio preloaded");
+    }).catch(error => {
+      console.error("Error preloading audio:", error);
+    });
   }
 
   update(time: number, delta: number): void {
-    if (this.gameOver) return;
+    if (this.gameOver || !this.componentsInitialized) return;
     
     // Update player (increases pressure, updates face)
-    this.player.update(delta);
+    if (this.player) {
+      this.player.update(delta);
+      
+      // Check for auto-release if pressure is critical
+      if (this.player.shouldAutoRelease()) {
+        this.handleAutoFartRelease();
+      }
+    }
     
     // Update fart meter display
-    this.fartMeter.update();
-    
-    // Check for auto-release if pressure is critical
-    if (this.player.shouldAutoRelease()) {
-      this.handleAutoFartRelease();
+    if (this.fartMeter) {
+      this.fartMeter.update();
     }
     
     // Update dialogue manager
-    this.dialogueManager.update(delta);
+    if (this.dialogueManager) {
+      this.dialogueManager.update(delta);
+    }
     
     // Update NPCs
-    this.npcs.forEach(npc => npc.update(delta));
+    if (this.npcs.length > 0) {
+      this.npcs.forEach(npc => npc.update(delta));
+    }
   }
   
   private createBackground(): void {
@@ -270,6 +312,11 @@ export class GameScene extends Phaser.Scene {
   }
   
   private handleFartAttempt(): void {
+    if (!this.componentsInitialized || !this.dialogueManager || !this.player || !this.audioManager) {
+      console.warn("Cannot handle fart attempt - components not fully initialized");
+      return;
+    }
+    
     // Get current dialogue safety
     const safetyStatus = this.dialogueManager.getCurrentSafetyStatus();
     const currentPressure = this.player.getCurrentPressure();
@@ -303,11 +350,17 @@ export class GameScene extends Phaser.Scene {
     
     // Reset expression after a moment
     this.time.delayedCall(1000, () => {
-      this.player.resetExpression();
+      if (this.player) {
+        this.player.resetExpression();
+      }
     });
   }
   
   private handleAutoFartRelease(): void {
+    if (!this.componentsInitialized || !this.player || !this.audioManager) {
+      return;
+    }
+    
     // Auto-release is always at a bad time
     const currentPressure = this.player.getCurrentPressure();
     
@@ -325,11 +378,17 @@ export class GameScene extends Phaser.Scene {
     
     // Reset expression after a moment
     this.time.delayedCall(1000, () => {
-      this.player.resetExpression();
+      if (this.player) {
+        this.player.resetExpression();
+      }
     });
   }
   
   private handleGoodFartTiming(): void {
+    if (!this.componentsInitialized || !this.player) {
+      return;
+    }
+    
     // No penalty, got away with it
     // Add some small positive indicator
     const goodText = this.add.text(
@@ -355,6 +414,10 @@ export class GameScene extends Phaser.Scene {
   }
   
   private handleNeutralFartTiming(): void {
+    if (!this.componentsInitialized || this.npcs.length === 0) {
+      return;
+    }
+    
     // Small penalty
     this.updateCredibility(-5);
     
@@ -369,6 +432,10 @@ export class GameScene extends Phaser.Scene {
   }
   
   private handleBadFartTiming(pressureValue: number, isAuto: boolean = false): void {
+    if (!this.componentsInitialized || this.npcs.length === 0) {
+      return;
+    }
+    
     // Heavy penalty based on pressure
     const penalty = isAuto ? -30 : -15;
     this.updateCredibility(penalty);

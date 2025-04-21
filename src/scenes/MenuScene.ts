@@ -11,9 +11,26 @@ export class MenuScene extends Phaser.Scene {
     });
   }
 
-  create(): void {
+  async create(): Promise<void> {
     // Initialize level manager
     this.levelManager = new LevelManager();
+    
+    // Add loading text
+    const loadingText = this.add.text(
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2,
+      'Loading levels...',
+      {
+        font: '24px Arial',
+        color: '#ffffff'
+      }
+    ).setOrigin(0.5);
+    
+    // Wait a moment to ensure levels are loaded
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Remove loading text
+    loadingText.destroy();
     
     // Create title text
     this.add.text(
