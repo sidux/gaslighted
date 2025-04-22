@@ -1,6 +1,7 @@
 import { SafeZone, SpeechMark, SpeechSegment, VisemeType } from '../types/speech/SpeechMark';
 import { Viseme, VisemeData, visemeTypeToViseme, getKeyForViseme } from '../types/speech/Viseme';
 import { Dialogue } from '../types/Dialogue';
+import { GameConfig } from '../config/GameConfig';
 
 export class NeuralSpeechProcessor {
   // Map of dialogue sound files to their speech marks
@@ -170,11 +171,28 @@ export class NeuralSpeechProcessor {
       }
     }
     
-    // Extract viseme information for each word segment - BUT SIMPLIFIED
-    // Instead of creating a safe zone for every viseme, we'll only create one per word
-    // This will make the game much easier to play
+    // Extract viseme information for each word segment - FURTHER SIMPLIFIED
+    // Only sample a percentage of words to reduce density
+    // This will prevent overlapping and make the game much easier to play
+    
+    // Get difficulty settings from GameConfig
+    const difficulty = 1; // Default to easy (can be passed in as parameter)
+    const difficultySettings = GameConfig.DIFFICULTY_MODIFIER[difficulty];
+    
+    // Difficulty-based parameters
+    const samplingRate = difficultySettings.visemeSamplingRate;
+    const minTimeBetweenVisemes = difficultySettings.minTimeBetweenVisemes;
+    
+    // First, collect all potential viseme zones
+    const potentialZones = [];
+    
     for (const segment of segments) {
       if (segment.isSafe && segment.word.length > 0) {
+        // Only process some words based on sampling rate
+        if (Math.random() > samplingRate) {
+          continue; // Skip this word
+        }
+        
         // Find all viseme marks that fall within this word segment
         const visemesInSegment = visemeMarks.filter(mark => 
           mark.time >= segment.startTime && mark.time <= segment.endTime
@@ -201,7 +219,7 @@ export class NeuralSpeechProcessor {
           // Make duration longer for easier timing
           const visemeDuration = nextViseme 
             ? (nextViseme.time - mainViseme.time) * 1.5  // 50% longer for easier timing
-            : 300; // Default increased from 150ms to 300ms
+            : 400; // Default increased from 300ms to 400ms
           
           // Determine the viseme type - limit to just a few keys for simplicity
           // We'll use only A, E, I, O, U to make it easier to remember
@@ -238,13 +256,14 @@ export class NeuralSpeechProcessor {
               visemeType = vowels[Math.floor(Math.random() * vowels.length)];
           }
           
-          // Create the safe zone with longer timing window
-          safeZones.push({
-            startTime: mainViseme.time - 100, // Start 100ms earlier
-            endTime: mainViseme.time + visemeDuration + 100, // End 100ms later
+          // Add to potential zones
+          potentialZones.push({
+            startTime: mainViseme.time - 150, // Start 150ms earlier
+            endTime: mainViseme.time + visemeDuration + 150, // End 150ms later
             confidence: 0.8, // Higher confidence for easier gameplay
             visemeType: visemeType,
-            keyToPress: visemeType.toUpperCase()
+            keyToPress: visemeType.toUpperCase(),
+            originalTime: mainViseme.time // Keep track of original time for sorting
           });
         } else {
           // If no visemes found, create a generic safe zone for this word
@@ -252,15 +271,40 @@ export class NeuralSpeechProcessor {
           const vowels = [VisemeType.A, VisemeType.E, VisemeType.I, VisemeType.O, VisemeType.U];
           const randomViseme = vowels[Math.floor(Math.random() * vowels.length)];
           
-          // Create a longer safe zone for easier gameplay
-          safeZones.push({
-            startTime: segment.startTime - 100, // Start 100ms earlier
-            endTime: segment.endTime + 100, // End 100ms later  
+          // Add to potential zones
+          potentialZones.push({
+            startTime: segment.startTime - 150, // Start 150ms earlier
+            endTime: segment.endTime + 150, // End 150ms later  
             confidence: 0.8, // Higher confidence for easier gameplay
             visemeType: randomViseme, 
-            keyToPress: randomViseme.toUpperCase()
+            keyToPress: randomViseme.toUpperCase(),
+            originalTime: segment.startTime // Keep track of original time for sorting
           });
         }
+      }
+    }
+    
+    // Sort potential zones by their original timing
+    potentialZones.sort((a, b) => a.originalTime - b.originalTime);
+    
+    // Now filter to ensure minimum spacing between safe zones
+    let lastEndTime = 0;
+    
+    for (const zone of potentialZones) {
+      // Significantly increase minimum spacing to prevent overlapping notes
+      // Only add if there's enough spacing from previous zone
+      if (zone.startTime - lastEndTime >= minTimeBetweenVisemes * 2) { // Double the minimum time between visemes
+        // Create a copy without the originalTime property
+        const safeZone: SafeZone = {
+          startTime: zone.startTime,
+          endTime: zone.endTime,
+          confidence: zone.confidence,
+          visemeType: zone.visemeType,
+          keyToPress: zone.keyToPress
+        };
+        
+        safeZones.push(safeZone);
+        lastEndTime = zone.endTime;
       }
     }
     

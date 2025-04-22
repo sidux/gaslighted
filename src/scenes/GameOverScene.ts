@@ -130,10 +130,21 @@ export class GameOverScene extends Phaser.Scene {
      .setInteractive({ useHandCursor: true });
     
     button.on('pointerdown', () => {
-      const result = callback();
-      // If callback returns a Promise, handle potential errors
-      if (result instanceof Promise) {
-        result.catch(error => console.error("Button action error:", error));
+      try {
+        // Ensure the scene is marked for shutdown and proper cleanup before proceeding
+        const currentScene = this.scene.manager.getScene(GameConfig.SCENE_GAME_OVER);
+        if (currentScene) {
+          // Perform cleanup tasks before changing scenes
+          this.cleanup();
+        }
+        
+        // Call the callback with proper error handling
+        const result = callback();
+        if (result instanceof Promise) {
+          result.catch(error => console.error("Button action error:", error));
+        }
+      } catch (error) {
+        console.error("Error handling button click:", error);
       }
     });
     
@@ -145,5 +156,52 @@ export class GameOverScene extends Phaser.Scene {
     button.on('pointerout', () => {
       button.setStyle({ backgroundColor: '#3498db' });
     });
+  }
+  
+  /**
+   * Clean up resources before scene transition
+   */
+  private cleanup(): void {
+    try {
+      // Clear any tweens that might be active
+      if (this.tweens) {
+        this.tweens.killAll();
+      }
+      
+      // Game-specific cleanup
+      // Clear any global cache that might cause issues between game sessions
+      if (this.cache && this.cache.custom) {
+        // Clear any custom caches that might be holding references
+        // (This needs to be customized based on your game's specific needs)
+      }
+      
+      // Clear any event listeners or timers
+      if (this.time) {
+        this.time.removeAllEvents();
+      }
+      
+      // Force a cache check to ensure no texture issues
+      if (this.textures) {
+        // This doesn't actually clear textures but can help identify issues
+        console.log("Preparing to transition scenes...");
+      }
+      
+      // Ensure game objects are properly destroyed
+      this.children.each((child: any) => {
+        if (child && child.destroy && typeof child.destroy === 'function') {
+          child.destroy();
+        }
+      });
+      
+      // Allow garbage collection to clean up
+      this.time.addEvent({
+        delay: 10,
+        callback: () => {
+          console.log("Scene transition cleanup complete");
+        }
+      });
+    } catch (error) {
+      console.error("Error during scene cleanup:", error);
+    }
   }
 }

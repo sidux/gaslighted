@@ -31,6 +31,9 @@ export class GameScene extends Phaser.Scene {
   private comboText!: Phaser.GameObjects.Text;
   private fartParticles!: Phaser.GameObjects.Particles.ParticleEmitter;
   
+  // Additional tracking to help with cleanup
+  private notes: any[] = [];
+  
   constructor() {
     super({
       key: GameConfig.SCENE_GAME
@@ -57,6 +60,9 @@ export class GameScene extends Phaser.Scene {
 
   async create(): Promise<void> {
     console.log("Creating GameScene");
+    
+    // Setup scene lifecycle listeners for cleanup
+    this.setupSceneEventListeners();
     
     // Setup background
     this.createBackground();
@@ -130,12 +136,19 @@ export class GameScene extends Phaser.Scene {
     });
     
     // Add key handlers for different fart types/visemes
-    // Vowels
+    // Vowels with both keydown and keyup handlers
     this.input.keyboard.on('keydown-A', () => this.handleVisemeKeyPress('A'));
     this.input.keyboard.on('keydown-E', () => this.handleVisemeKeyPress('E'));
     this.input.keyboard.on('keydown-I', () => this.handleVisemeKeyPress('I'));
     this.input.keyboard.on('keydown-O', () => this.handleVisemeKeyPress('O'));
     this.input.keyboard.on('keydown-U', () => this.handleVisemeKeyPress('U'));
+    
+    // Add keyup handlers to unhighlight keys
+    this.input.keyboard.on('keyup-A', () => this.handleVisemeKeyRelease('A'));
+    this.input.keyboard.on('keyup-E', () => this.handleVisemeKeyRelease('E'));
+    this.input.keyboard.on('keyup-I', () => this.handleVisemeKeyRelease('I'));
+    this.input.keyboard.on('keyup-O', () => this.handleVisemeKeyRelease('O'));
+    this.input.keyboard.on('keyup-U', () => this.handleVisemeKeyRelease('U'));
     
     // Consonants
     this.input.keyboard.on('keydown-P', () => this.handleVisemeKeyPress('P'));
@@ -143,6 +156,13 @@ export class GameScene extends Phaser.Scene {
     this.input.keyboard.on('keydown-T', () => this.handleVisemeKeyPress('T'));
     this.input.keyboard.on('keydown-S', () => this.handleVisemeKeyPress('S'));
     this.input.keyboard.on('keydown-K', () => this.handleVisemeKeyPress('K'));
+    
+    // Add keyup handlers for consonants
+    this.input.keyboard.on('keyup-P', () => this.handleVisemeKeyRelease('P'));
+    this.input.keyboard.on('keyup-F', () => this.handleVisemeKeyRelease('F'));
+    this.input.keyboard.on('keyup-T', () => this.handleVisemeKeyRelease('T'));
+    this.input.keyboard.on('keyup-S', () => this.handleVisemeKeyRelease('S'));
+    this.input.keyboard.on('keyup-K', () => this.handleVisemeKeyRelease('K'));
     
     // Start the game timer
     this.time.addEvent({
@@ -215,46 +235,62 @@ export class GameScene extends Phaser.Scene {
   }
 
   update(time: number, delta: number): void {
-    if (this.gameOver) return;
+    // Add additional safety check for game over or scene shutdown
+    if (this.gameOver || !this.scene) return;
     
-    // If game hasn't fully started yet, just wait for space press
-    if (!this.componentsInitialized) return;
-    
-    // Update player (increases pressure, updates face)
-    if (this.player) {
-      this.player.update(delta);
+    try {
+      // If game hasn't fully started yet, just wait for space press
+      if (!this.componentsInitialized) return;
       
-      // Check for auto-release if pressure is critical
-      if (this.player.shouldAutoRelease()) {
-        this.handleAutoFartRelease();
+      // Update player (increases pressure, updates face) - with additional safety checks
+      if (this.player) {
+        this.player.update(delta);
+        
+        // Check for auto-release if pressure is critical - with null safety
+        if (this.player.shouldAutoRelease && this.player.shouldAutoRelease()) {
+          this.handleAutoFartRelease();
+        }
+        
+        // Update RhythmUI with current pressure - with null safety
+        if (this.rhythmUI && this.player.getCurrentPressure) {
+          this.rhythmUI.updatePressureIndicator(this.player.getCurrentPressure());
+          // Additional null check for isHoldingFart
+          if (typeof this.player.isHoldingFart !== 'undefined') {
+            this.rhythmUI.showHolding(this.player.isHoldingFart);
+          }
+        }
       }
       
-      // Update RhythmUI with current pressure
-      if (this.rhythmUI) {
-        this.rhythmUI.updatePressureIndicator(this.player.getCurrentPressure());
-        this.rhythmUI.showHolding(this.player.isHoldingFart);
+      // Update fart meter display
+      if (this.fartMeter && this.fartMeter.update) {
+        this.fartMeter.update();
       }
-    }
-    
-    // Update fart meter display
-    if (this.fartMeter) {
-      this.fartMeter.update();
-    }
-    
-    // Update dialogue manager
-    if (this.dialogueManager) {
-      this.dialogueManager.update(delta);
       
-      // Get current speaker for rhythm UI
-      const currentSpeaker = this.dialogueManager.getCurrentSpeaker();
-      if (currentSpeaker && this.rhythmUI) {
-        this.rhythmUI.setActiveSpeaker(currentSpeaker.id);
+      // Update dialogue manager
+      if (this.dialogueManager && this.dialogueManager.update) {
+        this.dialogueManager.update(delta);
+        
+        // Get current speaker for rhythm UI
+        if (this.dialogueManager.getCurrentSpeaker) {
+          const currentSpeaker = this.dialogueManager.getCurrentSpeaker();
+          if (currentSpeaker && this.rhythmUI && this.rhythmUI.setActiveSpeaker) {
+            this.rhythmUI.setActiveSpeaker(currentSpeaker.id);
+          }
+        }
       }
-    }
-    
-    // Update NPCs
-    if (this.npcs.length > 0) {
-      this.npcs.forEach(npc => npc.update(delta));
+      
+      // Update NPCs
+      if (this.npcs && Array.isArray(this.npcs) && this.npcs.length > 0) {
+        this.npcs.forEach(npc => {
+          if (npc && npc.update) {
+            npc.update(delta);
+          }
+        });
+      }
+    } catch (error) {
+      console.error("Error in GameScene update:", error);
+      // Don't set gameOver here as it might cause infinite loops if error is persistent
+      // Just log the error and try to continue
     }
   }
   
@@ -704,6 +740,13 @@ export class GameScene extends Phaser.Scene {
       }
       
       this.rhythmUI.showVisemeMatch(currentVisemeKey, accuracy);
+      
+      // Reset key highlights after a short delay
+      setTimeout(() => {
+        if (this.rhythmUI) {
+          this.rhythmUI.resetAllKeyHighlights();
+        }
+      }, 500);
     }
   }
   
@@ -908,16 +951,57 @@ export class GameScene extends Phaser.Scene {
     // Show the key press in the rhythm UI
     if (this.rhythmUI) {
       this.rhythmUI.showKeyPress(key);
+      
+      // Remove the note with this key to clean up the UI
+      this.rhythmUI.removeNoteWithKey(key);
     }
     
     // Show a visual indicator above the player to show which key is active
     this.showActiveKeyIndicator(key);
+    
+    // Add a feedback sound for pressing a key - conditionally check if sound exists
+    try {
+      if (this.sound.get('fart')) {
+        // Use the fart sound at very low volume as a placeholder 'click' since we know it exists
+        const sound = this.sound.add('fart', { volume: 0.05, rate: 2.0, detune: 1200 });
+        sound.play();
+      }
+    } catch(e) {
+      // Ignore sound errors - not critical
+      console.log("Sound effect skipped");
+    }
   }
+  
+  /**
+   * Handle when player releases a letter key
+   * @param key The key that was released
+   */
+  private handleVisemeKeyRelease(key: string): void {
+    if (!this.componentsInitialized || !this.player || !this.playerStartedFarting) {
+      return;
+    }
+    
+    // Keep the key active for gameplay purposes but visually show release
+    if (this.rhythmUI) {
+      this.rhythmUI.showKeyRelease(key);
+    }
+    
+    // Note: We're intentionally NOT clearing the player's current viseme key
+    // This allows the player to press and release a key, but still have that letter
+    // selected for when they release SPACE to fart
+  }
+
+  // Store the current active key for the player
+  private currentActiveKey: string = '';
   
   /**
    * Shows a visual indicator of which key is currently active
    */
   private showActiveKeyIndicator(key: string): void {
+    // If this is the same key we're already showing, just refresh the animation
+    const isSameKey = this.currentActiveKey === key;
+    this.currentActiveKey = key;
+    
     // Remove any existing indicators
     this.children.getAll()
       .filter(obj => obj.name === 'active-key-indicator')
@@ -925,53 +1009,42 @@ export class GameScene extends Phaser.Scene {
     
     if (!this.player) return;
     
-    // Create a new indicator
-    const indicator = this.add.container(this.player.x, this.player.y - 120);
-    indicator.setName('active-key-indicator');
+    // Don't show letter next to player face as requested
+    // Instead, only update the key in the rhythm UI
     
-    // Background
-    const bg = this.add.rectangle(0, 0, 60, 60, 0x000000, 0.7);
-    bg.setStrokeStyle(3, 0x00ffff);
-    indicator.add(bg);
+    // Update the rhythm UI to show the active key
+    if (this.rhythmUI) {
+      this.rhythmUI.showKeyPress(key);
+    }
     
-    // Key text
-    const text = this.add.text(0, 0, key, {
-      fontFamily: 'Arial',
-      fontSize: '32px',
-      color: '#ffffff',
-      fontStyle: 'bold'
-    }).setOrigin(0.5);
-    indicator.add(text);
+    // Create a simple flash effect to indicate the key was pressed
+    const flash = this.add.rectangle(
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2,
+      this.cameras.main.width,
+      this.cameras.main.height,
+      0xffffff,
+      0.1
+    );
     
-    // Add "READY" text below
-    const readyText = this.add.text(0, 30, "READY!", {
-      fontFamily: 'Arial',
-      fontSize: '16px',
-      color: '#00ff00',
-      fontStyle: 'bold'
-    }).setOrigin(0.5);
-    indicator.add(readyText);
-    
-    // Animate the indicator for visibility
+    // Quick flash animation
     this.tweens.add({
-      targets: indicator,
-      scale: { from: 0.8, to: 1.2 },
-      duration: 300,
-      yoyo: true,
-      repeat: 2,
-      ease: 'Sine.easeInOut'
+      targets: flash,
+      alpha: 0,
+      duration: 100,
+      onComplete: () => flash.destroy()
     });
     
-    // Auto-destroy after a few seconds
-    this.time.delayedCall(3000, () => {
-      this.tweens.add({
-        targets: indicator,
-        alpha: 0,
-        y: indicator.y - 30,
-        duration: 500,
-        onComplete: () => indicator.destroy()
-      });
-    });
+    // Play a sound effect for key press
+    try {
+      if (this.sound.get('fart')) {
+        const sound = this.sound.add('fart', { volume: 0.05, rate: 2.0, detune: 1200 });
+        sound.play();
+      }
+    } catch(e) {
+      // Ignore sound errors - not critical
+      console.log("Sound effect skipped");
+    }
   }
 
   private async handleAutoFartRelease(): Promise<void> {
@@ -1135,16 +1208,165 @@ export class GameScene extends Phaser.Scene {
   }
   
   private async triggerGameOver(success: boolean): Promise<void> {
+    // Mark as game over immediately to prevent further updates
     this.gameOver = true;
     
-    // Transition to game over scene after a short delay (using Promise)
-    await this.delay(2000);
+    console.log("Game over triggered:", success ? "Success" : "Failure");
     
-    this.scene.start(GameConfig.SCENE_GAME_OVER, {
-      success,
-      levelId: this.currentLevel.id,
-      credibilityScore: this.credibilityScore
-    });
+    try {
+      // Stop any ongoing audio to prevent errors
+      if (this.audioManager && this.audioManager.stopAllSounds) {
+        try {
+          this.audioManager.stopAllSounds();
+        } catch (e) {
+          console.warn("Error stopping audio:", e);
+        }
+      }
+      
+      // Stop any active dialogue
+      if (this.dialogueManager && this.dialogueManager.stopDialogue) {
+        try {
+          this.dialogueManager.stopDialogue();
+        } catch (e) {
+          console.warn("Error stopping dialogue:", e);
+        }
+      }
+      
+      // Clean up NPCs to prevent callback errors during scene transition
+      if (this.npcs && Array.isArray(this.npcs)) {
+        for (const npc of this.npcs) {
+          if (npc && npc.stopSpeaking) {
+            try {
+              npc.stopSpeaking();
+            } catch (e) {
+              console.warn("Error stopping NPC speech:", e);
+            }
+          }
+        }
+      }
+      
+      // Clean up player if it exists
+      if (this.player) {
+        if (this.player.stopFarting) {
+          try {
+            this.player.stopFarting();
+          } catch (e) {
+            console.warn("Error stopping player farting:", e);
+          }
+        }
+      }
+      
+      // Additional cleanup of scene resources
+      this.performSceneCleanup();
+      
+      // Short delay to allow for visual feedback before transitioning
+      console.log("Delaying before transition...");
+      await this.delay(2000);
+      
+      // Make sure we clean up stuff that might cause errors during transition
+      this.notes = [];
+      
+      // Clear any timers or event listeners
+      if (this.time) {
+        try {
+          this.time.removeAllEvents();
+        } catch (e) {
+          console.warn("Error removing time events:", e);
+        }
+      }
+      
+      // Save important data for transition
+      const levelId = this.currentLevel ? this.currentLevel.id : "";
+      const finalScore = this.credibilityScore || 0;
+      
+      // Only transition if scene still exists
+      if (this.scene && this.scene.start) {
+        console.log("Transitioning to game over scene...");
+        
+        // Reset all references before transitioning
+        const player = this.player;
+        const npcs = this.npcs;
+        
+        // Null out references before transition
+        this.player = null as any;
+        this.npcs = [];
+        this.dialogueManager = null as any;
+        this.audioManager = null as any;
+        
+        // Transition with minimal data
+        try {
+          this.scene.start(GameConfig.SCENE_GAME_OVER, {
+            success,
+            levelId,
+            credibilityScore: finalScore
+          });
+        } catch (e) {
+          console.error("Error during scene transition:", e);
+          
+          // Last resort emergency transition
+          this.scene.start(GameConfig.SCENE_GAME_OVER);
+        }
+      } else {
+        console.error("Cannot transition - scene is not available");
+      }
+    } catch (error) {
+      console.error("Error during game over transition:", error);
+      
+      // As a fallback, try to force the transition
+      if (this.scene) {
+        try {
+          // Last resort - force a hard restart of the game over scene
+          this.scene.stop(GameConfig.SCENE_GAME);
+          this.scene.start(GameConfig.SCENE_GAME_OVER, {
+            success,
+            levelId: this.currentLevel ? this.currentLevel.id : "",
+            credibilityScore: this.credibilityScore || 0
+          });
+        } catch (e) {
+          console.error("Critical error during fallback transition:", e);
+          // Can't do much more at this point
+        }
+      }
+    }
+  }
+  
+  /**
+   * Additional cleanup of scene resources
+   */
+  private performSceneCleanup(): void {
+    try {
+      console.log("Performing scene cleanup...");
+      
+      // Stop all tweens
+      if (this.tweens) {
+        this.tweens.killAll();
+      }
+      
+      // Clear particles if they exist
+      if (this.fartParticles) {
+        this.fartParticles.stop();
+        this.fartParticles.destroy();
+      }
+      
+      // Cleanup rhythm UI
+      if (this.rhythmUI) {
+        // Clear any timers or animations in rhythm UI if needed
+      }
+      
+      // Remove key handlers to prevent memory leaks
+      if (this.input && this.input.keyboard) {
+        this.input.keyboard.removeAllKeys();
+      }
+      
+      // Force a garbage collection cycle by nullifying references
+      this.dialogueManager = null as any;
+      this.npcs = [];
+      this.player = null as any;
+      
+      console.log("Scene cleanup complete");
+    } catch (error) {
+      console.error("Error in scene cleanup:", error);
+    }
   }
   
   /**
@@ -1419,5 +1641,101 @@ export class GameScene extends Phaser.Scene {
   
   private delay(ms: number): Promise<void> {
     return new Promise<void>(resolve => setTimeout(resolve, ms));
+  }
+  
+  /**
+   * Add listeners for scene lifecycle events
+   */
+  private setupSceneEventListeners(): void {
+    // Listen for scene shutdown event
+    this.events.once('shutdown', this.onSceneShutdown, this);
+    this.events.once('destroy', this.onSceneDestroy, this);
+  }
+  
+  /**
+   * Cleanup method that runs when the scene is shut down
+   */
+  private onSceneShutdown = (): void => {
+    console.log("GameScene shutdown event triggered");
+    
+    try {
+      // Mark game as over to stop any updates
+      this.gameOver = true;
+      
+      // Stop audio
+      if (this.audioManager) {
+        this.audioManager.stopAllSounds();
+      }
+      
+      // Stop dialogue
+      if (this.dialogueManager) {
+        this.dialogueManager.stopDialogue();
+      }
+      
+      // Clear all timers
+      if (this.time) {
+        this.time.removeAllEvents();
+      }
+      
+      // Stop all tweens
+      if (this.tweens) {
+        this.tweens.killAll();
+      }
+      
+      // Clear input handlers
+      if (this.input && this.input.keyboard) {
+        this.input.keyboard.removeAllKeys();
+      }
+      
+      // Clean up NPCs
+      if (this.npcs && Array.isArray(this.npcs)) {
+        for (const npc of this.npcs) {
+          if (npc.stopSpeaking) {
+            try {
+              npc.stopSpeaking();
+            } catch (e) {
+              console.warn("Error stopping NPC speech:", e);
+            }
+          }
+        }
+      }
+      
+      // Clean up player
+      if (this.player) {
+        if (this.player.stopFarting) {
+          try {
+            this.player.stopFarting();
+          } catch (e) {
+            console.warn("Error stopping player farting:", e);
+          }
+        }
+      }
+      
+      // Nullify references to aid garbage collection
+      this.dialogueManager = null as any;
+      this.audioManager = null as any;
+      this.player = null as any;
+      this.npcs = [];
+      this.fartMeter = null as any;
+      this.rhythmUI = null as any;
+      this.notes = [];
+      
+      console.log("GameScene shutdown complete");
+    } catch (error) {
+      console.error("Error in GameScene shutdown:", error);
+    }
+  }
+  
+  /**
+   * Cleanup method that runs when the scene is destroyed
+   */
+  private onSceneDestroy = (): void => {
+    console.log("GameScene destroy event triggered");
+    try {
+      // Any additional cleanup specific to scene destruction
+      // Most cleanup should already be handled in onSceneShutdown
+    } catch (error) {
+      console.error("Error in GameScene destroy handler:", error);
+    }
   }
 }

@@ -44,8 +44,32 @@ export const GameConfig = {
   
   // Difficulty settings
   DIFFICULTY_MODIFIER: {
-    1: { pressureRate: 0.5, autoReleaseChance: 0.01 },
-    2: { pressureRate: 0.7, autoReleaseChance: 0.02 },
-    3: { pressureRate: 1.0, autoReleaseChance: 0.03 }
+    // Easy mode
+    1: { 
+      pressureRate: 0.5, 
+      autoReleaseChance: 0.01,
+      visemeSamplingRate: 0.25, // Only 25% of potential visemes
+      minTimeBetweenVisemes: 1000, // 1 second minimum spacing
+      noteFallSpeed: 1.3, // 30% slower notes
+      noteLimit: 3 // Max 3 notes at once
+    },
+    // Medium mode
+    2: { 
+      pressureRate: 0.7, 
+      autoReleaseChance: 0.02,
+      visemeSamplingRate: 0.4, // 40% of potential visemes
+      minTimeBetweenVisemes: 800, // 0.8 second minimum spacing
+      noteFallSpeed: 1.1, // 10% slower notes
+      noteLimit: 4 // Max 4 notes at once
+    },
+    // Hard mode
+    3: { 
+      pressureRate: 1.0, 
+      autoReleaseChance: 0.03,
+      visemeSamplingRate: 0.6, // 60% of potential visemes
+      minTimeBetweenVisemes: 600, // 0.6 second minimum spacing
+      noteFallSpeed: 1.0, // Normal speed
+      noteLimit: 5 // Max 5 notes at once
+    }
   }
 };

@@ -241,96 +241,126 @@ export class DialogueManager {
   }
   
   private async playDialogue(dialogue: Dialogue): Promise<void> {
-    // If there's already an active dialogue, stop it first
-    if (this.isDialogueActive) {
-      console.log("Stopping active dialogue before starting new one");
-      this.stopCurrentDialogue();
-    }
-    
-    console.log(`Playing dialogue for speaker ${dialogue.speakerId}`);
-    
-    // Store current dialogue reference
-    this.currentDialogue = dialogue;
-    
-    // Find the speaking NPC
-    const speaker = this.npcs.find(npc => npc.id === dialogue.speakerId);
-    
-    if (!speaker) {
-      console.warn(`Speaker with ID ${dialogue.speakerId} not found!`);
-      console.log(`Available NPCs: ${this.npcs.map(npc => npc.id).join(', ')}`);
+    try {
+      // If there's already an active dialogue, stop it first
+      if (this.isDialogueActive) {
+        console.log("Stopping active dialogue before starting new one");
+        this.stopCurrentDialogue();
+      }
+      
+      console.log(`Playing dialogue for speaker ${dialogue.speakerId}`);
+      
+      // Store current dialogue reference
+      this.currentDialogue = dialogue;
+      
+      // Find the speaking NPC
+      const speaker = this.npcs.find(npc => npc.id === dialogue.speakerId);
+      
+      if (!speaker) {
+        console.warn(`Speaker with ID ${dialogue.speakerId} not found!`);
+        console.log(`Available NPCs: ${this.npcs.map(npc => npc.id).join(', ')}`);
+        await this.moveToNextDialogue();
+        return;
+      }
+      
+      console.log(`Found speaker: ${speaker.name} (ID: ${speaker.id})`);
+      
+      // Get safe zones for this dialogue from speech processor
+      this.safeZones = this.speechProcessor.getSafeZones(dialogue);
+      
+      // Set current safety status to neutral initially
+      // It will be updated dynamically based on the speech rhythm
+      this.currentSafetyStatus = 'neutral';
+      
+      // Make NPC speak
+      speaker.startSpeaking();
+      
+      // Record start time for timing calculations
+      this.currentDialogueStartTime = this.scene.time.now;
+      
+      // Update player's fart meter with safe zones
+      const fartMeter = this.scene.getFartMeter();
+      if (fartMeter) {
+        const meterSafeZones = this.speechProcessor.getSafeZonesForMeter(dialogue);
+        fartMeter.setSafeZones(meterSafeZones);
+      }
+      
+      // Get rhythm UI from game scene (if it exists)
+      const rhythmUI = (this.scene as any).rhythmUI;
+      if (rhythmUI) {
+        // Clear existing notes
+        rhythmUI.clearNotes();
+        
+        // Reset all key highlights to ensure clean state
+        rhythmUI.resetAllKeyHighlights();
+        
+        // Set active speaker
+        rhythmUI.setActiveSpeaker(dialogue.speakerId);
+        
+        // Get viseme data from speech processor
+        const visemeData = this.speechProcessor.getVisemeData(dialogue);
+        
+        // Add viseme notes to rhythm UI
+        rhythmUI.addUpcomingVisemes(visemeData, dialogue.duration);
+      }
+      
+      // Set dialogue as active before playing audio
+      this.isDialogueActive = true;
+      
+      // Play voice audio
+      await this.audioManager.playVoice(dialogue);
+      
+      // Wait for complete dialogue duration with error handling
+      try {
+        await this.delay(dialogue.duration);
+      } catch (error) {
+        console.warn("Error during dialogue delay:", error);
+      }
+      
+      // Make sure we only continue if the scene still exists
+      if (!this.scene || !this.scene.scene.isActive()) {
+        console.log("Scene no longer active, stopping dialogue sequence");
+        return;
+      }
+      
+      // Stop speaking
+      speaker.stopSpeaking();
+      
+      // Hide dialogue text
+      this.scene.hideDialogue();
+      
+      // Hide rhythm display
+      if (this.speechRhythmDisplay) {
+        this.speechRhythmDisplay.setVisible(false);
+      }
+      
+      // Mark dialogue as inactive
+      this.isDialogueActive = false;
+      this.currentDialogue = null;
+      
+      // Clear safe zones
+      if (fartMeter) {
+        fartMeter.clearSafeZones();
+      }
+      
+      // Add a small delay before moving to next dialogue to prevent cutting off
+      await this.delay(300);
+      
+      // Move to next dialogue
       await this.moveToNextDialogue();
-      return;
-    }
-    
-    console.log(`Found speaker: ${speaker.name} (ID: ${speaker.id})`);
-    
-    // Get safe zones for this dialogue from speech processor
-    this.safeZones = this.speechProcessor.getSafeZones(dialogue);
-    
-    // Set current safety status to neutral initially
-    // It will be updated dynamically based on the speech rhythm
-    this.currentSafetyStatus = 'neutral';
-    
-    // Make NPC speak
-    speaker.startSpeaking();
-    
-    // Record start time for timing calculations
-    this.currentDialogueStartTime = this.scene.time.now;
-    
-    // Update player's fart meter with safe zones
-    const fartMeter = this.scene.getFartMeter();
-    if (fartMeter) {
-      const meterSafeZones = this.speechProcessor.getSafeZonesForMeter(dialogue);
-      fartMeter.setSafeZones(meterSafeZones);
-    }
-    
-    // Get rhythm UI from game scene (if it exists)
-    const rhythmUI = (this.scene as any).rhythmUI;
-    if (rhythmUI) {
-      // Clear existing notes
-      rhythmUI.clearNotes();
+    } catch (error) {
+      console.error("Error in playDialogue:", error);
       
-      // Set active speaker
-      rhythmUI.setActiveSpeaker(dialogue.speakerId);
+      // Attempt to recover by moving to next dialogue
+      this.isDialogueActive = false;
+      this.currentDialogue = null;
       
-      // Get viseme data from speech processor
-      const visemeData = this.speechProcessor.getVisemeData(dialogue);
-      
-      // Add viseme notes to rhythm UI
-      rhythmUI.addUpcomingVisemes(visemeData, dialogue.duration);
+      try {
+        await this.moveToNextDialogue();
+      } catch (moveError) {
+        console.error("Failed to recover dialogue sequence:", moveError);
+      }
     }
-    
-    // Play voice audio
-    await this.audioManager.playVoice(dialogue);
-    
-    // Set dialogue as active
-    this.isDialogueActive = true;
-    
-    // Wait for dialogue duration
-    await this.delay(dialogue.duration);
-    
-    // Stop speaking
-    speaker.stopSpeaking();
-    
-    // Hide dialogue text
-    this.scene.hideDialogue();
-    
-    // Hide rhythm display
-    if (this.speechRhythmDisplay) {
-      this.speechRhythmDisplay.setVisible(false);
-    }
-    
-    // Mark dialogue as inactive
-    this.isDialogueActive = false;
-    this.currentDialogue = null;
-    
-    // Clear safe zones
-    if (fartMeter) {
-      fartMeter.clearSafeZones();
-    }
-    
-    // Move to next dialogue
-    await this.moveToNextDialogue();
   }
   
   // Helper method for Promise-based delays
@@ -339,6 +369,33 @@ export class DialogueManager {
   }
   
   private stopCurrentDialogue(): void {
+    // Clear any pending dialogue timer
+    if (this.nextDialogueTimer) {
+      this.nextDialogueTimer.remove();
+      this.nextDialogueTimer = null;
+    }
+    
+    // Stop current speaker if any
+    const currentSpeaker = this.getCurrentSpeaker();
+    if (currentSpeaker) {
+      currentSpeaker.stopSpeaking();
+    }
+    
+    // Stop any playing dialogue audio
+    this.audioManager.stopAllSpeechSounds();
+    
+    // Hide dialogue text
+    this.scene.hideDialogue();
+    
+    // Set dialogue as inactive
+    this.isDialogueActive = false;
+  }
+  
+  /**
+   * Public method to stop the dialogue, useful for cleanup during game over
+   */
+  public stopDialogue(): void {
+    // Same implementation as the private method
     // Clear any pending dialogue timer
     if (this.nextDialogueTimer) {
       this.nextDialogueTimer.remove();

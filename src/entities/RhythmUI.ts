@@ -196,6 +196,9 @@ export class RhythmUI {
         // Get the background (first child)
         const bg = container.list[0] as Phaser.GameObjects.Rectangle;
         
+        // Stop any existing tweens
+        this.scene.tweens.killTweensOf(container);
+        
         // Highlight or unhighlight
         if (highlight) {
           bg.setFillStyle(0x00aaff, 1);
@@ -211,11 +214,19 @@ export class RhythmUI {
             scaleY: 1.2,
             duration: 100,
             yoyo: true,
-            ease: 'Sine.easeInOut'
+            repeat: 0,
+            ease: 'Sine.easeInOut',
+            onComplete: () => {
+              // Make sure scale resets properly
+              container.setScale(1);
+            }
           });
         } else {
           bg.setFillStyle(0x444444, 1);
           bg.setStrokeStyle(1, 0x666666);
+          
+          // Reset the scale
+          container.setScale(1);
           
           // Remove from active keys
           this.activeKeys.delete(keyUpper);
@@ -263,6 +274,24 @@ export class RhythmUI {
     
     // Unhighlight the key in the UI
     this.highlightKey(keyUpper, false);
+    
+    // Remove from active keys set
+    this.activeKeys.delete(keyUpper);
+    
+    // Add visual feedback for key release
+    for (let i = 0; i < this.keyTexts.length; i++) {
+      if (this.keyTexts[i].text === keyUpper) {
+        const container = this.keyIndicators[i];
+        
+        // Flash effect to show key release
+        this.scene.tweens.add({
+          targets: container,
+          alpha: { from: 0.5, to: 1 },
+          duration: 200,
+          ease: 'Sine.easeOut'
+        });
+      }
+    }
   }
   
   /**
@@ -291,26 +320,41 @@ export class RhythmUI {
     // Sort by start time so we get the most immediate ones
     const sortedVisemes = [...visemes].sort((a, b) => a.startTime - b.startTime);
     
-    // Only use the next few visemes (up to 5) to avoid overwhelming the player
-    const limitedVisemes = sortedVisemes.slice(0, 5);
+    // Get difficulty settings
+    const difficulty = 1; // Default to easy
+    const difficultySettings = GameConfig.DIFFICULTY_MODIFIER[difficulty];
+    
+    // Only use the configured number of visemes based on difficulty
+    const limitedVisemes = sortedVisemes.slice(0, difficultySettings.noteLimit);
     
     // Create note for each viseme
-    limitedVisemes.forEach(viseme => {
+    limitedVisemes.forEach((viseme, index) => {
       // Skip silence visemes
       if (viseme.viseme === Viseme.SILENCE) return;
       
       // Create note container
       const note = this.scene.add.container(0, -this.laneHeight/2);
+      note.setName(`note-${viseme.keyToPress}`); // Add name for identifying
       
       // Make notes larger and more visible
-      const height = Math.max(30, (viseme.endTime - viseme.startTime) / 15);
+      const height = Math.max(40, (viseme.endTime - viseme.startTime) / 15);
       
-      // Main note body with brighter colors
+      // Different colors for different vowels
+      let noteColor = 0x22ff22; // Default green
+      switch(viseme.keyToPress) {
+        case 'A': noteColor = 0xff3333; break; // Red
+        case 'E': noteColor = 0x33ff33; break; // Green
+        case 'I': noteColor = 0x3333ff; break; // Blue
+        case 'O': noteColor = 0xffff33; break; // Yellow
+        case 'U': noteColor = 0xff33ff; break; // Purple
+      }
+      
+      // Main note body with colors matching the key
       const noteBody = this.scene.add.rectangle(
         0, 0,
         this.laneWidth - 10, // Wider
         height,
-        0x22ff22, 0.8 // Brighter green, more opaque
+        noteColor, 0.8 // Matching color, more opaque
       );
       noteBody.setStrokeStyle(3, 0xffffff, 1); // Thicker, more visible border
       note.add(noteBody);
@@ -321,31 +365,36 @@ export class RhythmUI {
         viseme.keyToPress,
         {
           fontFamily: 'Arial',
-          fontSize: '24px', // Bigger text
+          fontSize: '28px', // Bigger text
           color: '#ffffff',
           fontStyle: 'bold',
           backgroundColor: '#333333',
-          padding: { x: 6, y: 4 }, // More padding
+          padding: { x: 8, y: 6 }, // More padding
           stroke: '#000000',
           strokeThickness: 2 // Add stroke for visibility
         }
       ).setOrigin(0.5);
       note.add(letter);
       
+      // Store the key in the note for reference
+      (note as any).keyToPress = viseme.keyToPress;
+      
       // Add to container
       this.container.add(note);
       this.notes.push(note);
       
       // Add a indicator for "NEXT" on the closest upcoming note
-      if (note === this.container.getAll()[1]) { // First note after background
+      if (index === 0) { // First note is next
         const nextIndicator = this.scene.add.text(
           -this.laneWidth/2 - 50, 0,
           "NEXT →",
           {
             fontFamily: 'Arial',
-            fontSize: '16px',
+            fontSize: '18px',
             color: '#ffff00',
-            fontStyle: 'bold'
+            fontStyle: 'bold',
+            stroke: '#000000',
+            strokeThickness: 2
           }
         ).setOrigin(1, 0.5);
         note.add(nextIndicator);
@@ -354,17 +403,17 @@ export class RhythmUI {
         this.scene.tweens.add({
           targets: nextIndicator,
           alpha: { from: 0.5, to: 1 },
-          duration: 500,
+          duration: 400,
           yoyo: true,
           repeat: -1
         });
       }
       
-      // Animate note moving down the lane - slower for easier timing
+      // Animate note moving down the lane - speed based on difficulty
       this.scene.tweens.add({
         targets: note,
         y: this.laneHeight/2 + height/2,
-        duration: viseme.startTime * (dialogueDuration / viseme.endTime) * 1.2, // 20% slower
+        duration: viseme.startTime * (dialogueDuration / viseme.endTime) * difficultySettings.noteFallSpeed,
         ease: 'Linear',
         onComplete: () => {
           note.destroy();
@@ -372,6 +421,78 @@ export class RhythmUI {
         }
       });
     });
+  }
+  
+  /**
+   * Remove a note from the UI when its key is pressed
+   * @param key The key that was pressed
+   */
+  public removeNoteWithKey(key: string): void {
+    // Find notes with this key
+    const keyToPress = key.toUpperCase();
+    
+    // Check if we're getting close to the target zone
+    const notesToRemove: Phaser.GameObjects.Container[] = [];
+    
+    for (const note of this.notes) {
+      // Check if this note has the matching key
+      if ((note as any).keyToPress === keyToPress) {
+        const noteY = note.y;
+        const targetY = this.targetZone.y;
+        
+        // Only remove if it's within a reasonable distance of the target zone
+        const distance = Math.abs(noteY - targetY);
+        
+        // Increase threshold significantly to make hit detection more forgiving
+        // This makes it easier to hit notes that are approaching the target zone
+        const threshold = 200; // Much wider threshold for better gameplay (increased from 150)
+        
+        // Add special handling for notes that are about to enter the target zone
+        const isApproaching = noteY < targetY && noteY > targetY - 100;
+        
+        if (distance < threshold || isApproaching) {
+          notesToRemove.push(note);
+          
+          // Create a hit effect animation
+          const hitEffect = this.scene.add.circle(
+            0, noteY,
+            40, // Wider effect
+            0xffffff, 0.8
+          );
+          this.container.add(hitEffect);
+          
+          // Animate and remove
+          this.scene.tweens.add({
+            targets: hitEffect,
+            scale: 2,
+            alpha: 0,
+            duration: 300,
+            onComplete: () => hitEffect.destroy()
+          });
+          
+          // No need to remove more than one note with this key
+          break;
+        }
+      }
+    }
+    
+    // Remove the notes
+    for (const note of notesToRemove) {
+      // Explode animation
+      this.scene.tweens.add({
+        targets: note,
+        scaleX: 1.5,
+        scaleY: 0.1,
+        alpha: 0,
+        duration: 200,
+        onComplete: () => {
+          // Remove from our notes array
+          this.notes = this.notes.filter(n => n !== note);
+          // Destroy the note
+          note.destroy();
+        }
+      });
+    }
   }
   
   /**
@@ -605,6 +726,24 @@ export class RhythmUI {
   /**
    * Set visibility of the UI
    */
+  /**
+   * Reset all highlighted keys to normal state
+   */
+  public resetAllKeyHighlights(): void {
+    // Get all active keys and unhighlight them
+    const activeKeysCopy = [...this.activeKeys]; // Copy to avoid issues while iterating
+    
+    activeKeysCopy.forEach(key => {
+      this.highlightKey(key, false);
+    });
+    
+    // Clear the active keys set
+    this.activeKeys.clear();
+    
+    // Hide the pressed key display
+    this.pressedKeyDisplay.setVisible(false);
+  }
+  
   public setVisible(visible: boolean): void {
     this.container.setVisible(visible);
   }
