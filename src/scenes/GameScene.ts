@@ -116,20 +116,17 @@ export class GameScene extends Phaser.Scene {
     // Add gameplay instructions that stay visible
     this.createGameplayInstructions();
     
-    // Wait for initial SPACE to start the game
+    // Press SPACE to start the game (immediate start without holding)
     this.input.keyboard.once('keydown-SPACE', () => {
       this.startGame();
+      // Start game immediately without requiring the space bar to be released
+      this.playerStartedFarting = true;
+      this.comboText.setVisible(true);
+      this.initializeGameComponents();
     });
     
-    // Setup input for fart mechanics once game starts
+    // Replace SPACE holding with fart release mechanics
     this.input.keyboard.on('keydown-SPACE', () => {
-      if (!this.gameOver && this.componentsInitialized && this.playerStartedFarting) {
-        this.handleFartHold();
-      }
-    });
-    
-    // SPACE UP = release fart
-    this.input.keyboard.on('keyup-SPACE', () => {
       if (!this.gameOver && this.componentsInitialized && this.playerStartedFarting) {
         this.handleFartRelease();
       }
@@ -1395,7 +1392,7 @@ export class GameScene extends Phaser.Scene {
     
     // Instructions
     const instructions = this.add.text(0, 0, 
-      "HOLD the SPACE BAR to retain farts\nRELEASE at the right moment to let it out\n\nTime your releases with character speech\nDon't get caught!", 
+      "PRESS A, E, I, O, U keys to release pressure\nPRESS SPACE to let out a fart\n\nTime your releases with character speech\nDon't get caught!", 
       {
         fontFamily: 'Arial',
         fontSize: '18px',
@@ -1406,7 +1403,7 @@ export class GameScene extends Phaser.Scene {
     startContainer.add(instructions);
     
     // Start prompt
-    const startText = this.add.text(0, 70, "HOLD SPACE BAR TO START", {
+    const startText = this.add.text(0, 70, "PRESS SPACE TO START", {
       fontFamily: 'Arial',
       fontSize: '24px',
       fontStyle: 'bold',
@@ -1442,11 +1439,11 @@ export class GameScene extends Phaser.Scene {
       });
     }
     
-    // Show "Holding..." text
-    const holdingText = this.add.text(
+    // Show "Get Ready..." text
+    const readyText = this.add.text(
       this.cameras.main.width / 2,
       this.cameras.main.height / 2,
-      "Holding... Release to begin!",
+      "Get Ready... Game starting!",
       {
         fontFamily: 'Arial',
         fontSize: '24px',
@@ -1456,33 +1453,23 @@ export class GameScene extends Phaser.Scene {
       }
     ).setOrigin(0.5);
     
-    // When space is released, actually start the game
-    const startListener = this.input.keyboard.once('keyup-SPACE', () => {
-      // Remove the holding text
-      this.tweens.add({
-        targets: holdingText,
-        alpha: 0,
-        y: '-=50',
-        duration: 300,
-        onComplete: () => holdingText.destroy()
-      });
-      
-      // Start game timer
-      this.time.addEvent({
-        delay: 1000,
-        callback: this.updateTimer,
-        callbackScope: this,
-        loop: true
-      });
-      
-      // Mark as started
-      this.playerStartedFarting = true;
-      
-      // Show combo counter
-      this.comboText.setVisible(true);
-      
-      // Initialize the rest of the game
-      this.initializeGameComponents();
+    // Remove the text after a moment and start the game
+    this.tweens.add({
+      targets: readyText,
+      alpha: 0,
+      y: '-=50',
+      duration: 1000,
+      onComplete: () => {
+        readyText.destroy();
+        
+        // Start game timer
+        this.time.addEvent({
+          delay: 1000,
+          callback: this.updateTimer,
+          callbackScope: this,
+          loop: true
+        });
+      }
     });
   }
   
@@ -1591,10 +1578,10 @@ export class GameScene extends Phaser.Scene {
     
     // Instructions
     const instructions = [
-      "1. Press A, E, I, O, or U keys to select",
-      "2. Letter must match falling notes",
-      "3. HOLD SPACE to contain fart pressure",
-      "4. RELEASE SPACE during speech (green zone)"
+      "1. Press A, E, I, O, or U keys to vent pressure",
+      "2. Keys must match falling notes on screen",
+      "3. Each key press reduces pressure buildup",
+      "4. PRESS SPACE during speech (green zone) to fart"
     ];
     
     // Add each instruction line

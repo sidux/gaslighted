@@ -263,6 +263,16 @@ export class Character {
       default:
         this.currentFartType = VisemeType.NONE;
     }
+    
+    // Automatically release some pressure when a key is pressed
+    if (this.role === CharacterRole.PLAYER) {
+      // Release between 3-5 pressure units based on current pressure
+      const releaseAmount = 3 + (this.fartPressure / 100) * 2;
+      this.decreasePressure(releaseAmount);
+      
+      // Update facial expression based on new pressure
+      this.updateFacialExpression();
+    }
   }
   
   /**

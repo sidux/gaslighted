@@ -17,7 +17,7 @@ export const GameConfig = {
   
   // Fart pressure settings
   FART_PRESSURE_INITIAL: 3,  // Starting pressure
-  FART_PRESSURE_INCREASE_RATE: 0.7, // How fast pressure builds (points per frame)
+  FART_PRESSURE_INCREASE_RATE: 0.1, // How fast pressure builds (points per frame)
   FART_PRESSURE_MAX: 100,    // Maximum pressure
   FART_PRESSURE_CRITICAL: 85, // Threshold for critical pressure warning
   
@@ -46,7 +46,7 @@ export const GameConfig = {
   DIFFICULTY_MODIFIER: {
     // Easy mode
     1: { 
-      pressureRate: 0.5, 
+      pressureRate: 0.5,
       autoReleaseChance: 0.01,
       visemeSamplingRate: 0.25, // Only 25% of potential visemes
       minTimeBetweenVisemes: 1000, // 1 second minimum spacing
