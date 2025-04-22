@@ -48,17 +48,17 @@ export const GameConfig = {
     1: { 
       pressureRate: 0.5,
       autoReleaseChance: 0.01,
-      visemeSamplingRate: 0.25, // Only 25% of potential visemes
-      minTimeBetweenVisemes: 1000, // 1 second minimum spacing
-      noteFallSpeed: 1.2, // 30% slower notes
+      visemeSamplingRate: 0.2, // Sample 1 in 5 visemes (20%)
+      minTimeBetweenVisemes: 900, // 0.9 second minimum spacing between notes
+      noteFallSpeed: 1.2, // 20% slower notes
       noteLimit: 3 // Max 3 notes at once
     },
     // Medium mode
     2: { 
       pressureRate: 0.7, 
       autoReleaseChance: 0.02,
-      visemeSamplingRate: 0.4, // 40% of potential visemes
-      minTimeBetweenVisemes: 800, // 0.8 second minimum spacing
+      visemeSamplingRate: 0.33, // Sample 1 in 3 visemes (33%)
+      minTimeBetweenVisemes: 750, // 0.75 second minimum spacing
       noteFallSpeed: 1.1, // 10% slower notes
       noteLimit: 4 // Max 4 notes at once
     },
@@ -66,7 +66,7 @@ export const GameConfig = {
     3: { 
       pressureRate: 1.0, 
       autoReleaseChance: 0.03,
-      visemeSamplingRate: 0.6, // 60% of potential visemes
+      visemeSamplingRate: 0.5, // Sample 1 in 2 visemes (50%)
       minTimeBetweenVisemes: 600, // 0.6 second minimum spacing
       noteFallSpeed: 1.0, // Normal speed
       noteLimit: 5 // Max 5 notes at once

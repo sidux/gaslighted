@@ -266,8 +266,8 @@ export class Character {
     
     // Automatically release some pressure when a key is pressed
     if (this.role === CharacterRole.PLAYER) {
-      // Release between 3-5 pressure units based on current pressure
-      const releaseAmount = 3 + (this.fartPressure / 100) * 2;
+      // Release between 3-10 pressure units based on current pressure
+      const releaseAmount = 3 + (this.fartPressure / 100) * 10;
       this.decreasePressure(releaseAmount);
       
       // Update facial expression based on new pressure

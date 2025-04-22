@@ -171,9 +171,8 @@ export class NeuralSpeechProcessor {
       }
     }
     
-    // Extract viseme information for each word segment - FURTHER SIMPLIFIED
-    // Only sample a percentage of words to reduce density
-    // This will prevent overlapping and make the game much easier to play
+    // Extract viseme information directly from viseme marks, not tied to words
+    // This creates a more steady flow based on actual phonetic components
     
     // Get difficulty settings from GameConfig
     const difficulty = 1; // Default to easy (can be passed in as parameter)
@@ -186,98 +185,117 @@ export class NeuralSpeechProcessor {
     // First, collect all potential viseme zones
     const potentialZones = [];
     
-    for (const segment of segments) {
-      if (segment.isSafe && segment.word.length > 0) {
-        // Only process some words based on sampling rate
-        if (Math.random() > samplingRate) {
-          continue; // Skip this word
+    // Process all viseme marks directly instead of going word by word
+    if (visemeMarks.length > 0) {
+      // Sort visemes by time
+      const sortedVisemes = [...visemeMarks].sort((a, b) => a.time - b.time);
+      
+      // Track viseme count for consistent sampling
+      let visemeCount = 0;
+      
+      // Process each viseme
+      for (let i = 0; i < sortedVisemes.length; i++) {
+        const currentViseme = sortedVisemes[i];
+        visemeCount++;
+        
+        // Sample visemes based on count rather than random chance
+        // This ensures a steady, predictable flow
+        if (visemeCount % Math.floor(1/samplingRate) !== 0) {
+          continue; // Skip this viseme based on sampling rate
         }
         
-        // Find all viseme marks that fall within this word segment
-        const visemesInSegment = visemeMarks.filter(mark => 
-          mark.time >= segment.startTime && mark.time <= segment.endTime
+        // Check if this viseme falls within a speech segment (actual word)
+        const speechSegment = segments.find(seg => 
+          currentViseme.time >= seg.startTime && 
+          currentViseme.time <= seg.endTime &&
+          seg.isSafe
         );
         
-        // If we have visemes, just pick the most prominent one for this word
-        if (visemesInSegment.length > 0) {
-          // Sort by duration (if we can determine it) to find the most prominent
-          const sortedVisemes = [...visemesInSegment].sort((a, b) => {
-            const nextA = visemeMarks.find(v => v.time > a.time);
-            const nextB = visemeMarks.find(v => v.time > b.time);
-            
-            const durationA = nextA ? nextA.time - a.time : 150;
-            const durationB = nextB ? nextB.time - b.time : 150;
-            
-            return durationB - durationA; // Longer duration = more prominent
-          });
+        // Skip if not part of a spoken word
+        if (!speechSegment) continue;
+        
+        // Calculate viseme duration
+        const nextViseme = sortedVisemes.find(v => v.time > currentViseme.time);
           
-          // Use the most prominent viseme (first after sorting)
-          const mainViseme = sortedVisemes[0];
+        // Make duration longer for easier timing
+        const visemeDuration = nextViseme 
+          ? (nextViseme.time - currentViseme.time) * 1.5  // 50% longer for easier timing
+          : 400; // Default duration of 400ms
+        
+        // Determine the viseme type - limit to just a few keys for simplicity
+        // We'll use only A, E, I, O, U to make it easier to remember
+        const visemeValue = currentViseme.value.toLowerCase();
+        
+        // Map all possible visemes to just 5 vowels for simplicity
+        let visemeType: VisemeType;
+        switch (visemeValue.charAt(0)) {
+          case 'a': 
+          case 'æ': 
+            visemeType = VisemeType.A;
+            break;
+          case 'e': 
+          case 'ɛ': 
+          case 'ə': 
+            visemeType = VisemeType.E;
+            break;
+          case 'i': 
+          case 'ɪ': 
+            visemeType = VisemeType.I;
+            break;
+          case 'o': 
+          case 'ɔ': 
+          case 'ʊ': 
+            visemeType = VisemeType.O;
+            break;
+          case 'u':
+          case 'ʌ':
+            visemeType = VisemeType.U;
+            break;
+          default:
+            // For consonants, just pick a vowel based on position in sequence
+            // This creates a more predictable pattern rather than random
+            const vowels = [VisemeType.A, VisemeType.E, VisemeType.I, VisemeType.O, VisemeType.U];
+            visemeType = vowels[visemeCount % 5];
+        }
+        
+        // Add to potential zones
+        potentialZones.push({
+          startTime: currentViseme.time - 150, // Start 150ms earlier
+          endTime: currentViseme.time + visemeDuration + 150, // End 150ms later
+          confidence: 0.8, // Higher confidence for easier gameplay
+          visemeType: visemeType,
+          keyToPress: visemeType.toUpperCase(),
+          originalTime: currentViseme.time // Keep track of original time for sorting
+        });
+      }
+    } else {
+      // If no viseme marks available, fallback to word-based sampling
+      // but still make it more evenly distributed
+      
+      // Count safe speech segments with words
+      const safeWordSegments = segments.filter(seg => seg.isSafe && seg.word.length > 0);
+      
+      // Calculate how many segments to include based on sampling rate
+      const segmentsToInclude = Math.ceil(safeWordSegments.length * samplingRate);
+      
+      // Spread these evenly through the speech
+      if (segmentsToInclude > 0 && safeWordSegments.length > 0) {
+        const step = Math.max(1, Math.floor(safeWordSegments.length / segmentsToInclude));
+        
+        for (let i = 0; i < safeWordSegments.length; i += step) {
+          const segment = safeWordSegments[i];
           
-          // Calculate viseme duration with extra padding for easier gameplay
-          const nextViseme = visemeMarks.find(v => v.time > mainViseme.time);
-          // Make duration longer for easier timing
-          const visemeDuration = nextViseme 
-            ? (nextViseme.time - mainViseme.time) * 1.5  // 50% longer for easier timing
-            : 400; // Default increased from 300ms to 400ms
-          
-          // Determine the viseme type - limit to just a few keys for simplicity
-          // We'll use only A, E, I, O, U to make it easier to remember
-          const visemeValue = mainViseme.value.toLowerCase();
-          
-          // Map all possible visemes to just 5 vowels for simplicity
-          let visemeType: VisemeType;
-          switch (visemeValue.charAt(0)) {
-            case 'a': 
-            case 'æ': 
-              visemeType = VisemeType.A;
-              break;
-            case 'e': 
-            case 'ɛ': 
-            case 'ə': 
-              visemeType = VisemeType.E;
-              break;
-            case 'i': 
-            case 'ɪ': 
-              visemeType = VisemeType.I;
-              break;
-            case 'o': 
-            case 'ɔ': 
-            case 'ʊ': 
-              visemeType = VisemeType.O;
-              break;
-            case 'u':
-            case 'ʌ':
-              visemeType = VisemeType.U;
-              break;
-            default:
-              // For consonants, just pick a random vowel
-              const vowels = [VisemeType.A, VisemeType.E, VisemeType.I, VisemeType.O, VisemeType.U];
-              visemeType = vowels[Math.floor(Math.random() * vowels.length)];
-          }
-          
-          // Add to potential zones
-          potentialZones.push({
-            startTime: mainViseme.time - 150, // Start 150ms earlier
-            endTime: mainViseme.time + visemeDuration + 150, // End 150ms later
-            confidence: 0.8, // Higher confidence for easier gameplay
-            visemeType: visemeType,
-            keyToPress: visemeType.toUpperCase(),
-            originalTime: mainViseme.time // Keep track of original time for sorting
-          });
-        } else {
-          // If no visemes found, create a generic safe zone for this word
-          // Use a random vowel viseme (simpler set)
+          // Use a vowel based on position for consistency
           const vowels = [VisemeType.A, VisemeType.E, VisemeType.I, VisemeType.O, VisemeType.U];
-          const randomViseme = vowels[Math.floor(Math.random() * vowels.length)];
+          const visemeType = vowels[i % 5];
           
           // Add to potential zones
           potentialZones.push({
             startTime: segment.startTime - 150, // Start 150ms earlier
             endTime: segment.endTime + 150, // End 150ms later  
             confidence: 0.8, // Higher confidence for easier gameplay
-            visemeType: randomViseme, 
-            keyToPress: randomViseme.toUpperCase(),
+            visemeType: visemeType, 
+            keyToPress: visemeType.toUpperCase(),
             originalTime: segment.startTime // Keep track of original time for sorting
           });
         }
