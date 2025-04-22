@@ -14,6 +14,11 @@ export class RhythmUI {
   private notes: Phaser.GameObjects.Container[] = [];
   private currentTimeMarker: Phaser.GameObjects.Rectangle;
   private targetZone: Phaser.GameObjects.Rectangle;
+  private targetZoneMovementTimer: number = 0;
+  private targetZoneDirection: number = 1;
+  private targetZoneBaseY: number = 0;
+  private targetZoneAmplitude: number = 180; // How far it moves up/down
+  private targetZoneSpeed: number = 0.005; // Speed of movement
   private laneWidth: number = 80;
   private laneHeight: number = 400;
   private speakerLabels: Phaser.GameObjects.Text[] = [];
@@ -65,16 +70,16 @@ export class RhythmUI {
     
     // Create target zone (where notes should hit) - make it more visible
     this.targetZone = this.scene.add.rectangle(
-      0, 80, // Position in lower part of track
+      0, this.targetZoneBaseY, // Position in lower part of track
       this.laneWidth - 10, 40, // Taller
       0x00ff00, 0.5 // More visible green
     );
     this.targetZone.setStrokeStyle(3, 0xffffff, 0.8); // Thicker border
     this.container.add(this.targetZone);
     
-    // Add "HIT ZONE" text to make it super clear
+    // Add "HIT ZONE" text to make it super clear - will follow the target zone
     const hitZoneText = this.scene.add.text(
-      0, 80,
+      0, this.targetZoneBaseY,
       "HIT ZONE",
       {
         fontFamily: 'Arial',
@@ -85,6 +90,7 @@ export class RhythmUI {
         strokeThickness: 2
       }
     ).setOrigin(0.5);
+    hitZoneText.setName('hitZoneText'); // Name for easy reference
     this.container.add(hitZoneText);
     
     // Add pulsing animation to draw attention
@@ -96,9 +102,12 @@ export class RhythmUI {
       repeat: -1
     });
     
-    // Create current time marker (horizontal line)
+    // Add update event to handle movement
+    this.scene.events.on('update', this.updateTargetZone, this);
+    
+    // Create current time marker (horizontal line) - will follow target zone
     this.currentTimeMarker = this.scene.add.rectangle(
-      0, 80, // Same position as target zone
+      0, this.targetZoneBaseY, // Initially at same position as target zone
       this.laneWidth * 2, 3,
       0xffffff, 0.8
     );
@@ -537,18 +546,18 @@ export class RhythmUI {
       miss: 'MISS'
     };
     
-    // Create highlight effect on target zone
+    // Create highlight effect on target zone using current position
     const highlight = this.scene.add.rectangle(
-      0, 80, // Same Y as target zone
+      0, this.targetZone.y, // Use current target zone Y position
       this.laneWidth - 10, 30,
       colors[accuracy], 0.7
     );
     highlight.setName('viseme-match');
     this.container.add(highlight);
     
-    // Flash the letter that matched
+    // Flash the letter that matched at current target zone position
     const letterText = this.scene.add.text(
-      0, 80,
+      0, this.targetZone.y,
       key.toUpperCase(),
       {
         fontFamily: 'Arial',
@@ -642,18 +651,18 @@ export class RhythmUI {
       danger: 0xff0000
     };
     
-    // Create explosion effect
+    // Create explosion effect at current target zone position
     const explosion = this.scene.add.circle(
-      0, 80, // Same Y as current time marker
+      0, this.targetZone.y, // Use current Y position of moving target zone
       40,
       colors[safetyStatus], 0.7
     );
     explosion.setName('fart-release');
     this.container.add(explosion);
     
-    // Show the key used
+    // Show the key used - at current target zone position
     const keyText = this.scene.add.text(
-      0, 80,
+      0, this.targetZone.y,
       key.toUpperCase(),
       {
         fontFamily: 'Arial',
@@ -721,6 +730,31 @@ export class RhythmUI {
    */
   public setPosition(x: number, y: number): void {
     this.container.setPosition(x, y);
+  }
+  
+  /**
+   * Update the target zone position to create a moving hit zone
+   */
+  private updateTargetZone = (): void => {
+    if (!this.scene) return; // Safety check
+    
+    // Increment timer
+    this.targetZoneMovementTimer += this.scene.game.loop.delta * this.targetZoneSpeed;
+    
+    // Calculate new Y position using sine wave for smooth up and down motion
+    const newY = this.targetZoneBaseY + Math.sin(this.targetZoneMovementTimer) * this.targetZoneAmplitude;
+    
+    // Update the target zone position
+    this.targetZone.y = newY;
+    
+    // Update the current time marker to match
+    this.currentTimeMarker.y = newY;
+    
+    // Update hit zone text position
+    const hitZoneText = this.container.getByName('hitZoneText');
+    if (hitZoneText && hitZoneText instanceof Phaser.GameObjects.Text) {
+      hitZoneText.y = newY;
+    }
   }
   
   /**

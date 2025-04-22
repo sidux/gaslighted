@@ -50,7 +50,7 @@ export const GameConfig = {
       autoReleaseChance: 0.01,
       visemeSamplingRate: 0.25, // Only 25% of potential visemes
       minTimeBetweenVisemes: 1000, // 1 second minimum spacing
-      noteFallSpeed: 1.3, // 30% slower notes
+      noteFallSpeed: 1.2, // 30% slower notes
       noteLimit: 3 // Max 3 notes at once
     },
     // Medium mode

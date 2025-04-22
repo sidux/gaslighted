@@ -773,8 +773,9 @@ export class GameScene extends Phaser.Scene {
       }
     }
     
-    // Only return if the zone is reasonably close (within 500ms)
-    return closestDistance < 500 ? closestZone : null;
+    // With the moving hit zone, we need to be a bit more generous with timing
+    // Increase the acceptable window from 500ms to 700ms
+    return closestDistance < 700 ? closestZone : null;
   }
   
   /**
