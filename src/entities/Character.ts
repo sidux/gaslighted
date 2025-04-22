@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { GameConfig } from '../config/GameConfig';
 import { FartMeter } from './FartMeter';
+import { VisemeType } from '../types/speech/SpeechMark';
 
 export enum CharacterRole {
   PLAYER = 'player',
@@ -25,6 +26,11 @@ export class Character {
   private isFarting: boolean = false;
   private fartingTimer: Phaser.Time.TimerEvent | null = null;
   private fartParticles: Phaser.GameObjects.Particles.ParticleEmitter | null = null;
+  
+  // Viseme/fart type tracking
+  private currentVisemeKey: string = '';
+  private currentFartType: VisemeType = VisemeType.NONE;
+  private fartReleaseRate: number = 5; // How fast pressure decreases per frame when farting
   
   public readonly id: string;
   public readonly name: string;
@@ -135,8 +141,8 @@ export class Character {
         // Holding fart reduces pressure increase rate significantly
         pressureRate *= 0.2; // 80% reduction when holding
       } else if (this.isFarting) {
-        // Actively farting reduces pressure
-        this.decreasePressure(3 * (delta / 16.667)); // Decrease pressure while farting
+        // Actively farting reduces pressure based on release rate
+        this.decreasePressure(this.fartReleaseRate * (delta / 16.667)); // Decrease pressure while farting
         
         // If pressure gets too low, stop farting automatically
         if (this.fartPressure <= 5) {
@@ -203,16 +209,104 @@ export class Character {
   /**
    * Start continuous farting
    */
+  /**
+   * Set the current viseme key for the character
+   * @param key The viseme key being pressed (A, E, I, O, etc.)
+   */
+  public setVisemeKey(key: string): void {
+    this.currentVisemeKey = key.toUpperCase();
+    
+    // Map key to viseme type
+    switch (this.currentVisemeKey) {
+      case 'A':
+        this.currentFartType = VisemeType.A;
+        break;
+      case 'E':
+        this.currentFartType = VisemeType.E;
+        break;
+      case 'I':
+        this.currentFartType = VisemeType.I;
+        break;
+      case 'O':
+        this.currentFartType = VisemeType.O;
+        break;
+      case 'U':
+        this.currentFartType = VisemeType.U;
+        break;
+      case 'P':
+        this.currentFartType = VisemeType.P;
+        break;
+      case 'F':
+        this.currentFartType = VisemeType.F;
+        break;
+      case 'T':
+        this.currentFartType = VisemeType.T;
+        break;
+      case 'S':
+        this.currentFartType = VisemeType.S;
+        break;
+      case 'K':
+        this.currentFartType = VisemeType.K;
+        break;
+      default:
+        this.currentFartType = VisemeType.NONE;
+    }
+  }
+  
+  /**
+   * Get the current viseme key
+   */
+  public getCurrentVisemeKey(): string {
+    return this.currentVisemeKey;
+  }
+  
+  /**
+   * Get the current fart type (viseme)
+   */
+  public getCurrentFartType(): VisemeType {
+    return this.currentFartType;
+  }
+  
+  /**
+   * Set the fart release rate (how quickly pressure releases when farting)
+   * @param rate The rate (pressure points per frame)
+   */
+  public setFartReleaseRate(rate: number): void {
+    this.fartReleaseRate = rate;
+  }
+
   public startFarting(intensity: number): void {
     if (this.isFarting) return; // Already farting
     
     this.isFarting = true;
     this.setExpression('farting');
     
+    // Set fart release rate based on intensity
+    this.fartReleaseRate = 3 + (intensity / 20); // Higher intensity = faster release
+    
     // Create particle emitter for fart visual effect if it doesn't exist
     if (!this.fartParticles && this.role === CharacterRole.PLAYER) {
-      // Determine particle color based on intensity
-      const particleColor = intensity > 70 ? 0x99cc00 : 0xccff66;
+      // Determine particle color based on fart type/viseme
+      let particleColor = 0xccff66; // Default green
+      
+      // Different colors for different viseme types
+      switch (this.currentFartType) {
+        case VisemeType.A:
+          particleColor = 0xff0000; // Red
+          break;
+        case VisemeType.E:
+          particleColor = 0xffff00; // Yellow
+          break;
+        case VisemeType.I:
+          particleColor = 0x00ff00; // Green
+          break;
+        case VisemeType.O:
+          particleColor = 0x0000ff; // Blue
+          break;
+        case VisemeType.U:
+          particleColor = 0xff00ff; // Purple
+          break;
+      }
       
       // Create particles
       this.fartParticles = this.scene.add.particles(this.x, this.y + 50, 'fart-particle', {
@@ -243,7 +337,7 @@ export class Character {
         // Get audio manager from scene
         const gameScene = this.scene as any;
         if (gameScene.audioManager) {
-          gameScene.audioManager.playFartSound(20, false); // Low intensity continuous fart
+          gameScene.audioManager.playFartSound(20, false, this.currentFartType); // Pass fart type to audio manager
         }
       },
       callbackScope: this,

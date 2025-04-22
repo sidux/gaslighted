@@ -1,0 +1,475 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 78,
+    "value": "I've been working on the blockchain initiative with the marketing team."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 7,
+    "end": 11,
+    "value": "I've"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 12,
+    "end": 16,
+    "value": "been"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 325,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "word",
+    "start": 17,
+    "end": 24,
+    "value": "working"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 637,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 762,
+    "type": "word",
+    "start": 25,
+    "end": 27,
+    "value": "on"
+  },
+  {
+    "time": 762,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 875,
+    "type": "word",
+    "start": 28,
+    "end": 31,
+    "value": "the"
+  },
+  {
+    "time": 875,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 887,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 937,
+    "type": "word",
+    "start": 32,
+    "end": 42,
+    "value": "blockchain"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1562,
+    "type": "word",
+    "start": 43,
+    "end": 53,
+    "value": "initiative"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1850,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2187,
+    "type": "word",
+    "start": 54,
+    "end": 58,
+    "value": "with"
+  },
+  {
+    "time": 2187,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2312,
+    "type": "word",
+    "start": 59,
+    "end": 62,
+    "value": "the"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2325,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2387,
+    "type": "word",
+    "start": 63,
+    "end": 72,
+    "value": "marketing"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2437,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2512,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2562,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2700,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2750,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2887,
+    "type": "word",
+    "start": 73,
+    "end": 77,
+    "value": "team"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3375,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3387,
+    "type": "word",
+    "start": 79,
+    "end": 100,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 4067,
+    "type": "sentence",
+    "start": 100,
+    "end": 149,
+    "value": "The results are<break time=\"500ms\"/> interesting."
+  },
+  {
+    "time": 4192,
+    "type": "word",
+    "start": 100,
+    "end": 103,
+    "value": "The"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4205,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4267,
+    "type": "word",
+    "start": 104,
+    "end": 111,
+    "value": "results"
+  },
+  {
+    "time": 4267,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4317,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4380,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4442,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4567,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4642,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4667,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4780,
+    "type": "word",
+    "start": 112,
+    "end": 115,
+    "value": "are"
+  },
+  {
+    "time": 4780,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4817,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5067,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5098,
+    "type": "word",
+    "start": 115,
+    "end": 136,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 5630,
+    "type": "word",
+    "start": 137,
+    "end": 148,
+    "value": "interesting"
+  },
+  {
+    "time": 5630,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5817,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5880,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5942,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6005,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6055,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6130,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6380,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

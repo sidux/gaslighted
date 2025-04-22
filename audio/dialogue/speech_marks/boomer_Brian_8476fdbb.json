@@ -1,0 +1,491 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 178,
+    "value": "We<break time=\"300ms\"/>believe<break time=\"800ms\"/>that with appropriate resources, <break time=\"300ms\"/> this pivot represents a significant<break time=\"1s\"/>opportunity."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 7,
+    "end": 9,
+    "value": "We"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 406,
+    "type": "word",
+    "start": 9,
+    "end": 30,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 800,
+    "type": "word",
+    "start": 30,
+    "end": 37,
+    "value": "believe"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1050,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1337,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1612,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1700,
+    "type": "word",
+    "start": 37,
+    "end": 58,
+    "value": "<break time=\"800ms\"/>"
+  },
+  {
+    "time": 2587,
+    "type": "word",
+    "start": 58,
+    "end": 62,
+    "value": "that"
+  },
+  {
+    "time": 2587,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2862,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2912,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2975,
+    "type": "word",
+    "start": 63,
+    "end": 67,
+    "value": "with"
+  },
+  {
+    "time": 2975,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3037,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3162,
+    "type": "word",
+    "start": 68,
+    "end": 79,
+    "value": "appropriate"
+  },
+  {
+    "time": 3162,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3225,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3237,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3362,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3375,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3475,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3525,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3650,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3787,
+    "type": "word",
+    "start": 80,
+    "end": 89,
+    "value": "resources"
+  },
+  {
+    "time": 3787,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3800,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3887,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3987,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4162,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4225,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4312,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4425,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4568,
+    "type": "word",
+    "start": 91,
+    "end": 112,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 5012,
+    "type": "word",
+    "start": 113,
+    "end": 117,
+    "value": "this"
+  },
+  {
+    "time": 5012,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5112,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5150,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5287,
+    "type": "word",
+    "start": 118,
+    "end": 123,
+    "value": "pivot"
+  },
+  {
+    "time": 5287,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5350,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5400,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5525,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5550,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5650,
+    "type": "word",
+    "start": 124,
+    "end": 134,
+    "value": "represents"
+  },
+  {
+    "time": 5650,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5687,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5812,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5837,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5900,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5962,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6025,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6112,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6150,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6212,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6275,
+    "type": "word",
+    "start": 135,
+    "end": 136,
+    "value": "a"
+  },
+  {
+    "time": 6275,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6350,
+    "type": "word",
+    "start": 137,
+    "end": 148,
+    "value": "significant"
+  },
+  {
+    "time": 6350,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6437,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6475,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6550,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6587,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6662,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6712,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6800,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6862,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6900,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7025,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7087,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 7212,
+    "type": "word",
+    "start": 148,
+    "end": 166,
+    "value": "<break time=\"1s\"/>"
+  },
+  {
+    "time": 8337,
+    "type": "word",
+    "start": 166,
+    "end": 177,
+    "value": "opportunity"
+  },
+  {
+    "time": 8337,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 8462,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 8525,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 8650,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8662,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 8787,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 8837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8900,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 9025,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 9087,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 9462,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,448 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 47,
+    "value": "The broader market is down five percent."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 7,
+    "end": 10,
+    "value": "The"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 11,
+    "end": 18,
+    "value": "broader"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 562,
+    "type": "word",
+    "start": 19,
+    "end": 25,
+    "value": "market"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 875,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "word",
+    "start": 26,
+    "end": 28,
+    "value": "is"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1037,
+    "type": "word",
+    "start": 29,
+    "end": 33,
+    "value": "down"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1312,
+    "type": "word",
+    "start": 34,
+    "end": 38,
+    "value": "five"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1587,
+    "type": "word",
+    "start": 39,
+    "end": 46,
+    "value": "percent"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2175,
+    "type": "word",
+    "start": 48,
+    "end": 69,
+    "value": "<break time=\"200ms\"/>"
+  },
+  {
+    "time": 2755,
+    "type": "sentence",
+    "start": 70,
+    "end": 92,
+    "value": "You're down seventeen."
+  },
+  {
+    "time": 2892,
+    "type": "word",
+    "start": 70,
+    "end": 76,
+    "value": "You're"
+  },
+  {
+    "time": 2892,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2942,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2955,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3067,
+    "type": "word",
+    "start": 77,
+    "end": 81,
+    "value": "down"
+  },
+  {
+    "time": 3067,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3130,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3205,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3317,
+    "type": "word",
+    "start": 82,
+    "end": 91,
+    "value": "seventeen"
+  },
+  {
+    "time": 3317,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3380,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3467,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3505,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3642,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3755,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4067,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4105,
+    "type": "word",
+    "start": 93,
+    "end": 114,
+    "value": "<break time=\"700ms\"/>"
+  },
+  {
+    "time": 5185,
+    "type": "sentence",
+    "start": 114,
+    "end": 139,
+    "value": "Explain that discrepancy."
+  },
+  {
+    "time": 5322,
+    "type": "word",
+    "start": 114,
+    "end": 121,
+    "value": "Explain"
+  },
+  {
+    "time": 5322,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5385,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5435,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5497,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5560,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5635,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5685,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5747,
+    "type": "word",
+    "start": 122,
+    "end": 126,
+    "value": "that"
+  },
+  {
+    "time": 5747,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5822,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5872,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5935,
+    "type": "word",
+    "start": 127,
+    "end": 138,
+    "value": "discrepancy"
+  },
+  {
+    "time": 5935,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5997,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6022,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6122,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6185,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6222,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6247,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6322,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6385,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6435,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6560,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6747,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,417 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 62,
+    "value": "Shh! <break time=\"200ms\"/> I think they're joining now."
+  },
+  {
+    "time": 200,
+    "type": "word",
+    "start": 7,
+    "end": 11,
+    "value": "Shh!"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 325,
+    "type": "word",
+    "start": 12,
+    "end": 33,
+    "value": "<break time=\"200ms\"/>"
+  },
+  {
+    "time": 612,
+    "type": "word",
+    "start": 34,
+    "end": 35,
+    "value": "I"
+  },
+  {
+    "time": 612,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 700,
+    "type": "word",
+    "start": 36,
+    "end": 41,
+    "value": "think"
+  },
+  {
+    "time": 700,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 825,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 887,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 962,
+    "type": "word",
+    "start": 42,
+    "end": 49,
+    "value": "they're"
+  },
+  {
+    "time": 962,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1012,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1025,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1137,
+    "type": "word",
+    "start": 50,
+    "end": 57,
+    "value": "joining"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1237,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1262,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1337,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1400,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1450,
+    "type": "word",
+    "start": 58,
+    "end": 61,
+    "value": "now"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1662,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1825,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1862,
+    "type": "word",
+    "start": 63,
+    "end": 84,
+    "value": "<break time=\"600ms\"/>"
+  },
+  {
+    "time": 2842,
+    "type": "sentence",
+    "start": 84,
+    "end": 130,
+    "value": "Everyone<break time=\"300ms\"/>act professional!"
+  },
+  {
+    "time": 3030,
+    "type": "word",
+    "start": 84,
+    "end": 92,
+    "value": "Everyone"
+  },
+  {
+    "time": 3030,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3092,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3155,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3217,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3342,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3405,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3617,
+    "type": "word",
+    "start": 92,
+    "end": 113,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 3980,
+    "type": "word",
+    "start": 113,
+    "end": 116,
+    "value": "act"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4142,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4205,
+    "type": "word",
+    "start": 117,
+    "end": 129,
+    "value": "professional"
+  },
+  {
+    "time": 4205,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4267,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4292,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4392,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4580,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4955,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4967,
+    "type": "word",
+    "start": 131,
+    "end": 152,
+    "value": "<break time=\"400ms\"/>"
+  },
+  {
+    "time": 5747,
+    "type": "sentence",
+    "start": 152,
+    "end": 175,
+    "value": "Wojak, sit up straight!"
+  },
+  {
+    "time": 5885,
+    "type": "word",
+    "start": 152,
+    "end": 157,
+    "value": "Wojak"
+  },
+  {
+    "time": 5885,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5985,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 6060,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6160,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6310,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6460,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 6585,
+    "type": "word",
+    "start": 159,
+    "end": 162,
+    "value": "sit"
+  },
+  {
+    "time": 6585,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6685,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6747,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6785,
+    "type": "word",
+    "start": 163,
+    "end": 165,
+    "value": "up"
+  },
+  {
+    "time": 6785,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6872,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6947,
+    "type": "word",
+    "start": 166,
+    "end": 174,
+    "value": "straight"
+  },
+  {
+    "time": 6947,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6997,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7060,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 7210,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 7310,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7422,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,303 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 107,
+    "value": "As I was saying<break time=\"700ms\"/>our quarterly numbers are looking<break time=\"900ms\"/>promising."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 7,
+    "end": 9,
+    "value": "As"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 387,
+    "type": "word",
+    "start": 10,
+    "end": 11,
+    "value": "I"
+  },
+  {
+    "time": 387,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 500,
+    "type": "word",
+    "start": 12,
+    "end": 15,
+    "value": "was"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 712,
+    "type": "word",
+    "start": 16,
+    "end": 22,
+    "value": "saying"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1318,
+    "type": "word",
+    "start": 22,
+    "end": 43,
+    "value": "<break time=\"700ms\"/>"
+  },
+  {
+    "time": 2187,
+    "type": "word",
+    "start": 43,
+    "end": 46,
+    "value": "our"
+  },
+  {
+    "time": 2187,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2450,
+    "type": "word",
+    "start": 47,
+    "end": 56,
+    "value": "quarterly"
+  },
+  {
+    "time": 2450,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2475,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2575,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2662,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2737,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2825,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2837,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2975,
+    "type": "word",
+    "start": 57,
+    "end": 64,
+    "value": "numbers"
+  },
+  {
+    "time": 2975,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3087,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3325,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3337,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3450,
+    "type": "word",
+    "start": 65,
+    "end": 68,
+    "value": "are"
+  },
+  {
+    "time": 3450,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3587,
+    "type": "word",
+    "start": 69,
+    "end": 76,
+    "value": "looking"
+  },
+  {
+    "time": 3587,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3650,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3762,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3825,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3887,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3912,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4000,
+    "type": "word",
+    "start": 76,
+    "end": 97,
+    "value": "<break time=\"900ms\"/>"
+  },
+  {
+    "time": 4987,
+    "type": "word",
+    "start": 97,
+    "end": 106,
+    "value": "promising"
+  },
+  {
+    "time": 4987,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5187,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5275,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5325,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5412,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5487,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5600,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5662,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6012,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

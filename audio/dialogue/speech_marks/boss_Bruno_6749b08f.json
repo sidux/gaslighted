@@ -1,0 +1,93 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 62,
+    "value": "Welcome to the quarterly review meeting. We have lots to discuss today."
+  },
+  {
+    "time": 150,
+    "type": "word",
+    "start": 0,
+    "end": 7,
+    "value": "Welcome"
+  },
+  {
+    "time": 650,
+    "type": "word",
+    "start": 8,
+    "end": 10,
+    "value": "to"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 11,
+    "end": 14,
+    "value": "the"
+  },
+  {
+    "time": 900,
+    "type": "word",
+    "start": 15,
+    "end": 24,
+    "value": "quarterly"
+  },
+  {
+    "time": 1350,
+    "type": "word",
+    "start": 25,
+    "end": 31,
+    "value": "review"
+  },
+  {
+    "time": 1650,
+    "type": "word",
+    "start": 32,
+    "end": 40,
+    "value": "meeting."
+  },
+  {
+    "time": 2100,
+    "type": "word",
+    "start": 41,
+    "end": 43,
+    "value": "We"
+  },
+  {
+    "time": 2250,
+    "type": "word",
+    "start": 44,
+    "end": 48,
+    "value": "have"
+  },
+  {
+    "time": 2450,
+    "type": "word",
+    "start": 49,
+    "end": 53,
+    "value": "lots"
+  },
+  {
+    "time": 2650,
+    "type": "word",
+    "start": 54,
+    "end": 56,
+    "value": "to"
+  },
+  {
+    "time": 2800,
+    "type": "word",
+    "start": 57,
+    "end": 65,
+    "value": "discuss"
+  },
+  {
+    "time": 3200,
+    "type": "word",
+    "start": 66,
+    "end": 72,
+    "value": "today."
+  }
+]

@@ -1,0 +1,313 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 20,
+    "value": "Hey everyone!"
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 7,
+    "end": 10,
+    "value": "Hey"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 375,
+    "type": "word",
+    "start": 11,
+    "end": 19,
+    "value": "everyone"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 987,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1000,
+    "type": "word",
+    "start": 21,
+    "end": 42,
+    "value": "<break time=\"200ms\"/>"
+  },
+  {
+    "time": 1580,
+    "type": "sentence",
+    "start": 43,
+    "end": 85,
+    "value": "I'm super excited to share our Q4 results!"
+  },
+  {
+    "time": 1705,
+    "type": "word",
+    "start": 43,
+    "end": 46,
+    "value": "I'm"
+  },
+  {
+    "time": 1705,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1780,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1892,
+    "type": "word",
+    "start": 47,
+    "end": 52,
+    "value": "super"
+  },
+  {
+    "time": 1892,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1955,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2080,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2142,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2292,
+    "type": "word",
+    "start": 53,
+    "end": 60,
+    "value": "excited"
+  },
+  {
+    "time": 2292,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2330,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2417,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2580,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2642,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2717,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2780,
+    "type": "word",
+    "start": 61,
+    "end": 63,
+    "value": "to"
+  },
+  {
+    "time": 2780,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2830,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2955,
+    "type": "word",
+    "start": 64,
+    "end": 69,
+    "value": "share"
+  },
+  {
+    "time": 2955,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3017,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3067,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3205,
+    "type": "word",
+    "start": 70,
+    "end": 73,
+    "value": "our"
+  },
+  {
+    "time": 3205,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3217,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3330,
+    "type": "word",
+    "start": 74,
+    "end": 76,
+    "value": "Q4"
+  },
+  {
+    "time": 3330,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3417,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3455,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3617,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3667,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3892,
+    "type": "word",
+    "start": 77,
+    "end": 84,
+    "value": "results"
+  },
+  {
+    "time": 3892,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3905,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4005,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4217,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4267,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4580,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

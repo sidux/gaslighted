@@ -1,0 +1,347 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 78,
+    "value": "Should I bring up the ROI projections now or wait until after the demo?"
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 7,
+    "end": 13,
+    "value": "Should"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 350,
+    "type": "word",
+    "start": 14,
+    "end": 15,
+    "value": "I"
+  },
+  {
+    "time": 350,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 16,
+    "end": 21,
+    "value": "bring"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 600,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 22,
+    "end": 24,
+    "value": "up"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 762,
+    "type": "word",
+    "start": 25,
+    "end": 28,
+    "value": "the"
+  },
+  {
+    "time": 762,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1000,
+    "type": "word",
+    "start": 29,
+    "end": 32,
+    "value": "ROI"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1487,
+    "type": "word",
+    "start": 33,
+    "end": 44,
+    "value": "projections"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1725,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1837,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1925,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2125,
+    "type": "word",
+    "start": 45,
+    "end": 48,
+    "value": "now"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2225,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2325,
+    "type": "word",
+    "start": 49,
+    "end": 51,
+    "value": "or"
+  },
+  {
+    "time": 2325,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2462,
+    "type": "word",
+    "start": 52,
+    "end": 56,
+    "value": "wait"
+  },
+  {
+    "time": 2462,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2562,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2712,
+    "type": "word",
+    "start": 57,
+    "end": 62,
+    "value": "until"
+  },
+  {
+    "time": 2712,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2825,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3000,
+    "type": "word",
+    "start": 63,
+    "end": 68,
+    "value": "after"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3187,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3250,
+    "type": "word",
+    "start": 69,
+    "end": 72,
+    "value": "the"
+  },
+  {
+    "time": 3250,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3312,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3375,
+    "type": "word",
+    "start": 73,
+    "end": 77,
+    "value": "demo"
+  },
+  {
+    "time": 3375,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3437,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3500,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3587,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 3800,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

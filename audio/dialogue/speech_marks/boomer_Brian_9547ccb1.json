@@ -1,0 +1,342 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 75,
+    "value": "Everyone <break time=\"100ms\"/> needs to submit their reports by EOD."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 7,
+    "end": 15,
+    "value": "Everyone"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 875,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 956,
+    "type": "word",
+    "start": 16,
+    "end": 37,
+    "value": "<break time=\"100ms\"/>"
+  },
+  {
+    "time": 1137,
+    "type": "word",
+    "start": 38,
+    "end": 43,
+    "value": "needs"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1412,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1537,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1750,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "to"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1787,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1862,
+    "type": "word",
+    "start": 47,
+    "end": 53,
+    "value": "submit"
+  },
+  {
+    "time": 1862,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1912,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1975,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2225,
+    "type": "word",
+    "start": 54,
+    "end": 59,
+    "value": "their"
+  },
+  {
+    "time": 2225,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2287,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2362,
+    "type": "word",
+    "start": 60,
+    "end": 67,
+    "value": "reports"
+  },
+  {
+    "time": 2362,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2412,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2487,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2612,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2737,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2975,
+    "type": "word",
+    "start": 68,
+    "end": 70,
+    "value": "by"
+  },
+  {
+    "time": 2975,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3100,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3225,
+    "type": "word",
+    "start": 71,
+    "end": 74,
+    "value": "EOD"
+  },
+  {
+    "time": 3225,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3412,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3600,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3775,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4137,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4275,
+    "type": "word",
+    "start": 76,
+    "end": 97,
+    "value": "<break time=\"200ms\"/>"
+  },
+  {
+    "time": 4855,
+    "type": "sentence",
+    "start": 98,
+    "end": 132,
+    "value": "No<break time=\"500ms\"/>exceptions!"
+  },
+  {
+    "time": 5042,
+    "type": "word",
+    "start": 98,
+    "end": 100,
+    "value": "No"
+  },
+  {
+    "time": 5042,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5155,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5267,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5373,
+    "type": "word",
+    "start": 100,
+    "end": 121,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 5980,
+    "type": "word",
+    "start": 121,
+    "end": 131,
+    "value": "exceptions"
+  },
+  {
+    "time": 5980,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6355,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6392,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6505,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6605,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6730,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6842,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6980,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7442,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

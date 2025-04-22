@@ -1,0 +1,429 @@
+[
+  {
+    "time": 0,
+    "type": "word",
+    "start": 7,
+    "end": 28,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 300,
+    "type": "sentence",
+    "start": 28,
+    "end": 48,
+    "value": "Is my lighting okay?"
+  },
+  {
+    "time": 425,
+    "type": "word",
+    "start": 28,
+    "end": 30,
+    "value": "Is"
+  },
+  {
+    "time": 425,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 487,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 550,
+    "type": "word",
+    "start": 31,
+    "end": 33,
+    "value": "my"
+  },
+  {
+    "time": 550,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 662,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 712,
+    "type": "word",
+    "start": 34,
+    "end": 42,
+    "value": "lighting"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 875,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 987,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1050,
+    "type": "word",
+    "start": 43,
+    "end": 47,
+    "value": "okay"
+  },
+  {
+    "time": 1050,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1112,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1300,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1892,
+    "type": "sentence",
+    "start": 49,
+    "end": 82,
+    "value": "I want to make a good impression."
+  },
+  {
+    "time": 2030,
+    "type": "word",
+    "start": 49,
+    "end": 50,
+    "value": "I"
+  },
+  {
+    "time": 2030,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2142,
+    "type": "word",
+    "start": 51,
+    "end": 55,
+    "value": "want"
+  },
+  {
+    "time": 2142,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2192,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2267,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2280,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2292,
+    "type": "word",
+    "start": 56,
+    "end": 58,
+    "value": "to"
+  },
+  {
+    "time": 2292,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2305,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2342,
+    "type": "word",
+    "start": 59,
+    "end": 63,
+    "value": "make"
+  },
+  {
+    "time": 2342,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2392,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2467,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2517,
+    "type": "word",
+    "start": 64,
+    "end": 65,
+    "value": "a"
+  },
+  {
+    "time": 2517,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2580,
+    "type": "word",
+    "start": 66,
+    "end": 70,
+    "value": "good"
+  },
+  {
+    "time": 2580,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2655,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2767,
+    "type": "word",
+    "start": 71,
+    "end": 81,
+    "value": "impression"
+  },
+  {
+    "time": 2767,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2830,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2892,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2955,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3042,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3205,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3480,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3492,
+    "type": "word",
+    "start": 83,
+    "end": 104,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 4372,
+    "type": "sentence",
+    "start": 104,
+    "end": 132,
+    "value": "Can everyone see me clearly?"
+  },
+  {
+    "time": 4472,
+    "type": "word",
+    "start": 104,
+    "end": 107,
+    "value": "Can"
+  },
+  {
+    "time": 4472,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4560,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4572,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4622,
+    "type": "word",
+    "start": 108,
+    "end": 116,
+    "value": "everyone"
+  },
+  {
+    "time": 4622,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4685,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4747,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4760,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4822,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4872,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4935,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4997,
+    "type": "word",
+    "start": 117,
+    "end": 120,
+    "value": "see"
+  },
+  {
+    "time": 4997,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5085,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5185,
+    "type": "word",
+    "start": 121,
+    "end": 123,
+    "value": "me"
+  },
+  {
+    "time": 5185,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5210,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5372,
+    "type": "word",
+    "start": 124,
+    "end": 131,
+    "value": "clearly"
+  },
+  {
+    "time": 5372,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5410,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5510,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5522,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5622,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5685,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5897,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

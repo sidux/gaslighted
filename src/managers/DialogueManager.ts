@@ -5,6 +5,7 @@ import { AudioManager } from './AudioManager';
 import { GameScene } from '../scenes/GameScene';
 import { NeuralSpeechProcessor } from './NeuralSpeechProcessor';
 import { SafeZone } from '../types/speech/SpeechMark';
+import { VisemeData } from '../types/speech/Viseme';
 
 export class DialogueManager {
   private scene: GameScene;
@@ -21,7 +22,20 @@ export class DialogueManager {
   private safeZones: SafeZone[] = [];
   private speechRhythmDisplay: Phaser.GameObjects.Container | null = null;
   
+  // Flags to prevent double initialization and start
+  private static instance: DialogueManager | null = null;
+  private initialized: boolean = false;
+  private dialogueStarted: boolean = false;
+  
   constructor(scene: GameScene, dialogues: Dialogue[]) {
+    // Implement singleton pattern to prevent multiple instances
+    if (DialogueManager.instance) {
+      console.warn("DialogueManager already exists - returning existing instance");
+      return DialogueManager.instance;
+    }
+    
+    DialogueManager.instance = this;
+    
     this.scene = scene;
     this.dialogues = dialogues;
     this.audioManager = new AudioManager(scene);
@@ -29,6 +43,9 @@ export class DialogueManager {
     
     // Create rhythm display
     this.createSpeechRhythmDisplay();
+    
+    this.initialized = true;
+    console.log("DialogueManager initialized once");
   }
   
   public setNPCs(npcs: Character[]): void {
@@ -133,7 +150,24 @@ export class DialogueManager {
   }
   
   public async startDialogue(): Promise<void> {
+    // Prevent multiple starts of dialogue sequence
+    if (this.dialogueStarted) {
+      console.warn("Dialogue sequence already started - ignoring duplicate call");
+      return;
+    }
+    
+    // Mark as started
+    this.dialogueStarted = true;
+    
     console.log("Starting dialogue sequence with", this.dialogues.length, "dialogues");
+    
+    // Stop any playing audio from previous attempts
+    this.audioManager.stopAllSpeechSounds();
+    
+    // Reset dialogue state
+    this.currentDialogueIndex = -1;
+    this.isDialogueActive = false;
+    this.currentDialogue = null;
     
     // Preload all speech marks first
     await this.speechProcessor.preloadSpeechMarks(this.dialogues);
@@ -153,6 +187,26 @@ export class DialogueManager {
   
   public getCurrentSafetyStatus(): 'safe' | 'neutral' | 'danger' {
     return this.currentSafetyStatus;
+  }
+  
+  /**
+   * Get the current safe zones
+   * @returns Array of current safe zones
+   */
+  public getCurrentSafeZones(): SafeZone[] {
+    return this.safeZones;
+  }
+  
+  /**
+   * Get the current time in the dialogue
+   * @returns Current time in ms since dialogue started
+   */
+  public getCurrentDialogueTime(): number {
+    if (!this.isDialogueActive) {
+      return 0;
+    }
+    
+    return this.scene.time.now - this.currentDialogueStartTime;
   }
   
   private async moveToNextDialogue(): Promise<void> {
@@ -187,6 +241,12 @@ export class DialogueManager {
   }
   
   private async playDialogue(dialogue: Dialogue): Promise<void> {
+    // If there's already an active dialogue, stop it first
+    if (this.isDialogueActive) {
+      console.log("Stopping active dialogue before starting new one");
+      this.stopCurrentDialogue();
+    }
+    
     console.log(`Playing dialogue for speaker ${dialogue.speakerId}`);
     
     // Store current dialogue reference
@@ -233,8 +293,11 @@ export class DialogueManager {
       // Set active speaker
       rhythmUI.setActiveSpeaker(dialogue.speakerId);
       
-      // Add notes for this dialogue's safe zones
-      rhythmUI.addNotesForDialogue(dialogue.speakerId, this.safeZones, dialogue.duration);
+      // Get viseme data from speech processor
+      const visemeData = this.speechProcessor.getVisemeData(dialogue);
+      
+      // Add viseme notes to rhythm UI
+      rhythmUI.addUpcomingVisemes(visemeData, dialogue.duration);
     }
     
     // Play voice audio
@@ -287,6 +350,9 @@ export class DialogueManager {
     if (currentSpeaker) {
       currentSpeaker.stopSpeaking();
     }
+    
+    // Stop any playing dialogue audio
+    this.audioManager.stopAllSpeechSounds();
     
     // Hide dialogue text
     this.scene.hideDialogue();

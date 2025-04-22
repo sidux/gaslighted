@@ -7,6 +7,7 @@ import {DialogueManager} from '../managers/DialogueManager';
 import {AudioManager} from '../managers/AudioManager';
 import {Level} from '../types/Level';
 import {RhythmUI} from '../entities/RhythmUI';
+import {SafeZone} from '../types/speech/SpeechMark';
 
 export class GameScene extends Phaser.Scene {
   private levelManager!: LevelManager;
@@ -55,6 +56,8 @@ export class GameScene extends Phaser.Scene {
   }
 
   async create(): Promise<void> {
+    console.log("Creating GameScene");
+    
     // Setup background
     this.createBackground();
     
@@ -104,6 +107,9 @@ export class GameScene extends Phaser.Scene {
     // Create "Hold SPACE to Start" prompt
     this.showStartPrompt();
     
+    // Add gameplay instructions that stay visible
+    this.createGameplayInstructions();
+    
     // Wait for initial SPACE to start the game
     this.input.keyboard.once('keydown-SPACE', () => {
       this.startGame();
@@ -123,6 +129,21 @@ export class GameScene extends Phaser.Scene {
       }
     });
     
+    // Add key handlers for different fart types/visemes
+    // Vowels
+    this.input.keyboard.on('keydown-A', () => this.handleVisemeKeyPress('A'));
+    this.input.keyboard.on('keydown-E', () => this.handleVisemeKeyPress('E'));
+    this.input.keyboard.on('keydown-I', () => this.handleVisemeKeyPress('I'));
+    this.input.keyboard.on('keydown-O', () => this.handleVisemeKeyPress('O'));
+    this.input.keyboard.on('keydown-U', () => this.handleVisemeKeyPress('U'));
+    
+    // Consonants
+    this.input.keyboard.on('keydown-P', () => this.handleVisemeKeyPress('P'));
+    this.input.keyboard.on('keydown-F', () => this.handleVisemeKeyPress('F'));
+    this.input.keyboard.on('keydown-T', () => this.handleVisemeKeyPress('T'));
+    this.input.keyboard.on('keydown-S', () => this.handleVisemeKeyPress('S'));
+    this.input.keyboard.on('keydown-K', () => this.handleVisemeKeyPress('K'));
+    
     // Start the game timer
     this.time.addEvent({
       delay: 1000,
@@ -135,7 +156,10 @@ export class GameScene extends Phaser.Scene {
       // Preload all audio files for this level for better performance
       await this.audioManager.preloadLevelAudio(this.currentLevel.dialogues);
       
+      // Create dialogue manager - now it uses singleton pattern so only one instance will exist
+      console.log("Creating DialogueManager");
       this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
+      console.log("DialogueManager created");
 
       // Create NPCs from level data
       this.createNPCs();
@@ -172,14 +196,21 @@ export class GameScene extends Phaser.Scene {
       // Mark components as initialized
       this.componentsInitialized = true;
       
-      // Start level dialogue (don't await as we don't need to block here)
-      this.dialogueManager.startDialogue().catch(error => {
-        console.error("Error starting dialogue:", error);
-      });
+      console.log("Game components initialized, starting dialogue...");
+      
+      // Start level dialogue in a controlled way
+      setTimeout(() => {
+        if (this.dialogueManager && !this.gameOver) {
+          console.log("Starting dialogue sequence...");
+          this.dialogueManager.startDialogue().catch(error => {
+            console.error("Error starting dialogue:", error);
+          });
+        }
+      }, 500); // Short delay to ensure everything is ready
       
       console.log("Level initialized with audio preloaded");
     } catch (error) {
-      console.error("Error preloading audio:", error);
+      console.error("Error in GameScene create:", error);
     }
   }
 
@@ -602,18 +633,53 @@ export class GameScene extends Phaser.Scene {
       return;
     }
     
+    // Get the current viseme key being pressed
+    const currentVisemeKey = this.player.getCurrentVisemeKey();
+    const currentFartType = this.player.getCurrentFartType();
+    
+    // Check if a valid key is being pressed
+    if (!currentVisemeKey) {
+      // No viseme key pressed, use default fart type
+      this.showVisemeKeyWarning();
+      return;
+    }
+    
     // Get current dialogue safety from speech rhythm analysis
-    const safetyStatus = this.dialogueManager.getCurrentSafetyStatus();
+    let safetyStatus = this.dialogueManager.getCurrentSafetyStatus();
+    
+    // Check if the viseme key matches the current safe zone
+    const safeZones = this.dialogueManager.getCurrentSafeZones();
+    const currentTime = this.dialogueManager.getCurrentDialogueTime();
+    
+    // Find the closest safe zone
+    const activeZone = this.findClosestSafeZone(safeZones, currentTime);
+    
+    // Check if the key pressed matches the required key
+    if (activeZone) {
+      if (activeZone.keyToPress === currentVisemeKey) {
+        // Perfect match - improve safety if possible
+        if (safetyStatus !== 'safe') {
+          safetyStatus = 'safe';
+        }
+      } else {
+        // Key mismatch - worsen safety status
+        if (safetyStatus === 'safe') {
+          safetyStatus = 'neutral';
+        } else if (safetyStatus === 'neutral') {
+          safetyStatus = 'danger';
+        }
+      }
+    }
     
     // Start continuous farting
     this.player.startFarting(currentPressure);
     
-    // Play initial fart sound with intensity based on pressure
-    this.audioManager.playFartSound(currentPressure);
+    // Play initial fart sound with intensity based on pressure and fart type
+    this.audioManager.playFartSound(currentPressure, false, currentFartType);
     
     // Show visual feedback in the rhythm UI
     if (this.rhythmUI) {
-      this.rhythmUI.showFartRelease(safetyStatus);
+      this.rhythmUI.showFartRelease(safetyStatus, currentVisemeKey);
     }
     
     // Show visual feedback about timing
@@ -624,6 +690,79 @@ export class GameScene extends Phaser.Scene {
     
     // Update combo count based on safety
     this.updateCombo(safetyStatus);
+    
+    // Show viseme match feedback for visual confirmation
+    if (this.rhythmUI && activeZone) {
+      let accuracy: 'perfect' | 'good' | 'miss';
+      
+      if (activeZone.keyToPress === currentVisemeKey && safetyStatus === 'safe') {
+        accuracy = 'perfect';
+      } else if (activeZone.keyToPress === currentVisemeKey && safetyStatus === 'neutral') {
+        accuracy = 'good';
+      } else {
+        accuracy = 'miss';
+      }
+      
+      this.rhythmUI.showVisemeMatch(currentVisemeKey, accuracy);
+    }
+  }
+  
+  /**
+   * Find the closest safe zone to the current time
+   * @param safeZones Array of safe zones
+   * @param currentTime Current dialogue time
+   * @returns The closest safe zone or null if none are close
+   */
+  private findClosestSafeZone(safeZones: SafeZone[], currentTime: number): SafeZone | null {
+    if (!safeZones || safeZones.length === 0) {
+      return null;
+    }
+    
+    // Find the closest safe zone
+    let closestZone: SafeZone | null = null;
+    let closestDistance = Number.MAX_VALUE;
+    
+    for (const zone of safeZones) {
+      // Calculate distance to zone center
+      const zoneCenter = (zone.startTime + zone.endTime) / 2;
+      const distance = Math.abs(currentTime - zoneCenter);
+      
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestZone = zone;
+      }
+    }
+    
+    // Only return if the zone is reasonably close (within 500ms)
+    return closestDistance < 500 ? closestZone : null;
+  }
+  
+  /**
+   * Show warning when no viseme key is pressed
+   */
+  private showVisemeKeyWarning(): void {
+    // Create warning text
+    const warningText = this.add.text(
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 3,
+      "Press a letter key first!",
+      {
+        font: 'bold 24px Arial',
+        color: '#ff0000',
+        stroke: '#000000',
+        strokeThickness: 4
+      }
+    ).setOrigin(0.5);
+    
+    // Animate and remove
+    this.tweens.add({
+      targets: warningText,
+      y: warningText.y - 50,
+      alpha: 0,
+      duration: 1500,
+      ease: 'Power2',
+      onComplete: () => warningText.destroy()
+    });
   }
   
   /**
@@ -754,6 +893,87 @@ export class GameScene extends Phaser.Scene {
     });
   }
   
+  /**
+   * Handle when player presses a key for a specific viseme
+   * @param key The key pressed (A, E, I, O, etc.)
+   */
+  private handleVisemeKeyPress(key: string): void {
+    if (!this.componentsInitialized || !this.player || !this.playerStartedFarting) {
+      return;
+    }
+    
+    // Set the current viseme key on the player
+    this.player.setVisemeKey(key);
+    
+    // Show the key press in the rhythm UI
+    if (this.rhythmUI) {
+      this.rhythmUI.showKeyPress(key);
+    }
+    
+    // Show a visual indicator above the player to show which key is active
+    this.showActiveKeyIndicator(key);
+  }
+  
+  /**
+   * Shows a visual indicator of which key is currently active
+   */
+  private showActiveKeyIndicator(key: string): void {
+    // Remove any existing indicators
+    this.children.getAll()
+      .filter(obj => obj.name === 'active-key-indicator')
+      .forEach(obj => obj.destroy());
+    
+    if (!this.player) return;
+    
+    // Create a new indicator
+    const indicator = this.add.container(this.player.x, this.player.y - 120);
+    indicator.setName('active-key-indicator');
+    
+    // Background
+    const bg = this.add.rectangle(0, 0, 60, 60, 0x000000, 0.7);
+    bg.setStrokeStyle(3, 0x00ffff);
+    indicator.add(bg);
+    
+    // Key text
+    const text = this.add.text(0, 0, key, {
+      fontFamily: 'Arial',
+      fontSize: '32px',
+      color: '#ffffff',
+      fontStyle: 'bold'
+    }).setOrigin(0.5);
+    indicator.add(text);
+    
+    // Add "READY" text below
+    const readyText = this.add.text(0, 30, "READY!", {
+      fontFamily: 'Arial',
+      fontSize: '16px',
+      color: '#00ff00',
+      fontStyle: 'bold'
+    }).setOrigin(0.5);
+    indicator.add(readyText);
+    
+    // Animate the indicator for visibility
+    this.tweens.add({
+      targets: indicator,
+      scale: { from: 0.8, to: 1.2 },
+      duration: 300,
+      yoyo: true,
+      repeat: 2,
+      ease: 'Sine.easeInOut'
+    });
+    
+    // Auto-destroy after a few seconds
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: indicator,
+        alpha: 0,
+        y: indicator.y - 30,
+        duration: 500,
+        onComplete: () => indicator.destroy()
+      });
+    });
+  }
+
   private async handleAutoFartRelease(): Promise<void> {
     if (!this.componentsInitialized || !this.player || !this.audioManager) {
       return;
@@ -762,8 +982,11 @@ export class GameScene extends Phaser.Scene {
     // Auto-release is always at a bad time
     const currentPressure = this.player.getCurrentPressure();
     
-    // Play loud fart sound
-    this.audioManager.playFartSound(currentPressure, true);
+    // Get the current fart type from player (or default)
+    const fartType = this.player.getCurrentFartType();
+    
+    // Play loud fart sound with current type
+    this.audioManager.playFartSound(currentPressure, true, fartType);
     
     // Release pressure
     this.player.releasePressure();
@@ -1046,14 +1269,26 @@ export class GameScene extends Phaser.Scene {
    */
   private async initializeGameComponents(): Promise<void> {
     try {
-      // Preload all audio files for this level for better performance
-      await this.audioManager.preloadLevelAudio(this.currentLevel.dialogues);
+      console.log("Initializing game components after player start");
       
-      this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
-
-      // Create NPCs from level data
-      this.createNPCs();
-
+      // We don't need to recreate the dialogue manager or NPCs since they're already created
+      // in the create method. Just make sure they're properly connected.
+      
+      // Make sure we have DialogueManager
+      if (!this.dialogueManager) {
+        console.log("No DialogueManager exists, creating one");
+        this.dialogueManager = new DialogueManager(this, this.currentLevel.dialogues);
+      }
+      
+      // Make sure we have NPCs
+      if (this.npcs.length === 0) {
+        console.log("No NPCs exist, creating them");
+        this.createNPCs();
+      }
+      
+      // Re-link dialogueManager to NPCs in case they were recreated
+      this.dialogueManager.setNPCs(this.npcs);
+      
       // Position player exactly according to the screenshot (bottom left)
       const playerX = this.cameras.main.width / 6; // 1/6 of screen width
       const playerY = this.cameras.main.height * 3 / 4; // 3/4 of screen height
@@ -1066,38 +1301,122 @@ export class GameScene extends Phaser.Scene {
         return;
       }
       
-      // Create player (after NPCs so player is on top layer)
-      this.player = new Character(
-        this, 
-        playerX, 
-        playerY, 
-        playerData.id,
-        playerData.name,
-        playerData.voiceType,
-        CharacterRole.PLAYER
-      );
-
-      // Link dialogue manager to NPCs for expression changes
-      this.dialogueManager.setNPCs(this.npcs);
-      
-      // Link player to fart meter for pressure updates
-      this.player.setFartMeter(this.fartMeter);
+      // Create player (after NPCs so player is on top layer) if it doesn't exist
+      if (!this.player) {
+        this.player = new Character(
+          this, 
+          playerX, 
+          playerY, 
+          playerData.id,
+          playerData.name,
+          playerData.voiceType,
+          CharacterRole.PLAYER
+        );
+        
+        // Link player to fart meter
+        if (this.fartMeter) {
+          this.player.setFartMeter(this.fartMeter);
+        }
+      }
       
       // Mark components as initialized
       this.componentsInitialized = true;
       
-      // Start level dialogue (don't await as we don't need to block here)
-      this.dialogueManager.startDialogue().catch(error => {
-        console.error("Error starting dialogue:", error);
-      });
+      // Only start dialogue if it hasn't been started yet
+      console.log("Components initialized - waiting a moment before starting dialogue");
+      setTimeout(() => {
+        if (this.dialogueManager && !this.gameOver) {
+          console.log("Starting dialogue sequence from initializeGameComponents");
+          this.dialogueManager.startDialogue().catch(error => {
+            console.error("Error starting dialogue:", error);
+          });
+        }
+      }, 1000); // Longer delay to ensure everything is really ready
       
-      console.log("Level initialized with audio preloaded");
+      console.log("Game components initialized successfully");
     } catch (error) {
       console.error("Error initializing game components:", error);
     }
   }
   
   // Helper method for Promise-based delays
+  /**
+   * Create permanent gameplay instructions
+   */
+  private createGameplayInstructions(): void {
+    // Create a semi-transparent background for the instructions
+    const instructionsContainer = this.add.container(10, 10);
+    instructionsContainer.setName('gameplay-instructions');
+    
+    // Background
+    const bg = this.add.rectangle(0, 0, 250, 100, 0x000000, 0.7);
+    bg.setOrigin(0, 0);
+    bg.setStrokeStyle(1, 0xffffff, 0.3);
+    instructionsContainer.add(bg);
+    
+    // Title
+    const title = this.add.text(
+      10, 10,
+      "HOW TO PLAY:",
+      {
+        fontFamily: 'Arial',
+        fontSize: '16px',
+        color: '#ffffff',
+        fontStyle: 'bold'
+      }
+    );
+    instructionsContainer.add(title);
+    
+    // Instructions
+    const instructions = [
+      "1. Press A, E, I, O, or U keys to select",
+      "2. Letter must match falling notes",
+      "3. HOLD SPACE to contain fart pressure",
+      "4. RELEASE SPACE during speech (green zone)"
+    ];
+    
+    // Add each instruction line
+    instructions.forEach((text, index) => {
+      const instruction = this.add.text(
+        10, 35 + (index * 16),
+        text,
+        {
+          fontFamily: 'Arial',
+          fontSize: '12px',
+          color: '#cccccc'
+        }
+      );
+      instructionsContainer.add(instruction);
+    });
+    
+    // Make instructions fade out after a while but return on hover
+    this.time.delayedCall(8000, () => {
+      this.tweens.add({
+        targets: instructionsContainer,
+        alpha: 0.3,
+        duration: 1000
+      });
+    });
+    
+    // Make instructions interactive
+    bg.setInteractive();
+    bg.on('pointerover', () => {
+      this.tweens.add({
+        targets: instructionsContainer,
+        alpha: 1,
+        duration: 200
+      });
+    });
+    
+    bg.on('pointerout', () => {
+      this.tweens.add({
+        targets: instructionsContainer,
+        alpha: 0.3,
+        duration: 500
+      });
+    });
+  }
+  
   private delay(ms: number): Promise<void> {
     return new Promise<void>(resolve => setTimeout(resolve, ms));
   }

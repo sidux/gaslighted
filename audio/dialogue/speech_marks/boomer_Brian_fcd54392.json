@@ -1,0 +1,411 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 132,
+    "value": "Ladies and gentlemen of the board<break time=\"800ms\"/><break time=\"300ms\"/>thank you for joining our annual investor meeting."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 7,
+    "end": 13,
+    "value": "Ladies"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 14,
+    "end": 17,
+    "value": "and"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 637,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 837,
+    "type": "word",
+    "start": 18,
+    "end": 27,
+    "value": "gentlemen"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1375,
+    "type": "word",
+    "start": 28,
+    "end": 30,
+    "value": "of"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1512,
+    "type": "word",
+    "start": 31,
+    "end": 34,
+    "value": "the"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1625,
+    "type": "word",
+    "start": 35,
+    "end": 40,
+    "value": "board"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2256,
+    "type": "word",
+    "start": 40,
+    "end": 61,
+    "value": "<break time=\"800ms\"/>"
+  },
+  {
+    "time": 3056,
+    "type": "word",
+    "start": 61,
+    "end": 82,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 3487,
+    "type": "word",
+    "start": 82,
+    "end": 87,
+    "value": "thank"
+  },
+  {
+    "time": 3487,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3562,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3650,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3737,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3787,
+    "type": "word",
+    "start": 88,
+    "end": 91,
+    "value": "you"
+  },
+  {
+    "time": 3787,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3912,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3987,
+    "type": "word",
+    "start": 92,
+    "end": 95,
+    "value": "for"
+  },
+  {
+    "time": 3987,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4050,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4225,
+    "type": "word",
+    "start": 96,
+    "end": 103,
+    "value": "joining"
+  },
+  {
+    "time": 4225,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4312,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4412,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4475,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4487,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4600,
+    "type": "word",
+    "start": 104,
+    "end": 107,
+    "value": "our"
+  },
+  {
+    "time": 4600,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4687,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4825,
+    "type": "word",
+    "start": 108,
+    "end": 114,
+    "value": "annual"
+  },
+  {
+    "time": 4825,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4925,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4987,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5100,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5137,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5162,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5287,
+    "type": "word",
+    "start": 115,
+    "end": 123,
+    "value": "investor"
+  },
+  {
+    "time": 5287,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5362,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5462,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5537,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5662,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5687,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5812,
+    "type": "word",
+    "start": 124,
+    "end": 131,
+    "value": "meeting"
+  },
+  {
+    "time": 5812,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5900,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5975,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6050,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6137,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6475,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,4 +1,5 @@
-import { SafeZone, SpeechMark, SpeechSegment } from '../types/speech/SpeechMark';
+import { SafeZone, SpeechMark, SpeechSegment, VisemeType } from '../types/speech/SpeechMark';
+import { Viseme, VisemeData, visemeTypeToViseme, getKeyForViseme } from '../types/speech/Viseme';
 import { Dialogue } from '../types/Dialogue';
 
 export class NeuralSpeechProcessor {
@@ -57,12 +58,25 @@ export class NeuralSpeechProcessor {
     // based on the dialogue's manual safety status
     const safeZones: SafeZone[] = [];
     
+    // Default viseme types to use for fallback
+    const defaultVisemes = [
+      VisemeType.A, 
+      VisemeType.E, 
+      VisemeType.I, 
+      VisemeType.O, 
+      VisemeType.U
+    ];
+    
     // If manually marked as safe, create a safe zone for the entire dialogue
     if (dialogue.safetyStatus === 'safe') {
+      // Use a random vowel viseme for the full duration
+      const randomViseme = defaultVisemes[Math.floor(Math.random() * defaultVisemes.length)];
       safeZones.push({
         startTime: 0,
         endTime: dialogue.duration,
-        confidence: 0.8
+        confidence: 0.8,
+        visemeType: randomViseme,
+        keyToPress: randomViseme.toUpperCase()
       });
     } 
     // If neutral, create semi-safe zones with gaps
@@ -74,10 +88,15 @@ export class NeuralSpeechProcessor {
       for (let i = 0; i < segments; i++) {
         // Only even segments are safe (simulating speech pattern)
         if (i % 2 === 0) {
+          // Use a different vowel for each segment
+          const visemeIndex = i % defaultVisemes.length;
+          const visemeType = defaultVisemes[visemeIndex];
           safeZones.push({
             startTime: i * segmentDuration,
             endTime: (i + 0.8) * segmentDuration, // Leave a small gap between segments
-            confidence: 0.6
+            confidence: 0.6,
+            visemeType: visemeType,
+            keyToPress: visemeType.toUpperCase()
           });
         }
       }
@@ -86,10 +105,14 @@ export class NeuralSpeechProcessor {
     else if (dialogue.safetyStatus === 'danger') {
       // Create just one short safe zone in the middle
       const middleStart = dialogue.duration * 0.4;
+      // Use a consonant viseme (harder to time)
+      const visemeType = VisemeType.T;
       safeZones.push({
         startTime: middleStart,
         endTime: middleStart + (dialogue.duration * 0.2),
-        confidence: 0.4
+        confidence: 0.4,
+        visemeType: visemeType,
+        keyToPress: visemeType.toUpperCase()
       });
     }
     
@@ -108,8 +131,9 @@ export class NeuralSpeechProcessor {
   private generateSafeZones(speechMarks: SpeechMark[], totalDuration: number): SafeZone[] {
     const safeZones: SafeZone[] = [];
     
-    // Filter to only get word marks (most useful for rhythm)
+    // Filter to get both word and viseme marks (most useful for rhythm)
     const wordMarks = speechMarks.filter(mark => mark.type === 'word');
+    const visemeMarks = speechMarks.filter(mark => mark.type === 'viseme');
     
     if (wordMarks.length === 0) {
       return safeZones;
@@ -146,34 +170,126 @@ export class NeuralSpeechProcessor {
       }
     }
     
-    // Merge consecutive safe segments into safe zones
-    let currentSafeZone: SafeZone | null = null;
-    
+    // Extract viseme information for each word segment - BUT SIMPLIFIED
+    // Instead of creating a safe zone for every viseme, we'll only create one per word
+    // This will make the game much easier to play
     for (const segment of segments) {
-      if (segment.isSafe) {
-        // Start a new safe zone or extend the current one
-        if (!currentSafeZone) {
-          currentSafeZone = {
-            startTime: segment.startTime,
-            endTime: segment.endTime,
-            confidence: this.calculateConfidence(segment)
-          };
+      if (segment.isSafe && segment.word.length > 0) {
+        // Find all viseme marks that fall within this word segment
+        const visemesInSegment = visemeMarks.filter(mark => 
+          mark.time >= segment.startTime && mark.time <= segment.endTime
+        );
+        
+        // If we have visemes, just pick the most prominent one for this word
+        if (visemesInSegment.length > 0) {
+          // Sort by duration (if we can determine it) to find the most prominent
+          const sortedVisemes = [...visemesInSegment].sort((a, b) => {
+            const nextA = visemeMarks.find(v => v.time > a.time);
+            const nextB = visemeMarks.find(v => v.time > b.time);
+            
+            const durationA = nextA ? nextA.time - a.time : 150;
+            const durationB = nextB ? nextB.time - b.time : 150;
+            
+            return durationB - durationA; // Longer duration = more prominent
+          });
+          
+          // Use the most prominent viseme (first after sorting)
+          const mainViseme = sortedVisemes[0];
+          
+          // Calculate viseme duration with extra padding for easier gameplay
+          const nextViseme = visemeMarks.find(v => v.time > mainViseme.time);
+          // Make duration longer for easier timing
+          const visemeDuration = nextViseme 
+            ? (nextViseme.time - mainViseme.time) * 1.5  // 50% longer for easier timing
+            : 300; // Default increased from 150ms to 300ms
+          
+          // Determine the viseme type - limit to just a few keys for simplicity
+          // We'll use only A, E, I, O, U to make it easier to remember
+          const visemeValue = mainViseme.value.toLowerCase();
+          
+          // Map all possible visemes to just 5 vowels for simplicity
+          let visemeType: VisemeType;
+          switch (visemeValue.charAt(0)) {
+            case 'a': 
+            case 'æ': 
+              visemeType = VisemeType.A;
+              break;
+            case 'e': 
+            case 'ɛ': 
+            case 'ə': 
+              visemeType = VisemeType.E;
+              break;
+            case 'i': 
+            case 'ɪ': 
+              visemeType = VisemeType.I;
+              break;
+            case 'o': 
+            case 'ɔ': 
+            case 'ʊ': 
+              visemeType = VisemeType.O;
+              break;
+            case 'u':
+            case 'ʌ':
+              visemeType = VisemeType.U;
+              break;
+            default:
+              // For consonants, just pick a random vowel
+              const vowels = [VisemeType.A, VisemeType.E, VisemeType.I, VisemeType.O, VisemeType.U];
+              visemeType = vowels[Math.floor(Math.random() * vowels.length)];
+          }
+          
+          // Create the safe zone with longer timing window
+          safeZones.push({
+            startTime: mainViseme.time - 100, // Start 100ms earlier
+            endTime: mainViseme.time + visemeDuration + 100, // End 100ms later
+            confidence: 0.8, // Higher confidence for easier gameplay
+            visemeType: visemeType,
+            keyToPress: visemeType.toUpperCase()
+          });
         } else {
-          currentSafeZone.endTime = segment.endTime;
-          // Average the confidence
-          currentSafeZone.confidence = (currentSafeZone.confidence + this.calculateConfidence(segment)) / 2;
+          // If no visemes found, create a generic safe zone for this word
+          // Use a random vowel viseme (simpler set)
+          const vowels = [VisemeType.A, VisemeType.E, VisemeType.I, VisemeType.O, VisemeType.U];
+          const randomViseme = vowels[Math.floor(Math.random() * vowels.length)];
+          
+          // Create a longer safe zone for easier gameplay
+          safeZones.push({
+            startTime: segment.startTime - 100, // Start 100ms earlier
+            endTime: segment.endTime + 100, // End 100ms later  
+            confidence: 0.8, // Higher confidence for easier gameplay
+            visemeType: randomViseme, 
+            keyToPress: randomViseme.toUpperCase()
+          });
         }
-      } else if (currentSafeZone) {
-        // End the current safe zone
-        safeZones.push(currentSafeZone);
-        currentSafeZone = null;
       }
     }
     
-    // Add the last safe zone if there is one
-    if (currentSafeZone) {
-      safeZones.push(currentSafeZone);
+    // Merge overlapping safe zones with the same viseme type
+    // This further reduces the number of notes falling
+    const mergedZones: SafeZone[] = [];
+    const sortedZones = [...safeZones].sort((a, b) => a.startTime - b.startTime);
+    
+    let currentZone: SafeZone | null = null;
+    
+    for (const zone of sortedZones) {
+      if (!currentZone) {
+        currentZone = zone;
+      } else if (currentZone.visemeType === zone.visemeType && zone.startTime <= currentZone.endTime) {
+        // Merge zones if they're the same type and overlap
+        currentZone.endTime = Math.max(currentZone.endTime, zone.endTime);
+      } else {
+        // Add the current zone and start a new one
+        mergedZones.push(currentZone);
+        currentZone = zone;
+      }
     }
+    
+    // Add the last zone
+    if (currentZone) {
+      mergedZones.push(currentZone);
+    }
+    
+    return mergedZones;
     
     return safeZones;
   }
@@ -255,6 +371,26 @@ export class NeuralSpeechProcessor {
       .filter(zone => zone.end > zone.start); // Ensure valid zones
   }
   
+  /**
+   * Extract viseme data from safe zones for RhythmUI
+   * @param dialogue The dialogue to extract visemes from
+   * @returns Array of VisemeData objects
+   */
+  public getVisemeData(dialogue: Dialogue): VisemeData[] {
+    // Get safe zones for this dialogue
+    const safeZones = this.getSafeZones(dialogue);
+    
+    // Convert to VisemeData format
+    return safeZones.map(zone => ({
+      viseme: visemeTypeToViseme(zone.visemeType),
+      startTime: zone.startTime,
+      endTime: zone.endTime,
+      duration: zone.endTime - zone.startTime,
+      keyToPress: zone.keyToPress,
+      intensity: zone.confidence
+    }));
+  }
+
   /**
    * Preload all speech marks for a set of dialogues
    * @param dialogues The dialogues to preload speech marks for

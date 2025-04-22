@@ -1,0 +1,310 @@
+[
+  {
+    "time": 0,
+    "type": "word",
+    "start": 7,
+    "end": 28,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 300,
+    "type": "word",
+    "start": 28,
+    "end": 49,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 600,
+    "type": "sentence",
+    "start": 49,
+    "end": 98,
+    "value": "Sorry about that, I'm coming down with something."
+  },
+  {
+    "time": 787,
+    "type": "word",
+    "start": 49,
+    "end": 54,
+    "value": "Sorry"
+  },
+  {
+    "time": 787,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 900,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 912,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1050,
+    "type": "word",
+    "start": 55,
+    "end": 60,
+    "value": "about"
+  },
+  {
+    "time": 1050,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1100,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1175,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1312,
+    "type": "word",
+    "start": 61,
+    "end": 65,
+    "value": "that"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1412,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1637,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1850,
+    "type": "word",
+    "start": 67,
+    "end": 70,
+    "value": "I'm"
+  },
+  {
+    "time": 1850,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1912,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1975,
+    "type": "word",
+    "start": 71,
+    "end": 77,
+    "value": "coming"
+  },
+  {
+    "time": 1975,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2162,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2225,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2350,
+    "type": "word",
+    "start": 78,
+    "end": 82,
+    "value": "down"
+  },
+  {
+    "time": 2350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2437,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2475,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2537,
+    "type": "word",
+    "start": 83,
+    "end": 87,
+    "value": "with"
+  },
+  {
+    "time": 2537,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2725,
+    "type": "word",
+    "start": 88,
+    "end": 97,
+    "value": "something"
+  },
+  {
+    "time": 2725,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2862,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2875,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2925,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3025,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3350,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3742,
+    "type": "sentence",
+    "start": 99,
+    "end": 109,
+    "value": "Excuse me."
+  },
+  {
+    "time": 3867,
+    "type": "word",
+    "start": 99,
+    "end": 105,
+    "value": "Excuse"
+  },
+  {
+    "time": 3867,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3942,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4055,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4117,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4242,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4367,
+    "type": "word",
+    "start": 106,
+    "end": 108,
+    "value": "me"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4692,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

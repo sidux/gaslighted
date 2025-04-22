@@ -1,0 +1,278 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 82,
+    "value": "Wojak will<break time=\"300ms\"/>um<break time=\"500ms\"/>cover that in detail."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 7,
+    "end": 12,
+    "value": "Wojak"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 562,
+    "type": "word",
+    "start": 13,
+    "end": 17,
+    "value": "will"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1068,
+    "type": "word",
+    "start": 17,
+    "end": 38,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 1437,
+    "type": "word",
+    "start": 38,
+    "end": 40,
+    "value": "um"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1550,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1737,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1762,
+    "type": "word",
+    "start": 40,
+    "end": 61,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 2287,
+    "type": "word",
+    "start": 61,
+    "end": 66,
+    "value": "cover"
+  },
+  {
+    "time": 2287,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2425,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2512,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2550,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2650,
+    "type": "word",
+    "start": 67,
+    "end": 71,
+    "value": "that"
+  },
+  {
+    "time": 2650,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2675,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2737,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2837,
+    "type": "word",
+    "start": 72,
+    "end": 74,
+    "value": "in"
+  },
+  {
+    "time": 2837,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2925,
+    "type": "word",
+    "start": 75,
+    "end": 81,
+    "value": "detail"
+  },
+  {
+    "time": 2925,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3112,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3225,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3550,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3955,
+    "type": "sentence",
+    "start": 83,
+    "end": 96,
+    "value": "Right, Wojak?"
+  },
+  {
+    "time": 4092,
+    "type": "word",
+    "start": 83,
+    "end": 88,
+    "value": "Right"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4267,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4330,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4455,
+    "type": "word",
+    "start": 90,
+    "end": 95,
+    "value": "Wojak"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4517,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 4705,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4792,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4992,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5092,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

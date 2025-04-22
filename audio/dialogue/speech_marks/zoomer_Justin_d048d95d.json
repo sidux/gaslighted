@@ -1,0 +1,326 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 54,
+    "value": "That reminds me of last year's company retreat!"
+  },
+  {
+    "time": 62,
+    "type": "word",
+    "start": 7,
+    "end": 11,
+    "value": "That"
+  },
+  {
+    "time": 62,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 12,
+    "end": 19,
+    "value": "reminds"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 600,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 712,
+    "type": "word",
+    "start": 20,
+    "end": 22,
+    "value": "me"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 912,
+    "type": "word",
+    "start": 23,
+    "end": 25,
+    "value": "of"
+  },
+  {
+    "time": 912,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1037,
+    "type": "word",
+    "start": 26,
+    "end": 30,
+    "value": "last"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1437,
+    "type": "word",
+    "start": 31,
+    "end": 37,
+    "value": "year's"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1712,
+    "type": "word",
+    "start": 38,
+    "end": 45,
+    "value": "company"
+  },
+  {
+    "time": 1712,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1775,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1837,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1937,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2125,
+    "type": "word",
+    "start": 46,
+    "end": 53,
+    "value": "retreat"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2187,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2275,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2512,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2837,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3230,
+    "type": "sentence",
+    "start": 55,
+    "end": 71,
+    "value": "So embarrassing!"
+  },
+  {
+    "time": 3417,
+    "type": "word",
+    "start": 55,
+    "end": 57,
+    "value": "So"
+  },
+  {
+    "time": 3417,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3467,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 3605,
+    "type": "word",
+    "start": 58,
+    "end": 70,
+    "value": "embarrassing"
+  },
+  {
+    "time": 3605,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3730,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3830,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3855,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3942,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4167,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4230,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4442,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

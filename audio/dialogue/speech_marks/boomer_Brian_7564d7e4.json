@@ -1,0 +1,241 @@
+[
+  {
+    "time": 0,
+    "type": "word",
+    "start": 7,
+    "end": 28,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 300,
+    "type": "sentence",
+    "start": 28,
+    "end": 56,
+    "value": "Thank you all for attending."
+  },
+  {
+    "time": 437,
+    "type": "word",
+    "start": 28,
+    "end": 33,
+    "value": "Thank"
+  },
+  {
+    "time": 437,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 537,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 600,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 612,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 800,
+    "type": "word",
+    "start": 34,
+    "end": 37,
+    "value": "you"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 862,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 925,
+    "type": "word",
+    "start": 38,
+    "end": 41,
+    "value": "all"
+  },
+  {
+    "time": 925,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1012,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1237,
+    "type": "word",
+    "start": 42,
+    "end": 45,
+    "value": "for"
+  },
+  {
+    "time": 1237,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1300,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1325,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1362,
+    "type": "word",
+    "start": 46,
+    "end": 55,
+    "value": "attending"
+  },
+  {
+    "time": 1362,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1550,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1737,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1812,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1925,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2175,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2225,
+    "type": "word",
+    "start": 57,
+    "end": 78,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 2905,
+    "type": "sentence",
+    "start": 79,
+    "end": 117,
+    "value": "Meeting<break time=\"700ms\"/>adjourned."
+  },
+  {
+    "time": 3042,
+    "type": "word",
+    "start": 79,
+    "end": 86,
+    "value": "Meeting"
+  },
+  {
+    "time": 3042,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3142,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3217,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3355,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3467,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3530,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3592,
+    "type": "word",
+    "start": 86,
+    "end": 107,
+    "value": "<break time=\"700ms\"/>"
+  },
+  {
+    "time": 4355,
+    "type": "word",
+    "start": 107,
+    "end": 116,
+    "value": "adjourned"
+  },
+  {
+    "time": 4355,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4755,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4980,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5280,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5567,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

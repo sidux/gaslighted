@@ -1,0 +1,461 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 15,
+    "value": "Welcome!"
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 7,
+    "end": 14,
+    "value": "Welcome"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 725,
+    "type": "word",
+    "start": 16,
+    "end": 37,
+    "value": "<break time=\"150ms\"/>"
+  },
+  {
+    "time": 1255,
+    "type": "sentence",
+    "start": 38,
+    "end": 81,
+    "value": "We're so excited to have you join us today!"
+  },
+  {
+    "time": 1380,
+    "type": "word",
+    "start": 38,
+    "end": 43,
+    "value": "We're"
+  },
+  {
+    "time": 1380,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1442,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1455,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1567,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "so"
+  },
+  {
+    "time": 1567,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1630,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1755,
+    "type": "word",
+    "start": 47,
+    "end": 54,
+    "value": "excited"
+  },
+  {
+    "time": 1755,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1817,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1880,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1967,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2005,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2142,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2192,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2255,
+    "type": "word",
+    "start": 55,
+    "end": 57,
+    "value": "to"
+  },
+  {
+    "time": 2255,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2267,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2317,
+    "type": "word",
+    "start": 58,
+    "end": 62,
+    "value": "have"
+  },
+  {
+    "time": 2317,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2392,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2455,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2567,
+    "type": "word",
+    "start": 63,
+    "end": 66,
+    "value": "you"
+  },
+  {
+    "time": 2567,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2630,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2742,
+    "type": "word",
+    "start": 67,
+    "end": 71,
+    "value": "join"
+  },
+  {
+    "time": 2742,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2817,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2880,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3030,
+    "type": "word",
+    "start": 72,
+    "end": 74,
+    "value": "us"
+  },
+  {
+    "time": 3030,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3105,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3192,
+    "type": "word",
+    "start": 75,
+    "end": 80,
+    "value": "today"
+  },
+  {
+    "time": 3192,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3292,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3530,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3755,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3767,
+    "type": "word",
+    "start": 82,
+    "end": 103,
+    "value": "<break time=\"200ms\"/>"
+  },
+  {
+    "time": 4347,
+    "type": "sentence",
+    "start": 104,
+    "end": 140,
+    "value": "Let me start by sharing my screen..."
+  },
+  {
+    "time": 4472,
+    "type": "word",
+    "start": 104,
+    "end": 107,
+    "value": "Let"
+  },
+  {
+    "time": 4472,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4535,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4547,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4597,
+    "type": "word",
+    "start": 108,
+    "end": 110,
+    "value": "me"
+  },
+  {
+    "time": 4597,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4622,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4722,
+    "type": "word",
+    "start": 111,
+    "end": 116,
+    "value": "start"
+  },
+  {
+    "time": 4722,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4797,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4847,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4922,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4972,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5035,
+    "type": "word",
+    "start": 117,
+    "end": 119,
+    "value": "by"
+  },
+  {
+    "time": 5035,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5097,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5285,
+    "type": "word",
+    "start": 120,
+    "end": 127,
+    "value": "sharing"
+  },
+  {
+    "time": 5285,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5347,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5385,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5485,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5547,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5597,
+    "type": "word",
+    "start": 128,
+    "end": 130,
+    "value": "my"
+  },
+  {
+    "time": 5597,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5660,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5785,
+    "type": "word",
+    "start": 131,
+    "end": 137,
+    "value": "screen"
+  },
+  {
+    "time": 5785,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5860,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5910,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5972,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6122,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6360,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

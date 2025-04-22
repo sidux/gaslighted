@@ -1,0 +1,347 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 49,
+    "value": "The team has prepared a detailed analysis."
+  },
+  {
+    "time": 62,
+    "type": "word",
+    "start": 7,
+    "end": 10,
+    "value": "The"
+  },
+  {
+    "time": 62,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 237,
+    "type": "word",
+    "start": 11,
+    "end": 15,
+    "value": "team"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 16,
+    "end": 19,
+    "value": "has"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 20,
+    "end": 28,
+    "value": "prepared"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 912,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1062,
+    "type": "word",
+    "start": 29,
+    "end": 30,
+    "value": "a"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1137,
+    "type": "word",
+    "start": 31,
+    "end": 39,
+    "value": "detailed"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1625,
+    "type": "word",
+    "start": 40,
+    "end": 48,
+    "value": "analysis"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1712,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1850,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2425,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2475,
+    "type": "word",
+    "start": 50,
+    "end": 71,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 3355,
+    "type": "sentence",
+    "start": 71,
+    "end": 94,
+    "value": "Let me find that chart."
+  },
+  {
+    "time": 3480,
+    "type": "word",
+    "start": 71,
+    "end": 74,
+    "value": "Let"
+  },
+  {
+    "time": 3480,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3605,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3630,
+    "type": "word",
+    "start": 75,
+    "end": 77,
+    "value": "me"
+  },
+  {
+    "time": 3630,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3667,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3730,
+    "type": "word",
+    "start": 78,
+    "end": 82,
+    "value": "find"
+  },
+  {
+    "time": 3730,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3855,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3992,
+    "type": "word",
+    "start": 83,
+    "end": 87,
+    "value": "that"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4067,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4192,
+    "type": "word",
+    "start": 88,
+    "end": 93,
+    "value": "chart"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4292,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4355,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4492,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4692,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

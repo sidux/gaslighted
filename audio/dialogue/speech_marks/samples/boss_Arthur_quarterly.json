@@ -1,0 +1,107 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 47,
+    "value": "Welcome to the quarterly review meeting."
+  },
+  {
+    "time": 100,
+    "type": "word",
+    "start": 0,
+    "end": 7,
+    "value": "Welcome"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 8,
+    "end": 10,
+    "value": "to"
+  },
+  {
+    "time": 600,
+    "type": "word",
+    "start": 11,
+    "end": 14,
+    "value": "the"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 15,
+    "end": 24,
+    "value": "quarterly"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 25,
+    "end": 31,
+    "value": "review"
+  },
+  {
+    "time": 1600,
+    "type": "word",
+    "start": 32,
+    "end": 40,
+    "value": "meeting."
+  },
+  {
+    "time": 2100,
+    "type": "sentence",
+    "start": 41,
+    "end": 65,
+    "value": "We have... lots to discuss today."
+  },
+  {
+    "time": 2400,
+    "type": "word",
+    "start": 41,
+    "end": 43,
+    "value": "We"
+  },
+  {
+    "time": 2600,
+    "type": "word",
+    "start": 44,
+    "end": 48,
+    "value": "have"
+  },
+  {
+    "time": 2900,
+    "type": "word",
+    "start": 49,
+    "end": 54,
+    "value": "..."
+  },
+  {
+    "time": 3300,
+    "type": "word",
+    "start": 55,
+    "end": 59,
+    "value": "lots"
+  },
+  {
+    "time": 3600,
+    "type": "word",
+    "start": 60,
+    "end": 62,
+    "value": "to"
+  },
+  {
+    "time": 3800,
+    "type": "word",
+    "start": 63,
+    "end": 71,
+    "value": "discuss"
+  },
+  {
+    "time": 4200,
+    "type": "word",
+    "start": 72,
+    "end": 77,
+    "value": "today"
+  }
+]

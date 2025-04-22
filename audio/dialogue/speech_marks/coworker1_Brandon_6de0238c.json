@@ -1,0 +1,79 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 51,
+    "value": "Hey everyone! I'm super excited to share our Q4 results!"
+  },
+  {
+    "time": 150,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "Hey"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 4,
+    "end": 12,
+    "value": "everyone!"
+  },
+  {
+    "time": 900,
+    "type": "word",
+    "start": 13,
+    "end": 16,
+    "value": "I'm"
+  },
+  {
+    "time": 1050,
+    "type": "word",
+    "start": 17,
+    "end": 22,
+    "value": "super"
+  },
+  {
+    "time": 1400,
+    "type": "word",
+    "start": 23,
+    "end": 30,
+    "value": "excited"
+  },
+  {
+    "time": 1800,
+    "type": "word",
+    "start": 31,
+    "end": 33,
+    "value": "to"
+  },
+  {
+    "time": 1900,
+    "type": "word",
+    "start": 34,
+    "end": 39,
+    "value": "share"
+  },
+  {
+    "time": 2150,
+    "type": "word",
+    "start": 40,
+    "end": 43,
+    "value": "our"
+  },
+  {
+    "time": 2300,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "Q4"
+  },
+  {
+    "time": 2500,
+    "type": "word",
+    "start": 47,
+    "end": 55,
+    "value": "results!"
+  }
+]

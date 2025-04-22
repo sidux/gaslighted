@@ -1,0 +1,324 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 51,
+    "value": "Hey everyone! I'm super excited to share our Q4 results!"
+  },
+  {
+    "time": 150,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "Hey"
+  },
+  {
+    "time": 150,
+    "type": "viseme",
+    "start": 0,
+    "end": 1,
+    "value": "h"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "start": 1,
+    "end": 3,
+    "value": "e"
+  },
+  {
+    "time": 350,
+    "type": "word",
+    "start": 4,
+    "end": 12,
+    "value": "everyone"
+  },
+  {
+    "time": 350,
+    "type": "viseme",
+    "start": 4,
+    "end": 5,
+    "value": "e"
+  },
+  {
+    "time": 400,
+    "type": "viseme",
+    "start": 5,
+    "end": 7,
+    "value": "v"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "start": 7,
+    "end": 8,
+    "value": "r"
+  },
+  {
+    "time": 530,
+    "type": "viseme",
+    "start": 8,
+    "end": 10,
+    "value": "e"
+  },
+  {
+    "time": 580,
+    "type": "viseme",
+    "start": 10,
+    "end": 12,
+    "value": "w"
+  },
+  {
+    "time": 650,
+    "type": "word",
+    "start": 13,
+    "end": 14,
+    "value": "I"
+  },
+  {
+    "time": 650,
+    "type": "viseme",
+    "start": 13,
+    "end": 14,
+    "value": "a"
+  },
+  {
+    "time": 700,
+    "type": "word",
+    "start": 14,
+    "end": 16,
+    "value": "'m"
+  },
+  {
+    "time": 700,
+    "type": "viseme",
+    "start": 14,
+    "end": 16,
+    "value": "m"
+  },
+  {
+    "time": 800,
+    "type": "word",
+    "start": 17,
+    "end": 22,
+    "value": "super"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "start": 17,
+    "end": 18,
+    "value": "s"
+  },
+  {
+    "time": 850,
+    "type": "viseme",
+    "start": 18,
+    "end": 19,
+    "value": "u"
+  },
+  {
+    "time": 900,
+    "type": "viseme",
+    "start": 19,
+    "end": 20,
+    "value": "p"
+  },
+  {
+    "time": 950,
+    "type": "viseme",
+    "start": 20,
+    "end": 22,
+    "value": "r"
+  },
+  {
+    "time": 1050,
+    "type": "word",
+    "start": 23,
+    "end": 30,
+    "value": "excited"
+  },
+  {
+    "time": 1050,
+    "type": "viseme",
+    "start": 23,
+    "end": 24,
+    "value": "e"
+  },
+  {
+    "time": 1120,
+    "type": "viseme",
+    "start": 24,
+    "end": 25,
+    "value": "k"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "start": 25,
+    "end": 27,
+    "value": "s"
+  },
+  {
+    "time": 1260,
+    "type": "viseme",
+    "start": 27,
+    "end": 28,
+    "value": "a"
+  },
+  {
+    "time": 1320,
+    "type": "viseme",
+    "start": 28,
+    "end": 29,
+    "value": "t"
+  },
+  {
+    "time": 1380,
+    "type": "viseme",
+    "start": 29,
+    "end": 30,
+    "value": "e"
+  },
+  {
+    "time": 1450,
+    "type": "word",
+    "start": 31,
+    "end": 33,
+    "value": "to"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "start": 31,
+    "end": 32,
+    "value": "t"
+  },
+  {
+    "time": 1490,
+    "type": "viseme",
+    "start": 32,
+    "end": 33,
+    "value": "u"
+  },
+  {
+    "time": 1550,
+    "type": "word",
+    "start": 34,
+    "end": 39,
+    "value": "share"
+  },
+  {
+    "time": 1550,
+    "type": "viseme",
+    "start": 34,
+    "end": 35,
+    "value": "s"
+  },
+  {
+    "time": 1620,
+    "type": "viseme",
+    "start": 35,
+    "end": 38,
+    "value": "e"
+  },
+  {
+    "time": 1700,
+    "type": "viseme",
+    "start": 38,
+    "end": 39,
+    "value": "r"
+  },
+  {
+    "time": 1800,
+    "type": "word",
+    "start": 40,
+    "end": 43,
+    "value": "our"
+  },
+  {
+    "time": 1800,
+    "type": "viseme",
+    "start": 40,
+    "end": 42,
+    "value": "a"
+  },
+  {
+    "time": 1860,
+    "type": "viseme",
+    "start": 42,
+    "end": 43,
+    "value": "r"
+  },
+  {
+    "time": 1950,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "Q4"
+  },
+  {
+    "time": 1950,
+    "type": "viseme",
+    "start": 44,
+    "end": 45,
+    "value": "k"
+  },
+  {
+    "time": 2020,
+    "type": "viseme",
+    "start": 45,
+    "end": 46,
+    "value": "u"
+  },
+  {
+    "time": 2100,
+    "type": "word",
+    "start": 47,
+    "end": 55,
+    "value": "results!"
+  },
+  {
+    "time": 2100,
+    "type": "viseme",
+    "start": 47,
+    "end": 48,
+    "value": "r"
+  },
+  {
+    "time": 2150,
+    "type": "viseme",
+    "start": 48,
+    "end": 49,
+    "value": "i"
+  },
+  {
+    "time": 2200,
+    "type": "viseme",
+    "start": 49,
+    "end": 51,
+    "value": "s"
+  },
+  {
+    "time": 2280,
+    "type": "viseme",
+    "start": 51,
+    "end": 52,
+    "value": "u"
+  },
+  {
+    "time": 2360,
+    "type": "viseme",
+    "start": 52,
+    "end": 54,
+    "value": "l"
+  },
+  {
+    "time": 2440,
+    "type": "viseme",
+    "start": 54,
+    "end": 55,
+    "value": "t"
+  }
+]

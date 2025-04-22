@@ -1,0 +1,107 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 55,
+    "value": "*nervously* Wojak will... um... cover that in detail."
+  },
+  {
+    "time": 100,
+    "type": "word",
+    "start": 0,
+    "end": 11,
+    "value": "*nervously*"
+  },
+  {
+    "time": 600,
+    "type": "word",
+    "start": 12,
+    "end": 17,
+    "value": "Wojak"
+  },
+  {
+    "time": 950,
+    "type": "word",
+    "start": 18,
+    "end": 22,
+    "value": "will"
+  },
+  {
+    "time": 1200,
+    "type": "word",
+    "start": 23,
+    "end": 26,
+    "value": "..."
+  },
+  {
+    "time": 1700,
+    "type": "word",
+    "start": 27,
+    "end": 29,
+    "value": "um"
+  },
+  {
+    "time": 2000,
+    "type": "word",
+    "start": 30,
+    "end": 33,
+    "value": "..."
+  },
+  {
+    "time": 2300,
+    "type": "word",
+    "start": 34,
+    "end": 39,
+    "value": "cover"
+  },
+  {
+    "time": 2550,
+    "type": "word",
+    "start": 40,
+    "end": 44,
+    "value": "that"
+  },
+  {
+    "time": 2750,
+    "type": "word",
+    "start": 45,
+    "end": 47,
+    "value": "in"
+  },
+  {
+    "time": 2900,
+    "type": "word",
+    "start": 48,
+    "end": 54,
+    "value": "detail"
+  },
+  {
+    "time": 3200,
+    "type": "sentence",
+    "start": 56,
+    "end": 69,
+    "value": "Right, Wojak?"
+  },
+  {
+    "time": 3400,
+    "type": "word",
+    "start": 56,
+    "end": 61,
+    "value": "Right"
+  },
+  {
+    "time": 3600,
+    "type": "word",
+    "start": 62,
+    "end": 63,
+    "value": ","
+  },
+  {
+    "time": 3650,
+    "type": "word",
+    "start": 64,
+    "end": 69,
+    "value": "Wojak"
+  }
+]

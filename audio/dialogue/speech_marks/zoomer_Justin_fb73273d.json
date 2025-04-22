@@ -1,0 +1,283 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 53,
+    "value": "HAHAHA, <break time=\"100ms\"/> that's so funny!"
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 7,
+    "end": 13,
+    "value": "HAHAHA"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 937,
+    "type": "word",
+    "start": 15,
+    "end": 36,
+    "value": "<break time=\"100ms\"/>"
+  },
+  {
+    "time": 1137,
+    "type": "word",
+    "start": 37,
+    "end": 43,
+    "value": "that's"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1300,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1412,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1475,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "so"
+  },
+  {
+    "time": 1475,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1725,
+    "type": "word",
+    "start": 47,
+    "end": 52,
+    "value": "funny"
+  },
+  {
+    "time": 1725,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1850,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1912,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1975,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2200,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2212,
+    "type": "word",
+    "start": 54,
+    "end": 75,
+    "value": "<break time=\"200ms\"/>"
+  },
+  {
+    "time": 2792,
+    "type": "sentence",
+    "start": 76,
+    "end": 106,
+    "value": "I can't believe that happened!"
+  },
+  {
+    "time": 2930,
+    "type": "word",
+    "start": 76,
+    "end": 77,
+    "value": "I"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3042,
+    "type": "word",
+    "start": 78,
+    "end": 83,
+    "value": "can't"
+  },
+  {
+    "time": 3042,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3105,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3292,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3355,
+    "type": "word",
+    "start": 84,
+    "end": 91,
+    "value": "believe"
+  },
+  {
+    "time": 3355,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3392,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3417,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3505,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3542,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3730,
+    "type": "word",
+    "start": 92,
+    "end": 96,
+    "value": "that"
+  },
+  {
+    "time": 3730,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3742,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3792,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3855,
+    "type": "word",
+    "start": 97,
+    "end": 105,
+    "value": "happened"
+  },
+  {
+    "time": 3855,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4105,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4280,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4417,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

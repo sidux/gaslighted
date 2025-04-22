@@ -1,0 +1,448 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 19,
+    "value": "Interesting."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 7,
+    "end": 18,
+    "value": "Interesting"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1175,
+    "type": "word",
+    "start": 20,
+    "end": 41,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 2055,
+    "type": "sentence",
+    "start": 41,
+    "end": 84,
+    "value": "And what about the implementation timeline?"
+  },
+  {
+    "time": 2242,
+    "type": "word",
+    "start": 41,
+    "end": 44,
+    "value": "And"
+  },
+  {
+    "time": 2242,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2292,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2305,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2392,
+    "type": "word",
+    "start": 45,
+    "end": 49,
+    "value": "what"
+  },
+  {
+    "time": 2392,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2505,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2567,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2617,
+    "type": "word",
+    "start": 50,
+    "end": 55,
+    "value": "about"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2680,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2767,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2805,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2992,
+    "type": "word",
+    "start": 56,
+    "end": 59,
+    "value": "the"
+  },
+  {
+    "time": 2992,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3005,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3117,
+    "type": "word",
+    "start": 60,
+    "end": 74,
+    "value": "implementation"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3192,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3205,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3305,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3367,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3380,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3430,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3492,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3617,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3817,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4092,
+    "type": "word",
+    "start": 75,
+    "end": 83,
+    "value": "timeline"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4317,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4430,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4517,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4692,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5005,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5042,
+    "type": "word",
+    "start": 85,
+    "end": 106,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 5922,
+    "type": "sentence",
+    "start": 106,
+    "end": 139,
+    "value": "Can you elaborate on that please?"
+  },
+  {
+    "time": 6047,
+    "type": "word",
+    "start": 106,
+    "end": 109,
+    "value": "Can"
+  },
+  {
+    "time": 6047,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6122,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6222,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6297,
+    "type": "word",
+    "start": 110,
+    "end": 113,
+    "value": "you"
+  },
+  {
+    "time": 6297,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6335,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6485,
+    "type": "word",
+    "start": 114,
+    "end": 123,
+    "value": "elaborate"
+  },
+  {
+    "time": 6485,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6547,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6610,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6672,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6735,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6760,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6922,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 6960,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7060,
+    "type": "word",
+    "start": 124,
+    "end": 126,
+    "value": "on"
+  },
+  {
+    "time": 7060,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 7122,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7172,
+    "type": "word",
+    "start": 127,
+    "end": 131,
+    "value": "that"
+  },
+  {
+    "time": 7172,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 7235,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7360,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7485,
+    "type": "word",
+    "start": 132,
+    "end": 138,
+    "value": "please"
+  },
+  {
+    "time": 7485,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7547,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7685,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7860,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 8197,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

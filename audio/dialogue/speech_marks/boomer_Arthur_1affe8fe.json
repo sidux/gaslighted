@@ -1,0 +1,369 @@
+[
+  {
+    "time": 0,
+    "type": "word",
+    "start": 7,
+    "end": 28,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 300,
+    "type": "sentence",
+    "start": 28,
+    "end": 68,
+    "value": "Welcome to the quarterly review meeting."
+  },
+  {
+    "time": 312,
+    "type": "word",
+    "start": 28,
+    "end": 35,
+    "value": "Welcome"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 487,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 550,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 612,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 675,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 36,
+    "end": 38,
+    "value": "to"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 862,
+    "type": "word",
+    "start": 39,
+    "end": 42,
+    "value": "the"
+  },
+  {
+    "time": 862,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 925,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 937,
+    "type": "word",
+    "start": 43,
+    "end": 52,
+    "value": "quarterly"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 987,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1050,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1237,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1300,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1337,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1425,
+    "type": "word",
+    "start": 53,
+    "end": 59,
+    "value": "review"
+  },
+  {
+    "time": 1425,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1550,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1612,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1762,
+    "type": "word",
+    "start": 60,
+    "end": 67,
+    "value": "meeting"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1862,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1925,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1975,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2062,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2150,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2617,
+    "type": "sentence",
+    "start": 69,
+    "end": 120,
+    "value": "We have<break time=\"800ms\"/> lots to discuss today."
+  },
+  {
+    "time": 2667,
+    "type": "word",
+    "start": 69,
+    "end": 71,
+    "value": "We"
+  },
+  {
+    "time": 2667,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2805,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2855,
+    "type": "word",
+    "start": 72,
+    "end": 76,
+    "value": "have"
+  },
+  {
+    "time": 2855,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2917,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3030,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3217,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3230,
+    "type": "word",
+    "start": 76,
+    "end": 97,
+    "value": "<break time=\"800ms\"/>"
+  },
+  {
+    "time": 4042,
+    "type": "word",
+    "start": 98,
+    "end": 102,
+    "value": "lots"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4417,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4480,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4555,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4667,
+    "type": "word",
+    "start": 103,
+    "end": 105,
+    "value": "to"
+  },
+  {
+    "time": 4667,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4680,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4730,
+    "type": "word",
+    "start": 106,
+    "end": 113,
+    "value": "discuss"
+  },
+  {
+    "time": 4730,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4792,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4855,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4905,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4980,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5042,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5167,
+    "type": "word",
+    "start": 114,
+    "end": 119,
+    "value": "today"
+  },
+  {
+    "time": 5167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5192,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5255,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5292,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5455,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

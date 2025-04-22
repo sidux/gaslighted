@@ -1,0 +1,447 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 28,
+    "end": 36,
+    "value": "Welcome!"
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 28,
+    "end": 35,
+    "value": "Welcome"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 186,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 227,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 278,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 329,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 431,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 604,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 997,
+    "type": "sentence",
+    "start": 37,
+    "end": 80,
+    "value": "We're so excited to have you join us today!"
+  },
+  {
+    "time": 1122,
+    "type": "word",
+    "start": 37,
+    "end": 42,
+    "value": "We're"
+  },
+  {
+    "time": 1122,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1173,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1183,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1275,
+    "type": "word",
+    "start": 43,
+    "end": 45,
+    "value": "so"
+  },
+  {
+    "time": 1275,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1326,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1428,
+    "type": "word",
+    "start": 46,
+    "end": 53,
+    "value": "excited"
+  },
+  {
+    "time": 1428,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1479,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1530,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1602,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1632,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1745,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1785,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1836,
+    "type": "word",
+    "start": 54,
+    "end": 56,
+    "value": "to"
+  },
+  {
+    "time": 1836,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1847,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1887,
+    "type": "word",
+    "start": 57,
+    "end": 61,
+    "value": "have"
+  },
+  {
+    "time": 1887,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1949,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2000,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2092,
+    "type": "word",
+    "start": 62,
+    "end": 65,
+    "value": "you"
+  },
+  {
+    "time": 2092,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2143,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2235,
+    "type": "word",
+    "start": 66,
+    "end": 70,
+    "value": "join"
+  },
+  {
+    "time": 2235,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2296,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2347,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2469,
+    "type": "word",
+    "start": 71,
+    "end": 73,
+    "value": "us"
+  },
+  {
+    "time": 2469,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2531,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2602,
+    "type": "word",
+    "start": 74,
+    "end": 79,
+    "value": "today"
+  },
+  {
+    "time": 2602,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2684,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2725,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2878,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3061,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3454,
+    "type": "sentence",
+    "start": 81,
+    "end": 117,
+    "value": "Let me start by sharing my screen..."
+  },
+  {
+    "time": 3579,
+    "type": "word",
+    "start": 81,
+    "end": 84,
+    "value": "Let"
+  },
+  {
+    "time": 3579,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3630,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3640,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3681,
+    "type": "word",
+    "start": 85,
+    "end": 87,
+    "value": "me"
+  },
+  {
+    "time": 3681,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3701,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3783,
+    "type": "word",
+    "start": 88,
+    "end": 93,
+    "value": "start"
+  },
+  {
+    "time": 3783,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3844,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3885,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3946,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3987,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4038,
+    "type": "word",
+    "start": 94,
+    "end": 96,
+    "value": "by"
+  },
+  {
+    "time": 4038,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4089,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4242,
+    "type": "word",
+    "start": 97,
+    "end": 104,
+    "value": "sharing"
+  },
+  {
+    "time": 4242,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4293,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4324,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4406,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4457,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4498,
+    "type": "word",
+    "start": 105,
+    "end": 107,
+    "value": "my"
+  },
+  {
+    "time": 4498,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4549,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4651,
+    "type": "word",
+    "start": 108,
+    "end": 114,
+    "value": "screen"
+  },
+  {
+    "time": 4651,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4712,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4753,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4804,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4926,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5120,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

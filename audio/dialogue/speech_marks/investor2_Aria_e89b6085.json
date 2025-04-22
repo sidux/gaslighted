@@ -1,0 +1,417 @@
+[
+  {
+    "time": 0,
+    "type": "word",
+    "start": 7,
+    "end": 28,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 300,
+    "type": "sentence",
+    "start": 28,
+    "end": 59,
+    "value": "Excuse me, I need to take this."
+  },
+  {
+    "time": 425,
+    "type": "word",
+    "start": 28,
+    "end": 34,
+    "value": "Excuse"
+  },
+  {
+    "time": 425,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 487,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 537,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 600,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 675,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 925,
+    "type": "word",
+    "start": 35,
+    "end": 37,
+    "value": "me"
+  },
+  {
+    "time": 925,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1237,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1337,
+    "type": "word",
+    "start": 39,
+    "end": 40,
+    "value": "I"
+  },
+  {
+    "time": 1337,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1612,
+    "type": "word",
+    "start": 41,
+    "end": 45,
+    "value": "need"
+  },
+  {
+    "time": 1612,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1737,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1812,
+    "type": "word",
+    "start": 46,
+    "end": 48,
+    "value": "to"
+  },
+  {
+    "time": 1812,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1862,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1925,
+    "type": "word",
+    "start": 49,
+    "end": 53,
+    "value": "take"
+  },
+  {
+    "time": 1925,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2050,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2112,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2175,
+    "type": "word",
+    "start": 54,
+    "end": 58,
+    "value": "this"
+  },
+  {
+    "time": 2175,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2675,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3067,
+    "type": "sentence",
+    "start": 85,
+    "end": 89,
+    "value": "Yes?"
+  },
+  {
+    "time": 3192,
+    "type": "word",
+    "start": 85,
+    "end": 88,
+    "value": "Yes"
+  },
+  {
+    "time": 3192,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3267,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3380,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3630,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4110,
+    "type": "sentence",
+    "start": 90,
+    "end": 119,
+    "value": "No, I'm still in the meeting."
+  },
+  {
+    "time": 4247,
+    "type": "word",
+    "start": 90,
+    "end": 92,
+    "value": "No"
+  },
+  {
+    "time": 4247,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4347,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4447,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4672,
+    "type": "word",
+    "start": 94,
+    "end": 97,
+    "value": "I'm"
+  },
+  {
+    "time": 4672,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4797,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4860,
+    "type": "word",
+    "start": 98,
+    "end": 103,
+    "value": "still"
+  },
+  {
+    "time": 4860,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4947,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5047,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5110,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5172,
+    "type": "word",
+    "start": 104,
+    "end": 106,
+    "value": "in"
+  },
+  {
+    "time": 5172,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5247,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5310,
+    "type": "word",
+    "start": 107,
+    "end": 110,
+    "value": "the"
+  },
+  {
+    "time": 5310,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5360,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5422,
+    "type": "word",
+    "start": 111,
+    "end": 118,
+    "value": "meeting"
+  },
+  {
+    "time": 5422,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5485,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5547,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5672,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5735,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5910,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 6302,
+    "type": "sentence",
+    "start": 120,
+    "end": 129,
+    "value": "Continue."
+  },
+  {
+    "time": 6327,
+    "type": "word",
+    "start": 120,
+    "end": 128,
+    "value": "Continue"
+  },
+  {
+    "time": 6327,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6440,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6502,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6552,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6615,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6715,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6802,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6865,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 7052,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

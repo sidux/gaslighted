@@ -1,0 +1,454 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 15,
+    "value": "A pivot?"
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 7,
+    "end": 8,
+    "value": "A"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 9,
+    "end": 14,
+    "value": "pivot"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 675,
+    "type": "word",
+    "start": 16,
+    "end": 37,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 1555,
+    "type": "sentence",
+    "start": 37,
+    "end": 90,
+    "value": "This is the third strategic pivot in eighteen months."
+  },
+  {
+    "time": 1680,
+    "type": "word",
+    "start": 37,
+    "end": 41,
+    "value": "This"
+  },
+  {
+    "time": 1680,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1755,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1792,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1867,
+    "type": "word",
+    "start": 42,
+    "end": 44,
+    "value": "is"
+  },
+  {
+    "time": 1867,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1930,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2005,
+    "type": "word",
+    "start": 45,
+    "end": 48,
+    "value": "the"
+  },
+  {
+    "time": 2005,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2055,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2180,
+    "type": "word",
+    "start": 49,
+    "end": 54,
+    "value": "third"
+  },
+  {
+    "time": 2180,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2367,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2430,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2467,
+    "type": "word",
+    "start": 55,
+    "end": 64,
+    "value": "strategic"
+  },
+  {
+    "time": 2467,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2492,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2555,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2580,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2692,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2805,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2867,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2880,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2930,
+    "type": "word",
+    "start": 65,
+    "end": 70,
+    "value": "pivot"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3042,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3142,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3267,
+    "type": "word",
+    "start": 71,
+    "end": 73,
+    "value": "in"
+  },
+  {
+    "time": 3267,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3305,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3405,
+    "type": "word",
+    "start": 74,
+    "end": 82,
+    "value": "eighteen"
+  },
+  {
+    "time": 3405,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3492,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3642,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3680,
+    "type": "word",
+    "start": 83,
+    "end": 89,
+    "value": "months"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3817,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3867,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3942,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4017,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4180,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4192,
+    "type": "word",
+    "start": 91,
+    "end": 112,
+    "value": "<break time=\"700ms\"/>"
+  },
+  {
+    "time": 5272,
+    "type": "sentence",
+    "start": 112,
+    "end": 138,
+    "value": "How is this one different?"
+  },
+  {
+    "time": 5397,
+    "type": "word",
+    "start": 112,
+    "end": 115,
+    "value": "How"
+  },
+  {
+    "time": 5397,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5472,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5622,
+    "type": "word",
+    "start": 116,
+    "end": 118,
+    "value": "is"
+  },
+  {
+    "time": 5622,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5647,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5722,
+    "type": "word",
+    "start": 119,
+    "end": 123,
+    "value": "this"
+  },
+  {
+    "time": 5722,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5772,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5835,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5897,
+    "type": "word",
+    "start": 124,
+    "end": 127,
+    "value": "one"
+  },
+  {
+    "time": 5897,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6022,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6085,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6185,
+    "type": "word",
+    "start": 128,
+    "end": 137,
+    "value": "different"
+  },
+  {
+    "time": 6185,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6272,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6310,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6335,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6410,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6472,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6522,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6647,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

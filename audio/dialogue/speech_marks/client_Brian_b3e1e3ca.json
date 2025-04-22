@@ -1,0 +1,376 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 22,
+    "value": "Hello everyone."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 7,
+    "end": 12,
+    "value": "Hello"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 562,
+    "type": "word",
+    "start": 13,
+    "end": 21,
+    "value": "everyone"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 912,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1612,
+    "type": "word",
+    "start": 23,
+    "end": 44,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 2492,
+    "type": "sentence",
+    "start": 44,
+    "end": 65,
+    "value": "Sorry I'm a bit late."
+  },
+  {
+    "time": 2692,
+    "type": "word",
+    "start": 44,
+    "end": 49,
+    "value": "Sorry"
+  },
+  {
+    "time": 2692,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2742,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2830,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2942,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3055,
+    "type": "word",
+    "start": 50,
+    "end": 53,
+    "value": "I'm"
+  },
+  {
+    "time": 3055,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3430,
+    "type": "word",
+    "start": 54,
+    "end": 55,
+    "value": "a"
+  },
+  {
+    "time": 3430,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3530,
+    "type": "word",
+    "start": 56,
+    "end": 59,
+    "value": "bit"
+  },
+  {
+    "time": 3530,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3630,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3742,
+    "type": "word",
+    "start": 60,
+    "end": 64,
+    "value": "late"
+  },
+  {
+    "time": 3742,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3867,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4055,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4430,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4480,
+    "type": "word",
+    "start": 66,
+    "end": 87,
+    "value": "<break time=\"400ms\"/>"
+  },
+  {
+    "time": 5260,
+    "type": "sentence",
+    "start": 87,
+    "end": 121,
+    "value": "Traffic was terrible this morning."
+  },
+  {
+    "time": 5385,
+    "type": "word",
+    "start": 87,
+    "end": 94,
+    "value": "Traffic"
+  },
+  {
+    "time": 5385,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5447,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5497,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5572,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5635,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5760,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5910,
+    "type": "word",
+    "start": 95,
+    "end": 98,
+    "value": "was"
+  },
+  {
+    "time": 5910,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5947,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5972,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6097,
+    "type": "word",
+    "start": 99,
+    "end": 107,
+    "value": "terrible"
+  },
+  {
+    "time": 6097,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6260,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6322,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6397,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6410,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6510,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6572,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6697,
+    "type": "word",
+    "start": 108,
+    "end": 112,
+    "value": "this"
+  },
+  {
+    "time": 6697,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 6722,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6822,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6935,
+    "type": "word",
+    "start": 113,
+    "end": 120,
+    "value": "morning"
+  },
+  {
+    "time": 6935,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7097,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 7197,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7222,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7347,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7647,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

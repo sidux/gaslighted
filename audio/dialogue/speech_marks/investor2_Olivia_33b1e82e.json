@@ -1,0 +1,377 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 48,
+    "value": "I have another meeting in thirty minutes."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 7,
+    "end": 8,
+    "value": "I"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 9,
+    "end": 13,
+    "value": "have"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 14,
+    "end": 21,
+    "value": "another"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 600,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 712,
+    "type": "word",
+    "start": 22,
+    "end": 29,
+    "value": "meeting"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 950,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1000,
+    "type": "word",
+    "start": 30,
+    "end": 32,
+    "value": "in"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1150,
+    "type": "word",
+    "start": 33,
+    "end": 39,
+    "value": "thirty"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1325,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1437,
+    "type": "word",
+    "start": 40,
+    "end": 47,
+    "value": "minutes"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1987,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2000,
+    "type": "word",
+    "start": 49,
+    "end": 70,
+    "value": "<break time=\"400ms\"/>"
+  },
+  {
+    "time": 2780,
+    "type": "sentence",
+    "start": 70,
+    "end": 106,
+    "value": "Can we accelerate this presentation?"
+  },
+  {
+    "time": 2967,
+    "type": "word",
+    "start": 70,
+    "end": 73,
+    "value": "Can"
+  },
+  {
+    "time": 2967,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2980,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3080,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3155,
+    "type": "word",
+    "start": 74,
+    "end": 76,
+    "value": "we"
+  },
+  {
+    "time": 3155,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3230,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3280,
+    "type": "word",
+    "start": 77,
+    "end": 87,
+    "value": "accelerate"
+  },
+  {
+    "time": 3280,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3342,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3405,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3530,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3592,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3655,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3780,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3842,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3930,
+    "type": "word",
+    "start": 88,
+    "end": 92,
+    "value": "this"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4030,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4155,
+    "type": "word",
+    "start": 93,
+    "end": 105,
+    "value": "presentation"
+  },
+  {
+    "time": 4155,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4167,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4217,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4342,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4405,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4592,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4655,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5042,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

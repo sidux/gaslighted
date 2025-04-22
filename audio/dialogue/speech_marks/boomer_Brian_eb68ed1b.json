@@ -1,0 +1,405 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 7,
+    "end": 41,
+    "value": "Thank you all for your time today."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 7,
+    "end": 12,
+    "value": "Thank"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 500,
+    "type": "word",
+    "start": 13,
+    "end": 16,
+    "value": "you"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 17,
+    "end": 20,
+    "value": "all"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "word",
+    "start": 21,
+    "end": 24,
+    "value": "for"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1062,
+    "type": "word",
+    "start": 25,
+    "end": 29,
+    "value": "your"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1312,
+    "type": "word",
+    "start": 30,
+    "end": 34,
+    "value": "time"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1712,
+    "type": "word",
+    "start": 35,
+    "end": 40,
+    "value": "today"
+  },
+  {
+    "time": 1712,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2275,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2487,
+    "type": "word",
+    "start": 42,
+    "end": 63,
+    "value": "<break time=\"600ms\"/>"
+  },
+  {
+    "time": 3467,
+    "type": "sentence",
+    "start": 63,
+    "end": 148,
+    "value": "We look forward to our<break time=\"500ms\"/>continued<break time=\"300ms\"/>partnership."
+  },
+  {
+    "time": 3592,
+    "type": "word",
+    "start": 63,
+    "end": 65,
+    "value": "We"
+  },
+  {
+    "time": 3592,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3655,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3717,
+    "type": "word",
+    "start": 66,
+    "end": 70,
+    "value": "look"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3780,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3855,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3967,
+    "type": "word",
+    "start": 71,
+    "end": 78,
+    "value": "forward"
+  },
+  {
+    "time": 3967,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4030,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4180,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4280,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4467,
+    "type": "word",
+    "start": 79,
+    "end": 81,
+    "value": "to"
+  },
+  {
+    "time": 4467,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4530,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4717,
+    "type": "word",
+    "start": 82,
+    "end": 85,
+    "value": "our"
+  },
+  {
+    "time": 4717,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4905,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4955,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5023,
+    "type": "word",
+    "start": 85,
+    "end": 106,
+    "value": "<break time=\"500ms\"/>"
+  },
+  {
+    "time": 5592,
+    "type": "word",
+    "start": 106,
+    "end": 115,
+    "value": "continued"
+  },
+  {
+    "time": 5592,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5842,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6055,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6092,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6155,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6242,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6292,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6392,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6517,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 6561,
+    "type": "word",
+    "start": 115,
+    "end": 136,
+    "value": "<break time=\"300ms\"/>"
+  },
+  {
+    "time": 6905,
+    "type": "word",
+    "start": 136,
+    "end": 147,
+    "value": "partnership"
+  },
+  {
+    "time": 6905,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7155,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7267,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7392,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7417,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7480,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 7580,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7755,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7992,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

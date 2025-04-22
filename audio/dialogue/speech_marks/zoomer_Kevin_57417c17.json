@@ -1,0 +1,269 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 70,
+    "end": 94,
+    "value": "HAHAHA, that's so funny!"
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 70,
+    "end": 76,
+    "value": "HAHAHA"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 219,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 270,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 331,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 392,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 484,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 637,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 925,
+    "type": "word",
+    "start": 78,
+    "end": 84,
+    "value": "that's"
+  },
+  {
+    "time": 925,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1057,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1098,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1149,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1251,
+    "type": "word",
+    "start": 85,
+    "end": 87,
+    "value": "so"
+  },
+  {
+    "time": 1251,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1292,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1405,
+    "type": "word",
+    "start": 88,
+    "end": 93,
+    "value": "funny"
+  },
+  {
+    "time": 1405,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1445,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1517,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1609,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1731,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2124,
+    "type": "sentence",
+    "start": 95,
+    "end": 125,
+    "value": "I can't believe that happened!"
+  },
+  {
+    "time": 2261,
+    "type": "word",
+    "start": 95,
+    "end": 96,
+    "value": "I"
+  },
+  {
+    "time": 2261,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2353,
+    "type": "word",
+    "start": 97,
+    "end": 102,
+    "value": "can't"
+  },
+  {
+    "time": 2353,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2445,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2455,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2465,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2557,
+    "type": "word",
+    "start": 103,
+    "end": 110,
+    "value": "believe"
+  },
+  {
+    "time": 2557,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2608,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2659,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2670,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2731,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2812,
+    "type": "word",
+    "start": 111,
+    "end": 115,
+    "value": "that"
+  },
+  {
+    "time": 2812,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2833,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2915,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2966,
+    "type": "word",
+    "start": 116,
+    "end": 124,
+    "value": "happened"
+  },
+  {
+    "time": 2966,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3017,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3078,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3129,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3170,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3323,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3374,
+    "type": "viseme",
+    "value": "sil"
+  }
+]
