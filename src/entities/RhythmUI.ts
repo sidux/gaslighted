@@ -135,7 +135,7 @@ export class RhythmUI {
     // Add instructions
     const instructions = this.scene.add.text(
       0, this.laneHeight/2 + 70,
-      "PRESS KEYS TO VENT + SPACE TO FART",
+      "PRESS KEYS TO FART",
       {
         fontFamily: 'Arial',
         fontSize: '14px',

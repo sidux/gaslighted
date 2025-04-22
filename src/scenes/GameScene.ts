@@ -116,21 +116,14 @@ export class GameScene extends Phaser.Scene {
     // Add gameplay instructions that stay visible
     this.createGameplayInstructions();
     
-    // Press SPACE to start the game (immediate start without holding)
-    this.input.keyboard.once('keydown-SPACE', () => {
-      this.startGame();
-      // Start game immediately without requiring the space bar to be released
-      this.playerStartedFarting = true;
-      this.comboText.setVisible(true);
-      this.initializeGameComponents();
-    });
+    // Start the game immediately without requiring any key press
+    this.startGame();
+    // Initialize game components
+    this.playerStartedFarting = true;
+    this.comboText.setVisible(true);
+    this.initializeGameComponents();
     
-    // Replace SPACE holding with fart release mechanics
-    this.input.keyboard.on('keydown-SPACE', () => {
-      if (!this.gameOver && this.componentsInitialized && this.playerStartedFarting) {
-        this.handleFartRelease();
-      }
-    });
+    // No more SPACE bar control - completely removed
     
     // Add key handlers for different fart types/visemes
     // Vowels with both keydown and keyup handlers
@@ -642,19 +635,14 @@ export class GameScene extends Phaser.Scene {
   }
   
   /**
-   * Handle player releasing the SPACE key (releasing the fart)
+   * Handle direct fart release triggered by letter key
+   * @param key The letter key that was pressed (optional, defaults to current viseme key)
    */
-  private async handleFartRelease(): Promise<void> {
+  private async handleFartRelease(key?: string): Promise<void> {
     if (!this.componentsInitialized || !this.dialogueManager || !this.player || !this.audioManager) {
       console.warn("Cannot handle fart release - components not fully initialized");
       return;
     }
-    
-    // Remove holding text if exists
-    this.player.clearHoldingText();
-    
-    // Stop holding fart
-    this.player.setHoldingFart(false);
     
     // Get current pressure
     const currentPressure = this.player.getCurrentPressure();
@@ -666,16 +654,14 @@ export class GameScene extends Phaser.Scene {
       return;
     }
     
-    // Get the current viseme key being pressed
+    // If key is provided, set it on the player
+    if (key) {
+      this.player.setVisemeKey(key);
+    }
+    
+    // Get the current viseme key
     const currentVisemeKey = this.player.getCurrentVisemeKey();
     const currentFartType = this.player.getCurrentFartType();
-    
-    // Check if a valid key is being pressed
-    if (!currentVisemeKey) {
-      // No viseme key pressed, use default fart type
-      this.showVisemeKeyWarning();
-      return;
-    }
     
     // Get current dialogue safety from speech rhythm analysis
     let safetyStatus = this.dialogueManager.getCurrentSafetyStatus();
@@ -956,6 +942,9 @@ export class GameScene extends Phaser.Scene {
     
     // Show a visual indicator above the player to show which key is active
     this.showActiveKeyIndicator(key);
+    
+    // NEW: Directly trigger fart release when pressing a letter key
+    this.handleFartRelease(key);
     
     // Add a feedback sound for pressing a key - conditionally check if sound exists
     try {
@@ -1393,7 +1382,7 @@ export class GameScene extends Phaser.Scene {
     
     // Instructions
     const instructions = this.add.text(0, 0, 
-      "PRESS A, E, I, O, U keys to release pressure\nPRESS SPACE to let out a fart\n\nTime your releases with character speech\nDon't get caught!", 
+      "PRESS A, E, I, O, U keys to fart\n\nTime your key presses with character speech\nMatching the highlighted letters\nDon't get caught!", 
       {
         fontFamily: 'Arial',
         fontSize: '18px',
@@ -1403,8 +1392,8 @@ export class GameScene extends Phaser.Scene {
     ).setOrigin(0.5);
     startContainer.add(instructions);
     
-    // Start prompt
-    const startText = this.add.text(0, 70, "PRESS SPACE TO START", {
+    // Start message
+    const startText = this.add.text(0, 70, "GAME STARTING...", {
       fontFamily: 'Arial',
       fontSize: '24px',
       fontStyle: 'bold',
@@ -1421,6 +1410,17 @@ export class GameScene extends Phaser.Scene {
       duration: 800,
       yoyo: true,
       repeat: -1
+    });
+    
+    // Auto-hide the prompt after a few seconds
+    this.time.delayedCall(3000, () => {
+      this.tweens.add({
+        targets: startContainer,
+        alpha: 0,
+        y: '-=50',
+        duration: 500,
+        onComplete: () => startContainer.destroy()
+      });
     });
   }
   
@@ -1579,10 +1579,10 @@ export class GameScene extends Phaser.Scene {
     
     // Instructions
     const instructions = [
-      "1. Press A, E, I, O, or U keys to vent pressure",
+      "1. Press A, E, I, O, or U keys to fart",
       "2. Keys must match falling notes on screen",
-      "3. Each key press reduces pressure buildup",
-      "4. PRESS SPACE during speech (green zone) to fart"
+      "3. Match keys to highlighted letters in speech",
+      "4. Fart during speech (green zone) to avoid detection"
     ];
     
     // Add each instruction line

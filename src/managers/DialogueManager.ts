@@ -4,8 +4,9 @@ import { Character } from '../entities/Character';
 import { AudioManager } from './AudioManager';
 import { GameScene } from '../scenes/GameScene';
 import { NeuralSpeechProcessor } from './NeuralSpeechProcessor';
-import { SafeZone } from '../types/speech/SpeechMark';
+import { SafeZone, SpeechMark } from '../types/speech/SpeechMark';
 import { VisemeData } from '../types/speech/Viseme';
+import { KaraokeDialogue } from '../entities/KaraokeDialogue';
 
 export class DialogueManager {
   private scene: GameScene;
@@ -21,6 +22,9 @@ export class DialogueManager {
   private currentDialogue: Dialogue | null = null;
   private safeZones: SafeZone[] = [];
   private speechRhythmDisplay: Phaser.GameObjects.Container | null = null;
+  private karaokeDialogue: KaraokeDialogue;
+  private currentSpeechMarks: SpeechMark[] = [];
+  private currentVisemeMarks: SpeechMark[] = [];
   
   // Flags to prevent double initialization and start
   private static instance: DialogueManager | null = null;
@@ -44,6 +48,15 @@ export class DialogueManager {
     // Create rhythm display
     this.createSpeechRhythmDisplay();
     
+    // Create karaoke dialogue display
+    this.karaokeDialogue = new KaraokeDialogue(
+      scene,
+      scene.cameras.main.width / 2,
+      scene.cameras.main.height - 180,
+      scene.cameras.main.width * 0.6,
+      150
+    );
+    
     this.initialized = true;
     console.log("DialogueManager initialized once");
   }
@@ -65,6 +78,9 @@ export class DialogueManager {
       
       // Update rhythm display
       this.updateRhythmDisplay(currentTime);
+      
+      // Update karaoke dialogue display
+      this.karaokeDialogue.update();
     }
   }
   
@@ -285,6 +301,28 @@ export class DialogueManager {
         fartMeter.setSafeZones(meterSafeZones);
       }
       
+      // Get speech marks from cache to use with karaoke display
+      // These should be loaded by the speech processor already
+      fetch(`audio/dialogue/speech_marks/${dialogue.soundFile.replace('.mp3', '.json')}`)
+        .then(response => response.json())
+        .then((speechMarks: SpeechMark[]) => {
+          this.currentSpeechMarks = speechMarks.filter((mark: SpeechMark) => mark.type === 'word');
+          this.currentVisemeMarks = speechMarks.filter((mark: SpeechMark) => mark.type === 'viseme');
+          
+          // Set karaoke dialogue with speech marks
+          this.karaokeDialogue.setDialogue(
+            speaker.name,
+            dialogue.text,
+            this.currentSpeechMarks,
+            this.currentVisemeMarks
+          );
+        })
+        .catch(error => {
+          console.warn("Could not load speech marks for karaoke display:", error);
+          // Still show dialogue text without highlighting
+          this.scene.showDialogue(speaker.name, dialogue.text);
+        });
+      
       // Get rhythm UI from game scene (if it exists)
       const rhythmUI = (this.scene as any).rhythmUI;
       if (rhythmUI) {
@@ -326,8 +364,11 @@ export class DialogueManager {
       // Stop speaking
       speaker.stopSpeaking();
       
-      // Hide dialogue text
+      // Hide traditional dialogue text
       this.scene.hideDialogue();
+      
+      // Hide karaoke dialogue
+      this.karaokeDialogue.hide();
       
       // Hide rhythm display
       if (this.speechRhythmDisplay) {
@@ -386,6 +427,9 @@ export class DialogueManager {
     
     // Hide dialogue text
     this.scene.hideDialogue();
+    
+    // Hide karaoke dialogue
+    this.karaokeDialogue.hide();
     
     // Set dialogue as inactive
     this.isDialogueActive = false;

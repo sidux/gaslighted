@@ -22,79 +22,79 @@ participants:
     voiceType: Brian
 dialogues:
   - speakerId: boomer
-    text: <speak><break time="300ms"/>Welcome everyone to this<break time="500ms"/>important client meeting. <break time="600ms"/>Our investors are counting on us.</speak>
+    text: <speak>Welcome everyone to thisimportant client meeting. Our investors are counting on us.</speak>
     delay: 2000
     duration: 6000
     safetyStatus: danger
     soundFile: boomer_Stephen_cfee75ff.mp3
   - speakerId: zoomer
-    text: <speak>I've prepared the slides for our product roadmap presentation! <break time="400ms"/>Should I share my screen now?</speak>
+    text: <speak>I've prepared the slides for our product roadmap presentation! Should I share my screen now?</speak>
     delay: 1500
     duration: 4500
     safetyStatus: neutral
     soundFile: zoomer_Justin_40c8eafd.mp3
   - speakerId: boomer
-    text: <speak>Not yet. <break time="600ms"/>Remember that this client represents a major opportunity. <break time="200ms"/> Everyone<break time="300ms"/>stay focused.</speak>
+    text: <speak>Not yet. Remember that this client represents a major opportunity.  Everyonestay focused.</speak>
     delay: 1200
     duration: 5500
     safetyStatus: danger
     soundFile: boomer_Stephen_5682aced.mp3
   - speakerId: coworker1
-    text: <speak>I'll share the latest market research numbers when they arrive. <break time="600ms"/>The data is<break time="300ms"/>quite revealing.</speak>
+    text: <speak>I'll share the latest market research numbers when they arrive. The data isquite revealing.</speak>
     delay: 1000
     duration: 5000
     safetyStatus: neutral
     soundFile: coworker1_Joanna_7c91daec.mp3
   - speakerId: boomer
-    text: <speak>Wojak, you seem<break time="800ms"/>distracted. <break time="300ms"/> Are you properly prepared for your part of the presentation?</speak>
+    text: <speak>Wojak, you seemdistracted.  Are you properly prepared for your part of the presentation?</speak>
     delay: 1800
     duration: 5000
     safetyStatus: danger
     soundFile: boomer_Stephen_17f7b3dd.mp3
   - speakerId: zoomer
-    text: <speak>The client will be joining in just a minute! <break time="400ms"/>Everyone look professional! <break time="300ms"/> Fix your hair, Wojak!</speak>
+    text: <speak>The client will be joining in just a minute! Everyone look professional!  Fix your hair, Wojak!</speak>
     delay: 1200
     duration: 4500
     safetyStatus: danger
     soundFile: zoomer_Justin_8e5eeb0e.mp3
   - speakerId: coworker1
-    text: <speak><break time="300ms"/>Is my lighting okay? <break time="200ms"/> I want to make a good impression. <break time="500ms"/>Can everyone see me clearly?</speak>
+    text: <speak>Is my lighting okay?  I want to make a good impression. Can everyone see me clearly?</speak>
     delay: 1500
     duration: 5000
     safetyStatus: safe
     soundFile: coworker1_Joanna_703eeacc.mp3
   - speakerId: boomer
-    text: <speak>Let's quickly review the key talking points before they join. <break time="500ms"/>First, our quarterly performance<break time="1s"/>has exceeded expectations.</speak>
+    text: <speak>Let's quickly review the key talking points before they join. First, our quarterly performance<break time="1s"/>has exceeded expectations.</speak>
     delay: 2000
     duration: 7000
     safetyStatus: danger
     soundFile: boomer_Stephen_d85f2267.mp3
   - speakerId: zoomer
-    text: <speak>I've been working on the machine learning implementation with amazing results! <break time="400ms"/>The AI accuracy is up by 47%!</speak>
+    text: <speak>I've been working on the machine learning implementation with amazing results! The AI accuracy is up by 47%!</speak>
     delay: 1300
     duration: 5500
     safetyStatus: neutral
     soundFile: zoomer_Justin_a55a6894.mp3
   - speakerId: coworker1
-    text: <speak>The team has prepared a detailed analysis. <break time="500ms"/>Let me find that chart.</speak>
+    text: <speak>The team has prepared a detailed analysis. Let me find that chart.</speak>
     delay: 1200
     duration: 6000
     safetyStatus: safe
     soundFile: coworker1_Joanna_43e3ea45.mp3
   - speakerId: boomer
-    text: <speak>Shh! <break time="200ms"/> I think they're joining now. <break time="600ms"/>Everyone<break time="300ms"/>act professional! <break time="400ms"/>Wojak, sit up straight!</speak>
+    text: <speak>Shh!  I think they're joining now. Everyoneact professional! Wojak, sit up straight!</speak>
     delay: 2000
     duration: 5000
     safetyStatus: danger
     soundFile: boomer_Stephen_3ce95b29.mp3
   - speakerId: client
-    text: <speak>Hello everyone. <break time="500ms"/>Sorry I'm a bit late. <break time="400ms"/>Traffic was terrible this morning.</speak>
+    text: <speak>Hello everyone. Sorry I'm a bit late. Traffic was terrible this morning.</speak>
     delay: 2500
     duration: 4000
     safetyStatus: neutral
     soundFile: client_Brian_b3e1e3ca.mp3
   - speakerId: zoomer
-    text: <speak>Welcome! <break time="150ms"/> We're so excited to have you join us today! <break time="200ms"/> Let me start by sharing my screen...</speak>
+    text: <speak>Welcome!  We're so excited to have you join us today!  Let me start by sharing my screen...</speak>
     delay: 1200
     duration: 4500
     safetyStatus: danger
@@ -112,37 +112,37 @@ dialogues:
     safetyStatus: danger
     soundFile: boomer_Stephen_ee25262c.mp3
   - speakerId: client
-    text: <speak>Interesting. <break time="500ms"/>And what about the implementation timeline? <break time="500ms"/>Can you elaborate on that please?</speak>
+    text: <speak>Interesting. And what about the implementation timeline? Can you elaborate on that please?</speak>
     delay: 2000
     duration: 4500
     safetyStatus: neutral
     soundFile: client_Brian_70d4521e.mp3
   - speakerId: coworker1
-    text: <speak>Our team has been working around the clock to ensure quality deliverables. <break time="500ms"/>We've already completed the first two phases.</speak>
+    text: <speak>Our team has been working around the clock to ensure quality deliverables. We've already completed the first two phases.</speak>
     delay: 1500
     duration: 5500
     safetyStatus: danger
     soundFile: coworker1_Joanna_3a1757f5.mp3
   - speakerId: zoomer
-    text: <speak>And with that, I'll turn it over to Wojak for the technical details. <break time="500ms"/>He's our expert on this project.</speak>
+    text: <speak>And with that, I'll turn it over to Wojak for the technical details. He's our expert on this project.</speak>
     delay: 1800
     duration: 4500
     safetyStatus: danger
     soundFile: zoomer_Justin_8123c83c.mp3
   - speakerId: client
-    text: <speak>I'm particularly interested in how you're handling data security concerns. <break time="500ms"/>Could you address that specifically?</speak>
+    text: <speak>I'm particularly interested in how you're handling data security concerns. Could you address that specifically?</speak>
     delay: 2000
     duration: 5000
     safetyStatus: neutral
     soundFile: client_Brian_2489608d.mp3
   - speakerId: boomer
-    text: <speak>Wojak will<break time="300ms"/>um<break time="500ms"/>cover that in detail. <break time="200ms"/> Right, Wojak?</speak>
+    text: <speak>Wojak willumcover that in detail.  Right, Wojak?</speak>
     delay: 1500
     duration: 4000
     safetyStatus: safe
     soundFile: boomer_Stephen_a69b3518.mp3
   - speakerId: boomer
-    text: <speak>Thank you all for attending. <break time="500ms"/>We look forward to our partnership. <break time="400ms"/>We'll follow up with detailed documentation.</speak>
+    text: <speak>Thank you all for attending. We look forward to our partnership. We'll follow up with detailed documentation.</speak>
     delay: 2500
     duration: 5500
     safetyStatus: neutral
