@@ -1,12 +1,31 @@
-### 🎮 Game Prompt – **Gaslighted**
+# Game – **Gaslighted**
 
-Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in a corporate google-meet-like meeting and can’t mute. A **fart pressure meter** builds during the call. They must **release pressure discreetly** by clicking karaoke-style letters, timed with character speech (via **Amazon Polly viseme metadata**).
+## Concept
+**Gaslighted** - A 2D satirical corporate survival game built in **React + TypeScript** where players navigate the social minefield of remote meetings. Players control "Wojak," trapped in a Google Meet-style video call with unmutable audio. A **fart pressure meter** builds continuously during the meeting, requiring timely, strategic releases that must be disguised among ongoing conversation by typing specific letters at precise moments, synchronized with speech patterns (using **Amazon Polly viseme metadata**).
+
+---
+
+## Core Mechanics
+
+### Gameplay Loop
+1. Listen to ongoing meeting dialogue (in karaoke style with highlighted words)
+2. Watch for highlighted fart opportunity moments during speech
+3. Press the correct letter (matching the viseme) at the right time
+4. Manage pressure meter while minimizing shame
+5. Achieve combos for score multipliers and pressure relief
+6. Complete the entire meeting without being discovered
+
+### Input System
+- Player must press the correct key corresponding to a viseme phoneme type (`t`, `p`, `b`, `f`, `r`, `z`) (close viseme sounds are also accepted)
+- Timing window determines success quality (perfect, okay, bad)
+- Each success level has different effects on pressure and shame
 
 ---
 
 ### 🧱 Core Systems
 
 #### UI
+- game should responsive
 - ui should be as close as possible to google meet, for example hangout will just quit te game return the main menu, non relveant buttons should be disabled. (simulating a bug)
 - should have a karaoke text for the current dialogue highlighting the current word, with the letter (related to the fart) to press above.
 - farting release UI effects
@@ -32,16 +51,16 @@ Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in
   - Visual/audio effects
 - Any mistake = combo break
 
-#### 💨 Fart Types (6 MP3s)
-- Mapped to viseme phoneme types (`t`, `p`, `b`, `f`, `r`, `z`)
+#### Fart Types (6 MP3s)
+- Mapped to viseme phoneme types (`t`, `p`, `b`, `f`, `r`, `z`) (and close viseme sounds)
 - Each triggers:
-  - A specific sound (`fart1.mp3` to `fart6.mp3`)
+  - A specific sound (`t-fart.mp3`, `z-fart.mp3` etc)
   - Matching NPC reaction (face change, sound, camera FX)
   - the fart sound volume should be louder than the dialogue when it' bad and lower when it's okay, and silent when it's perfect.
 
 ---
 
-### 📘 Level Completion
+### Level Completion
 
 - A level ends **when all dialogue lines are finished**
 - Victory condition:
@@ -50,7 +69,7 @@ Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in
 
 ---
 
-### 👥 Characters
+### Characters
 
 - **wojak** (player)
 - **zoomer**
@@ -71,7 +90,7 @@ Each character has:
 Stored in: `/assets/faces/`
 
 🗣️ Characters must:
-- Animate between talking1, talking2, neutral talking1 ... while speaking.
+- Animate by changing faces talking1 -> talking2 -> neutral -> talking1 ... while speaking.
 - React with different expressions to each fart type:
   - perfect (no reaction)
   - okay
@@ -80,63 +99,19 @@ Stored in: `/assets/faces/`
 
 ---
 
-### 🗂️ Level Format (`/levels/[id].yaml`)
+### Level Format (`/levels/[id].json`)
 
-```yaml
-id: level1
-title: First Day Jitters
-description: Your first remote meeting. Thankfully, people are forgiving.
-
-rules:
-  pressure_buildup_speed: 1.2
-  precision_window_ms: 250
-  pressure_release:
-    perfect: 30
-    okay: 15
-    bad: 100
-  shame_gain:
-    perfect: 0
-    okay: 10
-    bad: 40
-
-participants:
-  - id: wojak
-    voiceType: Russel
-    type: player
-
-  - id: boomer
-    voiceType: Brian
-    type: npc
-
-  - id: zoomer
-    voiceType: brandon
-    type: npc
-
-  - id: karen
-    voiceType: Amy
-    type: npc
-
-dialogue:
-  - speakerId: boomer
-    text: Welcome to the quarterly review meeting.  We have lots to discuss today.
-  - speakerId: zoomer
-    text: Hey everyone!  I'm super excited to share our Q4 results!
-
-```
-
-- `voice` is selected in the YAML
-- `audio` must be `.mp3`
-- `karaoke_letters` computed in code from `visemes`
+check example in src/assets/level1.json
 
 ---
 
-### 📁 File Structure
+### File Structure
 
 ```
-/levels/              # One YAML per level
 /dialogue/            # MP3 + viseme JSON per line of diagogue [levelId]-[dialogueItemIndex]-[characterId].mp3 and [levelId]-[dialogueItemIndex]-[characterId]-metadata.json
 /assets/faces/        # [id]-[expression].png
-/assets/audio/        # fart1.mp3 ... fart6.mp3
+/assets/audio/        # z-fart.mp3 ...
+/assets/levels/       # level1.json ...
 /components/          # React components
 /logic/               # game logic independent of framework
 /scripts/             # Polly + viseme generator (MP3 + JSON)

@@ -43,7 +43,7 @@ const NEURAL_VOICES = [
 ];
 
 // Directory configuration
-const LEVELS_DIR = path.join(__dirname, '..', 'src', 'levels');
+const LEVELS_DIR = path.join(__dirname, '..', 'src', 'assets', 'levels');
 const AUDIO_OUTPUT_DIR = path.join(__dirname, '..', 'src', 'assets', 'dialogue');
 const SPEECH_MARKS_DIR = path.join(__dirname, '..', 'src', 'assets', 'dialogue', 'speech_marks');
 
