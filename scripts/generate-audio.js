@@ -44,8 +44,8 @@ const NEURAL_VOICES = [
 
 // Directory configuration
 const LEVELS_DIR = path.join(__dirname, '..', 'src', 'levels');
-const AUDIO_OUTPUT_DIR = path.join(__dirname, '..', 'audio', 'dialogue');
-const SPEECH_MARKS_DIR = path.join(__dirname, '..', 'audio', 'dialogue', 'speech_marks');
+const AUDIO_OUTPUT_DIR = path.join(__dirname, '..', 'src', 'assets', 'dialogue');
+const SPEECH_MARKS_DIR = path.join(__dirname, '..', 'src', 'assets', 'dialogue', 'speech_marks');
 
 // Create output directories if they don't exist
 async function ensureDirectories() {
@@ -61,11 +61,9 @@ async function ensureDirectories() {
 /**
  * Generate a filename for a dialogue entry
  */
-function generateFilename(speakerId, voiceType, text) {
-  // Create a hash of the text to ensure unique filenames
-  const hash = crypto.createHash('md5').update(text).digest('hex').substring(0, 8);
-  // Format: speakerId_voiceType_hash.mp3
-  return `${speakerId}_${voiceType}_${hash}.mp3`;
+function generateFilename(levelId, dialogueIndex, speakerId) {
+  // Format: [levelId]-[dialogueItemIndex]-[characterId].mp3
+  return `${levelId}-${dialogueIndex}-${speakerId}.mp3`;
 }
 
 /**
@@ -158,7 +156,7 @@ async function generateSpeechMarks(speakerId, voiceType, text, audioFilename) {
       Text: textToUse,
       TextType: isSSML ? 'ssml' : 'text',
       VoiceId: voiceType,
-      SpeechMarkTypes: ['sentence', 'word', 'viseme', 'ssml']
+      SpeechMarkTypes: ['sentence', 'word', 'viseme']
     };
 
     // Call Polly to generate speech marks
@@ -171,7 +169,7 @@ async function generateSpeechMarks(speakerId, voiceType, text, audioFilename) {
       .map(line => JSON.parse(line));
 
     // Save speech marks to file
-    const outputFile = path.join(SPEECH_MARKS_DIR, audioFilename.replace('.mp3', '.json'));
+    const outputFile = path.join(SPEECH_MARKS_DIR, audioFilename.replace('.mp3', '-metadata.json'));
     await writeFile(outputFile, JSON.stringify(speechMarks, null, 2));
 
     console.log(`Speech marks saved to: ${outputFile} (${speechMarks.length} marks)`);
@@ -204,7 +202,7 @@ async function generateSpeechMarks(speakerId, voiceType, text, audioFilename) {
           .map(line => JSON.parse(line));
 
         // Save speech marks to file
-        const outputFile = path.join(SPEECH_MARKS_DIR, audioFilename.replace('.mp3', '.json'));
+        const outputFile = path.join(SPEECH_MARKS_DIR, audioFilename.replace('.mp3', '-metadata.json'));
         await writeFile(outputFile, JSON.stringify(speechMarks, null, 2));
 
         console.log(`Speech marks saved to: ${outputFile} (${speechMarks.length} marks) with standard engine`);
@@ -235,11 +233,15 @@ async function processLevelFile(filePath) {
       participantVoices[participant.id] = participant.voiceType;
     });
 
+    // Extract level ID from file path
+    const levelId = path.basename(filePath, path.extname(filePath));
+    
     // Generate audio for each dialogue entry
-    const dialogues = levelData.dialogues;
+    const dialogues = levelData.dialogues || [];
     const audioMap = {};
 
-    for (const dialogue of dialogues) {
+    for (let i = 0; i < dialogues.length; i++) {
+      const dialogue = dialogues[i];
       const { speakerId, text } = dialogue;
       const voiceType = participantVoices[speakerId];
 
@@ -248,8 +250,8 @@ async function processLevelFile(filePath) {
         continue;
       }
 
-      // Generate filename
-      const filename = generateFilename(speakerId, voiceType, text);
+      // Generate filename using level ID, dialogue index, and speaker ID
+      const filename = generateFilename(levelId, i, speakerId);
 
       // Add to audio map
       audioMap[text] = filename;
@@ -257,7 +259,7 @@ async function processLevelFile(filePath) {
 
       // Check if file already exists
       const outputPath = path.join(AUDIO_OUTPUT_DIR, filename);
-      const speechMarksPath = path.join(SPEECH_MARKS_DIR, filename.replace('.mp3', '.json'));
+      const speechMarksPath = path.join(SPEECH_MARKS_DIR, filename.replace('.mp3', '-metadata.json'));
 
       // Track if we need to generate speech marks
       let needSpeechMarks = !fs.existsSync(speechMarksPath);
@@ -285,14 +287,6 @@ async function processLevelFile(filePath) {
       } else {
         console.log(`Speech marks already exist for: ${filename}`);
       }
-    }
-    // Update the level file with soundFile references if they were generated
-    if (Object.keys(audioMap).length > 0) {
-      // Convert back to YAML
-      const updatedYaml = yaml.dump(levelData, { lineWidth: -1 });
-      // Write updated YAML back to file
-      fs.writeFileSync(filePath, updatedYaml, 'utf8');
-      console.log(`Updated level file with sound file references: ${filePath}`);
     }
 
     return audioMap;

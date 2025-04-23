@@ -1,0 +1,451 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 71,
+    "value": "I've been working on the blockchain initiative with the marketing team."
+  },
+  {
+    "time": 200,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "I've"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 337,
+    "type": "word",
+    "start": 5,
+    "end": 9,
+    "value": "been"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 562,
+    "type": "word",
+    "start": 10,
+    "end": 17,
+    "value": "working"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1000,
+    "type": "word",
+    "start": 18,
+    "end": 20,
+    "value": "on"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1125,
+    "type": "word",
+    "start": 21,
+    "end": 24,
+    "value": "the"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 25,
+    "end": 35,
+    "value": "blockchain"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1775,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1875,
+    "type": "word",
+    "start": 36,
+    "end": 46,
+    "value": "initiative"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2187,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2462,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2562,
+    "type": "word",
+    "start": 47,
+    "end": 51,
+    "value": "with"
+  },
+  {
+    "time": 2562,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2687,
+    "type": "word",
+    "start": 52,
+    "end": 55,
+    "value": "the"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2750,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2825,
+    "type": "word",
+    "start": 56,
+    "end": 65,
+    "value": "marketing"
+  },
+  {
+    "time": 2825,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3187,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3375,
+    "type": "word",
+    "start": 66,
+    "end": 70,
+    "value": "team"
+  },
+  {
+    "time": 3375,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3500,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3675,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3787,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4180,
+    "type": "sentence",
+    "start": 72,
+    "end": 100,
+    "value": "The results are interesting."
+  },
+  {
+    "time": 4305,
+    "type": "word",
+    "start": 72,
+    "end": 75,
+    "value": "The"
+  },
+  {
+    "time": 4305,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4417,
+    "type": "word",
+    "start": 76,
+    "end": 83,
+    "value": "results"
+  },
+  {
+    "time": 4417,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4430,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4492,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4592,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4680,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4742,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4817,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4892,
+    "type": "word",
+    "start": 84,
+    "end": 87,
+    "value": "are"
+  },
+  {
+    "time": 4892,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4930,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5017,
+    "type": "word",
+    "start": 88,
+    "end": 99,
+    "value": "interesting"
+  },
+  {
+    "time": 5017,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5117,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5180,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5217,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5242,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5317,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5430,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5492,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5555,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5680,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

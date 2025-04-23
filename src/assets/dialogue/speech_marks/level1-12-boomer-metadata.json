@@ -1,0 +1,424 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 19,
+    "value": "Let's wrap this up."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "Let's"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 6,
+    "end": 10,
+    "value": "wrap"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 11,
+    "end": 15,
+    "value": "this"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1062,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "up"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1930,
+    "type": "sentence",
+    "start": 21,
+    "end": 72,
+    "value": "break time=\"1s\"/>Wojak, do you haveanything to add?"
+  },
+  {
+    "time": 2055,
+    "type": "word",
+    "start": 21,
+    "end": 26,
+    "value": "break"
+  },
+  {
+    "time": 2055,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2117,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2167,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2292,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2380,
+    "type": "word",
+    "start": 27,
+    "end": 32,
+    "value": "time="
+  },
+  {
+    "time": 2380,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2555,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2680,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2842,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2955,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2992,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3067,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3242,
+    "type": "word",
+    "start": 33,
+    "end": 35,
+    "value": "1s"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3305,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3417,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3692,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3892,
+    "type": "word",
+    "start": 37,
+    "end": 38,
+    "value": ">"
+  },
+  {
+    "time": 3892,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4067,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4205,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4305,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4442,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4492,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4567,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4617,
+    "type": "word",
+    "start": 38,
+    "end": 43,
+    "value": "Wojak"
+  },
+  {
+    "time": 4617,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4755,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4880,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5055,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5117,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5242,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5542,
+    "type": "word",
+    "start": 45,
+    "end": 47,
+    "value": "do"
+  },
+  {
+    "time": 5542,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5567,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5655,
+    "type": "word",
+    "start": 48,
+    "end": 51,
+    "value": "you"
+  },
+  {
+    "time": 5655,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5692,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5817,
+    "type": "word",
+    "start": 52,
+    "end": 64,
+    "value": "haveanything"
+  },
+  {
+    "time": 5817,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5880,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5930,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6055,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6117,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6180,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6192,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 6242,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6305,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6430,
+    "type": "word",
+    "start": 65,
+    "end": 67,
+    "value": "to"
+  },
+  {
+    "time": 6430,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6480,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6730,
+    "type": "word",
+    "start": 68,
+    "end": 71,
+    "value": "add"
+  },
+  {
+    "time": 6730,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6867,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7192,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

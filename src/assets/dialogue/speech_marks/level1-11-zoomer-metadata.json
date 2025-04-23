@@ -1,0 +1,411 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 65,
+    "value": "We should totally pivot with the new SaaS platform going forward!"
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 2,
+    "value": "We"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 3,
+    "end": 9,
+    "value": "should"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 10,
+    "end": 17,
+    "value": "totally"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 837,
+    "type": "word",
+    "start": 18,
+    "end": 23,
+    "value": "pivot"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1075,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1137,
+    "type": "word",
+    "start": 24,
+    "end": 28,
+    "value": "with"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1312,
+    "type": "word",
+    "start": 29,
+    "end": 32,
+    "value": "the"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1325,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1375,
+    "type": "word",
+    "start": 33,
+    "end": 36,
+    "value": "new"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1625,
+    "type": "word",
+    "start": 37,
+    "end": 41,
+    "value": "SaaS"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1725,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1850,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1937,
+    "type": "word",
+    "start": 42,
+    "end": 50,
+    "value": "platform"
+  },
+  {
+    "time": 1937,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2325,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2512,
+    "type": "word",
+    "start": 51,
+    "end": 56,
+    "value": "going"
+  },
+  {
+    "time": 2512,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2562,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2825,
+    "type": "word",
+    "start": 57,
+    "end": 64,
+    "value": "forward"
+  },
+  {
+    "time": 2825,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2950,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3462,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3855,
+    "type": "sentence",
+    "start": 66,
+    "end": 77,
+    "value": "Right team?"
+  },
+  {
+    "time": 3980,
+    "type": "word",
+    "start": 66,
+    "end": 71,
+    "value": "Right"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4055,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4192,
+    "type": "word",
+    "start": 72,
+    "end": 76,
+    "value": "team"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4355,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4417,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4692,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5085,
+    "type": "sentence",
+    "start": 79,
+    "end": 86,
+    "value": "Anyone?"
+  },
+  {
+    "time": 5222,
+    "type": "word",
+    "start": 79,
+    "end": 85,
+    "value": "Anyone"
+  },
+  {
+    "time": 5222,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5285,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5335,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5397,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5460,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5585,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5797,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

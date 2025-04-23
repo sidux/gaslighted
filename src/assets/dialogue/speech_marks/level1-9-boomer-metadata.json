@@ -1,0 +1,304 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 47,
+    "value": "Everyone  needs to submit their reports by EOD."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 0,
+    "end": 8,
+    "value": "Everyone"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 10,
+    "end": 15,
+    "value": "needs"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1062,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "to"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 19,
+    "end": 25,
+    "value": "submit"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1650,
+    "type": "word",
+    "start": 26,
+    "end": 31,
+    "value": "their"
+  },
+  {
+    "time": 1650,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1712,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1762,
+    "type": "word",
+    "start": 32,
+    "end": 39,
+    "value": "reports"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1837,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2387,
+    "type": "word",
+    "start": 40,
+    "end": 42,
+    "value": "by"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2462,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2637,
+    "type": "word",
+    "start": 43,
+    "end": 46,
+    "value": "EOD"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3587,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4055,
+    "type": "sentence",
+    "start": 49,
+    "end": 62,
+    "value": "Noexceptions!"
+  },
+  {
+    "time": 4242,
+    "type": "word",
+    "start": 49,
+    "end": 61,
+    "value": "Noexceptions"
+  },
+  {
+    "time": 4242,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4292,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4467,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4555,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4617,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4680,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4805,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4992,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5180,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5542,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

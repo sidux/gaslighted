@@ -1,116 +1,60 @@
-id: level1
 title: First Day Jitters
 description: Your first remote meeting. Thankfully, people are forgiving.
-difficulty: 1
-duration: 120
-zeroMistakesAllowed: false
+rules:
+  pressure_buildup_speed: 1.2
+  precision_window_ms: 250
+  max_possible_farts_by_word: 1
+  pressure_release:
+    perfect: 30
+    okay: 15
+    bad: 100
+  shame_gain:
+    perfect: 0
+    okay: 10
+    bad: 40
 participants:
-  - id: player
-    name: Wojak
-    voiceType: Matthew
+  - id: wojak
+    voiceType: Russell
+    type: player
   - id: boomer
-    name: Mr. Bogdanoff
     voiceType: Brian
+    type: npc
   - id: zoomer
-    name: Zoomer
     voiceType: Justin
-  - id: coworker1
-    name: Wifey
-    voiceType: Joanna
+    type: npc
+  - id: karen
+    voiceType: Amy
+    type: npc
 dialogues:
   - speakerId: boomer
-    text: <speak>Welcome to the quarterly review meeting.  We have lots to discuss today.</speak>
-    delay: 2000
-    duration: 5000
-    safetyStatus: neutral
-    soundFile: boomer_Brian_ef391653.mp3
+    text: Welcome to the quarterly review meeting.  We have lots to discuss today.
   - speakerId: zoomer
-    text: <speak>Hey everyone!  I'm super excited to share our Q4 results!</speak>
-    delay: 1500
-    duration: 3500
-    safetyStatus: neutral
-    soundFile: zoomer_Justin_d55f208e.mp3
+    text: Hey everyone!  I'm super excited to share our Q4 results!
   - speakerId: boomer
-    text: <speak>Before we begin, I would like to  emphasize  how important it is to listen carefully.</speak>
-    delay: 1200
-    duration: 6000
-    safetyStatus: danger
-    soundFile: boomer_Brian_8b0ee337.mp3
-  - speakerId: coworker1
-    text: <speak>Let's synergize our efforts and leverage our core competencies going forward. Any questions?</speak>
-    delay: 800
-    duration: 4500
-    safetyStatus: safe
-    soundFile: coworker1_Joanna_4f7ba7c2.mp3
+    text: Before we begin, I would like to  emphasize  how important it is to listen carefully.
+  - speakerId: karen
+    text: Let's synergize our efforts and leverage our core competencies going forward. Any questions?
   - speakerId: boomer
-    text: <speak>Wojak, are you with us? You look a bit uncomfortable.</speak>
-    delay: 1000
-    duration: 4000
-    safetyStatus: danger
-    soundFile: boomer_Brian_d976d8e2.mp3
+    text: Wojak, are you with us? You look a bit uncomfortable.
   - speakerId: zoomer
-    text: <speak>HAHAHA,  that's so funny!  I can't believe that happened!</speak>
-    delay: 1200
-    duration: 3500
-    safetyStatus: safe
-    soundFile: zoomer_Justin_fb73273d.mp3
+    text: HAHAHA,  that's so funny!  I can't believe that happened!
   - speakerId: boomer
-    text: <speak>As I was sayingour quarterly numbers are lookingpromising.</speak>
-    delay: 1500
-    duration: 5000
-    safetyStatus: danger
-    soundFile: boomer_Brian_cb779f1f.mp3
-  - speakerId: coworker1
-    text: <speak>I've been working on the blockchain initiative with the marketing team. The results are interesting.</speak>
-    delay: 1000
-    duration: 5500
-    safetyStatus: neutral
-    soundFile: coworker1_Joanna_ff72153c.mp3
+    text: As I was sayingour quarterly numbers are lookingpromising.
+  - speakerId: karen
+    text: I've been working on the blockchain initiative with the marketing team. The results are interesting.
   - speakerId: zoomer
-    text: <speak>Can we  leverage the AI framework before next week's deadline?  It's urgent!</speak>
-    delay: 1200
-    duration: 4000
-    safetyStatus: neutral
-    soundFile: zoomer_Justin_9a49036b.mp3
+    text: Can we  leverage the AI framework before next week's deadline?  It's urgent!
   - speakerId: boomer
-    text: <speak>Everyone  needs to submit their reports by EOD.  Noexceptions!</speak>
-    delay: 900
-    duration: 4500
-    safetyStatus: danger
-    soundFile: boomer_Brian_9547ccb1.mp3
-  - speakerId: coworker1
-    text: <speak>Sorry about that, I'm coming down with something.  Excuse me.</speak>
-    delay: 1000
-    duration: 4000
-    safetyStatus: safe
-    soundFile: coworker1_Joanna_e04de635.mp3
+    text: Everyone  needs to submit their reports by EOD.  Noexceptions!
+  - speakerId: karen
+    text: Sorry about that, I'm coming down with something.  Excuse me.
   - speakerId: zoomer
-    text: <speak>We should totally pivot with the new SaaS platform going forward! Right team?  Anyone?</speak>
-    delay: 800
-    duration: 4500
-    safetyStatus: neutral
-    soundFile: zoomer_Justin_3463ecb4.mp3
+    text: We should totally pivot with the new SaaS platform going forward! Right team?  Anyone?
   - speakerId: boomer
-    text: <speak>Let's wrap this up. <break time="1s"/>Wojak, do you haveanything to add?</speak>
-    delay: 1500
-    duration: 4000
-    safetyStatus: danger
-    soundFile: boomer_Brian_b05fcf69.mp3
+    text: Let's wrap this up. <break time="1s"/>Wojak, do you haveanything to add?
   - speakerId: zoomer
-    text: <speak>That reminds me of last year's company retreat!  So embarrassing!</speak>
-    delay: 1200
-    duration: 4000
-    safetyStatus: safe
-    soundFile: zoomer_Justin_b8a36add.mp3
-  - speakerId: coworker1
-    text: <speak>I think we've covered everything for today.  Great progress everyone!</speak>
-    delay: 1100
-    duration: 3500
-    safetyStatus: neutral
-    soundFile: coworker1_Joanna_3f5eaf36.mp3
+    text: That reminds me of last year's company retreat!  So embarrassing!
+  - speakerId: karen
+    text: I think we've covered everything for today.  Great progress everyone!
   - speakerId: boomer
-    text: <speak>Thank you all for attending.  Meetingadjourned.</speak>
-    delay: 1500
-    duration: 4000
-    safetyStatus: neutral
-    soundFile: boomer_Brian_7564d7e4.mp3
+    text: Thank you all for attending.  Meeting adjourned.
