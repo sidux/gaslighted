@@ -1,151 +1,193 @@
 import React from 'react';
-import { GameState, Viseme, FartType } from '../logic/types';
+import { GameState, Viseme, FartType, FartOpportunity } from '../logic/types';
 import { getAllWords, getWordVisemes } from '../logic/metadataLoader';
-
-// Function to determine the color of the letter based on timing window
-const getTimingWindowColor = (opportunityTime: number, currentTime: number, precisionWindowMs: number): string => {
-  const timeDifference = Math.abs(currentTime - opportunityTime);
-  
-  // Perfect window (green)
-  if (timeDifference <= precisionWindowMs * 0.75) {
-    return '#34a853'; // Green for perfect timing
-  }
-  // Okay window (yellow)
-  else if (timeDifference <= precisionWindowMs * 2) {
-    return '#fbbc05'; // Yellow for okay timing
-  }
-  // Bad window (red)
-  else {
-    return '#ea4335'; // Red for bad timing
-  }
-};
-
-// Function to determine the border color of the letter based on timing window
-const getTimingWindowBorderColor = (opportunityTime: number, currentTime: number, precisionWindowMs: number): string => {
-  const timeDifference = Math.abs(currentTime - opportunityTime);
-  
-  // Perfect window (green border)
-  if (timeDifference <= precisionWindowMs * 0.75) {
-    return '#0f9d58'; // Darker green for perfect timing
-  }
-  // Okay window (yellow border)
-  else if (timeDifference <= precisionWindowMs * 2) {
-    return '#e65100'; // Orange for okay timing
-  }
-  // Bad window (red border)
-  else {
-    return '#c62828'; // Darker red for bad timing
-  }
-};
 
 interface GameUIProps {
   gameState: GameState;
+  setGameState: React.Dispatch<React.SetStateAction<GameState>>;
   dialogueMetadata: { [key: string]: Viseme[] };
 }
 
-const GameUI: React.FC<GameUIProps> = ({ gameState, dialogueMetadata }) => {
-  // Don't render UI if not playing
-  if (!gameState.isPlaying || gameState.isGameOver) {
-    return null;
-  }
-  
+// Function to determine the color of the letter based on timing window and pressed state
+const getTimingWindowColor = (
+  opportunity: FartOpportunity,
+  currentTime: number,
+  precisionWindowMs: number
+): string => {
+  if (opportunity.pressed) return '#9e9e9e';
+  const dt = Math.abs(currentTime - opportunity.time);
+  if (dt <= precisionWindowMs * 0.75) return '#34a853';
+  else if (dt <= precisionWindowMs * 2) return '#fbbc05';
+  else return '#ea4335';
+};
+
+const getTimingWindowBorderColor = (
+  opportunity: FartOpportunity,
+  currentTime: number,
+  precisionWindowMs: number
+): string => {
+  if (opportunity.pressed) return '#616161';
+  const dt = Math.abs(currentTime - opportunity.time);
+  if (dt <= precisionWindowMs * 0.75) return '#0f9d58';
+  else if (dt <= precisionWindowMs * 2) return '#e65100';
+  else return '#c62828';
+};
+
+const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetadata }) => {
+  // Only render when playing
+  if (!gameState.isPlaying || gameState.isGameOver) return null;
+
   const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
-  
-  if (!currentDialogue) {
-    return null;
-  }
-  
+  if (!currentDialogue) return null;
+
+  // build metadata key and load
   const speakerId = currentDialogue.speakerId;
   const metadataKey = `level1-${gameState.currentDialogueIndex}-${speakerId}-metadata.json`;
   const metadata = dialogueMetadata[metadataKey] || [];
-  
+
   const words = getAllWords(metadata, currentDialogue.text);
   const currentWordIndex = gameState.currentWordIndex;
-  
-  // Find all active fart opportunities, not just for the current word
+
+  // pick out all active, un‐handled opportunities for this dialogue
   const activeFartOpportunities = gameState.fartOpportunities.filter(
-    opp => opp.dialogueIndex === gameState.currentDialogueIndex && 
-           opp.active &&
-           !opp.handled
+    opp =>
+      opp.dialogueIndex === gameState.currentDialogueIndex &&
+      opp.active &&
+      !opp.handled
   );
 
-  // Create a map of word indices to their fart opportunities
-  const wordToFartOpportunityMap = new Map();
+  // map wordIndex → opportunity
+  const wordToFartOpportunityMap = new Map<number, FartOpportunity>();
   activeFartOpportunities.forEach(opp => {
     wordToFartOpportunityMap.set(opp.wordIndex, opp);
   });
-  
+
+  // Handler called when the float animation finishes
+  const handleFartAnimationEnd = (opp: FartOpportunity) => {
+    setGameState(gs => ({
+      ...gs,
+      fartOpportunities: gs.fartOpportunities.map(o =>
+        o === opp
+          ? { ...o, handled: true, active: false }
+          : o
+      )
+    }));
+  };
+
   return (
     <div className="game-ui">
       <div className="meters-container">
+        {/* Pressure meter */}
         <div className="meter">
           <div className="meter-label">Pressure</div>
           <div className="meter-bar">
-            <div 
-              className={`meter-fill pressure-fill ${gameState.pressure >= 80 ? 'critical' : ''}`} 
+            <div
+              className={`meter-fill pressure-fill ${
+                gameState.pressure >= 80 ? 'critical' : ''
+              }`}
               style={{ width: `${Math.min(100, gameState.pressure)}%` }}
-            ></div>
+            />
           </div>
         </div>
-        
+        {/* Shame meter */}
         <div className="meter">
           <div className="meter-label">Shame</div>
           <div className="meter-bar">
-            <div 
-              className="meter-fill shame-fill" 
+            <div
+              className="meter-fill shame-fill"
               style={{ width: `${gameState.shame}%` }}
-            ></div>
+            />
           </div>
         </div>
-        
+        {/* Combo */}
         {gameState.combo > 0 && (
-          <div className="combo-counter">
-            Combo: {gameState.combo}x
+          <div className="combo-counter" data-combo={gameState.combo}>
+            <span className="combo-text">Combo:</span>{' '}
+            <span className="combo-value">{gameState.combo}x</span>
           </div>
         )}
       </div>
-      
+
       <div className="karaoke-container">
         <div className="karaoke-text">
           {words.map((word, index) => {
-            const hasFartOpportunity = wordToFartOpportunityMap.has(index);
-            const fartOpportunity = wordToFartOpportunityMap.get(index);
-            
+            const opp = wordToFartOpportunityMap.get(index);
+            const hasFart = Boolean(opp);
+
             return (
-              <span 
+              <span
                 key={index}
-                className={`karaoke-word ${index === currentWordIndex ? 'current' : ''} ${
-                  hasFartOpportunity ? 'fart-opportunity' : ''
-                }`}
+                className={`karaoke-word ${
+                  index === currentWordIndex ? 'current' : ''
+                } ${hasFart ? 'fart-opportunity' : ''}`}
               >
-                {hasFartOpportunity && (
-                  <span 
-                    className="fart-key"
+                {hasFart && opp && (
+                  <span
+                    key={opp.animationKey ?? `key-${index}-${opp.type}`}
+                    className={`fart-key ${
+                      opp.pressed
+                        ? `${opp.resultType}-pressed pressed-animation`
+                        : ''
+                    }`}
                     style={{
-                      animationDuration: `${gameState.level.rules.letter_float_duration_ms / gameState.level.rules.letter_float_speed_multiplier}ms`,
+                      animationDuration: opp.pressed
+                        ? undefined
+                        : `${gameState.level.rules.letter_float_duration_ms /
+                            gameState.level.rules.letter_float_speed_multiplier
+                          }ms`,
                       animationIterationCount: '1',
                       animationFillMode: 'forwards',
-                      // Create custom animation keyframes based on level settings
                       '--float-height': `${gameState.level.rules.letter_float_height_px}px`,
-                      // Determine color based on timing window
-                      backgroundColor: getTimingWindowColor(fartOpportunity.time, gameState.playbackTime, gameState.level.rules.precision_window_ms),
-                      borderColor: getTimingWindowBorderColor(fartOpportunity.time, gameState.playbackTime, gameState.level.rules.precision_window_ms)
+                      backgroundColor: opp.pressed
+                        ? undefined
+                        : getTimingWindowColor(
+                            opp,
+                            gameState.playbackTime,
+                            gameState.level.rules.precision_window_ms
+                          ),
+                      borderColor: opp.pressed
+                        ? undefined
+                        : getTimingWindowBorderColor(
+                            opp,
+                            gameState.playbackTime,
+                            gameState.level.rules.precision_window_ms
+                          ),
+                      animation: opp.pressed
+                        ? undefined
+                        : `float-key ${gameState.level.rules.letter_float_duration_ms /
+                            gameState.level.rules.letter_float_speed_multiplier
+                          }ms forwards`,
+                      opacity: opp.pressed ? undefined : 1,
+                      visibility: 'visible',
+                      display: 'block',
+                      zIndex: 100
                     } as React.CSSProperties}
+                    aria-label={`Press ${opp.type.toUpperCase()} key to fart`}
+                    data-letter={opp.type.toUpperCase()}
+                    data-pressed={opp.pressed ? 'true' : 'false'}
+                    data-result={opp.resultType ?? ''}
+                    onAnimationEnd={() => handleFartAnimationEnd(opp)}
                   >
-                    {fartOpportunity.type.toUpperCase()}
+                    {opp.type.toUpperCase()}
+
+                    {opp.pressed && opp.resultType === 'perfect' && (
+                      <>
+                        {/* particles */}
+                        <div className="particle" style={{ '--x': '30px', '--y': '-30px' } as React.CSSProperties} />
+                        <div className="particle" style={{ '--x': '40px', '--y': '-10px' } as React.CSSProperties} />
+                        <div className="particle" style={{ '--x': '35px', '--y': '20px' } as React.CSSProperties} />
+                        <div className="particle" style={{ '--x': '-5px', '--y': '30px' } as React.CSSProperties} />
+                        <div className="particle" style={{ '--x': '-30px', '--y': '15px' } as React.CSSProperties} />
+                        <div className="particle" style={{ '--x': '-35px', '--y': '-25px' } as React.CSSProperties} />
+                      </>
+                    )}
                   </span>
                 )}
-                {word.text}
+                {word.text + ' '}
               </span>
             );
           })}
         </div>
-        
-        {activeFartOpportunities.length > 0 && (
-          <div className="fart-instructions">
-            Press the highlighted letters to release pressure!
-          </div>
-        )}
       </div>
     </div>
   );

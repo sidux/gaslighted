@@ -15,6 +15,7 @@ interface ParticipantVideoProps {
   shame: number;
   isGameOver: boolean;
   victory: boolean;
+  isActive: boolean;
 }
 
 const ParticipantVideo: React.FC<ParticipantVideoProps> = ({ 
@@ -24,7 +25,8 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
   pressure,
   shame,
   isGameOver,
-  victory
+  victory,
+  isActive
 }) => {
   const [faceImage, setFaceImage] = useState('neutral');
   const [talkingState, setTalkingState] = useState(0);
@@ -87,9 +89,19 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
     setFaceImage(image);
   }, [participant.type, isSpeaking, fartReaction, talkingState, pressure, shame, isGameOver, victory]);
   
+  // Dynamic class based on active speaker
+  const containerClasses = [
+    "video-container",
+    isActive ? "active-speaker" : "",
+    fartReaction === 'bad' ? "vibrate" : ""
+  ].filter(Boolean).join(" ");
+  
   return (
-    <div className="video-container">
-      <div className="video-participant">
+    <div className={containerClasses}>
+      <div 
+        className="video-participant"
+        aria-label={`${participant.id} ${fartReaction === 'bad' ? 'is reacting to a bad fart' : isSpeaking ? 'is speaking' : ''}`}
+      >
         <img 
           src={`src/assets/faces/${participant.id}-${faceImage}.png`}
           alt={participant.id}
@@ -98,6 +110,12 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
         <div className="participant-name">
           {participant.id.charAt(0).toUpperCase() + participant.id.slice(1)}
         </div>
+        {participant.type === 'player' && isSpeaking && (
+          <div className="active-indicator">
+            <span>Speaking</span>
+          </div>
+        )}
+        {isActive && <div className="active-border"></div>}
       </div>
     </div>
   );
@@ -107,8 +125,14 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
   const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
   const currentSpeakerId = currentDialogue?.speakerId;
   
+  // Create a more Google Meet-like layout with a designated tiled view
   return (
     <div className="meeting-container">
+      <div className="meeting-info">
+        <span className="meeting-title">Team meeting</span>
+        <span className="meeting-time">{new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+      </div>
+      
       <div className="video-grid">
         {participants.map(participant => (
           <ParticipantVideo
@@ -125,6 +149,7 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
             shame={gameState.shame}
             isGameOver={gameState.isGameOver}
             victory={gameState.victory}
+            isActive={participant.id === currentSpeakerId}
           />
         ))}
       </div>
@@ -145,6 +170,10 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
         className={`bad-effect ${gameState.lastFartResult?.type === 'bad' ? 'active' : ''}`}
       >
         BAD!
+      </div>
+      
+      <div className="participant-count">
+        <span>{participants.length}</span>
       </div>
     </div>
   );

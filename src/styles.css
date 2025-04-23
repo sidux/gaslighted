@@ -79,28 +79,124 @@ body, html {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 0; 
   background-color: #202124;
   position: relative;
+  overflow: hidden;
+}
+
+/* Google Meet header info */
+.meeting-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  color: #e8eaed;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.meeting-title {
+  display: flex;
+  align-items: center;
+}
+
+.meeting-time {
+  color: #9aa0a6;
+}
+
+/* Game screen without header */
+.game-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #202124;
 }
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  flex: 1;
-  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: minmax(260px, auto);
+  gap: 12px;
+  padding: 12px;
+  margin: 0 auto;
+  width: 100%;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
 /* Participant video */
 .video-container {
-  background-color: #323436;
+  background-color: #3c4043;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/10;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+  min-height: 260px;
+}
+
+.video-container.active-speaker {
+  box-shadow: 0 0 0 2px #8ab4f8;
+}
+
+.active-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #8ab4f8;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.active-indicator {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 3;
+}
+
+.participant-count {
+  position: absolute;
+  bottom: 84px;
+  right: 8px;
+  background-color: rgba(60, 64, 67, 0.8);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* Vibration animation for bad farts */
+@keyframes character-vibration {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-2px, -2px); }
+  20% { transform: translate(2px, -2px); }
+  30% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, 2px); }
+  50% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, -2px); }
+  70% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, 2px); }
+  90% { transform: translate(-2px, 0); }
+  100% { transform: translate(0, 0); }
 }
 
 .video-participant {
@@ -110,64 +206,141 @@ body, html {
   align-items: center;
   flex: 1;
   position: relative;
+  padding: 4px;
+}
+
+/* Add vibration to character with bad fart */
+.vibrate .video-participant {
+  animation: character-vibration 0.5s ease-in-out;
 }
 
 .participant-face {
-  width: 120px;
-  height: 120px;
+  width: 240px;
+  height: 240px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s ease;
+}
+
+.video-participant:hover .participant-face {
+  transform: scale(1.05);
 }
 
 .participant-name {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 4px 8px;
+  bottom: 8px;
+  left: 8px;
+  color: #e8eaed;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 2px 6px;
+  background-color: rgba(32, 33, 36, 0.4);
   border-radius: 4px;
-  font-size: 14px;
+  z-index: 2;
 }
 
-/* Control bar */
-.control-bar {
+/* Control bar - Modern Google Meet style */
+.meet-control-bar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  padding: 16px;
+  padding: 8px 16px;
   background-color: #202124;
+  height: 72px;
+  border-top: 1px solid rgba(60, 64, 67, 0.6);
 }
 
-.control-button {
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-group.left {
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.control-group.center {
+  justify-content: center;
+  flex: 2;
+}
+
+.control-group.right {
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.meet-control-button {
   background-color: #3c4043;
   border: none;
   color: white;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
-.control-button:hover {
+.meet-control-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Material icons styling */
+.material-icons {
+  font-size: 24px;
+  color: #888888;
+}
+
+/* Control button with Material icons */
+.meet-control-button .material-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meet-control-button:hover {
   background-color: #5f6368;
 }
 
-.control-button.red {
+.meet-control-button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.meet-control-button.end-call {
   background-color: #ea4335;
 }
 
-.control-button.red:hover {
+.meet-control-button.end-call:hover {
   background-color: #d93025;
+}
+
+.meet-control-button.start-game {
+  background-color: #1a73e8;
+  width: auto;
+  height: 36px;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.meet-control-button.start-game:hover {
+  background-color: #1967d2;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Game UI elements */
 .game-ui {
   position: absolute;
-  bottom: 130px;
+  bottom: 100px;
   left: 0;
   right: 0;
   display: flex;
@@ -175,26 +348,37 @@ body, html {
   align-items: center;
   padding: 16px;
   z-index: 10;
+  pointer-events: none; /* Allow clicks to pass through to elements below */
+}
+
+.game-ui > * {
+  pointer-events: auto; /* Re-enable pointer events for UI elements */
 }
 
 .karaoke-container {
   background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  width: 90%;
-  max-width: 900px;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 85%;
+  max-width: 1000px;
+  min-height: 120px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  position: relative;
+  overflow: visible; /* Allow fart keys to overflow without affecting container size */
 }
 
 .karaoke-text {
   color: white;
-  font-size: 26px;
-  line-height: 1.5;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  margin-bottom: 15px;
+  font-size: 28px;
+  line-height: 1.6;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .fart-instructions {
@@ -245,6 +429,439 @@ body, html {
   z-index: 100;
   will-change: transform, opacity;
   --float-height: 300px; /* Default value, will be overridden by inline styles */
+  pointer-events: auto;
+  width: auto;
+  height: auto;
+  position: absolute;
+}
+
+/* Pressed letter animations */
+@keyframes pressed-pulse {
+  0% { transform: translateX(-50%) scale(0.9); opacity: 0.7; }
+  100% { transform: translateX(-50%) scale(1.1); opacity: 0.9; }
+}
+
+/* Perfect press animation - spectacular explosion effect with continued ascension */
+@keyframes perfect-pressed {
+  0% { transform: translateX(-50%) translateY(0) scale(1); box-shadow: 0 0 10px rgba(52, 168, 83, 0.8); filter: brightness(1); opacity: 1; }
+  10% { transform: translateX(-50%) translateY(-40px) scale(2.5) rotate(5deg); box-shadow: 0 0 50px rgba(52, 168, 83, 1); filter: brightness(2); opacity: 1; }
+  25% { transform: translateX(-50%) translateY(-80px) scale(2) rotate(-3deg); box-shadow: 0 0 40px rgba(52, 168, 83, 0.9); filter: brightness(1.8) saturate(1.5); opacity: 1; }
+  40% { transform: translateX(-50%) translateY(-120px) scale(1.8) rotate(2deg); box-shadow: 0 0 35px rgba(52, 168, 83, 0.95); filter: brightness(1.6) hue-rotate(10deg); opacity: 1; }
+  60% { transform: translateX(-50%) translateY(-160px) scale(1.5) rotate(-1deg); box-shadow: 0 0 30px rgba(52, 168, 83, 0.9); filter: brightness(1.4) hue-rotate(-5deg); opacity: 1; }
+  80% { transform: translateX(-50%) translateY(-200px) scale(1.2) rotate(1deg); box-shadow: 0 0 20px rgba(52, 168, 83, 0.85); filter: brightness(1.2); opacity: 0.6; }
+  95% { transform: translateX(-50%) translateY(-240px) scale(1) rotate(0); box-shadow: 0 0 10px rgba(52, 168, 83, 0.8); filter: brightness(1); opacity: 0.2; }
+  100% { transform: translateX(-50%) translateY(-250px) scale(1) rotate(0); box-shadow: 0 0 10px rgba(52, 168, 83, 0.8); filter: brightness(1); opacity: 0; }
+}
+
+/* Okay press animation - bouncy pop effect with continued ascension */
+@keyframes okay-pressed {
+  0% { transform: translateX(-50%) translateY(0) scale(1); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 1; }
+  15% { transform: translateX(-50%) translateY(-40px) scale(1.8); box-shadow: 0 0 25px rgba(251, 188, 5, 1); filter: brightness(1.5) saturate(1.3); opacity: 1; }
+  30% { transform: translateX(-50%) translateY(-80px) scale(1.4); box-shadow: 0 0 20px rgba(251, 188, 5, 0.9); filter: brightness(1.3); opacity: 1; }
+  45% { transform: translateX(-50%) translateY(-120px) scale(1.6); box-shadow: 0 0 22px rgba(251, 188, 5, 0.95); filter: brightness(1.4) saturate(1.2); opacity: 1; }
+  60% { transform: translateX(-50%) translateY(-160px) scale(1.3); box-shadow: 0 0 18px rgba(251, 188, 5, 0.9); filter: brightness(1.2); opacity: 0.8; }
+  75% { transform: translateX(-50%) translateY(-200px) scale(1.2); box-shadow: 0 0 15px rgba(251, 188, 5, 0.85); filter: brightness(1.1); opacity: 0.5; }
+  95% { transform: translateX(-50%) translateY(-240px) scale(1); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 0.2; }
+  100% { transform: translateX(-50%) translateY(-250px) scale(1); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 0; }
+}
+
+/* Bad press animation - violent shake and distort effect with continued ascension */
+@keyframes bad-pressed {
+  0% { transform: translateX(-50%) translateY(0) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0); opacity: 1; }
+  10% { transform: translateX(-60%) translateY(-30px) rotate(15deg) scale(1.5) skewX(20deg); filter: contrast(1.5) blur(2px) saturate(2); opacity: 1; }
+  20% { transform: translateX(-30%) translateY(-60px) rotate(-20deg) scale(1.4) skewX(-15deg); filter: contrast(1.4) blur(1px) saturate(1.8); opacity: 1; }
+  30% { transform: translateX(-70%) translateY(-90px) rotate(25deg) scale(1.3) skewX(10deg); filter: contrast(1.3) blur(3px) saturate(1.6); opacity: 1; }
+  40% { transform: translateX(-20%) translateY(-120px) rotate(-15deg) scale(1.2) skewX(-5deg); filter: contrast(1.2) blur(2px) saturate(1.4); opacity: 1; }
+  50% { transform: translateX(-55%) translateY(-150px) rotate(10deg) scale(1.1) skewX(5deg); filter: contrast(1.1) blur(1px) saturate(1.2); opacity: 0.8; }
+  60% { transform: translateX(-45%) translateY(-180px) rotate(-8deg) scale(1.05) skewX(-3deg); filter: contrast(1.05) blur(0.5px) saturate(1.1); opacity: 0.6; }
+  75% { transform: translateX(-50%) translateY(-210px) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0) saturate(1); opacity: 0.4; }
+  95% { transform: translateX(-50%) translateY(-240px) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0) saturate(1); opacity: 0.2; }
+  100% { transform: translateX(-50%) translateY(-250px) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0) saturate(1); opacity: 0; }
+}
+
+/* Flash effect animation for letter press */
+@keyframes letter-flash {
+  0% { filter: brightness(1); }
+  20% { filter: brightness(2.5); }
+  100% { filter: brightness(1); }
+}
+
+/* Terrible animation - extreme chaotic effect with continued ascension */
+@keyframes terrible-pressed {
+  0% { transform: translateX(-50%) translateY(0) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0) hue-rotate(0deg); opacity: 1; }
+  5% { transform: translateX(-80%) translateY(-25px) rotate(25deg) scale(2) skewX(30deg); filter: contrast(2) blur(4px) saturate(3) hue-rotate(30deg); opacity: 1; }
+  15% { transform: translateX(-20%) translateY(-50px) rotate(-35deg) scale(1.8) skewX(-40deg); filter: contrast(1.8) blur(3px) saturate(2.5) hue-rotate(-40deg); opacity: 1; }
+  25% { transform: translateX(-90%) translateY(-75px) rotate(40deg) scale(1.9) skewX(20deg); filter: contrast(2.2) blur(5px) saturate(2.8) hue-rotate(60deg); opacity: 1; }
+  35% { transform: translateX(0%) translateY(-100px) rotate(-30deg) scale(1.7) skewX(-30deg); filter: contrast(1.9) blur(2px) saturate(2.2) hue-rotate(-20deg); opacity: 1; }
+  45% { transform: translateX(-70%) translateY(-125px) rotate(20deg) scale(1.5) skewX(15deg); filter: contrast(1.7) blur(3px) saturate(2) hue-rotate(10deg); opacity: 0.9; }
+  55% { transform: translateX(-30%) translateY(-150px) rotate(-15deg) scale(1.3) skewX(-10deg); filter: contrast(1.5) blur(2px) saturate(1.8) hue-rotate(-10deg); opacity: 0.8; }
+  65% { transform: translateX(-60%) translateY(-175px) rotate(10deg) scale(1.2) skewX(5deg); filter: contrast(1.3) blur(1px) saturate(1.6) hue-rotate(5deg); opacity: 0.6; }
+  75% { transform: translateX(-40%) translateY(-200px) rotate(-5deg) scale(1.1) skewX(-3deg); filter: contrast(1.2) blur(0.5px) saturate(1.4) hue-rotate(-3deg); opacity: 0.5; }
+  85% { transform: translateX(-50%) translateY(-225px) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0) saturate(1.2) hue-rotate(0deg); opacity: 0.3; }
+  95% { transform: translateX(-50%) translateY(-240px) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0) saturate(1.2) hue-rotate(0deg); opacity: 0.1; }
+  100% { transform: translateX(-50%) translateY(-250px) rotate(0) scale(1) skewX(0); filter: contrast(1) blur(0) saturate(1) hue-rotate(0deg); opacity: 0; }
+}
+
+/* Shockwave effect for perfect press */
+@keyframes perfect-shockwave {
+  0% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.8); }
+  70% { box-shadow: 0 0 0 50px rgba(52, 168, 83, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0); }
+}
+
+/* Pop effect for okay press */
+@keyframes okay-pop {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.7; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* Glitch effect for bad press */
+@keyframes bad-glitch {
+  0% { clip-path: inset(0 0 0 0); }
+  10% { clip-path: inset(20% 0 0 0); }
+  20% { clip-path: inset(0 20% 0 0); }
+  30% { clip-path: inset(0 0 20% 0); }
+  40% { clip-path: inset(0 0 0 20%); }
+  50% { clip-path: inset(10% 10% 0 0); }
+  60% { clip-path: inset(0 10% 10% 0); }
+  70% { clip-path: inset(0 0 10% 10%); }
+  80% { clip-path: inset(10% 0 0 10%); }
+  90% { clip-path: inset(5% 5% 5% 5%); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+/* Styling for pressed letters */
+.fart-key.pressed {
+  box-shadow: 0 0 10px rgba(97, 97, 97, 0.8);
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+/* Class that ensures animations will run */
+.pressed-animation {
+  animation-play-state: running !important;
+}
+
+.fart-key.perfect-pressed {
+  background-color: #34a853 !important;
+  color: white;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+  border-color: #0f9d58 !important;
+  animation-name: perfect-pressed !important;
+  animation-duration: 1s !important;
+  animation-fill-mode: forwards !important;
+  animation-iteration-count: 1 !important;
+  z-index: 200;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 25px rgba(52, 168, 83, 1), inset 0 0 15px rgba(255, 255, 255, 0.7);
+  /* Enhanced effects for perfect */
+  transform-origin: center;
+  font-size: 28px !important;
+  border-width: 3px !important;
+  padding: 8px 15px !important;
+  backdrop-filter: blur(2px);
+  filter: brightness(1.3) contrast(1.1) !important;
+  position: relative;
+  opacity: 1 !important; /* Ensure it stays visible */
+  pointer-events: none; /* Prevent additional clicks */
+}
+
+/* Perfect press effects */
+.fart-key.perfect-pressed::before,
+.fart-key.perfect-pressed::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fart-key.perfect-pressed::before {
+  /* Inner particle explosion */
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(52, 168, 83, 0.9) 0%, rgba(52, 168, 83, 0) 70%);
+  animation: perfect-shockwave 0.6s forwards;
+  z-index: -1;
+}
+
+.fart-key.perfect-pressed::after {
+  /* Outer glow ring */
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  border: 4px solid rgba(52, 168, 83, 0.8);
+  animation: perfect-ring 0.8s forwards;
+  z-index: -2;
+}
+
+@keyframes perfect-ring {
+  0% { width: 100%; height: 100%; opacity: 0.8; border-width: 4px; }
+  100% { width: 300%; height: 300%; opacity: 0; border-width: 1px; }
+}
+
+/* Perfect press particles */
+.fart-key.perfect-pressed .particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #34a853;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fart-key.perfect-pressed .particle:nth-child(1) { 
+  top: 0%; left: 50%; 
+  animation: particle-move 0.8s forwards;
+  animation-delay: 0.1s;
+}
+.fart-key.perfect-pressed .particle:nth-child(2) { 
+  top: 25%; left: 100%; 
+  animation: particle-move 0.8s forwards;
+  animation-delay: 0.2s;
+}
+.fart-key.perfect-pressed .particle:nth-child(3) { 
+  top: 75%; left: 100%; 
+  animation: particle-move 0.8s forwards;
+  animation-delay: 0.15s;
+}
+.fart-key.perfect-pressed .particle:nth-child(4) { 
+  top: 100%; left: 50%; 
+  animation: particle-move 0.8s forwards;
+  animation-delay: 0.25s;
+}
+.fart-key.perfect-pressed .particle:nth-child(5) { 
+  top: 75%; left: 0%; 
+  animation: particle-move 0.8s forwards;
+  animation-delay: 0.1s;
+}
+.fart-key.perfect-pressed .particle:nth-child(6) { 
+  top: 25%; left: 0%; 
+  animation: particle-move 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes particle-move {
+  0% { transform: scale(0) translate(0, 0); opacity: 1; }
+  100% { transform: scale(1.5) translate(var(--x, 50px), var(--y, 50px)); opacity: 0; }
+}
+
+.fart-key.okay-pressed {
+  background-color: #fbbc05 !important;
+  color: black;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+  border-color: #e65100 !important;
+  animation-name: okay-pressed !important;
+  animation-duration: 0.8s !important;
+  animation-fill-mode: forwards !important;
+  animation-iteration-count: 1 !important;
+  z-index: 150;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 18px rgba(251, 188, 5, 0.9), inset 0 0 10px rgba(255, 255, 255, 0.6);
+  /* Enhanced effects for okay */
+  font-size: 24px !important;
+  border-width: 2px !important;
+  padding: 7px 14px !important;
+  filter: brightness(1.2) !important;
+  position: relative;
+  opacity: 1 !important; /* Ensure it stays visible */
+  pointer-events: none; /* Prevent additional clicks */
+}
+
+/* Okay press effects */
+.fart-key.okay-pressed::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(251, 188, 5, 0.7);
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: -1;
+  animation: okay-pop 0.6s forwards;
+  /* Fix to ensure centering */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fart-key.bad-pressed {
+  background-color: #ea4335 !important;
+  color: white;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+  border-color: #c62828 !important;
+  animation-name: bad-pressed !important;
+  animation-duration: 0.6s !important;
+  animation-fill-mode: forwards !important;
+  animation-iteration-count: 1 !important;
+  z-index: 100;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 16px rgba(234, 67, 53, 1), inset 0 0 8px rgba(0, 0, 0, 0.5);
+  /* Enhanced effects for bad */
+  filter: saturate(1.5) !important;
+  transform-origin: center;
+  letter-spacing: -1px;
+  font-size: 22px !important;
+  border-width: 2px !important;
+  position: relative;
+  opacity: 1 !important; /* Ensure it stays visible */
+  pointer-events: none; /* Prevent additional clicks */
+}
+
+/* Terrible press style - extreme version */
+.fart-key.terrible-pressed {
+  background-color: #900 !important; /* Darker red */
+  color: #fff;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+  border-color: #600 !important;
+  animation-name: terrible-pressed !important;
+  animation-duration: 1s !important;
+  animation-fill-mode: forwards !important;
+  animation-iteration-count: 1 !important;
+  z-index: 200;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 0, 0, 0.8);
+  box-shadow: 0 0 25px rgba(234, 0, 0, 1), inset 0 0 15px rgba(0, 0, 0, 0.7);
+  /* Enhanced effects for terrible */
+  filter: saturate(2) contrast(1.5) !important;
+  transform-origin: center;
+  letter-spacing: -2px;
+  font-size: 26px !important;
+  border-width: 3px !important;
+  position: relative;
+  opacity: 1 !important; /* Ensure it stays visible */
+  pointer-events: none; /* Prevent additional clicks */
+}
+
+/* Terrible press glitch effect */
+.fart-key.terrible-pressed::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c00;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bad-glitch 0.3s infinite;
+  z-index: -1;
+}
+
+/* Add visual indicator for terrible */
+.fart-key.terrible-pressed::after {
+  content: "TERRIBLE!";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff0000;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  animation: feedback-text 0.8s forwards;
+}
+
+/* Bad press glitch effect */
+.fart-key.bad-pressed::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ea4335;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bad-glitch 0.5s forwards;
+  z-index: -1;
+}
+
+/* Add visual indicator for perfect/okay/bad in the form of text that appears briefly */
+.fart-key.perfect-pressed::after {
+  content: "PERFECT!";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #34a853;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: feedback-text 0.8s forwards;
+}
+
+.fart-key.okay-pressed::after {
+  content: "OKAY";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fbbc05;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: feedback-text 0.8s forwards;
+}
+
+.fart-key.bad-pressed::after {
+  content: "BAD";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ea4335;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: feedback-text 0.6s forwards;
+}
+
+/* Animation delay reset - ensure animations play immediately when the element is added to DOM */
+.fart-key.pressed-animation {
+  animation-delay: 0ms !important;
+  animation-play-state: running !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: forwards !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  pointer-events: none !important; /* Prevent further interactions while animating */
+  position: absolute !important; /* Ensure it doesn't affect layout flow */
+  z-index: 1000 !important; /* Keep on top */
+}
+
+@keyframes feedback-text {
+  0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  20% { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+  80% { opacity: 1; transform: translateX(-50%) translateY(-15px); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-30px); }
 }
 
 /* This animation is dynamically modified in the component based on level settings */
@@ -408,6 +1025,26 @@ body, html {
   background-color: #ea4335;
 }
 
+/* Combo counter animations */
+@keyframes combo-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes combo-shine {
+  0% { background-position: -100px; }
+  100% { background-position: 200px; }
+}
+
+@keyframes combo-wiggle {
+  0% { transform: rotate(-2deg) scale(1); }
+  25% { transform: rotate(0deg) scale(1.05); }
+  50% { transform: rotate(2deg) scale(1); }
+  75% { transform: rotate(0deg) scale(1.05); }
+  100% { transform: rotate(-2deg) scale(1); }
+}
+
 .combo-counter {
   color: white;
   font-size: 20px;
@@ -418,6 +1055,71 @@ body, html {
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: combo-pulse 0.8s infinite;
+  transition: all 0.3s ease;
+}
+
+/* Apply different styles and animations based on combo value */
+.combo-counter[data-combo="2"],
+.combo-counter[data-combo="3"] {
+  background-color: rgba(251, 188, 5, 0.3);
+  border: 1px solid #fbbc05;
+}
+
+.combo-counter[data-combo="4"],
+.combo-counter[data-combo="5"] {
+  background-color: rgba(52, 168, 83, 0.3);
+  border: 1px solid #34a853;
+  animation: combo-pulse 0.6s infinite;
+}
+
+.combo-counter[data-combo="6"],
+.combo-counter[data-combo="7"] {
+  background-color: rgba(66, 133, 244, 0.3);
+  border: 1px solid #4285f4;
+  animation: combo-pulse 0.4s infinite;
+}
+
+.combo-counter[data-combo="8"],
+.combo-counter[data-combo="9"] {
+  background-color: rgba(234, 67, 53, 0.3);
+  border: 1px solid #ea4335;
+  animation: combo-wiggle 0.8s infinite;
+}
+
+.combo-counter[data-combo="10"] {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid gold;
+  font-size: 24px;
+  box-shadow: 0 0 20px gold;
+  animation: combo-wiggle 0.6s infinite;
+}
+
+/* Shine effect for high combos */
+.combo-counter[data-combo="10"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: combo-shine 2s infinite;
+}
+
+/* Make the combo text pop */
+.combo-counter .combo-text {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.combo-counter .combo-value {
+  font-size: 1.2em;
+  color: gold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Animations */
@@ -523,6 +1225,20 @@ body, html {
   z-index: 100;
 }
 
+.game-over-face {
+  margin-bottom: 20px;
+}
+
+.player-outcome-face {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(32, 33, 36, 0.8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
 .game-over-title {
   color: white;
   font-size: 48px;
@@ -556,39 +1272,276 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #202124;
+  background-color: #141518;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.main-menu-title {
+/* Particles for background effect */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.main-menu-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: rgba(32, 33, 36, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title-container {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.animated-title {
   color: white;
-  font-size: 48px;
-  margin-bottom: 24px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.animated-title span {
+  display: inline-block;
+  animation: letter-wave 5s infinite;
+  transform-origin: center;
+}
+
+.g-letter { animation-delay: 0.0s; color: #4285f4; }
+.a-letter { animation-delay: 0.1s; color: #ea4335; }
+.s-letter { animation-delay: 0.2s; color: #fbbc05; }
+.l-letter { animation-delay: 0.3s; color: #34a853; }
+.i-letter { animation-delay: 0.4s; color: #4285f4; }
+.g2-letter { animation-delay: 0.5s; color: #ea4335; }
+.h-letter { animation-delay: 0.6s; color: #fbbc05; }
+.t-letter { animation-delay: 0.7s; color: #34a853; }
+.e-letter { animation-delay: 0.8s; color: #4285f4; }
+.d-letter { animation-delay: 0.9s; color: #ea4335; }
+
+@keyframes letter-wave {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-8px); }
+  40% { transform: translateY(4px); }
+  60% { transform: translateY(-4px); }
+  80% { transform: translateY(2px); }
+}
+
+.title-underline {
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc05, #34a853);
+  margin: 0 auto;
+  animation: underline-grow 1.5s forwards ease-out;
+}
+
+@keyframes underline-grow {
+  0% { width: 0; }
+  100% { width: 100%; }
 }
 
 .main-menu-subtitle {
   color: #e0e0e0;
-  font-size: 18px;
-  margin-bottom: 48px;
+  font-size: 20px;
+  margin-bottom: 40px;
   text-align: center;
   max-width: 600px;
+  line-height: 1.5;
+  font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.level-info {
+  background-color: rgba(20, 20, 22, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.level-badge {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.level-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.level-info h2 {
+  color: #4285f4;
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.level-info p {
+  color: #bdc1c6;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.level-selector {
+  margin-top: 15px;
+}
+
+.level-selector h3 {
+  color: #bdc1c6;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.level-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.level-button {
+  background-color: #3c4043;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.level-button:hover {
+  background-color: #5f6368;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.level-button.active {
+  background-color: #4285f4;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.6);
+}
+
+.main-menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
 }
 
 .main-menu-button {
   background-color: #4285f4;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   color: white;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-size: 18px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 600;
   cursor: pointer;
-  margin-bottom: 16px;
-  width: 200px;
+  width: 100%;
   text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.main-menu-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.main-menu-button.button-hovered::before {
+  left: 100%;
 }
 
 .main-menu-button:hover {
   background-color: #1a73e8;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.4);
+}
+
+.main-menu-button.secondary {
+  background-color: transparent;
+  border: 2px solid #4285f4;
+  color: #4285f4;
+}
+
+.main-menu-button.secondary:hover {
+  background-color: rgba(66, 133, 244, 0.1);
+  color: #74aeff;
+  border-color: #74aeff;
+}
+
+.main-menu-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.5);
+}
+
+.main-menu-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button-icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.menu-footer {
+  margin-top: 40px;
+  color: #9aa0a6;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
 }
 
 /* Instructions */

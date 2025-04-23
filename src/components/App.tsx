@@ -14,23 +14,44 @@ const App: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>(Screen.MAIN_MENU);
   const [level, setLevel] = useState<Level | null>(null);
   
-  // Load the first level data
+  const [availableLevels, setAvailableLevels] = useState<Level[]>([]);
+  const [selectedLevelIndex, setSelectedLevelIndex] = useState<number>(0);
+
+  // Load all level data
   useEffect(() => {
-    const loadLevel = async () => {
+    const loadLevels = async () => {
       try {
-        const response = await fetch('src/assets/levels/level1.json');
-        if (!response.ok) {
-          throw new Error(`Failed to load level: ${response.statusText}`);
+        const levelFiles = ['level1.json', 'level2.json'];
+        const loadedLevels = [];
+        
+        for (const file of levelFiles) {
+          const response = await fetch(`src/assets/levels/${file}`);
+          if (!response.ok) {
+            console.error(`Failed to load level: ${file}`);
+            continue;
+          }
+          const levelData: Level = await response.json();
+          loadedLevels.push(levelData);
         }
-        const levelData: Level = await response.json();
-        setLevel(levelData);
+        
+        setAvailableLevels(loadedLevels);
+        if (loadedLevels.length > 0) {
+          setLevel(loadedLevels[0]);
+        }
       } catch (error) {
-        console.error('Failed to load level:', error);
+        console.error('Failed to load levels:', error);
       }
     };
     
-    loadLevel();
+    loadLevels();
   }, []);
+  
+  // Update selected level when selectedLevelIndex changes
+  useEffect(() => {
+    if (availableLevels.length > 0 && selectedLevelIndex < availableLevels.length) {
+      setLevel(availableLevels[selectedLevelIndex]);
+    }
+  }, [selectedLevelIndex, availableLevels]);
   
   const handleStartGame = () => {
     setCurrentScreen(Screen.GAME);
@@ -51,6 +72,9 @@ const App: React.FC = () => {
           onStart={handleStartGame} 
           onShowInstructions={handleShowInstructions}
           level={level}
+          availableLevels={availableLevels}
+          selectedLevelIndex={selectedLevelIndex}
+          onSelectLevel={setSelectedLevelIndex}
         />
       )}
       

@@ -1,8 +1,8 @@
 {
-    "title": "First Day Jitters",
+    "title": "First Day Jitters 2",
     "description": "Your first remote meeting. Thankfully, people are forgiving.",
     "rules": {
-        "pressure_buildup_speed": 12,
+        "pressure_buildup_speed": 17,
         "precision_window_ms": 500,
         "max_possible_farts_by_word": 1,
         "max_simultaneous_letters": 3,
@@ -14,13 +14,13 @@
             "perfect": 40,
             "okay": 25,
             "bad": 100,
-            "terrible": 0
+            "terrible": 15
         },
         "shame_gain": {
             "perfect": 0,
             "okay": 5,
             "bad": 30,
-            "terrible": 100
+            "terrible": 50
         }
     },
     "participants": [

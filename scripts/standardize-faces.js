@@ -14,7 +14,7 @@ const path = require('path');
 const sharp = require('sharp');
 
 // Configuration
-const FACES_DIR = path.join(__dirname, '..', 'faces');
+const FACES_DIR = path.join(__dirname, '..', 'src', 'assets', 'faces');
 const OUTPUT_DIR = path.join(__dirname, '..', 'faces', 'standardized');
 const STANDARD_WIDTH = 320;
 const STANDARD_HEIGHT = 320;

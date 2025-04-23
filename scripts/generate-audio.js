@@ -24,7 +24,7 @@ const mkdir = util.promisify(fs.mkdir);
 
 // Configure AWS SDK
 AWS.config.update({
-  region: process.env.AWS_REGION || 'us-east-1',
+  region: process.env.AWS_REGION || 'eu-west-1',
   credentials: new AWS.Credentials({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
@@ -175,44 +175,6 @@ async function generateSpeechMarks(speakerId, voiceType, text, audioFilename) {
     console.log(`Speech marks saved to: ${outputFile} (${speechMarks.length} marks)`);
     return speechMarks;
   } catch (err) {
-    // If neural failed, try standard as fallback
-    if (err.code === 'ValidationException' && err.message.includes('neural')) {
-      console.log(`Neural engine not supported for speech marks, falling back to standard engine`);
-
-      try {
-        // Retry with standard engine
-        const isSSML = text.includes('<speak>');
-        const textToUse = isSSML ? text : text;
-
-        const standardParams = {
-          Engine: 'standard',
-          OutputFormat: 'json',
-          Text: textToUse,
-          TextType: isSSML ? 'ssml' : 'text',
-          VoiceId: voiceType,
-          SpeechMarkTypes: ['sentence', 'word', 'viseme']
-        };
-
-        const standardData = await polly.synthesizeSpeech(standardParams).promise();
-
-        // Convert the response to string and parse as JSON lines
-        const speechMarksText = Buffer.from(standardData.AudioStream).toString('utf8');
-        const speechMarks = speechMarksText.split('\n')
-          .filter(line => line.trim())
-          .map(line => JSON.parse(line));
-
-        // Save speech marks to file
-        const outputFile = path.join(SPEECH_MARKS_DIR, audioFilename.replace('.mp3', '-metadata.json'));
-        await writeFile(outputFile, JSON.stringify(speechMarks, null, 2));
-
-        console.log(`Speech marks saved to: ${outputFile} (${speechMarks.length} marks) with standard engine`);
-        return speechMarks;
-      } catch (standardErr) {
-        console.error('Error with fallback to standard engine for speech marks:', standardErr);
-        throw standardErr;
-      }
-    }
-
     console.error('Error generating speech marks:', err);
     throw err;
   }
@@ -225,7 +187,7 @@ async function processLevelFile(filePath) {
   try {
     // Read and parse YAML file
     const fileContent = fs.readFileSync(filePath, 'utf8');
-    const levelData = yaml.load(fileContent);
+    const levelData = JSON.parse(fileContent);
 
     // Get participant voice mappings
     const participantVoices = {};
@@ -304,9 +266,8 @@ async function main() {
     // Ensure output directories exist
     await ensureDirectories();
 
-    // Get all YAML files in levels directory
     const files = fs.readdirSync(LEVELS_DIR)
-      .filter(file => file.endsWith('.yaml') || file.endsWith('.yml'))
+      .filter(file => file.endsWith('.json'))
       .map(file => path.join(LEVELS_DIR, file));
 
     console.log(`Found ${files.length} level files to process`);

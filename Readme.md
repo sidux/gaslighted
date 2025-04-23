@@ -3,6 +3,51 @@
 ## Concept
 **Gaslighted** - A 2D satirical corporate survival game built in **React + TypeScript** where players navigate the social minefield of remote meetings. Players control "Wojak," trapped in a Google Meet-style video call with unmutable audio. A **fart pressure meter** builds continuously during the meeting, requiring timely, strategic releases that must be disguised among ongoing conversation by typing specific letters at precise moments, synchronized with speech patterns (using **Amazon Polly viseme metadata**).
 
+## Installation and Running the Game
+
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm (comes with Node.js)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sidux/gaslighted.git
+   cd gaslighted
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Game
+1. To start the development server:
+   ```bash
+   npm run dev
+   ```
+
+2. Open your browser and navigate to:
+   ```
+   http://localhost:3001
+   ```
+
+### Building for Production
+1. To create a production build:
+   ```bash
+   npm run build
+   ```
+
+2. The built files will be in the `dist` folder
+
+### Game Controls
+- Press the highlighted letters (T, P, B, F, R, Z) when they appear over words during the meeting
+- Time your key presses correctly for best results:
+  - **Perfect**: Silent fart, pressure relief, and no shame
+  - **Okay**: Quieter fart, some pressure relief, and minimal shame
+  - **Bad**: Loud fart, less pressure relief, and high shame
+  - **Terrible**: Extremely loud fart that occurs when pressure maxes out, with minimal pressure relief and maximum shame
+
 ---
 
 ## Core Mechanics

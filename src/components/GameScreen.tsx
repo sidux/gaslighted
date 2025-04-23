@@ -80,8 +80,42 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
           return prevState;
         }
         
+        // Store previous state's lastFartResult to detect new auto-farts
+        const prevLastFartResult = prevState.lastFartResult;
+        
         // Update game state
-        return updateGameState(prevState, deltaTime);
+        const newState = updateGameState(prevState, deltaTime);
+        
+        // Check if a new terrible auto-fart just happened
+        if (newState.lastFartResult && 
+            newState.lastFartResult.type === 'terrible' && 
+            (!prevLastFartResult || prevLastFartResult !== newState.lastFartResult)) {
+          
+          // Play the terrible fart sound manually when auto-fart occurs
+          if (audioResources) {
+            playFartAudio(
+              audioResources,
+              newState.lastFartResult.fartType,
+              'terrible'
+            );
+            
+            // Pause the speaker for a short time on terrible farts
+            newState.pausedTimestamp = Date.now();
+            
+            // Set a timeout to unpause after 1.5 seconds (longer than bad farts)
+            setTimeout(() => {
+              setGameState(state => {
+                if (!state) return null;
+                return {
+                  ...state,
+                  pausedTimestamp: null
+                };
+              });
+            }, 1500);
+          }
+        }
+        
+        return newState;
       });
       
       animationFrameRef.current = requestAnimationFrame(gameLoop);
@@ -152,11 +186,20 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
       const validFartKeys = ['t', 'p', 'b', 'f', 'r', 'z'];
       
       if (validFartKeys.includes(key)) {
-        // If there's an active fart opportunity
-        if (gameState.currentFartOpportunity) {
+        // Find all active opportunities of the pressed key type
+        const activeOpportunities = gameState.fartOpportunities.filter(
+          opp => opp.active && !opp.handled && !opp.pressed && opp.type === key
+        );
+
+        // If there are active opportunities of this type
+        if (activeOpportunities.length > 0) {
+          // Sort by time to get the earliest one
+          activeOpportunities.sort((a, b) => a.time - b.time);
+          const opportunity = activeOpportunities[0];
+          
           const result = checkFartKeyPress(
             key,
-            gameState.currentFartOpportunity,
+            opportunity,
             gameState.playbackTime,
             gameState.level.rules.precision_window_ms
           );
@@ -169,35 +212,84 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
             setGameState(prevState => {
               if (!prevState) return null;
               
-              // Mark the opportunity as handled
+              // Create a unique key for this press to force animation refresh
+              const animationKey = `${Date.now()}-${Math.random()}`;
+              
+              // Mark the opportunity as pressed but NOT handled yet - this will let the animation play
               const updatedOpportunities = prevState.fartOpportunities.map(opp => {
-                if (opp === prevState.currentFartOpportunity) {
-                  return { ...opp, handled: true, active: false };
+                if (opp === opportunity) {
+                  return { 
+                    ...opp, 
+                    handled: false,               // Don't mark as handled yet so letter stays visible
+                    pressed: true,                // Mark as pressed for animation
+                    pressedTime: prevState.playbackTime,  // Record when it was pressed
+                    resultType: result.type,      // Store the result type for visual feedback
+                    animationKey: animationKey    // Add unique key to force animation refresh
+                  };
                 }
                 return opp;
               });
+              
+              // Set a timeout to mark the opportunity as handled after the animation completes
+              setTimeout(() => {
+                setGameState(latestState => {
+                  if (!latestState) return null;
+                  
+                  const finalOpportunities = latestState.fartOpportunities.map(opp => {
+                    if (opp === opportunity) {
+                      return {
+                        ...opp,
+                        handled: true // Now mark as handled after animation
+                      };
+                    }
+                    return opp;
+                  });
+                  
+                  return {
+                    ...latestState,
+                    fartOpportunities: finalOpportunities
+                  };
+                });
+              }, 1000); // Increased to 1 second to match animation duration
+              
+              // For bad farts, pause the speaker for a short time
+              const shouldPause = result.type === 'bad';
               
               // Apply fart result
               const newState = applyFartResult({
                 ...prevState,
                 fartOpportunities: updatedOpportunities,
-                currentFartOpportunity: null,
+                currentFartOpportunity: prevState.currentFartOpportunity === opportunity ? null : prevState.currentFartOpportunity,
+                // If it's a bad fart, set the pausedTimestamp to now
+                pausedTimestamp: shouldPause ? Date.now() : prevState.pausedTimestamp
               }, result);
+              
+              // For bad farts, set a timeout to unpause after 1 second
+              if (shouldPause) {
+                setTimeout(() => {
+                  setGameState(state => {
+                    if (!state) return null;
+                    return {
+                      ...state,
+                      pausedTimestamp: null
+                    };
+                  });
+                }, 1000); // Pause for 1 second
+              }
               
               return newState;
             });
           }
         } else {
-          // If there's no active fart opportunity, trigger a bad fart
+          // If there's no active fart opportunity of this type, trigger a bad fart
           if (audioResources) {
-            // Play a bad fart sound with random fart type
-            const randomFartType = validFartKeys[Math.floor(Math.random() * validFartKeys.length)] as FartType;
-            playFartAudio(audioResources, randomFartType, 'bad');
+            // Play a bad fart sound with the pressed key type
+            playFartAudio(audioResources, key as FartType, 'bad');
             
             // Create a bad fart result
             const badFartResult: FartResult = {
               type: 'bad',
-              fartType: randomFartType,
+              fartType: key as FartType,
               timestamp: gameState.playbackTime,
               wordIndex: gameState.currentWordIndex,
             };
@@ -206,8 +298,27 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
             setGameState(prevState => {
               if (!prevState) return null;
               
+              // For bad farts, pause the speaker for a short time
+              const pausedTimestamp = Date.now();
+              
               // Apply fart result
-              return applyFartResult(prevState, badFartResult);
+              const newState = applyFartResult({
+                ...prevState,
+                pausedTimestamp
+              }, badFartResult);
+              
+              // Set a timeout to unpause after 1 second
+              setTimeout(() => {
+                setGameState(state => {
+                  if (!state) return null;
+                  return {
+                    ...state,
+                    pausedTimestamp: null
+                  };
+                });
+              }, 1000); // Pause for 1 second
+              
+              return newState;
             });
           }
         }
@@ -282,27 +393,22 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
   
   return (
     <div className="game-screen">
-      <Header title={level.title} onLeave={handleLeaveMeeting} />
-      
       <MeetingArea 
         gameState={gameState} 
         participants={level.participants}
       />
       
-      <ControlBar />
+      <ControlBar 
+        onBackToMenu={handleLeaveMeeting} 
+        onStartGame={!gameState.isPlaying && !gameState.isGameOver ? handleStartGame : undefined}
+        isGameInProgress={gameState.isPlaying}
+      />
       
       <GameUI 
         gameState={gameState}
+        setGameState={setGameState}
         dialogueMetadata={dialogueMetadata}
       />
-      
-      {!gameState.isPlaying && !gameState.isGameOver && (
-        <div className="game-start-overlay">
-          <button className="main-menu-button" onClick={handleStartGame}>
-            Start Meeting
-          </button>
-        </div>
-      )}
       
       {gameState.isGameOver && (
         <GameOverScreen 

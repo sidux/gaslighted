@@ -81,13 +81,33 @@ export const playFartAudio = (
     // Set volume based on result type
     switch (resultType) {
       case 'perfect':
-        audio.volume = 0.1; // Almost silent for perfect farts
+        audio.volume = 0.01; // Almost silent for perfect farts
         break;
       case 'okay':
-        audio.volume = 0.5; // Medium volume for okay farts
+        audio.volume = 0.2; // Medium volume for okay farts
         break;
       case 'bad':
         audio.volume = 1.0; // Full volume for bad farts
+        break;
+      case 'terrible':
+        audio.volume = 1.0; // Full volume for terrible farts
+        
+        // Add distortion/pitch effect for terrible farts (play multiple overlapping sounds)
+        // Play twice with a slight delay to create a louder, more chaotic sound
+        setTimeout(() => {
+          const secondAudio = resources.farts[fartType].cloneNode(true) as HTMLAudioElement;
+          secondAudio.volume = 0.8;
+          secondAudio.playbackRate = 0.85; // Slightly slower pitch
+          secondAudio.play().catch(e => console.error('Error playing terrible fart second sound', e));
+          
+          // Play a third copy for extra loudness
+          setTimeout(() => {
+            const thirdAudio = resources.farts[fartType].cloneNode(true) as HTMLAudioElement;
+            thirdAudio.volume = 0.6;
+            thirdAudio.playbackRate = 1.15; // Slightly higher pitch
+            thirdAudio.play().catch(e => console.error('Error playing terrible fart third sound', e));
+          }, 100);
+        }, 50);
         break;
       default:
         audio.volume = 0.7;

@@ -15,6 +15,14 @@ const GameOverScreen: React.FC<GameOverScreenProps> = ({
 }) => {
   return (
     <div className="game-over">
+      <div className="game-over-face">
+        <img 
+          src={`src/assets/faces/wojak-${victory ? 'win' : 'lose'}.png`}
+          alt={victory ? "Victory face" : "Defeat face"}
+          className="player-outcome-face"
+        />
+      </div>
+      
       <h1 className="game-over-title">
         {victory ? 'Meeting Survived!' : 'Meeting Disaster!'}
       </h1>

@@ -22,11 +22,13 @@ export interface LevelRules {
     perfect: number;
     okay: number;
     bad: number;
+    terrible?: number; // Optional property for terrible state
   };
   shame_gain: {
     perfect: number;
     okay: number;
     bad: number;
+    terrible?: number; // Optional property for terrible state
   };
 }
 
@@ -78,9 +80,11 @@ export interface FartOpportunity {
   handled: boolean;
   pressed: boolean;   // Whether the letter has been pressed but is still floating
   pressedTime: number; // When the letter was pressed
+  resultType?: FartResultType; // Type of result when pressed (perfect, okay, bad)
+  animationKey?: string; // Unique key to force animation refresh
 }
 
-export type FartResultType = 'perfect' | 'okay' | 'bad' | 'missed';
+export type FartResultType = 'perfect' | 'okay' | 'bad' | 'terrible' | 'missed';
 
 export interface FartResult {
   type: FartResultType;

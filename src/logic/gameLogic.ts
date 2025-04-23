@@ -96,8 +96,17 @@ export const generateFartOpportunities = (
     
     if (!metadata) return;
     
-    // Check for special words that should always have opportunities (like "quarterly")
-    const specialWords = ["quarterly", "quart", "quarter", "questions", "quality", "quick", "report", "team", "please", "brief", "forward", "review", "synergize", "framework", "blockchain", "leverage", "pivot"];
+    // Enhanced list of special words that should always have opportunities
+    const specialWords = [
+      "quarterly", "quart", "quarter", "questions", "quality", "quick",
+      "report", "team", "please", "brief", "forward", "review",
+      "synergize", "framework", "blockchain", "leverage", "pivot",
+      "business", "profit", "meeting", "target", "budget", "benchmark",
+      "presentation", "performance", "strategy", "revenue", "forecast",
+      "resources", "timeline", "deliverable", "project", "feedback",
+      "discuss", "follow", "priority", "focus", "progress", "update",
+      "time", "paradigm", "baseline", "metric", "kpi", "agenda", "issue"
+    ];
     const lowerText = dialogue.text.toLowerCase();
     
     // Group visemes by word
@@ -116,82 +125,58 @@ export const generateFartOpportunities = (
     // Generate opportunities based on rules
     Object.entries(wordVisemes).forEach(([wordIndexStr, visemes]) => {
       const wordIndex = parseInt(wordIndexStr);
-      
-      // Get the word text from metadata
-      const wordItem = metadata.find(item => 
-        item.type === 'word' && metadata.indexOf(item) === wordIndex * 2 // Accounting for sentence markers
-      );
-      
       let maxOpportunitiesForWord = Math.min(
         level.rules.max_possible_farts_by_word,
         visemes.length
       );
       
-      // If it's a special word that should have more opportunities
-      if (wordItem && wordItem.value) {
-        const wordText = wordItem.value.toLowerCase();
-        if (specialWords.some(special => wordText.includes(special))) {
-          // Increase opportunities for special words
-          maxOpportunitiesForWord = Math.min(
-            level.rules.max_possible_farts_by_word * 2, // Double the opportunities
-            visemes.length
-          );
-        }
-      }
-      
-      // Get all possible visemes that map to valid fart types
+      // Get all visemes that map to valid fart types
       const validVisemes = visemes.filter(viseme => getFartTypeFromViseme(viseme.value) !== null);
       
-      // If we don't have enough valid visemes, try to convert some other visemes
-      if (validVisemes.length < maxOpportunitiesForWord && visemes.length > 0) {
-        // Assign random fart types to some visemes that don't have mappings
-        const unmappedVisemes = visemes.filter(viseme => getFartTypeFromViseme(viseme.value) === null);
-        for (let i = 0; i < Math.min(unmappedVisemes.length, maxOpportunitiesForWord - validVisemes.length); i++) {
-          const randomFartType = ['t', 'p', 'b', 'f', 'r', 'z'][Math.floor(Math.random() * 6)] as FartType;
-          opportunities.push({
-            dialogueIndex,
-            wordIndex,
-            visemeIndex: metadata.findIndex(item => 
-              item.type === 'viseme' && item.time === unmappedVisemes[i].time
-            ),
-            time: unmappedVisemes[i].time,
-            type: randomFartType,
-            active: false,
-            handled: false,
-            pressed: false,
-            pressedTime: 0
-          });
-        }
+      // Add opportunities from the valid visemes
+      if (validVisemes.length > 0) {
+        // Use all valid visemes up to maxOpportunitiesForWord, prioritizing different types
+        const fartTypes = new Set<FartType>();
+        const selectedVisemes: Viseme[] = [];
+        
+        // First pass: try to select one of each fart type
+        validVisemes.forEach(viseme => {
+          const fartType = getFartTypeFromViseme(viseme.value);
+          if (fartType && !fartTypes.has(fartType) && selectedVisemes.length < maxOpportunitiesForWord) {
+            fartTypes.add(fartType);
+            selectedVisemes.push(viseme);
+          }
+        });
+        
+        // Sort by time and create opportunities
+        selectedVisemes.sort((a, b) => a.time - b.time);
+        
+        selectedVisemes.forEach((viseme) => {
+          const fartType = getFartTypeFromViseme(viseme.value);
+          if (fartType) {
+            const visemeIndex = metadata.findIndex(
+              (item) => item.type === 'viseme' && item.time === viseme.time
+            );
+            
+            opportunities.push({
+              dialogueIndex,
+              wordIndex,
+              visemeIndex,
+              time: viseme.time,
+              type: fartType,
+              active: false,
+              handled: false,
+              pressed: false,
+              pressedTime: 0,
+              animationKey: '' // Initialize with blank animation key
+            });
+          }
+        });
       }
-      
-      // Randomly select visemes for fart opportunities from the valid ones
-      const selectedVisemes = shuffleArray([...validVisemes])
-        .slice(0, maxOpportunitiesForWord)
-        .sort((a, b) => a.time - b.time);
-      
-      selectedVisemes.forEach((viseme) => {
-        const fartType = getFartTypeFromViseme(viseme.value);
-        if (fartType) {
-          const visemeIndex = metadata.findIndex(
-            (item) => item.type === 'viseme' && item.time === viseme.time
-          );
-          
-          opportunities.push({
-            dialogueIndex,
-            wordIndex,
-            visemeIndex,
-            time: viseme.time,
-            type: fartType,
-            active: false,
-            handled: false,
-            pressed: false,
-            pressedTime: 0
-          });
-        }
-      });
     });
   });
   
+  // Ensure there are plenty of opportunities spread throughout the dialogue
   return opportunities;
 };
 
@@ -250,6 +235,9 @@ export const checkFartKeyPress = (
   };
 };
 
+// Import the playFartAudio function directly here
+import { playFartAudio } from './audioManager';
+
 // Update game state based on elapsed time
 export const updateGameState = (state: GameState, elapsedMs: number): GameState => {
   if (!state.isPlaying || state.isGameOver) {
@@ -262,16 +250,27 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   
   // Check for auto-fart (pressure max)
   if (newPressure >= 100 && !state.lastFartResult) {
-    // Trigger a bad automatic fart
+    // Select a random fart type
+    const randomFartType = ['t', 'p', 'b', 'f', 'r', 'z'][Math.floor(Math.random() * 6)] as FartType;
+    
+    // Create the terrible auto-fart result
     const autoFartResult: FartResult = {
-      type: 'bad',
-      fartType: ['t', 'p', 'b', 'f', 'r', 'z'][Math.floor(Math.random() * 6)] as FartType,
+      type: 'terrible',
+      fartType: randomFartType,
       timestamp: state.playbackTime,
       wordIndex: state.currentWordIndex,
     };
     
-    // Apply shame increase
-    const newShame = state.shame + state.level.rules.shame_gain.bad;
+    // IMPORTANT: Access the audio resources from the global window object to play the fart sound
+    // This is a workaround since we don't have direct access to audioResources here
+    // The GameScreen component will handle this part by checking lastFartResult
+    
+    // Get the terrible shame value or calculate it (1.5x the bad shame)
+    const terribleShameGain = state.level.rules.shame_gain.terrible || 
+                              Math.ceil(state.level.rules.shame_gain.bad * 1.5);
+    
+    // Apply shame increase for terrible farts
+    const newShame = state.shame + terribleShameGain;
     
     // Reset combo
     const newCombo = 0;
@@ -279,9 +278,13 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
     // Game over if shame is too high
     const isGameOver = newShame >= 100;
     
+    // Get the terrible pressure release or calculate it (half of bad pressure release)
+    const terriblePressureRelease = state.level.rules.pressure_release.terrible || 
+                                   (state.level.rules.pressure_release.bad / 2);
+    
     return {
       ...state,
-      pressure: Math.max(0, newPressure - state.level.rules.pressure_release.bad),
+      pressure: Math.max(0, newPressure - terriblePressureRelease),
       shame: Math.min(100, newShame),
       combo: newCombo,
       lastFartResult: autoFartResult,
@@ -344,31 +347,74 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   // Update fart opportunities with much wider windows and make them stay visible longer
   const newFartOpportunities = state.fartOpportunities.map(opportunity => {
     if (opportunity.dialogueIndex === state.currentDialogueIndex) {
+      // Skip update if this opportunity is already handled
+      if (opportunity.handled) {
+        return opportunity;
+      }
+      
       // Use the configured values from level rules
       const startTime = opportunity.time - (state.level.rules.precision_window_ms * 2.5); // Show much earlier
       
       // Use the letter_visible_duration_ms to control how long the letter stays visible
       const endTime = opportunity.time + state.level.rules.letter_visible_duration_ms; 
       
+      // If it's already pressed, don't mark it as inactive or handled by the time check
+      // This allows the animation to play fully
+      if (opportunity.pressed) {
+        return opportunity; // Keep its current state so animation can finish
+      }
+      
       const isActive = newPlaybackTime >= startTime && newPlaybackTime <= endTime && !opportunity.handled;
       
-      // Mark as handled if the active window has passed
-      const handled = opportunity.handled || newPlaybackTime > endTime;
+      // Mark as handled if the active window has passed and it's not pressed
+      const handled = opportunity.handled || (newPlaybackTime > endTime && !opportunity.pressed);
       
       return { ...opportunity, active: isActive, handled };
     }
     return opportunity;
   });
   
-  // Limit the number of active fart opportunities based on max_simultaneous_letters
-  const activeOpportunities = newFartOpportunities.filter(opp => opp.active && !opp.handled);
-  if (activeOpportunities.length > state.level.rules.max_simultaneous_letters) {
+  // Implement "only one instance of each letter" rule:
+  // Group active opportunities by their letter type
+  const activeByType: { [key: string]: FartOpportunity[] } = {};
+  newFartOpportunities
+    .filter(opp => opp.active && !opp.handled)
+    .forEach(opp => {
+      if (!activeByType[opp.type]) {
+        activeByType[opp.type] = [];
+      }
+      activeByType[opp.type].push(opp);
+    });
+  
+  // For each letter type, if we have more than one instance, keep only the most recent one
+  Object.keys(activeByType).forEach(letterType => {
+    if (activeByType[letterType].length > 1) {
+      // Sort by time (newest first)
+      activeByType[letterType].sort((a, b) => b.time - a.time);
+      
+      // Keep only the most recent one, mark others as handled
+      for (let i = 1; i < activeByType[letterType].length; i++) {
+        const oppIndex = newFartOpportunities.findIndex(o => o === activeByType[letterType][i]);
+        if (oppIndex !== -1) {
+          newFartOpportunities[oppIndex] = {
+            ...newFartOpportunities[oppIndex],
+            active: false,
+            handled: true
+          };
+        }
+      }
+    }
+  });
+  
+  // Limit the total number of active fart opportunities based on max_simultaneous_letters
+  const allActiveOpportunities = newFartOpportunities.filter(opp => opp.active && !opp.handled);
+  if (allActiveOpportunities.length > state.level.rules.max_simultaneous_letters) {
     // Sort by time, keep the earliest ones
-    activeOpportunities.sort((a, b) => a.time - b.time);
+    allActiveOpportunities.sort((a, b) => a.time - b.time);
     
     // Mark excess opportunities as not active
-    for (let i = state.level.rules.max_simultaneous_letters; i < activeOpportunities.length; i++) {
-      const oppIndex = newFartOpportunities.findIndex(o => o === activeOpportunities[i]);
+    for (let i = state.level.rules.max_simultaneous_letters; i < allActiveOpportunities.length; i++) {
+      const oppIndex = newFartOpportunities.findIndex(o => o === allActiveOpportunities[i]);
       if (oppIndex !== -1) {
         newFartOpportunities[oppIndex] = {
           ...newFartOpportunities[oppIndex],
@@ -425,15 +471,29 @@ export const applyFartResult = (state: GameState, result: FartResult): GameState
     return state;
   }
   
-  // Get pressure release and shame values based on result type
-  const pressureRelease = result.type === 'missed' ? 0 : state.level.rules.pressure_release[result.type];
-  const shameGain = result.type === 'missed' ? 0 : state.level.rules.shame_gain[result.type];
+  // Handle pressure release and shame values based on result type
+  let pressureRelease = 0;
+  let shameGain = 0;
+  
+  if (result.type !== 'missed') {
+    if (result.type === 'terrible') {
+      // Use terrible values if they exist, or calculate from bad values
+      pressureRelease = state.level.rules.pressure_release.terrible || 
+                       (state.level.rules.pressure_release.bad / 2);
+      shameGain = state.level.rules.shame_gain.terrible || 
+                  Math.ceil(state.level.rules.shame_gain.bad * 1.5);
+    } else {
+      // For regular result types (perfect, okay, bad)
+      pressureRelease = state.level.rules.pressure_release[result.type];
+      shameGain = state.level.rules.shame_gain[result.type];
+    }
+  }
   
   // Update combo
   let newCombo = state.combo;
   if (result.type === 'perfect') {
     newCombo += 1;
-  } else if (result.type === 'bad') {
+  } else if (result.type === 'bad' || result.type === 'terrible') {
     newCombo = 0;
   }
   
