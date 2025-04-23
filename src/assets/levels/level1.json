@@ -2,18 +2,23 @@
     "title": "First Day Jitters",
     "description": "Your first remote meeting. Thankfully, people are forgiving.",
     "rules": {
-        "pressure_buildup_speed": 1.2,
-        "precision_window_ms": 250,
+        "pressure_buildup_speed": 0.8,
+        "precision_window_ms": 500,
         "max_possible_farts_by_word": 1,
+        "max_simultaneous_letters": 3,
+        "letter_float_duration_ms": 7000,
+        "letter_visible_duration_ms": 6000,
+        "letter_float_height_px": 300,
+        "letter_float_speed_multiplier": 1.5,
         "pressure_release": {
-            "perfect": 30,
-            "okay": 15,
+            "perfect": 40,
+            "okay": 25,
             "bad": 100
         },
         "shame_gain": {
             "perfect": 0,
-            "okay": 10,
-            "bad": 40
+            "okay": 5,
+            "bad": 30
         }
     },
     "participants": [

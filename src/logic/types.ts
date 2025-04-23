@@ -1,0 +1,95 @@
+export interface Participant {
+  id: string;
+  voiceType: string;
+  type: 'player' | 'npc';
+}
+
+export interface DialogueItem {
+  speakerId: string;
+  text: string;
+}
+
+export interface LevelRules {
+  pressure_buildup_speed: number;
+  precision_window_ms: number;
+  max_possible_farts_by_word: number;
+  max_simultaneous_letters: number;
+  letter_float_duration_ms: number;
+  letter_visible_duration_ms: number;
+  letter_float_height_px: number;
+  letter_float_speed_multiplier: number;
+  pressure_release: {
+    perfect: number;
+    okay: number;
+    bad: number;
+  };
+  shame_gain: {
+    perfect: number;
+    okay: number;
+    bad: number;
+  };
+}
+
+export interface Level {
+  title: string;
+  description: string;
+  rules: LevelRules;
+  participants: Participant[];
+  dialogues: DialogueItem[];
+}
+
+export interface Viseme {
+  time: number;
+  type: string;
+  value: string;
+  start?: number;
+  end?: number;
+}
+
+export interface GameState {
+  level: Level;
+  isPlaying: boolean;
+  isGameOver: boolean;
+  victory: boolean;
+  currentDialogueIndex: number;
+  pressure: number;
+  shame: number;
+  combo: number;
+  score: number;
+  playbackTime: number;
+  currentWordIndex: number;
+  currentVisemeIndex: number;
+  fartOpportunities: FartOpportunity[];
+  currentFartOpportunity: FartOpportunity | null;
+  lastFartResult: FartResult | null;
+  dialogueMetadata: { [key: string]: Viseme[] };
+  pausedTimestamp: number | null;
+}
+
+export type FartType = 't' | 'p' | 'b' | 'f' | 'r' | 'z';
+
+export interface FartOpportunity {
+  dialogueIndex: number;
+  wordIndex: number;
+  visemeIndex: number;
+  time: number;
+  type: FartType;
+  active: boolean;
+  handled: boolean;
+  pressed: boolean;   // Whether the letter has been pressed but is still floating
+  pressedTime: number; // When the letter was pressed
+}
+
+export type FartResultType = 'perfect' | 'okay' | 'bad' | 'missed';
+
+export interface FartResult {
+  type: FartResultType;
+  fartType: FartType;
+  timestamp: number;
+  wordIndex: number;
+}
+
+export interface AudioResources {
+  dialogues: { [key: string]: HTMLAudioElement };
+  farts: { [key in FartType]: HTMLAudioElement };
+}

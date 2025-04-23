@@ -87,7 +87,7 @@ Each character has:
 ...
 ```
 
-Stored in: `/assets/faces/`
+Stored in: `src/assets/faces/`
 
 🗣️ Characters must:
 - Animate by changing faces talking1 -> talking2 -> neutral -> talking1 ... while speaking.
@@ -99,7 +99,7 @@ Stored in: `/assets/faces/`
 
 ---
 
-### Level Format (`/levels/[id].json`)
+### Level Format (`src/assets/levels/[id].json`)
 
 check example in src/assets/level1.json
 
@@ -108,13 +108,13 @@ check example in src/assets/level1.json
 ### File Structure
 
 ```
-/dialogue/            # MP3 + viseme JSON per line of diagogue [levelId]-[dialogueItemIndex]-[characterId].mp3 and [levelId]-[dialogueItemIndex]-[characterId]-metadata.json
-/assets/faces/        # [id]-[expression].png
-/assets/audio/        # z-fart.mp3 ...
-/assets/levels/       # level1.json ...
-/components/          # React components
-/logic/               # game logic independent of framework
-/scripts/             # Polly + viseme generator (MP3 + JSON)
+src/assets/dialogue/            # MP3 + viseme JSON per line of diagogue [levelId]-[dialogueItemIndex]-[characterId].mp3 and [levelId]-[dialogueItemIndex]-[characterId]-metadata.json
+src/assets/faces/        # [id]-[expression].png
+src/assets/audio/        # z-fart.mp3 ...
+src/assets/levels/       # level1.json ...
+src/components/          # React components
+src/logic/               # game logic independent of framework
+src/scripts/             # Polly + viseme generator (MP3 + JSON)
 ```
 
 ---
