@@ -9,7 +9,7 @@
     "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": ["DOM", "ESNext"],
     "outDir": "./dist",
     "sourceMap": true

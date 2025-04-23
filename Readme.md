@@ -1,10 +1,16 @@
 ### 🎮 Game Prompt – **Gaslighted**
 
-Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in a corporate Zoom-like meeting and can’t mute. A **fart pressure meter** builds during the call. They must **release pressure discreetly** by clicking karaoke-style letters, timed with character speech (via **Amazon Polly viseme metadata**).
+Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in a corporate google-meet-like meeting and can’t mute. A **fart pressure meter** builds during the call. They must **release pressure discreetly** by clicking karaoke-style letters, timed with character speech (via **Amazon Polly viseme metadata**).
 
 ---
 
 ### 🧱 Core Systems
+
+#### UI
+- ui should be as close as possible to google meet, for example hangout will just quit te game return the main menu, non relveant buttons should be disabled. (simulating a bug)
+- should have a karaoke text for the current dialogue highlighting the current word, with the letter (related to the fart) to press above.
+- farting release UI effects
+- should shiny effects with combos etc like guitar hero
 
 #### 🔺 Fart Pressure (can go **negative**)
 - Starts at `0`, increases over time
@@ -15,7 +21,7 @@ Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in
 #### 🔻 Shame Meter (0–100)
 - Increases on:
   - OK fart = low shame
-  - Missed/full fart = high shame
+  - Missed/Bad fart = high shame
 - Full = **game over (player resigns)**
 
 #### 🎯 Combo System
@@ -31,6 +37,7 @@ Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in
 - Each triggers:
   - A specific sound (`fart1.mp3` to `fart6.mp3`)
   - Matching NPC reaction (face change, sound, camera FX)
+  - the fart sound volume should be louder than the dialogue when it' bad and lower when it's okay, and silent when it's perfect.
 
 ---
 
@@ -38,7 +45,6 @@ Build a 2D satire game in **React + TypeScript**. The player (Wojak) is stuck in
 
 - A level ends **when all dialogue lines are finished**
 - Victory condition:
-  - **Shame < 100**
   - Reached the end of the meeting
 - Final score = **negative pressure value** (lower is better)
 
@@ -87,9 +93,11 @@ rules:
   pressure_release:
     perfect: 30
     okay: 15
+    bad: 100
   shame_gain:
+    perfect: 0
     okay: 10
-    real: 40
+    bad: 40
 
 participants:
   - id: wojak

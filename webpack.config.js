@@ -5,19 +5,23 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'inline-source-map',
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+      publicPath: '/',
+    },
     port: 3000,
     hot: true,
+    open: true,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -25,6 +29,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.ya?ml$/,
@@ -48,9 +56,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'faces', to: 'faces' },
-        { from: 'audio', to: 'audio' },
-        { from: 'images', to: 'images' },
+        { from: 'src/assets/faces', to: 'assets/faces' },
+        { from: 'src/assets/audio', to: 'assets/audio' },
+        { from: 'src/assets/dialogue', to: 'assets/dialogue' },
+        { from: 'src/levels', to: 'src/levels' },
       ],
     }),
   ],
