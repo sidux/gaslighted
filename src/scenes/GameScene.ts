@@ -23,6 +23,7 @@ export class GameScene extends Phaser.Scene {
   private gameOver: boolean = false;
   private credibilityScore: number = 100;
   private credibilityText!: Phaser.GameObjects.Text;
+  private credibilityBarFill!: Phaser.GameObjects.Rectangle;
   private dialogueBox!: Phaser.GameObjects.Rectangle;
   private dialogueText!: Phaser.GameObjects.Text;
   private componentsInitialized: boolean = false;
@@ -64,36 +65,39 @@ export class GameScene extends Phaser.Scene {
     // Setup scene lifecycle listeners for cleanup
     this.setupSceneEventListeners();
     
-    // Setup background
-    this.createBackground();
+    // Setup Google Meet style background - dark gray
+    this.cameras.main.setBackgroundColor('#202124');
     
-    // Setup UI elements
+    // Create Google Meet style layout with video grid first (lowest layer)
+    this.createGoogleMeetLayout();
+    
+    // Setup UI elements (credibility bar, etc.)
     this.setupUI();
     
-    // Create dialogue box
-    this.createDialogueBox();
-
     // Initialize managers
     this.audioManager = new AudioManager(this);
     
     // Create fart particle emitter
     this.fartParticles = this.add.particles(0, 0, 'fart-particle', {});
 
-    // Setup fart meter in left side of screen
+    // Setup fart meter on the side of screen
     this.fartMeter = new FartMeter(
         this,
-        100, // Left side position
+        50, // Far left
         this.cameras.main.height / 2,
         GameConfig.PRESSURE_METER_WIDTH,
         GameConfig.PRESSURE_METER_HEIGHT,
     );
     
-    // Setup rhythm UI (Guitar Hero style) on right side
+    // Setup rhythm UI at center-right without overlapping other elements
     this.rhythmUI = new RhythmUI(
       this,
-      this.cameras.main.width / 2, // Right side position
+      this.cameras.main.width - 120, // Right side
       this.cameras.main.height / 2
     );
+    
+    // Create dialogue box last so it's on top
+    this.createDialogueBox();
     
     // Add combo counter
     this.comboText = this.add.text(
@@ -174,9 +178,9 @@ export class GameScene extends Phaser.Scene {
       // Create NPCs from level data
       this.createNPCs();
 
-      // Position player exactly according to the screenshot (bottom left)
-      const playerX = this.cameras.main.width / 6; // 1/6 of screen width
-      const playerY = this.cameras.main.height * 3 / 4; // 3/4 of screen height
+      // Position player in bottom right to match the screenshot
+      const playerX = this.cameras.main.width * 3 / 4; // 3/4 of screen width
+      const playerY = 400; // Match the height of other characters
       
       // Find player data
       const playerData = this.currentLevel.participants.find(p => p.id === 'player');
@@ -284,245 +288,288 @@ export class GameScene extends Phaser.Scene {
     }
   }
   
-  private createBackground(): void {
-    // const bg = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000);
-    // bg.setOrigin(0, 0);
-    //
-    // // Create the top black bar
-    // const topBar = this.add.rectangle(0, 0, this.cameras.main.width, 35, 0x000000);
-    // topBar.setOrigin(0, 0);
-    //
-    // // ZOOM text
-    // this.add.text(20, 15, "ZOOM", {
-    //   font: 'bold 16px Arial',
-    //   color: '#ffffff'
-    // }).setOrigin(0, 0.5);
-    //
-    // // Original Sound: Off
-    // this.add.text(140, 15, "Original Sound: Off", {
-    //   font: '14px Arial',
-    //   color: '#aaaaaa'
-    // }).setOrigin(0.5, 0.5);
-    //
-    // // Meeting time in center
-    // this.add.text(this.cameras.main.width / 2, 18, "Meeting Time: 1:56", {
-    //   font: '16px Arial',
-    //   color: '#ffffff',
-    //   fontStyle: 'bold'
-    // }).setOrigin(0.5, 0.5);
-    //
-    // // View button and Recording indicator
-    // this.add.text(this.cameras.main.width - 70, 15, "☐", {
-    //   font: '16px Arial',
-    //   color: '#ffffff'
-    // }).setOrigin(0.5, 0.5);
-    //
-    // const recBox = this.add.rectangle(this.cameras.main.width - 25, 15, 40, 22, 0xcc0000).setOrigin(0.5, 0.5);
-    // this.add.text(this.cameras.main.width - 25, 15, "● REC", {
-    //   font: '12px Arial',
-    //   color: '#ffffff'
-    // }).setOrigin(0.5, 0.5);
-    //
-    // // Video grid with exact dimensions to match screenshot
-    // // Each video is surrounded by a very thin dark gray border
-    // const borderColor = 0x333333;
-    // const borderWidth = 1;
-    //
-    // // Create the four video frames with exact positioning
-    // // Top-left (Mr. Bogdanoff)
-    // this.add.rectangle(10, 45, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
-    //   .setStrokeStyle(borderWidth, borderColor)
-    //   .setOrigin(0, 0);
-    //
-    // // Top-right (Zoomer)
-    // this.add.rectangle(this.cameras.main.width/2 + 10, 45, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
-    //   .setStrokeStyle(borderWidth, borderColor)
-    //   .setOrigin(0, 0);
-    //
-    // // Bottom-left (Wojak)
-    // this.add.rectangle(10, this.cameras.main.height/2 + 10, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
-    //   .setStrokeStyle(borderWidth, borderColor)
-    //   .setOrigin(0, 0);
-    //
-    // // Bottom-right (Wifey)
-    // this.add.rectangle(this.cameras.main.width/2 + 10, this.cameras.main.height/2 + 10, this.cameras.main.width/2 - 20, this.cameras.main.height/2 - 60, 0x000000)
-    //   .setStrokeStyle(borderWidth, borderColor)
-    //   .setOrigin(0, 0);
-    //
-    // // Draw the green active speaker indicator (small box in top-left of Bogdanoff)
-    // this.add.rectangle(20, 55, 15, 15, 0x00ff00).setOrigin(0, 0);
-    //
-    // // Controls at the bottom with exact spacing to match screenshot
-    // const controls = [
-    //   { icon: "🎤", label: "Mute", x: 75 },
-    //   { icon: "📹", label: "Stop Video", x: 175 },
-    //   { icon: "🔒", label: "Security", x: 275 },
-    //   { icon: "👥", label: "Participants", x: 375 },
-    //   { icon: "💬", label: "Chat", x: 475 },
-    //   { icon: "📊", label: "Share Screen", x: 580 },
-    //   { icon: "📈", label: "Record", x: 680 },
-    // ];
-    //
-    // // Add each control button
-    // controls.forEach(control => {
-    //   // Icon
-    //   this.add.text(control.x, this.cameras.main.height - 25, control.icon, {
-    //     font: '16px Arial',
-    //     color: '#ffffff'
-    //   }).setOrigin(0.5, 0.5);
-    //
-    //   // Label below icon
-    //   this.add.text(control.x, this.cameras.main.height - 10, control.label, {
-    //     font: '11px Arial',
-    //     color: '#aaaaaa'
-    //   }).setOrigin(0.5, 0.5);
-    // });
-    //
-    // // End button (special red button)
-    // this.add.text(this.cameras.main.width - 80, this.cameras.main.height - 20, "End", {
-    //   font: '14px Arial',
-    //   color: '#ffffff',
-    //   fontStyle: 'bold'
-    // }).setOrigin(0.5, 0.5);
-    //
-    // // Credibility score display in bottom right
-    // this.add.text(this.cameras.main.width - 120, this.cameras.main.height - 60, "Credibility: 70%", {
-    //   font: '16px Arial',
-    //   color: '#ffffff',
-    //   stroke: '#000000',
-    //   strokeThickness: 1
-    // }).setOrigin(0.5, 0.5);
-    //
-    // // Add warning icon next to credibility
-    // this.add.text(this.cameras.main.width - 70, this.cameras.main.height - 60, "⚠️", {
-    //   font: '16px Arial'
-    // }).setOrigin(0.5, 0.5);
+  /**
+   * Create simplified Google Meet style layout
+   */
+  private createGoogleMeetLayout(): void {
+    // Create the main container for Google Meet layout
+    const meetContainer = this.add.container(0, 0);
+    
+    // Create the top bar with Google Meet branding
+    const topBar = this.add.rectangle(
+      this.cameras.main.width / 2,
+      18,
+      this.cameras.main.width,
+      36,
+      0x202124
+    ).setOrigin(0.5, 0.5);
+    meetContainer.add(topBar);
+    
+    // Google Meet logo
+    const meetLogo = this.add.text(
+      20,
+      18,
+      "Meet",
+      {
+        font: 'bold 18px Arial',
+        color: '#ffffff'
+      }
+    ).setOrigin(0, 0.5);
+    meetContainer.add(meetLogo);
+    
+    // Add call time in the center
+    const callTime = this.add.text(
+      this.cameras.main.width / 2,
+      18,
+      "1:56",
+      {
+        font: '16px Arial',
+        color: '#ffffff'
+      }
+    ).setOrigin(0.5, 0.5);
+    meetContainer.add(callTime);
+    
+    // Add participant info
+    const participantInfo = this.add.text(
+      this.cameras.main.width - 50,
+      18,
+      "4 participants",
+      {
+        font: '14px Arial',
+        color: '#aaaaaa'
+      }
+    ).setOrigin(1, 0.5);
+    meetContainer.add(participantInfo);
+    
+    // Create video grid with exact positioning that matches the original game
+    const videoBackgrounds = [];
+    
+    // Top-left (position 0 - Boomer)
+    videoBackgrounds.push(this.add.rectangle(
+      this.cameras.main.width / 4,
+      150,
+      this.cameras.main.width / 2 - 10,
+      220,
+      0x111111
+    ).setOrigin(0.5, 0.5).setStrokeStyle(1, 0x444444));
+    
+    // Top-right (position 1 - Zoomer)
+    videoBackgrounds.push(this.add.rectangle(
+      this.cameras.main.width * 3 / 4,
+      150,
+      this.cameras.main.width / 2 - 10,
+      220,
+      0x111111
+    ).setOrigin(0.5, 0.5).setStrokeStyle(1, 0x444444));
+    
+    // Bottom-left (position 2 - Wifey)
+    videoBackgrounds.push(this.add.rectangle(
+      this.cameras.main.width / 4,
+      400,
+      this.cameras.main.width / 2 - 10,
+      220,
+      0x111111
+    ).setOrigin(0.5, 0.5).setStrokeStyle(1, 0x444444));
+    
+    // Bottom-right (position 3 - Player)
+    videoBackgrounds.push(this.add.rectangle(
+      this.cameras.main.width * 3 / 4,
+      400,
+      this.cameras.main.width / 2 - 10,
+      220,
+      0x111111
+    ).setOrigin(0.5, 0.5).setStrokeStyle(1, 0x444444));
+    
+    // Add all backgrounds to the container
+    videoBackgrounds.forEach(bg => meetContainer.add(bg));
+    
+    // Add a simplified control bar at the bottom
+    const controlBarHeight = 40;
+    const controlBar = this.add.rectangle(
+      this.cameras.main.width / 2,
+      this.cameras.main.height - controlBarHeight / 2,
+      this.cameras.main.width,
+      controlBarHeight,
+      0x292929
+    ).setOrigin(0.5, 0.5);
+    meetContainer.add(controlBar);
+    
+    // Add a simple end call button
+    const endCallButton = this.add.rectangle(
+      this.cameras.main.width - 40,
+      this.cameras.main.height - controlBarHeight / 2,
+      60,
+      30,
+      0xea4335 // Google red
+    ).setOrigin(0.5, 0.5);
+    meetContainer.add(endCallButton);
+    
+    // Set container depth to be behind other UI elements
+    meetContainer.setDepth(0);
   }
   
   private setupUI(): void {
-    // Create timer text - positioned in the Zoom-style top bar
+    // Set all UI elements to appear above the game layout
+    const uiDepth = 10;
+    
+    // Create timer text in top center
     this.timeText = this.add.text(
-        this.cameras.main.width / 2,
-        18,
-        "Meeting Time: 1:56", // Exact text from screenshot
+      this.cameras.main.width / 2,
+      18,
+      "1:56",
       {
         font: '16px Arial',
         color: '#ffffff',
         fontStyle: 'bold'
       }
-    ).setOrigin(0.5, 0.5);
+    ).setOrigin(0.5, 0.5).setDepth(uiDepth);
 
-    // Create credibility text in bottom right
-    this.credibilityText = this.add.text(
-        this.cameras.main.width - 120,
-        this.cameras.main.height - 60,
-        "Credibility: 70%", // Starting with 70% as shown in screenshot
+    // Create simpler COMBO meter at top
+    const comboContainer = this.add.container(this.cameras.main.width / 2, 50).setDepth(uiDepth);
+    
+    const comboBackground = this.add.rectangle(
+      0, 0, 150, 24, 0x333333, 0.6
+    ).setOrigin(0.5, 0.5);
+    comboContainer.add(comboBackground);
+    
+    this.comboText = this.add.text(
+      0, 0,
+      "COMBO: 0",
       {
-        font: '16px Arial',
-        color: '#ffffff',
-        stroke: '#000000',
-        strokeThickness: 1
+        font: 'bold 14px Arial',
+        color: '#ffffff'
       }
     ).setOrigin(0.5, 0.5);
-
-    // Add warning icon next to credibility
-    this.add.text(
-        this.cameras.main.width - 70,
-        this.cameras.main.height - 60,
-        "⚠️",
-        {
-          font: '16px Arial'
-        }
+    comboContainer.add(this.comboText);
+    
+    // Create credibility bar in top right
+    const credibilityContainer = this.add.container(this.cameras.main.width - 100, 18).setDepth(uiDepth);
+    
+    // Simple colored bar for credibility
+    const credibilityBarBg = this.add.rectangle(
+      0, 0, 70, 12, 0x333333
     ).setOrigin(0.5, 0.5);
+    credibilityBarBg.setStrokeStyle(1, 0x555555);
+    credibilityContainer.add(credibilityBarBg);
+
+    // Create credibility bar fill (start at 70%)
+    this.credibilityBarFill = this.add.rectangle(
+      -35 + (70 * 0.7)/2, // Position from left edge
+      0,
+      70 * 0.7, // 70% width
+      12,
+      0x44cc44 // Green
+    ).setOrigin(0, 0.5);
+    credibilityContainer.add(this.credibilityBarFill);
+    
+    // Add warning icon
+    const warningIcon = this.add.text(
+      40, 0, "⚠️", { fontSize: '12px' }
+    ).setOrigin(0.5, 0.5);
+    credibilityContainer.add(warningIcon);
+
+    // Create small text indicator for credibility percentage
+    this.credibilityText = this.add.text(
+      0, 0, "70%", { fontSize: '10px', color: '#ffffff' }
+    ).setOrigin(0.5, 0.5);
+    credibilityContainer.add(this.credibilityText);
+    
+    // Update the updateCredibility method
+    this.updateCredibility = (change: number) => {
+      this.credibilityScore = Phaser.Math.Clamp(this.credibilityScore + change, 0, 100);
+      this.credibilityText.setText(this.credibilityScore + "%");
+      
+      // Update fill width and position
+      const newWidth = (this.credibilityScore / 100) * 70;
+      this.credibilityBarFill.width = newWidth;
+      this.credibilityBarFill.x = -35 + newWidth/2;
+      
+      // Update color based on score
+      if (this.credibilityScore < 30) {
+        this.credibilityBarFill.fillColor = 0xff3333; // Red
+      } else if (this.credibilityScore < 60) {
+        this.credibilityBarFill.fillColor = 0xffcc00; // Yellow
+      } else {
+        this.credibilityBarFill.fillColor = 0x44cc44; // Green
+      }
+    };
   }
   
   private createDialogueBox(): void {
-    // Create dialogue box that looks like a Zoom chat message
-    const boxHeight = 80;
+    // Create a minimalist dialogue box that shows at the bottom of screen
+    const boxHeight = 40;
 
-    // Create container for the dialogue
+    // Create container positioned at top of z-order
     const dialogueContainer = this.add.container(0, 0);
-
-    // Create chat-like background
-    this.dialogueBox = this.add.rectangle(
-      this.cameras.main.width / 2,
-        this.cameras.main.height - boxHeight - 60, // Position above the controls
-        this.cameras.main.width * 0.6,
-      boxHeight,
-        0x333333,
-        0.9
-    ).setOrigin(0.5);
-
-    // Add rounded corners and border
-    this.dialogueBox.setStrokeStyle(1, 0x555555);
-
-    // Add chat header with "To: Everyone" like in Zoom
-    const chatHeader = this.add.text(
-        this.cameras.main.width / 2 - (this.dialogueBox.width / 2) + 10,
-        this.cameras.main.height - boxHeight - 60 - 15,
-        "Chat | To: Everyone",
-        {
-          font: '14px Arial',
-          color: '#aaaaaa'
-        }
-    );
+    dialogueContainer.setDepth(1000); // Very high depth
     
-    // Add text to dialogue box
+    // Create simplified chat text display - just a text field with a dark background
     this.dialogueText = this.add.text(
-        this.cameras.main.width / 2 - (this.dialogueBox.width / 2) + 15,
-        this.cameras.main.height - boxHeight - 60 - 5,
+      this.cameras.main.width / 2,
+      this.cameras.main.height - 100, // Position above controls but not too high
       "", 
       {
         font: '16px Arial',
         color: '#ffffff',
-        wordWrap: {width: this.dialogueBox.width - 30}
+        backgroundColor: '#00000099', // Semi-transparent background
+        padding: { x: 10, y: 5 },
+        wordWrap: { width: this.cameras.main.width * 0.7 }
       }
-    );
-
-    // Add a close button like in Zoom
-    const closeButton = this.add.text(
-        this.cameras.main.width / 2 + (this.dialogueBox.width / 2) - 25,
-        this.cameras.main.height - boxHeight - 60 - 15,
-        "✕",
-        {
-          font: '14px Arial',
-          color: '#aaaaaa'
-      }
-    );
-
-    // Add all elements to the container
-    dialogueContainer.add([this.dialogueBox, chatHeader, this.dialogueText, closeButton]);
+    ).setOrigin(0.5, 0);
+    
+    // Add text to container
+    dialogueContainer.add(this.dialogueText);
     
     // Hide until needed
     dialogueContainer.setVisible(false);
 
     // Override the show/hide methods to manage the container
     this.showDialogue = (speakerName, text) => {
-      // Update dialogue text with sender name in bold
-      this.dialogueText.setText(speakerName + ": " + text);
+      // Keep text short and concise
+      const displayText = (speakerName + ": " + text).substring(0, 100);
+      
+      // Update text
+      this.dialogueText.setText(displayText);
+      
+      // Calculate width based on content
+      const padding = 20;
+      const textWidth = Math.min(this.dialogueText.width + padding, this.cameras.main.width * 0.7);
+      
+      // Update background area - must recreate the text with new dimensions
+      dialogueContainer.remove(this.dialogueText);
+      this.dialogueText = this.add.text(
+        this.cameras.main.width / 2,
+        this.cameras.main.height - 100,
+        displayText, 
+        {
+          font: '16px Arial',
+          color: '#ffffff',
+          backgroundColor: '#00000099',
+          padding: { x: 10, y: 5 },
+          wordWrap: { width: textWidth }
+        }
+      ).setOrigin(0.5, 0);
+      dialogueContainer.add(this.dialogueText);
 
       // Show dialogue container
       dialogueContainer.setVisible(true);
-
-      // Animate it appearing from bottom
-      dialogueContainer.y = 50;
+      
+      // Simple fade in
+      this.dialogueText.alpha = 0;
       this.tweens.add({
-        targets: dialogueContainer,
-        y: 0,
-        duration: 200,
-        ease: 'Power2'
+        targets: this.dialogueText,
+        alpha: 1,
+        duration: 200
       });
     };
 
     this.hideDialogue = async () => {
-      // Return a Promise that resolves when animation is complete
+      // Simple fade out
       return new Promise<void>((resolve) => {
-        // Animate hiding
         this.tweens.add({
-          targets: dialogueContainer,
-          y: 50,
+          targets: this.dialogueText,
+          alpha: 0,
           duration: 200,
-          ease: 'Power2',
           onComplete: () => {
             dialogueContainer.setVisible(false);
             resolve();
@@ -533,25 +580,25 @@ export class GameScene extends Phaser.Scene {
   }
   
   private createNPCs(): void {
-    // Position characters exactly according to the screenshot
+    // Position characters to match the screenshot exactly
     const positions = [
-      { // Top Left - Boomer (position 0)
+      { // Top Left - Mr. Bogdanoff
         id: 'boomer',
-        x: this.cameras.main.width / 6,
-        y: this.cameras.main.height / 4,
-        nameY: 80
+        x: this.cameras.main.width / 4,
+        y: 150,
+        nameY: 60
       },
-      { // Top Right - Zoomer (position 1)
+      { // Top Right - Zoomer
         id: 'zoomer',
-        x: this.cameras.main.width * 5 / 6,
-        y: this.cameras.main.height / 4,
-        nameY: 80
+        x: this.cameras.main.width * 3 / 4,
+        y: 150,
+        nameY: 60
       },
-      { // Bottom Right - Wifey
+      { // Bottom Left - Wifey
         id: 'coworker1',
-        x: this.cameras.main.width * 5 / 6,
-        y: this.cameras.main.height * 3 / 4,
-        nameY: 80
+        x: this.cameras.main.width / 4,
+        y: 400,
+        nameY: 60
       }
     ];
     
@@ -1152,27 +1199,25 @@ export class GameScene extends Phaser.Scene {
   
   private updateCredibility(change: number): void {
     this.credibilityScore = Phaser.Math.Clamp(this.credibilityScore + change, 0, 100);
-    this.credibilityText.setText("Credibility: " + this.credibilityScore + "%");
     
-    // Update text color based on score
-    if (this.credibilityScore < 30) {
-      this.credibilityText.setStyle({ 
-        color: '#ffaa00',
-        stroke: '#000000',
-        strokeThickness: 2
-      });
-    } else if (this.credibilityScore < 60) {
-      this.credibilityText.setStyle({ 
-        color: '#ffff00',
-        stroke: '#000000',
-        strokeThickness: 2
-      });
-    } else {
-      this.credibilityText.setStyle({ 
-        color: '#ffffff',
-        stroke: '#000000',
-        strokeThickness: 2
-      });
+    // Update the text
+    if (this.credibilityText) {
+      this.credibilityText.setText(this.credibilityScore + "%");
+    }
+    
+    // Update the bar fill
+    if (this.credibilityBarFill) {
+      // Update fill width based on score
+      this.credibilityBarFill.width = (this.credibilityScore / 100) * 120;
+      
+      // Update color based on score
+      if (this.credibilityScore < 30) {
+        this.credibilityBarFill.fillColor = 0xff3333; // Red
+      } else if (this.credibilityScore < 60) {
+        this.credibilityBarFill.fillColor = 0xffcc00; // Yellow
+      } else {
+        this.credibilityBarFill.fillColor = 0x44cc44; // Green
+      }
     }
   }
   

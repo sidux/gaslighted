@@ -34,69 +34,71 @@ export class RhythmUI {
     // Create container
     this.container = this.scene.add.container(x, y);
     
-    // Create background
+    // Create a slimmer, more compact UI
+    this.laneWidth = 60;
+    this.laneHeight = 300;
+    
+    // Create background - smaller, more transparent, and narrower
     this.background = this.scene.add.rectangle(
       0, 0, 
-      this.laneWidth * 2 + 20, // Width for single lane + padding
-      this.laneHeight + 60,     // Height + space for labels
-      0x111111, 0.8
+      this.laneWidth + 40, // Narrower width
+      this.laneHeight + 40, // Shorter height
+      0x111111, 0.5 // More transparent
     );
-    this.background.setStrokeStyle(2, 0x444444);
+    this.background.setStrokeStyle(1, 0x444444);
     this.container.add(this.background);
     
-    // Add title
+    // Add simpler heading
     const title = this.scene.add.text(
-      0, -this.laneHeight/2 - 25,
-      "SPEECH RHYTHM",
+      0, -this.laneHeight/2 - 10,
+      "TIMING",
       {
         fontFamily: 'Arial',
-        fontSize: '18px',
+        fontSize: '14px',
         color: '#ffffff',
         fontStyle: 'bold'
       }
     ).setOrigin(0.5);
     this.container.add(title);
     
-    // Create main rhythm lane
+    // Create main rhythm lane - narrower
     const mainLane = this.scene.add.rectangle(
       0, 0,
-      this.laneWidth - 10,
+      this.laneWidth,
       this.laneHeight,
-      0x333333, 0.5
+      0x333333, 0.4
     );
-    mainLane.setStrokeStyle(1, 0x6666cc, 0.8);
+    mainLane.setStrokeStyle(1, 0x6666cc, 0.5);
     this.container.add(mainLane);
     this.lanes.push(mainLane);
     
-    // Create target zone (where notes should hit) - make it more visible
+    // Create target zone - simpler and less visually intrusive
     this.targetZone = this.scene.add.rectangle(
-      0, this.targetZoneBaseY, // Position in lower part of track
-      this.laneWidth - 10, 40, // Taller
-      0x00ff00, 0.5 // More visible green
+      0, this.targetZoneBaseY,
+      this.laneWidth, 20, // Thinner
+      0x00ff00, 0.4 // Less opaque green
     );
-    this.targetZone.setStrokeStyle(3, 0xffffff, 0.8); // Thicker border
+    this.targetZone.setStrokeStyle(1, 0xffffff, 0.5); // Thinner border
     this.container.add(this.targetZone);
     
-    // Add "HIT ZONE" text to make it super clear - will follow the target zone
+    // Add small hit indicator text
     const hitZoneText = this.scene.add.text(
       0, this.targetZoneBaseY,
-      "HIT ZONE",
+      "HIT",
       {
         fontFamily: 'Arial',
-        fontSize: '14px',
+        fontSize: '10px',
         color: '#ffffff',
-        fontStyle: 'bold',
-        stroke: '#000000',
-        strokeThickness: 2
+        fontStyle: 'bold'
       }
     ).setOrigin(0.5);
-    hitZoneText.setName('hitZoneText'); // Name for easy reference
+    hitZoneText.setName('hitZoneText');
     this.container.add(hitZoneText);
     
-    // Add pulsing animation to draw attention
+    // Add subtle pulsing animation
     this.scene.tweens.add({
       targets: this.targetZone,
-      fillAlpha: { from: 0.5, to: 0.7 },
+      fillAlpha: { from: 0.3, to: 0.5 },
       duration: 1000,
       yoyo: true,
       repeat: -1
@@ -105,21 +107,21 @@ export class RhythmUI {
     // Add update event to handle movement
     this.scene.events.on('update', this.updateTargetZone, this);
     
-    // Create current time marker (horizontal line) - will follow target zone
+    // Create current time marker - thinner line
     this.currentTimeMarker = this.scene.add.rectangle(
-      0, this.targetZoneBaseY, // Initially at same position as target zone
-      this.laneWidth * 2, 3,
-      0xffffff, 0.8
+      0, this.targetZoneBaseY,
+      this.laneWidth, 2,
+      0xffffff, 0.6
     );
     this.container.add(this.currentTimeMarker);
     
-    // Create key indicators at bottom of UI
-    const keyRowY = this.laneHeight/2 + 20;
+    // Create smaller key indicators
+    const keyRowY = this.laneHeight/2 + 15;
     this.createKeyIndicators(keyRowY);
     
-    // Create display for pressed key
+    // Create smaller pressed key display
     this.pressedKeyDisplay = this.scene.add.text(
-      0, keyRowY + 40,
+      0, keyRowY - 40,
       "",
       {
         fontFamily: 'Arial',
@@ -127,59 +129,74 @@ export class RhythmUI {
         color: '#ffffff',
         fontStyle: 'bold',
         backgroundColor: '#333333',
-        padding: { x: 10, y: 6 }
+        padding: { x: 8, y: 4 },
+        stroke: '#000000',
+        strokeThickness: 2
       }
     ).setOrigin(0.5);
     this.container.add(this.pressedKeyDisplay);
     
-    // Add instructions
+    // Add minimal instructions
     const instructions = this.scene.add.text(
-      0, this.laneHeight/2 + 70,
-      "PRESS KEYS TO FART",
+      0, this.laneHeight/2 + 60,
+      "ARROW KEYS",
       {
         fontFamily: 'Arial',
-        fontSize: '14px',
-        color: '#ffff00'
+        fontSize: '12px',
+        color: '#ffff00',
+        stroke: '#000000',
+        strokeThickness: 1
       }
     ).setOrigin(0.5);
     this.container.add(instructions);
   }
   
   /**
-   * Create key indicators at the bottom of the UI
+   * Create key indicators - simplified version showing only the primary four arrow keys
    */
   private createKeyIndicators(yPosition: number): void {
-    // Create common viseme keys: A, E, I, O, U, P, T, S
-    const keys = ['A', 'E', 'I', 'O', 'U', 'P', 'T', 'S'];
-    const startX = -((keys.length * 30) / 2) + 15; // Center the keys
+    // Map viseme keys to arrow keys - only use the four main arrow keys for clarity
+    // A = LEFT, E = UP, I = RIGHT, O = DOWN
+    const keyMappings: Record<string, string> = {
+      'A': '←',    // Left arrow
+      'E': '↑',    // Up arrow
+      'I': '→',    // Right arrow
+      'O': '↓'     // Down arrow
+    };
+    
+    const keys = ['A', 'E', 'I', 'O'];
+    const startX = -((keys.length * 25) / 2) + 12; // Tighter spacing
     
     for (let i = 0; i < keys.length; i++) {
-      const keyX = startX + (i * 30);
+      const keyX = startX + (i * 25);
       
       // Create key container
       const keyContainer = this.scene.add.container(keyX, yPosition);
       
-      // Key background
+      // Key background - smaller and simpler
       const keyBg = this.scene.add.rectangle(
-        0, 0, 25, 25, 
+        0, 0, 20, 20, 
         0x444444, 1
       );
       keyBg.setStrokeStyle(1, 0x666666);
+      keyBg.setOrigin(0.5, 0.5);
       keyContainer.add(keyBg);
       
-      // Key text
+      // Key text - arrow symbol only
       const keyText = this.scene.add.text(
         0, 0, 
-        keys[i],
+        keyMappings[keys[i]],
         {
           fontFamily: 'Arial',
-          fontSize: '16px',
-          color: '#ffffff'
+          fontSize: '14px',
+          color: '#ffffff',
+          fontStyle: 'bold'
         }
       ).setOrigin(0.5);
       keyContainer.add(keyText);
       
-      // Store references
+      // Store the original letter in the text name property
+      keyText.name = keys[i];
       this.keyIndicators.push(keyContainer);
       this.keyTexts.push(keyText);
       
@@ -189,21 +206,40 @@ export class RhythmUI {
   }
   
   /**
+   * Get the arrow symbol for a key
+   */
+  private getArrowForKey(key: string): string {
+    const keyUpper = key.toUpperCase();
+    // Manual mapping to avoid TypeScript issues
+    switch (keyUpper) {
+      case 'A': return '←';    // Left arrow
+      case 'E': return '↑';    // Up arrow
+      case 'I': return '→';    // Right arrow
+      case 'O': return '↓';    // Down arrow
+      case 'U': return '↗';    // Up-right diagonal
+      case 'P': return '↖';    // Up-left diagonal
+      case 'T': return '↙';    // Down-left diagonal
+      case 'S': return '↘';    // Down-right diagonal
+      default: return keyUpper; // Default to the key itself
+    }
+  }
+
+  /**
    * Highlight a specific key
    */
   private highlightKey(key: string, highlight: boolean = true): void {
     const keyUpper = key.toUpperCase();
     
-    // Find the index of the key
+    // Find the index of the key by checking the name property we set
     for (let i = 0; i < this.keyTexts.length; i++) {
       const keyText = this.keyTexts[i];
       
-      if (keyText.text === keyUpper) {
+      if (keyText.name === keyUpper) {
         // Get the container
         const container = this.keyIndicators[i];
         
-        // Get the background (first child)
-        const bg = container.list[0] as Phaser.GameObjects.Rectangle;
+        // Get the background (second child, after shadow)
+        const bg = container.list[1] as Phaser.GameObjects.Rectangle;
         
         // Stop any existing tweens
         this.scene.tweens.killTweensOf(container);
@@ -232,7 +268,7 @@ export class RhythmUI {
           });
         } else {
           bg.setFillStyle(0x444444, 1);
-          bg.setStrokeStyle(1, 0x666666);
+          bg.setStrokeStyle(2, 0x666666);
           
           // Reset the scale
           container.setScale(1);
@@ -243,18 +279,19 @@ export class RhythmUI {
       }
     }
   }
-  
+
   /**
    * Display a key being pressed
    */
   public showKeyPress(key: string): void {
     const keyUpper = key.toUpperCase();
     
-    // Update the pressed key display
-    this.pressedKeyDisplay.setText(keyUpper);
+    // Update the pressed key display with arrow symbol
+    const arrowSymbol = this.getArrowForKey(keyUpper);
+    this.pressedKeyDisplay.setText(arrowSymbol);
     this.pressedKeyDisplay.setVisible(true);
     
-    // Pulse effect
+    // Add key press effect
     this.scene.tweens.add({
       targets: this.pressedKeyDisplay,
       scaleX: 1.3,
@@ -273,10 +310,11 @@ export class RhythmUI {
    */
   public showKeyRelease(key: string): void {
     const keyUpper = key.toUpperCase();
+    const arrowSymbol = this.getArrowForKey(keyUpper);
     
     // Hide the pressed key display after a delay
     this.scene.time.delayedCall(300, () => {
-      if (this.pressedKeyDisplay.text === keyUpper) {
+      if (this.pressedKeyDisplay.text === arrowSymbol) {
         this.pressedKeyDisplay.setVisible(false);
       }
     });
@@ -289,7 +327,7 @@ export class RhythmUI {
     
     // Add visual feedback for key release
     for (let i = 0; i < this.keyTexts.length; i++) {
-      if (this.keyTexts[i].text === keyUpper) {
+      if (this.keyTexts[i].name === keyUpper) {
         const container = this.keyIndicators[i];
         
         // Flash effect to show key release
@@ -348,17 +386,23 @@ export class RhythmUI {
       // Make notes larger and more visible
       const height = Math.max(40, (viseme.endTime - viseme.startTime) / 15);
       
-      // Different colors for different vowels
+      // Map key to arrow symbol for display
+      const arrowSymbol = this.getArrowForKey(viseme.keyToPress);
+      
+      // Different colors for different arrows based on direction
       let noteColor = 0x22ff22; // Default green
       switch(viseme.keyToPress) {
-        case 'A': noteColor = 0xff3333; break; // Red
-        case 'E': noteColor = 0x33ff33; break; // Green
-        case 'I': noteColor = 0x3333ff; break; // Blue
-        case 'O': noteColor = 0xffff33; break; // Yellow
-        case 'U': noteColor = 0xff33ff; break; // Purple
+        case 'A': noteColor = 0xff3333; break; // Left - Red
+        case 'E': noteColor = 0x33ff33; break; // Up - Green
+        case 'I': noteColor = 0x3333ff; break; // Right - Blue
+        case 'O': noteColor = 0xffff33; break; // Down - Yellow
+        case 'U': noteColor = 0xff33ff; break; // Diagonal - Purple
+        case 'P': noteColor = 0x33ffff; break; // Diagonal - Cyan
+        case 'T': noteColor = 0xff9900; break; // Diagonal - Orange
+        case 'S': noteColor = 0x9966ff; break; // Diagonal - Violet
       }
       
-      // Main note body with colors matching the key
+      // Main note body - make it look like a key
       const noteBody = this.scene.add.rectangle(
         0, 0,
         this.laneWidth - 10, // Wider
@@ -366,24 +410,23 @@ export class RhythmUI {
         noteColor, 0.8 // Matching color, more opaque
       );
       noteBody.setStrokeStyle(3, 0xffffff, 1); // Thicker, more visible border
+      // No rounded corners since setCornerRadius is not available
       note.add(noteBody);
       
-      // Add letter indicator - bigger and more visible
-      const letter = this.scene.add.text(
+      // Add arrow indicator - bigger and more visible
+      const arrow = this.scene.add.text(
         0, 0,
-        viseme.keyToPress,
+        arrowSymbol,
         {
           fontFamily: 'Arial',
-          fontSize: '28px', // Bigger text
+          fontSize: '32px', // Bigger text
           color: '#ffffff',
           fontStyle: 'bold',
-          backgroundColor: '#333333',
-          padding: { x: 8, y: 6 }, // More padding
           stroke: '#000000',
-          strokeThickness: 2 // Add stroke for visibility
+          strokeThickness: 3 // Add stroke for visibility
         }
       ).setOrigin(0.5);
-      note.add(letter);
+      note.add(arrow);
       
       // Store the key in the note for reference
       (note as any).keyToPress = viseme.keyToPress;
@@ -758,9 +801,6 @@ export class RhythmUI {
   }
   
   /**
-   * Set visibility of the UI
-   */
-  /**
    * Reset all highlighted keys to normal state
    */
   public resetAllKeyHighlights(): void {
@@ -778,6 +818,9 @@ export class RhythmUI {
     this.pressedKeyDisplay.setVisible(false);
   }
   
+  /**
+   * Set visibility of the UI
+   */
   public setVisible(visible: boolean): void {
     this.container.setVisible(visible);
   }
