@@ -21,9 +21,9 @@ const App: React.FC = () => {
   useEffect(() => {
     const loadLevels = async () => {
       try {
-        const levelFiles = ['level1.json', 'level2.json'];
+        const levelFiles = ['level1.json'];
         const loadedLevels = [];
-        
+
         for (const file of levelFiles) {
           const response = await fetch(`src/assets/levels/${file}`);
           if (!response.ok) {

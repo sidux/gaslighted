@@ -3,8 +3,8 @@
     "time": 0,
     "type": "sentence",
     "start": 0,
-    "end": 23,
-    "value": "Wojak, are you with us?"
+    "end": 118,
+    "value": "Wojak, you had visibility on some of that — do you think the delays came from lack of clarity, or lack of ownership?"
   },
   {
     "time": 137,
@@ -24,7 +24,7 @@
     "value": "@"
   },
   {
-    "time": 375,
+    "time": 337,
     "type": "viseme",
     "value": "S"
   },
@@ -39,232 +39,524 @@
     "value": "k"
   },
   {
-    "time": 750,
+    "time": 712,
     "type": "viseme",
     "value": "sil"
   },
   {
-    "time": 1037,
+    "time": 1075,
     "type": "word",
     "start": 7,
     "end": 10,
-    "value": "are"
-  },
-  {
-    "time": 1037,
-    "type": "viseme",
-    "value": "a"
-  },
-  {
-    "time": 1312,
-    "type": "word",
-    "start": 11,
-    "end": 14,
     "value": "you"
   },
   {
-    "time": 1312,
+    "time": 1075,
     "type": "viseme",
     "value": "i"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 11,
+    "end": 14,
+    "value": "had"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "a"
   },
   {
     "time": 1375,
     "type": "viseme",
-    "value": "u"
+    "value": "t"
   },
   {
-    "time": 1562,
+    "time": 1437,
     "type": "word",
     "start": 15,
-    "end": 19,
-    "value": "with"
+    "end": 25,
+    "value": "visibility"
   },
   {
-    "time": 1562,
-    "type": "viseme",
-    "value": "u"
-  },
-  {
-    "time": 1625,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 1725,
-    "type": "viseme",
-    "value": "T"
-  },
-  {
-    "time": 1850,
-    "type": "word",
-    "start": 20,
-    "end": 22,
-    "value": "us"
-  },
-  {
-    "time": 1850,
-    "type": "viseme",
-    "value": "E"
-  },
-  {
-    "time": 1962,
-    "type": "viseme",
-    "value": "s"
-  },
-  {
-    "time": 2325,
-    "type": "viseme",
-    "value": "sil"
-  },
-  {
-    "time": 2805,
-    "type": "sentence",
-    "start": 24,
-    "end": 53,
-    "value": "You look a bit uncomfortable."
-  },
-  {
-    "time": 2930,
-    "type": "word",
-    "start": 24,
-    "end": 27,
-    "value": "You"
-  },
-  {
-    "time": 2930,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 2992,
-    "type": "viseme",
-    "value": "u"
-  },
-  {
-    "time": 3055,
-    "type": "word",
-    "start": 28,
-    "end": 32,
-    "value": "look"
-  },
-  {
-    "time": 3055,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 3117,
-    "type": "viseme",
-    "value": "u"
-  },
-  {
-    "time": 3180,
-    "type": "viseme",
-    "value": "k"
-  },
-  {
-    "time": 3255,
-    "type": "word",
-    "start": 33,
-    "end": 34,
-    "value": "a"
-  },
-  {
-    "time": 3255,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 3367,
-    "type": "word",
-    "start": 35,
-    "end": 38,
-    "value": "bit"
-  },
-  {
-    "time": 3367,
-    "type": "viseme",
-    "value": "p"
-  },
-  {
-    "time": 3430,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 3492,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 3555,
-    "type": "word",
-    "start": 39,
-    "end": 52,
-    "value": "uncomfortable"
-  },
-  {
-    "time": 3555,
-    "type": "viseme",
-    "value": "E"
-  },
-  {
-    "time": 3642,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 3805,
-    "type": "viseme",
-    "value": "k"
-  },
-  {
-    "time": 3867,
-    "type": "viseme",
-    "value": "E"
-  },
-  {
-    "time": 3942,
-    "type": "viseme",
-    "value": "p"
-  },
-  {
-    "time": 4005,
+    "time": 1437,
     "type": "viseme",
     "value": "f"
   },
   {
-    "time": 4055,
+    "time": 1487,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1625,
     "type": "viseme",
     "value": "@"
   },
   {
-    "time": 4180,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 4242,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 4292,
+    "time": 1700,
     "type": "viseme",
     "value": "p"
   },
   {
-    "time": 4317,
+    "time": 1750,
     "type": "viseme",
-    "value": "@"
+    "value": "i"
   },
   {
-    "time": 4392,
+    "time": 1812,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 4680,
+    "time": 1875,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1937,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2125,
+    "type": "word",
+    "start": 26,
+    "end": 28,
+    "value": "on"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2312,
+    "type": "word",
+    "start": 29,
+    "end": 33,
+    "value": "some"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2500,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2512,
+    "type": "word",
+    "start": 34,
+    "end": 36,
+    "value": "of"
+  },
+  {
+    "time": 2512,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2562,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2637,
+    "type": "word",
+    "start": 37,
+    "end": 41,
+    "value": "that"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2750,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3250,
+    "type": "word",
+    "start": 46,
+    "end": 48,
+    "value": "do"
+  },
+  {
+    "time": 3250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3262,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3312,
+    "type": "word",
+    "start": 49,
+    "end": 52,
+    "value": "you"
+  },
+  {
+    "time": 3312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3387,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3500,
+    "type": "word",
+    "start": 53,
+    "end": 58,
+    "value": "think"
+  },
+  {
+    "time": 3500,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3587,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3637,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3712,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3762,
+    "type": "word",
+    "start": 59,
+    "end": 62,
+    "value": "the"
+  },
+  {
+    "time": 3762,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3825,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3887,
+    "type": "word",
+    "start": 63,
+    "end": 69,
+    "value": "delays"
+  },
+  {
+    "time": 3887,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3950,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4187,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4250,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4437,
+    "type": "word",
+    "start": 70,
+    "end": 74,
+    "value": "came"
+  },
+  {
+    "time": 4437,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4562,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4625,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4762,
+    "type": "word",
+    "start": 75,
+    "end": 79,
+    "value": "from"
+  },
+  {
+    "time": 4762,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4812,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4875,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4912,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4950,
+    "type": "word",
+    "start": 80,
+    "end": 84,
+    "value": "lack"
+  },
+  {
+    "time": 4950,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5037,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5137,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5187,
+    "type": "word",
+    "start": 85,
+    "end": 87,
+    "value": "of"
+  },
+  {
+    "time": 5187,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5237,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5312,
+    "type": "word",
+    "start": 88,
+    "end": 95,
+    "value": "clarity"
+  },
+  {
+    "time": 5312,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5375,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5412,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5462,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5700,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5850,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 6062,
+    "type": "word",
+    "start": 97,
+    "end": 99,
+    "value": "or"
+  },
+  {
+    "time": 6062,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6325,
+    "type": "word",
+    "start": 100,
+    "end": 104,
+    "value": "lack"
+  },
+  {
+    "time": 6325,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6400,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6462,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6562,
+    "type": "word",
+    "start": 105,
+    "end": 107,
+    "value": "of"
+  },
+  {
+    "time": 6562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6625,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6712,
+    "type": "word",
+    "start": 108,
+    "end": 117,
+    "value": "ownership"
+  },
+  {
+    "time": 6712,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6787,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6875,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7000,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 7062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7125,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7387,
     "type": "viseme",
     "value": "sil"
   }

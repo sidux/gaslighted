@@ -129,7 +129,7 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
 
 const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) => {
   const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
-  const currentSpeakerId = currentDialogue?.speakerId;
+  const currentSpeakerId = currentDialogue?.speaker;
   
   // Create a more Google Meet-like layout with a designated tiled view
   return (

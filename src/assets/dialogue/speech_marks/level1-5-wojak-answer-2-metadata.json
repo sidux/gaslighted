@@ -1,0 +1,120 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 22,
+    "value": "Probably just burnout."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 8,
+    "value": "Probably"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 44,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 98,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 182,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 238,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 299,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 384,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 447,
+    "type": "word",
+    "start": 9,
+    "end": 13,
+    "value": "just"
+  },
+  {
+    "time": 447,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 563,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 643,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 723,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 757,
+    "type": "word",
+    "start": 14,
+    "end": 21,
+    "value": "burnout"
+  },
+  {
+    "time": 757,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 816,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 958,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1011,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1239,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1346,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

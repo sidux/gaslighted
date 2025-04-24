@@ -1,0 +1,581 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 48,
+    "value": "Looking ahead: we need clearer escalation paths."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 7,
+    "value": "Looking"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 98,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 134,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 229,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 265,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 361,
+    "type": "word",
+    "start": 8,
+    "end": 13,
+    "value": "ahead"
+  },
+  {
+    "time": 361,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 413,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 514,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 676,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 791,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 985,
+    "type": "word",
+    "start": 15,
+    "end": 17,
+    "value": "we"
+  },
+  {
+    "time": 985,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1053,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1127,
+    "type": "word",
+    "start": 18,
+    "end": 22,
+    "value": "need"
+  },
+  {
+    "time": 1127,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1205,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1332,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1376,
+    "type": "word",
+    "start": 23,
+    "end": 30,
+    "value": "clearer"
+  },
+  {
+    "time": 1376,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1542,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1588,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1668,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1784,
+    "type": "word",
+    "start": 31,
+    "end": 41,
+    "value": "escalation"
+  },
+  {
+    "time": 1784,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1834,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1931,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2009,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2054,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2140,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2234,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2369,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2473,
+    "type": "word",
+    "start": 42,
+    "end": 47,
+    "value": "paths"
+  },
+  {
+    "time": 2473,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2567,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2758,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2838,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2987,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3374,
+    "type": "sentence",
+    "start": 49,
+    "end": 117,
+    "value": "If a ticket sits unresolved for more than 24 hours, it’s too late."
+  },
+  {
+    "time": 3381,
+    "type": "word",
+    "start": 49,
+    "end": 51,
+    "value": "If"
+  },
+  {
+    "time": 3381,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3444,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3538,
+    "type": "word",
+    "start": 52,
+    "end": 53,
+    "value": "a"
+  },
+  {
+    "time": 3538,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3579,
+    "type": "word",
+    "start": 54,
+    "end": 60,
+    "value": "ticket"
+  },
+  {
+    "time": 3579,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3705,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3753,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3812,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3860,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3912,
+    "type": "word",
+    "start": 61,
+    "end": 65,
+    "value": "sits"
+  },
+  {
+    "time": 3912,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4022,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4073,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4152,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4259,
+    "type": "word",
+    "start": 66,
+    "end": 76,
+    "value": "unresolved"
+  },
+  {
+    "time": 4259,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4353,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4434,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4504,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4536,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4638,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4724,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4816,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4880,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4920,
+    "type": "word",
+    "start": 77,
+    "end": 80,
+    "value": "for"
+  },
+  {
+    "time": 4920,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4995,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5027,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5076,
+    "type": "word",
+    "start": 81,
+    "end": 85,
+    "value": "more"
+  },
+  {
+    "time": 5076,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5184,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5297,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5335,
+    "type": "word",
+    "start": 86,
+    "end": 90,
+    "value": "than"
+  },
+  {
+    "time": 5335,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5403,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5435,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5492,
+    "type": "word",
+    "start": 91,
+    "end": 93,
+    "value": "24"
+  },
+  {
+    "time": 5492,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5616,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5682,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5713,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5744,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5774,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5825,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5932,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6016,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6095,
+    "type": "word",
+    "start": 94,
+    "end": 99,
+    "value": "hours"
+  },
+  {
+    "time": 6095,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6345,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6482,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6670,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 6865,
+    "type": "word",
+    "start": 101,
+    "end": 107,
+    "value": "it’s"
+  },
+  {
+    "time": 6865,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6955,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7016,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7105,
+    "type": "word",
+    "start": 108,
+    "end": 111,
+    "value": "too"
+  },
+  {
+    "time": 7105,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7200,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 7307,
+    "type": "word",
+    "start": 112,
+    "end": 116,
+    "value": "late"
+  },
+  {
+    "time": 7307,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7426,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 7567,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7698,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

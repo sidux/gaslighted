@@ -1,0 +1,161 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 32,
+    "value": "We were onboarding a new vendor."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 2,
+    "value": "We"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 73,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 126,
+    "type": "word",
+    "start": 3,
+    "end": 7,
+    "value": "were"
+  },
+  {
+    "time": 126,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 191,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 222,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 259,
+    "type": "word",
+    "start": 8,
+    "end": 18,
+    "value": "onboarding"
+  },
+  {
+    "time": 259,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 336,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 408,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 474,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 590,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 632,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 666,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 19,
+    "end": 20,
+    "value": "a"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 794,
+    "type": "word",
+    "start": 21,
+    "end": 24,
+    "value": "new"
+  },
+  {
+    "time": 794,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 860,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 953,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 994,
+    "type": "word",
+    "start": 25,
+    "end": 31,
+    "value": "vendor"
+  },
+  {
+    "time": 994,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1068,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1140,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1189,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1241,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1388,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

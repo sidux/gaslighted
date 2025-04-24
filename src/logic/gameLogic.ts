@@ -86,7 +86,18 @@ export const initializeGameState = (level: Level, dialogueMetadata: { [key: stri
     lastFartResult: null,
     dialogueMetadata,
     pausedTimestamp: null,
+    showingQuestion: false,
+    screenEffects: {
+      heartbeatIntensity: 0,
+      pulseEffect: false,
+      blurEffect: false
+    }
   };
+};
+
+// Helper function to generate metadata key
+const getRegularDialogueKey = (levelId: string, index: number, speakerId: string): string => {
+  return `${levelId}-${index}-${speakerId}-metadata.json`;
 };
 
 // Generate fart opportunities for the level based on viseme data
@@ -95,10 +106,15 @@ export const generateFartOpportunities = (
   dialogueMetadata: { [key: string]: Viseme[] }
 ): FartOpportunity[] => {
   const opportunities: FartOpportunity[] = [];
+  const levelId = 'level1'; // This should be extracted from level id
   
   level.dialogues.forEach((dialogue, dialogueIndex) => {
-    const speakerId = dialogue.speakerId;
-    const metadata = dialogueMetadata[`level1-${dialogueIndex}-${speakerId}-metadata.json`];
+    // Skip dialogues without text (questions, feedback)
+    if (!dialogue.text || !dialogue.speaker) return;
+    
+    const speakerId = dialogue.speaker;
+    const metadataKey = getRegularDialogueKey(levelId, dialogueIndex, speakerId);
+    const metadata = dialogueMetadata[metadataKey];
     
     if (!metadata) return;
     
@@ -113,6 +129,7 @@ export const generateFartOpportunities = (
       "discuss", "follow", "priority", "focus", "progress", "update",
       "time", "paradigm", "baseline", "metric", "kpi", "agenda", "issue"
     ];
+    
     const lowerText = dialogue.text.toLowerCase();
     
     // Group visemes by word
@@ -244,14 +261,156 @@ export const checkFartKeyPress = (
 // Import the playFartAudio function directly here
 import { playFartAudio } from './audioManager';
 
+// Convert time string to milliseconds (e.g., "10s" to 10000)
+export const parseTimeLimit = (timeLimit: string): number => {
+  if (!timeLimit) return 10000; // Default to 10 seconds
+  
+  const match = timeLimit.match(/^(\d+)(m?s)$/);
+  if (!match) return 10000;
+  
+  const value = parseInt(match[1], 10);
+  const unit = match[2];
+  
+  if (unit === 'ms') return value;
+  return value * 1000;
+};
+
+// Handle answer selection for questions
+export const handleAnswerSelection = (state: GameState, answerIndex: number): GameState => {
+  if (!state.showingQuestion || !state.currentQuestion) {
+    return state;
+  }
+  
+  // Check if answers array exists and answerIndex is valid
+  if (!state.currentQuestion.answers || 
+      !Array.isArray(state.currentQuestion.answers) || 
+      answerIndex < 0 || 
+      answerIndex >= state.currentQuestion.answers.length) {
+    console.error("Invalid answer selection:", answerIndex, state.currentQuestion);
+    return {
+      ...state,
+      showingQuestion: false
+    };
+  }
+  
+  const selectedAnswer = state.currentQuestion.answers[answerIndex];
+  const isCorrect = selectedAnswer ? selectedAnswer.correct : false;
+  
+  // Get question effects from rules
+  const effects = state.level.rules.question_effects || {
+    correct_shame_change: -10,
+    incorrect_shame_change: 15,
+    heartbeat_intensity: 70
+  };
+  
+  // Update shame based on answer correctness
+  let newShame = state.shame;
+  if (isCorrect) {
+    newShame = Math.max(0, newShame + effects.correct_shame_change);
+  } else {
+    newShame = Math.min(100, newShame + effects.incorrect_shame_change);
+  }
+  
+  // Update screen effects 
+  const screenEffects = {
+    heartbeatIntensity: isCorrect ? 10 : effects.heartbeat_intensity,
+    pulseEffect: !isCorrect,
+    blurEffect: newShame > 70
+  };
+  
+  // Set a timeout to clear the screen effects after animation
+  setTimeout(() => {
+    if (state.isPlaying && !state.isGameOver) {
+      state.screenEffects = {
+        ...state.screenEffects,
+        pulseEffect: false,
+        heartbeatIntensity: Math.min(state.shame / 2, 50) // Base heartbeat on shame
+      };
+    }
+  }, 2000);
+  
+  return {
+    ...state,
+    showingQuestion: false,
+    shame: newShame,
+    currentQuestion: {
+      ...state.currentQuestion,
+      selectedAnswer: answerIndex,
+      isCorrect,
+      timeRemaining: 0
+    },
+    screenEffects
+  };
+};
+
 // Update game state based on elapsed time
 export const updateGameState = (state: GameState, elapsedMs: number): GameState => {
   if (!state.isPlaying || state.isGameOver) {
     return state;
   }
   
-  // Update pressure based on elapsed time
-  const pressureIncrease = (elapsedMs / 1000) * state.level.rules.pressure_buildup_speed;
+  // Handle question timer if showing question
+  if (state.showingQuestion && state.currentQuestion) {
+    const timeLimit = parseTimeLimit(state.level.rules.question_time_limit || "10s");
+    
+    // Add null check for startTime
+    if (state.currentQuestion.startTime === undefined) {
+      console.error("Question startTime is undefined");
+      // Initialize it with current time if missing
+      return {
+        ...state,
+        currentQuestion: {
+          ...state.currentQuestion,
+          startTime: Date.now(),
+          timeRemaining: timeLimit
+        }
+      };
+    }
+    
+    const timeElapsed = Date.now() - (state.currentQuestion.startTime || Date.now());
+    const timeRemaining = Math.max(0, timeLimit - timeElapsed);
+    
+    // Update screen effects based on time remaining
+    const timeRatio = timeRemaining / timeLimit;
+    const heartbeatIntensity = timeRatio < 0.2 ? 80 : 
+                              timeRatio < 0.5 ? 40 : 
+                              20;
+    
+    // Time's up - select a wrong answer automatically
+    if (timeRemaining <= 0) {
+      // Make sure answers exist before accessing them
+      if (state.currentQuestion.answers && state.currentQuestion.answers.length > 0) {
+        // Find a wrong answer index
+        const wrongAnswerIndex = state.currentQuestion.answers.findIndex(a => !a.correct);
+        return handleAnswerSelection(state, wrongAnswerIndex >= 0 ? wrongAnswerIndex : 0);
+      } else {
+        // Handle case where answers are missing
+        console.error("Question answers are missing");
+        return {
+          ...state,
+          showingQuestion: false
+        };
+      }
+    }
+    
+    return {
+      ...state,
+      currentQuestion: {
+        ...state.currentQuestion,
+        timeRemaining
+      },
+      screenEffects: {
+        ...state.screenEffects,
+        heartbeatIntensity,
+        pulseEffect: timeRatio < 0.2
+      }
+    };
+  }
+  
+  // Update pressure based on elapsed time and apply pressure multiplier if in question mode
+  const pressureMultiplier = state.currentQuestion ? 
+    (state.level.rules.question_pressure_multiplier || 2.5) : 1;
+  const pressureIncrease = (elapsedMs / 1000) * state.level.rules.pressure_buildup_speed * pressureMultiplier;
   let newPressure = state.pressure + pressureIncrease;
   
   // Check for auto-fart (pressure max)
@@ -301,10 +460,39 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   // Update playback time
   const newPlaybackTime = state.playbackTime + elapsedMs;
   
+  // Helper functions to get metadata keys (shared with metadataLoader.ts)
+  const getRegularDialogueKey = (levelId: string, index: number, speakerId: string): string => {
+    return `${levelId}-${index}-${speakerId}-metadata.json`;
+  };
+
+  const getFeedbackDialogueKey = (levelId: string, index: number, speakerId: string, isCorrect: boolean): string => {
+    return `${levelId}-${index}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}-metadata.json`;
+  };
+  
   // Find current dialogue metadata
   const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
-  const currentSpeakerId = currentDialogue?.speakerId;
-  const currentMetadata = state.dialogueMetadata[`level1-${state.currentDialogueIndex}-${currentSpeakerId}-metadata.json`];
+  
+  // Skip if no dialogue or it's a question being displayed
+  if (!currentDialogue || state.showingQuestion) {
+    return state;
+  }
+  
+  // Determine the metadata key based on dialogue type
+  let currentMetadata: Viseme[] = [];
+  const currentSpeakerId = currentDialogue?.speaker;
+  const levelId = 'level1'; // Could be extracted from level info
+  
+  if (currentDialogue.text) {
+    // Regular dialogue
+    const metadataKey = getRegularDialogueKey(levelId, state.currentDialogueIndex, currentSpeakerId);
+    currentMetadata = state.dialogueMetadata[metadataKey];
+  } else if (currentDialogue.feedback) {
+    // This is a feedback dialogue
+    // Choose the correct feedback based on the previous answer
+    const isCorrect = state.currentQuestion?.isCorrect || false;
+    const metadataKey = getFeedbackDialogueKey(levelId, state.currentDialogueIndex, currentSpeakerId, isCorrect);
+    currentMetadata = state.dialogueMetadata[metadataKey];
+  }
   
   // Update current word and viseme based on playback time
   let newWordIndex = state.currentWordIndex;
@@ -338,11 +526,56 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   let newDialogueIndex = state.currentDialogueIndex;
   let completedCurrentDialogue = false;
   
-  if (currentMetadata) {
+  if (currentMetadata && currentMetadata.length > 0) {
     const lastItem = currentMetadata[currentMetadata.length - 1];
-    if (newPlaybackTime >= lastItem.time + 1000) { // Add 1 second buffer
-      newDialogueIndex++;
-      completedCurrentDialogue = true;
+    if (lastItem && lastItem.time !== undefined && newPlaybackTime >= lastItem.time + 1000) { // Add 1 second buffer
+      // Check if current dialogue is a question
+      const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
+      
+      if (currentDialogue && currentDialogue.answers && Array.isArray(currentDialogue.answers) && !state.showingQuestion) {
+        // Show question instead of advancing
+        const shuffledAnswers = [...currentDialogue.answers];
+        const currentTimestamp = Date.now();
+        
+        return {
+          ...state,
+          showingQuestion: true,
+          pausedTimestamp: currentTimestamp, // Pause the game while showing question
+          currentQuestion: {
+            answers: shuffledAnswers,
+            timeRemaining: parseTimeLimit(state.level.rules.question_time_limit || "10s"),
+            startTime: currentTimestamp // Use same timestamp to avoid inconsistency
+          },
+          screenEffects: {
+            ...state.screenEffects,
+            heartbeatIntensity: 20, // Low intensity to start
+            pulseEffect: false
+          }
+        };
+      } 
+      // Check if this is a feedback dialogue after question
+      else if (currentDialogue.feedback) {
+        // Previous dialogue was a question, now show feedback
+        if (state.currentQuestion && state.currentQuestion.selectedAnswer !== undefined) {
+          const isCorrect = state.currentQuestion.isCorrect || false;
+          // Use the appropriate feedback text
+          const feedbackItem = currentDialogue.feedback.find(f => f.correct === isCorrect);
+          
+          if (feedbackItem) {
+            // Move to next dialogue after feedback
+            newDialogueIndex++;
+            completedCurrentDialogue = true;
+          }
+        } else {
+          // Skip feedback if no answer was selected (shouldn't happen)
+          newDialogueIndex++;
+          completedCurrentDialogue = true;
+        }
+      } else {
+        // Regular dialogue, advance to next
+        newDialogueIndex++;
+        completedCurrentDialogue = true;
+      }
     }
   }
   

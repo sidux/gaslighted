@@ -3,25 +3,25 @@
     "time": 0,
     "type": "sentence",
     "start": 0,
-    "end": 40,
-    "value": "Welcome to the quarterly review meeting."
+    "end": 13,
+    "value": "Good morning."
   },
   {
-    "time": 137,
+    "time": 125,
     "type": "word",
     "start": 0,
-    "end": 7,
-    "value": "Welcome"
+    "end": 4,
+    "value": "Good"
   },
   {
-    "time": 137,
+    "time": 125,
     "type": "viseme",
-    "value": "u"
+    "value": "k"
   },
   {
     "time": 200,
     "type": "viseme",
-    "value": "E"
+    "value": "u"
   },
   {
     "time": 250,
@@ -29,321 +29,463 @@
     "value": "t"
   },
   {
-    "time": 312,
-    "type": "viseme",
-    "value": "k"
+    "time": 337,
+    "type": "word",
+    "start": 5,
+    "end": 12,
+    "value": "morning"
   },
   {
-    "time": 375,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 450,
+    "time": 337,
     "type": "viseme",
     "value": "p"
   },
   {
-    "time": 625,
-    "type": "word",
-    "start": 8,
-    "end": 10,
-    "value": "to"
+    "time": 500,
+    "type": "viseme",
+    "value": "O"
   },
   {
-    "time": 625,
+    "time": 562,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 687,
+    "time": 625,
     "type": "viseme",
-    "value": "@"
+    "value": "i"
   },
   {
-    "time": 750,
-    "type": "word",
-    "start": 11,
-    "end": 14,
-    "value": "the"
-  },
-  {
-    "time": 750,
-    "type": "viseme",
-    "value": "T"
-  },
-  {
-    "time": 812,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 937,
-    "type": "word",
-    "start": 15,
-    "end": 24,
-    "value": "quarterly"
-  },
-  {
-    "time": 937,
+    "time": 712,
     "type": "viseme",
     "value": "k"
-  },
-  {
-    "time": 1000,
-    "type": "viseme",
-    "value": "u"
   },
   {
     "time": 1062,
     "type": "viseme",
-    "value": "O"
-  },
-  {
-    "time": 1150,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 1250,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 1312,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 1375,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 1562,
-    "type": "word",
-    "start": 25,
-    "end": 31,
-    "value": "review"
-  },
-  {
-    "time": 1562,
-    "type": "viseme",
-    "value": "r"
-  },
-  {
-    "time": 1587,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 1625,
-    "type": "viseme",
-    "value": "f"
-  },
-  {
-    "time": 1750,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 1850,
-    "type": "viseme",
-    "value": "u"
-  },
-  {
-    "time": 1962,
-    "type": "word",
-    "start": 32,
-    "end": 39,
-    "value": "meeting"
-  },
-  {
-    "time": 1962,
-    "type": "viseme",
-    "value": "p"
-  },
-  {
-    "time": 2087,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 2137,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 2275,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 2387,
-    "type": "viseme",
-    "value": "k"
-  },
-  {
-    "time": 2637,
-    "type": "viseme",
     "value": "sil"
   },
   {
-    "time": 3180,
+    "time": 1555,
     "type": "sentence",
-    "start": 42,
-    "end": 72,
-    "value": "We have lots to discuss today."
+    "start": 14,
+    "end": 34,
+    "value": "Let’s get started."
   },
   {
-    "time": 3305,
+    "time": 1692,
     "type": "word",
-    "start": 42,
-    "end": 44,
-    "value": "We"
+    "start": 14,
+    "end": 21,
+    "value": "Let’s"
   },
   {
-    "time": 3305,
-    "type": "viseme",
-    "value": "u"
-  },
-  {
-    "time": 3367,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 3430,
-    "type": "word",
-    "start": 45,
-    "end": 49,
-    "value": "have"
-  },
-  {
-    "time": 3430,
-    "type": "viseme",
-    "value": "k"
-  },
-  {
-    "time": 3492,
-    "type": "viseme",
-    "value": "a"
-  },
-  {
-    "time": 3517,
-    "type": "viseme",
-    "value": "f"
-  },
-  {
-    "time": 3680,
-    "type": "word",
-    "start": 50,
-    "end": 54,
-    "value": "lots"
-  },
-  {
-    "time": 3680,
+    "time": 1692,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 3742,
-    "type": "viseme",
-    "value": "O"
-  },
-  {
-    "time": 3805,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 3892,
-    "type": "viseme",
-    "value": "s"
-  },
-  {
-    "time": 4117,
-    "type": "word",
-    "start": 55,
-    "end": 57,
-    "value": "to"
-  },
-  {
-    "time": 4117,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 4130,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 4180,
-    "type": "word",
-    "start": 58,
-    "end": 65,
-    "value": "discuss"
-  },
-  {
-    "time": 4180,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 4242,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 4317,
-    "type": "viseme",
-    "value": "s"
-  },
-  {
-    "time": 4430,
-    "type": "viseme",
-    "value": "k"
-  },
-  {
-    "time": 4492,
+    "time": 1755,
     "type": "viseme",
     "value": "E"
   },
   {
-    "time": 4617,
+    "time": 1805,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1917,
     "type": "viseme",
     "value": "s"
   },
   {
-    "time": 4742,
+    "time": 2005,
     "type": "word",
-    "start": 66,
-    "end": 71,
-    "value": "today"
+    "start": 22,
+    "end": 25,
+    "value": "get"
   },
   {
-    "time": 4742,
+    "time": 2005,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2055,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2117,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 4805,
+    "time": 2267,
+    "type": "word",
+    "start": 26,
+    "end": 33,
+    "value": "started"
+  },
+  {
+    "time": 2267,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2392,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2555,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2692,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2755,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2867,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3547,
+    "type": "sentence",
+    "start": 35,
+    "end": 107,
+    "value": "We’ve got a packed agenda and limited time, so let’s stay efficient."
+  },
+  {
+    "time": 3672,
+    "type": "word",
+    "start": 35,
+    "end": 42,
+    "value": "We’ve"
+  },
+  {
+    "time": 3672,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3747,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3785,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3860,
+    "type": "word",
+    "start": 43,
+    "end": 46,
+    "value": "got"
+  },
+  {
+    "time": 3860,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3897,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3922,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3997,
+    "type": "word",
+    "start": 47,
+    "end": 48,
+    "value": "a"
+  },
+  {
+    "time": 3997,
     "type": "viseme",
     "value": "@"
   },
   {
-    "time": 4930,
+    "time": 4110,
+    "type": "word",
+    "start": 49,
+    "end": 55,
+    "value": "packed"
+  },
+  {
+    "time": 4110,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4172,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4260,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4297,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 5055,
+    "time": 4422,
+    "type": "word",
+    "start": 56,
+    "end": 62,
+    "value": "agenda"
+  },
+  {
+    "time": 4422,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4485,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4585,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4685,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4697,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4797,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4922,
+    "type": "word",
+    "start": 63,
+    "end": 66,
+    "value": "and"
+  },
+  {
+    "time": 4922,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4985,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5010,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5110,
+    "type": "word",
+    "start": 67,
+    "end": 74,
+    "value": "limited"
+  },
+  {
+    "time": 5110,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5135,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5172,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5247,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5310,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5385,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5422,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5585,
+    "type": "word",
+    "start": 75,
+    "end": 79,
+    "value": "time"
+  },
+  {
+    "time": 5585,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5685,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5822,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6010,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 6097,
+    "type": "word",
+    "start": 81,
+    "end": 83,
+    "value": "so"
+  },
+  {
+    "time": 6097,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6335,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6497,
+    "type": "word",
+    "start": 84,
+    "end": 91,
+    "value": "let’s"
+  },
+  {
+    "time": 6497,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6547,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6672,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6735,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6835,
+    "type": "word",
+    "start": 92,
+    "end": 96,
+    "value": "stay"
+  },
+  {
+    "time": 6835,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6922,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7035,
     "type": "viseme",
     "value": "e"
   },
   {
-    "time": 5455,
+    "time": 7135,
+    "type": "word",
+    "start": 97,
+    "end": 106,
+    "value": "efficient"
+  },
+  {
+    "time": 7135,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7235,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 7272,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7435,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 7547,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7585,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7985,
     "type": "viseme",
     "value": "sil"
   }

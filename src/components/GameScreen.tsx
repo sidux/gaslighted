@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Header from './Header';
 import MeetingArea from './MeetingArea';
 import ControlBar from './ControlBar';
 import GameUI from './GameUI';
 import GameOverScreen from './GameOverScreen';
-import { Level, GameState, Viseme, AudioResources, FartResult, FartType } from '../logic/types';
-import { initializeGameState, updateGameState, checkFartKeyPress, applyFartResult, getFinalScore } from '../logic/gameLogic';
+import { Level, GameState, Viseme, AudioResources, FartResult, FartType, Answer } from '../logic/types';
+import { initializeGameState, updateGameState, checkFartKeyPress, applyFartResult, getFinalScore, handleAnswerSelection, parseTimeLimit } from '../logic/gameLogic';
 import { loadLevelMetadata } from '../logic/metadataLoader';
-import { loadAudioResources, playDialogueAudio, playFartAudio, playHeartbeatSound, stopAllAudio } from '../logic/audioManager';
+import { loadAudioResources, playDialogueAudio, playFartAudio, playHeartbeatSound, playAnswerAudio, playFeedbackAudio, stopAllAudio } from '../logic/audioManager';
 
 interface GameScreenProps {
   level: Level;
@@ -169,7 +168,7 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
         audioResources,
         '1',
         gameState.currentDialogueIndex,
-        currentDialogue.speakerId,
+        currentDialogue.speaker,
         handleDialogueEnded
       );
     }
@@ -405,9 +404,30 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
       </div>
     );
   }
+
+  // Get screen effect classes based on current state
+  const getScreenEffectClasses = () => {
+    if (!gameState.screenEffects) return '';
+    
+    const classes = [];
+    
+    if (gameState.screenEffects.pulseEffect) {
+      classes.push('pulse-effect');
+    }
+    
+    if (gameState.screenEffects.blurEffect) {
+      classes.push('blur-effect');
+    }
+    
+    if (gameState.pressure >= 80) {
+      classes.push('pressure-critical');
+    }
+    
+    return classes.join(' ');
+  };
   
   return (
-    <div className="game-screen">
+    <div className={`game-screen ${getScreenEffectClasses()}`}>
       <MeetingArea 
         gameState={gameState} 
         participants={level.participants}
@@ -419,12 +439,12 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
         isGameInProgress={gameState.isPlaying}
       />
       
-      <GameUI 
+      <GameUI
         gameState={gameState}
         setGameState={setGameState}
         dialogueMetadata={dialogueMetadata}
       />
-      
+
       {gameState.isGameOver && (
         <GameOverScreen 
           victory={gameState.victory}

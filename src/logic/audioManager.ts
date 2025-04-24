@@ -1,6 +1,27 @@
-import { AudioResources, FartType, FartResultType } from './types';
+import { AudioResources, FartType, FartResultType, Answer } from './types';
 
-// Load audio resources
+// List of known audio files to avoid excessive 404 errors
+const knownAudioFiles = new Set<string>();
+
+// Helper function to check if a file exists (with caching)
+const fileExists = async (url: string): Promise<boolean> => {
+  if (knownAudioFiles.has(url)) {
+    return true;
+  }
+  
+  try {
+    const response = await fetch(url, { method: 'HEAD' });
+    const exists = response.ok;
+    if (exists) {
+      knownAudioFiles.add(url);
+    }
+    return exists;
+  } catch (error) {
+    return false;
+  }
+};
+
+// Load audio resources efficiently
 export const loadAudioResources = async (levelId: string, dialogueCount: number): Promise<AudioResources> => {
   const dialogues: { [key: string]: HTMLAudioElement } = {};
   const farts: { [key in FartType]: HTMLAudioElement } = {
@@ -15,18 +36,36 @@ export const loadAudioResources = async (levelId: string, dialogueCount: number)
   // Set heartbeat to loop
   heartbeat.loop = true;
   
-  // Load dialogue audio
-  const participants = ['boomer', 'karen', 'zoomer'];
-  for (let i = 0; i < dialogueCount; i++) {
-    for (const participant of participants) {
-      const audioKey = `level${levelId}-${i}-${participant}`;
-      const audioPath = `src/assets/dialogue/${audioKey}.mp3`;
-      try {
-        const audio = new Audio(audioPath);
-        dialogues[audioKey] = audio;
-      } catch (error) {
-        console.error(`Failed to load audio: ${audioPath}`, error);
-      }
+  // Load only the dialogues specifically from the list we've seen in the directory
+  const knownFiles = [
+    // Regular dialogues
+    "level1-0-boomer.mp3", "level1-1-zoomer.mp3", "level1-2-boomer.mp3", "level1-3-karen.mp3",
+    "level1-4-boomer.mp3", "level1-7-karen.mp3", "level1-8-zoomer.mp3", "level1-9-boomer.mp3",
+    "level1-10-boomer.mp3", "level1-13-karen.mp3", "level1-14-boomer.mp3", "level1-15-zoomer.mp3",
+    "level1-16-boomer.mp3",
+    
+    // Answer options
+    "level1-5-wojak-answer-0.mp3", "level1-5-wojak-answer-1.mp3", "level1-5-wojak-answer-2.mp3", 
+    "level1-5-wojak-answer-3.mp3", "level1-11-wojak-answer-0.mp3", "level1-11-wojak-answer-1.mp3", 
+    "level1-11-wojak-answer-2.mp3", "level1-11-wojak-answer-3.mp3",
+    
+    // Feedback responses
+    "level1-6-boomer-feedback-correct.mp3", "level1-6-boomer-feedback-incorrect.mp3",
+    "level1-12-boomer-feedback-correct.mp3", "level1-12-boomer-feedback-incorrect.mp3"
+  ];
+  
+  // Load each known file
+  for (const filename of knownFiles) {
+    const path = `src/assets/dialogue/${filename}`;
+    // Extract the key (removing the .mp3 extension)
+    const key = filename.replace('.mp3', '');
+    
+    try {
+      const audio = new Audio(path);
+      dialogues[key] = audio;
+      console.log(`Loaded audio: ${key}`);
+    } catch (error) {
+      console.error(`Failed to load audio: ${path}`, error);
     }
   }
   
@@ -130,11 +169,83 @@ export const playFartAudio = (
   }
 };
 
-// Play heartbeat sound with volume based on shame level
+// Play answer audio
+export const playAnswerAudio = (
+  resources: AudioResources,
+  levelId: string,
+  dialogueIndex: number,
+  speakerId: string,
+  answerIndex: number,
+  onEnded: () => void
+): void => {
+  // Format: level[levelId]-[dialogueIndex]-[speakerId]-answer-[answerIndex].mp3
+  const audioKey = `level${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}`;
+  
+  // Try to find the audio in the resources
+  const audio = resources.dialogues[audioKey];
+  
+  if (audio) {
+    audio.currentTime = 0;
+    audio.onended = onEnded;
+    
+    // Try to play, handle potential browser autoplay restrictions
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.error('Answer audio playback prevented:', error);
+        // Call onEnded anyway to prevent game from getting stuck
+        onEnded();
+      });
+    }
+  } else {
+    console.error(`Answer audio not found: ${audioKey}`);
+    // Call onEnded anyway to prevent game from getting stuck
+    setTimeout(onEnded, 100);
+  }
+};
+
+// Play feedback audio
+export const playFeedbackAudio = (
+  resources: AudioResources,
+  levelId: string,
+  dialogueIndex: number,
+  speakerId: string,
+  isCorrect: boolean,
+  onEnded: () => void
+): void => {
+  // Format: level[levelId]-[dialogueIndex]-[speakerId]-feedback-[correct|incorrect].mp3
+  const feedbackType = isCorrect ? 'correct' : 'incorrect';
+  const audioKey = `level${levelId}-${dialogueIndex}-${speakerId}-feedback-${feedbackType}`;
+  
+  // Try to find the audio in the resources
+  const audio = resources.dialogues[audioKey];
+  
+  if (audio) {
+    audio.currentTime = 0;
+    audio.onended = onEnded;
+    
+    // Try to play, handle potential browser autoplay restrictions
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.error('Feedback audio playback prevented:', error);
+        // Call onEnded anyway to prevent game from getting stuck
+        onEnded();
+      });
+    }
+  } else {
+    console.error(`Feedback audio not found: ${audioKey}`);
+    // Call onEnded anyway to prevent game from getting stuck
+    setTimeout(onEnded, 100);
+  }
+};
+
+// Play heartbeat sound with volume and rate based on shame level and intensity parameter
 export const playHeartbeatSound = (
   resources: AudioResources,
   shame: number,
-  isPlaying: boolean
+  isPlaying: boolean,
+  intensity?: number
 ): void => {
   const { heartbeat } = resources;
   
@@ -143,15 +254,26 @@ export const playHeartbeatSound = (
     return;
   }
   
-  if (isPlaying && shame > 0) {
-    // Calculate volume based on shame level (0.1 to 1.0)
-    const baseVolume = 0.1;
-    const additionalVolume = 0.9 * (shame / 100);
-    heartbeat.volume = baseVolume + additionalVolume;
-    
-    // Calculate playback rate based on shame level (1.0 to 1.5)
-    // Higher shame = faster heartbeat
-    heartbeat.playbackRate = 1.0 + (shame / 100) * 0.5;
+  if (isPlaying && (shame > 0 || intensity)) {
+    // If intensity is provided, use it directly
+    if (intensity !== undefined) {
+      // Normalize intensity to a value between 0.1 and 1.0
+      const normalizedIntensity = Math.min(1.0, Math.max(0.1, intensity / 100));
+      heartbeat.volume = normalizedIntensity;
+      
+      // Higher intensity = faster heartbeat (range: 1.0 to 2.0)
+      heartbeat.playbackRate = 1.0 + normalizedIntensity;
+    } else {
+      // Use shame level for calculations if intensity not provided
+      // Calculate volume based on shame level (0.1 to 1.0)
+      const baseVolume = 0.1;
+      const additionalVolume = 0.9 * (shame / 100);
+      heartbeat.volume = baseVolume + additionalVolume;
+      
+      // Calculate playback rate based on shame level (1.0 to 1.5)
+      // Higher shame = faster heartbeat
+      heartbeat.playbackRate = 1.0 + (shame / 100) * 0.5;
+    }
     
     // Start playing if not already playing
     if (heartbeat.paused) {
@@ -160,7 +282,7 @@ export const playHeartbeatSound = (
       });
     }
   } else {
-    // Pause heartbeat if not playing or no shame
+    // Pause heartbeat if not playing or no shame/intensity
     if (!heartbeat.paused) {
       heartbeat.pause();
       heartbeat.currentTime = 0;

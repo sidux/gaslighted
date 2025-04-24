@@ -1,0 +1,369 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 84,
+    "value": "While we’re here — Wojak, remind me, what was the main issue with Ops that week?"
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "While"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 6,
+    "end": 13,
+    "value": "we’re"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 14,
+    "end": 18,
+    "value": "here"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 23,
+    "end": 28,
+    "value": "Wojak"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2137,
+    "type": "word",
+    "start": 30,
+    "end": 36,
+    "value": "remind"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2462,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2625,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2787,
+    "type": "word",
+    "start": 37,
+    "end": 39,
+    "value": "me"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3125,
+    "type": "word",
+    "start": 41,
+    "end": 45,
+    "value": "what"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3375,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3562,
+    "type": "word",
+    "start": 46,
+    "end": 49,
+    "value": "was"
+  },
+  {
+    "time": 3562,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3575,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3587,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3712,
+    "type": "word",
+    "start": 50,
+    "end": 53,
+    "value": "the"
+  },
+  {
+    "time": 3712,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3750,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3875,
+    "type": "word",
+    "start": 54,
+    "end": 58,
+    "value": "main"
+  },
+  {
+    "time": 3875,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4000,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4250,
+    "type": "word",
+    "start": 59,
+    "end": 64,
+    "value": "issue"
+  },
+  {
+    "time": 4250,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4362,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4437,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4562,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4687,
+    "type": "word",
+    "start": 65,
+    "end": 69,
+    "value": "with"
+  },
+  {
+    "time": 4687,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4712,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4750,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4812,
+    "type": "word",
+    "start": 70,
+    "end": 73,
+    "value": "Ops"
+  },
+  {
+    "time": 4812,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4937,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5037,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5150,
+    "type": "word",
+    "start": 74,
+    "end": 78,
+    "value": "that"
+  },
+  {
+    "time": 5150,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5187,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5375,
+    "type": "word",
+    "start": 79,
+    "end": 83,
+    "value": "week"
+  },
+  {
+    "time": 5375,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5462,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5612,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5875,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

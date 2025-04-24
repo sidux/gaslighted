@@ -1,0 +1,189 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 39,
+    "value": "Marketing delayed the content calendar."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 9,
+    "value": "Marketing"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 77,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 194,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 277,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 314,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 352,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 389,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 476,
+    "type": "word",
+    "start": 10,
+    "end": 17,
+    "value": "delayed"
+  },
+  {
+    "time": 476,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 537,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 574,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 682,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 822,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 862,
+    "type": "word",
+    "start": 18,
+    "end": 21,
+    "value": "the"
+  },
+  {
+    "time": 862,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 890,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 927,
+    "type": "word",
+    "start": 22,
+    "end": 29,
+    "value": "content"
+  },
+  {
+    "time": 927,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1060,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1132,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1194,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1271,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1317,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1388,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1437,
+    "type": "word",
+    "start": 30,
+    "end": 38,
+    "value": "calendar"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1559,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1603,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1719,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1743,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1790,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1825,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1978,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

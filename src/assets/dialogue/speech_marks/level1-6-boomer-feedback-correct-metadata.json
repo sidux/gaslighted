@@ -1,0 +1,337 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 31,
+    "value": "That lines up with what we saw."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "That"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 337,
+    "type": "word",
+    "start": 5,
+    "end": 10,
+    "value": "lines"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 837,
+    "type": "word",
+    "start": 11,
+    "end": 13,
+    "value": "up"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1125,
+    "type": "word",
+    "start": 14,
+    "end": 18,
+    "value": "with"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 19,
+    "end": 23,
+    "value": "what"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1512,
+    "type": "word",
+    "start": 24,
+    "end": 26,
+    "value": "we"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1675,
+    "type": "word",
+    "start": 27,
+    "end": 30,
+    "value": "saw"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2680,
+    "type": "sentence",
+    "start": 32,
+    "end": 72,
+    "value": "Let’s address that in the post-mortem."
+  },
+  {
+    "time": 2817,
+    "type": "word",
+    "start": 32,
+    "end": 39,
+    "value": "Let’s"
+  },
+  {
+    "time": 2817,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2880,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2992,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3130,
+    "type": "word",
+    "start": 40,
+    "end": 47,
+    "value": "address"
+  },
+  {
+    "time": 3130,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3180,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3305,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3430,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3617,
+    "type": "word",
+    "start": 48,
+    "end": 52,
+    "value": "that"
+  },
+  {
+    "time": 3617,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3805,
+    "type": "word",
+    "start": 53,
+    "end": 55,
+    "value": "in"
+  },
+  {
+    "time": 3805,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3817,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3930,
+    "type": "word",
+    "start": 56,
+    "end": 59,
+    "value": "the"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3942,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3992,
+    "type": "word",
+    "start": 60,
+    "end": 71,
+    "value": "post-mortem"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4117,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4267,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4305,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4555,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4642,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4767,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5055,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

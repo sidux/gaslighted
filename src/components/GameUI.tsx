@@ -40,12 +40,40 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
   const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
   if (!currentDialogue) return null;
 
-  // build metadata key and load
-  const speakerId = currentDialogue.speakerId;
-  const metadataKey = `level1-${gameState.currentDialogueIndex}-${speakerId}-metadata.json`;
-  const metadata = dialogueMetadata[metadataKey] || [];
+  // Helper functions to get metadata keys (shared with metadataLoader.ts)
+  const getRegularDialogueKey = (levelId: string, index: number, speakerId: string): string => {
+    return `${levelId}-${index}-${speakerId}-metadata.json`;
+  };
 
-  const words = getAllWords(metadata, currentDialogue.text);
+  const getFeedbackDialogueKey = (levelId: string, index: number, speakerId: string, isCorrect: boolean): string => {
+    return `${levelId}-${index}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}-metadata.json`;
+  };
+  
+  // build metadata key and load
+  const speakerId = currentDialogue.speaker;
+  const levelId = 'level1'; // This could be extracted from level info
+  
+  // Determine if this is a question, feedback, or regular dialogue
+  let metadata: Viseme[] = [];
+  
+  if (currentDialogue.text) {
+    // Regular dialogue
+    const metadataKey = getRegularDialogueKey(levelId, gameState.currentDialogueIndex, speakerId);
+    metadata = dialogueMetadata[metadataKey] || [];
+  } else if (currentDialogue.answers) {
+    // This is a question dialogue - no metadata needed for UI
+    // Will be handled by QuestionOverlay component
+  } else if (currentDialogue.feedback) {
+    // This is a feedback dialogue
+    // Choose the correct feedback based on the previous answer
+    const isCorrect = gameState.currentQuestion?.isCorrect || false;
+    const metadataKey = getFeedbackDialogueKey(levelId, gameState.currentDialogueIndex, speakerId, isCorrect);
+    metadata = dialogueMetadata[metadataKey] || [];
+  }
+
+  // Make sure to pass a valid string to getAllWords
+  const dialogueText = currentDialogue.text || '';
+  const words = getAllWords(metadata, dialogueText);
   const currentWordIndex = gameState.currentWordIndex;
 
   // pick out all active, un‐handled opportunities for this dialogue

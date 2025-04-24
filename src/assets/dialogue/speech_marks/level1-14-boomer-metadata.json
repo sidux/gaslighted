@@ -1,0 +1,475 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 36,
+    "value": "We’ll also be adjusting check-ins."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 7,
+    "value": "We’ll"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 312,
+    "type": "word",
+    "start": 8,
+    "end": 12,
+    "value": "also"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 837,
+    "type": "word",
+    "start": 13,
+    "end": 15,
+    "value": "be"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 912,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1000,
+    "type": "word",
+    "start": 16,
+    "end": 25,
+    "value": "adjusting"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1625,
+    "type": "word",
+    "start": 26,
+    "end": 35,
+    "value": "check-ins"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1812,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3055,
+    "type": "sentence",
+    "start": 37,
+    "end": 60,
+    "value": "More async, less noise."
+  },
+  {
+    "time": 3192,
+    "type": "word",
+    "start": 37,
+    "end": 41,
+    "value": "More"
+  },
+  {
+    "time": 3192,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3292,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3355,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3505,
+    "type": "word",
+    "start": 42,
+    "end": 47,
+    "value": "async"
+  },
+  {
+    "time": 3505,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3617,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3805,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3867,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4205,
+    "type": "word",
+    "start": 49,
+    "end": 53,
+    "value": "less"
+  },
+  {
+    "time": 4205,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4492,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4617,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4730,
+    "type": "word",
+    "start": 54,
+    "end": 59,
+    "value": "noise"
+  },
+  {
+    "time": 4730,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4930,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5092,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5330,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5922,
+    "type": "sentence",
+    "start": 61,
+    "end": 100,
+    "value": "Unless anyone sees a problem with that?"
+  },
+  {
+    "time": 6060,
+    "type": "word",
+    "start": 61,
+    "end": 67,
+    "value": "Unless"
+  },
+  {
+    "time": 6060,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6122,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6172,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6235,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6335,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6485,
+    "type": "word",
+    "start": 68,
+    "end": 74,
+    "value": "anyone"
+  },
+  {
+    "time": 6485,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6547,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6610,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6672,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6735,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6797,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6960,
+    "type": "word",
+    "start": 75,
+    "end": 79,
+    "value": "sees"
+  },
+  {
+    "time": 6960,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7060,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7172,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7235,
+    "type": "word",
+    "start": 80,
+    "end": 81,
+    "value": "a"
+  },
+  {
+    "time": 7235,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7360,
+    "type": "word",
+    "start": 82,
+    "end": 89,
+    "value": "problem"
+  },
+  {
+    "time": 7360,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7410,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 7485,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 7547,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7597,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7672,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7697,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7797,
+    "type": "word",
+    "start": 90,
+    "end": 94,
+    "value": "with"
+  },
+  {
+    "time": 7797,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 7860,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7885,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 8047,
+    "type": "word",
+    "start": 95,
+    "end": 99,
+    "value": "that"
+  },
+  {
+    "time": 8047,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 8060,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 8310,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8610,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

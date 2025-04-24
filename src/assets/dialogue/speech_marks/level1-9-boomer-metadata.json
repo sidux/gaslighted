@@ -3,45 +3,42 @@
     "time": 0,
     "type": "sentence",
     "start": 0,
-    "end": 47,
-    "value": "Everyone  needs to submit their reports by EOD."
+    "end": 18,
+    "value": "Let’s do it now."
   },
   {
     "time": 187,
     "type": "word",
     "start": 0,
-    "end": 8,
-    "value": "Everyone"
+    "end": 7,
+    "value": "Let’s"
   },
   {
     "time": 187,
     "type": "viseme",
-    "value": "E"
+    "value": "t"
   },
   {
     "time": 237,
     "type": "viseme",
-    "value": "f"
-  },
-  {
-    "time": 300,
-    "type": "viseme",
-    "value": "r"
+    "value": "E"
   },
   {
     "time": 312,
     "type": "viseme",
-    "value": "i"
+    "value": "t"
   },
   {
-    "time": 412,
+    "time": 375,
     "type": "viseme",
-    "value": "u"
+    "value": "s"
   },
   {
-    "time": 500,
-    "type": "viseme",
-    "value": "E"
+    "time": 562,
+    "type": "word",
+    "start": 8,
+    "end": 10,
+    "value": "do"
   },
   {
     "time": 562,
@@ -49,255 +46,264 @@
     "value": "t"
   },
   {
-    "time": 625,
-    "type": "word",
-    "start": 10,
-    "end": 15,
-    "value": "needs"
-  },
-  {
-    "time": 625,
+    "time": 600,
     "type": "viseme",
-    "value": "t"
+    "value": "u"
   },
   {
-    "time": 712,
+    "time": 687,
+    "type": "word",
+    "start": 11,
+    "end": 13,
+    "value": "it"
+  },
+  {
+    "time": 687,
     "type": "viseme",
     "value": "i"
   },
   {
-    "time": 837,
+    "time": 750,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 937,
-    "type": "viseme",
-    "value": "s"
-  },
-  {
-    "time": 1062,
+    "time": 912,
     "type": "word",
-    "start": 16,
-    "end": 18,
-    "value": "to"
+    "start": 14,
+    "end": 17,
+    "value": "now"
   },
   {
-    "time": 1062,
+    "time": 912,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 1137,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 1250,
-    "type": "word",
-    "start": 19,
-    "end": 25,
-    "value": "submit"
-  },
-  {
-    "time": 1250,
-    "type": "viseme",
-    "value": "s"
-  },
-  {
-    "time": 1312,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 1375,
-    "type": "viseme",
-    "value": "p"
-  },
-  {
-    "time": 1437,
-    "type": "viseme",
-    "value": "p"
-  },
-  {
-    "time": 1450,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 1512,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 1650,
-    "type": "word",
-    "start": 26,
-    "end": 31,
-    "value": "their"
-  },
-  {
-    "time": 1650,
-    "type": "viseme",
-    "value": "T"
-  },
-  {
-    "time": 1712,
-    "type": "viseme",
-    "value": "E"
-  },
-  {
-    "time": 1762,
-    "type": "word",
-    "start": 32,
-    "end": 39,
-    "value": "reports"
-  },
-  {
-    "time": 1762,
-    "type": "viseme",
-    "value": "r"
-  },
-  {
-    "time": 1837,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 1875,
-    "type": "viseme",
-    "value": "p"
-  },
-  {
-    "time": 2037,
-    "type": "viseme",
-    "value": "O"
-  },
-  {
-    "time": 2137,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 2262,
-    "type": "viseme",
-    "value": "s"
-  },
-  {
-    "time": 2387,
-    "type": "word",
-    "start": 40,
-    "end": 42,
-    "value": "by"
-  },
-  {
-    "time": 2387,
-    "type": "viseme",
-    "value": "p"
-  },
-  {
-    "time": 2462,
+    "time": 1037,
     "type": "viseme",
     "value": "a"
   },
   {
-    "time": 2637,
-    "type": "word",
-    "start": 43,
-    "end": 46,
-    "value": "EOD"
-  },
-  {
-    "time": 2637,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 2787,
-    "type": "viseme",
-    "value": "@"
-  },
-  {
-    "time": 3062,
-    "type": "viseme",
-    "value": "t"
-  },
-  {
-    "time": 3125,
-    "type": "viseme",
-    "value": "i"
-  },
-  {
-    "time": 3587,
+    "time": 1462,
     "type": "viseme",
     "value": "sil"
   },
   {
-    "time": 4055,
+    "time": 1930,
     "type": "sentence",
-    "start": 49,
-    "end": 62,
-    "value": "Noexceptions!"
+    "start": 19,
+    "end": 64,
+    "value": "No point deferring numbers we all saw coming."
   },
   {
-    "time": 4242,
+    "time": 2117,
     "type": "word",
-    "start": 49,
-    "end": 61,
-    "value": "Noexceptions"
+    "start": 19,
+    "end": 21,
+    "value": "No"
   },
   {
-    "time": 4242,
+    "time": 2117,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 4292,
+    "time": 2167,
     "type": "viseme",
     "value": "@"
   },
   {
-    "time": 4367,
-    "type": "viseme",
-    "value": "i"
+    "time": 2342,
+    "type": "word",
+    "start": 22,
+    "end": 27,
+    "value": "point"
   },
   {
-    "time": 4467,
-    "type": "viseme",
-    "value": "k"
-  },
-  {
-    "time": 4555,
-    "type": "viseme",
-    "value": "s"
-  },
-  {
-    "time": 4617,
-    "type": "viseme",
-    "value": "E"
-  },
-  {
-    "time": 4680,
+    "time": 2342,
     "type": "viseme",
     "value": "p"
   },
   {
-    "time": 4805,
+    "time": 2492,
     "type": "viseme",
-    "value": "S"
+    "value": "O"
   },
   {
-    "time": 4992,
+    "time": 2505,
     "type": "viseme",
     "value": "t"
   },
   {
-    "time": 5180,
+    "time": 2555,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2642,
+    "type": "word",
+    "start": 28,
+    "end": 37,
+    "value": "deferring"
+  },
+  {
+    "time": 2642,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2680,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2767,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2967,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3055,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3080,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3180,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3242,
+    "type": "word",
+    "start": 38,
+    "end": 45,
+    "value": "numbers"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3367,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3417,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3492,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3680,
     "type": "viseme",
     "value": "s"
   },
   {
-    "time": 5542,
+    "time": 3780,
+    "type": "word",
+    "start": 46,
+    "end": 48,
+    "value": "we"
+  },
+  {
+    "time": 3780,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3805,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4017,
+    "type": "word",
+    "start": 49,
+    "end": 52,
+    "value": "all"
+  },
+  {
+    "time": 4017,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4067,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4255,
+    "type": "word",
+    "start": 53,
+    "end": 56,
+    "value": "saw"
+  },
+  {
+    "time": 4255,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4392,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4567,
+    "type": "word",
+    "start": 57,
+    "end": 63,
+    "value": "coming"
+  },
+  {
+    "time": 4567,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4680,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4755,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4817,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4930,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5242,
     "type": "viseme",
     "value": "sil"
   }

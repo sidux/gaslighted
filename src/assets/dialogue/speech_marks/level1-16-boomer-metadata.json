@@ -1,0 +1,521 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 8,
+    "value": "Alright."
+  },
+  {
+    "time": 200,
+    "type": "word",
+    "start": 0,
+    "end": 7,
+    "value": "Alright"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1492,
+    "type": "sentence",
+    "start": 9,
+    "end": 22,
+    "value": "Let’s wrap."
+  },
+  {
+    "time": 1630,
+    "type": "word",
+    "start": 9,
+    "end": 16,
+    "value": "Let’s"
+  },
+  {
+    "time": 1630,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1692,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1792,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1830,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1992,
+    "type": "word",
+    "start": 17,
+    "end": 21,
+    "value": "wrap"
+  },
+  {
+    "time": 1992,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2055,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2242,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2555,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3047,
+    "type": "sentence",
+    "start": 23,
+    "end": 45,
+    "value": "Status updates by EOD."
+  },
+  {
+    "time": 3185,
+    "type": "word",
+    "start": 23,
+    "end": 29,
+    "value": "Status"
+  },
+  {
+    "time": 3185,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3285,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3360,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3422,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3497,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3547,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3672,
+    "type": "word",
+    "start": 30,
+    "end": 37,
+    "value": "updates"
+  },
+  {
+    "time": 3672,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3760,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3797,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3985,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4085,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4185,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4297,
+    "type": "word",
+    "start": 38,
+    "end": 40,
+    "value": "by"
+  },
+  {
+    "time": 4297,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4360,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4610,
+    "type": "word",
+    "start": 41,
+    "end": 44,
+    "value": "EOD"
+  },
+  {
+    "time": 4610,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4672,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4922,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5010,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5472,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5915,
+    "type": "sentence",
+    "start": 46,
+    "end": 110,
+    "value": "If you’re blocked, say so before it becomes a Friday surprise."
+  },
+  {
+    "time": 6052,
+    "type": "word",
+    "start": 46,
+    "end": 48,
+    "value": "If"
+  },
+  {
+    "time": 6052,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6115,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6215,
+    "type": "word",
+    "start": 49,
+    "end": 57,
+    "value": "you’re"
+  },
+  {
+    "time": 6215,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6252,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6415,
+    "type": "word",
+    "start": 58,
+    "end": 65,
+    "value": "blocked"
+  },
+  {
+    "time": 6415,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6477,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6540,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6665,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6752,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6915,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 7165,
+    "type": "word",
+    "start": 67,
+    "end": 70,
+    "value": "say"
+  },
+  {
+    "time": 7165,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7352,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 7540,
+    "type": "word",
+    "start": 71,
+    "end": 73,
+    "value": "so"
+  },
+  {
+    "time": 7540,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7627,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7752,
+    "type": "word",
+    "start": 74,
+    "end": 80,
+    "value": "before"
+  },
+  {
+    "time": 7752,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7790,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7852,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 7952,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 8040,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 8177,
+    "type": "word",
+    "start": 81,
+    "end": 83,
+    "value": "it"
+  },
+  {
+    "time": 8177,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 8190,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8290,
+    "type": "word",
+    "start": 84,
+    "end": 91,
+    "value": "becomes"
+  },
+  {
+    "time": 8290,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 8340,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 8377,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 8465,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 8552,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 8602,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 8665,
+    "type": "word",
+    "start": 92,
+    "end": 93,
+    "value": "a"
+  },
+  {
+    "time": 8665,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 8790,
+    "type": "word",
+    "start": 94,
+    "end": 100,
+    "value": "Friday"
+  },
+  {
+    "time": 8790,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 8865,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 8977,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 9040,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 9127,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 9302,
+    "type": "word",
+    "start": 101,
+    "end": 109,
+    "value": "surprise"
+  },
+  {
+    "time": 9302,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 9352,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 9415,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 9502,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 9640,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 9865,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 10227,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

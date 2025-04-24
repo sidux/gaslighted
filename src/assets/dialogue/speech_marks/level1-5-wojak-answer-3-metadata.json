@@ -1,0 +1,181 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 37,
+    "value": "Honestly, it wasn’t really my area."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 8,
+    "value": "Honestly"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 112,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 163,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 213,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 303,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 399,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 598,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 792,
+    "type": "word",
+    "start": 10,
+    "end": 12,
+    "value": "it"
+  },
+  {
+    "time": 792,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 863,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 902,
+    "type": "word",
+    "start": 13,
+    "end": 21,
+    "value": "wasn’t"
+  },
+  {
+    "time": 902,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1024,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1052,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1134,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1231,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1268,
+    "type": "word",
+    "start": 22,
+    "end": 28,
+    "value": "really"
+  },
+  {
+    "time": 1268,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1317,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1366,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1450,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1496,
+    "type": "word",
+    "start": 29,
+    "end": 31,
+    "value": "my"
+  },
+  {
+    "time": 1496,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1588,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1727,
+    "type": "word",
+    "start": 32,
+    "end": 36,
+    "value": "area"
+  },
+  {
+    "time": 1727,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1858,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1951,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2040,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2189,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -56,9 +56,10 @@
 1. Listen to ongoing meeting dialogue (in karaoke style with highlighted words)
 2. Watch for highlighted fart opportunity moments during speech
 3. Press the correct letter (matching the viseme) at the right time
-4. Manage pressure meter while minimizing shame
-5. Achieve combos for score multipliers and pressure relief
-6. Complete the entire meeting without being discovered
+4. Answer questions when prompted (correct answers decrease shame, incorrect answers increase it)
+5. Manage pressure meter while minimizing shame
+6. Achieve combos for score multipliers and pressure relief
+7. Complete the entire meeting without being discovered
 
 ### Input System
 - Player must press the correct key corresponding to a viseme phoneme type (`t`, `p`, `k`, `f`, `r`, `z`) (close viseme sounds are also accepted)
@@ -70,11 +71,21 @@
 ### 🧱 Core Systems
 
 #### UI
-- game should responsive
-- ui should be as close as possible to google meet, for example hangout will just quit te game return the main menu, non relveant buttons should be disabled. (simulating a bug)
-- should have a karaoke text for the current dialogue highlighting the current word, with the letter (related to the fart) to press above.
-- farting release UI effects
-- should shiny effects with combos etc like guitar hero
+- Game should be responsive
+- UI should be as close as possible to Google Meet (e.g., hangout button quits the game, non-relevant buttons disabled - simulating a bug)
+- Karaoke text for current dialogue highlighting current words, with fart letter to press above
+- Question/answer UI integrated into the dialogue flow:
+  - Questions display multiple-choice answers (shown in random order)
+  - Timer bar showing remaining time to answer
+  - Cool animations for time running out, correct/incorrect answers
+  - Accelerated heartbeat effect when time is low
+- Audio playback for answers and feedback
+- Farting release UI effects
+- Screen effects for critical pressure states:
+  - Screen pulsing
+  - Slight blur effect
+  - Visual feedback for shame levels
+- Shiny effects with combos etc. like Guitar Hero
 
 #### 🔺 Fart Pressure (can go **negative**)
 - Starts at `0`, increases over time
@@ -146,14 +157,62 @@ Stored in: `src/assets/faces/`
 
 ### Level Format (`src/assets/levels/[id].json`)
 
-check example in src/assets/level1.json
+See example in `src/assets/levels/level1.json`
+
+The level format now supports a question/answer system where players must respond to questions during the meeting. This adds an additional gameplay element where correct answers reduce shame and incorrect answers increase it.
+
+#### Question Format
+```json
+{
+  "speaker": "character-id",
+  "answers": [
+    {
+      "text": "Answer option text (first option is always correct)",
+      "correct": true
+    },
+    {
+      "text": "Incorrect answer option",
+      "correct": false
+    },
+    ...more options...
+  ]
+}
+```
+
+#### Feedback Format
+Feedback appears after the player answers a question:
+```json
+{
+  "speaker": "character-id",
+  "feedback": [
+    {
+      "text": "Feedback for correct answer",
+      "correct": true
+    },
+    {
+      "text": "Feedback for incorrect answer",
+      "correct": false
+    }
+  ]
+}
+```
+
+#### Question/Answer Effects
+The `rules` section of the level includes new properties:
+- `question_pressure_multiplier`: Increases pressure buildup during questions
+- `question_effects`: Contains properties for shame changes and heart effects
+- `question_time_limit`: Time to answer (e.g. "10s")
+
+Audio files for questions and feedback follow this naming pattern:
+- Answers: `[levelId]-[dialogueIndex]-[speakerId]-answer-[answerIndex].mp3`
+- Feedback: `[levelId]-[dialogueIndex]-[speakerId]-feedback-[correct/incorrect].mp3`
 
 ---
 
 ### File Structure
 
 ```
-src/assets/dialogue/            # MP3 + viseme JSON per line of diagogue [levelId]-[dialogueItemIndex]-[characterId].mp3 and [levelId]-[dialogueItemIndex]-[characterId]-metadata.json
+src/assets/dialogue/     # MP3 + viseme JSON per line of diagogue [levelId]-[dialogueItemIndex]-[characterId].mp3 and [levelId]-[dialogueItemIndex]-[characterId]-metadata.json
 src/assets/faces/        # [id]-[expression].png
 src/assets/audio/        # z-fart.mp3 ...
 src/assets/levels/       # level1.json ...

@@ -1,0 +1,325 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 24,
+    "value": "No — that wasn’t it."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 2,
+    "value": "No"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 7,
+    "end": 11,
+    "value": "that"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1150,
+    "type": "word",
+    "start": 12,
+    "end": 20,
+    "value": "wasn’t"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1625,
+    "type": "word",
+    "start": 21,
+    "end": 23,
+    "value": "it"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2492,
+    "type": "sentence",
+    "start": 25,
+    "end": 71,
+    "value": "Please review your notes before the next sync."
+  },
+  {
+    "time": 2617,
+    "type": "word",
+    "start": 25,
+    "end": 31,
+    "value": "Please"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2680,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2742,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2805,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2992,
+    "type": "word",
+    "start": 32,
+    "end": 38,
+    "value": "review"
+  },
+  {
+    "time": 2992,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3055,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3180,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3305,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3405,
+    "type": "word",
+    "start": 39,
+    "end": 43,
+    "value": "your"
+  },
+  {
+    "time": 3405,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3430,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3555,
+    "type": "word",
+    "start": 44,
+    "end": 49,
+    "value": "notes"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3642,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3742,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3805,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3980,
+    "type": "word",
+    "start": 50,
+    "end": 56,
+    "value": "before"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4005,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4117,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4255,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4367,
+    "type": "word",
+    "start": 57,
+    "end": 60,
+    "value": "the"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4430,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4530,
+    "type": "word",
+    "start": 61,
+    "end": 65,
+    "value": "next"
+  },
+  {
+    "time": 4530,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4580,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4630,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4742,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4805,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4955,
+    "type": "word",
+    "start": 66,
+    "end": 70,
+    "value": "sync"
+  },
+  {
+    "time": 4955,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5042,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5130,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5280,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5617,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

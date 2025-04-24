@@ -1,0 +1,157 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 33,
+    "value": "Budget freeze paused procurement."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "Budget"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 26,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 117,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 227,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 287,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 326,
+    "type": "word",
+    "start": 7,
+    "end": 13,
+    "value": "freeze"
+  },
+  {
+    "time": 326,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 401,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 479,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 547,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 630,
+    "type": "word",
+    "start": 14,
+    "end": 20,
+    "value": "paused"
+  },
+  {
+    "time": 630,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 745,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 869,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 932,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 978,
+    "type": "word",
+    "start": 21,
+    "end": 32,
+    "value": "procurement"
+  },
+  {
+    "time": 978,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1052,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1082,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1114,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1209,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1256,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1389,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1468,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1530,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1691,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

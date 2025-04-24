@@ -1,0 +1,250 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 17,
+    "value": "Mostly ownership."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "Mostly"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 52,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 136,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 229,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 268,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 321,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 414,
+    "type": "word",
+    "start": 7,
+    "end": 16,
+    "value": "ownership"
+  },
+  {
+    "time": 414,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 488,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 542,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 700,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 757,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 878,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1265,
+    "type": "sentence",
+    "start": 18,
+    "end": 58,
+    "value": "The handoffs weren’t clearly assigned."
+  },
+  {
+    "time": 1271,
+    "type": "word",
+    "start": 18,
+    "end": 21,
+    "value": "The"
+  },
+  {
+    "time": 1271,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1309,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1354,
+    "type": "word",
+    "start": 22,
+    "end": 30,
+    "value": "handoffs"
+  },
+  {
+    "time": 1354,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1496,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1593,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1645,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1674,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1739,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1805,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1871,
+    "type": "word",
+    "start": 31,
+    "end": 40,
+    "value": "weren’t"
+  },
+  {
+    "time": 1871,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1972,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2016,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2075,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2133,
+    "type": "word",
+    "start": 41,
+    "end": 48,
+    "value": "clearly"
+  },
+  {
+    "time": 2133,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2242,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2301,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2348,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2450,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2508,
+    "type": "word",
+    "start": 49,
+    "end": 57,
+    "value": "assigned"
+  },
+  {
+    "time": 2508,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2562,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2670,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2846,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2891,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2979,
+    "type": "viseme",
+    "value": "sil"
+  }
+]
