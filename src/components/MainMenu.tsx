@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Level } from '../logic/types';
+import { Level } from '../types';
 
 interface MainMenuProps {
   onStart: () => void;

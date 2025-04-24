@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import MainMenu from './MainMenu';
 import GameScreen from './GameScreen';
 import InstructionsScreen from './InstructionsScreen';
-import { Level } from '../logic/types';
+import { Level } from '../types';
+import { loadAllLevels } from '../services/levelService';
 
 enum Screen {
   MAIN_MENU,
@@ -16,30 +17,22 @@ const App: React.FC = () => {
   
   const [availableLevels, setAvailableLevels] = useState<Level[]>([]);
   const [selectedLevelIndex, setSelectedLevelIndex] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Load all level data
   useEffect(() => {
     const loadLevels = async () => {
+      setIsLoading(true);
       try {
-        const levelFiles = ['level1.json'];
-        const loadedLevels = [];
-
-        for (const file of levelFiles) {
-          const response = await fetch(`src/assets/levels/${file}`);
-          if (!response.ok) {
-            console.error(`Failed to load level: ${file}`);
-            continue;
-          }
-          const levelData: Level = await response.json();
-          loadedLevels.push(levelData);
-        }
-        
+        const loadedLevels = await loadAllLevels();
         setAvailableLevels(loadedLevels);
         if (loadedLevels.length > 0) {
           setLevel(loadedLevels[0]);
         }
       } catch (error) {
         console.error('Failed to load levels:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
     
@@ -64,6 +57,15 @@ const App: React.FC = () => {
   const handleBackToMainMenu = () => {
     setCurrentScreen(Screen.MAIN_MENU);
   };
+  
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <h1>Loading...</h1>
+        <p>Loading game assets...</p>
+      </div>
+    );
+  }
   
   return (
     <div className="app-container">

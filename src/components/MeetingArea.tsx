@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Participant, GameState, FartResultType } from '../logic/types';
+import React, { useState, useEffect, memo } from 'react';
+import { Participant, GameState, FartResultType } from '../types';
 
 interface MeetingAreaProps {
   gameState: GameState;
@@ -18,7 +18,8 @@ interface ParticipantVideoProps {
   isActive: boolean;
 }
 
-const ParticipantVideo: React.FC<ParticipantVideoProps> = ({ 
+// Memoized participant video to prevent unnecessary re-renders
+const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({ 
   participant, 
   isSpeaking, 
   fartReaction,
@@ -30,32 +31,10 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
 }) => {
   const [faceImage, setFaceImage] = useState('neutral');
   const [talkingState, setTalkingState] = useState(0);
-  const [talkingInterval, setTalkingIntervalState] = useState<NodeJS.Timeout | null>(null);
   
-  // Handle talking animation
+  // Handle talking animation and face image based on state
   useEffect(() => {
-    if (isSpeaking && !fartReaction) {
-      // Start talking animation
-      const interval = setInterval(() => {
-        setTalkingState(prev => (prev === 0 ? 1 : 0));
-      }, 300);
-      
-      setTalkingIntervalState(interval);
-      
-      return () => {
-        clearInterval(interval);
-        setTalkingIntervalState(null);
-      };
-    } else if (talkingInterval) {
-      // Stop talking animation
-      clearInterval(talkingInterval);
-      setTalkingIntervalState(null);
-      setTalkingState(0);
-    }
-  }, [isSpeaking, fartReaction]);
-  
-  // Handle face image based on state
-  useEffect(() => {
+    // Determine the appropriate face image
     let image = 'neutral';
     
     if (participant.type === 'player') {
@@ -93,9 +72,23 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
     }
     
     setFaceImage(image);
+    
+    // Handle talking animation
+    let intervalId: NodeJS.Timeout | null = null;
+    
+    if (isSpeaking && !fartReaction) {
+      // Start talking animation
+      intervalId = setInterval(() => {
+        setTalkingState(prev => (prev === 0 ? 1 : 0));
+      }, 300);
+    }
+    
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
   }, [participant.type, isSpeaking, fartReaction, talkingState, pressure, shame, isGameOver, victory]);
   
-  // Dynamic class based on active speaker
+  // Generate CSS classes based on current state
   const containerClasses = [
     "video-container",
     isActive ? "active-speaker" : "",
@@ -125,13 +118,20 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
       </div>
     </div>
   );
-};
+});
 
+// The main meeting area component
 const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) => {
   const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
   const currentSpeakerId = currentDialogue?.speaker;
   
-  // Create a more Google Meet-like layout with a designated tiled view
+  // Effects for fart reactions
+  const fartEffectClasses = {
+    perfect: gameState.lastFartResult?.type === 'perfect' ? 'active' : '',
+    okay: gameState.lastFartResult?.type === 'okay' ? 'active' : '',
+    bad: gameState.lastFartResult?.type === 'bad' ? 'active' : ''
+  };
+  
   return (
     <div className="meeting-container">
       <div className="meeting-info">
@@ -160,23 +160,10 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
         ))}
       </div>
       
-      <div 
-        className={`perfect-effect ${gameState.lastFartResult?.type === 'perfect' ? 'active' : ''}`}
-      >
-        PERFECT!
-      </div>
-      
-      <div 
-        className={`okay-effect ${gameState.lastFartResult?.type === 'okay' ? 'active' : ''}`}
-      >
-        OKAY
-      </div>
-      
-      <div 
-        className={`bad-effect ${gameState.lastFartResult?.type === 'bad' ? 'active' : ''}`}
-      >
-        BAD!
-      </div>
+      {/* Fart effect overlays */}
+      <div className={`perfect-effect ${fartEffectClasses.perfect}`}>PERFECT!</div>
+      <div className={`okay-effect ${fartEffectClasses.okay}`}>OKAY</div>
+      <div className={`bad-effect ${fartEffectClasses.bad}`}>BAD!</div>
       
       <div className="participant-count">
         <span>{participants.length}</span>

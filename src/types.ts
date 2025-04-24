@@ -47,6 +47,7 @@ export interface LevelRules {
 }
 
 export interface Level {
+  id?: string; // Added ID field
   title: string;
   description: string;
   rules: LevelRules;
@@ -93,6 +94,7 @@ export interface GameState {
     pulseEffect: boolean;
     blurEffect: boolean;
   };
+  audioResources?: AudioResources;
 }
 
 export type FartType = 't' | 'p' | 'k' | 'f' | 'r' | 'z';
