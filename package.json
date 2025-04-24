@@ -7,7 +7,9 @@
     "dev": "webpack serve --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
     "test": "jest",
-    "generate-audio": "node scripts/generate-audio.js"
+    "generate-audio": "node scripts/generate-audio.js",
+    "generate-audio:dry-run": "node scripts/generate-audio.js --dry-run",
+    "check-compile": "tsc --noEmit"
   },
   "keywords": [
     "typescript",

@@ -6,6 +6,20 @@
  * 2. Generates TTS audio files using Amazon Polly with direct SSML support
  * 3. Generates corresponding speech marks for rhythm-based gameplay
  * 4. Supports neural voices with natural pauses and rhythm
+ * 5. Handles question-answer format with multiple choices
+ * 6. Generates audio for both answer options and feedback responses
+ * 
+ * Usage:
+ * - Run 'npm run generate-audio' to generate all audio files
+ * - Run 'npm run generate-audio:dry-run' to simulate the generation process without creating files
+ * 
+ * Audio file naming:
+ * - Regular dialogue: [levelId]-[dialogueIndex]-[speakerId].mp3
+ * - Answer options: [levelId]-[dialogueIndex]-[speakerId]-answer-[answerIndex].mp3
+ * - Feedback responses: [levelId]-[dialogueIndex]-[speakerId]-feedback-[correct|incorrect].mp3
+ * 
+ * Speech marks are generated for all audio files with matching filenames:
+ * - [filename]-metadata.json
  * 
  * Run this script before building the game to generate all required audio files.
  */
@@ -61,15 +75,35 @@ async function ensureDirectories() {
 /**
  * Generate a filename for a dialogue entry
  */
-function generateFilename(levelId, dialogueIndex, speakerId) {
-  // Format: [levelId]-[dialogueItemIndex]-[characterId].mp3
-  return `${levelId}-${dialogueIndex}-${speakerId}.mp3`;
+function generateFilename(levelId, dialogueIndex, speaker, type = 'dialogue', index = null) {
+  switch (type) {
+    case 'dialogue':
+      // Format: [levelId]-[dialogueItemIndex]-[characterId].mp3
+      return `${levelId}-${dialogueIndex}-${speaker}.mp3`;
+    case 'answer':
+      // Format: [levelId]-[dialogueItemIndex]-[characterId]-answer-[answerIndex].mp3
+      return `${levelId}-${dialogueIndex}-${speaker}-answer-${index}.mp3`;
+    case 'feedback':
+      // Format: [levelId]-[dialogueItemIndex]-[characterId]-feedback-[correct|incorrect].mp3
+      return `${levelId}-${dialogueIndex}-${speaker}-feedback-${index}.mp3`;
+    default:
+      return `${levelId}-${dialogueIndex}-${speaker}.mp3`;
+  }
 }
+
+// Global variable to check if we're in dry-run mode
+const isDryRun = () => process.argv.includes('--dry-run');
 
 /**
  * Generate audio for a single dialogue entry
  */
-async function generateAudio(speakerId, voiceType, text, filename) {
+async function generateAudio(speaker, voiceType, text, filename) {
+  // If in dry-run mode, just log and return
+  if (isDryRun()) {
+    console.log(`[DRY RUN] Would generate audio for: "${text.substring(0, 50)}..." using voice ${voiceType}`);
+    return filename;
+  }
+  
   try {
     // Determine if this voice supports neural
     const supportsNeural = NEURAL_VOICES.includes(voiceType);
@@ -137,7 +171,13 @@ async function generateAudio(speakerId, voiceType, text, filename) {
 /**
  * Generate speech marks for a dialogue entry
  */
-async function generateSpeechMarks(speakerId, voiceType, text, audioFilename) {
+async function generateSpeechMarks(speaker, voiceType, text, audioFilename) {
+  // If in dry-run mode, just log and return
+  if (isDryRun()) {
+    console.log(`[DRY RUN] Would generate speech marks for: "${text.substring(0, 30)}..." with voice ${voiceType}`);
+    return [];
+  }
+
   try {
     // Determine if this voice supports neural
     const supportsNeural = NEURAL_VOICES.includes(voiceType);
@@ -185,7 +225,7 @@ async function generateSpeechMarks(speakerId, voiceType, text, audioFilename) {
  */
 async function processLevelFile(filePath) {
   try {
-    // Read and parse YAML file
+    // Read and parse JSON file
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const levelData = JSON.parse(fileContent);
 
@@ -197,14 +237,14 @@ async function processLevelFile(filePath) {
 
     // Extract level ID from file path
     const levelId = path.basename(filePath, path.extname(filePath));
-    
+
     // Generate audio for each dialogue entry
     const dialogues = levelData.dialogues || [];
     const audioMap = {};
 
     for (let i = 0; i < dialogues.length; i++) {
       const dialogue = dialogues[i];
-      const { speakerId, text } = dialogue;
+      const speakerId = dialogue.speaker;
       const voiceType = participantVoices[speakerId];
 
       if (!voiceType) {
@@ -212,22 +252,25 @@ async function processLevelFile(filePath) {
         continue;
       }
 
-      // Generate filename using level ID, dialogue index, and speaker ID
-      const filename = generateFilename(levelId, i, speakerId);
+      // Case 1: Regular dialogue with text
+      if (dialogue.text) {
+        const text = dialogue.text;
 
-      // Add to audio map
-      audioMap[text] = filename;
-      dialogue.soundFile = filename;  // Update the dialogue with the sound file
+        // Generate filename using level ID, dialogue index, and speaker ID
+        const filename = generateFilename(levelId, i, speakerId);
 
-      // Check if file already exists
-      const outputPath = path.join(AUDIO_OUTPUT_DIR, filename);
-      const speechMarksPath = path.join(SPEECH_MARKS_DIR, filename.replace('.mp3', '-metadata.json'));
+        // Add to audio map
+        audioMap[text] = filename;
+        dialogue.soundFile = filename;  // Update the dialogue with the sound file
 
-      // Track if we need to generate speech marks
-      let needSpeechMarks = !fs.existsSync(speechMarksPath);
+        // Check if file already exists
+        const outputPath = path.join(AUDIO_OUTPUT_DIR, filename);
+        const speechMarksPath = path.join(SPEECH_MARKS_DIR, filename.replace('.mp3', '-metadata.json'));
 
-      // Generate audio if needed
-      if (!fs.existsSync(outputPath)) {
+        // Track if we need to generate speech marks
+        let needSpeechMarks = !fs.existsSync(speechMarksPath);
+
+        // Generate audio if needed
         try {
           await generateAudio(speakerId, voiceType, text, filename);
           needSpeechMarks = true; // Always generate speech marks for newly created audio
@@ -235,19 +278,99 @@ async function processLevelFile(filePath) {
           console.error(`Error generating audio for "${text.substring(0, 30)}..."`, error.message);
           continue;
         }
-      } else {
-        console.log(`Audio file already exists: ${filename}`);
-      }
 
-      // Generate speech marks if needed
-      if (needSpeechMarks) {
-        try {
-          await generateSpeechMarks(speakerId, voiceType, text, filename);
-        } catch (error) {
-          console.error(`Error generating speech marks for "${text.substring(0, 30)}..."`, error.message);
+        // Generate speech marks if needed
+        if (needSpeechMarks) {
+          try {
+            await generateSpeechMarks(speakerId, voiceType, text, filename);
+          } catch (error) {
+            console.error(`Error generating speech marks for "${text.substring(0, 30)}..."`, error.message);
+          }
+        } else {
+          console.log(`Speech marks already exist for: ${filename}`);
         }
-      } else {
-        console.log(`Speech marks already exist for: ${filename}`);
+      } 
+      // Case 2: Dialogue with answers (question)
+      else if (dialogue.answers && dialogue.answers.length > 0) {
+        console.log(`Processing answers for dialogue ${i} (question)`);
+
+        // Generate audio for each answer option
+        for (let j = 0; j < dialogue.answers.length; j++) {
+          const answerObj = dialogue.answers[j];
+          const answerText = answerObj.text;
+          
+          // Generate a special filename for the answer
+          const answerFilename = generateFilename(levelId, i, speakerId, 'answer', j);
+
+          // Add to audio map
+          audioMap[answerText] = answerFilename;
+
+          // Check if file already exists
+          const speechMarksPath = path.join(SPEECH_MARKS_DIR, answerFilename.replace('.mp3', '-metadata.json'));
+          let needSpeechMarks = !fs.existsSync(speechMarksPath);
+
+          // Generate audio if needed
+          try {
+            await generateAudio(speakerId, voiceType, answerText, answerFilename);
+            needSpeechMarks = true; // Always generate speech marks for newly created audio
+          } catch (error) {
+            console.error(`Error generating audio for answer "${answerText.substring(0, 30)}..."`, error.message);
+            continue;
+          }
+
+          // Generate speech marks if needed
+          if (needSpeechMarks) {
+            try {
+              await generateSpeechMarks(speakerId, voiceType, answerText, answerFilename);
+            } catch (error) {
+              console.error(`Error generating speech marks for answer "${answerText.substring(0, 30)}..."`, error.message);
+            }
+          } else {
+            console.log(`Speech marks already exist for answer: ${answerFilename}`);
+          }
+        }
+      }
+      // Case 3: Dialogue with feedback
+      else if (dialogue.feedback && dialogue.feedback.length > 0) {
+        console.log(`Processing feedback for dialogue ${i}`);
+
+        // Generate audio for each feedback option
+        for (let j = 0; j < dialogue.feedback.length; j++) {
+          const feedbackObj = dialogue.feedback[j];
+          const feedbackText = feedbackObj.text;
+          const isCorrect = feedbackObj.correct;
+          
+          // Generate a special filename for the feedback
+          const feedbackType = isCorrect ? 'correct' : 'incorrect';
+          const feedbackFilename = generateFilename(levelId, i, speakerId, 'feedback', feedbackType);
+
+          // Add to audio map
+          audioMap[feedbackText] = feedbackFilename;
+
+          // Check if file already exists
+          const speechMarksPath = path.join(SPEECH_MARKS_DIR, feedbackFilename.replace('.mp3', '-metadata.json'));
+          let needSpeechMarks = !fs.existsSync(speechMarksPath);
+
+          // Generate audio if needed
+          try {
+            await generateAudio(speakerId, voiceType, feedbackText, feedbackFilename);
+            needSpeechMarks = true; // Always generate speech marks for newly created audio
+          } catch (error) {
+            console.error(`Error generating audio for feedback "${feedbackText.substring(0, 30)}..."`, error.message);
+            continue;
+          }
+
+          // Generate speech marks if needed
+          if (needSpeechMarks) {
+            try {
+              await generateSpeechMarks(speakerId, voiceType, feedbackText, feedbackFilename);
+            } catch (error) {
+              console.error(`Error generating speech marks for feedback "${feedbackText.substring(0, 30)}..."`, error.message);
+            }
+          } else {
+            console.log(`Speech marks already exist for feedback: ${feedbackFilename}`);
+          }
+        }
       }
     }
 
@@ -263,8 +386,13 @@ async function processLevelFile(filePath) {
  */
 async function main() {
   try {
-    // Ensure output directories exist
-    await ensureDirectories();
+    // Check for dry-run flag
+    if (isDryRun()) {
+      console.log('Running in dry-run mode - no files will be created.');
+    } else {
+      // Ensure output directories exist if not in dry-run mode
+      await ensureDirectories();
+    }
 
     const files = fs.readdirSync(LEVELS_DIR)
       .filter(file => file.endsWith('.json'))
@@ -274,11 +402,39 @@ async function main() {
 
     // Process each file
     for (const file of files) {
-      console.log(`Processing ${file}...`);
-      await processLevelFile(file);
+      console.log(`${isDryRun() ? 'Would process' : 'Processing'} ${file}...`);
+      
+      // If dry run, calculate and display stats
+      if (isDryRun()) {
+        const fileContent = fs.readFileSync(file, 'utf8');
+        const levelData = JSON.parse(fileContent);
+        
+        // Count the number of audio files that would be generated
+        let dialogueCount = 0;
+        let answerCount = 0;
+        let feedbackCount = 0;
+        
+        levelData.dialogues.forEach(dialogue => {
+          if (dialogue.text) dialogueCount++;
+          if (dialogue.answers) answerCount += dialogue.answers.length;
+          if (dialogue.feedback) feedbackCount += dialogue.feedback.length;
+        });
+        
+        console.log(`  - Regular dialogues: ${dialogueCount}`);
+        console.log(`  - Answer options: ${answerCount}`);
+        console.log(`  - Feedback responses: ${feedbackCount}`);
+        console.log(`  - Total audio files: ${dialogueCount + answerCount + feedbackCount}`);
+      } else {
+        // Actually process the file
+        await processLevelFile(file);
+      }
     }
 
-    console.log('Audio and speech marks generation complete!');
+    if (isDryRun()) {
+      console.log('Dry run complete! No files were created.');
+    } else {
+      console.log('Audio and speech marks generation complete!');
+    }
   } catch (error) {
     console.error('Error in main process:', error);
   }

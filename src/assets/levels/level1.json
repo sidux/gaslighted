@@ -2,7 +2,7 @@
     "title": "First Day Jitters",
     "description": "Your first remote meeting. Thankfully, people are forgiving.",
     "rules": {
-        "pressure_buildup_speed": 12,
+        "pressure_buildup_speed": 0,
         "precision_window_ms": 500,
         "max_possible_farts_by_word": 1,
         "max_simultaneous_letters": 3,
@@ -54,133 +54,124 @@
     ],
     "dialogues": [
         {
-            "speakerId": "boomer",
-            "text": "Welcome to the quarterly review meeting.  We have lots to discuss today."
+            "speaker": "boomer",
+            "text": "Good morning. Let’s get started. We’ve got a packed agenda and limited time, so let’s stay efficient."
         },
         {
-            "speakerId": "zoomer",
-            "text": "Hey everyone!  I'm super excited to share our Q4 results!"
+            "speaker": "zoomer",
+            "text": "Hey everyone! I’ve put together the Q4 highlights and a few slides on early Q1 trends. Shouldn’t take long."
         },
         {
-            "speakerId": "boomer",
-            "text": "Before we begin, I would like to emphasize how important it is to listen carefully."
+            "speaker": "boomer",
+            "text": "Thanks. Just a reminder to keep side conversations in the chat — and let’s avoid talking over each other this time."
         },
         {
-            "speakerId": "karen",
-            "text": "Let's synergize our efforts and leverage our core competencies going forward. Any questions?"
+            "speaker": "karen",
+            "text": "Moving forward, we’ll be tightening timelines around reporting. Too many delays last cycle."
         },
         {
-            "speakerId": "boomer",
-            "text": "Wojak, are you with us? You look a bit uncomfortable."
+            "speaker": "boomer",
+            "text": "Wojak, you had visibility on some of that — do you think the delays came from lack of clarity, or lack of ownership?"
         },
         {
-            "speakerId": "boomer",
-            "text": "What do you think is the most important deliverable for today?"
-        },
-        {
-            "speakerId": "wojak",
-            "options": [
-                "I believe the quarterly report is our top priority.",
-                "We should focus on the marketing strategy first.",
-                "Let's get the budget forecast finalized.",
-                "Team performance metrics need our attention."
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "Mostly ownership. The handoffs weren’t clearly assigned.",
+                    "correct": true
+                },
+                {
+                    "text": "I think it was due to unclear goals.",
+                    "correct": false
+                },
+                {
+                    "text": "Probably just burnout.",
+                    "correct": false
+                },
+                {
+                    "text": "Honestly, it wasn’t really my area.",
+                    "correct": false
+                }
             ]
         },
         {
-            "speakerId": "zoomer",
-            "text": "HAHAHA, that's so funny! I can't believe that happened!"
-        },
-        {
-            "speakerId": "boomer",
-            "text": "As I was saying, our quarterly numbers are looking promising."
-        },
-        {
-            "speakerId": "karen",
-            "text": "I've been working on the blockchain initiative with the marketing team. The results are interesting."
-        },
-        {
-            "speakerId": "karen",
-            "text": "Wojak, which team is behind the blockchain initiative?"
-        },
-        {
-            "speakerId": "wojak",
-            "options": [
-                "The marketing team has been leading that effort.",
-                "That was our development team's project.",
-                "It was initiated by our CEO directly.",
-                "The CTO's team has been handling it."
+            "speaker": "boomer",
+            "feedback": [
+                {
+                    "text": "That lines up with what we saw. Let’s address that in the post-mortem.",
+                    "correct": true
+                },
+                {
+                    "text": "That’s not how it looked from our end. Be more involved next time.",
+                    "correct": false
+                }
             ]
         },
         {
-            "speakerId": "zoomer",
-            "text": "Can we leverage the AI framework before next week's deadline? It's urgent!"
+            "speaker": "karen",
+            "text": "On that note — we’ll be rolling out a revised ownership matrix. No task without a name attached."
         },
         {
-            "speakerId": "zoomer",
-            "text": "Hey Wojak, what do you think we should leverage for next week?"
+            "speaker": "zoomer",
+            "text": "Also, I added a chart to the slides showing where we dipped below target in December. Should we pull that up now or circle back later?"
         },
         {
-            "speakerId": "wojak",
-            "options": [
-                "I think the AI framework would be most effective.",
-                "The blockchain framework has a lot of potential.",
-                "A hybrid approach would give us flexibility.",
-                "We should stick with our existing solution for now."
+            "speaker": "boomer",
+            "text": "Let’s do it now. No point deferring numbers we all saw coming."
+        },
+        {
+            "speaker": "boomer",
+            "text": "While we’re here — Wojak, remind me, what was the main issue with Ops that week?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "System outage caused a backlog across multiple teams.",
+                    "correct": true
+                },
+                {
+                    "text": "Marketing delayed the content calendar.",
+                    "correct": false
+                },
+                {
+                    "text": "Budget freeze paused procurement.",
+                    "correct": false
+                },
+                {
+                    "text": "We were onboarding a new vendor.",
+                    "correct": false
+                }
             ]
         },
         {
-            "speakerId": "boomer",
-            "text": "Everyone needs to submit their reports by EOD. No exceptions!"
-        },
-        {
-            "speakerId": "boomer",
-            "text": "When do you plan to submit your report, Wojak?"
-        },
-        {
-            "speakerId": "wojak",
-            "options": [
-                "I'll make sure it's done by end of day.",
-                "I'll have it ready by the end of the week.",
-                "I can submit it tomorrow if needed.",
-                "I was planning for next Monday, if that works."
+            "speaker": "boomer",
+            "feedback": [
+                {
+                    "text": "Right. Let’s make sure that’s documented properly this time.",
+                    "correct": true
+                },
+                {
+                    "text": "No — that wasn’t it. Please review your notes before the next sync.",
+                    "correct": false
+                }
             ]
         },
         {
-            "speakerId": "karen",
-            "text": "Sorry about that, I'm coming down with something. Excuse me."
+            "speaker": "karen",
+            "text": "Looking ahead: we need clearer escalation paths. If a ticket sits unresolved for more than 24 hours, it’s too late."
         },
         {
-            "speakerId": "zoomer",
-            "text": "We should totally pivot with the new SaaS platform going forward! Right team? Anyone?"
+            "speaker": "boomer",
+            "text": "We’ll also be adjusting check-ins. More async, less noise. Unless anyone sees a problem with that?"
         },
         {
-            "speakerId": "boomer",
-            "text": "Let's wrap this up. Wojak, do you have anything to add?"
+            "speaker": "zoomer",
+            "text": "Nope, that actually works better for my timezone. I’ll tweak the Slack workflows accordingly."
         },
         {
-            "speakerId": "boomer",
-            "text": "Wojak, what's your take on our new strategy?"
-        },
-        {
-            "speakerId": "wojak",
-            "options": [
-                "I fully support it, the direction is perfect.",
-                "It's quite innovative, I'm impressed.",
-                "I have some concerns about implementation.",
-                "We might need to iterate more before launch."
-            ]
-        },
-        {
-            "speakerId": "zoomer",
-            "text": "That reminds me of last year's company retreat! So embarrassing!"
-        },
-        {
-            "speakerId": "karen",
-            "text": "I think we've covered everything for today. Great progress everyone!"
-        },
-        {
-            "speakerId": "boomer",
-            "text": "Thank you all for attending. Meeting adjourned."
+            "speaker": "boomer",
+            "text": "Alright. Let’s wrap. Status updates by EOD. If you’re blocked, say so before it becomes a Friday surprise."
         }
     ]
 }
