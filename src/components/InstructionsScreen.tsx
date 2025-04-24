@@ -40,7 +40,7 @@ const InstructionsScreen: React.FC<InstructionsScreenProps> = ({ onBack }) => {
         <p className="instructions-text">
           <span className="instructions-key">T</span> - T-fart
           <span className="instructions-key">P</span> - P-fart
-          <span className="instructions-key">B</span> - B-fart
+          <span className="instructions-key">K</span> - K-fart
           <span className="instructions-key">F</span> - F-fart
           <span className="instructions-key">R</span> - R-fart
           <span className="instructions-key">Z</span> - Z-fart

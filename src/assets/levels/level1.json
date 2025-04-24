@@ -21,7 +21,14 @@
             "okay": 5,
             "bad": 30,
             "terrible": 100
-        }
+        },
+        "question_pressure_multiplier": 2.5,
+        "question_effects": {
+            "correct_shame_change": -10,
+            "incorrect_shame_change": 15,
+            "heartbeat_intensity": 70
+        },
+        "question_time_limit": "10s"
     },
     "participants": [
         {
@@ -41,7 +48,7 @@
         },
         {
             "id": "karen",
-            "voiceType": "Amy",
+            "voiceType": "Salli",
             "type": "npc"
         }
     ],
@@ -56,7 +63,7 @@
         },
         {
             "speakerId": "boomer",
-            "text": "Before we begin, I would like to  emphasize  how important it is to listen carefully."
+            "text": "Before we begin, I would like to emphasize how important it is to listen carefully."
         },
         {
             "speakerId": "karen",
@@ -67,48 +74,113 @@
             "text": "Wojak, are you with us? You look a bit uncomfortable."
         },
         {
+            "speakerId": "boomer",
+            "text": "What do you think is the most important deliverable for today?"
+        },
+        {
+            "speakerId": "wojak",
+            "options": [
+                "I believe the quarterly report is our top priority.",
+                "We should focus on the marketing strategy first.",
+                "Let's get the budget forecast finalized.",
+                "Team performance metrics need our attention."
+            ]
+        },
+        {
             "speakerId": "zoomer",
-            "text": "HAHAHA,  that's so funny!  I can't believe that happened!"
+            "text": "HAHAHA, that's so funny! I can't believe that happened!"
         },
         {
             "speakerId": "boomer",
-            "text": "As I was sayingour quarterly numbers are lookingpromising."
+            "text": "As I was saying, our quarterly numbers are looking promising."
         },
         {
             "speakerId": "karen",
             "text": "I've been working on the blockchain initiative with the marketing team. The results are interesting."
         },
         {
+            "speakerId": "karen",
+            "text": "Wojak, which team is behind the blockchain initiative?"
+        },
+        {
+            "speakerId": "wojak",
+            "options": [
+                "The marketing team has been leading that effort.",
+                "That was our development team's project.",
+                "It was initiated by our CEO directly.",
+                "The CTO's team has been handling it."
+            ]
+        },
+        {
             "speakerId": "zoomer",
-            "text": "Can we  leverage the AI framework before next week's deadline?  It's urgent!"
+            "text": "Can we leverage the AI framework before next week's deadline? It's urgent!"
+        },
+        {
+            "speakerId": "zoomer",
+            "text": "Hey Wojak, what do you think we should leverage for next week?"
+        },
+        {
+            "speakerId": "wojak",
+            "options": [
+                "I think the AI framework would be most effective.",
+                "The blockchain framework has a lot of potential.",
+                "A hybrid approach would give us flexibility.",
+                "We should stick with our existing solution for now."
+            ]
         },
         {
             "speakerId": "boomer",
-            "text": "Everyone  needs to submit their reports by EOD.  Noexceptions!"
+            "text": "Everyone needs to submit their reports by EOD. No exceptions!"
+        },
+        {
+            "speakerId": "boomer",
+            "text": "When do you plan to submit your report, Wojak?"
+        },
+        {
+            "speakerId": "wojak",
+            "options": [
+                "I'll make sure it's done by end of day.",
+                "I'll have it ready by the end of the week.",
+                "I can submit it tomorrow if needed.",
+                "I was planning for next Monday, if that works."
+            ]
         },
         {
             "speakerId": "karen",
-            "text": "Sorry about that, I'm coming down with something.  Excuse me."
+            "text": "Sorry about that, I'm coming down with something. Excuse me."
         },
         {
             "speakerId": "zoomer",
-            "text": "We should totally pivot with the new SaaS platform going forward! Right team?  Anyone?"
+            "text": "We should totally pivot with the new SaaS platform going forward! Right team? Anyone?"
         },
         {
             "speakerId": "boomer",
-            "text": "Let's wrap this up. Wojak, do you haveanything to add?"
+            "text": "Let's wrap this up. Wojak, do you have anything to add?"
+        },
+        {
+            "speakerId": "boomer",
+            "text": "Wojak, what's your take on our new strategy?"
+        },
+        {
+            "speakerId": "wojak",
+            "options": [
+                "I fully support it, the direction is perfect.",
+                "It's quite innovative, I'm impressed.",
+                "I have some concerns about implementation.",
+                "We might need to iterate more before launch."
+            ]
         },
         {
             "speakerId": "zoomer",
-            "text": "That reminds me of last year's company retreat!  So embarrassing!"
+            "text": "That reminds me of last year's company retreat! So embarrassing!"
         },
         {
             "speakerId": "karen",
-            "text": "I think we've covered everything for today.  Great progress everyone!"
+            "text": "I think we've covered everything for today. Great progress everyone!"
         },
         {
             "speakerId": "boomer",
-            "text": "Thank you all for attending.  Meeting adjourned."
+            "text": "Thank you all for attending. Meeting adjourned."
         }
     ]
 }

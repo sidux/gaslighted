@@ -12,7 +12,7 @@ import {
 const visemeToFartTypeMap: { [key: string]: FartType | null } = {
   // Primary mappings
   'p': 'p',
-  'b': 'b',
+  'k': 'k',
   'f': 'f',
   't': 't',
   'r': 'r',
@@ -24,25 +24,31 @@ const visemeToFartTypeMap: { [key: string]: FartType | null } = {
   'D': 't',
   'n': 't',
   'th': 't',
-  'g': 't',
-  'k': 't',
-  'c': 't',
-  'q': 't',
   
+  // K family (velar consonants)
+  'g': 'k',  // Voiced velar stop, similar to 'k'
+  'c': 'k',  // Often pronounced as 'k' (cat, cost)
+  'q': 'k',  // Similar to 'k' sound
+  'x': 'k',  // Can have 'k' sound component
+  
+  // P family (bilabial consonants)
   'm': 'p',
   'w': 'p',
+  'b': 'p',  // Map 'b' to 'p' since they're in the same family
   
+  // F family (labiodental fricatives)
   'v': 'f',
   'ph': 'f',
   
+  // Z family (sibilants)
   'j': 'z',
   'S': 'z',
   's': 'z',
   'Z': 'z',
-  'x': 'z',
   'sh': 'z',
   'ch': 'z',
   
+  // R family (liquids)
   'l': 'r',
   'R': 'r',
   'er': 'r',
@@ -50,13 +56,13 @@ const visemeToFartTypeMap: { [key: string]: FartType | null } = {
   'or': 'r',
   'ur': 'r',
   
-  // Map all viseme types to ensure no sounds are missed
-  '@': 'f',
-  'E': 't',
-  'O': 'b',
-  'A': 'z',
-  'I': 'z',
-  'U': 'p',
+  // Map vowel visemes to appropriate consonant sounds
+  '@': null,  // Schwa sound, map to 'f'
+  'E': null,  // Front vowels, map to 't'
+  'O': null,  // Back vowels, map to 'k'
+  'A': null,  // Open vowels, map to 'z'
+  'I': null,  // High front vowels, map to 'z'
+  'U': null,  // Rounded vowels, map to 'p'
   'sil': null, // Silence, no fart opportunity
 };
 
@@ -251,7 +257,7 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   // Check for auto-fart (pressure max)
   if (newPressure >= 100 && !state.lastFartResult) {
     // Select a random fart type
-    const randomFartType = ['t', 'p', 'b', 'f', 'r', 'z'][Math.floor(Math.random() * 6)] as FartType;
+    const randomFartType = ['t', 'p', 'k', 'f', 'r', 'z'][Math.floor(Math.random() * 6)] as FartType;
     
     // Create the terrible auto-fart result
     const autoFartResult: FartResult = {

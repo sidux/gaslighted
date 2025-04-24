@@ -41,7 +41,7 @@
 2. The built files will be in the `dist` folder
 
 ### Game Controls
-- Press the highlighted letters (T, P, B, F, R, Z) when they appear over words during the meeting
+- Press the highlighted letters (T, P, K, F, R, Z) when they appear over words during the meeting
 - Time your key presses correctly for best results:
   - **Perfect**: Silent fart, pressure relief, and no shame
   - **Okay**: Quieter fart, some pressure relief, and minimal shame
@@ -61,7 +61,7 @@
 6. Complete the entire meeting without being discovered
 
 ### Input System
-- Player must press the correct key corresponding to a viseme phoneme type (`t`, `p`, `b`, `f`, `r`, `z`) (close viseme sounds are also accepted)
+- Player must press the correct key corresponding to a viseme phoneme type (`t`, `p`, `k`, `f`, `r`, `z`) (close viseme sounds are also accepted)
 - Timing window determines success quality (perfect, okay, bad)
 - Each success level has different effects on pressure and shame
 
@@ -97,7 +97,7 @@
 - Any mistake = combo break
 
 #### Fart Types (6 MP3s)
-- Mapped to viseme phoneme types (`t`, `p`, `b`, `f`, `r`, `z`) (and close viseme sounds)
+- Mapped to viseme phoneme types (`t`, `p`, `k`, `f`, `r`, `z`) (and close viseme sounds)
 - Each triggers:
   - A specific sound (`t-fart.mp3`, `z-fart.mp3` etc)
   - Matching NPC reaction (face change, sound, camera FX)

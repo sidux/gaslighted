@@ -183,7 +183,7 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
       }
       
       const key = event.key.toLowerCase();
-      const validFartKeys = ['t', 'p', 'b', 'f', 'r', 'z'];
+      const validFartKeys = ['t', 'p', 'k', 'f', 'r', 'z'];
       
       if (validFartKeys.includes(key)) {
         // Find all active opportunities of the pressed key type

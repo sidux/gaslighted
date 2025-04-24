@@ -68,7 +68,7 @@ export interface GameState {
   pausedTimestamp: number | null;
 }
 
-export type FartType = 't' | 'p' | 'b' | 'f' | 'r' | 'z';
+export type FartType = 't' | 'p' | 'k' | 'f' | 'r' | 'z';
 
 export interface FartOpportunity {
   dialogueIndex: number;

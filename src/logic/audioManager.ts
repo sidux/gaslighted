@@ -6,7 +6,7 @@ export const loadAudioResources = async (levelId: string, dialogueCount: number)
   const farts: { [key in FartType]: HTMLAudioElement } = {
     't': new Audio(),
     'p': new Audio(),
-    'b': new Audio(),
+    'k': new Audio(),
     'f': new Audio(),
     'r': new Audio(),
     'z': new Audio(),
