@@ -7,7 +7,7 @@ import GameOverScreen from './GameOverScreen';
 import { Level, GameState, Viseme, AudioResources, FartResult, FartType } from '../logic/types';
 import { initializeGameState, updateGameState, checkFartKeyPress, applyFartResult, getFinalScore } from '../logic/gameLogic';
 import { loadLevelMetadata } from '../logic/metadataLoader';
-import { loadAudioResources, playDialogueAudio, playFartAudio, stopAllAudio } from '../logic/audioManager';
+import { loadAudioResources, playDialogueAudio, playFartAudio, playHeartbeatSound, stopAllAudio } from '../logic/audioManager';
 
 interface GameScreenProps {
   level: Level;
@@ -357,6 +357,21 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
     lastUpdateTimeRef.current = null;
   };
   
+  // Update heartbeat sound based on shame meter
+  useEffect(() => {
+    if (!gameState || !audioResources) {
+      return;
+    }
+    
+    // Update heartbeat volume and rate based on shame level
+    playHeartbeatSound(
+      audioResources,
+      gameState.shame,
+      gameState.isPlaying && !gameState.isGameOver
+    );
+    
+  }, [gameState?.shame, gameState?.isPlaying, gameState?.isGameOver, audioResources]);
+
   // Handle leave meeting (go back to menu)
   const handleLeaveMeeting = () => {
     if (audioResources) {

@@ -61,17 +61,23 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = ({
     if (participant.type === 'player') {
       // Player-specific faces
       if (isGameOver && shame >= 100) {
-        image = 'shame';
+        image = 'lose';
       } else if (victory) {
-        image = 'perfect-fart';
-      } else if (pressure >= 80) {
-        image = 'critical-pressure';
+        image = 'win';
       } else if (fartReaction === 'perfect') {
         image = 'perfect-fart';
       } else if (fartReaction === 'okay') {
         image = 'okay-fart';
       } else if (fartReaction === 'bad') {
         image = 'bad-fart';
+      } else if (pressure >= 80) {
+        image = 'critical-pressure';
+      } else if (pressure >= 60) {
+        image = 'high-pressure';
+      } else if (pressure >= 40) {
+        image = 'medium-pressure';
+      } else if (pressure >= 20) {
+        image = 'light-pressure';
       } else if (isSpeaking) {
         image = `talking${talkingState + 1}`;
       }

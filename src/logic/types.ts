@@ -96,4 +96,5 @@ export interface FartResult {
 export interface AudioResources {
   dialogues: { [key: string]: HTMLAudioElement };
   farts: { [key in FartType]: HTMLAudioElement };
+  heartbeat: HTMLAudioElement;
 }

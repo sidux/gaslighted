@@ -11,6 +11,9 @@ export const loadAudioResources = async (levelId: string, dialogueCount: number)
     'r': new Audio(),
     'z': new Audio(),
   };
+  const heartbeat = new Audio('src/assets/audio/heartbeat.mp3');
+  // Set heartbeat to loop
+  heartbeat.loop = true;
   
   // Load dialogue audio
   const participants = ['boomer', 'karen', 'zoomer'];
@@ -37,7 +40,7 @@ export const loadAudioResources = async (levelId: string, dialogueCount: number)
     }
   }
   
-  return { dialogues, farts };
+  return { dialogues, farts, heartbeat };
 };
 
 // Play dialogue audio
@@ -127,6 +130,44 @@ export const playFartAudio = (
   }
 };
 
+// Play heartbeat sound with volume based on shame level
+export const playHeartbeatSound = (
+  resources: AudioResources,
+  shame: number,
+  isPlaying: boolean
+): void => {
+  const { heartbeat } = resources;
+  
+  if (!heartbeat) {
+    console.error('Heartbeat audio not found');
+    return;
+  }
+  
+  if (isPlaying && shame > 0) {
+    // Calculate volume based on shame level (0.1 to 1.0)
+    const baseVolume = 0.1;
+    const additionalVolume = 0.9 * (shame / 100);
+    heartbeat.volume = baseVolume + additionalVolume;
+    
+    // Calculate playback rate based on shame level (1.0 to 1.5)
+    // Higher shame = faster heartbeat
+    heartbeat.playbackRate = 1.0 + (shame / 100) * 0.5;
+    
+    // Start playing if not already playing
+    if (heartbeat.paused) {
+      heartbeat.play().catch(error => {
+        console.error('Heartbeat audio playback prevented:', error);
+      });
+    }
+  } else {
+    // Pause heartbeat if not playing or no shame
+    if (!heartbeat.paused) {
+      heartbeat.pause();
+      heartbeat.currentTime = 0;
+    }
+  }
+};
+
 // Stop all audio
 export const stopAllAudio = (resources: AudioResources): void => {
   // Stop dialogue audio
@@ -140,6 +181,10 @@ export const stopAllAudio = (resources: AudioResources): void => {
     audio.pause();
     audio.currentTime = 0;
   });
+  
+  // Stop heartbeat audio
+  resources.heartbeat.pause();
+  resources.heartbeat.currentTime = 0;
 };
 
 // Preload all audio files
