@@ -1,6 +1,6 @@
 import React from 'react';
 import { GameState, FartOpportunity, Viseme } from '../types';
-import { getAllWords } from '../services/assetService';
+import { getAllWords } from '../services';
 
 interface KaraokeTextProps {
   gameState: GameState;
