@@ -83,6 +83,8 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
     // For feedback, use the correct/incorrect feedback metadata
     const isCorrect = gameState.currentQuestion.isCorrect;
     metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}-metadata.json`;
+  } else if (isPlayerDialogue(currentDialogue.speaker, gameState.level) && currentDialogue.answers) {
+    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-answer-${gameState.currentQuestion?.selectedAnswer ?? 0}-metadata.json`;
   } else {
     // Regular dialogue (including answers)
     metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-metadata.json`;
