@@ -132,6 +132,19 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
     bad: gameState.lastFartResult?.type === 'bad' ? 'active' : ''
   };
   
+  // Optimize participant order for smaller screens - put the active speaker and player first
+  const sortedParticipants = [...participants].sort((a, b) => {
+    // Player always first
+    if (a.type === 'player') return -1;
+    if (b.type === 'player') return 1;
+    
+    // Active speaker second
+    if (a.id === currentSpeakerId) return -1;
+    if (b.id === currentSpeakerId) return 1;
+    
+    return 0;
+  });
+  
   return (
     <div className="meeting-container">
       <div className="meeting-info">
@@ -140,7 +153,7 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
       </div>
       
       <div className="video-grid">
-        {participants.map(participant => (
+        {sortedParticipants.map(participant => (
           <ParticipantVideo
             key={participant.id}
             participant={participant}

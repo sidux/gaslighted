@@ -183,7 +183,8 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
                 )}
               </span>
             )}
-            {word.text + ' '}
+            {word.text}
+            {' '}
           </span>
         );
       })}

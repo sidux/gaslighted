@@ -9,7 +9,7 @@
     "test": "jest",
     "generate-audio": "node scripts/generate-audio.js",
     "generate-audio:dry-run": "node scripts/generate-audio.js --dry-run",
-    "check-compile": "tsc --noEmit"
+    "compile": "tsc --noEmit"
   },
   "keywords": [
     "typescript",

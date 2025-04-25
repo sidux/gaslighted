@@ -43,12 +43,6 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
             dialogueMetadata={dialogueMetadata}
             handleFartAnimationEnd={handleFartAnimationEnd}
           />
-          
-          {/* Always show active fart opportunities in a second layer, regardless of dialogue type */}
-          <FartOpportunities 
-            gameState={gameState}
-            handleFartAnimationEnd={handleFartAnimationEnd}
-          />
         </div>
       )}
       
