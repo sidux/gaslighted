@@ -154,6 +154,8 @@ export const getAllWords = (
   // If there are no word items but we have text, create simple word structure
   if (wordItems.length === 0 && dialogueText) {
     console.log("No word items in metadata, creating simple structure for:", dialogueText);
+    
+    // Split text properly by whitespace to get natural word boundaries
     const words = dialogueText.split(/\s+/).filter(w => w.trim().length > 0);
     
     // If this appears to be a player answer (longer text), space words out more
@@ -168,31 +170,59 @@ export const getAllWords = (
     }));
   }
   
-  // Process regular metadata
+  // When we have both metadata and dialogue text, but the metadata's word boundaries may not be accurate
+  if (dialogueText && wordItems.length > 0) {
+    // Instead of relying on metadata's start/end indices which might be wrong,
+    // split the text properly into words and match them with timing from metadata
+    const words = dialogueText.split(/\s+/).filter(w => w.trim().length > 0);
+    
+    // If we have a big mismatch in word count, fallback to simpler approach
+    if (Math.abs(words.length - wordItems.length) > words.length * 0.25) {
+      console.log(`Word count mismatch: text has ${words.length} words, metadata has ${wordItems.length} items. Using fallback.`);
+      return words.map((word, index) => {
+        // Use metadata timing if available, otherwise fallback to calculated timing
+        const startTime = index < wordItems.length ? (wordItems[index].time || index * 500) : index * 500;
+        const endTime = (index + 1) < wordItems.length 
+          ? (wordItems[index + 1].time || (index + 1) * 500 - 50) 
+          : (index + 1) * 500 - 50;
+          
+        return { text: word, startTime, endTime, index };
+      });
+    }
+    
+    // Try to match words with metadata (improved approach)
+    return wordItems.map((wordItem, index) => {
+      const startTime = wordItem.time || 0;
+      const endTime = index < wordItems.length - 1
+        ? (wordItems[index + 1].time || startTime + 500)
+        : (metadata[metadata.length - 1]?.time || startTime) + 500;
+      
+      // Get text from natural word boundaries if possible
+      let text = '';
+      if (index < words.length) {
+        text = words[index];
+      } else if (dialogueText && wordItem.start !== undefined && wordItem.end !== undefined) {
+        // Fallback to the old approach if needed
+        try {
+          text = dialogueText.substring(wordItem.start, wordItem.end + 1);
+        } catch (error) {
+          console.error("Error extracting word text:", error);
+        }
+      }
+      
+      return { text, startTime, endTime, index };
+    });
+  }
+  
+  // Process regular metadata without text (should rarely happen)
   return wordItems.map((wordItem, index) => {
     const startTime = wordItem.time || 0;
     const endTime = index < wordItems.length - 1
       ? (wordItems[index + 1].time || startTime + 500)
       : (metadata[metadata.length - 1]?.time || startTime) + 500;
     
-    // Get text from dialogue text if available
-    let text = '';
-    if (dialogueText && wordItem.start !== undefined && wordItem.end !== undefined) {
-      try {
-        text = dialogueText.substring(wordItem.start, wordItem.end + 1);
-      } catch (error) {
-        console.error("Error extracting word text:", error);
-      }
-    }
-    
-    // If we couldn't extract text and have wordItems but no text, use index as text
-    if (!text && dialogueText) {
-      // Try to extract words from dialogueText if no start/end in metadata
-      const words = dialogueText.split(/\s+/);
-      if (index < words.length) {
-        text = words[index];
-      }
-    }
+    // No text available, use placeholder
+    const text = `word${index}`;
     
     return { text, startTime, endTime, index };
   });
