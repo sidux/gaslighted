@@ -100,12 +100,28 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
       <div 
         className="video-participant"
         aria-label={`${participant.id} ${fartReaction === 'bad' ? 'is reacting to a bad fart' : isSpeaking ? 'is speaking' : ''}`}
+        style={{
+          backgroundImage: `url(${require(`../assets/backgrounds/${participant.id}.jpg`)})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center bottom'
+        }}
       >
-        <img 
-          src={`src/assets/faces/${participant.id}-${faceImage}.png`}
-          alt={participant.id}
-          className="participant-face"
-        />
+        <div className="character-container" style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'flex-end', 
+          height: '100%', 
+          width: '100%', 
+          position: 'absolute',
+          bottom: '0'
+        }}>
+          <img 
+            src={require(`../assets/faces/${participant.id}-${faceImage}.png`)}
+            alt={participant.id}
+            className="participant-face"
+            style={{ marginBottom: '0', maxHeight: '90%', objectFit: 'contain' }}
+          />
+        </div>
         <div className="participant-name">
           {participant.id.charAt(0).toUpperCase() + participant.id.slice(1)}
         </div>

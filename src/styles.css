@@ -1607,7 +1607,46 @@ body, html {
   100% { background-color: rgba(60, 64, 67, 0.8); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
 }
 
-/* Removed custom answer and feedback styling to ensure all text is displayed the same */
+/* Answer text styling */
+.answer-text {
+  color: white;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.6;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+  width: 100%;
+}
+
+/* Feedback text styling */
+.correct-feedback {
+  color: #34a853;
+  text-shadow: 0 0 8px rgba(52, 168, 83, 0.3);
+  font-size: 28px;
+  line-height: 1.6;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+  width: 100%;
+}
+
+.incorrect-feedback {
+  color: #ea4335;
+  text-shadow: 0 0 8px rgba(234, 67, 53, 0.3);
+  font-size: 28px;
+  line-height: 1.6;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+  width: 100%;
+}
 
 /* Styling for answer and feedback words in karaoke style */
 .answer-word {
@@ -1682,24 +1721,12 @@ body, html {
   100% { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
 }
 
-/* Question overlay container */
-.question-overlay {
-  width: 100%;
-}
-
-/* Ensure the question prompt is properly styled */
-.question-prompt {
-  margin-bottom: 15px;
-  text-align: center;
-  animation: prompt-pulse 2s infinite alternate;
-}
-
-.question-speaker {
+/* Ensure the dialogue text in question prompt is properly styled */
+.dialogue-text.question-prompt {
   color: white;
   font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 /* Additional styles for floating fart keys */
@@ -2568,81 +2595,6 @@ body, html {
   padding: 2px 6px;
   border-radius: 4px;
   margin: 0 4px;
-}
-
-/* Pause Overlay */
-.pause-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.pause-container {
-  background-color: rgba(60, 64, 67, 0.9);
-  border-radius: 12px;
-  padding: 32px;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 400px;
-  width: 90%;
-}
-
-.pause-title {
-  color: white;
-  font-size: 36px;
-  margin-bottom: 16px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.pause-subtitle {
-  color: #e8eaed;
-  font-size: 18px;
-  margin-bottom: 32px;
-  line-height: 1.5;
-}
-
-.pause-resume-button {
-  background-color: #4285f4;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 24px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.pause-resume-button:hover {
-  background-color: #1a73e8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-.pause-resume-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Styling for pause button in control bar */
-.meet-control-button.pause-button {
-  background-color: #fbbc05;
-}
-
-.meet-control-button.pause-button:hover {
-  background-color: #f9ab00;
 }
 
 /* Fade in animation */

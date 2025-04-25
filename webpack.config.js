@@ -56,10 +56,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/assets/faces', to: 'src/assets/faces' },
-        { from: 'src/assets/audio', to: 'src/assets/audio' },
-        { from: 'src/assets/dialogue', to: 'src/assets/dialogue' },
-        { from: 'src/assets/levels', to: 'src/assets/levels' },
+        { from: 'src/assets', to: 'src/assets' },
       ],
     }),
   ],
