@@ -10,7 +10,35 @@ import { getFartTypeFromViseme } from './types';
  * Helper function to determine if a dialogue is an answer dialogue
  */
 const isAnswerDialogue = (dialogue: any): boolean => {
-  return dialogue.speaker === 'wojak' && !dialogue.text && !dialogue.answers && !dialogue.feedback;
+  // Check for a wojak dialogue that has text but no answers/feedback
+  // OR an empty wojak dialogue with no properties (backward compatibility)
+  return (dialogue.speaker === 'wojak' && 
+         (dialogue.text && !dialogue.answers && !dialogue.feedback) ||
+         (dialogue.speaker === 'wojak' && !dialogue.text && !dialogue.answers && !dialogue.feedback));
+};
+
+/**
+ * Helper function to get dialogue display text (for debugging)
+ */
+const getDialogueDisplayText = (dialogue: any, gameState: any = null): string => {
+  if (dialogue.text) {
+    return dialogue.text;
+  } else if (dialogue.speaker === 'wojak' && gameState?.currentQuestion?.selectedAnswer !== undefined) {
+    // Player answer
+    return gameState.currentQuestion.answers[gameState.currentQuestion.selectedAnswer].text || 'Selected answer';
+  } else if (dialogue.feedback && gameState?.currentQuestion?.isCorrect !== undefined) {
+    // Feedback
+    const feedback = dialogue.feedback.find((f: any) => f.correct === gameState.currentQuestion.isCorrect);
+    return feedback?.text || 'Feedback';
+  }
+  return 'No text';
+};
+
+/**
+ * Helper function to determine if a dialogue is a feedback dialogue
+ */
+const isFeedbackDialogue = (dialogue: any): boolean => {
+  return dialogue.feedback !== undefined;
 };
 
 /**
@@ -25,51 +53,75 @@ export const generateFartOpportunities = (
   
   // Process each dialogue
   level.dialogues.forEach((dialogue, dialogueIndex) => {
-    // For answer and feedback dialogues, generate fart opportunities
-    if ((!dialogue.text && (dialogue.answers || dialogue.feedback)) || 
-        (dialogue.feedback && dialogue.speaker) || 
-        (dialogue.speaker === 'wojak' && dialogueIndex > 0 && level.dialogues[dialogueIndex-1].answers)) {
-      
-      // Generate 2 fart opportunities for answer/feedback dialogues
-      // Use the standard set of fart types
-      const fartTypes: FartType[] = ['t', 'p', 'k', 'f', 'r', 'z'];
-      
-      // Create two fart opportunities - one early and one later
-      // This gives the player clear chances to fart during answer/feedback
-      for (let i = 0; i < 2; i++) {
-        const fartTime = i === 0 ? 800 : 2500; // Early or late opportunity
-        
-        // Use predictable fart types that match with answer correctness hints
-        // Use 'p' (good) for correct answers area, 'z' (risky) for incorrect
-        const fartType = isAnswerDialogue(dialogue) ? 'p' : 'z';
-        
-        opportunities.push({
-          dialogueIndex,
-          wordIndex: i,
-          visemeIndex: i,
-          time: fartTime,
-          type: fartType,
-          active: false,
-          handled: false,
-          pressed: false,
-          pressedTime: 0,
-          animationKey: ''
-        });
-      }
-      
-      return; // Skip the regular metadata processing
+    // Skip dialogues with no speaker
+    if (!dialogue.speaker) return;
+    
+    // For each dialogue, determine the metadata key to use
+    let metadataKey = '';
+    
+    if (dialogue.text) {
+      // Regular dialogue
+      metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-metadata.json`;
+    } 
+    else if (isAnswerDialogue(dialogue)) {
+      // Player answer dialogue - use both answer possibilities since we don't know which will be selected
+      // We'll generate generic opportunities for now, and they'll be filtered at runtime
+      metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-answer-0-metadata.json`;
+    }
+    else if (isFeedbackDialogue(dialogue)) {
+      // Feedback dialogue - use the correct feedback metadata as default
+      metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-feedback-correct-metadata.json`;
+    }
+    else {
+      // Question dialogue or other special case
+      metadataKey = '';
     }
     
-    // Regular dialogue with text
-    if (!dialogue.text || !dialogue.speaker) return;
-    
-    const speakerId = dialogue.speaker;
-    const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${speakerId}-metadata.json`;
+    // Get metadata based on the key we determined
     const metadata = dialogueMetadata[metadataKey];
     
-    if (!metadata) return;
+    // Check if we have any metadata
+    if (!metadata || metadata.length === 0) {
+      // For answer/feedback dialogues with no metadata, or wojak dialogues with answers+text, generate basic opportunities
+      if (isAnswerDialogue(dialogue) || isFeedbackDialogue(dialogue) ||
+          (dialogue.speaker === 'wojak' && dialogue.answers && dialogue.text)) {
+        console.log(`Generating basic fart opportunities for ${dialogue.speaker} dialogue at index ${dialogueIndex}`);
+        
+        // Number of opportunities to generate
+        const numOpportunities = 3;
+        
+        // Create evenly spaced opportunities
+        for (let i = 0; i < numOpportunities; i++) {
+          // Calculate time based on position (early, middle, late)
+          const fartTime = 500 + (i * 1500); // 500ms, 2000ms, 3500ms
+          
+          // Choose a random fart type
+          const fartTypes: FartType[] = ['t', 'p', 'k', 'f', 'r', 'z'];
+          const randomIndex = Math.floor(Math.random() * fartTypes.length);
+          const fartType = fartTypes[randomIndex];
+          
+          opportunities.push({
+            dialogueIndex,
+            wordIndex: i,
+            visemeIndex: i,
+            time: fartTime,
+            type: fartType,
+            active: false,
+            handled: false,
+            pressed: false,
+            pressedTime: 0,
+            animationKey: ''
+          });
+        }
+        
+        return; // Skip the regular metadata processing
+      }
+      
+      // No metadata and not a special dialogue type, so skip
+      return;
+    }
     
-    // Group visemes by word
+    // Group visemes by word for metadata-based dialogues
     const wordVisemes: { [wordIndex: number]: Viseme[] } = {};
     let currentWordIndex = -1;
     

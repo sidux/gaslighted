@@ -1573,56 +1573,133 @@ body, html {
 }
 
 @keyframes correct-answer-flash {
-  0% { background-color: transparent; }
-  30% { background-color: rgba(52, 168, 83, 0.3); }
-  100% { background-color: transparent; }
+  0% { background-color: transparent; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
+  30% { background-color: rgba(52, 168, 83, 0.2); box-shadow: 0 0 30px rgba(52, 168, 83, 0.6), 0 6px 12px rgba(0, 0, 0, 0.6); }
+  100% { background-color: transparent; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
 }
 
 @keyframes incorrect-answer-flash {
-  0% { background-color: transparent; }
-  30% { background-color: rgba(234, 67, 53, 0.3); }
-  100% { background-color: transparent; }
+  0% { background-color: transparent; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
+  30% { background-color: rgba(234, 67, 53, 0.2); box-shadow: 0 0 30px rgba(234, 67, 53, 0.6), 0 6px 12px rgba(0, 0, 0, 0.6); }
+  100% { background-color: transparent; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
 }
 
-/* Answer text styling */
-.answer-text {
+/* Animations for answer buttons */
+.correct-answer-animation {
+  animation: correct-answer-glow 0.8s ease-out;
+  border: 2px solid rgba(52, 168, 83, 1.0) !important;
+}
+
+.incorrect-answer-animation {
+  animation: incorrect-answer-glow 0.8s ease-out; 
+  border: 2px solid rgba(234, 67, 53, 1.0) !important;
+}
+
+@keyframes correct-answer-glow {
+  0% { background-color: rgba(60, 64, 67, 0.8); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
+  50% { background-color: rgba(52, 168, 83, 0.4); box-shadow: 0 0 20px rgba(52, 168, 83, 0.7); }
+  100% { background-color: rgba(60, 64, 67, 0.8); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
+}
+
+@keyframes incorrect-answer-glow {
+  0% { background-color: rgba(60, 64, 67, 0.8); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
+  50% { background-color: rgba(234, 67, 53, 0.4); box-shadow: 0 0 20px rgba(234, 67, 53, 0.7); }
+  100% { background-color: rgba(60, 64, 67, 0.8); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
+}
+
+/* Removed custom answer and feedback styling to ensure all text is displayed the same */
+
+/* Styling for answer and feedback words in karaoke style */
+.answer-word {
+  font-weight: 500;
+  position: relative;
+}
+
+.correct-answer-word {
   color: white;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 1.6;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
-  margin-bottom: 10px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  display: block;
-  width: 100%;
+  background-color: rgba(52, 168, 83, 0.1);
+  border-radius: 4px;
+  padding: 0 4px;
 }
 
-/* Feedback text styling */
-.correct-feedback {
+.incorrect-answer-word {
+  color: white;
+  background-color: rgba(234, 67, 53, 0.1);
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+.correct-feedback-word {
   color: #34a853;
   text-shadow: 0 0 8px rgba(52, 168, 83, 0.3);
-  font-size: 28px;
-  line-height: 1.6;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
-  margin-bottom: 10px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  display: block;
+}
+
+.incorrect-feedback-word {
+  color: #ea4335;
+  text-shadow: 0 0 8px rgba(234, 67, 53, 0.3);
+}
+
+/* Enhanced fart opportunity styling for answer and feedback */
+.answer-word.fart-opportunity,
+.correct-feedback-word.fart-opportunity,
+.incorrect-feedback-word.fart-opportunity {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin: 0 2px;
+  box-shadow: 0 0 8px rgba(66, 133, 244, 0.3);
+  transition: all 0.2s ease;
+}
+
+.answer-word.fart-opportunity:hover,
+.correct-feedback-word.fart-opportunity:hover,
+.incorrect-feedback-word.fart-opportunity:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 12px rgba(66, 133, 244, 0.5);
+}
+
+/* Animation for karaoke container when answer is selected */
+.karaoke-container.answer-feedback-correct {
+  animation: answer-feedback-correct 0.8s ease-out;
+  position: relative;
+}
+
+.karaoke-container.answer-feedback-incorrect {
+  animation: answer-feedback-incorrect 0.8s ease-out;
+  position: relative;
+}
+
+@keyframes answer-feedback-correct {
+  0% { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
+  30% { box-shadow: 0 0 30px rgba(52, 168, 83, 0.6), 0 6px 12px rgba(0, 0, 0, 0.6); }
+  100% { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
+}
+
+@keyframes answer-feedback-incorrect {
+  0% { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
+  30% { box-shadow: 0 0 30px rgba(234, 67, 53, 0.6), 0 6px 12px rgba(0, 0, 0, 0.6); }
+  100% { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); }
+}
+
+/* Question overlay container */
+.question-overlay {
   width: 100%;
 }
 
-.incorrect-feedback {
-  color: #ea4335;
-  text-shadow: 0 0 8px rgba(234, 67, 53, 0.3);
-  font-size: 28px;
-  line-height: 1.6;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+/* Ensure the question prompt is properly styled */
+.question-prompt {
+  margin-bottom: 15px;
+  text-align: center;
+  animation: prompt-pulse 2s infinite alternate;
+}
+
+.question-speaker {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
   margin-bottom: 10px;
-  font-weight: 500;
   letter-spacing: 0.5px;
-  display: block;
-  width: 100%;
 }
 
 /* Additional styles for floating fart keys */
@@ -1847,6 +1924,63 @@ body, html {
 @keyframes wrong-answer {
   0% { background-color: rgba(60, 64, 67, 0.7); }
   50% { background-color: rgba(234, 67, 53, 0.7); }
+  100% { background-color: rgba(60, 64, 67, 0.7); }
+}
+
+/* Animations for answer selection feedback */
+.correct-answer-animation {
+  animation: correct-answer-flash 0.5s ease-out;
+  border-color: #34a853 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.incorrect-answer-animation {
+  animation: incorrect-answer-flash 0.5s ease-out;
+  border-color: #ea4335 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.correct-answer-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(52, 168, 83, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: answer-glow 0.5s ease-out;
+  z-index: -1;
+}
+
+.incorrect-answer-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(234, 67, 53, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: answer-glow 0.5s ease-out;
+  z-index: -1;
+}
+
+@keyframes answer-glow {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.2); }
+}
+
+@keyframes correct-answer-flash {
+  0% { background-color: rgba(60, 64, 67, 0.7); }
+  30% { background-color: rgba(52, 168, 83, 0.4); }
+  100% { background-color: rgba(60, 64, 67, 0.7); }
+}
+
+@keyframes incorrect-answer-flash {
+  0% { background-color: rgba(60, 64, 67, 0.7); }
+  30% { background-color: rgba(234, 67, 53, 0.4); }
   100% { background-color: rgba(60, 64, 67, 0.7); }
 }
 

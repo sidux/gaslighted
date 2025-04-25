@@ -10,6 +10,8 @@ export function useQuestionHandler(
       const customEvent = event as CustomEvent<{ dialogueIndex: number, answerIndex: number }>;
       const { dialogueIndex } = customEvent.detail;
       
+      console.log("Answer complete event received for dialogue:", dialogueIndex);
+      
       setGameState(prevState => {
         if (!prevState) return null;
         
@@ -18,6 +20,13 @@ export function useQuestionHandler(
           return prevState;
         }
         
+        // Reset state for proper fart opportunities with new text
+        const updatedState: GameState = {
+          ...prevState,
+          pausedTimestamp: null, // Resume the game
+          currentWordIndex: 0     // Start from first word of answer text
+        };
+        
         // Get the feedback dialogue
         const nextDialogue = prevState.level.dialogues[dialogueIndex + 1];
         
@@ -25,12 +34,11 @@ export function useQuestionHandler(
         if (nextDialogue && nextDialogue.feedback) {
           // Move to the next dialogue (feedback)
           return {
-            ...prevState,
+            ...updatedState,
             currentDialogueIndex: dialogueIndex + 1,
             playbackTime: 0,
-            currentWordIndex: -1,
-            currentVisemeIndex: -1,
-            pausedTimestamp: null // Resume the game
+            currentWordIndex: 0,  // Start from first word
+            currentVisemeIndex: -1
           };
         } else {
           // If there's no feedback dialogue after the question,
@@ -39,13 +47,12 @@ export function useQuestionHandler(
           const isLevelComplete = newDialogueIndex >= prevState.level.dialogues.length;
           
           return {
-            ...prevState,
+            ...updatedState,
             currentDialogueIndex: newDialogueIndex,
             playbackTime: 0,
-            currentWordIndex: -1,
+            currentWordIndex: 0,  // Start from first word
             currentVisemeIndex: -1,
             lastFartResult: null,
-            pausedTimestamp: null,
             victory: isLevelComplete && prevState.shame < 100,
             isGameOver: isLevelComplete || prevState.shame >= 100,
           };

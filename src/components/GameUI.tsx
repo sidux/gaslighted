@@ -35,24 +35,13 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
     <div className="game-ui">
       <GameMeters gameState={gameState} />
 
-      {/* All non-question dialogues (regular, answer, and feedback) */}
-      {!gameState.showingQuestion && (
-        <div className="karaoke-container">
-          <KaraokeText 
-            gameState={gameState} 
-            dialogueMetadata={dialogueMetadata}
-            handleFartAnimationEnd={handleFartAnimationEnd}
-          />
-        </div>
-      )}
-      
-      {/* Show the question overlay when a question is active */}
-      {gameState.showingQuestion && (
-        <div className="karaoke-container">
+      <div className="karaoke-container">
+        {/* Question timer container only visible when showing question */}
+        {gameState.showingQuestion && gameState.currentQuestion && (
           <div className="question-timer-container">
             <div 
               className={`question-timer ${
-                gameState.currentQuestion && gameState.currentQuestion.timeRemaining 
+                gameState.currentQuestion.timeRemaining
                   ? (gameState.currentQuestion.timeRemaining / parseTimeLimit(gameState.level.rules.question_time_limit || "10s") < 0.3 
                       ? 'timer-critical pulse' 
                       : gameState.currentQuestion.timeRemaining / parseTimeLimit(gameState.level.rules.question_time_limit || "10s") < 0.6 
@@ -61,19 +50,35 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
                   : ''
               }`}
               style={{ 
-                width: `${gameState.currentQuestion 
-                  ? (gameState.currentQuestion.timeRemaining / parseTimeLimit(gameState.level.rules.question_time_limit || "10s") * 100)
-                  : 100}%` 
+                width: `${(gameState.currentQuestion.timeRemaining / parseTimeLimit(gameState.level.rules.question_time_limit || "10s") * 100)}%` 
               }}
             />
           </div>
-          
+        )}
+        
+        {/* When showing question, display the question overlay */}
+        {gameState.showingQuestion ? (
           <QuestionOverlay 
             gameState={gameState}
             setGameState={setGameState}
           />
-        </div>
-      )}
+        ) : (
+          /* For ALL dialogue types (regular, answer, feedback) use the same KaraokeText component */
+          <KaraokeText 
+            gameState={gameState} 
+            dialogueMetadata={dialogueMetadata}
+            handleFartAnimationEnd={handleFartAnimationEnd}
+          />
+        )}
+        
+        {/* Always show active fart opportunities, but only when not in question mode */}
+        {!gameState.showingQuestion && (
+          <FartOpportunities 
+            gameState={gameState}
+            handleFartAnimationEnd={handleFartAnimationEnd}
+          />
+        )}
+      </div>
     </div>
   );
 };

@@ -22,7 +22,20 @@ const QuestionOverlay: React.FC<QuestionOverlayProps> = ({ gameState, setGameSta
   const timeRatio = timeRemaining / timeLimit;
   
   const handleAnswerClick = (index: number) => {
-    setGameState(prevState => handleAnswerSelection(prevState, index));
+    // Add animation effect for answer selection
+    const answerButtons = document.querySelectorAll('.question-option');
+    answerButtons.forEach((button, idx) => {
+      if (idx === index) {
+        // Add animation class based on whether answer is correct
+        const isCorrect = answers[index].correct;
+        button.classList.add(isCorrect ? 'correct-answer-animation' : 'incorrect-answer-animation');
+      }
+    });
+    
+    // Add a slight delay to allow the animation to be seen
+    setTimeout(() => {
+      setGameState(prevState => handleAnswerSelection(prevState, index));
+    }, 300);
   };
   
   // Determine the speaker name for the question prompt
@@ -36,17 +49,9 @@ const QuestionOverlay: React.FC<QuestionOverlayProps> = ({ gameState, setGameSta
     : 'Your response:';
   
   return (
-    <div className="karaoke-container question-container">
+    <div className="question-overlay">
       <div className="question-prompt">
         <div className="question-speaker">{speakerQuestion}</div>
-      </div>
-      
-      <div className="question-timer-container">
-        <div 
-          className={`question-timer ${timeRatio < 0.3 ? 'timer-critical pulse' : 
-            timeRatio < 0.6 ? 'timer-warning' : ''}`}
-          style={{ width: `${timeRatio * 100}%` }}
-        />
       </div>
       
       <div className="question-options-container">

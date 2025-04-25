@@ -55,19 +55,19 @@
     "dialogues": [
         {
             "speaker": "boomer",
-            "text": "Good morning. Let’s get started. We’ve got a packed agenda and limited time, so let’s stay efficient."
+            "text": "Good morning. Let's get started. We've got a packed agenda and limited time, so let's stay efficient."
         },
         {
             "speaker": "zoomer",
-            "text": "Hey everyone! I’ve put together the Q4 highlights and a few slides on early Q1 trends. Shouldn’t take long."
+            "text": "Hey everyone! I've put together the Q4 highlights and a few slides on early Q1 trends. Shouldn't take long."
         },
         {
             "speaker": "boomer",
-            "text": "Thanks. Just a reminder to keep side conversations in the chat — and let’s avoid talking over each other this time."
+            "text": "Thanks. Just a reminder to keep side conversations in the chat — and let's avoid talking over each other this time."
         },
         {
             "speaker": "karen",
-            "text": "Moving forward, we’ll be tightening timelines around reporting. Too many delays last cycle."
+            "text": "Moving forward, we'll be tightening timelines around reporting. Too many delays last cycle."
         },
         {
             "speaker": "boomer",
@@ -77,7 +77,7 @@
             "speaker": "wojak",
             "answers": [
                 {
-                    "text": "Mostly ownership. The handoffs weren’t clearly assigned.",
+                    "text": "Mostly ownership. The handoffs weren't clearly assigned.",
                     "correct": true
                 },
                 {
@@ -89,7 +89,7 @@
                     "correct": false
                 },
                 {
-                    "text": "Honestly, it wasn’t really my area.",
+                    "text": "Honestly, it wasn't really my area.",
                     "correct": false
                 }
             ]
@@ -98,18 +98,18 @@
             "speaker": "boomer",
             "feedback": [
                 {
-                    "text": "That lines up with what we saw. Let’s address that in the post-mortem.",
+                    "text": "That lines up with what we saw. Let's address that in the post-mortem.",
                     "correct": true
                 },
                 {
-                    "text": "That’s not how it looked from our end. Be more involved next time.",
+                    "text": "That's not how it looked from our end. Be more involved next time.",
                     "correct": false
                 }
             ]
         },
         {
             "speaker": "karen",
-            "text": "On that note — we’ll be rolling out a revised ownership matrix. No task without a name attached."
+            "text": "On that note — we'll be rolling out a revised ownership matrix. No task without a name attached."
         },
         {
             "speaker": "zoomer",
@@ -117,11 +117,11 @@
         },
         {
             "speaker": "boomer",
-            "text": "Let’s do it now. No point deferring numbers we all saw coming."
+            "text": "Let's do it now. No point deferring numbers we all saw coming."
         },
         {
             "speaker": "boomer",
-            "text": "While we’re here — Wojak, remind me, what was the main issue with Ops that week?"
+            "text": "While we're here — Wojak, remind me, what was the main issue with Ops that week?"
         },
         {
             "speaker": "wojak",
@@ -148,30 +148,30 @@
             "speaker": "boomer",
             "feedback": [
                 {
-                    "text": "Right. Let’s make sure that’s documented properly this time.",
+                    "text": "Right. Let's make sure that's documented properly this time.",
                     "correct": true
                 },
                 {
-                    "text": "No — that wasn’t it. Please review your notes before the next sync.",
+                    "text": "No — that wasn't it. Please review your notes before the next sync.",
                     "correct": false
                 }
             ]
         },
         {
             "speaker": "karen",
-            "text": "Looking ahead: we need clearer escalation paths. If a ticket sits unresolved for more than 24 hours, it’s too late."
+            "text": "Looking ahead: we need clearer escalation paths. If a ticket sits unresolved for more than 24 hours, it's too late."
         },
         {
             "speaker": "boomer",
-            "text": "We’ll also be adjusting check-ins. More async, less noise. Unless anyone sees a problem with that?"
+            "text": "We'll also be adjusting check-ins. More async, less noise. Unless anyone sees a problem with that?"
         },
         {
             "speaker": "zoomer",
-            "text": "Nope, that actually works better for my timezone. I’ll tweak the Slack workflows accordingly."
+            "text": "Nope, that actually works better for my timezone. I'll tweak the Slack workflows accordingly."
         },
         {
             "speaker": "boomer",
-            "text": "Alright. Let’s wrap. Status updates by EOD. If you’re blocked, say so before it becomes a Friday surprise."
+            "text": "Alright. Let's wrap. Status updates by EOD. If you're blocked, say so before it becomes a Friday surprise."
         }
     ]
 }

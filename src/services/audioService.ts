@@ -101,7 +101,19 @@ export const playFeedbackAudio = (
 ): void => {
   const feedbackType = isCorrect ? 'correct' : 'incorrect';
   const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-feedback-${feedbackType}`;
-  playAudio(resources.dialogues[audioKey], onEnded);
+  
+  console.log("Playing feedback audio with key:", audioKey);
+  console.log("Available audio keys:", Object.keys(resources.dialogues));
+  
+  const audio = resources.dialogues[audioKey];
+  if (!audio) {
+    console.error(`Feedback audio not found for key: ${audioKey}`);
+    // If audio not found, move on after a short delay
+    setTimeout(onEnded, 500);
+    return;
+  }
+  
+  playAudio(audio, onEnded);
 };
 
 /**

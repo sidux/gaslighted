@@ -177,10 +177,6 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
       <div className={`perfect-effect ${fartEffectClasses.perfect}`}>PERFECT!</div>
       <div className={`okay-effect ${fartEffectClasses.okay}`}>OKAY</div>
       <div className={`bad-effect ${fartEffectClasses.bad}`}>BAD!</div>
-      
-      <div className="participant-count">
-        <span>{participants.length}</span>
-      </div>
     </div>
   );
 };

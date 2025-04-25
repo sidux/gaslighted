@@ -53,6 +53,9 @@ export function useDialogueAudio(
       
       // Play the feedback audio directly
       import('../services/audioService').then(({ playFeedbackAudio }) => {
+        console.log("Playing feedback audio for dialogue index:", gameState.currentDialogueIndex, 
+          "Speaker:", currentDialogue.speaker, "Is Correct:", isCorrect);
+        
         playFeedbackAudio(
           audioResources,
           gameState.level.id || 'level1',
@@ -61,6 +64,10 @@ export function useDialogueAudio(
           isCorrect,
           handleFeedbackEnded
         );
+      }).catch(error => {
+        console.error("Error importing playFeedbackAudio:", error);
+        // Even if there's an error, move to the next dialogue
+        handleFeedbackEnded();
       });
       
       return; // Skip the regular dialogue audio playback below
@@ -110,6 +117,9 @@ export function useDialogueAudio(
         });
       } else {
         // Play regular dialogue audio
+        console.log("Playing regular dialogue audio for index:", gameState.currentDialogueIndex, 
+          "Speaker:", currentDialogue.speaker);
+        
         playDialogueAudio(
           audioResources,
           gameState.level.id || 'level1',

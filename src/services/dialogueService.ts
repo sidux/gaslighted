@@ -11,7 +11,34 @@ export const getDialogueMetadata = (state: GameState): Viseme[] => {
   
   if (!speakerId) return [];
   
-  if (currentDialogue.text) {
+  // Check if this is a player answer dialogue
+  const isPlayerAnswer = speakerId === 'wojak' && 
+                         (state.currentQuestion?.selectedAnswer !== undefined || 
+                          (currentDialogue.answers && currentDialogue.text));
+                         
+  if (isPlayerAnswer) {
+    // If this is a wojak dialogue with answers array and text property,
+    // this is using our new approach where we added text directly to the answers dialogue
+    if (currentDialogue.answers && currentDialogue.text) {
+      const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-metadata.json`;
+      const metadata = state.dialogueMetadata[metadataKey];
+      if (metadata && metadata.length > 0) {
+        return metadata;
+      }
+      
+      // If no direct metadata exists for this dialogue, try to find the answer metadata
+      // for the selected answer (fallback to old approach)
+      const answerIndex = state.currentQuestion?.selectedAnswer || 0;
+      const answerMetadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-answer-${answerIndex}-metadata.json`;
+      return state.dialogueMetadata[answerMetadataKey] || [];
+    } else {
+      // Legacy approach - separate answer dialogue
+      const answerIndex = state.currentQuestion?.selectedAnswer || 0;
+      const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-answer-${answerIndex}-metadata.json`;
+      return state.dialogueMetadata[metadataKey] || [];
+    }
+  }
+  else if (currentDialogue.text) {
     // Regular dialogue
     const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-metadata.json`;
     return state.dialogueMetadata[metadataKey] || [];

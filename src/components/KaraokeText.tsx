@@ -41,60 +41,63 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
   const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
   if (!currentDialogue) return null;
 
-  // build metadata key and load
+  // Build metadata key and load
   const speakerId = currentDialogue.speaker;
   const levelId = gameState.level.id || 'level1';
 
-  // Check if this is specifically a user answer or feedback dialogue
-  const isPlayerAnswer = currentDialogue?.speaker === 'wojak' && 
-                          gameState.currentQuestion?.selectedAnswer !== undefined;
-  
   // For feedback dialogue
   const isFeedbackDialogue = currentDialogue?.feedback !== undefined;
   
-  // For feedback, find the correct feedback text based on the player's previous answer
-  const feedbackText = isFeedbackDialogue && gameState.currentQuestion?.isCorrect !== undefined
-    ? currentDialogue?.feedback?.find(f => f.correct === gameState.currentQuestion?.isCorrect)?.text || ''
-    : '';
+  // Get text to display based on type of dialogue
+  let displayText = '';
   
-  // Get the selected answer text if applicable
-  const selectedAnswerText = isPlayerAnswer && gameState.currentQuestion?.selectedAnswer !== undefined 
-    ? gameState.currentQuestion.answers[gameState.currentQuestion.selectedAnswer].text 
-    : '';
-
-  // If this is an answer or feedback dialogue, we display it differently
-  if (isPlayerAnswer) {
-    return (
-      <div className="answer-text">{selectedAnswerText}</div>
-    );
+  if (isFeedbackDialogue && gameState.currentQuestion?.isCorrect !== undefined) {
+    // For feedback dialogue, use the appropriate feedback text based on answer correctness
+    const feedbackText = currentDialogue.feedback?.find(f => f.correct === gameState.currentQuestion?.isCorrect)?.text || '';
+    displayText = feedbackText;
+    console.log("Feedback text:", displayText);
+  } else if (currentDialogue.speaker === 'wojak' && currentDialogue.answers) {
+    // This is an answer dialogue with answers array - use the text property (added when answer was selected)
+    // or fallback to empty string if no answer selected yet
+    displayText = currentDialogue.text || '';
+    console.log("Wojak answer dialogue text:", displayText);
+  } else if (currentDialogue.speaker === 'wojak' && !currentDialogue.answers && !currentDialogue.feedback && currentDialogue.text === undefined) {
+    // Legacy format for backward compatibility: empty wojak dialogue
+    if (gameState.currentDialogueIndex > 0 && gameState.level.dialogues[gameState.currentDialogueIndex - 1].answers) {
+      const prevDialogue = gameState.level.dialogues[gameState.currentDialogueIndex - 1];
+      if (prevDialogue.answers && gameState.currentQuestion?.selectedAnswer !== undefined) {
+        displayText = prevDialogue.answers[gameState.currentQuestion.selectedAnswer].text || '';
+        console.log("Legacy answer dialogue text:", displayText);
+      }
+    }
+  } else {
+    // For all other dialogues, use the text property
+    displayText = currentDialogue.text || '';
+    console.log("Dialogue text:", displayText, "for speaker:", currentDialogue.speaker);
   }
   
-  if (isFeedbackDialogue) {
-    return (
-      <div className={gameState.currentQuestion?.isCorrect ? 'correct-feedback' : 'incorrect-feedback'}>
-        {feedbackText}
-      </div>
-    );
-  }
-
-  // Regular dialogue with text and fart opportunities
-  // Make sure to pass a valid string to getAllWords
-  const dialogueText = currentDialogue.text || '';
-  
-  // Determine the metadata to use
+  // Determine the metadata to use based on dialogue type
   let metadataKey = '';
-  if (currentDialogue.text) {
-    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-metadata.json`;
-  } else if (currentDialogue.feedback) {
-    const isCorrect = gameState.currentQuestion?.isCorrect || false;
+  
+  if (isFeedbackDialogue && gameState.currentQuestion?.isCorrect !== undefined) {
+    // For feedback, use the correct/incorrect feedback metadata
+    const isCorrect = gameState.currentQuestion.isCorrect;
     metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}-metadata.json`;
+  } else {
+    // Regular dialogue (including answers)
+    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-metadata.json`;
   }
   
+  console.log("Using metadata key:", metadataKey);
   const metadata = dialogueMetadata[metadataKey] || [];
-  const words = getAllWords(metadata, dialogueText);
+  console.log("Metadata found:", metadata.length > 0);
+  
+  // Process the words from metadata
+  const words = getAllWords(metadata, displayText);
+  
   const currentWordIndex = gameState.currentWordIndex;
 
-  // pick out all active, un‐handled opportunities for this dialogue
+  // Pick out all active, un‐handled opportunities for this dialogue
   const activeFartOpportunities = gameState.fartOpportunities.filter(
     opp =>
       opp.dialogueIndex === gameState.currentDialogueIndex &&
@@ -102,7 +105,7 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
       !opp.handled
   );
 
-  // map wordIndex → opportunity
+  // Map wordIndex → opportunity
   const wordToFartOpportunityMap = new Map<number, FartOpportunity>();
   activeFartOpportunities.forEach(opp => {
     wordToFartOpportunityMap.set(opp.wordIndex, opp);

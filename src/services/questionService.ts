@@ -1,4 +1,4 @@
-import { GameState } from '../types';
+import { GameState, DialogueItem } from '../types';
 import { playAnswerAudio } from './audioService';
 
 /**
@@ -61,9 +61,38 @@ export const handleAnswerSelection = (state: GameState, answerIndex: number): Ga
     blurEffect: newShame > 70
   };
   
+  // Create a deep copy of the level with the answer text directly added to the wojak answer dialogue
+  // This ensures the answer text is available even if currentQuestion gets cleared
+  const modifiedLevel = JSON.parse(JSON.stringify(state.level));
+  const selectedAnswerText = state.currentQuestion.answers[answerIndex].text;
+  
+  console.log("Selected answer text:", selectedAnswerText);
+  
+  // Instead of searching for a separate wojak answer dialogue, use the current dialogue
+  // that already contains the answers - just add the selected text
+  const currentDialogue = modifiedLevel.dialogues[state.currentDialogueIndex];
+  
+  // Add the selectedAnswerText directly to the current dialogue
+  if (currentDialogue && currentDialogue.speaker === 'wojak' && currentDialogue.answers) {
+    // Store the selected answer text for display
+    currentDialogue.text = selectedAnswerText;
+    // Keep the answers array for reference, but we'll now use the text property for display
+    console.log("Added answer text to current wojak dialogue:", selectedAnswerText);
+  } else {
+    console.error("Current dialogue is not a wojak answer dialogue:", state.currentDialogueIndex);
+    console.log("Dialogues:", modifiedLevel.dialogues.map((d: DialogueItem, i: number) => ({
+      index: i,
+      speaker: d.speaker,
+      hasText: !!d.text,
+      hasAnswers: !!d.answers,
+      hasFeedback: !!d.feedback
+    })));
+  }
+  
   // Create the updated state with answer selection and affect pressure based on answer correctness
   const updatedState = {
     ...state,
+    level: modifiedLevel, // Use our modified level with added answer text
     showingQuestion: false,
     shame: newShame,
     // Increase pressure if answer is incorrect, slightly decrease if correct
@@ -77,8 +106,13 @@ export const handleAnswerSelection = (state: GameState, answerIndex: number): Ga
       timeRemaining: 0
     },
     screenEffects,
-    pausedTimestamp: Date.now() // Important: Pause the game while playing the answer
+    pausedTimestamp: Date.now(), // Important: Pause the game while playing the answer
+    currentWordIndex: 0 // Reset word index for the answer/feedback text
   };
+  
+  // Animation effects will be added when the question UI is replaced with answer dialogue
+  
+  // This section was redundant and already handled above
   
   // Play the answer audio if resources exist
   if (state.audioResources) {
@@ -89,14 +123,14 @@ export const handleAnswerSelection = (state: GameState, answerIndex: number): Ga
     // Add visual feedback for correct/incorrect answer - using setTimeout to ensure the effect happens
     // after the question UI has been replaced with the answer UI
     setTimeout(() => {
-      const feedbackElement = document.querySelector('.karaoke-container');
-      if (feedbackElement) {
-        feedbackElement.classList.add(isCorrect ? 'answer-feedback-correct' : 'answer-feedback-incorrect');
+      const karaokeContainer = document.querySelector('.karaoke-container');
+      if (karaokeContainer) {
+        karaokeContainer.classList.add(isCorrect ? 'answer-feedback-correct' : 'answer-feedback-incorrect');
         setTimeout(() => {
-          feedbackElement.classList.remove('answer-feedback-correct', 'answer-feedback-incorrect');
+          karaokeContainer.classList.remove('answer-feedback-correct', 'answer-feedback-incorrect');
         }, 800); // Keep the effect a bit longer (800ms)
       }
-    }, 50); // Small delay to ensure the DOM has updated
+    }, 300); // Delay to ensure the DOM has updated and animation is visible
     
     // This will play the player's answer as a dialogue
     try {
