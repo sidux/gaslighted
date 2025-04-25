@@ -61,11 +61,15 @@ export const handleAnswerSelection = (state: GameState, answerIndex: number): Ga
     blurEffect: newShame > 70
   };
   
-  // Create the updated state with answer selection
+  // Create the updated state with answer selection and affect pressure based on answer correctness
   const updatedState = {
     ...state,
     showingQuestion: false,
     shame: newShame,
+    // Increase pressure if answer is incorrect, slightly decrease if correct
+    pressure: isCorrect 
+      ? Math.max(0, state.pressure - 10) // Decrease pressure for correct answers (relief)
+      : Math.min(100, state.pressure + 20), // Increase pressure for wrong answers
     currentQuestion: {
       ...state.currentQuestion,
       selectedAnswer: answerIndex,
