@@ -1,6 +1,7 @@
 import React from 'react';
 import { GameState, Answer } from '../types';
 import { handleAnswerSelection, parseTimeLimit } from '../services/questionService';
+import { getPlayerCharacterId, isPlayerDialogue } from '../services';
 
 interface QuestionOverlayProps {
   gameState: GameState;
@@ -43,8 +44,11 @@ const QuestionOverlay: React.FC<QuestionOverlayProps> = ({ gameState, setGameSta
     ? currentDialogue.speaker.charAt(0).toUpperCase() + currentDialogue.speaker.slice(1)
     : '';
   
+  // Get the player character ID
+  const playerCharacterId = getPlayerCharacterId(level);
+  
   // If the question is from a previous dialogue, get that speaker
-  const speakerQuestion = currentDialogue && currentDialogue.speaker !== 'wojak'
+  const speakerQuestion = currentDialogue && currentDialogue.speaker !== playerCharacterId
     ? `${speakerName} is waiting for your answer...`
     : 'Your response:';
   

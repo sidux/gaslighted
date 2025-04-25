@@ -5,16 +5,18 @@ import {
   Viseme
 } from '../../types';
 import { getFartTypeFromViseme } from './types';
+import { getPlayerCharacterId, isPlayerDialogue } from '../playerService';
 
 /**
  * Helper function to determine if a dialogue is an answer dialogue
  */
-const isAnswerDialogue = (dialogue: any): boolean => {
-  // Check for a wojak dialogue that has text but no answers/feedback
-  // OR an empty wojak dialogue with no properties (backward compatibility)
-  return (dialogue.speaker === 'wojak' && 
+const isAnswerDialogue = (dialogue: any, level: Level): boolean => {
+  const playerCharacterId = getPlayerCharacterId(level);
+  // Check for a player dialogue that has text but no answers/feedback
+  // OR an empty player dialogue with no properties (backward compatibility)
+  return (dialogue.speaker === playerCharacterId && 
          (dialogue.text && !dialogue.answers && !dialogue.feedback) ||
-         (dialogue.speaker === 'wojak' && !dialogue.text && !dialogue.answers && !dialogue.feedback));
+         (dialogue.speaker === playerCharacterId && !dialogue.text && !dialogue.answers && !dialogue.feedback));
 };
 
 /**
@@ -23,7 +25,7 @@ const isAnswerDialogue = (dialogue: any): boolean => {
 const getDialogueDisplayText = (dialogue: any, gameState: any = null): string => {
   if (dialogue.text) {
     return dialogue.text;
-  } else if (dialogue.speaker === 'wojak' && gameState?.currentQuestion?.selectedAnswer !== undefined) {
+  } else if (isPlayerDialogue(dialogue.speaker, gameState.level) && gameState?.currentQuestion?.selectedAnswer !== undefined) {
     // Player answer
     return gameState.currentQuestion.answers[gameState.currentQuestion.selectedAnswer].text || 'Selected answer';
   } else if (dialogue.feedback && gameState?.currentQuestion?.isCorrect !== undefined) {
@@ -50,6 +52,7 @@ export const generateFartOpportunities = (
 ): FartOpportunity[] => {
   const opportunities: FartOpportunity[] = [];
   const levelId = level.id || 'level1';
+  const playerCharacterId = getPlayerCharacterId(level);
   
   // Process each dialogue
   level.dialogues.forEach((dialogue, dialogueIndex) => {
@@ -63,7 +66,7 @@ export const generateFartOpportunities = (
       // Regular dialogue
       metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-metadata.json`;
     } 
-    else if (isAnswerDialogue(dialogue)) {
+    else if (isAnswerDialogue(dialogue, level)) {
       // Player answer dialogue - use both answer possibilities since we don't know which will be selected
       // We'll generate generic opportunities for now, and they'll be filtered at runtime
       metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-answer-0-metadata.json`;
@@ -82,9 +85,9 @@ export const generateFartOpportunities = (
     
     // Check if we have any metadata
     if (!metadata || metadata.length === 0) {
-      // For answer/feedback dialogues with no metadata, or wojak dialogues with answers+text, generate basic opportunities
-      if (isAnswerDialogue(dialogue) || isFeedbackDialogue(dialogue) ||
-          (dialogue.speaker === 'wojak' && dialogue.answers && dialogue.text)) {
+      // For answer/feedback dialogues with no metadata, or player dialogues with answers+text, generate basic opportunities
+      if (isAnswerDialogue(dialogue, level) || isFeedbackDialogue(dialogue) ||
+          (dialogue.speaker === playerCharacterId && dialogue.answers && dialogue.text)) {
         console.log(`Generating basic fart opportunities for ${dialogue.speaker} dialogue at index ${dialogueIndex}`);
         
         // Number of opportunities to generate

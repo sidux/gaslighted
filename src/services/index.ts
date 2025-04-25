@@ -7,3 +7,4 @@ export * from './levelService';
 export * from './questionService';
 export * from './dialogueService';
 export * from './scoreService';
+export * from './playerService';

@@ -1,5 +1,6 @@
 import { GameState, DialogueItem } from '../types';
 import { playAnswerAudio } from './audioService';
+import { getPlayerCharacterId } from './playerService';
 
 /**
  * Convert time string to milliseconds (e.g., "10s" to 10000)
@@ -61,25 +62,28 @@ export const handleAnswerSelection = (state: GameState, answerIndex: number): Ga
     blurEffect: newShame > 70
   };
   
-  // Create a deep copy of the level with the answer text directly added to the wojak answer dialogue
+
+  
+  // Create a deep copy of the level with the answer text directly added to the player's answer dialogue
   // This ensures the answer text is available even if currentQuestion gets cleared
   const modifiedLevel = JSON.parse(JSON.stringify(state.level));
   const selectedAnswerText = state.currentQuestion.answers[answerIndex].text;
+  const playerCharacterId = getPlayerCharacterId(state.level);
   
   console.log("Selected answer text:", selectedAnswerText);
   
-  // Instead of searching for a separate wojak answer dialogue, use the current dialogue
+  // Instead of searching for a separate player answer dialogue, use the current dialogue
   // that already contains the answers - just add the selected text
   const currentDialogue = modifiedLevel.dialogues[state.currentDialogueIndex];
   
   // Add the selectedAnswerText directly to the current dialogue
-  if (currentDialogue && currentDialogue.speaker === 'wojak' && currentDialogue.answers) {
+  if (currentDialogue && currentDialogue.speaker === playerCharacterId && currentDialogue.answers) {
     // Store the selected answer text for display
     currentDialogue.text = selectedAnswerText;
     // Keep the answers array for reference, but we'll now use the text property for display
-    console.log("Added answer text to current wojak dialogue:", selectedAnswerText);
+    console.log(`Added answer text to current ${playerCharacterId} dialogue:`, selectedAnswerText);
   } else {
-    console.error("Current dialogue is not a wojak answer dialogue:", state.currentDialogueIndex);
+    console.error(`Current dialogue is not a ${playerCharacterId} answer dialogue:`, state.currentDialogueIndex);
     console.log("Dialogues:", modifiedLevel.dialogues.map((d: DialogueItem, i: number) => ({
       index: i,
       speaker: d.speaker,
@@ -118,7 +122,7 @@ export const handleAnswerSelection = (state: GameState, answerIndex: number): Ga
   if (state.audioResources) {
     const levelId = state.level.id || 'level1';
     const dialogueIndex = state.currentDialogueIndex;
-    const speakerId = 'wojak'; // Player character
+    const speakerId = getPlayerCharacterId(state.level); // Get player character ID dynamically
     
     // Add visual feedback for correct/incorrect answer - using setTimeout to ensure the effect happens
     // after the question UI has been replaced with the answer UI

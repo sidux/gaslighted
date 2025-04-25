@@ -1,5 +1,6 @@
 import { GameState, Viseme } from '../types';
 import { showQuestion } from './questionService';
+import { getPlayerCharacterId, isPlayerDialogue } from './playerService';
 
 /**
  * Get metadata for the current dialogue
@@ -11,13 +12,16 @@ export const getDialogueMetadata = (state: GameState): Viseme[] => {
   
   if (!speakerId) return [];
   
+  // Get player character ID
+  const playerCharacterId = getPlayerCharacterId(state.level);
+  
   // Check if this is a player answer dialogue
-  const isPlayerAnswer = speakerId === 'wojak' && 
+  const isPlayerAnswer = speakerId === playerCharacterId && 
                          (state.currentQuestion?.selectedAnswer !== undefined || 
                           (currentDialogue.answers && currentDialogue.text));
                          
   if (isPlayerAnswer) {
-    // If this is a wojak dialogue with answers array and text property,
+    // If this is a player dialogue with answers array and text property,
     // this is using our new approach where we added text directly to the answers dialogue
     if (currentDialogue.answers && currentDialogue.text) {
       const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-metadata.json`;

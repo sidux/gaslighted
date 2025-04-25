@@ -99,11 +99,15 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
           </div>
           
           <div className="loading-animation">
-            <img 
-              src={require('../assets/faces/wojak-talking1.png')} 
-              alt="Loading" 
-              className="loading-character-image"
-            />
+            {level.participants.find(p => p.type === 'player') ? (
+              <img 
+                src={require(`../assets/faces/${level.participants.find(p => p.type === 'player')?.id || 'default'}-talking1.png`)} 
+                alt="Loading" 
+                className="loading-character-image"
+              />
+            ) : (
+              <div className="loading-character-placeholder"></div>
+            )}
             <div className="loading-meet-ui">
               <div className="loading-progress-bar">
                 <div className="loading-progress-fill"></div>
@@ -148,6 +152,7 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
           score={getFinalScore(gameState)}
           onRestart={handleRestartGame}
           onBackToMenu={handleLeaveMeeting}
+          level={level}
         />
       )}
     </GameScreenEffects>

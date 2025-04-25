@@ -1,23 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getPlayerCharacterId } from '../services';
 
 interface GameOverScreenProps {
   victory: boolean;
   score: number;
   onRestart: () => void;
   onBackToMenu: () => void;
+  level?: any; // Add level prop
 }
 
 const GameOverScreen: React.FC<GameOverScreenProps> = ({ 
   victory, 
   score, 
   onRestart, 
-  onBackToMenu 
+  onBackToMenu,
+  level
 }) => {
+  // Find the player character ID or use a default
+  const [playerId, setPlayerId] = useState('default');
+  
+  useEffect(() => {
+    if (level && level.participants) {
+      const playerChar = level.participants.find((p: any) => p.type === 'player');
+      if (playerChar) {
+        setPlayerId(playerChar.id);
+      }
+    }
+  }, [level]);
   return (
     <div className="game-over">
       <div className="game-over-face">
         <img 
-          src={`src/assets/faces/wojak-${victory ? 'win' : 'lose'}.png`}
+          src={require(`../assets/faces/${playerId}-${victory ? 'win' : 'lose'}.png`)}
           alt={victory ? "Victory face" : "Defeat face"}
           className="player-outcome-face"
         />

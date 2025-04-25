@@ -242,16 +242,19 @@ export const loadLevelMetadata = async (level: Level): Promise<{ [key: string]: 
       const dialogueKey = getMetadataPath(levelId, i, speakerId);
       result[dialogueKey] = await loadMetadataFile(dialogueKey);
       
-      // Also load wojak's answer metadata for each possible answer (both for this dialogue and possibly next dialogue)
+      // Get player character ID
+      const playerCharacterId = level.participants.find(p => p.type === 'player')?.id || '';
+      
+      // Also load player's answer metadata for each possible answer (both for this dialogue and possibly next dialogue)
       for (let j = 0; j < dialogue.answers.length; j++) {
         // For this dialogue (new approach)
         const answerKeyDirect = getAnswerMetadataPath(levelId, i, speakerId, j);
         result[answerKeyDirect] = await loadMetadataFile(answerKeyDirect);
         console.log("Loading answer metadata (direct):", answerKeyDirect);
         
-        // For subsequent wojak dialogue (old approach)
-        if (i + 1 < level.dialogues.length && level.dialogues[i + 1].speaker === 'wojak') {
-          const answerKey = getAnswerMetadataPath(levelId, i + 1, 'wojak', j);
+        // For subsequent player dialogue (old approach)
+        if (i + 1 < level.dialogues.length && level.dialogues[i + 1].speaker === playerCharacterId) {
+          const answerKey = getAnswerMetadataPath(levelId, i + 1, playerCharacterId, j);
           result[answerKey] = await loadMetadataFile(answerKey);
           console.log("Loading answer metadata (separate dialogue):", answerKey);
         }

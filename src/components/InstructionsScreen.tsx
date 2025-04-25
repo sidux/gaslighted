@@ -13,7 +13,7 @@ const InstructionsScreen: React.FC<InstructionsScreenProps> = ({ onBack }) => {
         <h2 className="instructions-title">Welcome to your first corporate meeting!</h2>
         
         <p className="instructions-text">
-          You're Wojak, trapped in a Google Meet with unmutable audio. 
+          You're trapped in a Google Meet with unmutable audio. 
           Unfortunately, you need to fart but can't leave the meeting!
         </p>
         

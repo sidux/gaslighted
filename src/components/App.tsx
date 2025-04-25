@@ -68,11 +68,15 @@ const App: React.FC = () => {
           </div>
           
           <div className="loading-animation">
-            <img 
-              src={require('../assets/faces/wojak-talking1.png')} 
-              alt="Loading" 
-              className="loading-character-image"
-            />
+            {availableLevels.length > 0 && availableLevels[0].participants.find(p => p.type === 'player') ? (
+              <img 
+                src={require(`../assets/faces/${availableLevels[0].participants.find(p => p.type === 'player')?.id || 'default'}-talking1.png`)} 
+                alt="Loading" 
+                className="loading-character-image"
+              />
+            ) : (
+              <div className="loading-character-placeholder"></div>
+            )}
             <div className="loading-meet-ui">
               <div className="loading-progress-bar">
                 <div className="loading-progress-fill"></div>

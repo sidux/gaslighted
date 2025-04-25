@@ -1,6 +1,6 @@
 import React from 'react';
 import { GameState, FartOpportunity, Viseme } from '../types';
-import { getAllWords } from '../services';
+import { getAllWords, getPlayerCharacterId, isPlayerDialogue } from '../services';
 
 interface KaraokeTextProps {
   gameState: GameState;
@@ -56,13 +56,13 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
     const feedbackText = currentDialogue.feedback?.find(f => f.correct === gameState.currentQuestion?.isCorrect)?.text || '';
     displayText = feedbackText;
     console.log("Feedback text:", displayText);
-  } else if (currentDialogue.speaker === 'wojak' && currentDialogue.answers) {
+  } else if (isPlayerDialogue(currentDialogue.speaker, gameState.level) && currentDialogue.answers) {
     // This is an answer dialogue with answers array - use the text property (added when answer was selected)
     // or fallback to empty string if no answer selected yet
     displayText = currentDialogue.text || '';
-    console.log("Wojak answer dialogue text:", displayText);
-  } else if (currentDialogue.speaker === 'wojak' && !currentDialogue.answers && !currentDialogue.feedback && currentDialogue.text === undefined) {
-    // Legacy format for backward compatibility: empty wojak dialogue
+    console.log("Player answer dialogue text:", displayText);
+  } else if (isPlayerDialogue(currentDialogue.speaker, gameState.level) && !currentDialogue.answers && !currentDialogue.feedback && currentDialogue.text === undefined) {
+    // Legacy format for backward compatibility: empty player dialogue
     if (gameState.currentDialogueIndex > 0 && gameState.level.dialogues[gameState.currentDialogueIndex - 1].answers) {
       const prevDialogue = gameState.level.dialogues[gameState.currentDialogueIndex - 1];
       if (prevDialogue.answers && gameState.currentQuestion?.selectedAnswer !== undefined) {
