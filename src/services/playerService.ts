@@ -24,13 +24,4 @@ export const isPlayerDialogue = (speakerId: string, level: Level): boolean => {
   return speakerId === playerCharacterId;
 };
 
-/**
- * Check if a dialogue is an answer dialogue from the player
- */
-export const isPlayerAnswerDialogue = (dialogue: any, level: Level): boolean => {
-  const playerCharacterId = getPlayerCharacterId(level);
-  return dialogue.speaker === playerCharacterId && 
-         !dialogue.text && 
-         !dialogue.answers && 
-         !dialogue.feedback;
-};
+

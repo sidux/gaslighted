@@ -4,7 +4,6 @@ export * from './audioService';
 export * from './fartService';
 export * from './gameStateService';
 export * from './levelService';
-export * from './questionService';
 export * from './dialogueService';
 export * from './scoreService';
 export * from './playerService';

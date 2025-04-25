@@ -17,7 +17,6 @@ import {
   useGameLoop,
   useDialogueAudio,
   useKeyboardHandler,
-  useQuestionHandler,
   useHeartbeatSound
 } from '../hooks';
 
@@ -43,9 +42,6 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
   
   // Hook for handling keyboard input
   useKeyboardHandler(gameState, audioResources, setGameState);
-  
-  // Hook for handling question responses
-  useQuestionHandler(setGameState);
   
   // Hook for handling heartbeat sound
   useHeartbeatSound(gameState, audioResources);

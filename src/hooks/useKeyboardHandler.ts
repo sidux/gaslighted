@@ -18,11 +18,6 @@ export function useKeyboardHandler(
         return;
       }
       
-      // Don't process fart keys if showing a question (allow for answer selection)
-      if (gameState.showingQuestion) {
-        return;
-      }
-      
       const key = event.key.toLowerCase();
       const validFartKeys = ['t', 'p', 'k', 'f', 'r', 'z'];
       
@@ -134,7 +129,7 @@ function processValidFartPress(
       // For bad farts, pause the speaker for a short time
       const shouldPause = result.type === 'bad';
       
-      // Don't pause if it's already paused (e.g., during answer/feedback)
+      // Don't pause if it's already paused
       const newPausedTimestamp = shouldPause && !prevState.pausedTimestamp 
         ? Date.now() 
         : prevState.pausedTimestamp;
@@ -193,7 +188,7 @@ function processBadFartPress(
   setGameState(prevState => {
     if (!prevState) return null;
     
-    // Don't pause if it's already paused (e.g., during answer/feedback)
+    // Don't pause if it's already paused
     const newPausedTimestamp = !prevState.pausedTimestamp 
       ? Date.now() 
       : prevState.pausedTimestamp;

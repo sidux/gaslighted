@@ -62,50 +62,12 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
   const speakerId = currentDialogue.speaker;
   const levelId = gameState.level.id || 'level1';
 
-  // For feedback dialogue
-  const isFeedbackDialogue = currentDialogue?.feedback !== undefined;
-  
   // Get text to display based on type of dialogue
-  let displayText = '';
+  let displayText = currentDialogue.text || '';
+  console.log("Dialogue text:", displayText, "for speaker:", currentDialogue.speaker);
   
-  if (isFeedbackDialogue && gameState.currentQuestion?.isCorrect !== undefined) {
-    // For feedback dialogue, use the appropriate feedback text based on answer correctness
-    const feedbackText = currentDialogue.feedback?.find(f => f.correct === gameState.currentQuestion?.isCorrect)?.text || '';
-    displayText = feedbackText;
-    console.log("Feedback text:", displayText);
-  } else if (isPlayerDialogue(currentDialogue.speaker, gameState.level) && currentDialogue.answers) {
-    // This is an answer dialogue with answers array - use the text property (added when answer was selected)
-    // or fallback to empty string if no answer selected yet
-    displayText = currentDialogue.text || '';
-    console.log("Player answer dialogue text:", displayText);
-  } else if (isPlayerDialogue(currentDialogue.speaker, gameState.level) && !currentDialogue.answers && !currentDialogue.feedback && currentDialogue.text === undefined) {
-    // Legacy format for backward compatibility: empty player dialogue
-    if (gameState.currentDialogueIndex > 0 && gameState.level.dialogues[gameState.currentDialogueIndex - 1].answers) {
-      const prevDialogue = gameState.level.dialogues[gameState.currentDialogueIndex - 1];
-      if (prevDialogue.answers && gameState.currentQuestion?.selectedAnswer !== undefined) {
-        displayText = prevDialogue.answers[gameState.currentQuestion.selectedAnswer].text || '';
-        console.log("Legacy answer dialogue text:", displayText);
-      }
-    }
-  } else {
-    // For all other dialogues, use the text property
-    displayText = currentDialogue.text || '';
-    console.log("Dialogue text:", displayText, "for speaker:", currentDialogue.speaker);
-  }
-  
-  // Determine the metadata to use based on dialogue type
-  let metadataKey = '';
-  
-  if (isFeedbackDialogue && gameState.currentQuestion?.isCorrect !== undefined) {
-    // For feedback, use the correct/incorrect feedback metadata
-    const isCorrect = gameState.currentQuestion.isCorrect;
-    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}-metadata.json`;
-  } else if (isPlayerDialogue(currentDialogue.speaker, gameState.level) && currentDialogue.answers) {
-    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-answer-${gameState.currentQuestion?.selectedAnswer ?? 0}-metadata.json`;
-  } else {
-    // Regular dialogue (including answers)
-    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-metadata.json`;
-  }
+  // Use regular dialogue metadata
+  let metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${gameState.currentDialogueIndex}-${speakerId}-metadata.json`;
   
   console.log("Using metadata key:", metadataKey);
   const metadata = dialogueMetadata[metadataKey] || [];

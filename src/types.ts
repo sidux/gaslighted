@@ -4,16 +4,11 @@ export interface Participant {
   type: 'player' | 'npc';
 }
 
-export interface Answer {
-  text: string;
-  correct: boolean;
-}
+
 
 export interface DialogueItem {
   speaker: string;
   text?: string;
-  answers?: Answer[];
-  feedback?: Answer[];
 }
 
 export interface LevelRules {
@@ -38,13 +33,6 @@ export interface LevelRules {
     bad: number;
     terrible?: number; // Optional property for terrible state
   };
-  question_pressure_multiplier?: number;
-  question_effects?: {
-    correct_shame_change: number;
-    incorrect_shame_change: number;
-    heartbeat_intensity: number;
-  };
-  question_time_limit?: string;
 }
 
 export interface Level {
@@ -83,15 +71,6 @@ export interface GameState {
   lastFartResult: FartResult | null;
   dialogueMetadata: { [key: string]: Viseme[] };
   pausedTimestamp: number | null;
-  showingQuestion: boolean;
-  showQuestion: boolean; // Flag to trigger question display
-  currentQuestion?: {
-    answers: Answer[];
-    selectedAnswer?: number;
-    isCorrect?: boolean;
-    timeRemaining: number;
-    startTime: number;
-  };
   screenEffects: {
     heartbeatIntensity: number;
     pulseEffect: boolean;

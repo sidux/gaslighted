@@ -1,7 +1,6 @@
 import { GameState, Level, Viseme } from '../types';
 import { generateFartOpportunities, handleTerribleFart, updateFartOpportunities } from './fartService';
-import { updateQuestionTimer } from './questionService';
-import { getDialogueMetadata, updateWordAndVisemeIndices, checkDialogueCompletion, isQuestionDialogue } from './dialogueService';
+import { getDialogueMetadata, updateWordAndVisemeIndices, checkDialogueCompletion } from './dialogueService';
 import { updatePressure, checkGameCompletion } from './scoreService';
 
 /**
@@ -27,8 +26,6 @@ export const initializeGameState = (level: Level, dialogueMetadata: { [key: stri
     lastFartResult: null,
     dialogueMetadata,
     pausedTimestamp: null,
-    showingQuestion: false,
-    showQuestion: false,  // New field for triggering question display
     screenEffects: {
       heartbeatIntensity: 0,
       pulseEffect: false,
@@ -57,9 +54,6 @@ export const resetGameState = (state: GameState): GameState => {
     currentVisemeIndex: -1,
     lastFartResult: null,
     pausedTimestamp: null,
-    showingQuestion: false,
-    showQuestion: false, // Reset the question trigger flag
-    currentQuestion: undefined, // Clear any current question
     screenEffects: {
       heartbeatIntensity: 0,
       pulseEffect: false,
@@ -80,19 +74,8 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   const gameSpeed = state.level.rules.game_speed || 1.0; // Default to 1.0 if not specified
   const adjustedElapsedMs = elapsedMs * gameSpeed;
   
-  // Handle question timer
-  if (state.showingQuestion && state.currentQuestion) {
-    return updateQuestionTimer(state, gameSpeed);
-  }
-  
-  // Update pressure with question pressure multiplier if applicable
+  // Update pressure
   let pressureMultiplier = 1;
-  
-  // Apply pressure multiplier for questions
-  if (isQuestionDialogue(state) || state.showingQuestion) {
-    pressureMultiplier = state.level.rules.question_pressure_multiplier || 2.5;
-  }
-  
   const newPressure = updatePressure(state, adjustedElapsedMs * pressureMultiplier);
   
   // Check for auto-fart (pressure max)

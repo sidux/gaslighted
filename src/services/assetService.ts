@@ -16,19 +16,7 @@ export const getDialogueAudioPath = (levelId: string, dialogueIndex: number, spe
   return `src/assets/dialogue/${levelId}-${dialogueIndex}-${speakerId}.mp3`;
 };
 
-/**
- * Get the path for an answer audio file
- */
-export const getAnswerAudioPath = (levelId: string, dialogueIndex: number, speakerId: string, answerIndex: number): string => {
-  return `src/assets/dialogue/${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}.mp3`;
-};
 
-/**
- * Get the path for a feedback audio file
- */
-export const getFeedbackAudioPath = (levelId: string, dialogueIndex: number, speakerId: string, isCorrect: boolean): string => {
-  return `src/assets/dialogue/${levelId}-${dialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}.mp3`;
-};
 
 /**
  * Get the path for a fart audio file
@@ -44,19 +32,7 @@ export const getMetadataPath = (levelId: string, dialogueIndex: number, speakerI
   return `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${speakerId}-metadata.json`;
 };
 
-/**
- * Get the path for answer metadata file
- */
-export const getAnswerMetadataPath = (levelId: string, dialogueIndex: number, speakerId: string, answerIndex: number): string => {
-  return `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}-metadata.json`;
-};
 
-/**
- * Get the path for feedback metadata file
- */
-export const getFeedbackMetadataPath = (levelId: string, dialogueIndex: number, speakerId: string, isCorrect: boolean): string => {
-  return `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}-metadata.json`;
-};
 
 /* --- METADATA UTILITY FUNCTIONS --- */
 
@@ -139,8 +115,7 @@ export const getAllWords = (
       console.log("Creating fallback word items for text:", dialogueText);
       const words = dialogueText.split(/\s+/).filter(w => w.trim().length > 0);
       
-      // For player answers, create a more deliberate timing to allow for fart opportunities
-      // Space words out more to give player more time to react
+      // Create timing to allow for fart opportunities
       // Apply game speed to word timing
       const baseWordDuration = 500; // Base word duration in ms
       const adjustedWordDuration = baseWordDuration / gameSpeed;
@@ -164,9 +139,8 @@ export const getAllWords = (
     // Split text properly by whitespace to get natural word boundaries
     const words = dialogueText.split(/\s+/).filter(w => w.trim().length > 0);
     
-    // If this appears to be a player answer (longer text), space words out more
-    const isLikelyPlayerAnswer = words.length > 3 && dialogueText.length > 15;
-    const baseWordDuration = isLikelyPlayerAnswer ? 500 : 200;
+    // Space words based on length
+    const baseWordDuration = 300;
     const adjustedWordDuration = baseWordDuration / gameSpeed; // Apply game speed
     
     return words.map((word, index) => ({
@@ -279,41 +253,6 @@ export const loadLevelMetadata = async (level: Level): Promise<{ [key: string]: 
       // Regular dialogue
       const key = getMetadataPath(levelId, i, speakerId);
       result[key] = await loadMetadataFile(key);
-    } 
-    else if (dialogue.answers) {
-      // Question with answers
-      // Try to load any possible metadata for the dialogue itself
-      const dialogueKey = getMetadataPath(levelId, i, speakerId);
-      result[dialogueKey] = await loadMetadataFile(dialogueKey);
-      
-      // Get player character ID
-      const playerCharacterId = level.participants.find(p => p.type === 'player')?.id || '';
-      
-      // Also load player's answer metadata for each possible answer (both for this dialogue and possibly next dialogue)
-      for (let j = 0; j < dialogue.answers.length; j++) {
-        // For this dialogue (new approach)
-        const answerKeyDirect = getAnswerMetadataPath(levelId, i, speakerId, j);
-        result[answerKeyDirect] = await loadMetadataFile(answerKeyDirect);
-        console.log("Loading answer metadata (direct):", answerKeyDirect);
-        
-        // For subsequent player dialogue (old approach)
-        if (i + 1 < level.dialogues.length && level.dialogues[i + 1].speaker === playerCharacterId) {
-          const answerKey = getAnswerMetadataPath(levelId, i + 1, playerCharacterId, j);
-          result[answerKey] = await loadMetadataFile(answerKey);
-          console.log("Loading answer metadata (separate dialogue):", answerKey);
-        }
-      }
-    }
-    else if (dialogue.feedback) {
-      // Feedback for answers - load both correct and incorrect possibilities
-      result[getFeedbackMetadataPath(levelId, i, speakerId, true)] = 
-        await loadMetadataFile(getFeedbackMetadataPath(levelId, i, speakerId, true));
-      
-      result[getFeedbackMetadataPath(levelId, i, speakerId, false)] = 
-        await loadMetadataFile(getFeedbackMetadataPath(levelId, i, speakerId, false));
-      
-      console.log("Loading feedback metadata:", getFeedbackMetadataPath(levelId, i, speakerId, true));
-      console.log("Loading feedback metadata:", getFeedbackMetadataPath(levelId, i, speakerId, false));
     }
   }
   
@@ -363,29 +302,6 @@ export const loadAudioResources = async (level: Level): Promise<AudioResources> 
         getDialogueAudioPath(levelId, i, speakerId),
         `${levelId}-${i}-${speakerId}`
       );
-    } 
-    else if (dialogue.answers) {
-      // Question with answers
-      for (let j = 0; j < dialogue.answers.length; j++) {
-        loadAudio(
-          getAnswerAudioPath(levelId, i, speakerId, j),
-          `${levelId}-${i}-${speakerId}-answer-${j}`
-        );
-      }
-    }
-    else if (dialogue.feedback) {
-      // Feedback for answers
-      const correctAudioPath = getFeedbackAudioPath(levelId, i, speakerId, true);
-      const incorrectAudioPath = getFeedbackAudioPath(levelId, i, speakerId, false);
-      
-      const correctAudioKey = `${levelId}-${i}-${speakerId}-feedback-correct`;
-      const incorrectAudioKey = `${levelId}-${i}-${speakerId}-feedback-incorrect`;
-      
-      console.log("Loading feedback audio:", correctAudioPath, "->", correctAudioKey);
-      console.log("Loading feedback audio:", incorrectAudioPath, "->", incorrectAudioKey);
-      
-      loadAudio(correctAudioPath, correctAudioKey);
-      loadAudio(incorrectAudioPath, incorrectAudioKey);
     }
   }
   

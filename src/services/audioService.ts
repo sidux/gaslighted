@@ -82,50 +82,7 @@ export const playFartAudio = (
   }
 };
 
-/**
- * Play answer audio
- */
-export const playAnswerAudio = (
-  resources: AudioResources,
-  levelId: string,
-  dialogueIndex: number,
-  speakerId: string,
-  answerIndex: number,
-  onEnded: () => void,
-  gameSpeed?: number
-): void => {
-  const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}`;
-  playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
-};
 
-/**
- * Play feedback audio
- */
-export const playFeedbackAudio = (
-  resources: AudioResources,
-  levelId: string,
-  dialogueIndex: number,
-  speakerId: string,
-  isCorrect: boolean,
-  onEnded: () => void,
-  gameSpeed?: number
-): void => {
-  const feedbackType = isCorrect ? 'correct' : 'incorrect';
-  const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-feedback-${feedbackType}`;
-  
-  console.log("Playing feedback audio with key:", audioKey);
-  console.log("Available audio keys:", Object.keys(resources.dialogues));
-  
-  const audio = resources.dialogues[audioKey];
-  if (!audio) {
-    console.error(`Feedback audio not found for key: ${audioKey}`);
-    // If audio not found, move on after a short delay
-    setTimeout(onEnded, 500);
-    return;
-  }
-  
-  playAudio(audio, onEnded, gameSpeed);
-};
 
 /**
  * Helper function to play audio with error handling

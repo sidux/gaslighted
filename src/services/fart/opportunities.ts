@@ -7,24 +7,7 @@ import {
 import { getFartTypeFromViseme } from './types';
 import { getPlayerCharacterId, isPlayerDialogue } from '../playerService';
 
-/**
- * Helper function to determine if a dialogue is an answer dialogue
- */
-const isAnswerDialogue = (dialogue: any, level: Level): boolean => {
-  const playerCharacterId = getPlayerCharacterId(level);
-  // Check for a player dialogue that has text but no answers/feedback
-  // OR an empty player dialogue with no properties (backward compatibility)
-  return (dialogue.speaker === playerCharacterId && 
-         (dialogue.text && !dialogue.answers && !dialogue.feedback) ||
-         (dialogue.speaker === playerCharacterId && !dialogue.text && !dialogue.answers && !dialogue.feedback));
-};
 
-/**
- * Helper function to determine if a dialogue is a feedback dialogue
- */
-const isFeedbackDialogue = (dialogue: any): boolean => {
-  return dialogue.feedback !== undefined;
-};
 
 /**
  * Generate fart opportunities for the level
@@ -49,17 +32,8 @@ export const generateFartOpportunities = (
       // Regular dialogue
       metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-metadata.json`;
     } 
-    else if (isAnswerDialogue(dialogue, level)) {
-      // Player answer dialogue - use both answer possibilities since we don't know which will be selected
-      // We'll generate generic opportunities for now, and they'll be filtered at runtime
-      metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-answer-0-metadata.json`;
-    }
-    else if (isFeedbackDialogue(dialogue)) {
-      // Feedback dialogue - use the correct feedback metadata as default
-      metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${dialogueIndex}-${dialogue.speaker}-feedback-correct-metadata.json`;
-    }
     else {
-      // Question dialogue or other special case
+      // Other cases
       metadataKey = '';
     }
     
@@ -68,42 +42,7 @@ export const generateFartOpportunities = (
     
     // Check if we have any metadata
     if (!metadata || metadata.length === 0) {
-      // For answer/feedback dialogues with no metadata, or player dialogues with answers+text, generate basic opportunities
-      if (isAnswerDialogue(dialogue, level) || isFeedbackDialogue(dialogue) ||
-          (dialogue.speaker === playerCharacterId && dialogue.answers && dialogue.text)) {
-        console.log(`Generating basic fart opportunities for ${dialogue.speaker} dialogue at index ${dialogueIndex}`);
-        
-        // Number of opportunities to generate
-        const numOpportunities = 3;
-        
-        // Create evenly spaced opportunities
-        for (let i = 0; i < numOpportunities; i++) {
-          // Calculate time based on position (early, middle, late)
-          const fartTime = 500 + (i * 1500); // 500ms, 2000ms, 3500ms
-          
-          // Choose a random fart type
-          const fartTypes: FartType[] = ['t', 'p', 'k', 'f', 'r', 'z'];
-          const randomIndex = Math.floor(Math.random() * fartTypes.length);
-          const fartType = fartTypes[randomIndex];
-          
-          opportunities.push({
-            dialogueIndex,
-            wordIndex: i,
-            visemeIndex: i,
-            time: fartTime,
-            type: fartType,
-            active: false,
-            handled: false,
-            pressed: false,
-            pressedTime: 0,
-            animationKey: ''
-          });
-        }
-        
-        return; // Skip the regular metadata processing
-      }
-      
-      // No metadata and not a special dialogue type, so skip
+      // No metadata, so skip
       return;
     }
     

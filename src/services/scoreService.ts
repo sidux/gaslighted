@@ -36,8 +36,7 @@ export const updatePressure = (
   state: GameState, 
   elapsedMs: number
 ): number => {
-  const pressureMultiplier = state.currentQuestion ? 
-    (state.level.rules.question_pressure_multiplier || 2.5) : 1;
+  const pressureMultiplier = 1;
   
   const pressureIncrease = (elapsedMs / 1000) * 
     state.level.rules.pressure_buildup_speed * 

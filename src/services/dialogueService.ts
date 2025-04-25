@@ -1,5 +1,4 @@
 import { GameState, Viseme } from '../types';
-import { showQuestion } from './questionService';
 import { getPlayerCharacterId, isPlayerDialogue } from './playerService';
 
 /**
@@ -12,45 +11,9 @@ export const getDialogueMetadata = (state: GameState): Viseme[] => {
   
   if (!speakerId) return [];
   
-  // Get player character ID
-  const playerCharacterId = getPlayerCharacterId(state.level);
-  
-  // Check if this is a player answer dialogue
-  const isPlayerAnswer = speakerId === playerCharacterId && 
-                         (state.currentQuestion?.selectedAnswer !== undefined || 
-                          (currentDialogue.answers && currentDialogue.text));
-                         
-  if (isPlayerAnswer) {
-    // If this is a player dialogue with answers array and text property,
-    // this is using our new approach where we added text directly to the answers dialogue
-    if (currentDialogue.answers && currentDialogue.text) {
-      const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-metadata.json`;
-      const metadata = state.dialogueMetadata[metadataKey];
-      if (metadata && metadata.length > 0) {
-        return metadata;
-      }
-      
-      // If no direct metadata exists for this dialogue, try to find the answer metadata
-      // for the selected answer (fallback to old approach)
-      const answerIndex = state.currentQuestion?.selectedAnswer || 0;
-      const answerMetadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-answer-${answerIndex}-metadata.json`;
-      return state.dialogueMetadata[answerMetadataKey] || [];
-    } else {
-      // Legacy approach - separate answer dialogue
-      const answerIndex = state.currentQuestion?.selectedAnswer || 0;
-      const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-answer-${answerIndex}-metadata.json`;
-      return state.dialogueMetadata[metadataKey] || [];
-    }
-  }
-  else if (currentDialogue.text) {
+  if (currentDialogue.text) {
     // Regular dialogue
     const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-metadata.json`;
-    return state.dialogueMetadata[metadataKey] || [];
-  } 
-  else if (currentDialogue.feedback) {
-    // Feedback dialogue
-    const isCorrect = state.currentQuestion?.isCorrect || false;
-    const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}-metadata.json`;
     return state.dialogueMetadata[metadataKey] || [];
   }
   
@@ -127,41 +90,16 @@ export const checkDialogueCompletion = (
     const adjustedPauseDuration = 1000 * (1.0 / gameSpeed);
     
     if (playbackTime >= adjustedLastTime + adjustedPauseDuration) {
-      const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
-    
-      if (currentDialogue.answers && Array.isArray(currentDialogue.answers) && !state.showingQuestion) {
-        // Show question instead of advancing
-        updatedState = showQuestion(state);
-      } 
-      else if (currentDialogue.feedback) {
-        // Previous dialogue was a question, now show feedback
-        if (state.currentQuestion && state.currentQuestion.selectedAnswer !== undefined) {
-          // Move to next dialogue after feedback
-          newDialogueIndex++;
-          completedCurrentDialogue = true;
-        } else {
-          // Skip feedback if no answer was selected
-          newDialogueIndex++;
-          completedCurrentDialogue = true;
-        }
-      } else {
-        // Regular dialogue, advance to next
-        newDialogueIndex++;
-        completedCurrentDialogue = true;
-      }
+      // Regular dialogue, advance to next
+      newDialogueIndex++;
+      completedCurrentDialogue = true;
     }
   }
   
   return { newDialogueIndex, completedCurrentDialogue, updatedState };
 };
 
-/**
- * Check if the current dialogue is a question
- */
-export const isQuestionDialogue = (state: GameState): boolean => {
-  const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
-  return Boolean(currentDialogue && currentDialogue.answers);
-};
+
 
 /**
  * Helper function to shuffle array
