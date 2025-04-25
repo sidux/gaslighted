@@ -92,7 +92,33 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
   if (isLoading || !gameState) {
     return (
       <div className="loading-screen">
-        <h1>Loading...</h1>
+        <div className="loading-container">
+          <div className="loading-header">
+            <h1 className="loading-title">Gaslighted</h1>
+            <div className="loading-title-underline"></div>
+          </div>
+          
+          <div className="loading-animation">
+            <img 
+              src={require('../assets/faces/wojak-talking1.png')} 
+              alt="Loading" 
+              className="loading-character-image"
+            />
+            <div className="loading-meet-ui">
+              <div className="loading-progress-bar">
+                <div className="loading-progress-fill"></div>
+              </div>
+              <div className="loading-text">Starting the meeting...</div>
+            </div>
+          </div>
+          
+          <div className="loading-tips-container">
+            <div className="loading-tip">
+              <span className="loading-tip-title">REMEMBER:</span> 
+              <span className="loading-tip-text">Perfect timing gets you a silent fart! Bad timing might get you caught!</span>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

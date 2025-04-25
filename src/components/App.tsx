@@ -61,8 +61,33 @@ const App: React.FC = () => {
   if (isLoading) {
     return (
       <div className="loading-screen">
-        <h1>Loading...</h1>
-        <p>Loading game assets...</p>
+        <div className="loading-container">
+          <div className="loading-header">
+            <h1 className="loading-title">Gaslighted</h1>
+            <div className="loading-title-underline"></div>
+          </div>
+          
+          <div className="loading-animation">
+            <img 
+              src={require('../assets/faces/wojak-talking1.png')} 
+              alt="Loading" 
+              className="loading-character-image"
+            />
+            <div className="loading-meet-ui">
+              <div className="loading-progress-bar">
+                <div className="loading-progress-fill"></div>
+              </div>
+              <div className="loading-text">Preparing your meeting...</div>
+            </div>
+          </div>
+          
+          <div className="loading-tips-container">
+            <div className="loading-tip">
+              <span className="loading-tip-title">PRO TIP:</span> 
+              <span className="loading-tip-text">Press the highlighted letters when they appear over words to relieve pressure silently!</span>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
