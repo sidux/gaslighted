@@ -13,6 +13,11 @@ export function useDialogueAudio(
       return;
     }
     
+    // Don't start new audio when paused, but allow the effect to run when unpausing
+    if (gameState.isPaused) {
+      return;
+    }
+    
     const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
     if (!currentDialogue) {
       return;
@@ -129,7 +134,7 @@ export function useDialogueAudio(
         );
       }
     }
-  }, [gameState?.currentDialogueIndex, gameState?.playbackTime, gameState?.isPlaying, gameState?.isGameOver, audioResources, setGameState]);
+  }, [gameState?.currentDialogueIndex, gameState?.playbackTime, gameState?.isPlaying, gameState?.isPaused, gameState?.isGameOver, audioResources, setGameState]);
 }
 
 // Helper function to move to the next dialogue

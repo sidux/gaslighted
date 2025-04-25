@@ -11,6 +11,7 @@ export const initializeGameState = (level: Level, dialogueMetadata: { [key: stri
   return {
     level,
     isPlaying: false,
+    isPaused: false,
     isGameOver: false,
     victory: false,
     currentDialogueIndex: 0,
@@ -42,6 +43,7 @@ export const resetGameState = (state: GameState): GameState => {
   return {
     ...state,
     isPlaying: true,
+    isPaused: false,
     isGameOver: false,
     victory: false,
     currentDialogueIndex: 0,

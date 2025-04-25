@@ -13,10 +13,11 @@ export function useHeartbeatSound(
     }
     
     // Update heartbeat volume and rate based on shame level
+    // Only play when game is playing, not over, and not paused
     playHeartbeatSound(
       audioResources,
       gameState.shame,
-      gameState.isPlaying && !gameState.isGameOver
+      gameState.isPlaying && !gameState.isGameOver && !gameState.isPaused
     );
-  }, [gameState?.shame, gameState?.isPlaying, gameState?.isGameOver, audioResources]);
+  }, [gameState?.shame, gameState?.isPlaying, gameState?.isGameOver, gameState?.isPaused, audioResources]);
 }

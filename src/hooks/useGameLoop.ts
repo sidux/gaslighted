@@ -12,7 +12,7 @@ export function useGameLoop(
 
   // Game loop
   useEffect(() => {
-    if (!gameState || !gameState.isPlaying || isLoading) {
+    if (!gameState || !gameState.isPlaying || isLoading || (gameState && gameState.isPaused)) {
       return;
     }
     
@@ -28,7 +28,7 @@ export function useGameLoop(
         if (!prevState) return null;
         
         // Handle paused state or showing question
-        if (prevState.pausedTimestamp !== null || prevState.showingQuestion) {
+        if (prevState.isPaused || prevState.pausedTimestamp !== null || prevState.showingQuestion) {
           // If showing a question, we need to update the question timer
           if (prevState.showingQuestion && prevState.currentQuestion) {
             return updateGameState(prevState, deltaTime);
@@ -85,7 +85,7 @@ export function useGameLoop(
         animationFrameRef.current = null;
       }
     };
-  }, [gameState?.isPlaying, isLoading, setGameState]);
+  }, [gameState?.isPlaying, gameState?.isPaused, isLoading, setGameState]);
 
   return {
     lastUpdateTimeRef,

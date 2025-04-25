@@ -66,6 +66,7 @@ export interface Viseme {
 export interface GameState {
   level: Level;
   isPlaying: boolean;
+  isPaused: boolean;
   isGameOver: boolean;
   victory: boolean;
   currentDialogueIndex: number;

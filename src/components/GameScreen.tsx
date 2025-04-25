@@ -4,6 +4,7 @@ import ControlBar from './ControlBar';
 import GameUI from './GameUI';
 import GameOverScreen from './GameOverScreen';
 import GameScreenEffects from './GameScreenEffects';
+import PauseOverlay from './PauseOverlay';
 import { Level } from '../types';
 import { 
   resetGameState,
@@ -59,6 +60,44 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
       return resetState;
     });
     lastUpdateTimeRef.current = null;
+  };
+
+  // Handle toggle pause game
+  const handleTogglePause = () => {
+    setGameState(prevState => {
+      if (!prevState) return null;
+      
+      // Toggle isPaused state
+      const newIsPaused = !prevState.isPaused;
+      
+      // Pause or resume audio
+      if (prevState.audioResources) {
+        if (newIsPaused) {
+          // Import and use pauseAllAudio when pausing
+          import('../services/audioService').then(({ pauseAllAudio }) => {
+            pauseAllAudio(prevState.audioResources!);
+          });
+        } else {
+          // Import and use resumeAllAudio when unpausing
+          import('../services/audioService').then(({ resumeAllAudio }) => {
+            resumeAllAudio(prevState.audioResources!);
+          });
+        }
+      }
+      
+      // Update game state with new isPaused value
+      return {
+        ...prevState,
+        isPaused: newIsPaused,
+        // Reset lastUpdateTimeRef to prevent large time jumps when resuming
+        pausedTimestamp: newIsPaused ? Date.now() : null
+      };
+    });
+    
+    // Reset animation frame timer reference when resuming
+    if (gameState && gameState.isPaused) {
+      lastUpdateTimeRef.current = null;
+    }
   };
 
   // Handle leave meeting (go back to menu)
@@ -137,7 +176,9 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
       <ControlBar 
         onBackToMenu={handleLeaveMeeting} 
         onStartGame={!gameState.isPlaying && !gameState.isGameOver ? handleStartGame : undefined}
+        onTogglePause={gameState.isPlaying && !gameState.isGameOver ? handleTogglePause : undefined}
         isGameInProgress={gameState.isPlaying}
+        isPaused={gameState.isPaused}
       />
       
       <GameUI
@@ -154,6 +195,10 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
           onBackToMenu={handleLeaveMeeting}
           level={level}
         />
+      )}
+
+      {gameState.isPaused && !gameState.isGameOver && (
+        <PauseOverlay onResume={handleTogglePause} />
       )}
     </GameScreenEffects>
   );

@@ -179,6 +179,46 @@ export const playHeartbeatSound = (
 };
 
 /**
+ * Pause all game audio without resetting
+ */
+export const pauseAllAudio = (resources: AudioResources): void => {
+  // Pause all dialogue audio
+  Object.values(resources.dialogues).forEach(audio => audio.pause());
+  
+  // Pause all fart audio
+  Object.values(resources.farts).forEach(audio => audio.pause());
+  
+  // Pause heartbeat
+  resources.heartbeat.pause();
+};
+
+/**
+ * Resume all game audio
+ */
+export const resumeAllAudio = (resources: AudioResources): void => {
+  // Resume dialogue audio (but only the one that was playing before)
+  Object.values(resources.dialogues).forEach(audio => {
+    // Only resume if it IS paused and has playback position (was playing before)
+    if (audio.paused && audio.currentTime > 0 && audio.currentTime < audio.duration) {
+      audio.play().catch(error => {
+        console.error('Failed to resume audio:', error);
+      });
+    }
+  });
+  
+  // Resume any fart audio that was playing
+  Object.values(resources.farts).forEach(audio => {
+    if (audio.paused && audio.currentTime > 0 && audio.currentTime < audio.duration) {
+      audio.play().catch(error => {
+        console.error('Failed to resume fart audio:', error);
+      });
+    }
+  });
+  
+  // Heartbeat will be resumed by the heartbeat hook
+};
+
+/**
  * Stop all audio
  */
 export const stopAllAudio = (resources: AudioResources): void => {
