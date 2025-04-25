@@ -20,23 +20,6 @@ const isAnswerDialogue = (dialogue: any, level: Level): boolean => {
 };
 
 /**
- * Helper function to get dialogue display text (for debugging)
- */
-const getDialogueDisplayText = (dialogue: any, gameState: any = null): string => {
-  if (dialogue.text) {
-    return dialogue.text;
-  } else if (isPlayerDialogue(dialogue.speaker, gameState.level) && gameState?.currentQuestion?.selectedAnswer !== undefined) {
-    // Player answer
-    return gameState.currentQuestion.answers[gameState.currentQuestion.selectedAnswer].text || 'Selected answer';
-  } else if (dialogue.feedback && gameState?.currentQuestion?.isCorrect !== undefined) {
-    // Feedback
-    const feedback = dialogue.feedback.find((f: any) => f.correct === gameState.currentQuestion.isCorrect);
-    return feedback?.text || 'Feedback';
-  }
-  return 'No text';
-};
-
-/**
  * Helper function to determine if a dialogue is a feedback dialogue
  */
 const isFeedbackDialogue = (dialogue: any): boolean => {
