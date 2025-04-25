@@ -16,8 +16,7 @@ const GameOverScreen: React.FC<GameOverScreenProps> = ({
   onBackToMenu,
   level
 }) => {
-  // Find the player character ID or use a default
-  const [playerId, setPlayerId] = useState('default');
+  const [playerId, setPlayerId] = useState(getPlayerCharacterId(level) || 'wojak');
   
   useEffect(() => {
     if (level && level.participants) {
