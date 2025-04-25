@@ -189,7 +189,7 @@ export const handleAnswerSelection = (state: GameState, answerIndex: number): Ga
 /**
  * Update question state with timer and effects
  */
-export const updateQuestionState = (state: GameState): GameState => {
+export const updateQuestionState = (state: GameState, gameSpeed: number = 1.0): GameState => {
   if (!state.currentQuestion) {
     return state;
   }
@@ -208,7 +208,8 @@ export const updateQuestionState = (state: GameState): GameState => {
     };
   }
   
-  const timeElapsed = Date.now() - (state.currentQuestion.startTime || Date.now());
+  // Apply game speed to time elapsed calculation
+  const timeElapsed = (Date.now() - (state.currentQuestion.startTime || Date.now())) * gameSpeed;
   const timeRemaining = Math.max(0, timeLimit - timeElapsed);
   
   // Update heartbeat intensity based on time remaining

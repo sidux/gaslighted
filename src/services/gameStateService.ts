@@ -73,9 +73,13 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
     return state;
   }
   
+  // Apply game speed to elapsed time
+  const gameSpeed = state.level.rules.game_speed || 1.0; // Default to 1.0 if not specified
+  const adjustedElapsedMs = elapsedMs * gameSpeed;
+  
   // Handle question timer
   if (state.showingQuestion && state.currentQuestion) {
-    return updateQuestionState(state);
+    return updateQuestionState(state, gameSpeed);
   }
   
   // Update pressure with question pressure multiplier if applicable
@@ -86,7 +90,7 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
     pressureMultiplier = state.level.rules.question_pressure_multiplier || 2.5;
   }
   
-  const newPressure = updatePressure(state, elapsedMs * pressureMultiplier);
+  const newPressure = updatePressure(state, adjustedElapsedMs * pressureMultiplier);
   
   // Check for auto-fart (pressure max)
   if (newPressure >= 100 && !state.lastFartResult) {

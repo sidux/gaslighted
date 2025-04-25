@@ -126,10 +126,12 @@ export const getCurrentWordText = (
 
 /**
  * Get all words with their time ranges
+ * @param gameSpeed Optional parameter for game speed (default 1.0)
  */
 export const getAllWords = (
   metadata: Viseme[],
-  dialogueText?: string
+  dialogueText?: string,
+  gameSpeed: number = 1.0
 ): { text: string; startTime: number; endTime: number; index: number }[] => {
   if (!metadata || !Array.isArray(metadata) || metadata.length === 0) {
     // If we have no metadata but have dialogue text, split it into words as a fallback
@@ -139,10 +141,14 @@ export const getAllWords = (
       
       // For player answers, create a more deliberate timing to allow for fart opportunities
       // Space words out more to give player more time to react
+      // Apply game speed to word timing
+      const baseWordDuration = 500; // Base word duration in ms
+      const adjustedWordDuration = baseWordDuration / gameSpeed;
+      
       return words.map((word, index) => ({
         text: word,
-        startTime: index * 500, // Slower timing for better gameplay (500ms per word)
-        endTime: (index + 1) * 500 - 50,
+        startTime: index * adjustedWordDuration,
+        endTime: (index + 1) * adjustedWordDuration - (50 / gameSpeed),
         index
       }));
     }
@@ -160,12 +166,13 @@ export const getAllWords = (
     
     // If this appears to be a player answer (longer text), space words out more
     const isLikelyPlayerAnswer = words.length > 3 && dialogueText.length > 15;
-    const wordDuration = isLikelyPlayerAnswer ? 500 : 200;
+    const baseWordDuration = isLikelyPlayerAnswer ? 500 : 200;
+    const adjustedWordDuration = baseWordDuration / gameSpeed; // Apply game speed
     
     return words.map((word, index) => ({
       text: word,
-      startTime: index * wordDuration,
-      endTime: (index + 1) * wordDuration - 50,
+      startTime: index * adjustedWordDuration,
+      endTime: (index + 1) * adjustedWordDuration - (50 / gameSpeed),
       index
     }));
   }
@@ -181,10 +188,17 @@ export const getAllWords = (
       console.log(`Word count mismatch: text has ${words.length} words, metadata has ${wordItems.length} items. Using fallback.`);
       return words.map((word, index) => {
         // Use metadata timing if available, otherwise fallback to calculated timing
-        const startTime = index < wordItems.length ? (wordItems[index].time || index * 500) : index * 500;
+        // Apply game speed to timing calculations
+        const baseInterval = 500;
+        const adjustedInterval = baseInterval / gameSpeed;
+        
+        const startTime = index < wordItems.length 
+          ? (wordItems[index].time || index * adjustedInterval) 
+          : index * adjustedInterval;
+          
         const endTime = (index + 1) < wordItems.length 
-          ? (wordItems[index + 1].time || (index + 1) * 500 - 50) 
-          : (index + 1) * 500 - 50;
+          ? (wordItems[index + 1].time || (index + 1) * adjustedInterval - (50 / gameSpeed)) 
+          : (index + 1) * adjustedInterval - (50 / gameSpeed);
           
         return { text: word, startTime, endTime, index };
       });

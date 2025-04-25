@@ -8,10 +8,11 @@ export const playDialogueAudio = (
   levelId: string,
   dialogueIndex: number,
   speakerId: string,
-  onEnded: () => void
+  onEnded: () => void,
+  gameSpeed?: number
 ): void => {
   const audioKey = `${levelId}-${dialogueIndex}-${speakerId}`;
-  playAudio(resources.dialogues[audioKey], onEnded);
+  playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
 };
 
 /**
@@ -20,7 +21,8 @@ export const playDialogueAudio = (
 export const playFartAudio = (
   resources: AudioResources,
   fartType: FartType,
-  resultType: FartResultType
+  resultType: FartResultType,
+  gameSpeed?: number
 ): void => {
   const audio = resources.farts[fartType];
   
@@ -47,6 +49,11 @@ export const playFartAudio = (
   
   audio.currentTime = 0;
   
+  // Apply game speed to playback rate if provided
+  if (gameSpeed !== undefined) {
+    audio.playbackRate = gameSpeed;
+  }
+  
   // Play the audio
   const playPromise = audio.play();
   if (playPromise) {
@@ -57,19 +64,21 @@ export const playFartAudio = (
   
   // For terrible farts, play additional overlapping sounds
   if (resultType === 'terrible') {
+    const basePlaybackRate = gameSpeed !== undefined ? gameSpeed : 1.0;
+    
     setTimeout(() => {
       const secondAudio = resources.farts[fartType].cloneNode(true) as HTMLAudioElement;
       secondAudio.volume = 0.8;
-      secondAudio.playbackRate = 0.85; // Slightly slower pitch
+      secondAudio.playbackRate = basePlaybackRate * 0.85; // Slightly slower pitch
       secondAudio.play().catch(e => console.error('Error playing terrible fart second sound', e));
       
       setTimeout(() => {
         const thirdAudio = resources.farts[fartType].cloneNode(true) as HTMLAudioElement;
         thirdAudio.volume = 0.6;
-        thirdAudio.playbackRate = 1.15; // Slightly higher pitch
+        thirdAudio.playbackRate = basePlaybackRate * 1.15; // Slightly higher pitch
         thirdAudio.play().catch(e => console.error('Error playing terrible fart third sound', e));
-      }, 100);
-    }, 50);
+      }, 100 / (gameSpeed || 1.0)); // Adjust timing based on game speed
+    }, 50 / (gameSpeed || 1.0)); // Adjust timing based on game speed
   }
 };
 
@@ -82,10 +91,11 @@ export const playAnswerAudio = (
   dialogueIndex: number,
   speakerId: string,
   answerIndex: number,
-  onEnded: () => void
+  onEnded: () => void,
+  gameSpeed?: number
 ): void => {
   const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}`;
-  playAudio(resources.dialogues[audioKey], onEnded);
+  playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
 };
 
 /**
@@ -97,7 +107,8 @@ export const playFeedbackAudio = (
   dialogueIndex: number,
   speakerId: string,
   isCorrect: boolean,
-  onEnded: () => void
+  onEnded: () => void,
+  gameSpeed?: number
 ): void => {
   const feedbackType = isCorrect ? 'correct' : 'incorrect';
   const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-feedback-${feedbackType}`;
@@ -113,13 +124,13 @@ export const playFeedbackAudio = (
     return;
   }
   
-  playAudio(audio, onEnded);
+  playAudio(audio, onEnded, gameSpeed);
 };
 
 /**
  * Helper function to play audio with error handling
  */
-const playAudio = (audio: HTMLAudioElement | undefined, onEnded?: () => void): void => {
+const playAudio = (audio: HTMLAudioElement | undefined, onEnded?: () => void, gameSpeed?: number): void => {
   if (!audio) {
     console.error('Audio not found');
     if (onEnded) setTimeout(onEnded, 100);
@@ -128,6 +139,11 @@ const playAudio = (audio: HTMLAudioElement | undefined, onEnded?: () => void): v
   
   audio.currentTime = 0;
   if (onEnded) audio.onended = onEnded;
+  
+  // Set playback rate based on game speed if provided
+  if (gameSpeed !== undefined) {
+    audio.playbackRate = gameSpeed;
+  }
   
   const playPromise = audio.play();
   if (playPromise) {
@@ -145,7 +161,8 @@ export const playHeartbeatSound = (
   resources: AudioResources,
   shame: number,
   isPlaying: boolean,
-  intensity?: number
+  intensity?: number,
+  gameSpeed?: number
 ): void => {
   const { heartbeat } = resources;
   
@@ -155,14 +172,17 @@ export const playHeartbeatSound = (
   }
   
   if (isPlaying && (shame > 0 || intensity)) {
+    // Get base game speed multiplier
+    const speedMultiplier = gameSpeed !== undefined ? gameSpeed : 1.0;
+    
     // Set volume and rate based on intensity or shame
     if (intensity !== undefined) {
       const normalizedIntensity = Math.min(1.0, Math.max(0.1, intensity / 100));
       heartbeat.volume = normalizedIntensity;
-      heartbeat.playbackRate = 1.0 + normalizedIntensity;
+      heartbeat.playbackRate = (1.0 + normalizedIntensity) * speedMultiplier;
     } else {
       heartbeat.volume = 0.1 + (0.9 * (shame / 100));
-      heartbeat.playbackRate = 1.0 + ((shame / 100) * 0.5);
+      heartbeat.playbackRate = (1.0 + ((shame / 100) * 0.5)) * speedMultiplier;
     }
     
     // Start playing if not already

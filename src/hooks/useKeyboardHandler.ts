@@ -68,17 +68,24 @@ function processValidFartPress(
   activeOpportunities.sort((a, b) => a.time - b.time);
   const opportunity = activeOpportunities[0];
   
+  // Get game speed from level rules
+  const gameSpeed = gameState.level.rules.game_speed || 1.0;
+  
   const result = checkFartKeyPress(
     key,
     opportunity,
     gameState.playbackTime,
-    gameState.level.rules.precision_window_ms
+    gameState.level.rules.precision_window_ms,
+    gameSpeed
   );
   
   if (result && audioResources) {
-    // Play fart sound
-    playFartAudio(audioResources, result.fartType, result.type);
-    console.log(`Played fart of type: ${result.type}`);
+    // Get game speed from level rules
+    const gameSpeed = gameState.level.rules.game_speed || 1.0;
+    
+    // Play fart sound with game speed
+    playFartAudio(audioResources, result.fartType, result.type, gameSpeed);
+    console.log(`Played fart of type: ${result.type} with speed: ${gameSpeed}`);
     
     // Apply result to game state
     setGameState(prevState => {
@@ -168,8 +175,11 @@ function processBadFartPress(
 ) {
   console.log("No active opportunity - doing bad fart");
   
-  // Play a bad fart sound with the pressed key type
-  playFartAudio(audioResources, fartType, 'bad');
+  // Get game speed from level rules
+  const gameSpeed = gameState.level.rules.game_speed || 1.0;
+  
+  // Play a bad fart sound with the pressed key type and game speed
+  playFartAudio(audioResources, fartType, 'bad', gameSpeed);
   
   // Create a bad fart result
   const badFartResult: FartResult = {

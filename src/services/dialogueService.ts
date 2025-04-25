@@ -58,7 +58,7 @@ export const getDialogueMetadata = (state: GameState): Viseme[] => {
 };
 
 /**
- * Update word and viseme indices based on playback time
+ * Update word and viseme indices based on playback time, adjusted by game speed
  */
 export const updateWordAndVisemeIndices = (
   state: GameState, 
@@ -68,20 +68,27 @@ export const updateWordAndVisemeIndices = (
   let newWordIndex = state.currentWordIndex;
   let newVisemeIndex = state.currentVisemeIndex;
   
-  // Find current word
+  // Get game speed from level rules
+  const gameSpeed = state.level.rules.game_speed || 1.0;
+  
+  // Find current word - apply game speed to metadata time values
   const wordItems = metadata.filter(item => item.type === 'word');
   for (let i = 0; i < wordItems.length; i++) {
-    if (playbackTime >= wordItems[i].time) {
+    // Scale the metadata time by game speed to match audio playback rate
+    const adjustedWordTime = wordItems[i].time * (1.0 / gameSpeed);
+    if (playbackTime >= adjustedWordTime) {
       newWordIndex = i;
     } else {
       break;
     }
   }
   
-  // Find current viseme
+  // Find current viseme - apply game speed to metadata time values
   const visemeItems = metadata.filter(item => item.type === 'viseme');
   for (let i = 0; i < visemeItems.length; i++) {
-    if (playbackTime >= visemeItems[i].time) {
+    // Scale the metadata time by game speed to match audio playback rate
+    const adjustedVisemeTime = visemeItems[i].time * (1.0 / gameSpeed);
+    if (playbackTime >= adjustedVisemeTime) {
       newVisemeIndex = metadata.findIndex(item => 
         item.type === 'viseme' && item.time === visemeItems[i].time
       );
@@ -109,30 +116,39 @@ export const checkDialogueCompletion = (
   let completedCurrentDialogue = false;
   let updatedState = undefined;
   
+  // Get game speed from level rules
+  const gameSpeed = state.level.rules.game_speed || 1.0;
+  
   // Check if we've reached the end of this dialogue
   const lastItem = metadata[metadata.length - 1];
-  if (lastItem && lastItem.time !== undefined && playbackTime >= lastItem.time + 1000) {
-    const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
+  if (lastItem && lastItem.time !== undefined) {
+    // Scale the metadata time and pause duration by game speed
+    const adjustedLastTime = lastItem.time * (1.0 / gameSpeed);
+    const adjustedPauseDuration = 1000 * (1.0 / gameSpeed);
     
-    if (currentDialogue.answers && Array.isArray(currentDialogue.answers) && !state.showingQuestion) {
-      // Show question instead of advancing
-      updatedState = showQuestion(state);
-    } 
-    else if (currentDialogue.feedback) {
-      // Previous dialogue was a question, now show feedback
-      if (state.currentQuestion && state.currentQuestion.selectedAnswer !== undefined) {
-        // Move to next dialogue after feedback
-        newDialogueIndex++;
-        completedCurrentDialogue = true;
+    if (playbackTime >= adjustedLastTime + adjustedPauseDuration) {
+      const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
+    
+      if (currentDialogue.answers && Array.isArray(currentDialogue.answers) && !state.showingQuestion) {
+        // Show question instead of advancing
+        updatedState = showQuestion(state);
+      } 
+      else if (currentDialogue.feedback) {
+        // Previous dialogue was a question, now show feedback
+        if (state.currentQuestion && state.currentQuestion.selectedAnswer !== undefined) {
+          // Move to next dialogue after feedback
+          newDialogueIndex++;
+          completedCurrentDialogue = true;
+        } else {
+          // Skip feedback if no answer was selected
+          newDialogueIndex++;
+          completedCurrentDialogue = true;
+        }
       } else {
-        // Skip feedback if no answer was selected
+        // Regular dialogue, advance to next
         newDialogueIndex++;
         completedCurrentDialogue = true;
       }
-    } else {
-      // Regular dialogue, advance to next
-      newDialogueIndex++;
-      completedCurrentDialogue = true;
     }
   }
   

@@ -12,25 +12,42 @@ interface KaraokeTextProps {
 const getTimingWindowColor = (
   opportunity: FartOpportunity,
   currentTime: number,
-  precisionWindowMs: number
+  precisionWindowMs: number,
+  gameSpeed: number = 1.0
 ): string => {
   if (opportunity.pressed) return '#9e9e9e';
-  const dt = Math.abs(currentTime - opportunity.time);
-  if (dt <= precisionWindowMs * 0.75) return '#34a853';
-  else if (dt <= precisionWindowMs * 2) return '#fbbc05';
-  else return '#ea4335';
+  
+  // Adjust opportunity time and precision window for game speed
+  const adjustedOpportunityTime = opportunity.time * (1.0 / gameSpeed);
+  const adjustedPrecisionWindow = precisionWindowMs / gameSpeed;
+  
+  const dt = Math.abs(currentTime - adjustedOpportunityTime);
+  
+  // Debug the timing window calculations
+  console.log(`Color timing: dt=${dt}, window=${adjustedPrecisionWindow}, adjusted opp time=${adjustedOpportunityTime}, current=${currentTime}`);
+  
+  if (dt <= adjustedPrecisionWindow * 0.75) return '#34a853'; // Green - perfect
+  else if (dt <= adjustedPrecisionWindow * 2) return '#fbbc05'; // Yellow - okay
+  else return '#ea4335'; // Red - bad
 };
 
 const getTimingWindowBorderColor = (
   opportunity: FartOpportunity,
   currentTime: number,
-  precisionWindowMs: number
+  precisionWindowMs: number,
+  gameSpeed: number = 1.0
 ): string => {
   if (opportunity.pressed) return '#616161';
-  const dt = Math.abs(currentTime - opportunity.time);
-  if (dt <= precisionWindowMs * 0.75) return '#0f9d58';
-  else if (dt <= precisionWindowMs * 2) return '#e65100';
-  else return '#c62828';
+  
+  // Adjust opportunity time and precision window for game speed
+  const adjustedOpportunityTime = opportunity.time * (1.0 / gameSpeed);
+  const adjustedPrecisionWindow = precisionWindowMs / gameSpeed;
+  
+  const dt = Math.abs(currentTime - adjustedOpportunityTime);
+  
+  if (dt <= adjustedPrecisionWindow * 0.75) return '#0f9d58'; // Green - perfect
+  else if (dt <= adjustedPrecisionWindow * 2) return '#e65100'; // Orange - okay
+  else return '#c62828'; // Red - bad
 };
 
 const KaraokeText: React.FC<KaraokeTextProps> = ({ 
@@ -94,10 +111,16 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
   const metadata = dialogueMetadata[metadataKey] || [];
   console.log("Metadata found:", metadata.length > 0);
   
-  // Process the words from metadata
-  const words = getAllWords(metadata, displayText);
+  // Get game speed from level rules
+  const gameSpeed = gameState.level.rules.game_speed || 1.0;
+  
+  // Process the words from metadata, applying game speed
+  const words = getAllWords(metadata, displayText, gameSpeed);
   
   const currentWordIndex = gameState.currentWordIndex;
+  
+  // For debugging
+  console.log(`Playing at speed: ${gameSpeed}, Word index: ${currentWordIndex}, Playback time: ${gameState.playbackTime}`);
 
   // Pick out all active, un‐handled opportunities for this dialogue
   const activeFartOpportunities = gameState.fartOpportunities.filter(
@@ -137,8 +160,9 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
                 style={{
                   animationDuration: opp.pressed
                     ? undefined
-                    : `${gameState.level.rules.letter_float_duration_ms /
-                        gameState.level.rules.letter_float_speed_multiplier
+                    : `${(gameState.level.rules.letter_float_duration_ms / 
+                        gameState.level.rules.letter_float_speed_multiplier) / 
+                        (gameState.level.rules.game_speed || 1.0)
                       }ms`,
                   animationIterationCount: '1',
                   animationFillMode: 'forwards',
@@ -148,19 +172,22 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
                     : getTimingWindowColor(
                         opp,
                         gameState.playbackTime,
-                        gameState.level.rules.precision_window_ms
+                        gameState.level.rules.precision_window_ms,
+                        gameSpeed
                       ),
                   borderColor: opp.pressed
                     ? undefined
                     : getTimingWindowBorderColor(
                         opp,
                         gameState.playbackTime,
-                        gameState.level.rules.precision_window_ms
+                        gameState.level.rules.precision_window_ms,
+                        gameSpeed
                       ),
                   animation: opp.pressed
                     ? undefined
-                    : `float-key ${gameState.level.rules.letter_float_duration_ms /
-                        gameState.level.rules.letter_float_speed_multiplier
+                    : `float-key ${(gameState.level.rules.letter_float_duration_ms / 
+                        gameState.level.rules.letter_float_speed_multiplier) / 
+                        (gameState.level.rules.game_speed || 1.0)
                       }ms forwards`,
                   opacity: opp.pressed ? undefined : 1,
                   visibility: 'visible',

@@ -61,13 +61,17 @@ export function useDialogueAudio(
         console.log("Playing feedback audio for dialogue index:", gameState.currentDialogueIndex, 
           "Speaker:", currentDialogue.speaker, "Is Correct:", isCorrect);
         
+        // Get game speed from level rules
+        const gameSpeed = gameState.level.rules.game_speed || 1.0;
+        
         playFeedbackAudio(
           audioResources,
           gameState.level.id || 'level1',
           gameState.currentDialogueIndex,
           currentDialogue.speaker,
           isCorrect,
-          handleFeedbackEnded
+          handleFeedbackEnded,
+          gameSpeed
         );
       }).catch(error => {
         console.error("Error importing playFeedbackAudio:", error);
@@ -107,13 +111,17 @@ export function useDialogueAudio(
         
         // Import and use playFeedbackAudio
         import('../services/audioService').then(({ playFeedbackAudio }) => {
+          // Get game speed from level rules
+          const gameSpeed = gameState.level.rules.game_speed || 1.0;
+          
           playFeedbackAudio(
             audioResources,
             gameState.level.id || 'level1',
             gameState.currentDialogueIndex,
             currentDialogue.speaker,
             isCorrect,
-            handleDialogueEnded
+            handleDialogueEnded,
+            gameSpeed
           );
         }).catch(importError => {
           console.error("Import of playFeedbackAudio failed:", importError);
@@ -125,12 +133,16 @@ export function useDialogueAudio(
         console.log("Playing regular dialogue audio for index:", gameState.currentDialogueIndex, 
           "Speaker:", currentDialogue.speaker);
         
+        // Get game speed from level rules
+        const gameSpeed = gameState.level.rules.game_speed || 1.0;
+        
         playDialogueAudio(
           audioResources,
           gameState.level.id || 'level1',
           gameState.currentDialogueIndex,
           currentDialogue.speaker,
-          handleDialogueEnded
+          handleDialogueEnded,
+          gameSpeed
         );
       }
     }

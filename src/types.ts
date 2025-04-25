@@ -17,6 +17,7 @@ export interface DialogueItem {
 }
 
 export interface LevelRules {
+  game_speed: number; // Overall game speed multiplier (1.0 is normal speed)
   pressure_buildup_speed: number;
   precision_window_ms: number;
   max_possible_farts_by_word: number;

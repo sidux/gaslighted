@@ -202,6 +202,9 @@ export const updateFartOpportunities = (
   newFartOpportunities: FartOpportunity[], 
   currentFartOpportunity: FartOpportunity | null 
 } => {
+  // Get game speed from level rules
+  const gameSpeed = state.level.rules.game_speed || 1.0;
+  
   // Update basic active/handled status based on timing
   const fartOpportunities = state.fartOpportunities.map((opportunity: FartOpportunity) => {
     if (opportunity.dialogueIndex === state.currentDialogueIndex) {
@@ -209,8 +212,10 @@ export const updateFartOpportunities = (
         return opportunity;
       }
       
-      const startTime = opportunity.time - (state.level.rules.precision_window_ms * 2.5);
-      const endTime = opportunity.time + state.level.rules.letter_visible_duration_ms;
+      // Adjust opportunity timing based on game speed
+      const adjustedTime = opportunity.time * (1.0 / gameSpeed);
+      const startTime = adjustedTime - (state.level.rules.precision_window_ms * 2.5 / gameSpeed);
+      const endTime = adjustedTime + (state.level.rules.letter_visible_duration_ms / gameSpeed);
       
       const isActive = playbackTime >= startTime && playbackTime <= endTime && !opportunity.handled;
       const handled = opportunity.handled || (playbackTime > endTime && !opportunity.pressed);

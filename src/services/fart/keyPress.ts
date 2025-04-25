@@ -13,20 +13,25 @@ export const checkFartKeyPress = (
   key: string,
   opportunity: FartOpportunity | null,
   currentTime: number,
-  precisionWindowMs: number
+  precisionWindowMs: number,
+  gameSpeed: number = 1.0
 ): FartResult | null => {
   if (!opportunity || !opportunity.active) return null;
   
   const pressedKey = key.toLowerCase();
   if (pressedKey !== opportunity.type) return null;
   
-  // Check timing precision
-  const timeDifference = Math.abs(currentTime - opportunity.time);
+  // Check timing precision - adjust opportunity time for game speed
+  const adjustedOpportunityTime = opportunity.time * (1.0 / gameSpeed);
+  const timeDifference = Math.abs(currentTime - adjustedOpportunityTime);
+  
+  // Also adjust precision window based on game speed
+  const adjustedPrecisionWindow = precisionWindowMs / gameSpeed;
   
   let resultType: FartResultType;
-  if (timeDifference <= precisionWindowMs * 0.75) {
+  if (timeDifference <= adjustedPrecisionWindow * 0.75) {
     resultType = 'perfect';
-  } else if (timeDifference <= precisionWindowMs * 2) {
+  } else if (timeDifference <= adjustedPrecisionWindow * 2) {
     resultType = 'okay';
   } else {
     resultType = 'bad';

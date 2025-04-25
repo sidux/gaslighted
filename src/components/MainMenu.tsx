@@ -102,7 +102,7 @@ const MainMenu: React.FC<MainMenuProps> = ({
         </div>
         
         <p className="main-menu-subtitle">
-          A satirical corporate survival game where timing is everything
+          A satirical corporate survival game where timing and balance are everything
         </p>
         
         {level && (
