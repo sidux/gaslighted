@@ -84,6 +84,7 @@ export interface GameState {
   dialogueMetadata: { [key: string]: Viseme[] };
   pausedTimestamp: number | null;
   showingQuestion: boolean;
+  showQuestion: boolean; // Flag to trigger question display
   currentQuestion?: {
     answers: Answer[];
     selectedAnswer?: number;

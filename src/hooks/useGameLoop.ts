@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { GameState } from '../types';
 import { updateGameState, playFartAudio } from '../services';
+import { showQuestion, updateQuestionTimer } from '../services/questionService';
 
 export function useGameLoop(
   gameState: GameState | null, 
@@ -27,13 +28,23 @@ export function useGameLoop(
       setGameState(prevState => {
         if (!prevState) return null;
         
+        // Check if we need to display a question
+        if (prevState.showQuestion && !prevState.showingQuestion) {
+          // Show question and update state
+          return {
+            ...showQuestion(prevState),
+            showQuestion: false // Reset the flag
+          };
+        }
+        
         // Handle paused state or showing question
-        if (prevState.isPaused || prevState.pausedTimestamp !== null || prevState.showingQuestion) {
-          // If showing a question, we need to update the question timer
-          if (prevState.showingQuestion && prevState.currentQuestion) {
-            return updateGameState(prevState, deltaTime);
-          }
+        if (prevState.isPaused || prevState.pausedTimestamp !== null) {
           return prevState;
+        }
+        
+        // Update question timer if showing question
+        if (prevState.showingQuestion && prevState.currentQuestion) {
+          return updateQuestionTimer(prevState);
         }
         
         // Store previous state's lastFartResult to detect new auto-farts

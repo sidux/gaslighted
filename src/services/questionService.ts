@@ -1,61 +1,115 @@
-import {DialogueItem, GameState} from '../types';
-import {getPlayerCharacterId} from './playerService';
+import { GameState } from '../types';
 
 /**
- * Convert time string to milliseconds (e.g., "10s" to 10000)
+ * Show a question based on current dialogue
  */
-export const parseTimeLimit = (timeLimit: string): number => {
-  if (!timeLimit) return 10000; // Default to 10 seconds
+export const showQuestion = (state: GameState): GameState => {
+  const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
   
-  const match = timeLimit.match(/^(\d+)(m?s)$/);
-  if (!match) return 10000;
-  
-  const value = parseInt(match[1], 10);
-  const unit = match[2];
-  
-  return unit === 'ms' ? value : value * 1000;
-};
-
-/**
- * Handle answer selection for questions
- */
-export const handleAnswerSelection = (state: GameState, answerIndex: number): GameState => {
-  if (!state.showingQuestion || !state.currentQuestion) {
+  // If there's no dialogue or no answers to show, return unchanged state
+  if (!currentDialogue || !currentDialogue.answers || currentDialogue.answers.length === 0) {
     return state;
   }
   
-  // Validate answer selection
-  if (!state.currentQuestion.answers || 
-      !Array.isArray(state.currentQuestion.answers) || 
-      answerIndex < 0 || 
-      answerIndex >= state.currentQuestion.answers.length) {
-    console.error("Invalid answer selection:", answerIndex, state.currentQuestion);
-    return {
-      ...state,
-      showingQuestion: false
-    };
-  }
+  // Get the time limit from rules
+  const timeLimit = typeof state.level.rules.question_time_limit === 'string'
+    ? parseFloat(state.level.rules.question_time_limit.replace(/s$/, '')) * 1000
+    : 10000;
   
-  const selectedAnswer = state.currentQuestion.answers[answerIndex];
-  const isCorrect = selectedAnswer ? selectedAnswer.correct : false;
-
-  // Create a deep copy of the level with the answer text directly added to the player's answer dialogue
-  // This ensures the answer text is available even if currentQuestion gets cleared
-  const selectedAnswerText = state.currentQuestion.answers[answerIndex].text;
-
+  const currentTimestamp = Date.now();
+  
+  // Create a question state with the answers from the current dialogue
+  return {
+    ...state,
+    showingQuestion: true,
+    pausedTimestamp: currentTimestamp, // Pause game while showing question
+    currentQuestion: {
+      answers: [...currentDialogue.answers], // Use answers from current dialogue
+      timeRemaining: timeLimit,
+      startTime: currentTimestamp
+    },
+    screenEffects: {
+      ...state.screenEffects,
+      heartbeatIntensity: 20,
+      pulseEffect: false
+    }
+  };
 };
 
 /**
- * Update question state with timer and effects
+ * Move to feedback or next dialogue based on answer
  */
-export const updateQuestionState = (state: GameState, gameSpeed: number = 1.0): GameState => {
+export const handleAnswerCompletion = (state: GameState): GameState => {
   if (!state.currentQuestion) {
     return state;
   }
+
+  // Check if there's a feedback dialogue after the current dialogue
+  const nextDialogueIndex = state.currentDialogueIndex + 1;
+  const nextDialogue = state.level.dialogues[nextDialogueIndex];
+  const hasFeedback = nextDialogue && nextDialogue.feedback;
   
-  const timeLimit = parseTimeLimit(state.level.rules.question_time_limit || "10s");
+  // If next dialogue has feedback, show the appropriate feedback
+  // based on whether the answer was correct or not
+  if (hasFeedback && nextDialogue.feedback && state.currentQuestion.isCorrect !== undefined) {
+    const feedbackIndex = state.currentQuestion.isCorrect ? 0 : 1;
+    const feedbackDialogue = {
+      ...nextDialogue,
+      text: nextDialogue.feedback[feedbackIndex]?.text || ""
+    };
+    
+    // Update the next dialogue with the feedback text
+    const updatedDialogues = [...state.level.dialogues];
+    updatedDialogues[nextDialogueIndex] = feedbackDialogue;
+    
+    // Move to the feedback dialogue
+    return {
+      ...state,
+      level: {
+        ...state.level,
+        dialogues: updatedDialogues
+      },
+      showingQuestion: false,
+      pausedTimestamp: null, // Resume the game
+      currentQuestion: undefined,
+      currentDialogueIndex: nextDialogueIndex,
+      playbackTime: 0,
+      currentWordIndex: 0,
+      currentVisemeIndex: -1
+    };
+  }
   
-  // Initialize startTime if missing
+  // If no feedback, move to the next regular dialogue
+  const isLevelComplete = nextDialogueIndex >= state.level.dialogues.length;
+  
+  return {
+    ...state,
+    showingQuestion: false,
+    pausedTimestamp: null, // Resume the game
+    currentQuestion: undefined,
+    currentDialogueIndex: nextDialogueIndex,
+    playbackTime: 0,
+    currentWordIndex: 0,
+    currentVisemeIndex: -1,
+    victory: isLevelComplete && state.shame < 100,
+    isGameOver: isLevelComplete || state.shame >= 100,
+  };
+};
+
+/**
+ * Update question timer and effects
+ */
+export const updateQuestionTimer = (state: GameState, gameSpeed: number = 1.0): GameState => {
+  if (!state.currentQuestion || !state.showingQuestion) {
+    return state;
+  }
+  
+  // Parse time limit from rules
+  const timeLimit = typeof state.level.rules.question_time_limit === 'string'
+    ? parseFloat(state.level.rules.question_time_limit.replace(/s$/, '')) * 1000
+    : 10000;
+  
+  // Initialize startTime if not set
   if (state.currentQuestion.startTime === undefined) {
     return {
       ...state,
@@ -67,28 +121,51 @@ export const updateQuestionState = (state: GameState, gameSpeed: number = 1.0): 
     };
   }
   
-  // Apply game speed to time elapsed calculation
-  const timeElapsed = (Date.now() - (state.currentQuestion.startTime || Date.now())) * gameSpeed;
+  // Calculate time remaining with game speed factor
+  const timeElapsed = (Date.now() - state.currentQuestion.startTime) * gameSpeed;
   const timeRemaining = Math.max(0, timeLimit - timeElapsed);
   
-  // Update heartbeat intensity based on time remaining
+  // Update heartbeat and pulse effects based on time remaining
   const timeRatio = timeRemaining / timeLimit;
   const heartbeatIntensity = timeRatio < 0.2 ? 80 : timeRatio < 0.5 ? 40 : 20;
+  const pulseEffect = timeRatio < 0.3;
   
-  // Time's up - select a wrong answer automatically
-  if (timeRemaining <= 0) {
+  // If time's up, automatically select an incorrect answer
+  if (timeRemaining <= 0 && !state.currentQuestion.selectedAnswer) {
+    // Find the first incorrect answer
     const answers = state.currentQuestion.answers;
-    if (answers && answers.length > 0) {
-      const wrongAnswerIndex = answers.findIndex(a => !a.correct);
-      return handleAnswerSelection(state, wrongAnswerIndex >= 0 ? wrongAnswerIndex : 0);
-    } else {
-      return {
-        ...state,
-        showingQuestion: false
-      };
-    }
+    const wrongAnswerIndex = answers.findIndex(a => !a.correct);
+    
+    // Create timeout event to trigger answer selection
+    setTimeout(() => {
+      const answerCompletedEvent = new CustomEvent('answer-completed', {
+        detail: {
+          dialogueIndex: state.currentDialogueIndex,
+          answerIndex: wrongAnswerIndex >= 0 ? wrongAnswerIndex : 0,
+          isCorrect: false
+        }
+      });
+      document.dispatchEvent(answerCompletedEvent);
+    }, 0);
+    
+    // Update state with selected wrong answer
+    return {
+      ...state,
+      currentQuestion: {
+        ...state.currentQuestion,
+        selectedAnswer: wrongAnswerIndex >= 0 ? wrongAnswerIndex : 0,
+        isCorrect: false,
+        timeRemaining: 0
+      },
+      screenEffects: {
+        ...state.screenEffects,
+        heartbeatIntensity,
+        pulseEffect
+      }
+    };
   }
   
+  // Normal timer update
   return {
     ...state,
     currentQuestion: {
@@ -98,37 +175,7 @@ export const updateQuestionState = (state: GameState, gameSpeed: number = 1.0): 
     screenEffects: {
       ...state.screenEffects,
       heartbeatIntensity,
-      pulseEffect: timeRatio < 0.2
-    }
-  };
-};
-
-/**
- * Show a question
- */
-export const showQuestion = (state: GameState): GameState => {
-  const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
-  
-  if (!currentDialogue || !currentDialogue.answers || currentDialogue.answers.length === 0) {
-    return state;
-  }
-  
-  const shuffledAnswers = [...currentDialogue.answers];
-  const currentTimestamp = Date.now();
-  
-  return {
-    ...state,
-    showingQuestion: true,
-    pausedTimestamp: currentTimestamp,
-    currentQuestion: {
-      answers: shuffledAnswers,
-      timeRemaining: parseTimeLimit(state.level.rules.question_time_limit || "10s"),
-      startTime: currentTimestamp
-    },
-    screenEffects: {
-      ...state.screenEffects,
-      heartbeatIntensity: 20,
-      pulseEffect: false
+      pulseEffect
     }
   };
 };

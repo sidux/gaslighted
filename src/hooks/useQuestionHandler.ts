@@ -1,69 +1,95 @@
 import { useEffect } from 'react';
 import { GameState } from '../types';
+import { handleAnswerCompletion } from '../services/questionService';
 
 export function useQuestionHandler(
   setGameState: React.Dispatch<React.SetStateAction<GameState | null>>
 ) {
-  // Handle answer completion event
+  // Listen for answer completed events
   useEffect(() => {
-    const handleAnswerComplete = (event: Event) => {
-      const customEvent = event as CustomEvent<{ dialogueIndex: number, answerIndex: number }>;
-      const { dialogueIndex } = customEvent.detail;
-      
-      console.log("Answer complete event received for dialogue:", dialogueIndex);
+    const handleAnswerCompleted = (event: Event) => {
+      const customEvent = event as CustomEvent<{
+        dialogueIndex: number,
+        answerIndex: number,
+        isCorrect: boolean
+      }>;
       
       setGameState(prevState => {
         if (!prevState) return null;
         
-        // Check if we're still on the same dialogue
-        if (prevState.currentDialogueIndex !== dialogueIndex) {
+        // Only process if we're still on the same dialogue
+        if (prevState.currentDialogueIndex !== customEvent.detail.dialogueIndex) {
           return prevState;
         }
         
-        // Reset state for proper fart opportunities with new text
-        const updatedState: GameState = {
-          ...prevState,
-          pausedTimestamp: null, // Resume the game
-          currentWordIndex: 0     // Start from first word of answer text
-        };
-        
-        // Get the feedback dialogue
-        const nextDialogue = prevState.level.dialogues[dialogueIndex + 1];
-        
-        // Only move to next dialogue if it exists and it's a feedback dialogue
-        if (nextDialogue && nextDialogue.feedback) {
-          // Move to the next dialogue (feedback)
-          return {
-            ...updatedState,
-            currentDialogueIndex: dialogueIndex + 1,
-            playbackTime: 0,
-            currentWordIndex: 0,  // Start from first word
-            currentVisemeIndex: -1
-          };
-        } else {
-          // If there's no feedback dialogue after the question,
-          // move to the next regular dialogue
-          const newDialogueIndex = dialogueIndex + 1;
-          const isLevelComplete = newDialogueIndex >= prevState.level.dialogues.length;
-          
-          return {
-            ...updatedState,
-            currentDialogueIndex: newDialogueIndex,
-            playbackTime: 0,
-            currentWordIndex: 0,  // Start from first word
-            currentVisemeIndex: -1,
-            lastFartResult: null,
-            victory: isLevelComplete && prevState.shame < 100,
-            isGameOver: isLevelComplete || prevState.shame >= 100,
-          };
-        }
+        // Handle the completion by moving to feedback or next dialogue
+        return handleAnswerCompletion(prevState);
       });
     };
     
-    document.addEventListener('answer-complete', handleAnswerComplete);
+    // Add event listener
+    document.addEventListener('answer-completed', handleAnswerCompleted);
     
+    // Cleanup on unmount
     return () => {
-      document.removeEventListener('answer-complete', handleAnswerComplete);
+      document.removeEventListener('answer-completed', handleAnswerCompleted);
+    };
+  }, [setGameState]);
+  
+  // Handle dialogue transitions that should trigger questions
+  useEffect(() => {
+    const handleDialogueComplete = (event: Event) => {
+      const customEvent = event as CustomEvent<{ dialogueIndex: number }>;
+      
+      setGameState(prevState => {
+        if (!prevState) return null;
+        
+        // Get the next dialogue
+        const nextDialogueIndex = customEvent.detail.dialogueIndex + 1;
+        
+        // If we're out of dialogues, end the level
+        if (nextDialogueIndex >= prevState.level.dialogues.length) {
+          return {
+            ...prevState,
+            victory: prevState.shame < 100,
+            isGameOver: true,
+            currentDialogueIndex: nextDialogueIndex
+          };
+        }
+        
+        // Get the next dialogue
+        const nextDialogue = prevState.level.dialogues[nextDialogueIndex];
+        
+        // If the next dialogue has a question (answers), show it in the next update
+        // This will be picked up by the game loop to show the question
+        if (nextDialogue.answers && nextDialogue.answers.length > 0) {
+          return {
+            ...prevState,
+            currentDialogueIndex: nextDialogueIndex,
+            showQuestion: true, // Flag to show question on next update
+            playbackTime: 0,
+            currentWordIndex: 0,
+            currentVisemeIndex: -1
+          };
+        }
+        
+        // Otherwise, just move to the next dialogue as normal
+        return {
+          ...prevState,
+          currentDialogueIndex: nextDialogueIndex,
+          playbackTime: 0,
+          currentWordIndex: 0,
+          currentVisemeIndex: -1
+        };
+      });
+    };
+    
+    // Add event listener
+    document.addEventListener('dialogue-complete', handleDialogueComplete);
+    
+    // Cleanup on unmount
+    return () => {
+      document.removeEventListener('dialogue-complete', handleDialogueComplete);
     };
   }, [setGameState]);
 }

@@ -4,7 +4,6 @@ import GameMeters from './GameMeters';
 import QuestionOverlay from './QuestionOverlay';
 import KaraokeText from './KaraokeText';
 import FartOpportunities from './FartOpportunities';
-import { parseTimeLimit } from '../services/questionService';
 
 interface GameUIProps {
   gameState: GameState;
@@ -42,15 +41,15 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
             <div 
               className={`question-timer ${
                 gameState.currentQuestion.timeRemaining
-                  ? (gameState.currentQuestion.timeRemaining / parseTimeLimit(gameState.level.rules.question_time_limit || "10s") < 0.3 
+                  ? (gameState.currentQuestion.timeRemaining / parseFloat(gameState.level.rules.question_time_limit?.replace(/s$/, '') || "10") * 1000 < 0.3 
                       ? 'timer-critical pulse' 
-                      : gameState.currentQuestion.timeRemaining / parseTimeLimit(gameState.level.rules.question_time_limit || "10s") < 0.6 
+                      : gameState.currentQuestion.timeRemaining / parseFloat(gameState.level.rules.question_time_limit?.replace(/s$/, '') || "10") * 1000 < 0.6 
                         ? 'timer-warning' 
                         : '')
                   : ''
               }`}
               style={{ 
-                width: `${(gameState.currentQuestion.timeRemaining / parseTimeLimit(gameState.level.rules.question_time_limit || "10s") * 100)}%` 
+                width: `${(gameState.currentQuestion.timeRemaining / parseFloat(gameState.level.rules.question_time_limit?.replace(/s$/, '') || "10") * 1000) * 100}%` 
               }}
             />
           </div>

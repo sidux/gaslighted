@@ -1,6 +1,6 @@
 import { GameState, Level, Viseme } from '../types';
 import { generateFartOpportunities, handleTerribleFart, updateFartOpportunities } from './fartService';
-import { updateQuestionState } from './questionService';
+import { updateQuestionTimer } from './questionService';
 import { getDialogueMetadata, updateWordAndVisemeIndices, checkDialogueCompletion, isQuestionDialogue } from './dialogueService';
 import { updatePressure, checkGameCompletion } from './scoreService';
 
@@ -28,6 +28,7 @@ export const initializeGameState = (level: Level, dialogueMetadata: { [key: stri
     dialogueMetadata,
     pausedTimestamp: null,
     showingQuestion: false,
+    showQuestion: false,  // New field for triggering question display
     screenEffects: {
       heartbeatIntensity: 0,
       pulseEffect: false,
@@ -57,6 +58,8 @@ export const resetGameState = (state: GameState): GameState => {
     lastFartResult: null,
     pausedTimestamp: null,
     showingQuestion: false,
+    showQuestion: false, // Reset the question trigger flag
+    currentQuestion: undefined, // Clear any current question
     screenEffects: {
       heartbeatIntensity: 0,
       pulseEffect: false,
@@ -79,7 +82,7 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   
   // Handle question timer
   if (state.showingQuestion && state.currentQuestion) {
-    return updateQuestionState(state, gameSpeed);
+    return updateQuestionTimer(state, gameSpeed);
   }
   
   // Update pressure with question pressure multiplier if applicable
