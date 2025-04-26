@@ -24,7 +24,7 @@
             "terrible": 100
         },
         "question": {
-            "pressure_multiplier": 3.5,
+            "pressure_multiplier": 2,
             "correct_answer_shame_change": -12,
             "incorrect_answer_shame_change": 25,
             "heartbeat_intensity": 90
