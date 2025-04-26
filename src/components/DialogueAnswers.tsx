@@ -64,6 +64,28 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
       });
     }
     
+    // Directly resize the karaoke container when an answer is selected
+    const karaokeContainer = document.querySelector('.karaoke-container');
+    if (karaokeContainer) {
+      // First remove any previous classes
+      karaokeContainer.classList.remove('answer-selected');
+      
+      // Force a reflow to ensure the transition animation works properly
+      void (karaokeContainer as HTMLElement).offsetWidth;
+      
+      // Add the class for proper styling
+      karaokeContainer.classList.add('answer-selected');
+      
+      // Also force the container to fit the content directly
+      requestAnimationFrame(() => {
+        const karaokeText = karaokeContainer.querySelector('.karaoke-text');
+        if (karaokeText) {
+          const textHeight = (karaokeText as HTMLElement).scrollHeight;
+          (karaokeContainer as HTMLElement).style.height = `${textHeight + 30}px`; // Add some padding
+        }
+      });
+    }
+    
     // Call the callback to update the UI first
     onAnswerSelected(answer.correct, answer.originalIndex);
     
@@ -123,6 +145,16 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
   const advanceToFeedbackDialogue = (gameState: GameState, wasCorrect: boolean) => {
     const nextDialogueIndex = dialogueIndex + 1;
     
+    // Reset the karaoke container when advancing to feedback
+    const karaokeContainer = document.querySelector('.karaoke-container');
+    if (karaokeContainer) {
+      karaokeContainer.classList.remove('answer-selected');
+      if (karaokeContainer instanceof HTMLElement) {
+        karaokeContainer.style.height = '';
+        karaokeContainer.style.minHeight = '';
+      }
+    }
+    
     if (gameState.audioResources) {
       const levelId = gameState.level.id || 'level1';
       const feedbackSpeakerId = gameState.level.dialogues[nextDialogueIndex].speaker;
@@ -167,6 +199,16 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
   
   // Helper function to advance to next regular dialogue
   const advanceToNextDialogue = (gameState: GameState) => {
+    // Reset the karaoke container when advancing to next dialogue
+    const karaokeContainer = document.querySelector('.karaoke-container');
+    if (karaokeContainer) {
+      karaokeContainer.classList.remove('answer-selected');
+      if (karaokeContainer instanceof HTMLElement) {
+        karaokeContainer.style.height = '';
+        karaokeContainer.style.minHeight = '';
+      }
+    }
+    
     if (gameState.setGameState) {
       gameState.setGameState(prevState => {
         if (!prevState) return null;

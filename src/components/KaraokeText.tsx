@@ -104,6 +104,12 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
       setShowingFeedback(false);
       setFeedbackCorrect(false);
       setCurrentDialogueIndex(gameState.currentDialogueIndex);
+      
+      // Remove the answer-selected class when dialogue changes
+      const karaokeContainer = document.querySelector('.karaoke-container');
+      if (karaokeContainer) {
+        karaokeContainer.classList.remove('answer-selected');
+      }
     }
   }, [gameState.currentDialogueIndex, currentDialogueIndex]);
   
@@ -124,6 +130,21 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
   // Check if there's an active selected answer
   const isShowingAnswer = showingFeedback || gameState.selectedAnswerIndex !== undefined;
   const isShowingFeedback = showingFeedback || gameState.showingFeedback;
+  
+  // Update the karaoke container height on word changes when showing an answer
+  useEffect(() => {
+    if (isShowingAnswer && !isShowingFeedback && gameState.currentWordIndex >= 0) {
+      const karaokeContainer = document.querySelector('.karaoke-container');
+      const karaokeText = document.querySelector('.karaoke-text');
+      
+      if (karaokeContainer && karaokeText && karaokeContainer.classList.contains('answer-selected')) {
+        if (karaokeText instanceof HTMLElement && karaokeContainer instanceof HTMLElement) {
+          const textHeight = karaokeText.scrollHeight;
+          karaokeContainer.style.height = `${textHeight + 30}px`; // Add some padding
+        }
+      }
+    }
+  }, [isShowingAnswer, isShowingFeedback, gameState.currentWordIndex]);
   
   if (currentDialogue.text) {
     // Regular dialogue with text

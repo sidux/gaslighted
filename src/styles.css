@@ -448,6 +448,16 @@ body, html {
   backdrop-filter: blur(3px);
   position: relative;
   overflow: visible; /* Allow fart keys to overflow without affecting container size */
+  transition: min-height 0.3s ease, padding 0.3s ease;
+}
+
+/* When an answer is selected, adjust the container to fit the content */
+.karaoke-container.answer-selected {
+  min-height: 0 !important;
+  max-height: none !important;
+  height: auto !important;
+  padding: 15px 20px !important;
+  transition: all 0.3s ease-in-out;
 }
 
 .karaoke-text {
@@ -1606,6 +1616,12 @@ body, html {
 /* Karaoke text adjustments */
 .karaoke-text.has-answers {
   min-height: 200px;
+}
+
+/* Specific styling for karaoke text when an answer is selected */
+.karaoke-container.answer-selected .karaoke-text {
+  min-height: auto !important;
+  height: auto !important;
 }
 
 /* Question Styling */

@@ -56,10 +56,8 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
         const karaokeContainer = document.querySelector('.karaoke-container');
         if (karaokeContainer) {
           karaokeContainer.classList.add('answer-selected');
-          // Remove the class after transition completes
-          setTimeout(() => {
-            karaokeContainer.classList.remove('answer-selected');
-          }, 500);
+          // The class will persist while the answer is shown
+          // and will be removed when moving to the next dialogue
         }
       }, 100);
       
