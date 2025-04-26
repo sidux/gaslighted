@@ -9,6 +9,8 @@ export interface Participant {
 export interface DialogueItem {
   speaker: string;
   text?: string;
+  answers?: { text: string; correct: boolean }[];
+  feedback?: { text: string; correct: boolean }[];
 }
 
 export interface LevelRules {
@@ -32,6 +34,12 @@ export interface LevelRules {
     okay: number;
     bad: number;
     terrible?: number; // Optional property for terrible state
+  };
+  question?: {
+    pressure_multiplier: number;
+    correct_answer_shame_change: number;
+    incorrect_answer_shame_change: number;
+    heartbeat_intensity: number;
   };
 }
 
@@ -77,6 +85,15 @@ export interface GameState {
     blurEffect: boolean;
   };
   audioResources?: AudioResources;
+  setGameState?: React.Dispatch<React.SetStateAction<GameState | null>>;
+  
+  // For answer dialogues
+  selectedAnswerIndex?: number;
+  showingAnswer?: boolean;
+  
+  // For feedback dialogues
+  feedbackCorrect?: boolean;
+  showingFeedback?: boolean;
 }
 
 export type FartType = 't' | 'p' | 'k' | 'f' | 'r' | 'z';
@@ -84,6 +101,8 @@ export type FartType = 't' | 'p' | 'k' | 'f' | 'r' | 'z';
 export interface FartOpportunity {
   dialogueIndex: number;
   wordIndex: number;
+  answerIndex?: number; // For answer dialogues
+  feedbackIndex?: number; // For feedback dialogues
   visemeIndex: number;
   time: number;
   type: FartType;

@@ -11,12 +11,26 @@ export const getDialogueMetadata = (state: GameState): Viseme[] => {
   
   if (!speakerId) return [];
   
+  let metadataKey = '';
+  
   if (currentDialogue.text) {
     // Regular dialogue
-    const metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-metadata.json`;
-    return state.dialogueMetadata[metadataKey] || [];
+    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-metadata.json`;
+  } else if (currentDialogue.answers && state.selectedAnswerIndex !== undefined) {
+    // Answer dialogue with selection
+    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-answer-${state.selectedAnswerIndex}-metadata.json`;
+  } else if (currentDialogue.feedback && state.feedbackCorrect !== undefined) {
+    // Feedback dialogue
+    const feedbackType = state.feedbackCorrect ? 'correct' : 'incorrect';
+    metadataKey = `src/assets/dialogue/speech_marks/${levelId}-${state.currentDialogueIndex}-${speakerId}-feedback-${feedbackType}-metadata.json`;
   }
   
+  // Return metadata if found
+  if (metadataKey && state.dialogueMetadata[metadataKey]) {
+    return state.dialogueMetadata[metadataKey];
+  }
+  
+  // No metadata found
   return [];
 };
 

@@ -16,6 +16,38 @@ export const playDialogueAudio = (
 };
 
 /**
+ * Play answer audio
+ */
+export const playAnswerAudio = (
+  resources: AudioResources,
+  levelId: string,
+  dialogueIndex: number,
+  speakerId: string,
+  answerIndex: number,
+  onEnded: () => void,
+  gameSpeed?: number
+): void => {
+  const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}`;
+  playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
+};
+
+/**
+ * Play feedback audio
+ */
+export const playFeedbackAudio = (
+  resources: AudioResources,
+  levelId: string,
+  dialogueIndex: number,
+  speakerId: string,
+  isCorrect: boolean,
+  onEnded: () => void,
+  gameSpeed?: number
+): void => {
+  const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}`;
+  playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
+};
+
+/**
  * Play fart audio with volume based on result type
  */
 export const playFartAudio = (

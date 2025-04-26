@@ -28,6 +28,31 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
       )
     }));
   };
+  
+  // Handler for when an answer is selected
+  const handleAnswerSelected = (wasCorrect: boolean) => {
+    // Adjust shame based on correctness
+    setGameState(gs => {
+      if (!gs) return null;
+      
+      let shameChange = 0;
+      
+      // Get shame change values from level rules
+      if (wasCorrect) {
+        shameChange = gs.level.rules.question?.correct_answer_shame_change || -10;
+      } else {
+        shameChange = gs.level.rules.question?.incorrect_answer_shame_change || 15;
+      }
+      
+      // Calculate new shame value, clamped between 0-100
+      const newShame = Math.max(0, Math.min(100, gs.shame + shameChange));
+      
+      return {
+        ...gs,
+        shame: newShame
+      };
+    });
+  };
 
   return (
     <div className="game-ui">
@@ -38,6 +63,7 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
           gameState={gameState} 
           dialogueMetadata={dialogueMetadata}
           handleFartAnimationEnd={handleFartAnimationEnd}
+          onAnswerSelected={handleAnswerSelected}
         />
         
         <FartOpportunities 

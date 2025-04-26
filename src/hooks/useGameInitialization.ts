@@ -29,6 +29,8 @@ export function useGameInitialization(level: Level) {
         const initialState = initializeGameState(level, metadata);
         // Add audio resources to the game state for access in other components
         initialState.audioResources = audio;
+        // Add setGameState to the gameState for access in components
+        initialState.setGameState = setGameState;
         setGameState(initialState);
         
         setIsLoading(false);

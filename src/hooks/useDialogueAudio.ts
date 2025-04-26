@@ -25,29 +25,95 @@ export function useDialogueAudio(
     
     // Play dialogue audio if it's not already playing
     if (gameState.playbackTime === 0) {
+      // Check if this is a dialogue with answers or feedback
+      const hasAnswers = currentDialogue.answers && currentDialogue.answers.length > 0;
+      const hasFeedback = currentDialogue.feedback && currentDialogue.feedback.length > 0;
+      
+      // For dialogues with answers, don't auto-advance when audio ends
       const handleDialogueEnded = () => {
-        setGameState(prevState => {
-          if (!prevState) return null;
-          // Move to the next dialogue
-          return moveToNextDialogueState(prevState);
-        });
+        // Only auto-advance for regular dialogue (not answers or feedback)
+        if (!hasAnswers && !hasFeedback) {
+          setGameState(prevState => {
+            if (!prevState) return null;
+            
+            // Move to the next dialogue
+            return moveToNextDialogueState(prevState);
+          });
+        } else {
+          
+        }
       };
       
-      // Play regular dialogue audio
-      console.log("Playing regular dialogue audio for index:", gameState.currentDialogueIndex, 
-        "Speaker:", currentDialogue.speaker);
-      
-      // Get game speed from level rules
-      const gameSpeed = gameState.level.rules.game_speed || 1.0;
-      
-      playDialogueAudio(
-        audioResources,
-        gameState.level.id || 'level1',
-        gameState.currentDialogueIndex,
-        currentDialogue.speaker,
-        handleDialogueEnded,
-        gameSpeed
-      );
+      // Handle different types of dialogue
+      if (currentDialogue.text) {
+        // Regular dialogue with text
+        console.log("Playing regular dialogue audio for index:", gameState.currentDialogueIndex, 
+          "Speaker:", currentDialogue.speaker);
+        
+        // Get game speed from level rules
+        const gameSpeed = gameState.level.rules.game_speed || 1.0;
+        
+        playDialogueAudio(
+          audioResources,
+          gameState.level.id || 'level1',
+          gameState.currentDialogueIndex,
+          currentDialogue.speaker,
+          handleDialogueEnded,
+          gameSpeed
+        );
+      } else if (hasAnswers && gameState.selectedAnswerIndex !== undefined) {
+        // This is an answer dialogue with a selected answer - play the answer audio
+        console.log("Playing selected answer audio for index:", gameState.currentDialogueIndex,
+          "Speaker:", currentDialogue.speaker,
+          "Answer index:", gameState.selectedAnswerIndex);
+        
+        // Get game speed from level rules
+        const gameSpeed = gameState.level.rules.game_speed || 1.0;
+        
+        // Import and use playAnswerAudio
+        import('../services/audioService').then(({ playAnswerAudio }) => {
+          playAnswerAudio(
+            audioResources,
+            gameState.level.id || 'level1',
+            gameState.currentDialogueIndex,
+            currentDialogue.speaker,
+            gameState.selectedAnswerIndex!,
+            () => {
+              // After answer audio is done, we'll advance to feedback in DialogueAnswers component
+              
+            },
+            gameSpeed
+          );
+        });
+      } else if (hasFeedback && gameState.feedbackCorrect !== undefined) {
+        // This is a feedback dialogue - play the feedback audio
+        console.log("Playing feedback audio for index:", gameState.currentDialogueIndex,
+          "Speaker:", currentDialogue.speaker,
+          "Feedback correct:", gameState.feedbackCorrect);
+        
+        // Get game speed from level rules
+        const gameSpeed = gameState.level.rules.game_speed || 1.0;
+        
+        // Import and use playFeedbackAudio
+        import('../services/audioService').then(({ playFeedbackAudio }) => {
+          playFeedbackAudio(
+            audioResources,
+            gameState.level.id || 'level1',
+            gameState.currentDialogueIndex,
+            currentDialogue.speaker,
+            gameState.feedbackCorrect!,
+            () => {
+              // After feedback audio is done, we'll advance to next dialogue in DialogueAnswers component
+              
+            },
+            gameSpeed
+          );
+        });
+      } else if (hasAnswers) {
+        
+        // For answers dialogue without selection, we don't play audio immediately
+        // Audio will be played when an answer is selected
+      }
     }
   }, [gameState?.currentDialogueIndex, gameState?.playbackTime, gameState?.isPlaying, gameState?.isPaused, gameState?.isGameOver, audioResources, setGameState]);
 }

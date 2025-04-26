@@ -22,14 +22,14 @@ export function useKeyboardHandler(
       const validFartKeys = ['t', 'p', 'k', 'f', 'r', 'z'];
       
       if (validFartKeys.includes(key)) {
-        console.log(`Processing fart key: ${key}`);
+        
         
         // Find all active opportunities of the pressed key type
         const activeOpportunities = gameState.fartOpportunities.filter(
           opp => opp.active && !opp.handled && !opp.pressed && opp.type === key
         );
 
-        console.log(`Active opportunities for ${key}: ${activeOpportunities.length}`);
+        
 
         // If there are active opportunities of this type
         if (activeOpportunities.length > 0) {
@@ -80,7 +80,7 @@ function processValidFartPress(
     
     // Play fart sound with game speed
     playFartAudio(audioResources, result.fartType, result.type, gameSpeed);
-    console.log(`Played fart of type: ${result.type} with speed: ${gameSpeed}`);
+    
     
     // Apply result to game state
     setGameState(prevState => {
@@ -168,7 +168,7 @@ function processBadFartPress(
   audioResources: AudioResources,
   setGameState: React.Dispatch<React.SetStateAction<GameState | null>>
 ) {
-  console.log("No active opportunity - doing bad fart");
+  
   
   // Get game speed from level rules
   const gameSpeed = gameState.level.rules.game_speed || 1.0;

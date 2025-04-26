@@ -16,6 +16,19 @@ export const getDialogueAudioPath = (levelId: string, dialogueIndex: number, spe
   return `src/assets/dialogue/${levelId}-${dialogueIndex}-${speakerId}.mp3`;
 };
 
+/**
+ * Get the path for an answer audio file
+ */
+export const getAnswerAudioPath = (levelId: string, dialogueIndex: number, speakerId: string, answerIndex: number): string => {
+  return `src/assets/dialogue/${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}.mp3`;
+};
+
+/**
+ * Get the path for feedback audio file
+ */
+export const getFeedbackAudioPath = (levelId: string, dialogueIndex: number, speakerId: string, correct: boolean): string => {
+  return `src/assets/dialogue/${levelId}-${dialogueIndex}-${speakerId}-feedback-${correct ? 'correct' : 'incorrect'}.mp3`;
+};
 
 
 /**
@@ -112,7 +125,7 @@ export const getAllWords = (
   if (!metadata || !Array.isArray(metadata) || metadata.length === 0) {
     // If we have no metadata but have dialogue text, split it into words as a fallback
     if (dialogueText) {
-      console.log("Creating fallback word items for text:", dialogueText);
+      ;
       const words = dialogueText.split(/\s+/).filter(w => w.trim().length > 0);
       
       // Create timing to allow for fart opportunities
@@ -134,7 +147,7 @@ export const getAllWords = (
   
   // If there are no word items but we have text, create simple word structure
   if (wordItems.length === 0 && dialogueText) {
-    console.log("No word items in metadata, creating simple structure for:", dialogueText);
+    
     
     // Split text properly by whitespace to get natural word boundaries
     const words = dialogueText.split(/\s+/).filter(w => w.trim().length > 0);
@@ -159,7 +172,7 @@ export const getAllWords = (
     
     // If we have a big mismatch in word count, fallback to simpler approach
     if (Math.abs(words.length - wordItems.length) > words.length * 0.25) {
-      console.log(`Word count mismatch: text has ${words.length} words, metadata has ${wordItems.length} items. Using fallback.`);
+      
       return words.map((word, index) => {
         // Use metadata timing if available, otherwise fallback to calculated timing
         // Apply game speed to timing calculations
@@ -253,11 +266,37 @@ export const loadLevelMetadata = async (level: Level): Promise<{ [key: string]: 
       // Regular dialogue
       const key = getMetadataPath(levelId, i, speakerId);
       result[key] = await loadMetadataFile(key);
+    } else if (dialogue.answers) {
+      // For dialogue with answers, check if there are metadata for each answer
+      if (dialogue.answers && dialogue.answers.length > 0) {
+        // Try to load metadata for each answer
+        for (let j = 0; j < dialogue.answers.length; j++) {
+          const answerMetadataPath = `src/assets/dialogue/speech_marks/${levelId}-${i}-${speakerId}-answer-${j}-metadata.json`;
+          const answerMetadata = await loadMetadataFile(answerMetadataPath);
+          if (answerMetadata.length > 0) {
+            result[answerMetadataPath] = answerMetadata;
+          }
+        }
+      }
+    } else if (dialogue.feedback) {
+      // For feedback dialogue, try to load both correct and incorrect metadata
+      const correctMetadataPath = `src/assets/dialogue/speech_marks/${levelId}-${i}-${speakerId}-feedback-correct-metadata.json`;
+      const incorrectMetadataPath = `src/assets/dialogue/speech_marks/${levelId}-${i}-${speakerId}-feedback-incorrect-metadata.json`;
+      
+      const correctMetadata = await loadMetadataFile(correctMetadataPath);
+      if (correctMetadata.length > 0) {
+        result[correctMetadataPath] = correctMetadata;
+      }
+      
+      const incorrectMetadata = await loadMetadataFile(incorrectMetadataPath);
+      if (incorrectMetadata.length > 0) {
+        result[incorrectMetadataPath] = incorrectMetadata;
+      }
     }
   }
   
   // Log loaded metadata keys to help with debugging
-  console.log("Loaded metadata for keys:", Object.keys(result));
+  
   
   return result;
 };
@@ -302,11 +341,29 @@ export const loadAudioResources = async (level: Level): Promise<AudioResources> 
         getDialogueAudioPath(levelId, i, speakerId),
         `${levelId}-${i}-${speakerId}`
       );
+    } else if (dialogue.answers && dialogue.answers.length > 0) {
+      // For dialogues with answer options, load all answer audio files
+      dialogue.answers.forEach((answer, answerIndex) => {
+        loadAudio(
+          getAnswerAudioPath(levelId, i, speakerId, answerIndex),
+          `${levelId}-${i}-${speakerId}-answer-${answerIndex}`
+        );
+      });
+    } else if (dialogue.feedback && dialogue.feedback.length > 0) {
+      // For feedback dialogues, load correct and incorrect feedback audio
+      loadAudio(
+        getFeedbackAudioPath(levelId, i, speakerId, true),
+        `${levelId}-${i}-${speakerId}-feedback-correct`
+      );
+      loadAudio(
+        getFeedbackAudioPath(levelId, i, speakerId, false),
+        `${levelId}-${i}-${speakerId}-feedback-incorrect`
+      );
     }
   }
   
   // Log loaded audio resources for debugging
-  console.log("Loaded dialogue audio keys:", Object.keys(dialogues));
+  
   
   return { dialogues, farts, heartbeat };
 };
