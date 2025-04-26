@@ -397,13 +397,6 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
           />
         </div>
       )}
-      
-      {/* Show feedback if we just answered */}
-      {showingFeedback && hasFeedback && (
-        <div className={`dialogue-feedback ${feedbackCorrect ? 'correct' : 'incorrect'}`}>
-          {currentDialogue.feedback?.find(f => f.correct === feedbackCorrect)?.text || ''}
-        </div>
-      )}
     </div>
   );
 };
