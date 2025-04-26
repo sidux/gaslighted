@@ -103,9 +103,23 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
         style={{
           backgroundImage: `url(${require(`../assets/backgrounds/${participant.id}.jpg`)})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center bottom'
+          backgroundPosition: 'center bottom',
+          position: 'relative'
         }}
       >
+        {/* Blur overlay */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          backdropFilter: participant.type === 'player' ? 'blur(5px)' : 'blur(2px)',
+          WebkitBackdropFilter: participant.type === 'player' ? 'blur(5px)' : 'blur(2px)',
+          zIndex: 1
+        }}></div>
+        
         <div className="character-container" style={{ 
           display: 'flex', 
           justifyContent: 'center', 
@@ -113,7 +127,8 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
           height: '100%', 
           width: '100%', 
           position: 'absolute',
-          bottom: '0'
+          bottom: '0',
+          zIndex: 2
         }}>
           <img 
             src={require(`../assets/faces/${participant.id}-${faceImage}.png`)}
@@ -122,11 +137,11 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
             style={{ marginBottom: '0', maxHeight: '90%', objectFit: 'contain' }}
           />
         </div>
-        <div className="participant-name">
+        <div className="participant-name" style={{ zIndex: 2 }}>
           {participant.id.charAt(0).toUpperCase() + participant.id.slice(1)}
         </div>
         {participant.type === 'player' && isSpeaking && (
-          <div className="active-indicator">
+          <div className="active-indicator" style={{ zIndex: 2 }}>
             <span>Speaking</span>
           </div>
         )}
