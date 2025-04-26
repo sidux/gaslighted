@@ -383,7 +383,7 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
                 }`}
                 style={{
                   animationDuration: opp.pressed
-                    ? `${opp.resultType === 'perfect' ? 1500 / gameSpeed : opp.resultType === 'okay' ? 1200 / gameSpeed : 1000 / gameSpeed}ms`
+                    ? `${opp.resultType === 'perfect' ? 1500 / gameSpeed : opp.resultType === 'okay' ? 1200 / gameSpeed : opp.resultType === 'terrible' ? 1800 / gameSpeed : 1000 / gameSpeed}ms`
                     : `${(gameState.level.rules.letter_float_duration_ms / 
                         gameState.level.rules.letter_float_speed_multiplier) / 
                         (gameState.level.rules.game_speed || 1.0)
@@ -435,6 +435,18 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
                     <div className="particle" style={{ '--x': '-5px', '--y': '30px' } as React.CSSProperties} />
                     <div className="particle" style={{ '--x': '-30px', '--y': '15px' } as React.CSSProperties} />
                     <div className="particle" style={{ '--x': '-35px', '--y': '-25px' } as React.CSSProperties} />
+                  </>
+                )}
+                
+                {opp.pressed && opp.resultType === 'okay' && (
+                  <>
+                    {/* okay particles */}
+                    <div className="particle" style={{ '--x': '25px', '--y': '-25px' } as React.CSSProperties} />
+                    <div className="particle" style={{ '--x': '35px', '--y': '-5px' } as React.CSSProperties} />
+                    <div className="particle" style={{ '--x': '30px', '--y': '15px' } as React.CSSProperties} />
+                    <div className="particle" style={{ '--x': '-10px', '--y': '25px' } as React.CSSProperties} />
+                    <div className="particle" style={{ '--x': '-25px', '--y': '10px' } as React.CSSProperties} />
+                    <div className="particle" style={{ '--x': '-30px', '--y': '-20px' } as React.CSSProperties} />
                   </>
                 )}
               </span>

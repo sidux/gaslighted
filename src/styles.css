@@ -598,13 +598,13 @@ body, html {
 /* Okay press animation - bouncy pop effect with continued ascension */
 @keyframes okay-pressed {
   0% { transform: translateX(-50%) translateY(0) scale(1); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 1; }
-  15% { transform: translateX(-50%) translateY(-40px) scale(1.8); box-shadow: 0 0 25px rgba(251, 188, 5, 1); filter: brightness(1.5) saturate(1.3); opacity: 1; }
-  30% { transform: translateX(-50%) translateY(-80px) scale(1.4); box-shadow: 0 0 20px rgba(251, 188, 5, 0.9); filter: brightness(1.3); opacity: 1; }
-  45% { transform: translateX(-50%) translateY(-120px) scale(1.6); box-shadow: 0 0 22px rgba(251, 188, 5, 0.95); filter: brightness(1.4) saturate(1.2); opacity: 1; }
-  60% { transform: translateX(-50%) translateY(-160px) scale(1.3); box-shadow: 0 0 18px rgba(251, 188, 5, 0.9); filter: brightness(1.2); opacity: 0.8; }
-  75% { transform: translateX(-50%) translateY(-200px) scale(1.2); box-shadow: 0 0 15px rgba(251, 188, 5, 0.85); filter: brightness(1.1); opacity: 0.5; }
-  95% { transform: translateX(-50%) translateY(-240px) scale(1); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 0.2; }
-  100% { transform: translateX(-50%) translateY(-250px) scale(1); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 0; }
+  10% { transform: translateX(-50%) translateY(-30px) scale(1.6); box-shadow: 0 0 25px rgba(251, 188, 5, 1); filter: brightness(1.4) saturate(1.3); opacity: 1; }
+  25% { transform: translateX(-50%) translateY(-70px) scale(1.3); box-shadow: 0 0 20px rgba(251, 188, 5, 0.9); filter: brightness(1.3); opacity: 1; }
+  40% { transform: translateX(-50%) translateY(-110px) scale(1.5); box-shadow: 0 0 22px rgba(251, 188, 5, 0.95); filter: brightness(1.4) saturate(1.2); opacity: 1; }
+  55% { transform: translateX(-50%) translateY(-150px) scale(1.2); box-shadow: 0 0 18px rgba(251, 188, 5, 0.9); filter: brightness(1.2); opacity: 0.8; }
+  70% { transform: translateX(-50%) translateY(-190px) scale(1.1); box-shadow: 0 0 15px rgba(251, 188, 5, 0.85); filter: brightness(1.1); opacity: 0.5; }
+  85% { transform: translateX(-50%) translateY(-230px) scale(1); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 0.2; }
+  100% { transform: translateX(-50%) translateY(-250px) scale(0.9); box-shadow: 0 0 10px rgba(251, 188, 5, 0.8); filter: brightness(1); opacity: 0; }
 }
 
 /* Bad press animation - violent shake and distort effect with continued ascension */
@@ -653,9 +653,9 @@ body, html {
 
 /* Pop effect for okay press */
 @keyframes okay-pop {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.7; }
-  100% { transform: scale(2); opacity: 0; }
+  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0.9; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
 }
 
 /* Glitch effect for bad press */
@@ -806,7 +806,7 @@ body, html {
   font-style: normal;
   font-weight: bold;
   animation-name: okay-pressed !important;
-  animation-duration: var(--animation-duration, 1200ms) !important;
+  animation-duration: var(--okay-duration, 1200ms) !important;
   animation-fill-mode: forwards !important;
   animation-iteration-count: 1 !important;
   z-index: 150;
@@ -830,18 +830,60 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
-  background-color: rgba(251, 188, 5, 0.7);
+  background: radial-gradient(circle, rgba(251, 188, 5, 0.7) 0%, rgba(251, 188, 5, 0) 70%);
   border-radius: 50%;
   opacity: 0.8;
   z-index: -1;
-  animation: okay-pop 0.6s forwards;
-  /* Fix to ensure centering */
+  animation: okay-pop 0.8s forwards;
+  /* Ensure no additional spacing affects positioning */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Add particles to okay animation */
+.fart-key.okay-pressed .particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fbbc05;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fart-key.okay-pressed .particle:nth-child(1) { 
+  top: 10%; left: 50%; 
+  animation: okay-particle-move 0.7s forwards;
+  animation-delay: 0.05s;
+}
+.fart-key.okay-pressed .particle:nth-child(2) { 
+  top: 30%; left: 90%; 
+  animation: okay-particle-move 0.7s forwards;
+  animation-delay: 0.1s;
+}
+.fart-key.okay-pressed .particle:nth-child(3) { 
+  top: 70%; left: 90%; 
+  animation: okay-particle-move 0.7s forwards;
+  animation-delay: 0.15s;
+}
+.fart-key.okay-pressed .particle:nth-child(4) { 
+  top: 90%; left: 50%; 
+  animation: okay-particle-move 0.7s forwards;
+  animation-delay: 0.1s;
+}
+.fart-key.okay-pressed .particle:nth-child(5) { 
+  top: 70%; left: 10%; 
+  animation: okay-particle-move 0.7s forwards;
+  animation-delay: 0.05s;
+}
+.fart-key.okay-pressed .particle:nth-child(6) { 
+  top: 30%; left: 10%; 
+  animation: okay-particle-move 0.7s forwards;
+  animation-delay: 0.15s;
 }
 
 .fart-key.bad-pressed {
@@ -2926,4 +2968,12 @@ body, html {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Particle animation for okay press */
+@keyframes okay-particle-move {
+  0% { transform: scale(0) translate(0, 0); opacity: 0.8; }
+  30% { transform: scale(1.2) translate(calc(var(--x) * 0.4), calc(var(--y) * 0.4)); opacity: 0.9; }
+  60% { transform: scale(1.5) translate(calc(var(--x) * 0.8), calc(var(--y) * 0.8)); opacity: 0.6; }
+  100% { transform: scale(1.8) translate(var(--x), var(--y)); opacity: 0; }
 }
