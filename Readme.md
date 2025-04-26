@@ -20,16 +20,17 @@
    ```bash
    npm install
    ```
+   
+### Check Errors
+1. To check for TypeScript errors:
+   ```bash
+   npm run compile
+   ```
 
 ### Running the Game
 1. To start the development server:
    ```bash
    npm run dev
-   ```
-
-2. Open your browser and navigate to:
-   ```
-   http://localhost:3001
    ```
 
 ### Building for Production
