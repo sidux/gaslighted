@@ -16,7 +16,24 @@
    ```bash
    npm install
    ```
-   
+
+### Environment Setup
+The project uses Amazon Polly for generating dialogue audio and viseme data. To use the audio generation script:
+
+1. Create a `.env` file based on the `.env.example` template:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Add your AWS credentials to the `.env` file:
+   ```
+   AWS_REGION=eu-west-1  # Or your preferred AWS region
+   AWS_ACCESS_KEY_ID=your_access_key
+   AWS_SECRET_ACCESS_KEY=your_secret_key
+   ```
+
+3. Ensure your AWS IAM user has permissions for Amazon Polly services (specifically for `SynthesizeSpeech`).
+
 ### Check Errors
 1. To check for TypeScript errors:
    ```bash
@@ -206,16 +223,60 @@ Audio files for questions and feedback follow this naming pattern:
 
 ---
 
-### File Structure
+## Project Structure
 
 ```
-src/assets/dialogue/     # MP3 + viseme JSON per line of diagogue [levelId]-[dialogueItemIndex]-[characterId].mp3 and [levelId]-[dialogueItemIndex]-[characterId]-metadata.json
-src/assets/faces/        # [id]-[expression].png
-src/assets/audio/        # z-fart.mp3 ...
-src/assets/levels/       # level1.json ...
-src/components/          # React components
-src/logic/               # game logic independent of framework
-src/scripts/             # Polly + viseme generator (MP3 + JSON)
+src/
+├── assets/              # Game assets
+│   ├── audio/           # Sound effects (fart sounds, etc.)
+│   ├── backgrounds/     # Background images
+│   ├── dialogue/        # Generated dialogue audio files
+│   │   └── speech_marks/ # JSON files with viseme/timing data
+│   ├── faces/           # Character face images for different states
+│   └── levels/          # JSON level definition files
+├── components/          # React UI components
+├── hooks/               # Custom React hooks for game logic
+├── services/            # Game logic modules
+│   ├── fart/            # Fart mechanics handling
+│   └── ...              # Other service modules
+├── index.html           # Main HTML template
+├── index.tsx            # Application entry point
+├── styles.css           # Global styles
+└── types.ts             # TypeScript type definitions
+
+scripts/                 # Utility scripts
+├── generate-audio.js    # Script to generate dialogue audio with Amazon Polly
+├── standardize-faces.js # Script to process character face images
+└── copy-standardized.js # Helper script for face processing
 ```
 
----
+## Audio Generation
+
+The project includes a script to generate dialogue audio files and viseme data:
+
+```bash
+# Generate all audio files (requires AWS credentials)
+npm run generate-audio
+
+# Simulate generation without creating files (dry run)
+npm run generate-audio:dry-run
+```
+
+The script:
+1. Reads dialogue from level files
+2. Uses Amazon Polly to generate MP3 audio files
+3. Creates corresponding JSON metadata with viseme timings
+4. Supports question/answer formats and feedback responses
+
+## Extending the Game
+
+### Adding New Levels
+1. Create a new level file in `src/assets/levels/` (e.g., `level2.json`)
+2. Follow the format of existing level files
+3. Define dialogue, participants, and game rules
+4. Run the audio generation script to create audio and viseme data
+
+### Adding New Characters
+1. Add character face images in `src/assets/faces/`
+2. Required faces: `[id]-talking1.png`, `[id]-talking2.png`, `[id]-neutral.png`, etc.
+3. Update level files to include the new character in the participants array
