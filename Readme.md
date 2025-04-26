@@ -1,7 +1,11 @@
 # Game – **Gaslighted**
 
 ## Concept
-**Gaslighted** - A 2D satirical corporate survival game built in **React + TypeScript** where players navigate the social minefield of remote meetings. Players control "Wojak," trapped in a Google Meet-style video call with unmutable audio. A **fart pressure meter** builds continuously during the meeting, requiring timely, strategic releases that must be disguised among ongoing conversation by typing specific letters at precise moments, synchronized with speech patterns (using **Amazon Polly viseme metadata**).
+Gaslighted – A 2D satirical corporate survival game built in React + TypeScript, where players navigate the social minefield of remote meetings.
+Players control "Wojak," trapped in a Google Meet-style video call with unmutable audio.
+Before every meeting, Wojak can't resist devouring a huge bowl of spicy ramen — his guilty pleasure — but it comes at a cost: it massively increases his need to fart.
+A fart pressure meter builds continuously during the meeting, accelerated by his ramen-fueled digestion, forcing players to find the right balance between releasing pressure and staying unnoticed.
+Players must time their releases carefully by typing specific letters at precise moments, synchronized with speech patterns (using viseme metadata), blending farts seamlessly into the conversation to survive without getting exposed.
 
 ## Installation and Running the Game
 
