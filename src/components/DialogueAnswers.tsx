@@ -22,7 +22,7 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
   const [expanded, setExpanded] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
-  // Shuffle answers when dialogue changes
+  // Shuffle answers when dialogue changes and reset state
   useEffect(() => {
     if (dialogue.answers && dialogue.answers.length > 0) {
       // Keep track of original indices when shuffling
@@ -31,18 +31,20 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
         originalIndex: index
       }));
       
+      // Reset selected answer when dialogue changes
+      setSelectedAnswer(null);
+      
       setShuffledAnswers(shuffleArray(answersWithIndices));
       
       // Use setTimeout to create a staggered animation effect
       setTimeout(() => {
         setExpanded(true);
-      }, 1000); // Wait for dialogue text to finish before expanding
+      }, 200); // Reduced delay for answers to appear
     }
-  }, [dialogue]);
+  }, [dialogue, dialogueIndex]);
 
   const handleAnswerClick = (answer: { text: string; correct: boolean; originalIndex: number }) => {
     if (isGamePaused || selectedAnswer) return;
-    
     
     setSelectedAnswer(answer.text);
     
@@ -71,7 +73,7 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
       const speakerId = dialogue.speaker;
       
       
-      
+
       // Play the selected answer audio
       playAnswerAudio(
         gameState.audioResources,
@@ -138,7 +140,9 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
             feedbackCorrect: wasCorrect,
             showingFeedback: true,
             // Reset the answer state since we're moving to feedback
-            showingAnswer: false
+            showingAnswer: false,
+            // Clear selected answer to allow new selections later
+            selectedAnswerIndex: undefined
           };
         });
       }
@@ -167,32 +171,50 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
       gameState.setGameState(prevState => {
         if (!prevState) return null;
         
-        // Check if the current dialogue has feedback
-        const hasFeedback = 
-          prevState.currentDialogueIndex < prevState.level.dialogues.length &&
-          prevState.level.dialogues[prevState.currentDialogueIndex].feedback;
+        // Get current dialogue index
+        const currentDialogueIndex = prevState.currentDialogueIndex;
+        console.log("Current dialogue index:", currentDialogueIndex);
         
-        // If this was a feedback dialogue, we need to advance by 1, otherwise by 1
-        const currentIndex = prevState.currentDialogueIndex + 1;
-        const isLevelComplete = currentIndex >= prevState.level.dialogues.length;
+        // Calculate next dialogue index (move to the next dialogue)
+        const nextDialogueIndex = currentDialogueIndex + 1;
+        console.log("Next dialogue index:", nextDialogueIndex);
         
-        // Clear all UI states related to questions to ensure the game can be paused again
-        // This fixes the issue where the game can't be paused after answering a question
-        return {
+        const isLevelComplete = nextDialogueIndex >= prevState.level.dialogues.length;
+        console.log("Is level complete:", isLevelComplete);
+
+        // Reset state for the next dialogue
+        const newState = {
           ...prevState,
-          currentDialogueIndex: currentIndex,
+          currentDialogueIndex: nextDialogueIndex,
           playbackTime: 0,
           currentWordIndex: -1,
           currentVisemeIndex: -1,
-          lastFartResult: null,
+          lastFartResult: null as any,
           victory: isLevelComplete && prevState.shame < 100,
           isGameOver: isLevelComplete || prevState.shame >= 100,
           // Reset answer and feedback states
-          selectedAnswerIndex: undefined,
+          selectedAnswerIndex: undefined as any,
           showingAnswer: false,
-          feedbackCorrect: undefined,
+          feedbackCorrect: undefined as any,
           showingFeedback: false
         };
+        
+        // Check if we're advancing to another question
+        if (!isLevelComplete && nextDialogueIndex < prevState.level.dialogues.length) {
+          console.log("Next dialogue:", prevState.level.dialogues[nextDialogueIndex]);
+          
+          // Force clean slate for next question
+          if (prevState.level.dialogues[nextDialogueIndex].answers) {
+            console.log("Advancing to another question dialogue!");
+            // Ensure we reset all the related state variables
+            newState.selectedAnswerIndex = undefined as any;
+            newState.showingAnswer = false;
+            newState.feedbackCorrect = undefined as any;
+            newState.showingFeedback = false;
+          }
+        }
+        
+        return newState;
       });
     }
   };

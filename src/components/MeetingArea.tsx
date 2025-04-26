@@ -47,7 +47,7 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
         image = 'perfect-fart';
       } else if (fartReaction === 'okay') {
         image = 'okay-fart';
-      } else if (fartReaction === 'bad') {
+      } else if (fartReaction === 'bad' || fartReaction === 'terrible') {
         image = 'bad-fart';
       } else if (pressure >= 80) {
         image = 'critical-pressure';
@@ -92,7 +92,8 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
   const containerClasses = [
     "video-container",
     isActive ? "active-speaker" : "",
-    fartReaction === 'bad' ? "vibrate" : ""
+    fartReaction === 'bad' || fartReaction === 'terrible' ? "vibrate" : "",
+    fartReaction === 'terrible' ? "vibrate-intense" : ""
   ].filter(Boolean).join(" ");
   
   return (
@@ -160,7 +161,8 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
   const fartEffectClasses = {
     perfect: gameState.lastFartResult?.type === 'perfect' ? 'active' : '',
     okay: gameState.lastFartResult?.type === 'okay' ? 'active' : '',
-    bad: gameState.lastFartResult?.type === 'bad' ? 'active' : ''
+    bad: gameState.lastFartResult?.type === 'bad' ? 'active' : '',
+    terrible: gameState.lastFartResult?.type === 'terrible' ? 'active' : ''
   };
   
   return (
@@ -195,6 +197,7 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
       <div className={`perfect-effect ${fartEffectClasses.perfect}`}>PERFECT!</div>
       <div className={`okay-effect ${fartEffectClasses.okay}`}>OKAY</div>
       <div className={`bad-effect ${fartEffectClasses.bad}`}>BAD!</div>
+      <div className={`terrible-effect ${fartEffectClasses.terrible}`}>TERRIBLE!</div>
     </div>
   );
 };

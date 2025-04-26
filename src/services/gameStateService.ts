@@ -74,9 +74,8 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   const gameSpeed = state.level.rules.game_speed || 1.0; // Default to 1.0 if not specified
   const adjustedElapsedMs = elapsedMs * gameSpeed;
   
-  // Update pressure
-  let pressureMultiplier = 1;
-  const newPressure = updatePressure(state, adjustedElapsedMs * pressureMultiplier);
+  // Update pressure (passing the raw elapsed time to updatePressure which handles multipliers)
+  const newPressure = updatePressure(state, adjustedElapsedMs);
   
   // Check for auto-fart (pressure max)
   if (newPressure >= 100 && !state.lastFartResult) {

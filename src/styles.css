@@ -1472,6 +1472,54 @@ body, html {
   100% { opacity: 0; transform: scale(1.3); }
 }
 
+/* Terrible effect styling and animation */
+.terrible-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(139, 0, 0, 0.5) 0%, rgba(139, 0, 0, 0) 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: #900;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+}
+
+.terrible-effect.active {
+  animation: terrible-animation 1.2s ease-out;
+}
+
+@keyframes terrible-animation {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.3); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+/* Intense vibration for terrible farts */
+@keyframes vibrate-intense {
+  0% { transform: translate(0, 0) rotate(0); }
+  10% { transform: translate(-5px, -3px) rotate(-1deg); }
+  20% { transform: translate(5px, -2px) rotate(1deg); }
+  30% { transform: translate(-5px, 3px) rotate(-1.5deg); }
+  40% { transform: translate(5px, 2px) rotate(1.5deg); }
+  50% { transform: translate(-5px, -3px) rotate(-1deg); }
+  60% { transform: translate(5px, -2px) rotate(1deg); }
+  70% { transform: translate(-5px, 3px) rotate(-1.5deg); }
+  80% { transform: translate(5px, 2px) rotate(1.5deg); }
+  90% { transform: translate(-3px, -1px) rotate(-0.5deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}
+
+.vibrate-intense .video-participant {
+  animation: vibrate-intense 0.5s ease-in-out;
+}
+
 /* Dialogue Answers and Feedback Styling */
 .dialogue-answer-container {
   margin-top: 20px;

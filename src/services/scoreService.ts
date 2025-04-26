@@ -36,7 +36,19 @@ export const updatePressure = (
   state: GameState, 
   elapsedMs: number
 ): number => {
-  const pressureMultiplier = 1;
+  // Check if a question is active
+  const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
+  const isQuestionActive = currentDialogue && 
+                           currentDialogue.answers && 
+                           currentDialogue.answers.length > 0 &&
+                           !state.showingAnswer && 
+                           !state.showingFeedback && 
+                           state.selectedAnswerIndex === undefined;
+  
+  // Apply question pressure multiplier if a question is active
+  const pressureMultiplier = isQuestionActive 
+    ? (state.level.rules.question?.pressure_multiplier || 1.0)
+    : 1.0;
   
   const pressureIncrease = (elapsedMs / 1000) * 
     state.level.rules.pressure_buildup_speed * 

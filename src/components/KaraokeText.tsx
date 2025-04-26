@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GameState, FartOpportunity, Viseme } from '../types';
 import { getAllWords, getPlayerCharacterId, isPlayerDialogue } from '../services';
 import DialogueAnswers from './DialogueAnswers';
@@ -95,6 +95,17 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
 }) => {
   const [showingFeedback, setShowingFeedback] = useState(false);
   const [feedbackCorrect, setFeedbackCorrect] = useState(false);
+  const [currentDialogueIndex, setCurrentDialogueIndex] = useState(gameState.currentDialogueIndex);
+  
+  // Reset local state when dialogue index changes
+  useEffect(() => {
+    if (currentDialogueIndex !== gameState.currentDialogueIndex) {
+      console.log("Dialogue index changed from", currentDialogueIndex, "to", gameState.currentDialogueIndex);
+      setShowingFeedback(false);
+      setFeedbackCorrect(false);
+      setCurrentDialogueIndex(gameState.currentDialogueIndex);
+    }
+  }, [gameState.currentDialogueIndex, currentDialogueIndex]);
   
   const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
   if (!currentDialogue) return null;
@@ -260,7 +271,7 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
 
   // Handle answer selection
   const handleAnswerSelect = (wasCorrect: boolean, answerIndex: number) => {
-    
+    console.log("KaraokeText - Answer selected, correct:", wasCorrect, "index:", answerIndex);
     
     // Adjust shame based on answer correctness
     const shameChange = wasCorrect 
@@ -280,7 +291,7 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
       nextDialogueIndex < gameState.level.dialogues.length &&
       gameState.level.dialogues[nextDialogueIndex].feedback;
       
-    
+    console.log("Has feedback dialogue:", hasFeedback);
     
     if (hasFeedback) {
       // Only show feedback UI after the answer audio has completed
@@ -288,10 +299,20 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
       // after answer audio finishes
       setShowingFeedback(true);
       setFeedbackCorrect(wasCorrect);
+      console.log("Set showing feedback to true");
     } else {
       // If there's no feedback dialogue, manually advance to the next dialogue after the answer audio
       // Audio advancement is handled in DialogueAnswers component
-      
+      console.log("No feedback needed, will advance after audio");
+    }
+    
+    // Reset expanded state for dialogue answers
+    const answerComponent = document.querySelector('.dialogue-answers') as HTMLElement;
+    if (answerComponent) {
+      // Ensure the answers collapse properly when selected
+      setTimeout(() => {
+        answerComponent.classList.remove('expanded');
+      }, 100);
     }
   };
 

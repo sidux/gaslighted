@@ -31,6 +31,8 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
   
   // Handler for when an answer is selected
   const handleAnswerSelected = (wasCorrect: boolean) => {
+    console.log("GameUI - Answer selected, correct:", wasCorrect);
+    
     // Adjust shame based on correctness
     setGameState(gs => {
       if (!gs) return null;
@@ -44,8 +46,22 @@ const GameUI: React.FC<GameUIProps> = ({ gameState, setGameState, dialogueMetada
         shameChange = gs.level.rules.question?.incorrect_answer_shame_change || 15;
       }
       
+      console.log("Applying shame change:", shameChange);
+      
       // Calculate new shame value, clamped between 0-100
       const newShame = Math.max(0, Math.min(100, gs.shame + shameChange));
+      
+      // Ensure the karaoke container gets proper size-fitting class
+      setTimeout(() => {
+        const karaokeContainer = document.querySelector('.karaoke-container');
+        if (karaokeContainer) {
+          karaokeContainer.classList.add('answer-selected');
+          // Remove the class after transition completes
+          setTimeout(() => {
+            karaokeContainer.classList.remove('answer-selected');
+          }, 500);
+        }
+      }, 100);
       
       return {
         ...gs,
