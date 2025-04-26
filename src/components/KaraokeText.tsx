@@ -341,6 +341,24 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
   const hasAnswers = currentDialogue.answers && currentDialogue.answers.length > 0;
   const hasFeedback = currentDialogue.feedback && currentDialogue.feedback.length > 0;
 
+  // Set global CSS variables for animation durations based on game speed
+  useEffect(() => {
+    if (!gameState) return;
+    
+    const root = document.documentElement;
+    
+    // Set animation durations based on game speed
+    const perfectDuration = 1500 / gameSpeed;
+    const okayDuration = 1200 / gameSpeed;
+    const badDuration = 1000 / gameSpeed;
+    const terribleDuration = 1800 / gameSpeed;
+    
+    root.style.setProperty('--animation-duration', `${perfectDuration}ms`);
+    root.style.setProperty('--okay-duration', `${okayDuration}ms`);
+    root.style.setProperty('--bad-duration', `${badDuration}ms`);
+    root.style.setProperty('--terrible-duration', `${terribleDuration}ms`);
+  }, [gameState?.level.rules.game_speed]);
+
   return (
     <div className={`karaoke-text ${hasAnswers ? 'has-answers' : ''}`}>
       {/* Karaoke text for all dialogue types - regular, answers, and feedback */}
@@ -365,7 +383,7 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
                 }`}
                 style={{
                   animationDuration: opp.pressed
-                    ? undefined
+                    ? `${opp.resultType === 'perfect' ? 1500 / gameSpeed : opp.resultType === 'okay' ? 1200 / gameSpeed : 1000 / gameSpeed}ms`
                     : `${(gameState.level.rules.letter_float_duration_ms / 
                         gameState.level.rules.letter_float_speed_multiplier) / 
                         (gameState.level.rules.game_speed || 1.0)
@@ -390,7 +408,7 @@ const KaraokeText: React.FC<KaraokeTextProps> = ({
                         gameSpeed
                       ),
                   animation: opp.pressed
-                    ? undefined
+                    ? `${opp.resultType}-pressed ${opp.resultType === 'perfect' ? 1500 / gameSpeed : opp.resultType === 'okay' ? 1200 / gameSpeed : opp.resultType === 'terrible' ? 1800 / gameSpeed : 1000 / gameSpeed}ms forwards`
                     : `float-key ${(gameState.level.rules.letter_float_duration_ms / 
                         gameState.level.rules.letter_float_speed_multiplier) / 
                         (gameState.level.rules.game_speed || 1.0)

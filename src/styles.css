@@ -693,7 +693,7 @@ body, html {
   font-weight: bold;
   border-color: #0f9d58 !important;
   animation-name: perfect-pressed !important;
-  animation-duration: 1s !important;
+  animation-duration: var(--animation-duration, 1500ms) !important;
   animation-fill-mode: forwards !important;
   animation-iteration-count: 1 !important;
   z-index: 200;
@@ -800,26 +800,28 @@ body, html {
 
 .fart-key.okay-pressed {
   background-color: #fbbc05 !important;
-  color: black;
+  color: white;
+  border-color: #f29900 !important;
   text-decoration: none;
   font-style: normal;
   font-weight: bold;
-  border-color: #e65100 !important;
   animation-name: okay-pressed !important;
-  animation-duration: 0.8s !important;
+  animation-duration: var(--animation-duration, 1200ms) !important;
   animation-fill-mode: forwards !important;
   animation-iteration-count: 1 !important;
   z-index: 150;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 18px rgba(251, 188, 5, 0.9), inset 0 0 10px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 15px rgba(251, 188, 5, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.6);
   /* Enhanced effects for okay */
+  transform-origin: center;
   font-size: 24px !important;
   border-width: 2px !important;
-  padding: 7px 14px !important;
-  filter: brightness(1.2) !important;
+  padding: 6px 12px !important;
+  backdrop-filter: blur(1px);
+  filter: brightness(1.2) contrast(1.05) !important;
   position: relative;
-  opacity: 1 !important; /* Ensure it stays visible */
-  pointer-events: none; /* Prevent additional clicks */
+  opacity: 1 !important;
+  pointer-events: none;
 }
 
 /* Okay press effects */
@@ -845,52 +847,51 @@ body, html {
 .fart-key.bad-pressed {
   background-color: #ea4335 !important;
   color: white;
+  border-color: #d62516 !important;
   text-decoration: none;
-  font-style: italic;
+  font-style: normal;
   font-weight: bold;
-  border-color: #c62828 !important;
   animation-name: bad-pressed !important;
-  animation-duration: 0.6s !important;
+  animation-duration: var(--animation-duration, 1000ms) !important;
   animation-fill-mode: forwards !important;
   animation-iteration-count: 1 !important;
-  z-index: 100;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 16px rgba(234, 67, 53, 1), inset 0 0 8px rgba(0, 0, 0, 0.5);
+  z-index: 120;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(234, 67, 53, 0.8), inset 0 0 8px rgba(255, 255, 255, 0.4);
   /* Enhanced effects for bad */
-  filter: saturate(1.5) !important;
   transform-origin: center;
-  letter-spacing: -1px;
-  font-size: 22px !important;
   border-width: 2px !important;
+  padding: 6px 12px !important;
+  filter: brightness(1.1) saturate(1.2) !important;
   position: relative;
-  opacity: 1 !important; /* Ensure it stays visible */
-  pointer-events: none; /* Prevent additional clicks */
+  opacity: 1 !important;
+  pointer-events: none;
 }
 
 /* Terrible press style - extreme version */
 .fart-key.terrible-pressed {
-  background-color: #900 !important; /* Darker red */
-  color: #fff;
+  background-color: #ea4335 !important;
+  color: white;
+  border-color: #b31412 !important;
   text-decoration: none;
-  font-style: italic;
+  font-style: normal;
   font-weight: bold;
-  border-color: #600 !important;
   animation-name: terrible-pressed !important;
-  animation-duration: 1s !important;
+  animation-duration: var(--animation-duration, 1800ms) !important;
   animation-fill-mode: forwards !important;
   animation-iteration-count: 1 !important;
   z-index: 200;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 0, 0, 0.8);
-  box-shadow: 0 0 25px rgba(234, 0, 0, 1), inset 0 0 15px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(234, 67, 53, 1), inset 0 0 12px rgba(255, 255, 255, 0.3);
   /* Enhanced effects for terrible */
-  filter: saturate(2) contrast(1.5) !important;
   transform-origin: center;
-  letter-spacing: -2px;
-  font-size: 26px !important;
+  font-size: 30px !important;
   border-width: 3px !important;
+  padding: 10px 16px !important;
+  filter: brightness(1.4) saturate(1.5) hue-rotate(10deg) !important;
   position: relative;
-  opacity: 1 !important; /* Ensure it stays visible */
-  pointer-events: none; /* Prevent additional clicks */
+  opacity: 1 !important;
+  pointer-events: none;
 }
 
 /* Terrible press glitch effect */

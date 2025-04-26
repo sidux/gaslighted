@@ -36,6 +36,11 @@ export const updatePressure = (
   state: GameState, 
   elapsedMs: number
 ): number => {
+  // If pressure_buildup_speed is 0, return current pressure without increasing
+  if (state.level.rules.pressure_buildup_speed === 0) {
+    return state.pressure;
+  }
+  
   // Check if a question is active
   const currentDialogue = state.level.dialogues[state.currentDialogueIndex];
   const isQuestionActive = currentDialogue && 

@@ -79,7 +79,10 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   
   // Always ensure some visible movement in the pressure bar
   // For small increases, ensure a minimum change and make it more noticeable
-  const forcedPressureChange = Math.abs(newPressure - state.pressure) < 0.2 && newPressure < 100 
+  // Only apply this when pressure_buildup_speed is greater than 0
+  const forcedPressureChange = state.level.rules.pressure_buildup_speed > 0 &&
+                              Math.abs(newPressure - state.pressure) < 0.2 && 
+                              newPressure < 100 
     ? Math.min(100, state.pressure + 0.3) 
     : newPressure;
   
