@@ -1,0 +1,287 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 64,
+    "value": "Launch of our enterprise tier to attract higher-value customers."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "Launch"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 83,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 175,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 219,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 332,
+    "type": "word",
+    "start": 7,
+    "end": 9,
+    "value": "of"
+  },
+  {
+    "time": 332,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 371,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 424,
+    "type": "word",
+    "start": 10,
+    "end": 13,
+    "value": "our"
+  },
+  {
+    "time": 424,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 587,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 629,
+    "type": "word",
+    "start": 14,
+    "end": 24,
+    "value": "enterprise"
+  },
+  {
+    "time": 629,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 720,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 768,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 808,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 850,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 948,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1011,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1215,
+    "type": "word",
+    "start": 25,
+    "end": 29,
+    "value": "tier"
+  },
+  {
+    "time": 1215,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1351,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1472,
+    "type": "word",
+    "start": 30,
+    "end": 32,
+    "value": "to"
+  },
+  {
+    "time": 1472,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1566,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1644,
+    "type": "word",
+    "start": 33,
+    "end": 40,
+    "value": "attract"
+  },
+  {
+    "time": 1644,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1687,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1795,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1844,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1903,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1992,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2030,
+    "type": "word",
+    "start": 41,
+    "end": 53,
+    "value": "higher-value"
+  },
+  {
+    "time": 2030,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2121,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2199,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2242,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2322,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2391,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2455,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2546,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2604,
+    "type": "word",
+    "start": 54,
+    "end": 63,
+    "value": "customers"
+  },
+  {
+    "time": 2604,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2721,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2807,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2884,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2936,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2966,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3034,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3092,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3269,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

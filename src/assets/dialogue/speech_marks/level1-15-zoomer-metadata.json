@@ -236,15 +236,15 @@
     "time": 3342,
     "type": "sentence",
     "start": 50,
-    "end": 95,
-    "value": "I’ll tweak the Slack workflows accordingly."
+    "end": 93,
+    "value": "I'll tweak the Slack workflows accordingly."
   },
   {
     "time": 3480,
     "type": "word",
     "start": 50,
-    "end": 56,
-    "value": "I’ll"
+    "end": 54,
+    "value": "I'll"
   },
   {
     "time": 3480,
@@ -259,8 +259,8 @@
   {
     "time": 3642,
     "type": "word",
-    "start": 57,
-    "end": 62,
+    "start": 55,
+    "end": 60,
     "value": "tweak"
   },
   {
@@ -286,8 +286,8 @@
   {
     "time": 3905,
     "type": "word",
-    "start": 63,
-    "end": 66,
+    "start": 61,
+    "end": 64,
     "value": "the"
   },
   {
@@ -303,8 +303,8 @@
   {
     "time": 4092,
     "type": "word",
-    "start": 67,
-    "end": 72,
+    "start": 65,
+    "end": 70,
     "value": "Slack"
   },
   {
@@ -330,8 +330,8 @@
   {
     "time": 4467,
     "type": "word",
-    "start": 73,
-    "end": 82,
+    "start": 71,
+    "end": 80,
     "value": "workflows"
   },
   {
@@ -372,8 +372,8 @@
   {
     "time": 5017,
     "type": "word",
-    "start": 83,
-    "end": 94,
+    "start": 81,
+    "end": 92,
     "value": "accordingly"
   },
   {

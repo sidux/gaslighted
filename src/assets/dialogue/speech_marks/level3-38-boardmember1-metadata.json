@@ -1,0 +1,336 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 73,
+    "value": "We'll need the updated projections based on today's discussion by Monday."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We'll"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 337,
+    "type": "word",
+    "start": 6,
+    "end": 10,
+    "value": "need"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 11,
+    "end": 14,
+    "value": "the"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 15,
+    "end": 22,
+    "value": "updated"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 23,
+    "end": 34,
+    "value": "projections"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1387,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1712,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1775,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2037,
+    "type": "word",
+    "start": 35,
+    "end": 40,
+    "value": "based"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2225,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2387,
+    "type": "word",
+    "start": 41,
+    "end": 43,
+    "value": "on"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2550,
+    "type": "word",
+    "start": 44,
+    "end": 51,
+    "value": "today's"
+  },
+  {
+    "time": 2550,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3062,
+    "type": "word",
+    "start": 52,
+    "end": 62,
+    "value": "discussion"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3187,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3312,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3437,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3662,
+    "type": "word",
+    "start": 63,
+    "end": 65,
+    "value": "by"
+  },
+  {
+    "time": 3662,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3750,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3887,
+    "type": "word",
+    "start": 66,
+    "end": 72,
+    "value": "Monday"
+  },
+  {
+    "time": 3887,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3950,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4125,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4187,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4387,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

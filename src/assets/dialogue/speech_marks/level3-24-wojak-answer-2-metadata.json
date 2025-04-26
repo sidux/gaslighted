@@ -1,0 +1,486 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 106,
+    "value": "We're exploring alternative funding sources such as venture debt to bridge us to better market conditions."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 83,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 141,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 186,
+    "type": "word",
+    "start": 6,
+    "end": 15,
+    "value": "exploring"
+  },
+  {
+    "time": 186,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 223,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 275,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 369,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 445,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 506,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 551,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 611,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 651,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 728,
+    "type": "word",
+    "start": 16,
+    "end": 27,
+    "value": "alternative"
+  },
+  {
+    "time": 728,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 776,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 844,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1004,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1064,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1117,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1152,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1201,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1262,
+    "type": "word",
+    "start": 28,
+    "end": 35,
+    "value": "funding"
+  },
+  {
+    "time": 1262,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1349,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1403,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1458,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1488,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1519,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1589,
+    "type": "word",
+    "start": 36,
+    "end": 43,
+    "value": "sources"
+  },
+  {
+    "time": 1589,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1704,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1814,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1911,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1955,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2003,
+    "type": "word",
+    "start": 44,
+    "end": 48,
+    "value": "such"
+  },
+  {
+    "time": 2003,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2102,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2165,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2286,
+    "type": "word",
+    "start": 49,
+    "end": 51,
+    "value": "as"
+  },
+  {
+    "time": 2286,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2346,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2417,
+    "type": "word",
+    "start": 52,
+    "end": 59,
+    "value": "venture"
+  },
+  {
+    "time": 2417,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2492,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2553,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2621,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2733,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2777,
+    "type": "word",
+    "start": 60,
+    "end": 64,
+    "value": "debt"
+  },
+  {
+    "time": 2777,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2846,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2927,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2980,
+    "type": "word",
+    "start": 65,
+    "end": 67,
+    "value": "to"
+  },
+  {
+    "time": 2980,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3057,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3088,
+    "type": "word",
+    "start": 68,
+    "end": 74,
+    "value": "bridge"
+  },
+  {
+    "time": 3088,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3176,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3235,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3285,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3377,
+    "type": "word",
+    "start": 75,
+    "end": 77,
+    "value": "us"
+  },
+  {
+    "time": 3377,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3416,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3505,
+    "type": "word",
+    "start": 78,
+    "end": 80,
+    "value": "to"
+  },
+  {
+    "time": 3505,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3601,
+    "type": "word",
+    "start": 81,
+    "end": 87,
+    "value": "better"
+  },
+  {
+    "time": 3601,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3675,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3741,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3804,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3842,
+    "type": "word",
+    "start": 88,
+    "end": 94,
+    "value": "market"
+  },
+  {
+    "time": 3842,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3939,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4065,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4138,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4177,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4222,
+    "type": "word",
+    "start": 95,
+    "end": 105,
+    "value": "conditions"
+  },
+  {
+    "time": 4222,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4310,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4405,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4444,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4499,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4620,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4765,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4949,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

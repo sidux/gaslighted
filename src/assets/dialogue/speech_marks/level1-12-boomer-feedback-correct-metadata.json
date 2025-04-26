@@ -37,15 +37,15 @@
     "time": 1242,
     "type": "sentence",
     "start": 7,
-    "end": 64,
-    "value": "Let’s make sure that’s documented properly this time."
+    "end": 60,
+    "value": "Let's make sure that's documented properly this time."
   },
   {
     "time": 1380,
     "type": "word",
     "start": 7,
-    "end": 14,
-    "value": "Let’s"
+    "end": 12,
+    "value": "Let's"
   },
   {
     "time": 1380,
@@ -70,8 +70,8 @@
   {
     "time": 1617,
     "type": "word",
-    "start": 15,
-    "end": 19,
+    "start": 13,
+    "end": 17,
     "value": "make"
   },
   {
@@ -92,8 +92,8 @@
   {
     "time": 1867,
     "type": "word",
-    "start": 20,
-    "end": 24,
+    "start": 18,
+    "end": 22,
     "value": "sure"
   },
   {
@@ -109,9 +109,9 @@
   {
     "time": 2280,
     "type": "word",
-    "start": 25,
-    "end": 33,
-    "value": "that’s"
+    "start": 23,
+    "end": 29,
+    "value": "that's"
   },
   {
     "time": 2280,
@@ -136,8 +136,8 @@
   {
     "time": 2680,
     "type": "word",
-    "start": 34,
-    "end": 44,
+    "start": 30,
+    "end": 40,
     "value": "documented"
   },
   {
@@ -198,8 +198,8 @@
   {
     "time": 3367,
     "type": "word",
-    "start": 45,
-    "end": 53,
+    "start": 41,
+    "end": 49,
     "value": "properly"
   },
   {
@@ -240,8 +240,8 @@
   {
     "time": 3805,
     "type": "word",
-    "start": 54,
-    "end": 58,
+    "start": 50,
+    "end": 54,
     "value": "this"
   },
   {
@@ -262,8 +262,8 @@
   {
     "time": 4130,
     "type": "word",
-    "start": 59,
-    "end": 63,
+    "start": 55,
+    "end": 59,
     "value": "time"
   },
   {

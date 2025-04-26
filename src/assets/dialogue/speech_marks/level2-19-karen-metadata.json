@@ -1,0 +1,566 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 30,
+    "value": "Rate is still up 12% per user."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "Rate"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 90,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 166,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 210,
+    "type": "word",
+    "start": 5,
+    "end": 7,
+    "value": "is"
+  },
+  {
+    "time": 210,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 266,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 315,
+    "type": "word",
+    "start": 8,
+    "end": 13,
+    "value": "still"
+  },
+  {
+    "time": 315,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 426,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 489,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 533,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 610,
+    "type": "word",
+    "start": 14,
+    "end": 16,
+    "value": "up"
+  },
+  {
+    "time": 610,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 677,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 764,
+    "type": "word",
+    "start": 17,
+    "end": 20,
+    "value": "12%"
+  },
+  {
+    "time": 764,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 838,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 908,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 969,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1029,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1097,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1187,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1235,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1367,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1449,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1505,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1574,
+    "type": "word",
+    "start": 21,
+    "end": 24,
+    "value": "per"
+  },
+  {
+    "time": 1574,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1684,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1752,
+    "type": "word",
+    "start": 25,
+    "end": 29,
+    "value": "user"
+  },
+  {
+    "time": 1752,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1924,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1996,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2091,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2270,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2656,
+    "type": "sentence",
+    "start": 31,
+    "end": 53,
+    "value": "That's not acceptable."
+  },
+  {
+    "time": 2663,
+    "type": "word",
+    "start": 31,
+    "end": 37,
+    "value": "That's"
+  },
+  {
+    "time": 2663,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2729,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2838,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2903,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2980,
+    "type": "word",
+    "start": 38,
+    "end": 41,
+    "value": "not"
+  },
+  {
+    "time": 2980,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3039,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3145,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3196,
+    "type": "word",
+    "start": 42,
+    "end": 52,
+    "value": "acceptable"
+  },
+  {
+    "time": 3196,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3255,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3322,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3412,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3473,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3531,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3588,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3612,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3677,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3712,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3864,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4251,
+    "type": "sentence",
+    "start": 54,
+    "end": 100,
+    "value": "Wojak, what's your plan to address this in Q4?"
+  },
+  {
+    "time": 4257,
+    "type": "word",
+    "start": 54,
+    "end": 59,
+    "value": "Wojak"
+  },
+  {
+    "time": 4257,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4338,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 4480,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4638,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4779,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4894,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5089,
+    "type": "word",
+    "start": 61,
+    "end": 67,
+    "value": "what's"
+  },
+  {
+    "time": 5089,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5197,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5247,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5298,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5408,
+    "type": "word",
+    "start": 68,
+    "end": 72,
+    "value": "your"
+  },
+  {
+    "time": 5408,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5454,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5504,
+    "type": "word",
+    "start": 73,
+    "end": 77,
+    "value": "plan"
+  },
+  {
+    "time": 5504,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5627,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5688,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5822,
+    "type": "word",
+    "start": 78,
+    "end": 80,
+    "value": "to"
+  },
+  {
+    "time": 5822,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5899,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5957,
+    "type": "word",
+    "start": 81,
+    "end": 88,
+    "value": "address"
+  },
+  {
+    "time": 5957,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5997,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6095,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6150,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6210,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6337,
+    "type": "word",
+    "start": 89,
+    "end": 93,
+    "value": "this"
+  },
+  {
+    "time": 6337,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 6384,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6443,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6567,
+    "type": "word",
+    "start": 94,
+    "end": 96,
+    "value": "in"
+  },
+  {
+    "time": 6567,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6668,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6745,
+    "type": "word",
+    "start": 97,
+    "end": 99,
+    "value": "Q4"
+  },
+  {
+    "time": 6745,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6871,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6921,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 7023,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 7129,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 7279,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 7419,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

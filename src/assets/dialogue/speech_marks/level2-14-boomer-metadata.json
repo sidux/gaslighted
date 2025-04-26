@@ -1,0 +1,387 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 11,
+    "value": "Good catch."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "Good"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "word",
+    "start": 5,
+    "end": 10,
+    "value": "catch"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1680,
+    "type": "sentence",
+    "start": 12,
+    "end": 82,
+    "value": "Wojak, what feature had the highest impact on engagement this quarter?"
+  },
+  {
+    "time": 1817,
+    "type": "word",
+    "start": 12,
+    "end": 17,
+    "value": "Wojak"
+  },
+  {
+    "time": 1817,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1930,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2055,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2180,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2305,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2567,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2742,
+    "type": "word",
+    "start": 19,
+    "end": 23,
+    "value": "what"
+  },
+  {
+    "time": 2742,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2817,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3055,
+    "type": "word",
+    "start": 24,
+    "end": 31,
+    "value": "feature"
+  },
+  {
+    "time": 3055,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3392,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3517,
+    "type": "word",
+    "start": 32,
+    "end": 35,
+    "value": "had"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3617,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3680,
+    "type": "word",
+    "start": 36,
+    "end": 39,
+    "value": "the"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3805,
+    "type": "word",
+    "start": 40,
+    "end": 47,
+    "value": "highest"
+  },
+  {
+    "time": 3805,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4067,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4142,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4317,
+    "type": "word",
+    "start": 48,
+    "end": 54,
+    "value": "impact"
+  },
+  {
+    "time": 4317,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4505,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4567,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4680,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4805,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4867,
+    "type": "word",
+    "start": 55,
+    "end": 57,
+    "value": "on"
+  },
+  {
+    "time": 4867,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4892,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4992,
+    "type": "word",
+    "start": 58,
+    "end": 68,
+    "value": "engagement"
+  },
+  {
+    "time": 4992,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5055,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5167,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5255,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5367,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5442,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5505,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5567,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5630,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5742,
+    "type": "word",
+    "start": 69,
+    "end": 73,
+    "value": "this"
+  },
+  {
+    "time": 5742,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5805,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5867,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6042,
+    "type": "word",
+    "start": 74,
+    "end": 81,
+    "value": "quarter"
+  },
+  {
+    "time": 6042,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6117,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6242,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6367,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6442,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6755,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

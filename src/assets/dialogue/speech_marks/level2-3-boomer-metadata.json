@@ -1,0 +1,490 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 6,
+    "value": "Great."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "Great"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1242,
+    "type": "sentence",
+    "start": 7,
+    "end": 50,
+    "value": "Wojak, let's start with conversion metrics."
+  },
+  {
+    "time": 1380,
+    "type": "word",
+    "start": 7,
+    "end": 12,
+    "value": "Wojak"
+  },
+  {
+    "time": 1380,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1492,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1617,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1742,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1867,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2130,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2280,
+    "type": "word",
+    "start": 14,
+    "end": 19,
+    "value": "let's"
+  },
+  {
+    "time": 2280,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2392,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2492,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2555,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2730,
+    "type": "word",
+    "start": 20,
+    "end": 25,
+    "value": "start"
+  },
+  {
+    "time": 2730,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2805,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2967,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3005,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3117,
+    "type": "word",
+    "start": 26,
+    "end": 30,
+    "value": "with"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3130,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3180,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3280,
+    "type": "word",
+    "start": 31,
+    "end": 41,
+    "value": "conversion"
+  },
+  {
+    "time": 3280,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3330,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3367,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3492,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3705,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3755,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3880,
+    "type": "word",
+    "start": 42,
+    "end": 49,
+    "value": "metrics"
+  },
+  {
+    "time": 3880,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4130,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4242,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4305,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4830,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5297,
+    "type": "sentence",
+    "start": 51,
+    "end": 105,
+    "value": "Take us through the funnel changes since last quarter."
+  },
+  {
+    "time": 5422,
+    "type": "word",
+    "start": 51,
+    "end": 55,
+    "value": "Take"
+  },
+  {
+    "time": 5422,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5497,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5610,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5672,
+    "type": "word",
+    "start": 56,
+    "end": 58,
+    "value": "us"
+  },
+  {
+    "time": 5672,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5747,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5860,
+    "type": "word",
+    "start": 59,
+    "end": 66,
+    "value": "through"
+  },
+  {
+    "time": 5860,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5985,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6047,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6210,
+    "type": "word",
+    "start": 67,
+    "end": 70,
+    "value": "the"
+  },
+  {
+    "time": 6210,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 6235,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6335,
+    "type": "word",
+    "start": 71,
+    "end": 77,
+    "value": "funnel"
+  },
+  {
+    "time": 6335,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6360,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6435,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6547,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6672,
+    "type": "word",
+    "start": 78,
+    "end": 85,
+    "value": "changes"
+  },
+  {
+    "time": 6672,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6785,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 6860,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6972,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 7060,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7172,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7335,
+    "type": "word",
+    "start": 86,
+    "end": 91,
+    "value": "since"
+  },
+  {
+    "time": 7335,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7435,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7560,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7572,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7735,
+    "type": "word",
+    "start": 92,
+    "end": 96,
+    "value": "last"
+  },
+  {
+    "time": 7735,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7810,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7935,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7985,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8122,
+    "type": "word",
+    "start": 97,
+    "end": 104,
+    "value": "quarter"
+  },
+  {
+    "time": 8122,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 8185,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 8360,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 8422,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8510,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 8872,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

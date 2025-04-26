@@ -1,0 +1,491 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 108,
+    "value": "The talent market has softened, allowing us to hire high-caliber talent at lower compensation than budgeted."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 55,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 98,
+    "type": "word",
+    "start": 4,
+    "end": 10,
+    "value": "talent"
+  },
+  {
+    "time": 98,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 232,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 271,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 353,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 380,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 425,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 476,
+    "type": "word",
+    "start": 11,
+    "end": 17,
+    "value": "market"
+  },
+  {
+    "time": 476,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 525,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 642,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 725,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 771,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 831,
+    "type": "word",
+    "start": 18,
+    "end": 21,
+    "value": "has"
+  },
+  {
+    "time": 831,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 886,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 921,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 994,
+    "type": "word",
+    "start": 22,
+    "end": 30,
+    "value": "softened"
+  },
+  {
+    "time": 994,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1101,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1182,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1286,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1441,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1550,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1744,
+    "type": "word",
+    "start": 32,
+    "end": 40,
+    "value": "allowing"
+  },
+  {
+    "time": 1744,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1792,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1894,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2041,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2097,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2180,
+    "type": "word",
+    "start": 41,
+    "end": 43,
+    "value": "us"
+  },
+  {
+    "time": 2180,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2255,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2342,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "to"
+  },
+  {
+    "time": 2342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2410,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2442,
+    "type": "word",
+    "start": 47,
+    "end": 51,
+    "value": "hire"
+  },
+  {
+    "time": 2442,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2565,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2716,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2760,
+    "type": "word",
+    "start": 52,
+    "end": 64,
+    "value": "high-caliber"
+  },
+  {
+    "time": 2760,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2891,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3004,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3121,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3197,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3278,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3313,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3364,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3388,
+    "type": "word",
+    "start": 65,
+    "end": 71,
+    "value": "talent"
+  },
+  {
+    "time": 3388,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3518,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3584,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3681,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3704,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3762,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3814,
+    "type": "word",
+    "start": 72,
+    "end": 74,
+    "value": "at"
+  },
+  {
+    "time": 3814,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3919,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3960,
+    "type": "word",
+    "start": 75,
+    "end": 80,
+    "value": "lower"
+  },
+  {
+    "time": 3960,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4075,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4174,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4212,
+    "type": "word",
+    "start": 81,
+    "end": 93,
+    "value": "compensation"
+  },
+  {
+    "time": 4212,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4329,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4395,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4441,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4489,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4546,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4611,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4706,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4809,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4926,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5011,
+    "type": "word",
+    "start": 94,
+    "end": 98,
+    "value": "than"
+  },
+  {
+    "time": 5011,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5052,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5096,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5156,
+    "type": "word",
+    "start": 99,
+    "end": 107,
+    "value": "budgeted"
+  },
+  {
+    "time": 5156,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5232,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5316,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5406,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5455,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5541,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5615,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5747,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,475 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 56,
+    "value": "That's the kind of efficiency improvement I want to see."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "That's"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 67,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 175,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 234,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 318,
+    "type": "word",
+    "start": 7,
+    "end": 10,
+    "value": "the"
+  },
+  {
+    "time": 318,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 378,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 422,
+    "type": "word",
+    "start": 11,
+    "end": 15,
+    "value": "kind"
+  },
+  {
+    "time": 422,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 552,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 675,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 722,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 762,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "of"
+  },
+  {
+    "time": 762,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 802,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 856,
+    "type": "word",
+    "start": 19,
+    "end": 29,
+    "value": "efficiency"
+  },
+  {
+    "time": 856,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 902,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1056,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1119,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1244,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1351,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1456,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1549,
+    "type": "word",
+    "start": 30,
+    "end": 41,
+    "value": "improvement"
+  },
+  {
+    "time": 1549,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1600,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1679,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1782,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1828,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1892,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1972,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2018,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2081,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2130,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2200,
+    "type": "word",
+    "start": 42,
+    "end": 43,
+    "value": "I"
+  },
+  {
+    "time": 2200,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2324,
+    "type": "word",
+    "start": 44,
+    "end": 48,
+    "value": "want"
+  },
+  {
+    "time": 2324,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2476,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2506,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2535,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2565,
+    "type": "word",
+    "start": 49,
+    "end": 51,
+    "value": "to"
+  },
+  {
+    "time": 2565,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2626,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2676,
+    "type": "word",
+    "start": 52,
+    "end": 55,
+    "value": "see"
+  },
+  {
+    "time": 2676,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2816,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3064,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3451,
+    "type": "sentence",
+    "start": 57,
+    "end": 97,
+    "value": "Make sure it doesn't affect CSAT scores."
+  },
+  {
+    "time": 3457,
+    "type": "word",
+    "start": 57,
+    "end": 61,
+    "value": "Make"
+  },
+  {
+    "time": 3457,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3588,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3700,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3771,
+    "type": "word",
+    "start": 62,
+    "end": 66,
+    "value": "sure"
+  },
+  {
+    "time": 3771,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3909,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3960,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4050,
+    "type": "word",
+    "start": 67,
+    "end": 69,
+    "value": "it"
+  },
+  {
+    "time": 4050,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4088,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4144,
+    "type": "word",
+    "start": 70,
+    "end": 77,
+    "value": "doesn't"
+  },
+  {
+    "time": 4144,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4194,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4279,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4366,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4434,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4475,
+    "type": "word",
+    "start": 78,
+    "end": 84,
+    "value": "affect"
+  },
+  {
+    "time": 4475,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4526,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4663,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4748,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4815,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4901,
+    "type": "word",
+    "start": 85,
+    "end": 89,
+    "value": "CSAT"
+  },
+  {
+    "time": 4901,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5023,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5118,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5237,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5330,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5368,
+    "type": "word",
+    "start": 90,
+    "end": 96,
+    "value": "scores"
+  },
+  {
+    "time": 5368,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5488,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5550,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5671,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5762,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5929,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

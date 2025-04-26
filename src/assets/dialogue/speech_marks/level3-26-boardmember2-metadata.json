@@ -1,0 +1,493 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 33,
+    "value": "I'd like to discuss team scaling."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "I'd"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 4,
+    "end": 8,
+    "value": "like"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 9,
+    "end": 11,
+    "value": "to"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 575,
+    "type": "word",
+    "start": 12,
+    "end": 19,
+    "value": "discuss"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1000,
+    "type": "word",
+    "start": 20,
+    "end": 24,
+    "value": "team"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 25,
+    "end": 32,
+    "value": "scaling"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2280,
+    "type": "sentence",
+    "start": 34,
+    "end": 107,
+    "value": "Are we appropriately resourced for the initiatives you've outlined today?"
+  },
+  {
+    "time": 2405,
+    "type": "word",
+    "start": 34,
+    "end": 37,
+    "value": "Are"
+  },
+  {
+    "time": 2405,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2467,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2530,
+    "type": "word",
+    "start": 38,
+    "end": 40,
+    "value": "we"
+  },
+  {
+    "time": 2530,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2580,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2655,
+    "type": "word",
+    "start": 41,
+    "end": 54,
+    "value": "appropriately"
+  },
+  {
+    "time": 2655,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2730,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2780,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2842,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 2905,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2992,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3092,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3155,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3217,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3280,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3342,
+    "type": "word",
+    "start": 55,
+    "end": 64,
+    "value": "resourced"
+  },
+  {
+    "time": 3342,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3430,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3530,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3655,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3767,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3842,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3967,
+    "type": "word",
+    "start": 65,
+    "end": 68,
+    "value": "for"
+  },
+  {
+    "time": 3967,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4030,
+    "type": "word",
+    "start": 69,
+    "end": 72,
+    "value": "the"
+  },
+  {
+    "time": 4030,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4155,
+    "type": "word",
+    "start": 73,
+    "end": 84,
+    "value": "initiatives"
+  },
+  {
+    "time": 4155,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4217,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4242,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4317,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4405,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4417,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4542,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4592,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4655,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4717,
+    "type": "word",
+    "start": 85,
+    "end": 91,
+    "value": "you've"
+  },
+  {
+    "time": 4717,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4780,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4792,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4917,
+    "type": "word",
+    "start": 92,
+    "end": 100,
+    "value": "outlined"
+  },
+  {
+    "time": 4917,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5067,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5230,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5405,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5467,
+    "type": "word",
+    "start": 101,
+    "end": 106,
+    "value": "today"
+  },
+  {
+    "time": 5467,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5492,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5542,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5592,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5867,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

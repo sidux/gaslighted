@@ -1,0 +1,484 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 27,
+    "value": "Solid presentation overall."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "Solid"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 500,
+    "type": "word",
+    "start": 6,
+    "end": 18,
+    "value": "presentation"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 19,
+    "end": 26,
+    "value": "overall"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1800,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2192,
+    "type": "sentence",
+    "start": 28,
+    "end": 103,
+    "value": "I'm looking forward to seeing the execution on these strategic initiatives."
+  },
+  {
+    "time": 2330,
+    "type": "word",
+    "start": 28,
+    "end": 31,
+    "value": "I'm"
+  },
+  {
+    "time": 2330,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2392,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2442,
+    "type": "word",
+    "start": 32,
+    "end": 39,
+    "value": "looking"
+  },
+  {
+    "time": 2442,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2505,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2567,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2605,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2642,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2767,
+    "type": "word",
+    "start": 40,
+    "end": 47,
+    "value": "forward"
+  },
+  {
+    "time": 2767,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2830,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2880,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2955,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3005,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3017,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3067,
+    "type": "word",
+    "start": 48,
+    "end": 50,
+    "value": "to"
+  },
+  {
+    "time": 3067,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3130,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3192,
+    "type": "word",
+    "start": 51,
+    "end": 57,
+    "value": "seeing"
+  },
+  {
+    "time": 3192,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3255,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3330,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3380,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3442,
+    "type": "word",
+    "start": 58,
+    "end": 61,
+    "value": "the"
+  },
+  {
+    "time": 3442,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3505,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3630,
+    "type": "word",
+    "start": 62,
+    "end": 71,
+    "value": "execution"
+  },
+  {
+    "time": 3630,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3755,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3817,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3892,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3955,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4030,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4067,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4155,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4317,
+    "type": "word",
+    "start": 72,
+    "end": 74,
+    "value": "on"
+  },
+  {
+    "time": 4317,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4330,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4442,
+    "type": "word",
+    "start": 75,
+    "end": 80,
+    "value": "these"
+  },
+  {
+    "time": 4442,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4505,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4517,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4580,
+    "type": "word",
+    "start": 81,
+    "end": 90,
+    "value": "strategic"
+  },
+  {
+    "time": 4580,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4692,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4705,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4755,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4830,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4880,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4980,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5080,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5142,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5255,
+    "type": "word",
+    "start": 91,
+    "end": 102,
+    "value": "initiatives"
+  },
+  {
+    "time": 5255,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5317,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5342,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5405,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5505,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5567,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5680,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5767,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5830,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6067,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

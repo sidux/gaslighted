@@ -2,8 +2,8 @@
     "title": "First Day Jitters",
     "description": "Your first remote meeting. Thankfully, people are forgiving.",
     "rules": {
-        "game_speed": 3.0,
-        "pressure_buildup_speed": 0,
+        "game_speed": 1.0,
+        "pressure_buildup_speed": 10,
         "precision_window_ms": 500,
         "max_possible_farts_by_word": 1,
         "max_simultaneous_letters": 3,

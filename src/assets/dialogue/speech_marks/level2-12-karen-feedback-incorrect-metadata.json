@@ -1,0 +1,492 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 31,
+    "value": "That's not what the data shows."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "That's"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 72,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 182,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 246,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 323,
+    "type": "word",
+    "start": 7,
+    "end": 10,
+    "value": "not"
+  },
+  {
+    "time": 323,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 392,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 502,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 538,
+    "type": "word",
+    "start": 11,
+    "end": 15,
+    "value": "what"
+  },
+  {
+    "time": 538,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 606,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 638,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 694,
+    "type": "word",
+    "start": 16,
+    "end": 19,
+    "value": "the"
+  },
+  {
+    "time": 694,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 734,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 772,
+    "type": "word",
+    "start": 20,
+    "end": 24,
+    "value": "data"
+  },
+  {
+    "time": 772,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 873,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 979,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1022,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1070,
+    "type": "word",
+    "start": 25,
+    "end": 30,
+    "value": "shows"
+  },
+  {
+    "time": 1070,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1222,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1480,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1646,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2032,
+    "type": "sentence",
+    "start": 32,
+    "end": 101,
+    "value": "I need you to do a deeper analysis before our executive presentation."
+  },
+  {
+    "time": 2039,
+    "type": "word",
+    "start": 32,
+    "end": 33,
+    "value": "I"
+  },
+  {
+    "time": 2039,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2146,
+    "type": "word",
+    "start": 34,
+    "end": 38,
+    "value": "need"
+  },
+  {
+    "time": 2146,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2249,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2359,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2425,
+    "type": "word",
+    "start": 39,
+    "end": 42,
+    "value": "you"
+  },
+  {
+    "time": 2425,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2510,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2546,
+    "type": "word",
+    "start": 43,
+    "end": 45,
+    "value": "to"
+  },
+  {
+    "time": 2546,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2643,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2695,
+    "type": "word",
+    "start": 46,
+    "end": 48,
+    "value": "do"
+  },
+  {
+    "time": 2695,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2765,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2892,
+    "type": "word",
+    "start": 49,
+    "end": 50,
+    "value": "a"
+  },
+  {
+    "time": 2892,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2943,
+    "type": "word",
+    "start": 51,
+    "end": 57,
+    "value": "deeper"
+  },
+  {
+    "time": 2943,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3064,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3159,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3239,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3348,
+    "type": "word",
+    "start": 58,
+    "end": 66,
+    "value": "analysis"
+  },
+  {
+    "time": 3348,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3392,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3469,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3539,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3650,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3701,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3825,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3903,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3990,
+    "type": "word",
+    "start": 67,
+    "end": 73,
+    "value": "before"
+  },
+  {
+    "time": 3990,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4072,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4111,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4245,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4313,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4357,
+    "type": "word",
+    "start": 74,
+    "end": 77,
+    "value": "our"
+  },
+  {
+    "time": 4357,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4406,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4477,
+    "type": "word",
+    "start": 78,
+    "end": 87,
+    "value": "executive"
+  },
+  {
+    "time": 4477,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4509,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4572,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4643,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4710,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4838,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4868,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4899,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4928,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4965,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5085,
+    "type": "word",
+    "start": 88,
+    "end": 100,
+    "value": "presentation"
+  },
+  {
+    "time": 5085,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5171,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5213,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5260,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5348,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5460,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5522,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5642,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5772,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5945,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

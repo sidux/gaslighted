@@ -1,0 +1,497 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 53,
+    "value": "I've already uploaded the slides to the shared drive."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "I've"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 312,
+    "type": "word",
+    "start": 5,
+    "end": 12,
+    "value": "already"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 687,
+    "type": "word",
+    "start": 13,
+    "end": 21,
+    "value": "uploaded"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 912,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1125,
+    "type": "word",
+    "start": 22,
+    "end": 25,
+    "value": "the"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 26,
+    "end": 32,
+    "value": "slides"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1750,
+    "type": "word",
+    "start": 33,
+    "end": 35,
+    "value": "to"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1775,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1875,
+    "type": "word",
+    "start": 36,
+    "end": 39,
+    "value": "the"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1887,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1962,
+    "type": "word",
+    "start": 40,
+    "end": 46,
+    "value": "shared"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2262,
+    "type": "word",
+    "start": 47,
+    "end": 52,
+    "value": "drive"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2275,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2425,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2550,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2762,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3155,
+    "type": "sentence",
+    "start": 54,
+    "end": 108,
+    "value": "Wojak, you should have everything you need to present."
+  },
+  {
+    "time": 3280,
+    "type": "word",
+    "start": 54,
+    "end": 59,
+    "value": "Wojak"
+  },
+  {
+    "time": 3280,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3392,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 3467,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3567,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3780,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3905,
+    "type": "word",
+    "start": 61,
+    "end": 64,
+    "value": "you"
+  },
+  {
+    "time": 3905,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4155,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4292,
+    "type": "word",
+    "start": 65,
+    "end": 71,
+    "value": "should"
+  },
+  {
+    "time": 4292,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4355,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4405,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4467,
+    "type": "word",
+    "start": 72,
+    "end": 76,
+    "value": "have"
+  },
+  {
+    "time": 4467,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4480,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4530,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4642,
+    "type": "word",
+    "start": 77,
+    "end": 87,
+    "value": "everything"
+  },
+  {
+    "time": 4642,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4717,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4742,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4780,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4905,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4967,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5005,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5092,
+    "type": "word",
+    "start": 88,
+    "end": 91,
+    "value": "you"
+  },
+  {
+    "time": 5092,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5142,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5242,
+    "type": "word",
+    "start": 92,
+    "end": 96,
+    "value": "need"
+  },
+  {
+    "time": 5242,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5280,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5467,
+    "type": "word",
+    "start": 97,
+    "end": 99,
+    "value": "to"
+  },
+  {
+    "time": 5467,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5480,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5542,
+    "type": "word",
+    "start": 100,
+    "end": 107,
+    "value": "present"
+  },
+  {
+    "time": 5542,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5592,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5617,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5717,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5792,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5980,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6117,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

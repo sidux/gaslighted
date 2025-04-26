@@ -1,0 +1,558 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 59,
+    "value": "The APAC-first approach aligns with our growth projections."
+  },
+  {
+    "time": 25,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 25,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 87,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 225,
+    "type": "word",
+    "start": 4,
+    "end": 14,
+    "value": "APAC-first"
+  },
+  {
+    "time": 225,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 425,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 525,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 600,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 850,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 900,
+    "type": "word",
+    "start": 15,
+    "end": 23,
+    "value": "approach"
+  },
+  {
+    "time": 900,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1087,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1237,
+    "type": "word",
+    "start": 24,
+    "end": 30,
+    "value": "aligns"
+  },
+  {
+    "time": 1237,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1275,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1537,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1637,
+    "type": "word",
+    "start": 31,
+    "end": 35,
+    "value": "with"
+  },
+  {
+    "time": 1637,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1687,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1712,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1762,
+    "type": "word",
+    "start": 36,
+    "end": 39,
+    "value": "our"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1825,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1862,
+    "type": "word",
+    "start": 40,
+    "end": 46,
+    "value": "growth"
+  },
+  {
+    "time": 1862,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1937,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2012,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 2062,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2125,
+    "type": "word",
+    "start": 47,
+    "end": 58,
+    "value": "projections"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2212,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2375,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2437,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2475,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2575,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2712,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2875,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3292,
+    "type": "sentence",
+    "start": 60,
+    "end": 123,
+    "value": "Let's ensure the localization resources are properly allocated."
+  },
+  {
+    "time": 3317,
+    "type": "word",
+    "start": 60,
+    "end": 65,
+    "value": "Let's"
+  },
+  {
+    "time": 3317,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3405,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3442,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3492,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3555,
+    "type": "word",
+    "start": 66,
+    "end": 72,
+    "value": "ensure"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3592,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3655,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3792,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3855,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3892,
+    "type": "word",
+    "start": 73,
+    "end": 76,
+    "value": "the"
+  },
+  {
+    "time": 3892,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3980,
+    "type": "word",
+    "start": 77,
+    "end": 89,
+    "value": "localization"
+  },
+  {
+    "time": 3980,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4105,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 4130,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4192,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4230,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4305,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4330,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4430,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4517,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4630,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4692,
+    "type": "word",
+    "start": 90,
+    "end": 99,
+    "value": "resources"
+  },
+  {
+    "time": 4692,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4805,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4855,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4967,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5055,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5105,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5192,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5255,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5317,
+    "type": "word",
+    "start": 100,
+    "end": 103,
+    "value": "are"
+  },
+  {
+    "time": 5317,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5355,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5392,
+    "type": "word",
+    "start": 104,
+    "end": 112,
+    "value": "properly"
+  },
+  {
+    "time": 5392,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5492,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5542,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5605,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5680,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5780,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5867,
+    "type": "word",
+    "start": 113,
+    "end": 122,
+    "value": "allocated"
+  },
+  {
+    "time": 5867,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6005,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6030,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6130,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 6205,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6242,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6305,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6430,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

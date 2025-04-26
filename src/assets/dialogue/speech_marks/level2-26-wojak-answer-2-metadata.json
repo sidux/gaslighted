@@ -1,0 +1,369 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 80,
+    "value": "Aggressive discounting strategy to boost conversion rates during holiday season."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 10,
+    "value": "Aggressive"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 71,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 179,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 259,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 313,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 423,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 467,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 531,
+    "type": "word",
+    "start": 11,
+    "end": 22,
+    "value": "discounting"
+  },
+  {
+    "time": 531,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 572,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 619,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 719,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 819,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 914,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 951,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1011,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1053,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1125,
+    "type": "word",
+    "start": 23,
+    "end": 31,
+    "value": "strategy"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1230,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1274,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1321,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1378,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1421,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1476,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1548,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1622,
+    "type": "word",
+    "start": 32,
+    "end": 34,
+    "value": "to"
+  },
+  {
+    "time": 1622,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1710,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1753,
+    "type": "word",
+    "start": 35,
+    "end": 40,
+    "value": "boost"
+  },
+  {
+    "time": 1753,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1818,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1917,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1982,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2009,
+    "type": "word",
+    "start": 41,
+    "end": 51,
+    "value": "conversion"
+  },
+  {
+    "time": 2009,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2076,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2115,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2177,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2230,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2347,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2454,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2529,
+    "type": "word",
+    "start": 52,
+    "end": 57,
+    "value": "rates"
+  },
+  {
+    "time": 2529,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2618,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2697,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2744,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2834,
+    "type": "word",
+    "start": 58,
+    "end": 64,
+    "value": "during"
+  },
+  {
+    "time": 2834,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2873,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2937,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2972,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3012,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3053,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3111,
+    "type": "word",
+    "start": 65,
+    "end": 72,
+    "value": "holiday"
+  },
+  {
+    "time": 3111,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3197,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3239,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3336,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3370,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3408,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3551,
+    "type": "word",
+    "start": 73,
+    "end": 79,
+    "value": "season"
+  },
+  {
+    "time": 3551,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3652,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3750,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3859,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4013,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

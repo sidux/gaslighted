@@ -1,0 +1,356 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 74,
+    "value": "We've hired an external consulting firm to audit our infrastructure spend."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We've"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 44,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 99,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 169,
+    "type": "word",
+    "start": 6,
+    "end": 11,
+    "value": "hired"
+  },
+  {
+    "time": 169,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 290,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 466,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 537,
+    "type": "word",
+    "start": 12,
+    "end": 14,
+    "value": "an"
+  },
+  {
+    "time": 537,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 619,
+    "type": "word",
+    "start": 15,
+    "end": 23,
+    "value": "external"
+  },
+  {
+    "time": 619,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 677,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 747,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 865,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 913,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1008,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1068,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1145,
+    "type": "word",
+    "start": 24,
+    "end": 34,
+    "value": "consulting"
+  },
+  {
+    "time": 1145,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1229,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1263,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1322,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1427,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1470,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1537,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1629,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1697,
+    "type": "word",
+    "start": 35,
+    "end": 39,
+    "value": "firm"
+  },
+  {
+    "time": 1697,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1792,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1922,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2004,
+    "type": "word",
+    "start": 40,
+    "end": 42,
+    "value": "to"
+  },
+  {
+    "time": 2004,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2099,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2137,
+    "type": "word",
+    "start": 43,
+    "end": 48,
+    "value": "audit"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2282,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2324,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2370,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2416,
+    "type": "word",
+    "start": 49,
+    "end": 52,
+    "value": "our"
+  },
+  {
+    "time": 2416,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2520,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2570,
+    "type": "word",
+    "start": 53,
+    "end": 67,
+    "value": "infrastructure"
+  },
+  {
+    "time": 2570,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2638,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2702,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2780,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2824,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2847,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2929,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2970,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3012,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3057,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3112,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3202,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3242,
+    "type": "word",
+    "start": 68,
+    "end": 73,
+    "value": "spend"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3337,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3406,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3521,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3588,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3708,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

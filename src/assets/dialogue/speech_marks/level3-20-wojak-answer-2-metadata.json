@@ -1,0 +1,337 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 71,
+    "value": "We're accelerating our product roadmap to maintain feature superiority."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 92,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 274,
+    "type": "word",
+    "start": 6,
+    "end": 18,
+    "value": "accelerating"
+  },
+  {
+    "time": 274,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 314,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 485,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 528,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 598,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 638,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 714,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 786,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 814,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 862,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 972,
+    "type": "word",
+    "start": 19,
+    "end": 22,
+    "value": "our"
+  },
+  {
+    "time": 972,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1053,
+    "type": "word",
+    "start": 23,
+    "end": 30,
+    "value": "product"
+  },
+  {
+    "time": 1053,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1168,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1242,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1278,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1321,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1396,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1502,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1553,
+    "type": "word",
+    "start": 31,
+    "end": 38,
+    "value": "roadmap"
+  },
+  {
+    "time": 1553,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1664,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1746,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1808,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1878,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1961,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2041,
+    "type": "word",
+    "start": 39,
+    "end": 41,
+    "value": "to"
+  },
+  {
+    "time": 2041,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2181,
+    "type": "word",
+    "start": 42,
+    "end": 50,
+    "value": "maintain"
+  },
+  {
+    "time": 2181,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2267,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2360,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2414,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2492,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2609,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2667,
+    "type": "word",
+    "start": 51,
+    "end": 58,
+    "value": "feature"
+  },
+  {
+    "time": 2667,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2772,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2878,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2973,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3015,
+    "type": "word",
+    "start": 59,
+    "end": 70,
+    "value": "superiority"
+  },
+  {
+    "time": 3015,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3123,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3173,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3203,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3284,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3354,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3414,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3486,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3550,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3634,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3664,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3713,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3866,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

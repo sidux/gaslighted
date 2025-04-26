@@ -1,0 +1,387 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 45,
+    "value": "That's an expensive band-aid, not a solution."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "That's"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 70,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 188,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 247,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 334,
+    "type": "word",
+    "start": 7,
+    "end": 9,
+    "value": "an"
+  },
+  {
+    "time": 334,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 430,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 480,
+    "type": "word",
+    "start": 10,
+    "end": 19,
+    "value": "expensive"
+  },
+  {
+    "time": 480,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 530,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 591,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 659,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 799,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 881,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 982,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1011,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1065,
+    "type": "word",
+    "start": 20,
+    "end": 28,
+    "value": "band-aid"
+  },
+  {
+    "time": 1065,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1141,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1253,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1361,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1564,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1645,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1838,
+    "type": "word",
+    "start": 30,
+    "end": 33,
+    "value": "not"
+  },
+  {
+    "time": 1838,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1938,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2046,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2091,
+    "type": "word",
+    "start": 34,
+    "end": 35,
+    "value": "a"
+  },
+  {
+    "time": 2091,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2120,
+    "type": "word",
+    "start": 36,
+    "end": 44,
+    "value": "solution"
+  },
+  {
+    "time": 2120,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2265,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2303,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2417,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2486,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2618,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2809,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3196,
+    "type": "sentence",
+    "start": 46,
+    "end": 79,
+    "value": "I need a more strategic approach."
+  },
+  {
+    "time": 3202,
+    "type": "word",
+    "start": 46,
+    "end": 47,
+    "value": "I"
+  },
+  {
+    "time": 3202,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3311,
+    "type": "word",
+    "start": 48,
+    "end": 52,
+    "value": "need"
+  },
+  {
+    "time": 3311,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3416,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3525,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3569,
+    "type": "word",
+    "start": 53,
+    "end": 54,
+    "value": "a"
+  },
+  {
+    "time": 3569,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3620,
+    "type": "word",
+    "start": 55,
+    "end": 59,
+    "value": "more"
+  },
+  {
+    "time": 3620,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3708,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3805,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3853,
+    "type": "word",
+    "start": 60,
+    "end": 69,
+    "value": "strategic"
+  },
+  {
+    "time": 3853,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3969,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4033,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4087,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4116,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4227,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4313,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4402,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4457,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4533,
+    "type": "word",
+    "start": 70,
+    "end": 78,
+    "value": "approach"
+  },
+  {
+    "time": 4533,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4575,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4686,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4754,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 4863,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5080,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

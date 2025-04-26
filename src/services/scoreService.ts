@@ -5,8 +5,8 @@ import { GameState } from '../types';
  */
 export const getFinalScore = (state: GameState): number => {
   if (state.victory) {
-    // Final score is the negative pressure plus accumulated score
-    return Math.max(0, -state.pressure + state.score);
+    // Final score is just the accumulated score since pressure can't be negative
+    return state.score;
   } else {
     // Failed, score is just the accumulated score
     return state.score;
@@ -59,15 +59,16 @@ export const updatePressure = (
   // Cap elapsed time to prevent huge jumps
   const cappedElapsedMs = Math.min(elapsedMs, 100);
   
-  // Make pressure build up faster for visibility
-  const scaleFactor = 1.5; // Increase pressure buildup speed
+  // Calculate pressure increase based on elapsed time and level configuration
   const pressureIncrease = (cappedElapsedMs / 1000) * 
     state.level.rules.pressure_buildup_speed * 
-    pressureMultiplier * 
-    scaleFactor;
+    pressureMultiplier;
   
-  // Ensure a minimum increase when pressure is not negative
-  // Higher minimum value when pressure is below 0
-  const minimumIncrease = state.pressure < 0 ? 0.5 : 0.2;
-  return state.pressure + Math.max(minimumIncrease, pressureIncrease);
+  // Only apply a small minimum increase to ensure visible movement when needed
+  const minimumIncrease = 0.02;
+  
+  // Use the actual calculated pressure increase instead of forcing a minimum
+  // This respects the level configuration more accurately
+  // Also ensure pressure never goes below 0
+  return Math.max(0, state.pressure + (pressureIncrease > 0 ? Math.max(minimumIncrease, pressureIncrease) : pressureIncrease));
 };

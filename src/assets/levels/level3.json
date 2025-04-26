@@ -1,0 +1,418 @@
+{
+    "title": "Board Presentation",
+    "description": "The moment of truth: presenting to the Board of Directors and executives. Your career is on the line... and so is your digestive system.",
+    "rules": {
+        "game_speed": 1.4,
+        "pressure_buildup_speed": 25,
+        "precision_window_ms": 300,
+        "max_possible_farts_by_word": 2,
+        "max_simultaneous_letters": 4,
+        "letter_float_duration_ms": 4000,
+        "letter_visible_duration_ms": 3500,
+        "letter_float_height_px": 300,
+        "letter_float_speed_multiplier": 2.0,
+        "pressure_release": {
+            "perfect": 30,
+            "okay": 15,
+            "bad": 60,
+            "terrible": 0
+        },
+        "shame_gain": {
+            "perfect": 0,
+            "okay": 12,
+            "bad": 40,
+            "terrible": 100
+        },
+        "question": {
+            "pressure_multiplier": 3.5,
+            "correct_answer_shame_change": -12,
+            "incorrect_answer_shame_change": 25,
+            "heartbeat_intensity": 90
+        }
+    },
+    "participants": [
+        {
+            "id": "wojak",
+            "voiceType": "Russell",
+            "type": "player"
+        },
+        {
+            "id": "boomer",
+            "voiceType": "Brian",
+            "type": "npc"
+        },
+        {
+            "id": "zoomer",
+            "voiceType": "Kevin",
+            "type": "npc"
+        },
+        {
+            "id": "karen",
+            "voiceType": "Salli",
+            "type": "npc"
+        },
+        {
+            "id": "cfo",
+            "voiceType": "Matthew",
+            "type": "npc"
+        },
+        {
+            "id": "boardmember1",
+            "voiceType": "Joey",
+            "type": "npc"
+        },
+        {
+            "id": "boardmember2",
+            "voiceType": "Joanna",
+            "type": "npc"
+        }
+    ],
+    "dialogues": [
+        {
+            "speaker": "boomer",
+            "text": "Ladies and gentlemen of the board, thank you for joining us today. We have a comprehensive review of our annual performance and strategic growth initiatives."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Wojak will be leading the presentation today. As you know, Wojak has been spearheading our digital transformation efforts this year."
+        },
+        {
+            "speaker": "boardmember1",
+            "text": "Let's get straight to the numbers. I'm particularly interested in how we're tracking against the aggressive growth targets we set last quarter."
+        },
+        {
+            "speaker": "wojak",
+            "text": "Thank you for the opportunity. Our fiscal year closed with a 22% year-over-year revenue growth, with EBITDA improving by 3.5 percentage points."
+        },
+        {
+            "speaker": "cfo",
+            "text": "That's below the 28% projection from your department. I've been reviewing the channel breakdown, and there seems to be significant underperformance in enterprise sales."
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We've shifted resources to the SMB segment which delivered 42% growth and higher margins, offsetting the enterprise gap.",
+                    "correct": true
+                },
+                {
+                    "text": "Enterprise sales cycles lengthened unexpectedly due to economic headwinds.",
+                    "correct": false
+                },
+                {
+                    "text": "Our enterprise product roadmap encountered delays that impacted close rates.",
+                    "correct": false
+                },
+                {
+                    "text": "The sales team experienced higher than projected turnover in Q3.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "cfo",
+            "feedback": [
+                {
+                    "text": "Smart pivot. The margin improvement more than compensates for the revenue mix shift. We should incorporate this into our revised forecasts.",
+                    "correct": true
+                },
+                {
+                    "text": "That's concerning given our heavy investment in enterprise infrastructure. We need a more detailed explanation of this strategic failure.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boardmember2",
+            "text": "I'm looking at slide 14, and the customer acquisition cost seems to be trending upward. How does this align with our efficiency targets?"
+        },
+        {
+            "speaker": "karen",
+            "text": "If I may, I've been raising this same concern in our operational reviews. The marketing spend has increased by 31% year-over-year."
+        },
+        {
+            "speaker": "boardmember1",
+            "text": "Wojak, defend this spend increase when our competitors are cutting back. What's the projected payback period?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "Our CAC payback decreased from 9 months to 6.5 months due to improved monetization and retention strategies.",
+                    "correct": true
+                },
+                {
+                    "text": "We're investing in brand awareness which doesn't show immediate CAC improvements but builds long-term equity.",
+                    "correct": false
+                },
+                {
+                    "text": "The increased spend was necessary to maintain market share in an increasingly competitive landscape.",
+                    "correct": false
+                },
+                {
+                    "text": "We're targeting higher-value customers which naturally increases acquisition costs but delivers higher LTV.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boardmember1",
+            "feedback": [
+                {
+                    "text": "That's precisely what I wanted to hear. As long as the efficiency metrics are improving, the absolute spend is less concerning.",
+                    "correct": true
+                },
+                {
+                    "text": "That doesn't address the core issue of spending efficiency. We need to revisit our marketing strategy immediately.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "cfo",
+            "text": "Moving to operational metrics, I'm seeing a concerning trend in our cloud infrastructure costs, which have increased disproportionately to user growth."
+        },
+        {
+            "speaker": "zoomer",
+            "text": "If I could jump in, we've been implementing several optimization initiatives that should show results in the next two quarters."
+        },
+        {
+            "speaker": "boardmember2",
+            "text": "That's too long. Wojak, what immediate steps are being taken to address this cost center?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We've implemented auto-scaling and right-sizing algorithms that have already reduced costs by 18% in the last month.",
+                    "correct": true
+                },
+                {
+                    "text": "We're migrating to a different cloud provider with more favorable pricing.",
+                    "correct": false
+                },
+                {
+                    "text": "We're reducing feature development to focus on infrastructure optimization.",
+                    "correct": false
+                },
+                {
+                    "text": "We've hired an external consulting firm to audit our infrastructure spend.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "cfo",
+            "feedback": [
+                {
+                    "text": "Excellent. I'd like a detailed report on these optimizations and projections for Q1 cost reductions by next week.",
+                    "correct": true
+                },
+                {
+                    "text": "That approach creates significant business risk. We need a more comprehensive strategy than just algorithmic improvements.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boardmember1",
+            "text": "Let's discuss the competitive landscape. I've been hearing that NewTechCorp is launching a similar product at a significantly lower price point."
+        },
+        {
+            "speaker": "karen",
+            "text": "Our market intelligence team has confirmed this. They're targeting a Q1 launch with aggressive promotional pricing."
+        },
+        {
+            "speaker": "boardmember2",
+            "text": "Wojak, how are we positioned to respond to this competitive threat?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We're launching our premium tier with exclusive features that deliver 3x the ROI of our core product, creating clear differentiation.",
+                    "correct": true
+                },
+                {
+                    "text": "We're planning to match their pricing with temporary promotional discounts.",
+                    "correct": false
+                },
+                {
+                    "text": "We're accelerating our product roadmap to maintain feature superiority.",
+                    "correct": false
+                },
+                {
+                    "text": "We're focusing on customer retention through enhanced service offerings.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boardmember2",
+            "feedback": [
+                {
+                    "text": "Moving upmarket is the right approach. Competing on price is a race to the bottom that we want to avoid.",
+                    "correct": true
+                },
+                {
+                    "text": "A reactive pricing strategy puts us in a weak position. We need to maintain our premium positioning in the market.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boardmember1",
+            "text": "Let's address the elephant in the room. The market valuation of companies in our sector has declined 25% this year. How does this impact our fundraising strategy?"
+        },
+        {
+            "speaker": "cfo",
+            "text": "I've prepared several scenarios based on different market conditions. Wojak, your team's projections are critical to this analysis."
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We've modeled a path to profitability that eliminates the need for additional funding within 15 months while maintaining 30%+ growth.",
+                    "correct": true
+                },
+                {
+                    "text": "We're shifting focus to strategic partnerships that could lead to acquisition rather than further funding rounds.",
+                    "correct": false
+                },
+                {
+                    "text": "We're exploring alternative funding sources such as venture debt to bridge us to better market conditions.",
+                    "correct": false
+                },
+                {
+                    "text": "We're planning to reduce our growth targets to extend our runway until valuations recover.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "cfo",
+            "feedback": [
+                {
+                    "text": "This is exactly the strategic approach we need. Self-sustainability with continued growth will maximize our options regardless of market conditions.",
+                    "correct": true
+                },
+                {
+                    "text": "I'm concerned about the feasibility of this model. We need to see more detailed financial projections before committing to this approach.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boardmember2",
+            "text": "I'd like to discuss team scaling. Are we appropriately resourced for the initiatives you've outlined today?"
+        },
+        {
+            "speaker": "karen",
+            "text": "Current hiring plans would increase headcount by 35% next year, primarily in product and engineering."
+        },
+        {
+            "speaker": "boardmember1",
+            "text": "That seems excessive given current market conditions. Wojak, justify this expansion."
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We've revised our hiring plan to focus on key roles that directly impact revenue, reducing the expansion to 20% with higher projected output.",
+                    "correct": true
+                },
+                {
+                    "text": "The expansion is necessary to deliver on our product roadmap and growth targets.",
+                    "correct": false
+                },
+                {
+                    "text": "We're planning to outsource certain functions which will reduce overall costs despite the headcount increase.",
+                    "correct": false
+                },
+                {
+                    "text": "The talent market has softened, allowing us to hire high-caliber talent at lower compensation than budgeted.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boardmember1",
+            "feedback": [
+                {
+                    "text": "That's the kind of prudent resource allocation we need. Make sure the hiring plan reflects these priorities.",
+                    "correct": true
+                },
+                {
+                    "text": "That's still too aggressive in this environment. I want to see a plan that maximizes output with minimal headcount growth.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "cfo",
+            "text": "Before we conclude, I need clarity on the international expansion timeline and associated costs."
+        },
+        {
+            "speaker": "zoomer",
+            "text": "I can pull up the regional breakdown if that would be helpful."
+        },
+        {
+            "speaker": "boardmember2",
+            "text": "Wojak, what are the priority markets and expected time to ROI for each region?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We're focusing on APAC expansion first, with projected ROI in 9 months, followed by targeted European markets at 12 months.",
+                    "correct": true
+                },
+                {
+                    "text": "We're prioritizing European markets first due to regulatory alignment, then expanding to LATAM.",
+                    "correct": false
+                },
+                {
+                    "text": "We're taking a distributed approach, entering multiple markets simultaneously to accelerate global presence.",
+                    "correct": false
+                },
+                {
+                    "text": "We're delaying international expansion to focus on deepening North American market penetration.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "cfo",
+            "feedback": [
+                {
+                    "text": "The APAC-first approach aligns with our growth projections. Let's ensure the localization resources are properly allocated.",
+                    "correct": true
+                },
+                {
+                    "text": "The risk profile of this approach concerns me. We need a more conservative expansion strategy in the current global economy.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boomer",
+            "text": "I think we've covered the major strategic areas. Wojak, do you have any final points before we move to the closed session?"
+        },
+        {
+            "speaker": "wojak",
+            "text": "Thank you for your time and valuable input. We're confident in our ability to execute on these initiatives while maintaining financial discipline."
+        },
+        {
+            "speaker": "boardmember1",
+            "text": "We'll need the updated projections based on today's discussion by Monday."
+        },
+        {
+            "speaker": "boardmember2",
+            "text": "Solid presentation overall. I'm looking forward to seeing the execution on these strategic initiatives."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Thank you, Wojak. The executive team will now move to a closed session."
+        }
+    ]
+}

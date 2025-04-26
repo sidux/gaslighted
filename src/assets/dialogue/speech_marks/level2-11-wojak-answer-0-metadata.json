@@ -1,0 +1,483 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 46,
+    "value": "It's temporary due to the new channel testing."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "It's"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 96,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 134,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 231,
+    "type": "word",
+    "start": 5,
+    "end": 14,
+    "value": "temporary"
+  },
+  {
+    "time": 231,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 324,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 401,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 501,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 574,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 635,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 696,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 760,
+    "type": "word",
+    "start": 15,
+    "end": 18,
+    "value": "due"
+  },
+  {
+    "time": 760,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 810,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 898,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 963,
+    "type": "word",
+    "start": 19,
+    "end": 21,
+    "value": "to"
+  },
+  {
+    "time": 963,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1041,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1080,
+    "type": "word",
+    "start": 22,
+    "end": 25,
+    "value": "the"
+  },
+  {
+    "time": 1080,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1128,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1160,
+    "type": "word",
+    "start": 26,
+    "end": 29,
+    "value": "new"
+  },
+  {
+    "time": 1160,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1212,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1310,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1357,
+    "type": "word",
+    "start": 30,
+    "end": 37,
+    "value": "channel"
+  },
+  {
+    "time": 1357,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1502,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1592,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1634,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1763,
+    "type": "word",
+    "start": 38,
+    "end": 45,
+    "value": "testing"
+  },
+  {
+    "time": 1763,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1857,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1945,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2033,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2082,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2129,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2291,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2678,
+    "type": "sentence",
+    "start": 47,
+    "end": 97,
+    "value": "The high-performing channels show a 30% lower CAC."
+  },
+  {
+    "time": 2684,
+    "type": "word",
+    "start": 47,
+    "end": 50,
+    "value": "The"
+  },
+  {
+    "time": 2684,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2722,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2776,
+    "type": "word",
+    "start": 51,
+    "end": 66,
+    "value": "high-performing"
+  },
+  {
+    "time": 2776,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2897,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2999,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3082,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3118,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3233,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3357,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3418,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3452,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3541,
+    "type": "word",
+    "start": 67,
+    "end": 75,
+    "value": "channels"
+  },
+  {
+    "time": 3541,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3668,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3741,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3778,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3872,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3945,
+    "type": "word",
+    "start": 76,
+    "end": 80,
+    "value": "show"
+  },
+  {
+    "time": 3945,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4065,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4181,
+    "type": "word",
+    "start": 81,
+    "end": 82,
+    "value": "a"
+  },
+  {
+    "time": 4181,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4222,
+    "type": "word",
+    "start": 83,
+    "end": 86,
+    "value": "30%"
+  },
+  {
+    "time": 4222,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4340,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4426,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4463,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4531,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4605,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4642,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4760,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4826,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4870,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4911,
+    "type": "word",
+    "start": 87,
+    "end": 92,
+    "value": "lower"
+  },
+  {
+    "time": 4911,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5006,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5130,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5181,
+    "type": "word",
+    "start": 93,
+    "end": 96,
+    "value": "CAC"
+  },
+  {
+    "time": 5181,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5326,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5484,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5658,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5797,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5981,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

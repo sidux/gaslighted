@@ -1,0 +1,538 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 48,
+    "value": "Our market intelligence team has confirmed this."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "Our"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 97,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 157,
+    "type": "word",
+    "start": 4,
+    "end": 10,
+    "value": "market"
+  },
+  {
+    "time": 157,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 276,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 347,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 394,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 490,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 542,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 571,
+    "type": "word",
+    "start": 11,
+    "end": 23,
+    "value": "intelligence"
+  },
+  {
+    "time": 571,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 649,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 713,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 867,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 947,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 977,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1081,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1127,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1211,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1313,
+    "type": "word",
+    "start": 24,
+    "end": 28,
+    "value": "team"
+  },
+  {
+    "time": 1313,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1420,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1555,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1624,
+    "type": "word",
+    "start": 29,
+    "end": 32,
+    "value": "has"
+  },
+  {
+    "time": 1624,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1715,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1760,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1846,
+    "type": "word",
+    "start": 33,
+    "end": 42,
+    "value": "confirmed"
+  },
+  {
+    "time": 1846,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1916,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1950,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2020,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2112,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2201,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2274,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2309,
+    "type": "word",
+    "start": 43,
+    "end": 47,
+    "value": "this"
+  },
+  {
+    "time": 2309,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2351,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2477,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2704,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3091,
+    "type": "sentence",
+    "start": 49,
+    "end": 115,
+    "value": "They're targeting a Q1 launch with aggressive promotional pricing."
+  },
+  {
+    "time": 3098,
+    "type": "word",
+    "start": 49,
+    "end": 56,
+    "value": "They're"
+  },
+  {
+    "time": 3098,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3135,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3172,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3265,
+    "type": "word",
+    "start": 57,
+    "end": 66,
+    "value": "targeting"
+  },
+  {
+    "time": 3265,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3380,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3440,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3502,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3566,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3607,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3636,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3698,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3779,
+    "type": "word",
+    "start": 67,
+    "end": 68,
+    "value": "a"
+  },
+  {
+    "time": 3779,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3840,
+    "type": "word",
+    "start": 69,
+    "end": 71,
+    "value": "Q1"
+  },
+  {
+    "time": 3840,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3987,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4054,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4173,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4336,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4389,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4465,
+    "type": "word",
+    "start": 72,
+    "end": 78,
+    "value": "launch"
+  },
+  {
+    "time": 4465,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4590,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4737,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4785,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4901,
+    "type": "word",
+    "start": 79,
+    "end": 83,
+    "value": "with"
+  },
+  {
+    "time": 4901,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4980,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5012,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5052,
+    "type": "word",
+    "start": 84,
+    "end": 94,
+    "value": "aggressive"
+  },
+  {
+    "time": 5052,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5087,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5170,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5231,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5325,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5428,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5467,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5542,
+    "type": "word",
+    "start": 95,
+    "end": 106,
+    "value": "promotional"
+  },
+  {
+    "time": 5542,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5661,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5688,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5719,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5813,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 5905,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6034,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6067,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6162,
+    "type": "word",
+    "start": 107,
+    "end": 114,
+    "value": "pricing"
+  },
+  {
+    "time": 6162,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6287,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6350,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6434,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6539,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6588,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6778,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

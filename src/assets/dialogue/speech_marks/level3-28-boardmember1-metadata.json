@@ -1,0 +1,413 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 53,
+    "value": "That seems excessive given current market conditions."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "That"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "word",
+    "start": 5,
+    "end": 10,
+    "value": "seems"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 11,
+    "end": 20,
+    "value": "excessive"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 912,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1187,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1375,
+    "type": "word",
+    "start": 21,
+    "end": 26,
+    "value": "given"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1750,
+    "type": "word",
+    "start": 27,
+    "end": 34,
+    "value": "current"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1837,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2125,
+    "type": "word",
+    "start": 35,
+    "end": 41,
+    "value": "market"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2275,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2375,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2500,
+    "type": "word",
+    "start": 42,
+    "end": 52,
+    "value": "conditions"
+  },
+  {
+    "time": 2500,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2750,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3730,
+    "type": "sentence",
+    "start": 54,
+    "end": 84,
+    "value": "Wojak, justify this expansion."
+  },
+  {
+    "time": 3867,
+    "type": "word",
+    "start": 54,
+    "end": 59,
+    "value": "Wojak"
+  },
+  {
+    "time": 3867,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3967,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4180,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4292,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4542,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4567,
+    "type": "word",
+    "start": 61,
+    "end": 68,
+    "value": "justify"
+  },
+  {
+    "time": 4567,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4867,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4880,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4980,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5042,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5105,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5217,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5355,
+    "type": "word",
+    "start": 69,
+    "end": 73,
+    "value": "this"
+  },
+  {
+    "time": 5355,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5480,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5505,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5605,
+    "type": "word",
+    "start": 74,
+    "end": 83,
+    "value": "expansion"
+  },
+  {
+    "time": 5605,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5667,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5692,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5817,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5855,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5955,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6005,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6117,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6367,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

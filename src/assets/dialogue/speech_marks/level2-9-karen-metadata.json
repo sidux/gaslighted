@@ -1,0 +1,567 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 72,
+    "value": "Yes, and our CAC has increased by 22% despite the supposed improvements."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "Yes"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 118,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 290,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 532,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 719,
+    "type": "word",
+    "start": 5,
+    "end": 8,
+    "value": "and"
+  },
+  {
+    "time": 719,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 770,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 808,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 849,
+    "type": "word",
+    "start": 9,
+    "end": 12,
+    "value": "our"
+  },
+  {
+    "time": 849,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 888,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 958,
+    "type": "word",
+    "start": 13,
+    "end": 16,
+    "value": "CAC"
+  },
+  {
+    "time": 958,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1100,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1217,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1317,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1432,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1561,
+    "type": "word",
+    "start": 17,
+    "end": 20,
+    "value": "has"
+  },
+  {
+    "time": 1561,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1657,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1708,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1783,
+    "type": "word",
+    "start": 21,
+    "end": 30,
+    "value": "increased"
+  },
+  {
+    "time": 1783,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1820,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1934,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2048,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2084,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2168,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2258,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2307,
+    "type": "word",
+    "start": 31,
+    "end": 33,
+    "value": "by"
+  },
+  {
+    "time": 2307,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2367,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2444,
+    "type": "word",
+    "start": 34,
+    "end": 37,
+    "value": "22%"
+  },
+  {
+    "time": 2444,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2550,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2622,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2653,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2690,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2733,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2844,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2986,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3082,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3189,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3246,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3370,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3447,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3519,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3550,
+    "type": "word",
+    "start": 38,
+    "end": 45,
+    "value": "despite"
+  },
+  {
+    "time": 3550,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3589,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3634,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3730,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3803,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3986,
+    "type": "word",
+    "start": 46,
+    "end": 49,
+    "value": "the"
+  },
+  {
+    "time": 3986,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4072,
+    "type": "word",
+    "start": 50,
+    "end": 58,
+    "value": "supposed"
+  },
+  {
+    "time": 4072,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4185,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4216,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4343,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 4517,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4565,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4631,
+    "type": "word",
+    "start": 59,
+    "end": 71,
+    "value": "improvements"
+  },
+  {
+    "time": 4631,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4679,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4739,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4846,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4899,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4993,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5062,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5122,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5182,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5234,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5262,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5434,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5821,
+    "type": "sentence",
+    "start": 73,
+    "end": 101,
+    "value": "I'm not seeing the ROI here."
+  },
+  {
+    "time": 5827,
+    "type": "word",
+    "start": 73,
+    "end": 76,
+    "value": "I'm"
+  },
+  {
+    "time": 5827,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5929,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5972,
+    "type": "word",
+    "start": 77,
+    "end": 80,
+    "value": "not"
+  },
+  {
+    "time": 5972,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6059,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6199,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6254,
+    "type": "word",
+    "start": 81,
+    "end": 87,
+    "value": "seeing"
+  },
+  {
+    "time": 6254,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6365,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6432,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6490,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6603,
+    "type": "word",
+    "start": 88,
+    "end": 91,
+    "value": "the"
+  },
+  {
+    "time": 6603,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 6639,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6752,
+    "type": "word",
+    "start": 92,
+    "end": 95,
+    "value": "ROI"
+  },
+  {
+    "time": 6752,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6858,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6917,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 7026,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7165,
+    "type": "word",
+    "start": 96,
+    "end": 100,
+    "value": "here"
+  },
+  {
+    "time": 7165,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7253,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 7343,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 7543,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

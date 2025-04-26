@@ -1,0 +1,292 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 64,
+    "value": "The marketing team changed the campaign focus without alignment."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 32,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 65,
+    "type": "word",
+    "start": 4,
+    "end": 13,
+    "value": "marketing"
+  },
+  {
+    "time": 65,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 175,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 296,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 455,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 496,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 591,
+    "type": "word",
+    "start": 14,
+    "end": 18,
+    "value": "team"
+  },
+  {
+    "time": 591,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 692,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 786,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 863,
+    "type": "word",
+    "start": 19,
+    "end": 26,
+    "value": "changed"
+  },
+  {
+    "time": 863,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 992,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1088,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1139,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1208,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1237,
+    "type": "word",
+    "start": 27,
+    "end": 30,
+    "value": "the"
+  },
+  {
+    "time": 1237,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1276,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1305,
+    "type": "word",
+    "start": 31,
+    "end": 39,
+    "value": "campaign"
+  },
+  {
+    "time": 1305,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1424,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1507,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1553,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1612,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1722,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1781,
+    "type": "word",
+    "start": 40,
+    "end": 45,
+    "value": "focus"
+  },
+  {
+    "time": 1781,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1891,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1985,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2061,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2110,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2201,
+    "type": "word",
+    "start": 46,
+    "end": 53,
+    "value": "without"
+  },
+  {
+    "time": 2201,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2269,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2311,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2370,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2504,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2528,
+    "type": "word",
+    "start": 54,
+    "end": 63,
+    "value": "alignment"
+  },
+  {
+    "time": 2528,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2565,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2673,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2834,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2888,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2936,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2974,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3028,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3166,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

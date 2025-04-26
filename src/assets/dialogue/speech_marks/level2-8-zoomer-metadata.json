@@ -1,0 +1,630 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 93,
+    "value": "If I could jump in, the growth in returning users is actually outpacing new user acquisition."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 2,
+    "value": "If"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 300,
+    "type": "word",
+    "start": 3,
+    "end": 4,
+    "value": "I"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 375,
+    "type": "word",
+    "start": 5,
+    "end": 10,
+    "value": "could"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 512,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 562,
+    "type": "word",
+    "start": 11,
+    "end": 15,
+    "value": "jump"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 637,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 837,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "in"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1312,
+    "type": "word",
+    "start": 20,
+    "end": 23,
+    "value": "the"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1487,
+    "type": "word",
+    "start": 24,
+    "end": 30,
+    "value": "growth"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1762,
+    "type": "word",
+    "start": 31,
+    "end": 33,
+    "value": "in"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1775,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1875,
+    "type": "word",
+    "start": 34,
+    "end": 43,
+    "value": "returning"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1937,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2025,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2375,
+    "type": "word",
+    "start": 44,
+    "end": 49,
+    "value": "users"
+  },
+  {
+    "time": 2375,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2425,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2512,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2750,
+    "type": "word",
+    "start": 50,
+    "end": 52,
+    "value": "is"
+  },
+  {
+    "time": 2750,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2825,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3000,
+    "type": "word",
+    "start": 53,
+    "end": 61,
+    "value": "actually"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3150,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3262,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3375,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3575,
+    "type": "word",
+    "start": 62,
+    "end": 71,
+    "value": "outpacing"
+  },
+  {
+    "time": 3575,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3587,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3725,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3825,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3950,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4000,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4062,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4187,
+    "type": "word",
+    "start": 72,
+    "end": 75,
+    "value": "new"
+  },
+  {
+    "time": 4187,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4250,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4412,
+    "type": "word",
+    "start": 76,
+    "end": 80,
+    "value": "user"
+  },
+  {
+    "time": 4412,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4500,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4562,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4687,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4812,
+    "type": "word",
+    "start": 81,
+    "end": 92,
+    "value": "acquisition"
+  },
+  {
+    "time": 4812,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4875,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4937,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4950,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5037,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5075,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5237,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5500,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 5892,
+    "type": "sentence",
+    "start": 94,
+    "end": 137,
+    "value": "Should we be concerned about top-of-funnel?"
+  },
+  {
+    "time": 6080,
+    "type": "word",
+    "start": 94,
+    "end": 100,
+    "value": "Should"
+  },
+  {
+    "time": 6080,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6092,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6142,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6205,
+    "type": "word",
+    "start": 101,
+    "end": 103,
+    "value": "we"
+  },
+  {
+    "time": 6205,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6242,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6342,
+    "type": "word",
+    "start": 104,
+    "end": 106,
+    "value": "be"
+  },
+  {
+    "time": 6342,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6392,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6492,
+    "type": "word",
+    "start": 107,
+    "end": 116,
+    "value": "concerned"
+  },
+  {
+    "time": 6492,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6530,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6580,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6642,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6730,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6830,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6842,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6892,
+    "type": "word",
+    "start": 117,
+    "end": 122,
+    "value": "about"
+  },
+  {
+    "time": 6892,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6955,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7030,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7042,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7142,
+    "type": "word",
+    "start": 123,
+    "end": 136,
+    "value": "top-of-funnel"
+  },
+  {
+    "time": 7142,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7267,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7330,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7405,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7455,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 7517,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 7617,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 7705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7917,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

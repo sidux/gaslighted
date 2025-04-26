@@ -69,8 +69,8 @@ export const applyFartResult = (state: GameState, result: FartResult): GameState
   const comboBonus = result.type === 'perfect' ? Math.min(newCombo, 5) * 5 : 0;
   const totalPressureRelease = pressureRelease + comboBonus;
   
-  // Update pressure and shame - don't let pressure go below -50
-  const newPressure = Math.max(-50, state.pressure - totalPressureRelease);
+  // Update pressure and shame - don't let pressure go below 0
+  const newPressure = Math.max(0, state.pressure - totalPressureRelease);
   const newShame = Math.min(100, state.shame + shameGain);
   
   // Update score

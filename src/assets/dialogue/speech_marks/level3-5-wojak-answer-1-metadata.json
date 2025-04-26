@@ -1,0 +1,372 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 74,
+    "value": "Enterprise sales cycles lengthened unexpectedly due to economic headwinds."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 10,
+    "value": "Enterprise"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 72,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 135,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 222,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 264,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 356,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 403,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 532,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 587,
+    "type": "word",
+    "start": 11,
+    "end": 16,
+    "value": "sales"
+  },
+  {
+    "time": 587,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 701,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 784,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 885,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 911,
+    "type": "word",
+    "start": 17,
+    "end": 23,
+    "value": "cycles"
+  },
+  {
+    "time": 911,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1021,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1090,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1192,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1240,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1297,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1363,
+    "type": "word",
+    "start": 24,
+    "end": 34,
+    "value": "lengthened"
+  },
+  {
+    "time": 1363,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1424,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1457,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1536,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1620,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1662,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1689,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1741,
+    "type": "word",
+    "start": 35,
+    "end": 47,
+    "value": "unexpectedly"
+  },
+  {
+    "time": 1741,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1833,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1884,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1914,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1974,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2066,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2116,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2174,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2268,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2305,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2349,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2410,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2459,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2542,
+    "type": "word",
+    "start": 48,
+    "end": 51,
+    "value": "due"
+  },
+  {
+    "time": 2542,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2618,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2696,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2764,
+    "type": "word",
+    "start": 52,
+    "end": 54,
+    "value": "to"
+  },
+  {
+    "time": 2764,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2836,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2882,
+    "type": "word",
+    "start": 55,
+    "end": 63,
+    "value": "economic"
+  },
+  {
+    "time": 2882,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3005,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3102,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3136,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3184,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3253,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3320,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3363,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3437,
+    "type": "word",
+    "start": 64,
+    "end": 73,
+    "value": "headwinds"
+  },
+  {
+    "time": 3437,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3502,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3575,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3635,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3701,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3738,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3803,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3842,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4001,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

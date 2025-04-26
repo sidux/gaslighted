@@ -3,8 +3,8 @@
     "time": 0,
     "type": "sentence",
     "start": 0,
-    "end": 37,
-    "value": "Honestly, it wasn’t really my area."
+    "end": 35,
+    "value": "Honestly, it wasn't really my area."
   },
   {
     "time": 6,
@@ -74,8 +74,8 @@
     "time": 902,
     "type": "word",
     "start": 13,
-    "end": 21,
-    "value": "wasn’t"
+    "end": 19,
+    "value": "wasn't"
   },
   {
     "time": 902,
@@ -105,8 +105,8 @@
   {
     "time": 1268,
     "type": "word",
-    "start": 22,
-    "end": 28,
+    "start": 20,
+    "end": 26,
     "value": "really"
   },
   {
@@ -132,8 +132,8 @@
   {
     "time": 1496,
     "type": "word",
-    "start": 29,
-    "end": 31,
+    "start": 27,
+    "end": 29,
     "value": "my"
   },
   {
@@ -149,8 +149,8 @@
   {
     "time": 1727,
     "type": "word",
-    "start": 32,
-    "end": 36,
+    "start": 30,
+    "end": 34,
     "value": "area"
   },
   {

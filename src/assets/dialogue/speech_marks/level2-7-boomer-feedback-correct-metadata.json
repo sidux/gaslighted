@@ -1,0 +1,350 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 11,
+    "value": "Smart move."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "Smart"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 6,
+    "end": 10,
+    "value": "move"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1867,
+    "type": "sentence",
+    "start": 12,
+    "end": 76,
+    "value": "The revenue increase more than justifies the change in approach."
+  },
+  {
+    "time": 1930,
+    "type": "word",
+    "start": 12,
+    "end": 15,
+    "value": "The"
+  },
+  {
+    "time": 1930,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2005,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2117,
+    "type": "word",
+    "start": 16,
+    "end": 23,
+    "value": "revenue"
+  },
+  {
+    "time": 2117,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2180,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2242,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2317,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2367,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2442,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2492,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2580,
+    "type": "word",
+    "start": 24,
+    "end": 32,
+    "value": "increase"
+  },
+  {
+    "time": 2580,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2805,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2867,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3005,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3117,
+    "type": "word",
+    "start": 33,
+    "end": 37,
+    "value": "more"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3242,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3492,
+    "type": "word",
+    "start": 38,
+    "end": 42,
+    "value": "than"
+  },
+  {
+    "time": 3492,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3505,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3542,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3680,
+    "type": "word",
+    "start": 43,
+    "end": 52,
+    "value": "justifies"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3742,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3805,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4055,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4142,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4330,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4505,
+    "type": "word",
+    "start": 53,
+    "end": 56,
+    "value": "the"
+  },
+  {
+    "time": 4505,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4555,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4655,
+    "type": "word",
+    "start": 57,
+    "end": 63,
+    "value": "change"
+  },
+  {
+    "time": 4655,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4817,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4930,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4992,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5080,
+    "type": "word",
+    "start": 64,
+    "end": 66,
+    "value": "in"
+  },
+  {
+    "time": 5080,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5180,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5242,
+    "type": "word",
+    "start": 67,
+    "end": 75,
+    "value": "approach"
+  },
+  {
+    "time": 5242,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5305,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5367,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5455,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5592,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5905,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

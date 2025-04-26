@@ -1,0 +1,477 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 95,
+    "value": "Wojak, given these constraints, which initiative should we prioritize for maximum impact in Q4?"
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "Wojak"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 837,
+    "type": "word",
+    "start": 7,
+    "end": 12,
+    "value": "given"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1187,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1375,
+    "type": "word",
+    "start": 13,
+    "end": 18,
+    "value": "these"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1725,
+    "type": "word",
+    "start": 19,
+    "end": 30,
+    "value": "constraints"
+  },
+  {
+    "time": 1725,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1812,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2275,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2387,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2550,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2887,
+    "type": "word",
+    "start": 32,
+    "end": 37,
+    "value": "which"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2950,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3125,
+    "type": "word",
+    "start": 38,
+    "end": 48,
+    "value": "initiative"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3187,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3312,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3375,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3500,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3562,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3662,
+    "type": "word",
+    "start": 49,
+    "end": 55,
+    "value": "should"
+  },
+  {
+    "time": 3662,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3737,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3875,
+    "type": "word",
+    "start": 56,
+    "end": 58,
+    "value": "we"
+  },
+  {
+    "time": 3875,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3887,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4000,
+    "type": "word",
+    "start": 59,
+    "end": 69,
+    "value": "prioritize"
+  },
+  {
+    "time": 4000,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4037,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4125,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4250,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4312,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4412,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4437,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4587,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4750,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4812,
+    "type": "word",
+    "start": 70,
+    "end": 73,
+    "value": "for"
+  },
+  {
+    "time": 4812,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4875,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4950,
+    "type": "word",
+    "start": 74,
+    "end": 81,
+    "value": "maximum"
+  },
+  {
+    "time": 4950,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5075,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5150,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5237,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5262,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5312,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5375,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5462,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5625,
+    "type": "word",
+    "start": 82,
+    "end": 88,
+    "value": "impact"
+  },
+  {
+    "time": 5625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5700,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5850,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5875,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6025,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6125,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6175,
+    "type": "word",
+    "start": 89,
+    "end": 91,
+    "value": "in"
+  },
+  {
+    "time": 6175,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6200,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6325,
+    "type": "word",
+    "start": 92,
+    "end": 94,
+    "value": "Q4"
+  },
+  {
+    "time": 6325,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6437,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6500,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6637,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6787,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 7187,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

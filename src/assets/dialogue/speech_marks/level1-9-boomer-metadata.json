@@ -3,15 +3,15 @@
     "time": 0,
     "type": "sentence",
     "start": 0,
-    "end": 18,
-    "value": "Let’s do it now."
+    "end": 16,
+    "value": "Let's do it now."
   },
   {
     "time": 187,
     "type": "word",
     "start": 0,
-    "end": 7,
-    "value": "Let’s"
+    "end": 5,
+    "value": "Let's"
   },
   {
     "time": 187,
@@ -36,8 +36,8 @@
   {
     "time": 562,
     "type": "word",
-    "start": 8,
-    "end": 10,
+    "start": 6,
+    "end": 8,
     "value": "do"
   },
   {
@@ -53,8 +53,8 @@
   {
     "time": 687,
     "type": "word",
-    "start": 11,
-    "end": 13,
+    "start": 9,
+    "end": 11,
     "value": "it"
   },
   {
@@ -70,8 +70,8 @@
   {
     "time": 912,
     "type": "word",
-    "start": 14,
-    "end": 17,
+    "start": 12,
+    "end": 15,
     "value": "now"
   },
   {
@@ -92,15 +92,15 @@
   {
     "time": 1930,
     "type": "sentence",
-    "start": 19,
-    "end": 64,
+    "start": 17,
+    "end": 62,
     "value": "No point deferring numbers we all saw coming."
   },
   {
     "time": 2117,
     "type": "word",
-    "start": 19,
-    "end": 21,
+    "start": 17,
+    "end": 19,
     "value": "No"
   },
   {
@@ -116,8 +116,8 @@
   {
     "time": 2342,
     "type": "word",
-    "start": 22,
-    "end": 27,
+    "start": 20,
+    "end": 25,
     "value": "point"
   },
   {
@@ -143,8 +143,8 @@
   {
     "time": 2642,
     "type": "word",
-    "start": 28,
-    "end": 37,
+    "start": 26,
+    "end": 35,
     "value": "deferring"
   },
   {
@@ -185,8 +185,8 @@
   {
     "time": 3242,
     "type": "word",
-    "start": 38,
-    "end": 45,
+    "start": 36,
+    "end": 43,
     "value": "numbers"
   },
   {
@@ -222,8 +222,8 @@
   {
     "time": 3780,
     "type": "word",
-    "start": 46,
-    "end": 48,
+    "start": 44,
+    "end": 46,
     "value": "we"
   },
   {
@@ -239,8 +239,8 @@
   {
     "time": 4017,
     "type": "word",
-    "start": 49,
-    "end": 52,
+    "start": 47,
+    "end": 50,
     "value": "all"
   },
   {
@@ -256,8 +256,8 @@
   {
     "time": 4255,
     "type": "word",
-    "start": 53,
-    "end": 56,
+    "start": 51,
+    "end": 54,
     "value": "saw"
   },
   {
@@ -273,8 +273,8 @@
   {
     "time": 4567,
     "type": "word",
-    "start": 57,
-    "end": 63,
+    "start": 55,
+    "end": 61,
     "value": "coming"
   },
   {

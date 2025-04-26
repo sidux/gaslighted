@@ -1,0 +1,433 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 95,
+    "value": "We're delaying international expansion to focus on deepening North American market penetration."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 83,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 146,
+    "type": "word",
+    "start": 6,
+    "end": 14,
+    "value": "delaying"
+  },
+  {
+    "time": 146,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 243,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 348,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 431,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 473,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 559,
+    "type": "word",
+    "start": 15,
+    "end": 28,
+    "value": "international"
+  },
+  {
+    "time": 559,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 640,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 689,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 763,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 792,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 847,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 941,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1074,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1117,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1157,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1239,
+    "type": "word",
+    "start": 29,
+    "end": 38,
+    "value": "expansion"
+  },
+  {
+    "time": 1239,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1287,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1348,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1432,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1502,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1592,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1653,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1826,
+    "type": "word",
+    "start": 39,
+    "end": 41,
+    "value": "to"
+  },
+  {
+    "time": 1826,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1889,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1920,
+    "type": "word",
+    "start": 42,
+    "end": 47,
+    "value": "focus"
+  },
+  {
+    "time": 1920,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2035,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2140,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2216,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2273,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2367,
+    "type": "word",
+    "start": 48,
+    "end": 50,
+    "value": "on"
+  },
+  {
+    "time": 2367,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2442,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2520,
+    "type": "word",
+    "start": 51,
+    "end": 60,
+    "value": "deepening"
+  },
+  {
+    "time": 2520,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2601,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2704,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2782,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2803,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2854,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2900,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2997,
+    "type": "word",
+    "start": 61,
+    "end": 66,
+    "value": "North"
+  },
+  {
+    "time": 2997,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3036,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3145,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3228,
+    "type": "word",
+    "start": 67,
+    "end": 75,
+    "value": "American"
+  },
+  {
+    "time": 3228,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3265,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3324,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3359,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3438,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3481,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3560,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3596,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3660,
+    "type": "word",
+    "start": 76,
+    "end": 82,
+    "value": "market"
+  },
+  {
+    "time": 3660,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3710,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3841,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3935,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3984,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4030,
+    "type": "word",
+    "start": 83,
+    "end": 94,
+    "value": "penetration"
+  },
+  {
+    "time": 4030,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4140,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4205,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4268,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4319,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4417,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4480,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4579,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4685,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4827,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

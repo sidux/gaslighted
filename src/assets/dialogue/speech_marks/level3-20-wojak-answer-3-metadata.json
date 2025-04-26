@@ -1,0 +1,312 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 72,
+    "value": "We're focusing on customer retention through enhanced service offerings."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 70,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 139,
+    "type": "word",
+    "start": 6,
+    "end": 14,
+    "value": "focusing"
+  },
+  {
+    "time": 139,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 259,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 353,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 429,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 469,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 564,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 604,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 672,
+    "type": "word",
+    "start": 15,
+    "end": 17,
+    "value": "on"
+  },
+  {
+    "time": 672,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 834,
+    "type": "word",
+    "start": 18,
+    "end": 26,
+    "value": "customer"
+  },
+  {
+    "time": 834,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 925,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1005,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1090,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1172,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1229,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1257,
+    "type": "word",
+    "start": 27,
+    "end": 36,
+    "value": "retention"
+  },
+  {
+    "time": 1257,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1368,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1405,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1527,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1584,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1642,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1752,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1838,
+    "type": "word",
+    "start": 37,
+    "end": 44,
+    "value": "through"
+  },
+  {
+    "time": 1838,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1928,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1986,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2080,
+    "type": "word",
+    "start": 45,
+    "end": 53,
+    "value": "enhanced"
+  },
+  {
+    "time": 2080,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2128,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2186,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2254,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2340,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2401,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2465,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2504,
+    "type": "word",
+    "start": 54,
+    "end": 61,
+    "value": "service"
+  },
+  {
+    "time": 2504,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2573,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2664,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2711,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2765,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2867,
+    "type": "word",
+    "start": 62,
+    "end": 71,
+    "value": "offerings"
+  },
+  {
+    "time": 2867,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2939,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3021,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3062,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3157,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3206,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3303,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3445,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

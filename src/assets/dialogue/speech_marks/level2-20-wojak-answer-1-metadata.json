@@ -1,0 +1,331 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 72,
+    "value": "We'll be hiring additional support staff to handle the increased volume."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We'll"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 60,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 141,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 214,
+    "type": "word",
+    "start": 6,
+    "end": 8,
+    "value": "be"
+  },
+  {
+    "time": 214,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 281,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 363,
+    "type": "word",
+    "start": 9,
+    "end": 15,
+    "value": "hiring"
+  },
+  {
+    "time": 363,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 476,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 581,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 611,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 665,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 704,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 770,
+    "type": "word",
+    "start": 16,
+    "end": 26,
+    "value": "additional"
+  },
+  {
+    "time": 770,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 800,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 862,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 921,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1046,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1084,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1192,
+    "type": "word",
+    "start": 27,
+    "end": 34,
+    "value": "support"
+  },
+  {
+    "time": 1192,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1298,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1329,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1449,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1577,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1624,
+    "type": "word",
+    "start": 35,
+    "end": 40,
+    "value": "staff"
+  },
+  {
+    "time": 1624,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1714,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1754,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1916,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2003,
+    "type": "word",
+    "start": 41,
+    "end": 43,
+    "value": "to"
+  },
+  {
+    "time": 2003,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2085,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2138,
+    "type": "word",
+    "start": 44,
+    "end": 50,
+    "value": "handle"
+  },
+  {
+    "time": 2138,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2244,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2325,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2364,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2395,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2498,
+    "type": "word",
+    "start": 51,
+    "end": 54,
+    "value": "the"
+  },
+  {
+    "time": 2498,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2545,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2621,
+    "type": "word",
+    "start": 55,
+    "end": 64,
+    "value": "increased"
+  },
+  {
+    "time": 2621,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2649,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2717,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2805,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2877,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2931,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3037,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3073,
+    "type": "word",
+    "start": 65,
+    "end": 71,
+    "value": "volume"
+  },
+  {
+    "time": 3073,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3132,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3164,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3260,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3366,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3445,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3592,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,515 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 108,
+    "value": "We're taking a distributed approach, entering multiple markets simultaneously to accelerate global presence."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 70,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 154,
+    "type": "word",
+    "start": 6,
+    "end": 12,
+    "value": "taking"
+  },
+  {
+    "time": 154,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 248,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 331,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 422,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 464,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 528,
+    "type": "word",
+    "start": 13,
+    "end": 14,
+    "value": "a"
+  },
+  {
+    "time": 528,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 564,
+    "type": "word",
+    "start": 15,
+    "end": 26,
+    "value": "distributed"
+  },
+  {
+    "time": 564,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 632,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 671,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 764,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 834,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 869,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 898,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 946,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1010,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1050,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1091,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1130,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1171,
+    "type": "word",
+    "start": 27,
+    "end": 35,
+    "value": "approach"
+  },
+  {
+    "time": 1171,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1204,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1319,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1399,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1483,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1717,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1911,
+    "type": "word",
+    "start": 37,
+    "end": 45,
+    "value": "entering"
+  },
+  {
+    "time": 1911,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1998,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2040,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2103,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2158,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2205,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2246,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2313,
+    "type": "word",
+    "start": 46,
+    "end": 54,
+    "value": "multiple"
+  },
+  {
+    "time": 2313,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2383,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2407,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2489,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2537,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2591,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2630,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2669,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2719,
+    "type": "word",
+    "start": 55,
+    "end": 62,
+    "value": "markets"
+  },
+  {
+    "time": 2719,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2820,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2940,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3013,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3051,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3102,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3166,
+    "type": "word",
+    "start": 63,
+    "end": 77,
+    "value": "simultaneously"
+  },
+  {
+    "time": 3166,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3269,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3302,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3358,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3435,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3530,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3629,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3683,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3743,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3771,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3891,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3953,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4039,
+    "type": "word",
+    "start": 78,
+    "end": 80,
+    "value": "to"
+  },
+  {
+    "time": 4039,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4143,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4218,
+    "type": "word",
+    "start": 81,
+    "end": 91,
+    "value": "accelerate"
+  },
+  {
+    "time": 4218,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4261,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4343,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4459,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4566,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4601,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4674,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4781,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4839,
+    "type": "word",
+    "start": 92,
+    "end": 98,
+    "value": "global"
+  },
+  {
+    "time": 4839,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4911,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4999,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5038,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5111,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5140,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5218,
+    "type": "word",
+    "start": 99,
+    "end": 107,
+    "value": "presence"
+  },
+  {
+    "time": 5218,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5301,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5354,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5401,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5481,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5620,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5819,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

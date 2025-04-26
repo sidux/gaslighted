@@ -47,8 +47,8 @@
     "time": 1430,
     "type": "sentence",
     "start": 8,
-    "end": 119,
-    "value": "Just a reminder to keep side conversations in the chat — and let’s avoid talking over each other this time."
+    "end": 117,
+    "value": "Just a reminder to keep side conversations in the chat — and let's avoid talking over each other this time."
   },
   {
     "time": 1617,
@@ -336,8 +336,8 @@
     "time": 5142,
     "type": "word",
     "start": 71,
-    "end": 78,
-    "value": "let’s"
+    "end": 76,
+    "value": "let's"
   },
   {
     "time": 5142,
@@ -362,8 +362,8 @@
   {
     "time": 5380,
     "type": "word",
-    "start": 79,
-    "end": 84,
+    "start": 77,
+    "end": 82,
     "value": "avoid"
   },
   {
@@ -389,8 +389,8 @@
   {
     "time": 5992,
     "type": "word",
-    "start": 85,
-    "end": 92,
+    "start": 83,
+    "end": 90,
     "value": "talking"
   },
   {
@@ -421,8 +421,8 @@
   {
     "time": 6555,
     "type": "word",
-    "start": 93,
-    "end": 97,
+    "start": 91,
+    "end": 95,
     "value": "over"
   },
   {
@@ -448,8 +448,8 @@
   {
     "time": 6742,
     "type": "word",
-    "start": 98,
-    "end": 102,
+    "start": 96,
+    "end": 100,
     "value": "each"
   },
   {
@@ -465,8 +465,8 @@
   {
     "time": 7055,
     "type": "word",
-    "start": 103,
-    "end": 108,
+    "start": 101,
+    "end": 106,
     "value": "other"
   },
   {
@@ -487,8 +487,8 @@
   {
     "time": 7305,
     "type": "word",
-    "start": 109,
-    "end": 113,
+    "start": 107,
+    "end": 111,
     "value": "this"
   },
   {
@@ -509,8 +509,8 @@
   {
     "time": 7617,
     "type": "word",
-    "start": 114,
-    "end": 118,
+    "start": 112,
+    "end": 116,
     "value": "time"
   },
   {

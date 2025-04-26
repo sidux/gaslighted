@@ -1,0 +1,381 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 82,
+    "value": "Market competition has increased driving up advertising costs across all channels."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "Market"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 66,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 172,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 245,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 293,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 346,
+    "type": "word",
+    "start": 7,
+    "end": 18,
+    "value": "competition"
+  },
+  {
+    "time": 346,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 468,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 534,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 580,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 623,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 665,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 764,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 814,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 935,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1025,
+    "type": "word",
+    "start": 19,
+    "end": 22,
+    "value": "has"
+  },
+  {
+    "time": 1025,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1115,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1148,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1232,
+    "type": "word",
+    "start": 23,
+    "end": 32,
+    "value": "increased"
+  },
+  {
+    "time": 1232,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1274,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1352,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1442,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1514,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1569,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1684,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1716,
+    "type": "word",
+    "start": 33,
+    "end": 40,
+    "value": "driving"
+  },
+  {
+    "time": 1716,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1748,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1807,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1919,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1963,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2007,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2086,
+    "type": "word",
+    "start": 41,
+    "end": 43,
+    "value": "up"
+  },
+  {
+    "time": 2086,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2161,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2271,
+    "type": "word",
+    "start": 44,
+    "end": 55,
+    "value": "advertising"
+  },
+  {
+    "time": 2271,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2353,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2392,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2459,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2493,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2616,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2731,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2813,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2840,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2930,
+    "type": "word",
+    "start": 56,
+    "end": 61,
+    "value": "costs"
+  },
+  {
+    "time": 2930,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3026,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3114,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3189,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3270,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3330,
+    "type": "word",
+    "start": 62,
+    "end": 68,
+    "value": "across"
+  },
+  {
+    "time": 3330,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3383,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3477,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3534,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3585,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3690,
+    "type": "word",
+    "start": 69,
+    "end": 72,
+    "value": "all"
+  },
+  {
+    "time": 3690,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3768,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3832,
+    "type": "word",
+    "start": 73,
+    "end": 81,
+    "value": "channels"
+  },
+  {
+    "time": 3832,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3940,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4011,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4052,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4187,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4352,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

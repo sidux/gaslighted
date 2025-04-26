@@ -1,0 +1,399 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 30,
+    "value": "With less budget, I might add."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "With"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 89,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 117,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 198,
+    "type": "word",
+    "start": 5,
+    "end": 9,
+    "value": "less"
+  },
+  {
+    "time": 198,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 327,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 402,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 533,
+    "type": "word",
+    "start": 10,
+    "end": 16,
+    "value": "budget"
+  },
+  {
+    "time": 533,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 629,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 725,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 830,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 904,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1025,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1219,
+    "type": "word",
+    "start": 18,
+    "end": 19,
+    "value": "I"
+  },
+  {
+    "time": 1219,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1282,
+    "type": "word",
+    "start": 20,
+    "end": 25,
+    "value": "might"
+  },
+  {
+    "time": 1282,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1368,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1481,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1530,
+    "type": "word",
+    "start": 26,
+    "end": 29,
+    "value": "add"
+  },
+  {
+    "time": 1530,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1772,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1855,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2242,
+    "type": "sentence",
+    "start": 31,
+    "end": 80,
+    "value": "We need to optimize spend across all departments."
+  },
+  {
+    "time": 2248,
+    "type": "word",
+    "start": 31,
+    "end": 33,
+    "value": "We"
+  },
+  {
+    "time": 2248,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2322,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2396,
+    "type": "word",
+    "start": 34,
+    "end": 38,
+    "value": "need"
+  },
+  {
+    "time": 2396,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2495,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2605,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2649,
+    "type": "word",
+    "start": 39,
+    "end": 41,
+    "value": "to"
+  },
+  {
+    "time": 2649,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2727,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2824,
+    "type": "word",
+    "start": 42,
+    "end": 50,
+    "value": "optimize"
+  },
+  {
+    "time": 2824,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2961,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3017,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3088,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3141,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3211,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3340,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3410,
+    "type": "word",
+    "start": 51,
+    "end": 56,
+    "value": "spend"
+  },
+  {
+    "time": 3410,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3511,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3595,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3655,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3724,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3766,
+    "type": "word",
+    "start": 57,
+    "end": 63,
+    "value": "across"
+  },
+  {
+    "time": 3766,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3813,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3951,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4025,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4093,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4228,
+    "type": "word",
+    "start": 64,
+    "end": 67,
+    "value": "all"
+  },
+  {
+    "time": 4228,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 4401,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4483,
+    "type": "word",
+    "start": 68,
+    "end": 79,
+    "value": "departments"
+  },
+  {
+    "time": 4483,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4529,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4557,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4684,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4784,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4811,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4845,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4910,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4953,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5020,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5058,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5198,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

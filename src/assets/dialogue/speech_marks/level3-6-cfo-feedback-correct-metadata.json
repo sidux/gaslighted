@@ -1,0 +1,685 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 12,
+    "value": "Smart pivot."
+  },
+  {
+    "time": 25,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "Smart"
+  },
+  {
+    "time": 25,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 150,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 275,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 375,
+    "type": "word",
+    "start": 6,
+    "end": 11,
+    "value": "pivot"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 512,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 650,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1167,
+    "type": "sentence",
+    "start": 13,
+    "end": 84,
+    "value": "The margin improvement more than compensates for the revenue mix shift."
+  },
+  {
+    "time": 1192,
+    "type": "word",
+    "start": 13,
+    "end": 16,
+    "value": "The"
+  },
+  {
+    "time": 1192,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1255,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1292,
+    "type": "word",
+    "start": 17,
+    "end": 23,
+    "value": "margin"
+  },
+  {
+    "time": 1292,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1405,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1492,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1530,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1617,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1642,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1692,
+    "type": "word",
+    "start": 24,
+    "end": 35,
+    "value": "improvement"
+  },
+  {
+    "time": 1692,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1730,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1805,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1905,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1967,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2005,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2067,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2117,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2155,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2180,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2205,
+    "type": "word",
+    "start": 36,
+    "end": 40,
+    "value": "more"
+  },
+  {
+    "time": 2205,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2267,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2355,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2405,
+    "type": "word",
+    "start": 41,
+    "end": 45,
+    "value": "than"
+  },
+  {
+    "time": 2405,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2467,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2492,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2555,
+    "type": "word",
+    "start": 46,
+    "end": 57,
+    "value": "compensates"
+  },
+  {
+    "time": 2555,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2655,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2755,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2780,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2830,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2855,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2905,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3017,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3117,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3167,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3217,
+    "type": "word",
+    "start": 58,
+    "end": 61,
+    "value": "for"
+  },
+  {
+    "time": 3217,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3280,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3305,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3330,
+    "type": "word",
+    "start": 62,
+    "end": 65,
+    "value": "the"
+  },
+  {
+    "time": 3330,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3367,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3417,
+    "type": "word",
+    "start": 66,
+    "end": 73,
+    "value": "revenue"
+  },
+  {
+    "time": 3417,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3617,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3655,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3705,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3767,
+    "type": "word",
+    "start": 74,
+    "end": 77,
+    "value": "mix"
+  },
+  {
+    "time": 3767,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3867,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3917,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3967,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4005,
+    "type": "word",
+    "start": 78,
+    "end": 83,
+    "value": "shift"
+  },
+  {
+    "time": 4005,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4142,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4255,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4467,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4897,
+    "type": "sentence",
+    "start": 85,
+    "end": 139,
+    "value": "We should incorporate this into our revised forecasts."
+  },
+  {
+    "time": 4922,
+    "type": "word",
+    "start": 85,
+    "end": 87,
+    "value": "We"
+  },
+  {
+    "time": 4922,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4997,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5035,
+    "type": "word",
+    "start": 88,
+    "end": 94,
+    "value": "should"
+  },
+  {
+    "time": 5035,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5147,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5185,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5235,
+    "type": "word",
+    "start": 95,
+    "end": 106,
+    "value": "incorporate"
+  },
+  {
+    "time": 5235,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5285,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5347,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5447,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5497,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5535,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5647,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5735,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5785,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5835,
+    "type": "word",
+    "start": 107,
+    "end": 111,
+    "value": "this"
+  },
+  {
+    "time": 5835,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5885,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5935,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6047,
+    "type": "word",
+    "start": 112,
+    "end": 116,
+    "value": "into"
+  },
+  {
+    "time": 6047,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6097,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6135,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6172,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6210,
+    "type": "word",
+    "start": 117,
+    "end": 120,
+    "value": "our"
+  },
+  {
+    "time": 6210,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6310,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6347,
+    "type": "word",
+    "start": 121,
+    "end": 128,
+    "value": "revised"
+  },
+  {
+    "time": 6347,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6435,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6472,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6560,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6710,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6760,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6797,
+    "type": "word",
+    "start": 129,
+    "end": 138,
+    "value": "forecasts"
+  },
+  {
+    "time": 6797,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6897,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6985,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 7035,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7122,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7285,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7360,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7410,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7510,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

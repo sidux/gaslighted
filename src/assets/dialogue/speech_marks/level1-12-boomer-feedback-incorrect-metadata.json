@@ -3,8 +3,8 @@
     "time": 0,
     "type": "sentence",
     "start": 0,
-    "end": 24,
-    "value": "No — that wasn’t it."
+    "end": 22,
+    "value": "No — that wasn't it."
   },
   {
     "time": 137,
@@ -54,8 +54,8 @@
     "time": 1150,
     "type": "word",
     "start": 12,
-    "end": 20,
-    "value": "wasn’t"
+    "end": 18,
+    "value": "wasn't"
   },
   {
     "time": 1150,
@@ -85,8 +85,8 @@
   {
     "time": 1625,
     "type": "word",
-    "start": 21,
-    "end": 23,
+    "start": 19,
+    "end": 21,
     "value": "it"
   },
   {
@@ -107,15 +107,15 @@
   {
     "time": 2492,
     "type": "sentence",
-    "start": 25,
-    "end": 71,
+    "start": 23,
+    "end": 69,
     "value": "Please review your notes before the next sync."
   },
   {
     "time": 2617,
     "type": "word",
-    "start": 25,
-    "end": 31,
+    "start": 23,
+    "end": 29,
     "value": "Please"
   },
   {
@@ -141,8 +141,8 @@
   {
     "time": 2992,
     "type": "word",
-    "start": 32,
-    "end": 38,
+    "start": 30,
+    "end": 36,
     "value": "review"
   },
   {
@@ -173,8 +173,8 @@
   {
     "time": 3405,
     "type": "word",
-    "start": 39,
-    "end": 43,
+    "start": 37,
+    "end": 41,
     "value": "your"
   },
   {
@@ -190,8 +190,8 @@
   {
     "time": 3555,
     "type": "word",
-    "start": 44,
-    "end": 49,
+    "start": 42,
+    "end": 47,
     "value": "notes"
   },
   {
@@ -217,8 +217,8 @@
   {
     "time": 3980,
     "type": "word",
-    "start": 50,
-    "end": 56,
+    "start": 48,
+    "end": 54,
     "value": "before"
   },
   {
@@ -244,8 +244,8 @@
   {
     "time": 4367,
     "type": "word",
-    "start": 57,
-    "end": 60,
+    "start": 55,
+    "end": 58,
     "value": "the"
   },
   {
@@ -261,8 +261,8 @@
   {
     "time": 4530,
     "type": "word",
-    "start": 61,
-    "end": 65,
+    "start": 59,
+    "end": 63,
     "value": "next"
   },
   {
@@ -293,8 +293,8 @@
   {
     "time": 4955,
     "type": "word",
-    "start": 66,
-    "end": 70,
+    "start": 64,
+    "end": 68,
     "value": "sync"
   },
   {

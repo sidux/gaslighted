@@ -1,0 +1,580 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 48,
+    "value": "I think we've covered the major strategic areas."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 0,
+    "end": 1,
+    "value": "I"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 250,
+    "type": "word",
+    "start": 2,
+    "end": 7,
+    "value": "think"
+  },
+  {
+    "time": 250,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 375,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 475,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 575,
+    "type": "word",
+    "start": 8,
+    "end": 13,
+    "value": "we've"
+  },
+  {
+    "time": 575,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 600,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 14,
+    "end": 21,
+    "value": "covered"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1062,
+    "type": "word",
+    "start": 22,
+    "end": 25,
+    "value": "the"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1125,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1200,
+    "type": "word",
+    "start": 26,
+    "end": 31,
+    "value": "major"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1437,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1625,
+    "type": "word",
+    "start": 32,
+    "end": 41,
+    "value": "strategic"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1637,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1725,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1850,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1937,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2187,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2425,
+    "type": "word",
+    "start": 42,
+    "end": 47,
+    "value": "areas"
+  },
+  {
+    "time": 2425,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2550,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3212,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3680,
+    "type": "sentence",
+    "start": 49,
+    "end": 122,
+    "value": "Wojak, do you have any final points before we move to the closed session?"
+  },
+  {
+    "time": 3817,
+    "type": "word",
+    "start": 49,
+    "end": 54,
+    "value": "Wojak"
+  },
+  {
+    "time": 3817,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3917,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4017,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4180,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4242,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4392,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4517,
+    "type": "word",
+    "start": 56,
+    "end": 58,
+    "value": "do"
+  },
+  {
+    "time": 4517,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4742,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4880,
+    "type": "word",
+    "start": 59,
+    "end": 62,
+    "value": "you"
+  },
+  {
+    "time": 4880,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4930,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5055,
+    "type": "word",
+    "start": 63,
+    "end": 67,
+    "value": "have"
+  },
+  {
+    "time": 5055,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5117,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5167,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5242,
+    "type": "word",
+    "start": 68,
+    "end": 71,
+    "value": "any"
+  },
+  {
+    "time": 5242,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5305,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5355,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5517,
+    "type": "word",
+    "start": 72,
+    "end": 77,
+    "value": "final"
+  },
+  {
+    "time": 5517,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5617,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5717,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5805,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5942,
+    "type": "word",
+    "start": 78,
+    "end": 84,
+    "value": "points"
+  },
+  {
+    "time": 5942,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5955,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6067,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6142,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6192,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6317,
+    "type": "word",
+    "start": 85,
+    "end": 91,
+    "value": "before"
+  },
+  {
+    "time": 6317,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6367,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6467,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6567,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 6742,
+    "type": "word",
+    "start": 92,
+    "end": 94,
+    "value": "we"
+  },
+  {
+    "time": 6742,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6805,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6892,
+    "type": "word",
+    "start": 95,
+    "end": 99,
+    "value": "move"
+  },
+  {
+    "time": 6892,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6992,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 7167,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 7342,
+    "type": "word",
+    "start": 100,
+    "end": 102,
+    "value": "to"
+  },
+  {
+    "time": 7342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7392,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7442,
+    "type": "word",
+    "start": 103,
+    "end": 106,
+    "value": "the"
+  },
+  {
+    "time": 7442,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 7492,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7567,
+    "type": "word",
+    "start": 107,
+    "end": 113,
+    "value": "closed"
+  },
+  {
+    "time": 7567,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7680,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7717,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7867,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7967,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8117,
+    "type": "word",
+    "start": 114,
+    "end": 121,
+    "value": "session"
+  },
+  {
+    "time": 8117,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 8180,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 8305,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 8430,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8755,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

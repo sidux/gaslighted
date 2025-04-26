@@ -224,8 +224,8 @@
     "time": 3374,
     "type": "sentence",
     "start": 49,
-    "end": 117,
-    "value": "If a ticket sits unresolved for more than 24 hours, it’s too late."
+    "end": 115,
+    "value": "If a ticket sits unresolved for more than 24 hours, it's too late."
   },
   {
     "time": 3381,
@@ -516,8 +516,8 @@
     "time": 6865,
     "type": "word",
     "start": 101,
-    "end": 107,
-    "value": "it’s"
+    "end": 105,
+    "value": "it's"
   },
   {
     "time": 6865,
@@ -537,8 +537,8 @@
   {
     "time": 7105,
     "type": "word",
-    "start": 108,
-    "end": 111,
+    "start": 106,
+    "end": 109,
     "value": "too"
   },
   {
@@ -554,8 +554,8 @@
   {
     "time": 7307,
     "type": "word",
-    "start": 112,
-    "end": 116,
+    "start": 110,
+    "end": 114,
     "value": "late"
   },
   {

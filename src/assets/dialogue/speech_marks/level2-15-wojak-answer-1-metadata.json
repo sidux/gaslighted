@@ -1,0 +1,304 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 66,
+    "value": "The UI redesign of the dashboard, which improved session duration."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 34,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 66,
+    "type": "word",
+    "start": 4,
+    "end": 6,
+    "value": "UI"
+  },
+  {
+    "time": 66,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 204,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 307,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 403,
+    "type": "word",
+    "start": 7,
+    "end": 15,
+    "value": "redesign"
+  },
+  {
+    "time": 403,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 530,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 596,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 637,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 677,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 765,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 897,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 949,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "of"
+  },
+  {
+    "time": 949,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1002,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1049,
+    "type": "word",
+    "start": 19,
+    "end": 22,
+    "value": "the"
+  },
+  {
+    "time": 1049,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1095,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1137,
+    "type": "word",
+    "start": 23,
+    "end": 32,
+    "value": "dashboard"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1240,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1330,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1436,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1508,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1658,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1957,
+    "type": "word",
+    "start": 34,
+    "end": 39,
+    "value": "which"
+  },
+  {
+    "time": 1957,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2043,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2076,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2178,
+    "type": "word",
+    "start": 40,
+    "end": 48,
+    "value": "improved"
+  },
+  {
+    "time": 2178,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2223,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2295,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2380,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2451,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2509,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2566,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2602,
+    "type": "word",
+    "start": 49,
+    "end": 56,
+    "value": "session"
+  },
+  {
+    "time": 2602,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2695,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2789,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2908,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2981,
+    "type": "word",
+    "start": 57,
+    "end": 65,
+    "value": "duration"
+  },
+  {
+    "time": 2981,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3036,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3093,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3149,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3241,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3329,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3439,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3589,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

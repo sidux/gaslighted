@@ -1,0 +1,364 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 76,
+    "value": "Our enterprise product roadmap encountered delays that impacted close rates."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "Our"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 155,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 203,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 254,
+    "type": "word",
+    "start": 4,
+    "end": 14,
+    "value": "enterprise"
+  },
+  {
+    "time": 254,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 345,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 394,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 434,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 476,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 568,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 615,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 739,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 822,
+    "type": "word",
+    "start": 15,
+    "end": 22,
+    "value": "product"
+  },
+  {
+    "time": 822,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 916,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 990,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1026,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1069,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1144,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1249,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1300,
+    "type": "word",
+    "start": 23,
+    "end": 30,
+    "value": "roadmap"
+  },
+  {
+    "time": 1300,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1411,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1494,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1556,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1626,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1708,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1774,
+    "type": "word",
+    "start": 31,
+    "end": 42,
+    "value": "encountered"
+  },
+  {
+    "time": 1774,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1813,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1880,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1998,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2110,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2147,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2209,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2241,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2293,
+    "type": "word",
+    "start": 43,
+    "end": 49,
+    "value": "delays"
+  },
+  {
+    "time": 2293,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2341,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2378,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2486,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2651,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2740,
+    "type": "word",
+    "start": 50,
+    "end": 54,
+    "value": "that"
+  },
+  {
+    "time": 2740,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2806,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2868,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2901,
+    "type": "word",
+    "start": 55,
+    "end": 63,
+    "value": "impacted"
+  },
+  {
+    "time": 2901,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2945,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3000,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3112,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3192,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3277,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3341,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3382,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3443,
+    "type": "word",
+    "start": 64,
+    "end": 69,
+    "value": "close"
+  },
+  {
+    "time": 3443,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3563,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3619,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3704,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3808,
+    "type": "word",
+    "start": 70,
+    "end": 75,
+    "value": "rates"
+  },
+  {
+    "time": 3808,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3894,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 4010,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4106,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4273,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,519 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 51,
+    "value": "I need concrete numbers for the board presentation."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 1,
+    "value": "I"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 115,
+    "type": "word",
+    "start": 2,
+    "end": 6,
+    "value": "need"
+  },
+  {
+    "time": 115,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 215,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 325,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 376,
+    "type": "word",
+    "start": 7,
+    "end": 15,
+    "value": "concrete"
+  },
+  {
+    "time": 376,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 528,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 612,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 675,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 780,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 819,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 918,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 962,
+    "type": "word",
+    "start": 16,
+    "end": 23,
+    "value": "numbers"
+  },
+  {
+    "time": 962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1010,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1079,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1138,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1178,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1254,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1349,
+    "type": "word",
+    "start": 24,
+    "end": 27,
+    "value": "for"
+  },
+  {
+    "time": 1349,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1407,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1434,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1465,
+    "type": "word",
+    "start": 28,
+    "end": 31,
+    "value": "the"
+  },
+  {
+    "time": 1465,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1519,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1572,
+    "type": "word",
+    "start": 32,
+    "end": 37,
+    "value": "board"
+  },
+  {
+    "time": 1572,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1666,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1790,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1852,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1899,
+    "type": "word",
+    "start": 38,
+    "end": 50,
+    "value": "presentation"
+  },
+  {
+    "time": 1899,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1991,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2050,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2079,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2180,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2285,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2353,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2473,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2603,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2798,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3184,
+    "type": "sentence",
+    "start": 52,
+    "end": 112,
+    "value": "Make sure all your projections are backed by data this time."
+  },
+  {
+    "time": 3191,
+    "type": "word",
+    "start": 52,
+    "end": 56,
+    "value": "Make"
+  },
+  {
+    "time": 3191,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3322,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3434,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3505,
+    "type": "word",
+    "start": 57,
+    "end": 61,
+    "value": "sure"
+  },
+  {
+    "time": 3505,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3648,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3699,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3765,
+    "type": "word",
+    "start": 62,
+    "end": 65,
+    "value": "all"
+  },
+  {
+    "time": 3765,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3904,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3954,
+    "type": "word",
+    "start": 66,
+    "end": 70,
+    "value": "your"
+  },
+  {
+    "time": 3954,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4042,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4102,
+    "type": "word",
+    "start": 71,
+    "end": 82,
+    "value": "projections"
+  },
+  {
+    "time": 4102,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4231,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4261,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4290,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4390,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4448,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4523,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4637,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4749,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4813,
+    "type": "word",
+    "start": 83,
+    "end": 86,
+    "value": "are"
+  },
+  {
+    "time": 4813,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4881,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4921,
+    "type": "word",
+    "start": 87,
+    "end": 93,
+    "value": "backed"
+  },
+  {
+    "time": 4921,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5013,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5140,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5214,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5268,
+    "type": "word",
+    "start": 94,
+    "end": 96,
+    "value": "by"
+  },
+  {
+    "time": 5268,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5328,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5420,
+    "type": "word",
+    "start": 97,
+    "end": 101,
+    "value": "data"
+  },
+  {
+    "time": 5420,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5518,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5631,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5665,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5786,
+    "type": "word",
+    "start": 102,
+    "end": 106,
+    "value": "this"
+  },
+  {
+    "time": 5786,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5872,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5932,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6035,
+    "type": "word",
+    "start": 107,
+    "end": 111,
+    "value": "time"
+  },
+  {
+    "time": 6035,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6124,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6343,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6469,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,334 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 64,
+    "value": "The sales team experienced higher than projected turnover in Q3."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 44,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 89,
+    "type": "word",
+    "start": 4,
+    "end": 9,
+    "value": "sales"
+  },
+  {
+    "time": 89,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 218,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 314,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 392,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 481,
+    "type": "word",
+    "start": 10,
+    "end": 14,
+    "value": "team"
+  },
+  {
+    "time": 481,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 569,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 644,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 700,
+    "type": "word",
+    "start": 15,
+    "end": 26,
+    "value": "experienced"
+  },
+  {
+    "time": 700,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 743,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 818,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 907,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 970,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1033,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1121,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1179,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1207,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1260,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1350,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1389,
+    "type": "word",
+    "start": 27,
+    "end": 33,
+    "value": "higher"
+  },
+  {
+    "time": 1389,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1480,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1593,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1644,
+    "type": "word",
+    "start": 34,
+    "end": 38,
+    "value": "than"
+  },
+  {
+    "time": 1644,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1710,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1829,
+    "type": "word",
+    "start": 39,
+    "end": 48,
+    "value": "projected"
+  },
+  {
+    "time": 1829,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1905,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1933,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1964,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2062,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2119,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2200,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2253,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2299,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2371,
+    "type": "word",
+    "start": 49,
+    "end": 57,
+    "value": "turnover"
+  },
+  {
+    "time": 2371,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2472,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2570,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2635,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2749,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2824,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2871,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2926,
+    "type": "word",
+    "start": 58,
+    "end": 60,
+    "value": "in"
+  },
+  {
+    "time": 2926,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2986,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3054,
+    "type": "word",
+    "start": 61,
+    "end": 63,
+    "value": "Q3"
+  },
+  {
+    "time": 3054,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3169,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3283,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3319,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3448,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3541,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3719,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

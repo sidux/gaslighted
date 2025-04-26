@@ -1,0 +1,496 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 113,
+    "value": "We're shifting focus to strategic partnerships that could lead to acquisition rather than further funding rounds."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 83,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 136,
+    "type": "word",
+    "start": 6,
+    "end": 14,
+    "value": "shifting"
+  },
+  {
+    "time": 136,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 270,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 314,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 384,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 446,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 486,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 561,
+    "type": "word",
+    "start": 15,
+    "end": 20,
+    "value": "focus"
+  },
+  {
+    "time": 561,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 684,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 778,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 854,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 903,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1004,
+    "type": "word",
+    "start": 21,
+    "end": 23,
+    "value": "to"
+  },
+  {
+    "time": 1004,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1070,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1114,
+    "type": "word",
+    "start": 24,
+    "end": 33,
+    "value": "strategic"
+  },
+  {
+    "time": 1114,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1191,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1248,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1275,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1318,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1434,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1536,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1616,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1655,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1730,
+    "type": "word",
+    "start": 34,
+    "end": 46,
+    "value": "partnerships"
+  },
+  {
+    "time": 1730,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1824,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1965,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2002,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2061,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2117,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2241,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2291,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2353,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2474,
+    "type": "word",
+    "start": 47,
+    "end": 51,
+    "value": "that"
+  },
+  {
+    "time": 2474,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2524,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2576,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2623,
+    "type": "word",
+    "start": 52,
+    "end": 57,
+    "value": "could"
+  },
+  {
+    "time": 2623,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2725,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2772,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2828,
+    "type": "word",
+    "start": 58,
+    "end": 62,
+    "value": "lead"
+  },
+  {
+    "time": 2828,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2911,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3003,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3046,
+    "type": "word",
+    "start": 63,
+    "end": 65,
+    "value": "to"
+  },
+  {
+    "time": 3046,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3120,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3169,
+    "type": "word",
+    "start": 66,
+    "end": 77,
+    "value": "acquisition"
+  },
+  {
+    "time": 3169,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3266,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3356,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3395,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3429,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3515,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3574,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3687,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3775,
+    "type": "word",
+    "start": 78,
+    "end": 84,
+    "value": "rather"
+  },
+  {
+    "time": 3775,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3901,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3995,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4063,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4097,
+    "type": "word",
+    "start": 85,
+    "end": 89,
+    "value": "than"
+  },
+  {
+    "time": 4097,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4150,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4184,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4254,
+    "type": "word",
+    "start": 90,
+    "end": 97,
+    "value": "further"
+  },
+  {
+    "time": 4254,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4362,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4474,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4536,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4576,
+    "type": "word",
+    "start": 98,
+    "end": 105,
+    "value": "funding"
+  },
+  {
+    "time": 4576,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4713,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4779,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4812,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4855,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4899,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4973,
+    "type": "word",
+    "start": 106,
+    "end": 112,
+    "value": "rounds"
+  },
+  {
+    "time": 4973,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5045,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5224,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5276,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5312,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5479,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

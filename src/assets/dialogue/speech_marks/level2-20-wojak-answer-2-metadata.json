@@ -1,0 +1,336 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 72,
+    "value": "We're planning to simplify key workflows that generate the most tickets."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 66,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 93,
+    "type": "word",
+    "start": 6,
+    "end": 14,
+    "value": "planning"
+  },
+  {
+    "time": 93,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 228,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 292,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 391,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 448,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 484,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 563,
+    "type": "word",
+    "start": 15,
+    "end": 17,
+    "value": "to"
+  },
+  {
+    "time": 563,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 627,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 662,
+    "type": "word",
+    "start": 18,
+    "end": 26,
+    "value": "simplify"
+  },
+  {
+    "time": 662,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 776,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 813,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 864,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 936,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 964,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 993,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1101,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1196,
+    "type": "word",
+    "start": 27,
+    "end": 30,
+    "value": "key"
+  },
+  {
+    "time": 1196,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1338,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1424,
+    "type": "word",
+    "start": 31,
+    "end": 40,
+    "value": "workflows"
+  },
+  {
+    "time": 1424,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1519,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1572,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1655,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1738,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1799,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1898,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1992,
+    "type": "word",
+    "start": 41,
+    "end": 45,
+    "value": "that"
+  },
+  {
+    "time": 1992,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2055,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2100,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2169,
+    "type": "word",
+    "start": 46,
+    "end": 54,
+    "value": "generate"
+  },
+  {
+    "time": 2169,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2262,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2315,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2372,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2414,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2480,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2560,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2637,
+    "type": "word",
+    "start": 55,
+    "end": 58,
+    "value": "the"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2693,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2715,
+    "type": "word",
+    "start": 59,
+    "end": 63,
+    "value": "most"
+  },
+  {
+    "time": 2715,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2792,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2902,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2976,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3034,
+    "type": "word",
+    "start": 64,
+    "end": 71,
+    "value": "tickets"
+  },
+  {
+    "time": 3034,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3120,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3162,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3235,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3378,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3548,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

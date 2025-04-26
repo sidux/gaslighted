@@ -1,0 +1,346 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 74,
+    "value": "We're migrating to a different cloud provider with more favorable pricing."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 62,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 116,
+    "type": "word",
+    "start": 6,
+    "end": 15,
+    "value": "migrating"
+  },
+  {
+    "time": 116,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 210,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 299,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 404,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 474,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 560,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 599,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 641,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 723,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "to"
+  },
+  {
+    "time": 723,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 814,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 890,
+    "type": "word",
+    "start": 19,
+    "end": 20,
+    "value": "a"
+  },
+  {
+    "time": 890,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 920,
+    "type": "word",
+    "start": 21,
+    "end": 30,
+    "value": "different"
+  },
+  {
+    "time": 920,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 999,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1045,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1141,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1177,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1206,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1252,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1289,
+    "type": "word",
+    "start": 31,
+    "end": 36,
+    "value": "cloud"
+  },
+  {
+    "time": 1289,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1390,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1451,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1550,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1603,
+    "type": "word",
+    "start": 37,
+    "end": 45,
+    "value": "provider"
+  },
+  {
+    "time": 1603,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1689,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1722,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1753,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1812,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1945,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1984,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2015,
+    "type": "word",
+    "start": 46,
+    "end": 50,
+    "value": "with"
+  },
+  {
+    "time": 2015,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2158,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2243,
+    "type": "word",
+    "start": 51,
+    "end": 55,
+    "value": "more"
+  },
+  {
+    "time": 2243,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2348,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2465,
+    "type": "word",
+    "start": 56,
+    "end": 65,
+    "value": "favorable"
+  },
+  {
+    "time": 2465,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2580,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2742,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2773,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2823,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2854,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2913,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2957,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3007,
+    "type": "word",
+    "start": 66,
+    "end": 73,
+    "value": "pricing"
+  },
+  {
+    "time": 3007,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3095,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3157,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3285,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3381,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3426,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

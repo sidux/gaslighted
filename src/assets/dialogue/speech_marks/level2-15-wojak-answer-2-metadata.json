@@ -1,0 +1,300 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 64,
+    "value": "The integration with third-party tools, expanding our ecosystem."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 45,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 163,
+    "type": "word",
+    "start": 4,
+    "end": 15,
+    "value": "integration"
+  },
+  {
+    "time": 163,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 215,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 275,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 343,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 380,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 470,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 537,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 616,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 737,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 840,
+    "type": "word",
+    "start": 16,
+    "end": 20,
+    "value": "with"
+  },
+  {
+    "time": 840,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 885,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 913,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 964,
+    "type": "word",
+    "start": 21,
+    "end": 32,
+    "value": "third-party"
+  },
+  {
+    "time": 964,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1086,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1204,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1262,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1377,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1485,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1541,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1619,
+    "type": "word",
+    "start": 33,
+    "end": 38,
+    "value": "tools"
+  },
+  {
+    "time": 1619,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1735,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1781,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1945,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2115,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2310,
+    "type": "word",
+    "start": 40,
+    "end": 49,
+    "value": "expanding"
+  },
+  {
+    "time": 2310,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2365,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2427,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2519,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2577,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2663,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2706,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2743,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2784,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2871,
+    "type": "word",
+    "start": 50,
+    "end": 53,
+    "value": "our"
+  },
+  {
+    "time": 2871,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2978,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3025,
+    "type": "word",
+    "start": 54,
+    "end": 63,
+    "value": "ecosystem"
+  },
+  {
+    "time": 3025,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3136,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3235,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3338,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3441,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3483,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3580,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3628,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3685,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3813,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,277 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 59,
+    "value": "The projections were probably too aggressive to begin with."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 38,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 82,
+    "type": "word",
+    "start": 4,
+    "end": 15,
+    "value": "projections"
+  },
+  {
+    "time": 82,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 152,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 180,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 211,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 309,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 366,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 443,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 546,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 656,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 730,
+    "type": "word",
+    "start": 16,
+    "end": 20,
+    "value": "were"
+  },
+  {
+    "time": 730,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 801,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 829,
+    "type": "word",
+    "start": 21,
+    "end": 29,
+    "value": "probably"
+  },
+  {
+    "time": 829,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 936,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 980,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1019,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1077,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1124,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1175,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1226,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1303,
+    "type": "word",
+    "start": 30,
+    "end": 33,
+    "value": "too"
+  },
+  {
+    "time": 1303,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1402,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1519,
+    "type": "word",
+    "start": 34,
+    "end": 44,
+    "value": "aggressive"
+  },
+  {
+    "time": 1519,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1561,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1653,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1741,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1813,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1919,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2040,
+    "type": "word",
+    "start": 45,
+    "end": 47,
+    "value": "to"
+  },
+  {
+    "time": 2040,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2139,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2181,
+    "type": "word",
+    "start": 48,
+    "end": 53,
+    "value": "begin"
+  },
+  {
+    "time": 2181,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2235,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2269,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2356,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2411,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2495,
+    "type": "word",
+    "start": 54,
+    "end": 58,
+    "value": "with"
+  },
+  {
+    "time": 2495,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2554,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2745,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,329 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 75,
+    "value": "We're planning to match their pricing with temporary promotional discounts."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 66,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 93,
+    "type": "word",
+    "start": 6,
+    "end": 14,
+    "value": "planning"
+  },
+  {
+    "time": 93,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 228,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 287,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 386,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 437,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 470,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 552,
+    "type": "word",
+    "start": 15,
+    "end": 17,
+    "value": "to"
+  },
+  {
+    "time": 552,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 634,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 657,
+    "type": "word",
+    "start": 18,
+    "end": 23,
+    "value": "match"
+  },
+  {
+    "time": 657,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 742,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 820,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 942,
+    "type": "word",
+    "start": 24,
+    "end": 29,
+    "value": "their"
+  },
+  {
+    "time": 942,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 991,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1073,
+    "type": "word",
+    "start": 30,
+    "end": 37,
+    "value": "pricing"
+  },
+  {
+    "time": 1073,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1195,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1247,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1353,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1452,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1479,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1562,
+    "type": "word",
+    "start": 38,
+    "end": 42,
+    "value": "with"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1616,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1637,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1703,
+    "type": "word",
+    "start": 43,
+    "end": 52,
+    "value": "temporary"
+  },
+  {
+    "time": 1703,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1803,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1854,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1904,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1967,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2015,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2095,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2223,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2271,
+    "type": "word",
+    "start": 53,
+    "end": 64,
+    "value": "promotional"
+  },
+  {
+    "time": 2271,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2386,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2425,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2448,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2530,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2630,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2761,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2800,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2883,
+    "type": "word",
+    "start": 65,
+    "end": 74,
+    "value": "discounts"
+  },
+  {
+    "time": 2883,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2954,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2995,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3061,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3161,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3306,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3356,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3397,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3564,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

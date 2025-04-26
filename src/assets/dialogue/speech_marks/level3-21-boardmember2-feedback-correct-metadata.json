@@ -1,0 +1,511 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 38,
+    "value": "Moving upmarket is the right approach."
+  },
+  {
+    "time": 125,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "Moving"
+  },
+  {
+    "time": 125,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 300,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 450,
+    "type": "word",
+    "start": 7,
+    "end": 15,
+    "value": "upmarket"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 637,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1062,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "is"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1087,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1150,
+    "type": "word",
+    "start": 19,
+    "end": 22,
+    "value": "the"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1250,
+    "type": "word",
+    "start": 23,
+    "end": 28,
+    "value": "right"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1487,
+    "type": "word",
+    "start": 29,
+    "end": 37,
+    "value": "approach"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1850,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2517,
+    "type": "sentence",
+    "start": 39,
+    "end": 104,
+    "value": "Competing on price is a race to the bottom that we want to avoid."
+  },
+  {
+    "time": 2617,
+    "type": "word",
+    "start": 39,
+    "end": 48,
+    "value": "Competing"
+  },
+  {
+    "time": 2617,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2705,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2717,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2767,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2830,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2892,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2967,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3017,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3155,
+    "type": "word",
+    "start": 49,
+    "end": 51,
+    "value": "on"
+  },
+  {
+    "time": 3155,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3167,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3267,
+    "type": "word",
+    "start": 52,
+    "end": 57,
+    "value": "price"
+  },
+  {
+    "time": 3267,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3330,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3355,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3580,
+    "type": "word",
+    "start": 58,
+    "end": 60,
+    "value": "is"
+  },
+  {
+    "time": 3580,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3642,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3717,
+    "type": "word",
+    "start": 61,
+    "end": 62,
+    "value": "a"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3767,
+    "type": "word",
+    "start": 63,
+    "end": 67,
+    "value": "race"
+  },
+  {
+    "time": 3767,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3830,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3955,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4080,
+    "type": "word",
+    "start": 68,
+    "end": 70,
+    "value": "to"
+  },
+  {
+    "time": 4080,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4105,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4142,
+    "type": "word",
+    "start": 71,
+    "end": 74,
+    "value": "the"
+  },
+  {
+    "time": 4142,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4217,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4280,
+    "type": "word",
+    "start": 75,
+    "end": 81,
+    "value": "bottom"
+  },
+  {
+    "time": 4280,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4367,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4392,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4555,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4605,
+    "type": "word",
+    "start": 82,
+    "end": 86,
+    "value": "that"
+  },
+  {
+    "time": 4605,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4642,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4742,
+    "type": "word",
+    "start": 87,
+    "end": 89,
+    "value": "we"
+  },
+  {
+    "time": 4742,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4780,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4830,
+    "type": "word",
+    "start": 90,
+    "end": 94,
+    "value": "want"
+  },
+  {
+    "time": 4830,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4905,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4955,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4967,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5017,
+    "type": "word",
+    "start": 95,
+    "end": 97,
+    "value": "to"
+  },
+  {
+    "time": 5017,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5080,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5155,
+    "type": "word",
+    "start": 98,
+    "end": 103,
+    "value": "avoid"
+  },
+  {
+    "time": 5155,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5205,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5342,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 5467,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5730,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

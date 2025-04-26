@@ -1,0 +1,422 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 90,
+    "value": "We're planning to reduce our growth targets to extend our runway until valuations recover."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 52,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 107,
+    "type": "word",
+    "start": 6,
+    "end": 14,
+    "value": "planning"
+  },
+  {
+    "time": 107,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 233,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 280,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 374,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 413,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 534,
+    "type": "word",
+    "start": 15,
+    "end": 17,
+    "value": "to"
+  },
+  {
+    "time": 534,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 610,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 645,
+    "type": "word",
+    "start": 18,
+    "end": 24,
+    "value": "reduce"
+  },
+  {
+    "time": 645,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 724,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 829,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 905,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 962,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1067,
+    "type": "word",
+    "start": 25,
+    "end": 28,
+    "value": "our"
+  },
+  {
+    "time": 1067,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1157,
+    "type": "word",
+    "start": 29,
+    "end": 35,
+    "value": "growth"
+  },
+  {
+    "time": 1157,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1233,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1336,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1459,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1565,
+    "type": "word",
+    "start": 36,
+    "end": 43,
+    "value": "targets"
+  },
+  {
+    "time": 1565,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1681,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1800,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1873,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1919,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1971,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2054,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "to"
+  },
+  {
+    "time": 2054,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2131,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2185,
+    "type": "word",
+    "start": 47,
+    "end": 53,
+    "value": "extend"
+  },
+  {
+    "time": 2185,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2243,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2298,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2400,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2438,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2549,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2606,
+    "type": "word",
+    "start": 54,
+    "end": 57,
+    "value": "our"
+  },
+  {
+    "time": 2606,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2703,
+    "type": "word",
+    "start": 58,
+    "end": 64,
+    "value": "runway"
+  },
+  {
+    "time": 2703,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2815,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2866,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2988,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3060,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3176,
+    "type": "word",
+    "start": 65,
+    "end": 70,
+    "value": "until"
+  },
+  {
+    "time": 3176,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3227,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3276,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3358,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3396,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3483,
+    "type": "word",
+    "start": 71,
+    "end": 81,
+    "value": "valuations"
+  },
+  {
+    "time": 3483,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3565,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3636,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3692,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3757,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3859,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3965,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4082,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4166,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4244,
+    "type": "word",
+    "start": 82,
+    "end": 89,
+    "value": "recover"
+  },
+  {
+    "time": 4244,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4302,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4350,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4530,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4592,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4751,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

@@ -1,0 +1,550 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 45,
+    "value": "I've already started modeling some scenarios."
+  },
+  {
+    "time": 187,
+    "type": "word",
+    "start": 0,
+    "end": 4,
+    "value": "I've"
+  },
+  {
+    "time": 187,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 200,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 312,
+    "type": "word",
+    "start": 5,
+    "end": 12,
+    "value": "already"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 450,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 625,
+    "type": "word",
+    "start": 13,
+    "end": 20,
+    "value": "started"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 712,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 825,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 950,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1037,
+    "type": "word",
+    "start": 21,
+    "end": 29,
+    "value": "modeling"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1137,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1312,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1462,
+    "type": "word",
+    "start": 30,
+    "end": 34,
+    "value": "some"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1675,
+    "type": "word",
+    "start": 35,
+    "end": 44,
+    "value": "scenarios"
+  },
+  {
+    "time": 1675,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1762,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1837,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1937,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2087,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2137,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 2325,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2500,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2892,
+    "type": "sentence",
+    "start": 46,
+    "end": 117,
+    "value": "The preliminary data suggests we'll need to make some tough trade-offs."
+  },
+  {
+    "time": 2992,
+    "type": "word",
+    "start": 46,
+    "end": 49,
+    "value": "The"
+  },
+  {
+    "time": 2992,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3030,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3130,
+    "type": "word",
+    "start": 50,
+    "end": 61,
+    "value": "preliminary"
+  },
+  {
+    "time": 3130,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3142,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3205,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3267,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3342,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3392,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3455,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3605,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3705,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3767,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3830,
+    "type": "word",
+    "start": 62,
+    "end": 66,
+    "value": "data"
+  },
+  {
+    "time": 3830,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3930,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3955,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4142,
+    "type": "word",
+    "start": 67,
+    "end": 75,
+    "value": "suggests"
+  },
+  {
+    "time": 4142,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4205,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4267,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4330,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4455,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4517,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4530,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4542,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4642,
+    "type": "word",
+    "start": 76,
+    "end": 81,
+    "value": "we'll"
+  },
+  {
+    "time": 4642,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4655,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4767,
+    "type": "word",
+    "start": 82,
+    "end": 86,
+    "value": "need"
+  },
+  {
+    "time": 4767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4855,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4930,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5017,
+    "type": "word",
+    "start": 87,
+    "end": 89,
+    "value": "to"
+  },
+  {
+    "time": 5017,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5030,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5155,
+    "type": "word",
+    "start": 90,
+    "end": 94,
+    "value": "make"
+  },
+  {
+    "time": 5155,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5167,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 5280,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5355,
+    "type": "word",
+    "start": 95,
+    "end": 99,
+    "value": "some"
+  },
+  {
+    "time": 5355,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5442,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5517,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5580,
+    "type": "word",
+    "start": 100,
+    "end": 105,
+    "value": "tough"
+  },
+  {
+    "time": 5580,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5642,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5717,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 5842,
+    "type": "word",
+    "start": 106,
+    "end": 116,
+    "value": "trade-offs"
+  },
+  {
+    "time": 5842,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5892,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5955,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 6017,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6105,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6280,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 6392,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6505,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

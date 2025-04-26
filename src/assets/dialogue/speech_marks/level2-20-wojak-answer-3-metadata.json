@@ -1,0 +1,339 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 72,
+    "value": "We're implementing stricter QA processes to catch issues before release."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 80,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 126,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 170,
+    "type": "word",
+    "start": 6,
+    "end": 18,
+    "value": "implementing"
+  },
+  {
+    "time": 170,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 234,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 304,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 399,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 436,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 466,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 540,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 606,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 656,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 726,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 769,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 849,
+    "type": "word",
+    "start": 19,
+    "end": 27,
+    "value": "stricter"
+  },
+  {
+    "time": 849,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 960,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1001,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1042,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1089,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1170,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1234,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1266,
+    "type": "word",
+    "start": 28,
+    "end": 30,
+    "value": "QA"
+  },
+  {
+    "time": 1266,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1379,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1448,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1580,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1717,
+    "type": "word",
+    "start": 31,
+    "end": 40,
+    "value": "processes"
+  },
+  {
+    "time": 1717,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1857,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1918,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2006,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2104,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2158,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2264,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2399,
+    "type": "word",
+    "start": 41,
+    "end": 43,
+    "value": "to"
+  },
+  {
+    "time": 2399,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2469,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2502,
+    "type": "word",
+    "start": 44,
+    "end": 49,
+    "value": "catch"
+  },
+  {
+    "time": 2502,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2615,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2719,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2837,
+    "type": "word",
+    "start": 50,
+    "end": 56,
+    "value": "issues"
+  },
+  {
+    "time": 2837,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2892,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3024,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3097,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3180,
+    "type": "word",
+    "start": 57,
+    "end": 63,
+    "value": "before"
+  },
+  {
+    "time": 3180,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3253,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3310,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3412,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3524,
+    "type": "word",
+    "start": 64,
+    "end": 71,
+    "value": "release"
+  },
+  {
+    "time": 3524,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3667,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3715,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3815,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3912,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4066,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

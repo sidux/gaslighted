@@ -1,0 +1,544 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 101,
+    "value": "Current hiring plans would increase headcount by 35% next year, primarily in product and engineering."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 7,
+    "value": "Current"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 96,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 186,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 227,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 278,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 335,
+    "type": "word",
+    "start": 8,
+    "end": 14,
+    "value": "hiring"
+  },
+  {
+    "time": 335,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 437,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 581,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 670,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 711,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 782,
+    "type": "word",
+    "start": 15,
+    "end": 20,
+    "value": "plans"
+  },
+  {
+    "time": 782,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 908,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 956,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 1075,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1160,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1238,
+    "type": "word",
+    "start": 21,
+    "end": 26,
+    "value": "would"
+  },
+  {
+    "time": 1238,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1290,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1321,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1353,
+    "type": "word",
+    "start": 27,
+    "end": 35,
+    "value": "increase"
+  },
+  {
+    "time": 1353,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1403,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1469,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1585,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1622,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1733,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1811,
+    "type": "word",
+    "start": 36,
+    "end": 45,
+    "value": "headcount"
+  },
+  {
+    "time": 1811,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1870,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1943,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2001,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2134,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2212,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2259,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2329,
+    "type": "word",
+    "start": 46,
+    "end": 48,
+    "value": "by"
+  },
+  {
+    "time": 2329,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2394,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2482,
+    "type": "word",
+    "start": 49,
+    "end": 52,
+    "value": "35%"
+  },
+  {
+    "time": 2482,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2597,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2679,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2718,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2808,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2941,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3127,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3220,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3318,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3377,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3514,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3581,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3641,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3689,
+    "type": "word",
+    "start": 53,
+    "end": 57,
+    "value": "next"
+  },
+  {
+    "time": 3689,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3766,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3836,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3917,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3986,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4050,
+    "type": "word",
+    "start": 58,
+    "end": 62,
+    "value": "year"
+  },
+  {
+    "time": 4050,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4109,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4183,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4405,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4600,
+    "type": "word",
+    "start": 64,
+    "end": 73,
+    "value": "primarily"
+  },
+  {
+    "time": 4600,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4666,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4708,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4739,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4829,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4859,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4950,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4983,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5043,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5158,
+    "type": "word",
+    "start": 74,
+    "end": 76,
+    "value": "in"
+  },
+  {
+    "time": 5158,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5215,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5312,
+    "type": "word",
+    "start": 77,
+    "end": 84,
+    "value": "product"
+  },
+  {
+    "time": 5312,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5428,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 5471,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5540,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5582,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5672,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5742,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5819,
+    "type": "word",
+    "start": 85,
+    "end": 88,
+    "value": "and"
+  },
+  {
+    "time": 5819,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5922,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5984,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6025,
+    "type": "word",
+    "start": 89,
+    "end": 100,
+    "value": "engineering"
+  },
+  {
+    "time": 6025,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6085,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6145,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6220,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6257,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6323,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6382,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 6513,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6548,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6691,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

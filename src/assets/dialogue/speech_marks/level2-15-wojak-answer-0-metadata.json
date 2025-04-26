@@ -1,0 +1,465 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 85,
+    "value": "The new notification system, which increased daily opens by 28% among enrolled users."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 41,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 67,
+    "type": "word",
+    "start": 4,
+    "end": 7,
+    "value": "new"
+  },
+  {
+    "time": 67,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 139,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 259,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 310,
+    "type": "word",
+    "start": 8,
+    "end": 20,
+    "value": "notification"
+  },
+  {
+    "time": 310,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 376,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 475,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 514,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 551,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 635,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 674,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 771,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 882,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1090,
+    "type": "word",
+    "start": 21,
+    "end": 27,
+    "value": "system"
+  },
+  {
+    "time": 1090,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1200,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1249,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1403,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1442,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1547,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 1734,
+    "type": "word",
+    "start": 29,
+    "end": 34,
+    "value": "which"
+  },
+  {
+    "time": 1734,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1821,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1857,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1970,
+    "type": "word",
+    "start": 35,
+    "end": 44,
+    "value": "increased"
+  },
+  {
+    "time": 1970,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2001,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2073,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2172,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2248,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2311,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2408,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2440,
+    "type": "word",
+    "start": 45,
+    "end": 50,
+    "value": "daily"
+  },
+  {
+    "time": 2440,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2489,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2587,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2658,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2745,
+    "type": "word",
+    "start": 51,
+    "end": 56,
+    "value": "opens"
+  },
+  {
+    "time": 2745,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2852,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2948,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2981,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3043,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3096,
+    "type": "word",
+    "start": 57,
+    "end": 59,
+    "value": "by"
+  },
+  {
+    "time": 3096,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3167,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3268,
+    "type": "word",
+    "start": 60,
+    "end": 63,
+    "value": "28%"
+  },
+  {
+    "time": 3268,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3356,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3426,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3462,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3503,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3555,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3656,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3774,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3825,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3910,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3948,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4070,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4140,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4200,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4253,
+    "type": "word",
+    "start": 64,
+    "end": 69,
+    "value": "among"
+  },
+  {
+    "time": 4253,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4288,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4360,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4423,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4491,
+    "type": "word",
+    "start": 70,
+    "end": 78,
+    "value": "enrolled"
+  },
+  {
+    "time": 4491,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4538,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4606,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4645,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4677,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4783,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4824,
+    "type": "word",
+    "start": 79,
+    "end": 84,
+    "value": "users"
+  },
+  {
+    "time": 4824,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4915,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4998,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5116,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5172,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5387,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

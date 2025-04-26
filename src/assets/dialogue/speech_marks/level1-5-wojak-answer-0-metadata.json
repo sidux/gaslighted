@@ -89,8 +89,8 @@
     "time": 1265,
     "type": "sentence",
     "start": 18,
-    "end": 58,
-    "value": "The handoffs weren’t clearly assigned."
+    "end": 56,
+    "value": "The handoffs weren't clearly assigned."
   },
   {
     "time": 1271,
@@ -155,8 +155,8 @@
     "time": 1871,
     "type": "word",
     "start": 31,
-    "end": 40,
-    "value": "weren’t"
+    "end": 38,
+    "value": "weren't"
   },
   {
     "time": 1871,
@@ -181,8 +181,8 @@
   {
     "time": 2133,
     "type": "word",
-    "start": 41,
-    "end": 48,
+    "start": 39,
+    "end": 46,
     "value": "clearly"
   },
   {
@@ -213,8 +213,8 @@
   {
     "time": 2508,
     "type": "word",
-    "start": 49,
-    "end": 57,
+    "start": 47,
+    "end": 55,
     "value": "assigned"
   },
   {

@@ -1,0 +1,499 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 107,
+    "value": "We're launching an improved self-service knowledge base and chatbot that's shown 40% deflection in testing."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 80,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 121,
+    "type": "word",
+    "start": 6,
+    "end": 15,
+    "value": "launching"
+  },
+  {
+    "time": 121,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 223,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 318,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 358,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 466,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 503,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 584,
+    "type": "word",
+    "start": 16,
+    "end": 18,
+    "value": "an"
+  },
+  {
+    "time": 584,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 629,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 671,
+    "type": "word",
+    "start": 19,
+    "end": 27,
+    "value": "improved"
+  },
+  {
+    "time": 671,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 714,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 777,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 866,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 936,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 995,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1051,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1087,
+    "type": "word",
+    "start": 28,
+    "end": 40,
+    "value": "self-service"
+  },
+  {
+    "time": 1087,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1185,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1241,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1318,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1372,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1493,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1580,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1646,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1704,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1807,
+    "type": "word",
+    "start": 41,
+    "end": 50,
+    "value": "knowledge"
+  },
+  {
+    "time": 1807,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1884,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1931,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2020,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2057,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2147,
+    "type": "word",
+    "start": 51,
+    "end": 55,
+    "value": "base"
+  },
+  {
+    "time": 2147,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2200,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2354,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2483,
+    "type": "word",
+    "start": 56,
+    "end": 59,
+    "value": "and"
+  },
+  {
+    "time": 2483,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2544,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2583,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2620,
+    "type": "word",
+    "start": 60,
+    "end": 67,
+    "value": "chatbot"
+  },
+  {
+    "time": 2620,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2755,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2858,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2907,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2960,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3111,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3156,
+    "type": "word",
+    "start": 68,
+    "end": 74,
+    "value": "that's"
+  },
+  {
+    "time": 3156,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3218,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3287,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3333,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3382,
+    "type": "word",
+    "start": 75,
+    "end": 80,
+    "value": "shown"
+  },
+  {
+    "time": 3382,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3631,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3710,
+    "type": "word",
+    "start": 81,
+    "end": 84,
+    "value": "40%"
+  },
+  {
+    "time": 3710,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3813,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3918,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3968,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4027,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4112,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4151,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4272,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4337,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4393,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4443,
+    "type": "word",
+    "start": 85,
+    "end": 95,
+    "value": "deflection"
+  },
+  {
+    "time": 4443,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4490,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4535,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4651,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4717,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 4764,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4837,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4938,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4993,
+    "type": "word",
+    "start": 96,
+    "end": 98,
+    "value": "in"
+  },
+  {
+    "time": 4993,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5053,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5114,
+    "type": "word",
+    "start": 99,
+    "end": 106,
+    "value": "testing"
+  },
+  {
+    "time": 5114,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5183,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5270,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5357,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5407,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5454,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5616,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

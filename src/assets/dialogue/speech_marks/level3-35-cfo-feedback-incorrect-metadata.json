@@ -1,0 +1,606 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 46,
+    "value": "The risk profile of this approach concerns me."
+  },
+  {
+    "time": 25,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 25,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 87,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 150,
+    "type": "word",
+    "start": 4,
+    "end": 8,
+    "value": "risk"
+  },
+  {
+    "time": 150,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 275,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 362,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 400,
+    "type": "word",
+    "start": 9,
+    "end": 16,
+    "value": "profile"
+  },
+  {
+    "time": 400,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 562,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 612,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 725,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 862,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 950,
+    "type": "word",
+    "start": 17,
+    "end": 19,
+    "value": "of"
+  },
+  {
+    "time": 950,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 987,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1025,
+    "type": "word",
+    "start": 20,
+    "end": 24,
+    "value": "this"
+  },
+  {
+    "time": 1025,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1112,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1212,
+    "type": "word",
+    "start": 25,
+    "end": 33,
+    "value": "approach"
+  },
+  {
+    "time": 1212,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1262,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1362,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1425,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1487,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 1587,
+    "type": "word",
+    "start": 34,
+    "end": 42,
+    "value": "concerns"
+  },
+  {
+    "time": 1587,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1650,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1687,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1837,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1950,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2000,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2050,
+    "type": "word",
+    "start": 43,
+    "end": 45,
+    "value": "me"
+  },
+  {
+    "time": 2050,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2337,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 2755,
+    "type": "sentence",
+    "start": 47,
+    "end": 124,
+    "value": "We need a more conservative expansion strategy in the current global economy."
+  },
+  {
+    "time": 2780,
+    "type": "word",
+    "start": 47,
+    "end": 49,
+    "value": "We"
+  },
+  {
+    "time": 2780,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2867,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2905,
+    "type": "word",
+    "start": 50,
+    "end": 54,
+    "value": "need"
+  },
+  {
+    "time": 2905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2955,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3030,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3067,
+    "type": "word",
+    "start": 55,
+    "end": 56,
+    "value": "a"
+  },
+  {
+    "time": 3067,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3105,
+    "type": "word",
+    "start": 57,
+    "end": 61,
+    "value": "more"
+  },
+  {
+    "time": 3105,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3192,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3292,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3342,
+    "type": "word",
+    "start": 62,
+    "end": 74,
+    "value": "conservative"
+  },
+  {
+    "time": 3342,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3430,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3467,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3517,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3630,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3717,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3767,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3792,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3830,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3867,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 3917,
+    "type": "word",
+    "start": 75,
+    "end": 84,
+    "value": "expansion"
+  },
+  {
+    "time": 3917,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3967,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 4017,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4155,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4255,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4292,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4380,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4480,
+    "type": "word",
+    "start": 85,
+    "end": 93,
+    "value": "strategy"
+  },
+  {
+    "time": 4480,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4567,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4630,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 4680,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4805,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4842,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 4955,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5030,
+    "type": "word",
+    "start": 94,
+    "end": 96,
+    "value": "in"
+  },
+  {
+    "time": 5030,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5055,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5092,
+    "type": "word",
+    "start": 97,
+    "end": 100,
+    "value": "the"
+  },
+  {
+    "time": 5092,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5117,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5155,
+    "type": "word",
+    "start": 101,
+    "end": 108,
+    "value": "current"
+  },
+  {
+    "time": 5155,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5267,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5367,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5405,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5442,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5467,
+    "type": "word",
+    "start": 109,
+    "end": 115,
+    "value": "global"
+  },
+  {
+    "time": 5467,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5505,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5580,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 5630,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5680,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5705,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5792,
+    "type": "word",
+    "start": 116,
+    "end": 123,
+    "value": "economy"
+  },
+  {
+    "time": 5792,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5830,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5942,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6030,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6067,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6105,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6180,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6367,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

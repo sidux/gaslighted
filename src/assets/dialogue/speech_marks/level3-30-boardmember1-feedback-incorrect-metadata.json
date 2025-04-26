@@ -1,0 +1,596 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 48,
+    "value": "That's still too aggressive in this environment."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "That's"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 412,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 500,
+    "type": "word",
+    "start": 7,
+    "end": 12,
+    "value": "still"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 687,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "word",
+    "start": 13,
+    "end": 16,
+    "value": "too"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1037,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1150,
+    "type": "word",
+    "start": 17,
+    "end": 27,
+    "value": "aggressive"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1462,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1887,
+    "type": "word",
+    "start": 28,
+    "end": 30,
+    "value": "in"
+  },
+  {
+    "time": 1887,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1900,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1962,
+    "type": "word",
+    "start": 31,
+    "end": 35,
+    "value": "this"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 2037,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2225,
+    "type": "word",
+    "start": 36,
+    "end": 47,
+    "value": "environment"
+  },
+  {
+    "time": 2225,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2325,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2437,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2512,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2687,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2712,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2812,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2825,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2887,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3050,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3442,
+    "type": "sentence",
+    "start": 49,
+    "end": 122,
+    "value": "I want to see a plan that maximizes output with minimal headcount growth."
+  },
+  {
+    "time": 3567,
+    "type": "word",
+    "start": 49,
+    "end": 50,
+    "value": "I"
+  },
+  {
+    "time": 3567,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3680,
+    "type": "word",
+    "start": 51,
+    "end": 55,
+    "value": "want"
+  },
+  {
+    "time": 3680,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 3792,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3817,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3855,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3942,
+    "type": "word",
+    "start": 56,
+    "end": 58,
+    "value": "to"
+  },
+  {
+    "time": 3942,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4005,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4067,
+    "type": "word",
+    "start": 59,
+    "end": 62,
+    "value": "see"
+  },
+  {
+    "time": 4067,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4155,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4280,
+    "type": "word",
+    "start": 63,
+    "end": 64,
+    "value": "a"
+  },
+  {
+    "time": 4280,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4380,
+    "type": "word",
+    "start": 65,
+    "end": 69,
+    "value": "plan"
+  },
+  {
+    "time": 4380,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 4442,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4505,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4642,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4755,
+    "type": "word",
+    "start": 70,
+    "end": 74,
+    "value": "that"
+  },
+  {
+    "time": 4755,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 4880,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 4905,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5005,
+    "type": "word",
+    "start": 75,
+    "end": 84,
+    "value": "maximizes"
+  },
+  {
+    "time": 5005,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5067,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5117,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5205,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5292,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5317,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5480,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5567,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5680,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5755,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5830,
+    "type": "word",
+    "start": 85,
+    "end": 91,
+    "value": "output"
+  },
+  {
+    "time": 5830,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5955,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6080,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6192,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6230,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6330,
+    "type": "word",
+    "start": 92,
+    "end": 96,
+    "value": "with"
+  },
+  {
+    "time": 6330,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6392,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6442,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 6567,
+    "type": "word",
+    "start": 97,
+    "end": 104,
+    "value": "minimal"
+  },
+  {
+    "time": 6567,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6630,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6655,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6755,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6767,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6880,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6892,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7017,
+    "type": "word",
+    "start": 105,
+    "end": 114,
+    "value": "headcount"
+  },
+  {
+    "time": 7017,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7030,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 7155,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7192,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7330,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7392,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7442,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7567,
+    "type": "word",
+    "start": 115,
+    "end": 121,
+    "value": "growth"
+  },
+  {
+    "time": 7567,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7630,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 7692,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 7805,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 7992,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

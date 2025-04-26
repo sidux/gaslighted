@@ -3,8 +3,8 @@
     "time": 0,
     "type": "sentence",
     "start": 0,
-    "end": 67,
-    "value": "On that note — we’ll be rolling out a revised ownership matrix."
+    "end": 65,
+    "value": "On that note — we'll be rolling out a revised ownership matrix."
   },
   {
     "time": 6,
@@ -76,8 +76,8 @@
     "time": 993,
     "type": "word",
     "start": 17,
-    "end": 24,
-    "value": "we’ll"
+    "end": 22,
+    "value": "we'll"
   },
   {
     "time": 993,
@@ -97,8 +97,8 @@
   {
     "time": 1258,
     "type": "word",
-    "start": 25,
-    "end": 27,
+    "start": 23,
+    "end": 25,
     "value": "be"
   },
   {
@@ -114,8 +114,8 @@
   {
     "time": 1415,
     "type": "word",
-    "start": 28,
-    "end": 35,
+    "start": 26,
+    "end": 33,
     "value": "rolling"
   },
   {
@@ -146,8 +146,8 @@
   {
     "time": 1808,
     "type": "word",
-    "start": 36,
-    "end": 39,
+    "start": 34,
+    "end": 37,
     "value": "out"
   },
   {
@@ -163,8 +163,8 @@
   {
     "time": 1974,
     "type": "word",
-    "start": 40,
-    "end": 41,
+    "start": 38,
+    "end": 39,
     "value": "a"
   },
   {
@@ -175,8 +175,8 @@
   {
     "time": 2014,
     "type": "word",
-    "start": 42,
-    "end": 49,
+    "start": 40,
+    "end": 47,
     "value": "revised"
   },
   {
@@ -212,8 +212,8 @@
   {
     "time": 2550,
     "type": "word",
-    "start": 50,
-    "end": 59,
+    "start": 48,
+    "end": 57,
     "value": "ownership"
   },
   {
@@ -249,8 +249,8 @@
   {
     "time": 3131,
     "type": "word",
-    "start": 60,
-    "end": 66,
+    "start": 58,
+    "end": 64,
     "value": "matrix"
   },
   {
@@ -296,15 +296,15 @@
   {
     "time": 4154,
     "type": "sentence",
-    "start": 68,
-    "end": 100,
+    "start": 66,
+    "end": 98,
     "value": "No task without a name attached."
   },
   {
     "time": 4161,
     "type": "word",
-    "start": 68,
-    "end": 70,
+    "start": 66,
+    "end": 68,
     "value": "No"
   },
   {
@@ -320,8 +320,8 @@
   {
     "time": 4437,
     "type": "word",
-    "start": 71,
-    "end": 75,
+    "start": 69,
+    "end": 73,
     "value": "task"
   },
   {
@@ -347,8 +347,8 @@
   {
     "time": 4848,
     "type": "word",
-    "start": 76,
-    "end": 83,
+    "start": 74,
+    "end": 81,
     "value": "without"
   },
   {
@@ -379,8 +379,8 @@
   {
     "time": 5178,
     "type": "word",
-    "start": 84,
-    "end": 85,
+    "start": 82,
+    "end": 83,
     "value": "a"
   },
   {
@@ -391,8 +391,8 @@
   {
     "time": 5216,
     "type": "word",
-    "start": 86,
-    "end": 90,
+    "start": 84,
+    "end": 88,
     "value": "name"
   },
   {
@@ -413,8 +413,8 @@
   {
     "time": 5480,
     "type": "word",
-    "start": 91,
-    "end": 99,
+    "start": 89,
+    "end": 97,
     "value": "attached"
   },
   {

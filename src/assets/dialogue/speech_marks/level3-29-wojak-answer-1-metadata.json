@@ -1,0 +1,395 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 80,
+    "value": "The expansion is necessary to deliver on our product roadmap and growth targets."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "The"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 44,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 136,
+    "type": "word",
+    "start": 4,
+    "end": 13,
+    "value": "expansion"
+  },
+  {
+    "time": 136,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 170,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 252,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 340,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 401,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 511,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 569,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 695,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 778,
+    "type": "word",
+    "start": 14,
+    "end": 16,
+    "value": "is"
+  },
+  {
+    "time": 778,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 831,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 914,
+    "type": "word",
+    "start": 17,
+    "end": 26,
+    "value": "necessary"
+  },
+  {
+    "time": 914,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 992,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1036,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1140,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1177,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1302,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1350,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1442,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1505,
+    "type": "word",
+    "start": 27,
+    "end": 29,
+    "value": "to"
+  },
+  {
+    "time": 1505,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1599,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1634,
+    "type": "word",
+    "start": 30,
+    "end": 37,
+    "value": "deliver"
+  },
+  {
+    "time": 1634,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1684,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1709,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1807,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1837,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1908,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1956,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2018,
+    "type": "word",
+    "start": 38,
+    "end": 40,
+    "value": "on"
+  },
+  {
+    "time": 2018,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2099,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2165,
+    "type": "word",
+    "start": 41,
+    "end": 44,
+    "value": "our"
+  },
+  {
+    "time": 2165,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 2254,
+    "type": "word",
+    "start": 45,
+    "end": 52,
+    "value": "product"
+  },
+  {
+    "time": 2254,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2360,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2421,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2458,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2500,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2576,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2671,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2716,
+    "type": "word",
+    "start": 53,
+    "end": 60,
+    "value": "roadmap"
+  },
+  {
+    "time": 2716,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2833,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2916,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2977,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3048,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3110,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3194,
+    "type": "word",
+    "start": 61,
+    "end": 64,
+    "value": "and"
+  },
+  {
+    "time": 3194,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3282,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3330,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3368,
+    "type": "word",
+    "start": 65,
+    "end": 71,
+    "value": "growth"
+  },
+  {
+    "time": 3368,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3408,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3486,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 3575,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 3660,
+    "type": "word",
+    "start": 72,
+    "end": 79,
+    "value": "targets"
+  },
+  {
+    "time": 3660,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3741,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3860,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 3929,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3996,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4093,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 4265,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

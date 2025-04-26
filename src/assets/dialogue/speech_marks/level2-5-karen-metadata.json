@@ -1,0 +1,532 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 67,
+    "value": "That's well below the 18% projection you shared in our last review."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 6,
+    "value": "That's"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 49,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 190,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 261,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 373,
+    "type": "word",
+    "start": 7,
+    "end": 11,
+    "value": "well"
+  },
+  {
+    "time": 373,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 462,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 519,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 624,
+    "type": "word",
+    "start": 12,
+    "end": 17,
+    "value": "below"
+  },
+  {
+    "time": 624,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 682,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 709,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 859,
+    "type": "viseme",
+    "value": "o"
+  },
+  {
+    "time": 1041,
+    "type": "word",
+    "start": 18,
+    "end": 21,
+    "value": "the"
+  },
+  {
+    "time": 1041,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1109,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1207,
+    "type": "word",
+    "start": 22,
+    "end": 25,
+    "value": "18%"
+  },
+  {
+    "time": 1207,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 1342,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1479,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1600,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1676,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1766,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1826,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1963,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2046,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2098,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2148,
+    "type": "word",
+    "start": 26,
+    "end": 36,
+    "value": "projection"
+  },
+  {
+    "time": 2148,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2267,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2296,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2396,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2454,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2534,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2654,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2749,
+    "type": "word",
+    "start": 37,
+    "end": 40,
+    "value": "you"
+  },
+  {
+    "time": 2749,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2828,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 2882,
+    "type": "word",
+    "start": 41,
+    "end": 47,
+    "value": "shared"
+  },
+  {
+    "time": 2882,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3028,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 3091,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3202,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3243,
+    "type": "word",
+    "start": 48,
+    "end": 50,
+    "value": "in"
+  },
+  {
+    "time": 3243,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3377,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3437,
+    "type": "word",
+    "start": 51,
+    "end": 54,
+    "value": "our"
+  },
+  {
+    "time": 3437,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3467,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3539,
+    "type": "word",
+    "start": 55,
+    "end": 59,
+    "value": "last"
+  },
+  {
+    "time": 3539,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3653,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3753,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3849,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3924,
+    "type": "word",
+    "start": 60,
+    "end": 66,
+    "value": "review"
+  },
+  {
+    "time": 3924,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3973,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4017,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 4094,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4275,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4464,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4851,
+    "type": "sentence",
+    "start": 68,
+    "end": 107,
+    "value": "What happened to the optimization work?"
+  },
+  {
+    "time": 4857,
+    "type": "word",
+    "start": 68,
+    "end": 72,
+    "value": "What"
+  },
+  {
+    "time": 4857,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4980,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 5030,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5072,
+    "type": "word",
+    "start": 73,
+    "end": 81,
+    "value": "happened"
+  },
+  {
+    "time": 5072,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5164,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5232,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5308,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5351,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5417,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5459,
+    "type": "word",
+    "start": 82,
+    "end": 84,
+    "value": "to"
+  },
+  {
+    "time": 5459,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5530,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 5578,
+    "type": "word",
+    "start": 85,
+    "end": 88,
+    "value": "the"
+  },
+  {
+    "time": 5578,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 5640,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5734,
+    "type": "word",
+    "start": 89,
+    "end": 101,
+    "value": "optimization"
+  },
+  {
+    "time": 5734,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5846,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5916,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5976,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6014,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6062,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 6126,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 6243,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 6364,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6506,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6627,
+    "type": "word",
+    "start": 102,
+    "end": 106,
+    "value": "work"
+  },
+  {
+    "time": 6627,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 6803,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6953,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 7089,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

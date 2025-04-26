@@ -1,0 +1,315 @@
+{
+    "title": "Quarterly Review",
+    "description": "Time to present your quarterly results. Everyone is watching closely... and your stomach is churning.",
+    "rules": {
+        "game_speed": 1.2,
+        "pressure_buildup_speed": 15,
+        "precision_window_ms": 400,
+        "max_possible_farts_by_word": 2,
+        "max_simultaneous_letters": 3,
+        "letter_float_duration_ms": 5000,
+        "letter_visible_duration_ms": 4500,
+        "letter_float_height_px": 300,
+        "letter_float_speed_multiplier": 1.7,
+        "pressure_release": {
+            "perfect": 35,
+            "okay": 20,
+            "bad": 80,
+            "terrible": 0
+        },
+        "shame_gain": {
+            "perfect": 0,
+            "okay": 8,
+            "bad": 35,
+            "terrible": 100
+        },
+        "question": {
+            "pressure_multiplier": 3.0,
+            "correct_answer_shame_change": -15,
+            "incorrect_answer_shame_change": 20,
+            "heartbeat_intensity": 80
+        }
+    },
+    "participants": [
+        {
+            "id": "wojak",
+            "voiceType": "Russell",
+            "type": "player"
+        },
+        {
+            "id": "boomer",
+            "voiceType": "Brian",
+            "type": "npc"
+        },
+        {
+            "id": "zoomer",
+            "voiceType": "Kevin",
+            "type": "npc"
+        },
+        {
+            "id": "karen",
+            "voiceType": "Salli",
+            "type": "npc"
+        }
+    ],
+    "dialogues": [
+        {
+            "speaker": "boomer",
+            "text": "Alright team, we're here to review Q3 performance. Wojak will be walking us through the key metrics and initiatives."
+        },
+        {
+            "speaker": "karen",
+            "text": "Before we start, I want to remind everyone that the executive team will be reviewing these numbers next week. Nothing preliminary or half-baked, please."
+        },
+        {
+            "speaker": "zoomer",
+            "text": "I've already uploaded the slides to the shared drive. Wojak, you should have everything you need to present."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Great. Wojak, let's start with conversion metrics. Take us through the funnel changes since last quarter."
+        },
+        {
+            "speaker": "wojak",
+            "text": "Thanks. As you can see from the dashboard, our conversion rate improved by 12% quarter-over-quarter, with the biggest gains coming from mobile users."
+        },
+        {
+            "speaker": "karen",
+            "text": "That's well below the 18% projection you shared in our last review. What happened to the optimization work?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We pivoted strategy mid-quarter based on A/B test results, which ultimately drove more revenue.",
+                    "correct": true
+                },
+                {
+                    "text": "We ran into technical limitations with the planned optimizations.",
+                    "correct": false
+                },
+                {
+                    "text": "The projections were probably too aggressive to begin with.",
+                    "correct": false
+                },
+                {
+                    "text": "The marketing team changed the campaign focus without alignment.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boomer",
+            "feedback": [
+                {
+                    "text": "Smart move. The revenue increase more than justifies the change in approach.",
+                    "correct": true
+                },
+                {
+                    "text": "That's concerning. We need to align on expectations and delivery capabilities going forward.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "zoomer",
+            "text": "If I could jump in, the growth in returning users is actually outpacing new user acquisition. Should we be concerned about top-of-funnel?"
+        },
+        {
+            "speaker": "karen",
+            "text": "Yes, and our CAC has increased by 22% despite the supposed improvements. I'm not seeing the ROI here."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Wojak, what's your take on the CAC increase? Is this a temporary spike or a trend we need to address?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "It's temporary due to the new channel testing. The high-performing channels show a 30% lower CAC.",
+                    "correct": true
+                },
+                {
+                    "text": "Market competition has increased driving up advertising costs across all channels.",
+                    "correct": false
+                },
+                {
+                    "text": "We're targeting higher-value segments which naturally increases acquisition costs.",
+                    "correct": false
+                },
+                {
+                    "text": "Our tracking might be attributing costs incorrectly across campaigns.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "karen",
+            "feedback": [
+                {
+                    "text": "We need to scale those high-performing channels immediately then. Send me the data after this meeting.",
+                    "correct": true
+                },
+                {
+                    "text": "That's not what the data shows. I need you to do a deeper analysis before our executive presentation.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "zoomer",
+            "text": "Moving to product metrics, our weekly active users grew by 15%, but session duration decreased slightly. I've added some drill-down tabs to the report."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Good catch. Wojak, what feature had the highest impact on engagement this quarter?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "The new notification system, which increased daily opens by 28% among enrolled users.",
+                    "correct": true
+                },
+                {
+                    "text": "The UI redesign of the dashboard, which improved session duration.",
+                    "correct": false
+                },
+                {
+                    "text": "The integration with third-party tools, expanding our ecosystem.",
+                    "correct": false
+                },
+                {
+                    "text": "The new recommendation algorithm that drove more content consumption.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boomer",
+            "feedback": [
+                {
+                    "text": "Excellent. Let's accelerate the rollout to the rest of the user base for Q4.",
+                    "correct": true
+                },
+                {
+                    "text": "The data doesn't support that conclusion. We need to re-evaluate our feature prioritization.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "karen",
+            "text": "Before we get too excited, there's a concerning trend in customer support tickets that's not being addressed. Escalations are up 35% quarter-over-quarter."
+        },
+        {
+            "speaker": "zoomer",
+            "text": "Actually, if you look at page 17, we've contextualized that. The increase correlates directly with our user growth."
+        },
+        {
+            "speaker": "karen",
+            "text": "Rate is still up 12% per user. That's not acceptable. Wojak, what's your plan to address this in Q4?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "We're launching an improved self-service knowledge base and chatbot that's shown 40% deflection in testing.",
+                    "correct": true
+                },
+                {
+                    "text": "We'll be hiring additional support staff to handle the increased volume.",
+                    "correct": false
+                },
+                {
+                    "text": "We're planning to simplify key workflows that generate the most tickets.",
+                    "correct": false
+                },
+                {
+                    "text": "We're implementing stricter QA processes to catch issues before release.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "karen",
+            "feedback": [
+                {
+                    "text": "That's the kind of efficiency improvement I want to see. Make sure it doesn't affect CSAT scores.",
+                    "correct": true
+                },
+                {
+                    "text": "That's an expensive band-aid, not a solution. I need a more strategic approach.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boomer",
+            "text": "Let's talk about Q4 targets. The board has increased our growth expectations by 15% over previous projections."
+        },
+        {
+            "speaker": "karen",
+            "text": "With less budget, I might add. We need to optimize spend across all departments."
+        },
+        {
+            "speaker": "zoomer",
+            "text": "I've already started modeling some scenarios. The preliminary data suggests we'll need to make some tough trade-offs."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Wojak, given these constraints, which initiative should we prioritize for maximum impact in Q4?"
+        },
+        {
+            "speaker": "wojak",
+            "answers": [
+                {
+                    "text": "Expansion of our referral program, which has shown a 3:1 ROI and contributes to both retention and acquisition.",
+                    "correct": true
+                },
+                {
+                    "text": "Launch of our enterprise tier to attract higher-value customers.",
+                    "correct": false
+                },
+                {
+                    "text": "Aggressive discounting strategy to boost conversion rates during holiday season.",
+                    "correct": false
+                },
+                {
+                    "text": "Expansion into new geographic markets to diversify our user base.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "boomer",
+            "feedback": [
+                {
+                    "text": "Smart choice. It addresses multiple KPIs with a proven track record. Let's get that rolling immediately.",
+                    "correct": true
+                },
+                {
+                    "text": "That's a long-term play that won't address our immediate targets. We need to reconsider.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "speaker": "karen",
+            "text": "I need concrete numbers for the board presentation. Make sure all your projections are backed by data this time."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Alright, I think we've covered the key areas. Wojak, please update the deck with today's discussion points and share it by EOD."
+        },
+        {
+            "speaker": "zoomer",
+            "text": "I'll help with the data visualization updates. Some of those charts could use better formatting for executive review."
+        },
+        {
+            "speaker": "boomer",
+            "text": "Great work everyone. Let's reconvene next week to finalize before the board presentation."
+        }
+    ]
+}

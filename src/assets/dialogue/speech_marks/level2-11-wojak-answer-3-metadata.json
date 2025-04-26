@@ -1,0 +1,327 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 69,
+    "value": "Our tracking might be attributing costs incorrectly across campaigns."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 3,
+    "value": "Our"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 68,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 122,
+    "type": "word",
+    "start": 4,
+    "end": 12,
+    "value": "tracking"
+  },
+  {
+    "time": 122,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 241,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 305,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 360,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 449,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 484,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 551,
+    "type": "word",
+    "start": 13,
+    "end": 18,
+    "value": "might"
+  },
+  {
+    "time": 551,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 609,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 701,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 750,
+    "type": "word",
+    "start": 19,
+    "end": 21,
+    "value": "be"
+  },
+  {
+    "time": 750,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 825,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 893,
+    "type": "word",
+    "start": 22,
+    "end": 33,
+    "value": "attributing"
+  },
+  {
+    "time": 893,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 933,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1035,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1064,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1098,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1155,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1205,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 1238,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1273,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1309,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1403,
+    "type": "word",
+    "start": 34,
+    "end": 39,
+    "value": "costs"
+  },
+  {
+    "time": 1403,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1509,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 1597,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1682,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1723,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1814,
+    "type": "word",
+    "start": 40,
+    "end": 51,
+    "value": "incorrectly"
+  },
+  {
+    "time": 1814,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1879,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1938,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2043,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2089,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2173,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2212,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2298,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2337,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2402,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2485,
+    "type": "word",
+    "start": 52,
+    "end": 58,
+    "value": "across"
+  },
+  {
+    "time": 2485,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2528,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2656,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2712,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2758,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2859,
+    "type": "word",
+    "start": 59,
+    "end": 68,
+    "value": "campaigns"
+  },
+  {
+    "time": 2859,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2944,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3033,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3089,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3157,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3328,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3430,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3579,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

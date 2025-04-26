@@ -1,0 +1,362 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 75,
+    "value": "We're reducing feature development to focus on infrastructure optimization."
+  },
+  {
+    "time": 6,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "We're"
+  },
+  {
+    "time": 6,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 86,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 109,
+    "type": "word",
+    "start": 6,
+    "end": 14,
+    "value": "reducing"
+  },
+  {
+    "time": 109,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 198,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 235,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 294,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 388,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 434,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 543,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 585,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 648,
+    "type": "word",
+    "start": 15,
+    "end": 22,
+    "value": "feature"
+  },
+  {
+    "time": 648,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 770,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 853,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 969,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1009,
+    "type": "word",
+    "start": 23,
+    "end": 34,
+    "value": "development"
+  },
+  {
+    "time": 1009,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1064,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1100,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1158,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1196,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1299,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1342,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1378,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1432,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1476,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1537,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1572,
+    "type": "word",
+    "start": 35,
+    "end": 37,
+    "value": "to"
+  },
+  {
+    "time": 1572,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1634,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1676,
+    "type": "word",
+    "start": 38,
+    "end": 43,
+    "value": "focus"
+  },
+  {
+    "time": 1676,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 1789,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1893,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1969,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2027,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2111,
+    "type": "word",
+    "start": 44,
+    "end": 46,
+    "value": "on"
+  },
+  {
+    "time": 2111,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 2221,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2273,
+    "type": "word",
+    "start": 47,
+    "end": 61,
+    "value": "infrastructure"
+  },
+  {
+    "time": 2273,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 2353,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2420,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 2498,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2543,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2565,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 2647,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2689,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 2730,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 2775,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 2825,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2922,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2994,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 3044,
+    "type": "word",
+    "start": 62,
+    "end": 74,
+    "value": "optimization"
+  },
+  {
+    "time": 3044,
+    "type": "viseme",
+    "value": "O"
+  },
+  {
+    "time": 3103,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3186,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3236,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 3278,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 3346,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3450,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3534,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3656,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 3769,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 3928,
+    "type": "viseme",
+    "value": "sil"
+  }
+]

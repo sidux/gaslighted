@@ -77,14 +77,9 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   // Update pressure (passing the raw elapsed time to updatePressure which handles multipliers)
   const newPressure = updatePressure(state, adjustedElapsedMs);
   
-  // Always ensure some visible movement in the pressure bar
-  // For small increases, ensure a minimum change and make it more noticeable
-  // Only apply this when pressure_buildup_speed is greater than 0
-  const forcedPressureChange = state.level.rules.pressure_buildup_speed > 0 &&
-                              Math.abs(newPressure - state.pressure) < 0.2 && 
-                              newPressure < 100 
-    ? Math.min(100, state.pressure + 0.3) 
-    : newPressure;
+  // Use the pressure value directly from updatePressure without forcing additional changes
+  // This will respect the configured pressure_buildup_speed from the level
+  const forcedPressureChange = newPressure;
   
   // Check for auto-fart (pressure max)
   if (forcedPressureChange >= 100 && !state.lastFartResult) {

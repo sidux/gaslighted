@@ -159,15 +159,15 @@
     "time": 2680,
     "type": "sentence",
     "start": 32,
-    "end": 72,
-    "value": "Let’s address that in the post-mortem."
+    "end": 70,
+    "value": "Let's address that in the post-mortem."
   },
   {
     "time": 2817,
     "type": "word",
     "start": 32,
-    "end": 39,
-    "value": "Let’s"
+    "end": 37,
+    "value": "Let's"
   },
   {
     "time": 2817,
@@ -192,8 +192,8 @@
   {
     "time": 3130,
     "type": "word",
-    "start": 40,
-    "end": 47,
+    "start": 38,
+    "end": 45,
     "value": "address"
   },
   {
@@ -224,8 +224,8 @@
   {
     "time": 3617,
     "type": "word",
-    "start": 48,
-    "end": 52,
+    "start": 46,
+    "end": 50,
     "value": "that"
   },
   {
@@ -246,8 +246,8 @@
   {
     "time": 3805,
     "type": "word",
-    "start": 53,
-    "end": 55,
+    "start": 51,
+    "end": 53,
     "value": "in"
   },
   {
@@ -263,8 +263,8 @@
   {
     "time": 3930,
     "type": "word",
-    "start": 56,
-    "end": 59,
+    "start": 54,
+    "end": 57,
     "value": "the"
   },
   {
@@ -280,8 +280,8 @@
   {
     "time": 3992,
     "type": "word",
-    "start": 60,
-    "end": 71,
+    "start": 58,
+    "end": 69,
     "value": "post-mortem"
   },
   {

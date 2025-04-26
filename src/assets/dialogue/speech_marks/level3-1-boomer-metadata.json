@@ -1,0 +1,586 @@
+[
+  {
+    "time": 0,
+    "type": "sentence",
+    "start": 0,
+    "end": 45,
+    "value": "Wojak will be leading the presentation today."
+  },
+  {
+    "time": 137,
+    "type": "word",
+    "start": 0,
+    "end": 5,
+    "value": "Wojak"
+  },
+  {
+    "time": 137,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 237,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 337,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 500,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 625,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 812,
+    "type": "word",
+    "start": 6,
+    "end": 10,
+    "value": "will"
+  },
+  {
+    "time": 812,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 825,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 875,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 937,
+    "type": "word",
+    "start": 11,
+    "end": 13,
+    "value": "be"
+  },
+  {
+    "time": 937,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1000,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1062,
+    "type": "word",
+    "start": 14,
+    "end": 21,
+    "value": "leading"
+  },
+  {
+    "time": 1062,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1150,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1250,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1375,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 1400,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 1512,
+    "type": "word",
+    "start": 22,
+    "end": 25,
+    "value": "the"
+  },
+  {
+    "time": 1512,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 1562,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 1625,
+    "type": "word",
+    "start": 26,
+    "end": 38,
+    "value": "presentation"
+  },
+  {
+    "time": 1625,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 1637,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 1750,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 1812,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 1875,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 1962,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2125,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 2237,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 2312,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2462,
+    "type": "word",
+    "start": 39,
+    "end": 44,
+    "value": "today"
+  },
+  {
+    "time": 2462,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2550,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 2637,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 2787,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 3125,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 3680,
+    "type": "sentence",
+    "start": 46,
+    "end": 132,
+    "value": "As you know, Wojak has been spearheading our digital transformation efforts this year."
+  },
+  {
+    "time": 3880,
+    "type": "word",
+    "start": 46,
+    "end": 48,
+    "value": "As"
+  },
+  {
+    "time": 3880,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 3917,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 3992,
+    "type": "word",
+    "start": 49,
+    "end": 52,
+    "value": "you"
+  },
+  {
+    "time": 3992,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 4092,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4242,
+    "type": "word",
+    "start": 53,
+    "end": 57,
+    "value": "know"
+  },
+  {
+    "time": 4242,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 4305,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 4430,
+    "type": "viseme",
+    "value": "sil"
+  },
+  {
+    "time": 4742,
+    "type": "word",
+    "start": 59,
+    "end": 64,
+    "value": "Wojak"
+  },
+  {
+    "time": 4742,
+    "type": "viseme",
+    "value": "u"
+  },
+  {
+    "time": 4992,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 5117,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 5242,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5305,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5455,
+    "type": "word",
+    "start": 65,
+    "end": 68,
+    "value": "has"
+  },
+  {
+    "time": 5455,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 5517,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 5530,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5617,
+    "type": "word",
+    "start": 69,
+    "end": 73,
+    "value": "been"
+  },
+  {
+    "time": 5617,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 5717,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 5767,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 5805,
+    "type": "word",
+    "start": 74,
+    "end": 86,
+    "value": "spearheading"
+  },
+  {
+    "time": 5805,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 5942,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 6067,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6142,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6305,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 6317,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6367,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6430,
+    "type": "viseme",
+    "value": "k"
+  },
+  {
+    "time": 6505,
+    "type": "word",
+    "start": 87,
+    "end": 90,
+    "value": "our"
+  },
+  {
+    "time": 6505,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 6680,
+    "type": "word",
+    "start": 91,
+    "end": 98,
+    "value": "digital"
+  },
+  {
+    "time": 6680,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 6742,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6805,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 6892,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 6992,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7055,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7180,
+    "type": "word",
+    "start": 99,
+    "end": 113,
+    "value": "transformation"
+  },
+  {
+    "time": 7180,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7242,
+    "type": "viseme",
+    "value": "r"
+  },
+  {
+    "time": 7267,
+    "type": "viseme",
+    "value": "a"
+  },
+  {
+    "time": 7392,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 7405,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 7567,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 7630,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 7680,
+    "type": "viseme",
+    "value": "p"
+  },
+  {
+    "time": 7717,
+    "type": "viseme",
+    "value": "e"
+  },
+  {
+    "time": 7930,
+    "type": "viseme",
+    "value": "S"
+  },
+  {
+    "time": 7992,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8180,
+    "type": "word",
+    "start": 114,
+    "end": 121,
+    "value": "efforts"
+  },
+  {
+    "time": 8180,
+    "type": "viseme",
+    "value": "E"
+  },
+  {
+    "time": 8267,
+    "type": "viseme",
+    "value": "f"
+  },
+  {
+    "time": 8392,
+    "type": "viseme",
+    "value": "@"
+  },
+  {
+    "time": 8442,
+    "type": "viseme",
+    "value": "t"
+  },
+  {
+    "time": 8492,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 8630,
+    "type": "word",
+    "start": 122,
+    "end": 126,
+    "value": "this"
+  },
+  {
+    "time": 8630,
+    "type": "viseme",
+    "value": "T"
+  },
+  {
+    "time": 8680,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 8817,
+    "type": "viseme",
+    "value": "s"
+  },
+  {
+    "time": 8942,
+    "type": "word",
+    "start": 127,
+    "end": 131,
+    "value": "year"
+  },
+  {
+    "time": 8942,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 9080,
+    "type": "viseme",
+    "value": "i"
+  },
+  {
+    "time": 9430,
+    "type": "viseme",
+    "value": "sil"
+  }
+]
