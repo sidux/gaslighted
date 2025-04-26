@@ -24,6 +24,9 @@ export function useGameLoop(
       const deltaTime = timestamp - lastUpdateTimeRef.current;
       lastUpdateTimeRef.current = timestamp;
       
+      // Apply a minimum deltaTime to ensure consistent updates
+      const minDeltaTime = Math.max(deltaTime, 16.67); // ~60fps
+      
       setGameState(prevState => {
         if (!prevState) return null;
         
@@ -36,7 +39,7 @@ export function useGameLoop(
         const prevLastFartResult = prevState.lastFartResult;
         
         // Update game state
-        const newState = updateGameState(prevState, deltaTime);
+        const newState = updateGameState(prevState, minDeltaTime);
         
         // Check if a new terrible auto-fart just happened
         if (newState.lastFartResult && 

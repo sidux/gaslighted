@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect, memo, useRef } from 'react';
 import { Participant, GameState, FartResultType } from '../types';
 
 interface MeetingAreaProps {
@@ -16,6 +16,7 @@ interface ParticipantVideoProps {
   isGameOver: boolean;
   victory: boolean;
   isActive: boolean;
+  gameState: GameState;
 }
 
 // Memoized participant video to prevent unnecessary re-renders
@@ -27,10 +28,14 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
   shame,
   isGameOver,
   victory,
-  isActive
+  isActive,
+  gameState
 }) => {
   const [faceImage, setFaceImage] = useState('neutral');
   const [talkingState, setTalkingState] = useState(0);
+  const animationRef = useRef<number | null>(null);
+  const lastFrameTimeRef = useRef<number>(0);
+  const animationTimeRef = useRef<number>(0);
   
   // Handle talking animation and face image based on state
   useEffect(() => {
@@ -72,21 +77,66 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
     }
     
     setFaceImage(image);
-    
-    // Handle talking animation
-    let intervalId: NodeJS.Timeout | null = null;
-    
-    if (isSpeaking && !fartReaction) {
-      // Start talking animation
-      intervalId = setInterval(() => {
-        setTalkingState(prev => (prev === 0 ? 1 : 0));
-      }, 300);
+  }, [participant.type, isSpeaking, fartReaction, talkingState, pressure, shame, isGameOver, victory]);
+  
+  // Separate useEffect to handle the talking animation with requestAnimationFrame
+  useEffect(() => {
+    // If not speaking or has a fart reaction, cancel any animation
+    if (!isSpeaking || fartReaction) {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+      return;
     }
     
-    return () => {
-      if (intervalId) clearInterval(intervalId);
+    // Get game speed from game state
+    const gameSpeed = gameState.level.rules.game_speed || 1.0;
+    
+    // Base talking interval in ms (adjusted for game speed)
+    const talkingInterval = 300 / gameSpeed;
+    
+    // Animation loop with requestAnimationFrame
+    const animate = (timestamp: number) => {
+      // Initialize lastFrameTime on first run
+      if (lastFrameTimeRef.current === 0) {
+        lastFrameTimeRef.current = timestamp;
+      }
+      
+      // Calculate elapsed time since last frame
+      const deltaTime = timestamp - lastFrameTimeRef.current;
+      lastFrameTimeRef.current = timestamp;
+      
+      // Add to accumulated animation time
+      animationTimeRef.current += deltaTime;
+      
+      // Check if it's time to switch talking state
+      if (animationTimeRef.current >= talkingInterval) {
+        // Toggle talking state
+        setTalkingState(prev => (prev === 0 ? 1 : 0));
+        
+        // Reset animation timer (but keep remainder for smoother animation)
+        animationTimeRef.current %= talkingInterval;
+      }
+      
+      // Continue animation loop
+      animationRef.current = requestAnimationFrame(animate);
     };
-  }, [participant.type, isSpeaking, fartReaction, talkingState, pressure, shame, isGameOver, victory]);
+    
+    // Start animation
+    animationRef.current = requestAnimationFrame(animate);
+    
+    // Cleanup when component unmounts or deps change
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+      // Reset times
+      lastFrameTimeRef.current = 0;
+      animationTimeRef.current = 0;
+    };
+  }, [isSpeaking, fartReaction, gameState.level.rules.game_speed]);
   
   // Generate CSS classes based on current state
   const containerClasses = [
@@ -189,6 +239,7 @@ const MeetingArea: React.FC<MeetingAreaProps> = ({ gameState, participants }) =>
             isGameOver={gameState.isGameOver}
             victory={gameState.victory}
             isActive={participant.id === currentSpeakerId}
+            gameState={gameState}
           />
         ))}
       </div>

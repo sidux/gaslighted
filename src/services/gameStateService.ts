@@ -77,9 +77,15 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   // Update pressure (passing the raw elapsed time to updatePressure which handles multipliers)
   const newPressure = updatePressure(state, adjustedElapsedMs);
   
+  // Always ensure some visible movement in the pressure bar
+  // For small increases, ensure a minimum change and make it more noticeable
+  const forcedPressureChange = Math.abs(newPressure - state.pressure) < 0.2 && newPressure < 100 
+    ? Math.min(100, state.pressure + 0.3) 
+    : newPressure;
+  
   // Check for auto-fart (pressure max)
-  if (newPressure >= 100 && !state.lastFartResult) {
-    return handleTerribleFart(state, newPressure);
+  if (forcedPressureChange >= 100 && !state.lastFartResult) {
+    return handleTerribleFart(state, forcedPressureChange);
   }
   
   // Update playback time
@@ -116,7 +122,7 @@ export const updateGameState = (state: GameState, elapsedMs: number): GameState 
   // Create updated state
   let result = {
     ...state,
-    pressure: newPressure,
+    pressure: forcedPressureChange,
     playbackTime: newPlaybackTime,
     currentWordIndex: newWordIndex,
     currentVisemeIndex: newVisemeIndex,

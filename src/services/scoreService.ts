@@ -50,9 +50,19 @@ export const updatePressure = (
     ? (state.level.rules.question?.pressure_multiplier || 1.0)
     : 1.0;
   
-  const pressureIncrease = (elapsedMs / 1000) * 
-    state.level.rules.pressure_buildup_speed * 
-    pressureMultiplier;
+  // Calculate pressure increase - ensure consistent rate regardless of frame rate
+  // Cap elapsed time to prevent huge jumps
+  const cappedElapsedMs = Math.min(elapsedMs, 100);
   
-  return state.pressure + pressureIncrease;
+  // Make pressure build up faster for visibility
+  const scaleFactor = 1.5; // Increase pressure buildup speed
+  const pressureIncrease = (cappedElapsedMs / 1000) * 
+    state.level.rules.pressure_buildup_speed * 
+    pressureMultiplier * 
+    scaleFactor;
+  
+  // Ensure a minimum increase when pressure is not negative
+  // Higher minimum value when pressure is below 0
+  const minimumIncrease = state.pressure < 0 ? 0.5 : 0.2;
+  return state.pressure + Math.max(minimumIncrease, pressureIncrease);
 };
