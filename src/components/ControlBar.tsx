@@ -6,6 +6,7 @@ interface ControlBarProps {
   onTogglePause?: () => void;
   isGameInProgress: boolean;
   isPaused?: boolean;
+  isPauseDisabled?: boolean;
 }
 
 // Google Meet modern style control bar
@@ -14,7 +15,8 @@ const ControlBar: React.FC<ControlBarProps> = ({
   onStartGame, 
   onTogglePause, 
   isGameInProgress, 
-  isPaused = false 
+  isPaused = false,
+  isPauseDisabled = false
 }) => {
   return (
     <div className="meet-control-bar">
@@ -39,9 +41,10 @@ const ControlBar: React.FC<ControlBarProps> = ({
         
         {isGameInProgress && onTogglePause && (
           <button 
-            className="meet-control-button pause-button" 
-            onClick={onTogglePause} 
-            title={isPaused ? "Resume meeting" : "Pause meeting"}
+            className={`meet-control-button pause-button ${isPauseDisabled ? 'disabled' : ''}`} 
+            onClick={isPauseDisabled ? undefined : onTogglePause} 
+            title={isPaused ? "Resume meeting" : isPauseDisabled ? "Cannot pause during questions" : "Pause meeting"}
+            disabled={isPauseDisabled}
           >
             {isPaused ? (
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

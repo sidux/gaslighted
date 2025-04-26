@@ -46,6 +46,30 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
   // Hook for handling heartbeat sound
   useHeartbeatSound(gameState, audioResources);
   
+  // Add keyboard handler for Escape key
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && gameState && gameState.isPlaying && !gameState.isGameOver) {
+        // Check if a question is active - using the same logic as in the render function
+        const isQuestionActive = gameState.currentDialogueIndex < gameState.level.dialogues.length && 
+                                 gameState.level.dialogues[gameState.currentDialogueIndex].answers?.length > 0 && 
+                                 !gameState.showingAnswer && 
+                                 !gameState.showingFeedback && 
+                                 gameState.selectedAnswerIndex === undefined;
+        
+        // Only toggle pause if there's no question active
+        if (!isQuestionActive) {
+          handleTogglePause();
+        }
+        
+        e.preventDefault();
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [gameState]);
+  
   // Handle start game
   const handleStartGame = () => {
     setGameState(prevState => {
@@ -62,6 +86,18 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
   const handleTogglePause = () => {
     setGameState(prevState => {
       if (!prevState) return null;
+      
+      // Use the same logic as in the UI to determine if a question is active
+      const isQuestionActive = prevState.currentDialogueIndex < prevState.level.dialogues.length && 
+                              prevState.level.dialogues[prevState.currentDialogueIndex].answers?.length > 0 && 
+                              !prevState.showingAnswer && 
+                              !prevState.showingFeedback && 
+                              prevState.selectedAnswerIndex === undefined;
+      
+      // Prevent pausing if a question is active
+      if (isQuestionActive && !prevState.isPaused) {
+        return prevState; // Do nothing if trying to pause during a question
+      }
       
       // Toggle isPaused state
       const newIsPaused = !prevState.isPaused;
@@ -169,13 +205,27 @@ const GameScreen: React.FC<GameScreenProps> = ({ level, onBackToMenu }) => {
         participants={level.participants}
       />
       
-      <ControlBar 
-        onBackToMenu={handleLeaveMeeting} 
-        onStartGame={!gameState.isPlaying && !gameState.isGameOver ? handleStartGame : undefined}
-        onTogglePause={gameState.isPlaying && !gameState.isGameOver ? handleTogglePause : undefined}
-        isGameInProgress={gameState.isPlaying}
-        isPaused={gameState.isPaused}
-      />
+      {/* Check if there's a question active to disable pause */}
+      {(() => {
+        // Only consider a question active if it has answers AND we're not showing an answer or feedback
+        // This ensures that once an answer is selected, the pause button becomes available again
+        const isQuestionActive = gameState.currentDialogueIndex < gameState.level.dialogues.length && 
+                                 gameState.level.dialogues[gameState.currentDialogueIndex].answers?.length > 0 && 
+                                 !gameState.showingAnswer && 
+                                 !gameState.showingFeedback && 
+                                 gameState.selectedAnswerIndex === undefined;
+        
+        return (
+          <ControlBar 
+            onBackToMenu={handleLeaveMeeting} 
+            onStartGame={!gameState.isPlaying && !gameState.isGameOver ? handleStartGame : undefined}
+            onTogglePause={gameState.isPlaying && !gameState.isGameOver ? handleTogglePause : undefined}
+            isGameInProgress={gameState.isPlaying}
+            isPaused={gameState.isPaused}
+            isPauseDisabled={isQuestionActive}
+          />
+        );
+      })()}
       
       <GameUI
         gameState={gameState}

@@ -145,8 +145,6 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
       
       // Then play feedback audio - this will display with karaoke text and fart opportunities
       import('../services/audioService').then(({ playFeedbackAudio }) => {
-        
-        
         playFeedbackAudio(
           gameState.audioResources!,
           levelId,
@@ -155,7 +153,6 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
           wasCorrect,
           () => {
             // After feedback audio finishes, advance to the next dialogue
-            
             advanceToNextDialogue(gameState);
           },
           gameState.level.rules.game_speed
@@ -179,8 +176,8 @@ const DialogueAnswers: React.FC<DialogueAnswersProps> = ({
         const currentIndex = prevState.currentDialogueIndex + 1;
         const isLevelComplete = currentIndex >= prevState.level.dialogues.length;
         
-        
-        
+        // Clear all UI states related to questions to ensure the game can be paused again
+        // This fixes the issue where the game can't be paused after answering a question
         return {
           ...prevState,
           currentDialogueIndex: currentIndex,
