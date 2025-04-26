@@ -42,6 +42,16 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
     // Determine the appropriate face image
     let image = 'neutral';
     
+    // Check conditions for when player should be speaking
+    const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
+    const hasAnswers = currentDialogue?.answers && currentDialogue.answers.length > 0;
+    const isInAnswerSelectionPhase = hasAnswers && gameState.selectedAnswerIndex === undefined;
+    
+    // Show talking animation when:
+    // 1. Character is marked as speaking
+    // 2. NOT in the answer selection phase (just showing options)
+    const shouldShowTalking = isSpeaking && !isInAnswerSelectionPhase;
+    
     if (participant.type === 'player') {
       // Player-specific faces
       if (isGameOver && shame >= 100) {
@@ -62,7 +72,8 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
         image = 'medium-pressure';
       } else if (pressure >= 20) {
         image = 'light-pressure';
-      } else if (isSpeaking) {
+      } else if (shouldShowTalking) {
+        // Only show talking animation when actually speaking, not when selecting an answer
         image = `talking${talkingState + 1}`;
       }
     } else {
@@ -71,22 +82,60 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
         image = 'okay-fart-reaction';
       } else if (fartReaction === 'bad') {
         image = 'bad-fart-reaction';
-      } else if (isSpeaking) {
+      } else if (shouldShowTalking) {
         image = `talking${talkingState + 1}`;
       }
     }
     
     setFaceImage(image);
-  }, [participant.type, isSpeaking, fartReaction, talkingState, pressure, shame, isGameOver, victory]);
+  }, [participant.type, isSpeaking, fartReaction, talkingState, pressure, shame, isGameOver, victory, gameState.selectedAnswerIndex, gameState.currentDialogueIndex]);
   
-  // Separate useEffect to handle the talking animation with requestAnimationFrame
+  // A separate effect to detect when an answer is selected, to restart animation
   useEffect(() => {
-    // If not speaking or has a fart reaction, cancel any animation
-    if (!isSpeaking || fartReaction) {
+    // When an answer is selected (selectedAnswerIndex changes from undefined to a value)
+    if (gameState.selectedAnswerIndex !== undefined && isSpeaking) {
+      // Reset animation timers to restart animation cycle at a visible point
+      lastFrameTimeRef.current = 0;
+      animationTimeRef.current = 0;
+      
+      // Start with talking1 (talkingState = 0)
+      setTalkingState(0);
+      
+      // Cancel any existing animation frame
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
         animationRef.current = null;
       }
+    }
+  }, [gameState.selectedAnswerIndex, isSpeaking]);
+
+  // Separate useEffect to handle the talking animation with requestAnimationFrame
+  useEffect(() => {
+    // Get current dialogue information
+    const currentDialogue = gameState.level.dialogues[gameState.currentDialogueIndex];
+    const hasAnswers = currentDialogue?.answers && currentDialogue.answers.length > 0;
+    
+    // Determine if we're in the answer selection phase (showing options, not yet selected)
+    const isInAnswerSelectionPhase = hasAnswers && gameState.selectedAnswerIndex === undefined;
+    
+    // For characters, only animate when:
+    // 1. They are speaking 
+    // 2. No fart reaction is active
+    // 3. NOT in the answer selection phase (showing options)
+    const shouldAnimate = isSpeaking && 
+                          !fartReaction &&
+                          !isInAnswerSelectionPhase;
+    
+    // If animation should not run, cancel the animation frame
+    if (!shouldAnimate) {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+      
+      // Reset animation-related refs when stopping animation
+      lastFrameTimeRef.current = 0;
+      animationTimeRef.current = 0;
       return;
     }
     
@@ -101,6 +150,7 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
       // Initialize lastFrameTime on first run
       if (lastFrameTimeRef.current === 0) {
         lastFrameTimeRef.current = timestamp;
+        animationTimeRef.current = 0;
       }
       
       // Calculate elapsed time since last frame
@@ -112,7 +162,7 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
       
       // Check if it's time to switch talking state
       if (animationTimeRef.current >= talkingInterval) {
-        // Toggle talking state
+        // Toggle talking state between 0 and 1
         setTalkingState(prev => (prev === 0 ? 1 : 0));
         
         // Reset animation timer (but keep remainder for smoother animation)
@@ -124,7 +174,9 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
     };
     
     // Start animation
-    animationRef.current = requestAnimationFrame(animate);
+    if (!animationRef.current) {
+      animationRef.current = requestAnimationFrame(animate);
+    }
     
     // Cleanup when component unmounts or deps change
     return () => {
@@ -136,7 +188,7 @@ const ParticipantVideo: React.FC<ParticipantVideoProps> = memo(({
       lastFrameTimeRef.current = 0;
       animationTimeRef.current = 0;
     };
-  }, [isSpeaking, fartReaction, gameState.level.rules.game_speed]);
+  }, [isSpeaking, fartReaction, gameState.level.rules.game_speed, gameState.selectedAnswerIndex, gameState.currentDialogueIndex]);
   
   // Generate CSS classes based on current state
   const containerClasses = [
