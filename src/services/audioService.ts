@@ -1,6 +1,19 @@
 import { AudioResources, FartType, FartResultType } from '../types';
 
 /**
+ * Stop all dialogue audio except for the specified key
+ */
+export const stopAllDialogues = (resources: AudioResources, exceptKey?: string): void => {
+  Object.entries(resources.dialogues).forEach(([key, audio]) => {
+    if (exceptKey !== key) {
+      audio.pause();
+      audio.currentTime = 0;
+      audio.onended = null; // Remove any onended handlers
+    }
+  });
+};
+
+/**
  * Play dialogue audio
  */
 export const playDialogueAudio = (
@@ -12,6 +25,10 @@ export const playDialogueAudio = (
   gameSpeed?: number
 ): void => {
   const audioKey = `${levelId}-${dialogueIndex}-${speakerId}`;
+  
+  // Stop all other dialogues before playing this one
+  stopAllDialogues(resources, audioKey);
+  
   playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
 };
 
@@ -28,6 +45,10 @@ export const playAnswerAudio = (
   gameSpeed?: number
 ): void => {
   const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-answer-${answerIndex}`;
+  
+  // Stop all other dialogues before playing this one
+  stopAllDialogues(resources, audioKey);
+  
   playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
 };
 
@@ -44,6 +65,10 @@ export const playFeedbackAudio = (
   gameSpeed?: number
 ): void => {
   const audioKey = `${levelId}-${dialogueIndex}-${speakerId}-feedback-${isCorrect ? 'correct' : 'incorrect'}`;
+  
+  // Stop all other dialogues before playing this one
+  stopAllDialogues(resources, audioKey);
+  
   playAudio(resources.dialogues[audioKey], onEnded, gameSpeed);
 };
 
@@ -126,8 +151,17 @@ const playAudio = (audio: HTMLAudioElement | undefined, onEnded?: () => void, ga
     return;
   }
   
+  // First, pause the audio and reset it
+  audio.pause();
   audio.currentTime = 0;
-  if (onEnded) audio.onended = onEnded;
+  
+  // Remove any existing onended handler to prevent multiple callbacks
+  audio.onended = null;
+  
+  // Set the new onended handler if provided
+  if (onEnded) {
+    audio.onended = onEnded;
+  }
   
   // Set playback rate based on game speed if provided
   if (gameSpeed !== undefined) {

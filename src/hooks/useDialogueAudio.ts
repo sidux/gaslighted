@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { GameState, AudioResources } from '../types';
 import { playDialogueAudio } from '../services';
 
@@ -7,6 +7,18 @@ export function useDialogueAudio(
   audioResources: AudioResources | null, 
   setGameState: React.Dispatch<React.SetStateAction<GameState | null>>
 ) {
+  // Create a ref to track dialogue transition timeouts
+  const dialogueTransitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Clean up any pending timeouts when component unmounts or dialogue changes
+  useEffect(() => {
+    return () => {
+      if (dialogueTransitionTimeoutRef.current) {
+        clearTimeout(dialogueTransitionTimeoutRef.current);
+        dialogueTransitionTimeoutRef.current = null;
+      }
+    };
+  }, [gameState?.currentDialogueIndex]);
   // Start or resume the current dialogue audio
   useEffect(() => {
     if (!gameState || !audioResources || !gameState.isPlaying || gameState.isGameOver) {
@@ -33,12 +45,38 @@ export function useDialogueAudio(
       const handleDialogueEnded = () => {
         // Only auto-advance for regular dialogue (not answers or feedback)
         if (!hasAnswers && !hasFeedback) {
-          setGameState(prevState => {
-            if (!prevState) return null;
+          // Clean up any existing timeouts to prevent multiple transitions
+          if (dialogueTransitionTimeoutRef.current) {
+            clearTimeout(dialogueTransitionTimeoutRef.current);
+            dialogueTransitionTimeoutRef.current = null;
+          }
+          
+          // Get delay from level rules or use default
+          const defaultDelayMs = 750; // Default delay of 750ms
+          const configuredDelay = gameState.level.rules.dialogue_end_delay_ms || defaultDelayMs;
+          // Use game speed from the level rules
+          const gameSpeed = gameState.level.rules.game_speed || 1.0;
+          const scaledDelay = configuredDelay / gameSpeed; // Scale by game speed
+          
+          // Store the timeout ID so we can clean it up if needed
+          dialogueTransitionTimeoutRef.current = setTimeout(() => {
+            // Clear the reference once the timeout executes
+            dialogueTransitionTimeoutRef.current = null;
             
-            // Move to the next dialogue
-            return moveToNextDialogueState(prevState);
-          });
+            // Stop any potentially running audio before transitioning
+            if (audioResources) {
+              import('../services/audioService').then(({ stopAllDialogues }) => {
+                stopAllDialogues(audioResources);
+              });
+            }
+            
+            setGameState(prevState => {
+              if (!prevState) return null;
+              
+              // Move to the next dialogue
+              return moveToNextDialogueState(prevState);
+            });
+          }, scaledDelay);
         } else {
           
         }

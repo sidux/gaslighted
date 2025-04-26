@@ -23,6 +23,7 @@ export interface LevelRules {
   letter_visible_duration_ms: number;
   letter_float_height_px: number;
   letter_float_speed_multiplier: number;
+  dialogue_end_delay_ms?: number; // Optional delay after dialogue ends before moving to next
   pressure_release: {
     perfect: number;
     okay: number;
