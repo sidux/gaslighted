@@ -8,7 +8,7 @@ export const getLevelFiles = async (): Promise<string[]> => {
     const response = await fetch('src/assets/levels/');
     if (!response.ok) {
       console.warn('Failed to fetch levels directory, using fallback');
-      return ['level1.json']; // Fallback to known level
+      return ['level1.json', 'level2.json', 'level3.json']; // Fallback to known level
     }
     
     const text = await response.text();
@@ -17,7 +17,7 @@ export const getLevelFiles = async (): Promise<string[]> => {
     return matches.map(match => match.replace('href="', '').replace('"', ''));
   } catch (error) {
     console.error('Error fetching level files:', error);
-    return ['level1.json']; // Fallback to known level
+    return ['level1.json', 'level2.json', 'level3.json']; // Fallback to known level
   }
 };
 
