@@ -5,10 +5,6 @@
 
 ## Installation and Running the Game
 
-### Prerequisites
-- Node.js (version 14 or higher)
-- npm (comes with Node.js)
-
 ### Installation
 1. Clone the repository:
    ```bash
